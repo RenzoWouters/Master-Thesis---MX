@@ -1,0 +1,13 @@
+test_full_restore_and_next_optimizer_update (__main__.CheckpointGuards.test_full_restore_and_next_optimizer_update) ... ok
+test_missing_rng_is_detected (__main__.CheckpointGuards.test_missing_rng_is_detected) ... ok
+test_negative_control_omitting_rng_changes_probe (__main__.CheckpointGuards.test_negative_control_omitting_rng_changes_probe) ... ok
+test_no_overwrite_and_weights_only_roundtrip (__main__.CheckpointGuards.test_no_overwrite_and_weights_only_roundtrip) ... ok
+test_reject_contract_change_before_loading (__main__.CheckpointGuards.test_reject_contract_change_before_loading) ... ok
+test_reject_corrupted_checkpoint (__main__.CheckpointGuards.test_reject_corrupted_checkpoint) ... ok
+test_reject_incomplete_checkpoint_without_marker (__main__.CheckpointGuards.test_reject_incomplete_checkpoint_without_marker) ... ok
+test_rng_roundtrip_with_cached_gaussian (__main__.CheckpointGuards.test_rng_roundtrip_with_cached_gaussian) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.626s
+
+OK

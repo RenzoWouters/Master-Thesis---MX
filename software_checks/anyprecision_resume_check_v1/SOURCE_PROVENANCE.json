@@ -1,0 +1,15 @@
+{
+  "upstream_archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+  "upstream_byte_identical_to_user_attachment": true,
+  "pilot_archive_sha256": "aed9558b6ab29e50fec2fd173d6ab2d2a24c7e9ef4acfcfae43d658b160473da",
+  "unchanged_imported_support": {
+    "run_pilot.py": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8"
+  },
+  "new_runtime_files": [
+    "resume_core.py",
+    "resume_worker.py",
+    "run_resume_check.py"
+  ],
+  "compatibility_patch_same_as_previous_pilot": true
+}

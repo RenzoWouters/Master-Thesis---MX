@@ -1,0 +1,9 @@
+{
+  "run_resume_check.py": "c9e1eb607eea9a55d8d62262312c7be222275fed02103fc6bfa9204a613db100",
+  "resume_worker.py": "3e652d1c852d01be2cdd4551ac8f607fd35ddab7763a3a7db0fe3b94220d5fe3",
+  "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+  "run_pilot.py": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "SOURCE_MANIFEST.json": "c696694c6ecf5f2c961317a169495e94d191f043f0079af96c0d4f41b49cda74",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

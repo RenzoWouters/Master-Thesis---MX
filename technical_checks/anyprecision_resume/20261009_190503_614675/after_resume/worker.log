@@ -1,0 +1,15 @@
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Checkpoint hersteld: epoch 1, 3 stappen; volgende epoch 2.
+  mini-epoch 2/3; learning rate=0.0001
+    batch 1/3: alle 5 precisies, gradients eindig, stap 4
+    batch 2/3: alle 5 precisies, gradients eindig, stap 5
+    batch 3/3: alle 5 precisies, gradients eindig, stap 6
+  Checkpoint epoch 2 opgeslagen; volgende learning rate=1e-05.
+  mini-epoch 3/3; learning rate=1e-05
+    batch 1/3: alle 5 precisies, gradients eindig, stap 7
+    batch 2/3: alle 5 precisies, gradients eindig, stap 8
+    batch 3/3: alle 5 precisies, gradients eindig, stap 9
+  Checkpoint epoch 3 opgeslagen; volgende learning rate=1e-05.
+Dit Python-proces stopt nu normaal; geen handmatige onderbreking nodig.
+Workerstatus: PASS; waarschuwingen: 0

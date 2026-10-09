@@ -1,0 +1,29 @@
+{
+  "purpose": "technical_epoch_boundary_resume_check",
+  "seed": 20261009,
+  "epochs": 3,
+  "train_per_class": 2,
+  "val_per_class": 2,
+  "batch_size": 8,
+  "bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "model": "resnet20q",
+  "expand": 5,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "scheduler_milestones": [
+    1,
+    2
+  ],
+  "scheduler_gamma": 0.1,
+  "workers": 0,
+  "drop_last": false,
+  "rng_policy": "continuous streams restored at epoch boundary; no per-epoch reseeding",
+  "scheduler_note": "ARTIFICIAL TEST milestones, NOT the 400-epoch research schedule"
+}

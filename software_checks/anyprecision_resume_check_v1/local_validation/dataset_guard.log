@@ -1,0 +1,2 @@
+PASS - afgewezen zonder download: Checksumfout: /mnt/data/resume_build/offline_check/fixture_data/cifar-10-batches-py/data_batch_1; niets wordt overschreven.
+PASS - afgewezen zonder download: CIFAR-10 ontbreekt. Gebruik --download om de officiele dataset op te halen.

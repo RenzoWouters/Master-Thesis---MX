@@ -1,0 +1,76 @@
+ANY-PRECISION HERVATCONTROLE - geen referentietraining, geen MX
+A: 3 mini-epochs in een proces. B: 1 mini-epoch, proces stopt, nieuw proces doet 2 en 3.
+20 trainingsbeelden, 20 controlebeelden; batch 8; drie optimizerstappen per mini-epoch.
+Learning-rateverlagingen na mini-epochs 1 en 2 zijn alleen voor deze technische controle.
+
+[1/3] Ononderbroken controlepad A
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Nieuwe initialisatie; dit gebruikt GEEN eerder pilotcheckpoint.
+  mini-epoch 1/3; learning rate=0.001
+    batch 1/3: alle 5 precisies, gradients eindig, stap 1
+    batch 2/3: alle 5 precisies, gradients eindig, stap 2
+    batch 3/3: alle 5 precisies, gradients eindig, stap 3
+  Checkpoint epoch 1 opgeslagen; volgende learning rate=0.0001.
+  mini-epoch 2/3; learning rate=0.0001
+    batch 1/3: alle 5 precisies, gradients eindig, stap 4
+    batch 2/3: alle 5 precisies, gradients eindig, stap 5
+    batch 3/3: alle 5 precisies, gradients eindig, stap 6
+  Checkpoint epoch 2 opgeslagen; volgende learning rate=1e-05.
+  mini-epoch 3/3; learning rate=1e-05
+    batch 1/3: alle 5 precisies, gradients eindig, stap 7
+    batch 2/3: alle 5 precisies, gradients eindig, stap 8
+    batch 3/3: alle 5 precisies, gradients eindig, stap 9
+  Checkpoint epoch 3 opgeslagen; volgende learning rate=1e-05.
+Dit Python-proces stopt nu normaal; geen handmatige onderbreking nodig.
+Workerstatus: PASS; waarschuwingen: 0
+
+[2/3] Controlepad B: trainen, checkpoint opslaan en Python afsluiten
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Nieuwe initialisatie; dit gebruikt GEEN eerder pilotcheckpoint.
+  mini-epoch 1/3; learning rate=0.001
+    batch 1/3: alle 5 precisies, gradients eindig, stap 1
+    batch 2/3: alle 5 precisies, gradients eindig, stap 2
+    batch 3/3: alle 5 precisies, gradients eindig, stap 3
+  Checkpoint epoch 1 opgeslagen; volgende learning rate=0.0001.
+Dit Python-proces stopt nu normaal; geen handmatige onderbreking nodig.
+Workerstatus: PASS; waarschuwingen: 0
+
+[3/3] Controlepad B: nieuw Python-proces, laden en verder trainen
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Checkpoint hersteld: epoch 1, 3 stappen; volgende epoch 2.
+  mini-epoch 2/3; learning rate=0.0001
+    batch 1/3: alle 5 precisies, gradients eindig, stap 4
+    batch 2/3: alle 5 precisies, gradients eindig, stap 5
+    batch 3/3: alle 5 precisies, gradients eindig, stap 6
+  Checkpoint epoch 2 opgeslagen; volgende learning rate=1e-05.
+  mini-epoch 3/3; learning rate=1e-05
+    batch 1/3: alle 5 precisies, gradients eindig, stap 7
+    batch 2/3: alle 5 precisies, gradients eindig, stap 8
+    batch 3/3: alle 5 precisies, gradients eindig, stap 9
+  Checkpoint epoch 3 opgeslagen; volgende learning rate=1e-05.
+Dit Python-proces stopt nu normaal; geen handmatige onderbreking nodig.
+Workerstatus: PASS; waarschuwingen: 0
+  OK   same_checkpoint_before_stop
+  OK   same_final_model_including_batchnorm
+  OK   same_final_optimizer
+  OK   same_final_scheduler
+  OK   same_final_rng_including_loader_generators
+  OK   same_training_history_losses_orders_and_augmented_inputs
+  OK   same_final_validation_logits_all_precisions
+  OK   same_entire_checkpoint_content
+  OK   same_exported_json_history
+  OK   new_process_restoration_checks_passed
+  OK   resume_started_at_epoch_2
+  OK   nine_optimizer_steps_per_path
+  OK   three_completed_mini_epochs
+  OK   expected_lr_sequence
+  OK   all_worker_statuses_pass
+  OK   all_sources_unchanged
+Vergelijking voltooid. Er wordt GEEN lange training gestart.
+
+STATUS: PASS
+Rapportmap: C:\Users\renzo\master-thesis-mx\technical_checks\anyprecision_resume\20261009_190503_614675
+Geen downloads. Geen pakketten geinstalleerd. Geen eerdere resultaten overschreven.

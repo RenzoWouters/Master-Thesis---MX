@@ -1,0 +1,214 @@
+{
+  "status": "PASS",
+  "purpose": "technical_resume_check_worker",
+  "started_at": "2026-10-09T19:05:03.927566+02:00",
+  "argv": [
+    "C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_resume_check_v1\\resume_worker.py",
+    "--config",
+    "C:\\Users\\renzo\\master-thesis-mx\\technical_checks\\anyprecision_resume\\20261009_190503_614675\\test_config.json",
+    "--source",
+    "C:\\Users\\renzo\\master-thesis-mx\\technical_checks\\anyprecision_resume\\20261009_190503_614675\\source_workcopy",
+    "--source-manifest",
+    "C:\\Users\\renzo\\master-thesis-mx\\technical_checks\\anyprecision_resume\\20261009_190503_614675\\source_manifest.json",
+    "--data-root",
+    "C:\\Users\\renzo\\master-thesis-mx\\data\\cifar10",
+    "--device",
+    "cuda",
+    "--out",
+    "C:\\Users\\renzo\\master-thesis-mx\\technical_checks\\anyprecision_resume\\20261009_190503_614675\\uninterrupted",
+    "--stop-after-epoch",
+    "3"
+  ],
+  "not_reference_training": true,
+  "mid_epoch_resume_tested": false,
+  "config": {
+    "purpose": "technical_epoch_boundary_resume_check",
+    "seed": 20261009,
+    "epochs": 3,
+    "train_per_class": 2,
+    "val_per_class": 2,
+    "batch_size": 8,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "model": "resnet20q",
+    "expand": 5,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      1,
+      2
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "drop_last": false,
+    "rng_policy": "continuous streams restored at epoch boundary; no per-epoch reseeding",
+    "scheduler_note": "ARTIFICIAL TEST milestones, NOT the 400-epoch research schedule"
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "pillow": "12.3.0",
+    "device": "cuda:0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "torch_num_threads": 2,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": false,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "matmul_fp32_precision": "ieee",
+    "cudnn_conv_fp32_precision": "ieee",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "pid": 56524,
+  "parent_pid": 56492,
+  "resumed_from": null,
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\cifar10",
+    "new_download": false,
+    "batch_files": {
+      "data_batch_1": {
+        "md5": "c99cafc152244af753f735de768cd75f",
+        "sha256": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+        "bytes": 31035704
+      },
+      "data_batch_2": {
+        "md5": "d4bba439e000b95fd0a9bffe97cbabec",
+        "sha256": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+        "bytes": 31035320
+      },
+      "data_batch_3": {
+        "md5": "54ebc095f3ab1f0389bbae665268c751",
+        "sha256": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+        "bytes": 31035999
+      },
+      "data_batch_4": {
+        "md5": "634d18415352ddfa80567beed471001a",
+        "sha256": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+        "bytes": 31035696
+      },
+      "data_batch_5": {
+        "md5": "482c414d41f54cd18b22e5b47cb7c3cb",
+        "sha256": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154",
+        "bytes": 31035623
+      },
+      "test_batch": {
+        "md5": "40351d587109b95175f43aff81a1287e",
+        "sha256": "f53d8d457504f7cff4ea9e021afcf0e0ad8e24a91f3fc42091b8adef61157831",
+        "bytes": 31035526
+      }
+    }
+  },
+  "selection": {
+    "source_split": "official CIFAR-10 training set, original concatenation order",
+    "split_seed": 20261009,
+    "train_indices": [
+      339,
+      4115,
+      6745,
+      10209,
+      10302,
+      15014,
+      16192,
+      20870,
+      23755,
+      25260,
+      28548,
+      30968,
+      31739,
+      33152,
+      37734,
+      39060,
+      46357,
+      46426,
+      46477,
+      49448
+    ],
+    "validation_indices": [
+      4998,
+      8307,
+      8345,
+      9647,
+      10158,
+      11091,
+      11545,
+      11651,
+      21010,
+      25114,
+      27340,
+      30888,
+      33260,
+      33820,
+      35245,
+      37323,
+      39051,
+      39663,
+      41026,
+      48508
+    ],
+    "official_test_examples_used": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    RandomHorizontalFlip(p=0.5)\n    RandomCrop(size=(32, 32), padding=4)\n    ToTensor()\n    Normalize(mean=[0.4913725490196078, 0.4823529411764706, 0.4466666666666667], std=[0.24705882352941178, 0.24352941176470588, 0.2615686274509804])\n)",
+    "validation": "Compose(\n    ToTensor()\n    Normalize(mean=[0.4913725490196078, 0.4823529411764706, 0.4466666666666667], std=[0.24705882352941178, 0.24352941176470588, 0.2615686274509804])\n)"
+  },
+  "synthetic_fixture_only": false,
+  "contract_sha256": "fd44de6be769a90116cb1edd7b328bbb66de280ce4deba08c6b5dda4496fe35f",
+  "first_epoch_this_process": 1,
+  "epoch_times_diagnostic_only": [
+    {
+      "epoch": 1,
+      "seconds": 2.6642616000026464
+    },
+    {
+      "epoch": 2,
+      "seconds": 2.0653990000719205
+    },
+    {
+      "epoch": 3,
+      "seconds": 2.0268367999233305
+    }
+  ],
+  "checkpoints": [
+    {
+      "file": "epoch_001.pt",
+      "sha256": "4029c22c5c2c16227f8231472f1de400b2686f4573142aa1c3a3e6beeeceb8ad",
+      "bytes": 81945799
+    },
+    {
+      "file": "epoch_002.pt",
+      "sha256": "25f9d68fa43d61a79037f32d086cb5e8b9c7594c241a512929623f5c579b27ab",
+      "bytes": 81949383
+    },
+    {
+      "file": "epoch_003.pt",
+      "sha256": "eb0256222bf4a4cbb815ac608b71fe3873df4e2091ed07bf7ee19563b18cdd06",
+      "bytes": 81952967
+    }
+  ],
+  "completed_epoch": 3,
+  "optimizer_steps": 9,
+  "source_unchanged": true,
+  "all_precision_gradients_and_states_finite": true,
+  "last_checkpoint": "epoch_003.pt",
+  "next_epoch": 4,
+  "peak_cuda_allocated_MiB": 381.3388671875,
+  "warnings": [],
+  "seconds_diagnostic_only": 14.223643700010143,
+  "ended_at": "2026-10-09T19:05:18.151281+02:00"
+}
