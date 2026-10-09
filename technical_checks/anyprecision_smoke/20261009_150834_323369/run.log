@@ -1,0 +1,27 @@
+ANY-PRECISION TECHNISCHE UITVOERTEST - geen referentietraining
+Bron-ZIP: gecontroleerd; alleen utils.py aangepast in een nieuwe werkkopie.
+FOUT: Expected a torch.device with a specified index or an integer, but got:cuda
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_smoke_v1\run_smoke.py", line 445, in main
+    run_test(args, out, report, log)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_smoke_v1\run_smoke.py", line 298, in run_test
+    report['execution_settings'] = configure(args.seed, device, args.threads)
+                                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_smoke_v1\run_smoke.py", line 136, in configure
+    torch.cuda.set_device(device)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\.venv-train\Lib\site-packages\torch\cuda\__init__.py", line 582, in set_device
+    device = _get_device_index(device)
+  File "C:\Users\renzo\master-thesis-mx\.venv-train\Lib\site-packages\torch\cuda\_utils.py", line 529, in _get_device_index
+    return _torch_get_device_index(device, optional, allow_cpu)
+  File "C:\Users\renzo\master-thesis-mx\.venv-train\Lib\site-packages\torch\_utils.py", line 878, in _get_device_index
+    raise ValueError(
+        f"Expected a torch.device with a specified index or an integer, but got:{device}"
+    )
+ValueError: Expected a torch.device with a specified index or an integer, but got:cuda
+
+Waarschuwingen: 0 (details in smoke_report.json).
+STATUS: FAIL
+Rapportmap: C:\Users\renzo\master-thesis-mx\technical_checks\anyprecision_smoke\20261009_150834_323369
+Geen CIFAR-10 gedownload. Geen pakketten geinstalleerd. Geen MX toegevoegd.

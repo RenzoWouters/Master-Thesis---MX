@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-10-09T14:41:01.896841+02:00",
+  "purpose": "Omgevingsdiagnose; geen dataset-, referentie- of MX-training",
+  "project_root": "C:\\Users\\renzo\\master-thesis-mx",
+  "python_executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "python_implementation": "CPython",
+  "python_pointer_bits": 64,
+  "python_prefix": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train",
+  "python_base_prefix": "C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0",
+  "in_virtual_environment": true,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "logical_cpu_count": 32,
+  "free_disk_GiB": 741.5972785949707,
+  "package_versions": {
+    "pip": "26.1.2",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "Pillow": "12.3.0",
+    "tensorboardX": null,
+    "gpustat": null,
+    "scipy": null
+  },
+  "pip_version": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pip",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "pip 26.1.2 from C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\pip (python 3.13)\n\n",
+    "stderr": ""
+  },
+  "pip_check": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  "pip_freeze": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pip",
+      "freeze",
+      "--all"
+    ],
+    "returncode": 0,
+    "stdout": "filelock==3.32.3\nfsspec==2026.7.0\nJinja2==3.1.6\nMarkupSafe==3.0.3\nmpmath==1.3.0\nnetworkx==3.6.1\nnumpy==2.5.2\npillow==12.3.0\npip==26.1.2\nsetuptools==78.1.0\nsympy==1.14.0\ntorch==2.10.0+cu128\ntorchvision==0.25.0+cu128\ntyping_extensions==4.16.0\n",
+    "stderr": ""
+  },
+  "nvidia_smi": {
+    "command": [
+      "nvidia-smi"
+    ],
+    "returncode": 0,
+    "stdout": "Fri Oct  9 14:41:05 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.97                 Driver Version: 591.97         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   45C    P0             12W /  109W |       0MiB /   8151MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n",
+    "stderr": ""
+  },
+  "python_launcher": {
+    "command": [
+      "py",
+      "-0p"
+    ],
+    "returncode": null,
+    "stdout": "",
+    "stderr": "FileNotFoundError: [WinError 2] Het systeem kan het opgegeven bestand niet vinden"
+  },
+  "physical_memory_bytes": {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "(Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory"
+    ],
+    "returncode": 0,
+    "stdout": "33479151616\n",
+    "stderr": ""
+  },
+  "torch_probe_process": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\renzo\\master-thesis-mx\\check_training_environment.py",
+      "--probe-torch"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"torch_import\": {\n    \"status\": \"OK\",\n    \"version\": \"2.10.0+cu128\"\n  },\n  \"torch_cuda_build\": \"12.8\",\n  \"cudnn_version\": 91002,\n  \"torchvision_import\": {\n    \"status\": \"OK\",\n    \"version\": \"0.25.0+cu128\"\n  },\n  \"cpu_test\": {\n    \"status\": \"OK\",\n    \"matrix_forward_backward\": true,\n    \"conv_forward_backward\": true,\n    \"finite_values_and_gradients\": true,\n    \"uint8_shift\": true\n  },\n  \"cuda_available\": true,\n  \"cuda_device_count\": 1,\n  \"compiled_cuda_architectures\": [\n    \"sm_70\",\n    \"sm_75\",\n    \"sm_80\",\n    \"sm_86\",\n    \"sm_90\",\n    \"sm_100\",\n    \"sm_120\"\n  ],\n  \"cuda_devices\": [\n    {\n      \"index\": 0,\n      \"name\": \"NVIDIA GeForce RTX 5070 Laptop GPU\",\n      \"compute_capability\": [\n        12,\n        0\n      ],\n      \"total_memory_GiB\": 7.95953369140625\n    }\n  ],\n  \"cuda_test\": {\n    \"status\": \"OK\",\n    \"matrix_forward_backward\": true,\n    \"conv_forward_backward\": true,\n    \"finite_values_and_gradients\": true,\n    \"uint8_shift\": true\n  }\n}\n",
+    "stderr": ""
+  },
+  "torch_probe": {
+    "torch_import": {
+      "status": "OK",
+      "version": "2.10.0+cu128"
+    },
+    "torch_cuda_build": "12.8",
+    "cudnn_version": 91002,
+    "torchvision_import": {
+      "status": "OK",
+      "version": "0.25.0+cu128"
+    },
+    "cpu_test": {
+      "status": "OK",
+      "matrix_forward_backward": true,
+      "conv_forward_backward": true,
+      "finite_values_and_gradients": true,
+      "uint8_shift": true
+    },
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "compiled_cuda_architectures": [
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "cuda_devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": [
+          12,
+          0
+        ],
+        "total_memory_GiB": 7.95953369140625
+      }
+    ],
+    "cuda_test": {
+      "status": "OK",
+      "matrix_forward_backward": true,
+      "conv_forward_backward": true,
+      "finite_values_and_gradients": true,
+      "uint8_shift": true
+    }
+  }
+}

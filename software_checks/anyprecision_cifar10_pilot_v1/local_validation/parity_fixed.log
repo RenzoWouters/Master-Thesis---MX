@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "device": "CPU",
+  "torch": "2.10.0+cpu",
+  "training_equivalence_steps": [
+    {
+      "step": 1,
+      "models_equal": true,
+      "optimizers_equal": true,
+      "losses_equal": true
+    },
+    {
+      "step": 2,
+      "models_equal": true,
+      "optimizers_equal": true,
+      "losses_equal": true
+    }
+  ],
+  "split_deterministic_and_disjoint": true,
+  "nested_subsets": true,
+  "weighted_metrics": true,
+  "limitations": [
+    "synthetic inputs only",
+    "CPU adapter for original cuda() calls in test-only function",
+    "no real CIFAR-10 download or full 3-epoch pilot",
+    "no Windows/CUDA verification here"
+  ]
+}

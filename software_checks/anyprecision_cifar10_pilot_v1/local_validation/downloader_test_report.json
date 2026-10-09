@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "network_used": false,
+  "mocked_archive_extraction": true,
+  "verified_reuse": true,
+  "corrupt_existing_file_rejected_without_overwrite": true
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/mnt/data/anyprecision_cifar10_pilot_v1/local_validation/test_parity_and_protocol.py", line 29, in <module>
+    p.support.configure(101, torch.device('cpu'), 2)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/anyprecision_cifar10_pilot_v1/smoke_support.py", line 142, in configure
+    'torch_compile': False, 'CUBLAS_WORKSPACE_CONFIG': os.environ['CUBLAS_WORKSPACE_CONFIG']}
+                                                       ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'CUBLAS_WORKSPACE_CONFIG'

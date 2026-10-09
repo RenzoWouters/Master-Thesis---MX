@@ -1,0 +1,93 @@
+OMGEVINGSCONTROLE - geen onderzoekstraining
+Python: 3.13.14 (64 bit)
+Interpreter: C:\Users\renzo\master-thesis-mx\.venv-train\Scripts\python.exe
+Virtual environment: True
+Vrije schijfruimte: 741.6 GiB
+
+Pakketten:
+  pip: 26.1.2
+  torch: 2.10.0+cu128
+  torchvision: 0.25.0+cu128
+  numpy: 2.5.2
+  Pillow: 12.3.0
+  tensorboardX: NIET GEINSTALLEERD
+  gpustat: NIET GEINSTALLEERD
+  scipy: NIET GEINSTALLEERD
+
+pip check:
+No broken requirements found.
+
+nvidia-smi:
+Fri Oct  9 14:41:05 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 591.97                 Driver Version: 591.97         CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |
+| N/A   45C    P0             12W /  109W |       0MiB /   8151MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+PyTorch-tests:
+{
+  "torch_import": {
+    "status": "OK",
+    "version": "2.10.0+cu128"
+  },
+  "torch_cuda_build": "12.8",
+  "cudnn_version": 91002,
+  "torchvision_import": {
+    "status": "OK",
+    "version": "0.25.0+cu128"
+  },
+  "cpu_test": {
+    "status": "OK",
+    "matrix_forward_backward": true,
+    "conv_forward_backward": true,
+    "finite_values_and_gradients": true,
+    "uint8_shift": true
+  },
+  "cuda_available": true,
+  "cuda_device_count": 1,
+  "compiled_cuda_architectures": [
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "cuda_devices": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "compute_capability": [
+        12,
+        0
+      ],
+      "total_memory_GiB": 7.95953369140625
+    }
+  ],
+  "cuda_test": {
+    "status": "OK",
+    "matrix_forward_backward": true,
+    "conv_forward_backward": true,
+    "finite_values_and_gradients": true,
+    "uint8_shift": true
+  }
+}
+
+Rapportmap: C:\Users\renzo\master-thesis-mx\environment_checks\20261009_144101_896841
+Deel deze uitvoer of environment_report.json. Er zijn geen pakketten geinstalleerd.

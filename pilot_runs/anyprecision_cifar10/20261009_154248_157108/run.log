@@ -1,0 +1,45 @@
+ANY-PRECISION CIFAR-10 PILOT - geen referentietraining, geen MX
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: downloaden van de officiele bron; ongeveer 163 MiB.
+  ontvangen: 25 MiB
+  ontvangen: 50 MiB
+  ontvangen: 75 MiB
+  ontvangen: 100 MiB
+  ontvangen: 125 MiB
+  ontvangen: 150 MiB
+CIFAR-10: archief en alle zes batchbestanden gecontroleerd.
+Data: 5000 train / 1000 validatie; officiele testset niet gebruikt.
+Protocol: 3 epochs, batch 32; W32/A32 -> W8/A8 -> W4/A4 -> W2/A2 -> W1/A1.
+Validatie voor training (epoch 0) opgeslagen; geen accuracy-drempel voor succes.
+  epoch 1/3, batch 1/157: W32/A32 CE=2.3389; gradients eindig; update=0.001
+  epoch 1/3, batch 25/157: W32/A32 CE=2.0503; gradients eindig; update=0.000598097
+  epoch 1/3, batch 50/157: W32/A32 CE=1.7517; gradients eindig; update=0.000720263
+  epoch 1/3, batch 75/157: W32/A32 CE=1.9646; gradients eindig; update=0.000849685
+  epoch 1/3, batch 100/157: W32/A32 CE=2.0197; gradients eindig; update=0.000903215
+  epoch 1/3, batch 125/157: W32/A32 CE=1.8600; gradients eindig; update=0.00117686
+  epoch 1/3, batch 150/157: W32/A32 CE=1.7204; gradients eindig; update=0.000754981
+  epoch 1/3, batch 157/157: W32/A32 CE=1.8101; gradients eindig; update=0.000976399
+  validatie top-1: W1/A1=31.60% | W2/A2=35.70% | W4/A4=33.20% | W8/A8=33.30% | W32/A32=38.40%
+  epoch 2/3, batch 1/157: W32/A32 CE=1.7540; gradients eindig; update=0.000909925
+  epoch 2/3, batch 25/157: W32/A32 CE=1.9185; gradients eindig; update=0.00111753
+  epoch 2/3, batch 50/157: W32/A32 CE=1.6860; gradients eindig; update=0.000777908
+  epoch 2/3, batch 75/157: W32/A32 CE=1.6888; gradients eindig; update=0.00148945
+  epoch 2/3, batch 100/157: W32/A32 CE=1.4514; gradients eindig; update=0.00126466
+  epoch 2/3, batch 125/157: W32/A32 CE=1.6977; gradients eindig; update=0.00147006
+  epoch 2/3, batch 150/157: W32/A32 CE=1.4129; gradients eindig; update=0.000963129
+  epoch 2/3, batch 157/157: W32/A32 CE=1.7859; gradients eindig; update=0.00104216
+  validatie top-1: W1/A1=30.50% | W2/A2=32.10% | W4/A4=33.50% | W8/A8=34.30% | W32/A32=36.80%
+  epoch 3/3, batch 1/157: W32/A32 CE=1.8337; gradients eindig; update=0.0009984
+  epoch 3/3, batch 25/157: W32/A32 CE=1.4938; gradients eindig; update=0.000831396
+  epoch 3/3, batch 50/157: W32/A32 CE=1.2646; gradients eindig; update=0.00082668
+  epoch 3/3, batch 75/157: W32/A32 CE=1.5552; gradients eindig; update=0.00141937
+  epoch 3/3, batch 100/157: W32/A32 CE=1.4603; gradients eindig; update=0.00153288
+  epoch 3/3, batch 125/157: W32/A32 CE=1.4756; gradients eindig; update=0.00112622
+  epoch 3/3, batch 150/157: W32/A32 CE=1.3716; gradients eindig; update=0.00120531
+  epoch 3/3, batch 157/157: W32/A32 CE=2.0685; gradients eindig; update=0.00127096
+  validatie top-1: W1/A1=39.60% | W2/A2=44.20% | W4/A4=45.20% | W8/A8=44.90% | W32/A32=48.70%
+Checkpoint opnieuw geladen: model, optimizer, scheduler en validatie-uitvoer identiek.
+Waarschuwingen: 0 (0 unieke meldingen).
+STATUS: PASS
+Rapportmap: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_cifar10\20261009_154248_157108
+Geen pakketten geinstalleerd. Geen MX. Geen officiele testset-evaluatie.

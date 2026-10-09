@@ -1,0 +1,10 @@
+ANY-PRECISION TECHNISCHE UITVOERTEST
+STATUS: FAIL
+Apparaat: cuda
+Batchgrootte: 2
+Batches per herhaling: 2; herhalingen: 2
+Waarschuwingen: 0
+Geen datasetaccuracy, referentietraining, MX of hardwaremeting.
+Herhaalbaarheid: binnen dezelfde proces-, apparaat- en softwareconfiguratie.
+Rapport: C:\Users\renzo\master-thesis-mx\technical_checks\anyprecision_smoke\20261009_150834_323369\smoke_report.json
+Fout: Expected a torch.device with a specified index or an integer, but got:cuda

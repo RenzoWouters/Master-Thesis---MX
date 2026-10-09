@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "status": "FAIL",
+  "purpose": "technical synthetic Any-Precision smoke test; no research accuracy",
+  "started_at": "2026-10-09T15:08:34.324966+02:00",
+  "run_directory": "C:\\Users\\renzo\\master-thesis-mx\\technical_checks\\anyprecision_smoke\\20261009_150834_323369",
+  "runner_sha256": "7895ad90d4355903f4af096744e8b460642dcebf73f13ecbafc49462c8056ab3",
+  "argv": [
+    ".\\software_checks\\anyprecision_smoke_v1\\run_smoke.py",
+    "--device",
+    "cuda",
+    "--output-root",
+    ".\\technical_checks\\anyprecision_smoke"
+  ],
+  "limitations": [
+    "No CIFAR-10 dataset/download/augmentation test.",
+    "Original train.py launcher not executed.",
+    "No MX, truncation-from-stored-codes, continual learning or hardware benefit test.",
+    "Repeatability checked within one process/device, not between platforms.",
+    "Checkpoint round-trip is not a complete training-resume validation."
+  ],
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "previous_CUBLAS_WORKSPACE_CONFIG": null,
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "numpy": "2.5.2",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device_requested": "cuda",
+    "torchvision": "0.25.0+cu128"
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "Expected a torch.device with a specified index or an integer, but got:cuda",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_smoke_v1\\run_smoke.py\", line 445, in main\n    run_test(args, out, report, log)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_smoke_v1\\run_smoke.py\", line 298, in run_test\n    report['execution_settings'] = configure(args.seed, device, args.threads)\n                                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_smoke_v1\\run_smoke.py\", line 136, in configure\n    torch.cuda.set_device(device)\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\cuda\\__init__.py\", line 582, in set_device\n    device = _get_device_index(device)\n  File \"C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\cuda\\_utils.py\", line 529, in _get_device_index\n    return _torch_get_device_index(device, optional, allow_cpu)\n  File \"C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\_utils.py\", line 878, in _get_device_index\n    raise ValueError(\n        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n    )\nValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"
+  },
+  "elapsed_seconds_diagnostic_only": 16.596130599966273,
+  "warnings": [],
+  "pip_freeze": {
+    "returncode": 0,
+    "stderr": ""
+  },
+  "ended_at": "2026-10-09T15:08:53.211051+02:00"
+}

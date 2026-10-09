@@ -1,0 +1,22 @@
+{
+  "CHANGELOG.md": "d7ef6526430f45bc60af8db81f39cb0a78ee4b93c81208ff5cd2805c07fde17f",
+  "PROTOCOL.md": "2cc3eb60f1d625f458d9cb3effb6161eb2248ff2737fa2f7a7615d35e0069955",
+  "README.md": "ae8b294d70470ac0303efab9137e5db2089f26ab40ff181e5fac8eecf2ce0722",
+  "SOURCE_MANIFEST.json": "c696694c6ecf5f2c961317a169495e94d191f043f0079af96c0d4f41b49cda74",
+  "compatibility.patch": "ff01f32b58a355b987f87d76d6f336a7a2f6203b3f11696aef9952e671635acb",
+  "local_validation/VALIDATION.md": "f52ddc7e71eed4249494943560e07efb71c3e72b15f91add1f2132e55839da8b",
+  "local_validation/downloader_test_report.json": "9d3bb7207fecefef01a066a2729e0b3a8c406f38f8e9646c3f1b5ac531254bae",
+  "local_validation/initial_parity_harness_failure.log": "78ecaa3290ff85791b8eb9d8a50ceb144fde576a00c68dcf842c7ac84ee2f2fc",
+  "local_validation/offline_fixture_run1.log": "7408edb82bb565a33bfa194ee3639c345f34d713563deca6ac45b94ec2368f9e",
+  "local_validation/offline_fixture_run2.log": "8da73b5bb6d958b3b546851117828a68ab016b20fc535fd7440feaa0b198f170",
+  "local_validation/offline_repeatability_report.json": "031512ab64068311703f1c156b598fce8c7d2ba665f21e8c77d3ca21e33fd71c",
+  "local_validation/parity_fixed.log": "42cc9580201da9899a455f3a4173e5613de28565f4556ab5ec434ee6b0a170b6",
+  "local_validation/parity_protocol_report.json": "42cc9580201da9899a455f3a4173e5613de28565f4556ab5ec434ee6b0a170b6",
+  "local_validation/real_download_attempt_failed.log": "6053182d781dc5055ab4c51b63bf1ced18e3fb4a92bf137ee8391619e9fdd9be",
+  "local_validation/test_downloader.py": "5d5228e3f308b355cf8f959dc6e5bcd356a265bdfe68740f09a302cb78b8cf0e",
+  "local_validation/test_offline_validation.py": "ee347e87ae42efc77830cf9a565ac9cc4b91f6811d0fa1ce0afabf7f977a1965",
+  "local_validation/test_parity_and_protocol.py": "fd2c0a24941cfa33044e49695408f4b1fbc28eec97806521c20c8c449984117e",
+  "run_pilot.py": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

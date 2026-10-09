@@ -1,0 +1,56 @@
+{
+  "config": {
+    "train_per_class": 500,
+    "val_per_class": 100,
+    "epochs": 3,
+    "batch_size": 32,
+    "profile": "pilot",
+    "seed": 20261009,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "model": "resnet20q",
+    "expand": 5,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      100,
+      150,
+      180
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "drop_last": false,
+    "repeats": 1
+  },
+  "execution": {
+    "seed": 20261009,
+    "torch_num_threads": 2,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": false,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "matmul_fp32_precision": "ieee",
+    "cudnn_conv_fp32_precision": "ieee",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "transforms": {
+    "train": "Compose(\n    RandomHorizontalFlip(p=0.5)\n    RandomCrop(size=(32, 32), padding=4)\n    ToTensor()\n    Normalize(mean=[0.4913725490196078, 0.4823529411764706, 0.4466666666666667], std=[0.24705882352941178, 0.24352941176470588, 0.2615686274509804])\n)",
+    "validation": "Compose(\n    ToTensor()\n    Normalize(mean=[0.4913725490196078, 0.4823529411764706, 0.4466666666666667], std=[0.24705882352941178, 0.24352941176470588, 0.2615686274509804])\n)",
+    "implementation": "get_transform from supplied datasets/data.py",
+    "historical_library_bitwise_equivalence_tested": false
+  },
+  "source_archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+  "runner_sha256": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc",
+  "split_sha256": "f011649d95b7f5dcef10fbd9f2deb0cd216428e2ccdf99b1be51e772b92fb3ab",
+  "interpretation": "Exploratory small-data/short-budget pilot, not paper reproduction or test accuracy.",
+  "test_examples_evaluated": 0,
+  "checkpoint_selection": "last epoch, no best-validation selection"
+}

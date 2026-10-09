@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "purpose": "small exploratory CIFAR-10 Any-Precision pilot",
+  "started_at": "2026-10-09T15:42:48.159735+02:00",
+  "run_directory": "C:\\Users\\renzo\\master-thesis-mx\\pilot_runs\\anyprecision_cifar10\\20261009_154248_157108",
+  "runner_sha256": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc",
+  "argv": [
+    ".\\software_checks\\anyprecision_cifar10_pilot_v1\\run_pilot.py",
+    "--profile",
+    "pilot",
+    "--device",
+    "cuda",
+    "--data-root",
+    ".\\data\\cifar10",
+    "--output-root",
+    ".\\pilot_runs\\anyprecision_cifar10",
+    "--download"
+  ],
+  "limitations": [
+    "Original train.py launcher not executed; original model/loss/optimizer/data functions reused.",
+    "Pilot batch, subsets and training budget differ from original 200-epoch training recipe.",
+    "No official test accuracy, MX, stored-code truncation, continual learning or hardware benefit.",
+    "No paper-accuracy reproduction claim, no automatic multi-seed comparison.",
+    "Checkpoint state round-trip, not a complete training-resume test."
+  ],
+  "support_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "config": {
+    "train_per_class": 500,
+    "val_per_class": 100,
+    "epochs": 3,
+    "batch_size": 32,
+    "profile": "pilot",
+    "seed": 20261009,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "model": "resnet20q",
+    "expand": 5,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      100,
+      150,
+      180
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "drop_last": false,
+    "repeats": 1
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "datasets/data.py",
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "214270311e6728eb0bd2be1dcc1df615e5a06bf32087416bc0c62834141f457a",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "torch_num_threads": 2,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": false,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "matmul_fp32_precision": "ieee",
+    "cudnn_conv_fp32_precision": "ieee",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\cifar10",
+    "new_download": true,
+    "requested_url": "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz",
+    "final_url": "https://cave.cs.toronto.edu/kriz/cifar-10-python.tar.gz",
+    "archive_path": "C:\\Users\\renzo\\master-thesis-mx\\data\\cifar10\\download_20261009_154252_392008\\cifar-10-python.tar.gz",
+    "archive_md5": "c58f30108f718f92721af3b95e74349a",
+    "archive_sha256": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce",
+    "batch_files": {
+      "data_batch_1": {
+        "md5": "c99cafc152244af753f735de768cd75f",
+        "sha256": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+        "bytes": 31035704
+      },
+      "data_batch_2": {
+        "md5": "d4bba439e000b95fd0a9bffe97cbabec",
+        "sha256": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+        "bytes": 31035320
+      },
+      "data_batch_3": {
+        "md5": "54ebc095f3ab1f0389bbae665268c751",
+        "sha256": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+        "bytes": 31035999
+      },
+      "data_batch_4": {
+        "md5": "634d18415352ddfa80567beed471001a",
+        "sha256": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+        "bytes": 31035696
+      },
+      "data_batch_5": {
+        "md5": "482c414d41f54cd18b22e5b47cb7c3cb",
+        "sha256": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154",
+        "bytes": 31035623
+      },
+      "test_batch": {
+        "md5": "40351d587109b95175f43aff81a1287e",
+        "sha256": "f53d8d457504f7cff4ea9e021afcf0e0ad8e24a91f3fc42091b8adef61157831",
+        "bytes": 31035526
+      }
+    }
+  },
+  "split": {
+    "source_split": "official CIFAR-10 training set, original concatenation order",
+    "seed": 20261009,
+    "rng": "numpy.random.default_rng(PCG64)",
+    "unused_train_pool_in_this_run": 40000,
+    "unused_validation_pool_in_this_run": 4000,
+    "official_test_examples_used": 0,
+    "train_class_counts": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ],
+    "validation_class_counts": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "sha256": "f011649d95b7f5dcef10fbd9f2deb0cd216428e2ccdf99b1be51e772b92fb3ab"
+  },
+  "transforms": {
+    "train": "Compose(\n    RandomHorizontalFlip(p=0.5)\n    RandomCrop(size=(32, 32), padding=4)\n    ToTensor()\n    Normalize(mean=[0.4913725490196078, 0.4823529411764706, 0.4466666666666667], std=[0.24705882352941178, 0.24352941176470588, 0.2615686274509804])\n)",
+    "validation": "Compose(\n    ToTensor()\n    Normalize(mean=[0.4913725490196078, 0.4823529411764706, 0.4466666666666667], std=[0.24705882352941178, 0.24352941176470588, 0.2615686274509804])\n)",
+    "implementation": "get_transform from supplied datasets/data.py",
+    "historical_library_bitwise_equivalence_tested": false
+  },
+  "parameter_count": 6786330,
+  "initial_model_sha256": "76b21d5180204caab2fbf57eb8907fd5ad8767ce68fb2d2509ec404fa4170857",
+  "epochs": [
+    {
+      "epoch": 1,
+      "train": [
+        {
+          "epoch": 1,
+          "phase": "train",
+          "bits_w_and_a": 1,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.9412952613830567,
+          "hard_ce": 1.9537344657897948,
+          "top1_percent": 25.86,
+          "top5_percent": 81.22,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "train",
+          "bits_w_and_a": 2,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.9111436786651612,
+          "hard_ce": 1.9396604400634765,
+          "top1_percent": 27.18,
+          "top5_percent": 81.66,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "train",
+          "bits_w_and_a": 4,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.9075806163787843,
+          "hard_ce": 1.9385773509979247,
+          "top1_percent": 26.9,
+          "top5_percent": 81.74,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "train",
+          "bits_w_and_a": 8,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.9109423759460449,
+          "hard_ce": 1.9376394504547119,
+          "top1_percent": 26.9,
+          "top5_percent": 81.78,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "train",
+          "bits_w_and_a": 32,
+          "n": 5000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.9267894012451172,
+          "hard_ce": 1.9267894012451172,
+          "top1_percent": 27.76,
+          "top5_percent": 81.9,
+          "lr": 0.001
+        }
+      ],
+      "validation": [
+        {
+          "epoch": 1,
+          "phase": "validation",
+          "bits_w_and_a": 1,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7864618606567382,
+          "hard_ce": 1.7864618606567382,
+          "top1_percent": 31.6,
+          "top5_percent": 88.0,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "validation",
+          "bits_w_and_a": 2,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7293855075836182,
+          "hard_ce": 1.7293855075836182,
+          "top1_percent": 35.7,
+          "top5_percent": 87.8,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "validation",
+          "bits_w_and_a": 4,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7452918577194214,
+          "hard_ce": 1.7452918577194214,
+          "top1_percent": 33.2,
+          "top5_percent": 87.5,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "validation",
+          "bits_w_and_a": 8,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7434501075744628,
+          "hard_ce": 1.7434501075744628,
+          "top1_percent": 33.3,
+          "top5_percent": 87.5,
+          "lr": 0.001
+        },
+        {
+          "epoch": 1,
+          "phase": "validation",
+          "bits_w_and_a": 32,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.6663185214996339,
+          "hard_ce": 1.6663185214996339,
+          "top1_percent": 38.4,
+          "top5_percent": 89.5,
+          "lr": 0.001
+        }
+      ],
+      "total_optimizer_steps": 157,
+      "seconds_diagnostic_only": 54.311284599942155
+    },
+    {
+      "epoch": 2,
+      "train": [
+        {
+          "epoch": 2,
+          "phase": "train",
+          "bits_w_and_a": 1,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.7843500595092774,
+          "hard_ce": 1.7720188514709472,
+          "top1_percent": 32.52,
+          "top5_percent": 86.68,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "train",
+          "bits_w_and_a": 2,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.7565830787658692,
+          "hard_ce": 1.7347296573638915,
+          "top1_percent": 35.62,
+          "top5_percent": 87.18,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "train",
+          "bits_w_and_a": 4,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.750212121963501,
+          "hard_ce": 1.734581583404541,
+          "top1_percent": 35.42,
+          "top5_percent": 87.5,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "train",
+          "bits_w_and_a": 8,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.7280023878097535,
+          "hard_ce": 1.731319038963318,
+          "top1_percent": 35.56,
+          "top5_percent": 87.34,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "train",
+          "bits_w_and_a": 32,
+          "n": 5000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.699030057144165,
+          "hard_ce": 1.699030057144165,
+          "top1_percent": 36.56,
+          "top5_percent": 88.2,
+          "lr": 0.001
+        }
+      ],
+      "validation": [
+        {
+          "epoch": 2,
+          "phase": "validation",
+          "bits_w_and_a": 1,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.8496239185333252,
+          "hard_ce": 1.8496239185333252,
+          "top1_percent": 30.5,
+          "top5_percent": 84.7,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "validation",
+          "bits_w_and_a": 2,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7463853054046632,
+          "hard_ce": 1.7463853054046632,
+          "top1_percent": 32.1,
+          "top5_percent": 86.8,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "validation",
+          "bits_w_and_a": 4,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7910775737762452,
+          "hard_ce": 1.7910775737762452,
+          "top1_percent": 33.5,
+          "top5_percent": 85.3,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "validation",
+          "bits_w_and_a": 8,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.7682434520721435,
+          "hard_ce": 1.7682434520721435,
+          "top1_percent": 34.3,
+          "top5_percent": 86.7,
+          "lr": 0.001
+        },
+        {
+          "epoch": 2,
+          "phase": "validation",
+          "bits_w_and_a": 32,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.6797063531875611,
+          "hard_ce": 1.6797063531875611,
+          "top1_percent": 36.8,
+          "top5_percent": 90.5,
+          "lr": 0.001
+        }
+      ],
+      "total_optimizer_steps": 314,
+      "seconds_diagnostic_only": 52.627356199896894
+    },
+    {
+      "epoch": 3,
+      "train": [
+        {
+          "epoch": 3,
+          "phase": "train",
+          "bits_w_and_a": 1,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.648215174293518,
+          "hard_ce": 1.6331576543807984,
+          "top1_percent": 39.06,
+          "top5_percent": 90.1,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "train",
+          "bits_w_and_a": 2,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.5977197622299195,
+          "hard_ce": 1.5823170703887939,
+          "top1_percent": 41.42,
+          "top5_percent": 90.98,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "train",
+          "bits_w_and_a": 4,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.5895591751098632,
+          "hard_ce": 1.5714854125976563,
+          "top1_percent": 41.76,
+          "top5_percent": 91.02,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "train",
+          "bits_w_and_a": 8,
+          "n": 5000,
+          "objective_type": "recursive_soft_cross_entropy",
+          "objective_loss": 1.5706436943054198,
+          "hard_ce": 1.5674451873779296,
+          "top1_percent": 42.16,
+          "top5_percent": 91.2,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "train",
+          "bits_w_and_a": 32,
+          "n": 5000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.5304645614624024,
+          "hard_ce": 1.5304645614624024,
+          "top1_percent": 43.24,
+          "top5_percent": 91.7,
+          "lr": 0.001
+        }
+      ],
+      "validation": [
+        {
+          "epoch": 3,
+          "phase": "validation",
+          "bits_w_and_a": 1,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.6922800788879395,
+          "hard_ce": 1.6922800788879395,
+          "top1_percent": 39.6,
+          "top5_percent": 88.7,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "validation",
+          "bits_w_and_a": 2,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.5472492427825928,
+          "hard_ce": 1.5472492427825928,
+          "top1_percent": 44.2,
+          "top5_percent": 90.6,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "validation",
+          "bits_w_and_a": 4,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.5175908946990966,
+          "hard_ce": 1.5175908946990966,
+          "top1_percent": 45.2,
+          "top5_percent": 91.1,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "validation",
+          "bits_w_and_a": 8,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.5157981643676757,
+          "hard_ce": 1.5157981643676757,
+          "top1_percent": 44.9,
+          "top5_percent": 90.9,
+          "lr": 0.001
+        },
+        {
+          "epoch": 3,
+          "phase": "validation",
+          "bits_w_and_a": 32,
+          "n": 1000,
+          "objective_type": "hard_cross_entropy",
+          "objective_loss": 1.4087763595581055,
+          "hard_ce": 1.4087763595581055,
+          "top1_percent": 48.7,
+          "top5_percent": 93.8,
+          "lr": 0.001
+        }
+      ],
+      "total_optimizer_steps": 471,
+      "seconds_diagnostic_only": 53.67486159992404
+    }
+  ],
+  "initial_validation": [
+    {
+      "epoch": 0,
+      "phase": "validation",
+      "bits_w_and_a": 1,
+      "n": 1000,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 2.301911277770996,
+      "hard_ce": 2.301911277770996,
+      "top1_percent": 10.4,
+      "top5_percent": 49.7,
+      "lr": 0.001
+    },
+    {
+      "epoch": 0,
+      "phase": "validation",
+      "bits_w_and_a": 2,
+      "n": 1000,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 2.304618854522705,
+      "hard_ce": 2.304618854522705,
+      "top1_percent": 10.6,
+      "top5_percent": 46.1,
+      "lr": 0.001
+    },
+    {
+      "epoch": 0,
+      "phase": "validation",
+      "bits_w_and_a": 4,
+      "n": 1000,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 2.3047512893676756,
+      "hard_ce": 2.3047512893676756,
+      "top1_percent": 10.2,
+      "top5_percent": 47.1,
+      "lr": 0.001
+    },
+    {
+      "epoch": 0,
+      "phase": "validation",
+      "bits_w_and_a": 8,
+      "n": 1000,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 2.3046129150390624,
+      "hard_ce": 2.3046129150390624,
+      "top1_percent": 10.5,
+      "top5_percent": 47.2,
+      "lr": 0.001
+    },
+    {
+      "epoch": 0,
+      "phase": "validation",
+      "bits_w_and_a": 32,
+      "n": 1000,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 2.304923725128174,
+      "hard_ce": 2.304923725128174,
+      "top1_percent": 10.9,
+      "top5_percent": 48.0,
+      "lr": 0.001
+    }
+  ],
+  "final_model_sha256": "4cc33e42010e39243111478e5e0e7e0602a10552cdf62904024c0d750a218146",
+  "checkpoint": {
+    "checks": {
+      "model_identical": true,
+      "optimizer_identical": true,
+      "scheduler_identical": true,
+      "validation_logits_identical": true,
+      "validation_metrics_identical": true
+    },
+    "weights_only": true,
+    "complete_training_resume_tested": false,
+    "sha256": "17750b221632732e97a3355f60dd31fcb5f37d5701f4d7f19460be18c9ce1c40"
+  },
+  "checks": {
+    "finite_gradients_and_states": true,
+    "split_disjoint": true,
+    "all_samples_used_once_per_epoch": true,
+    "batchnorm_counters_correct": true,
+    "validation_state_unchanged": true,
+    "source_unchanged": true
+  },
+  "completed_optimizer_steps": 471,
+  "zero_updates_of_watched_weight": 0,
+  "repeatability": {
+    "fresh_repetitions_this_run": 1,
+    "cross_process_repeatability_tested_here": false,
+    "note": "Seeds, split, order and transformed-batch hashes saved; full pilot repetition not automatic."
+  },
+  "cuda_peak_allocated_MiB": 660.1630859375,
+  "cuda_peak_reserved_MiB": 700.0,
+  "elapsed_seconds_diagnostic_only": 2840.9964530999423,
+  "warnings": [],
+  "pip_freeze": {
+    "returncode": 0,
+    "stderr": ""
+  },
+  "ended_at": "2026-10-09T16:30:09.514495+02:00"
+}

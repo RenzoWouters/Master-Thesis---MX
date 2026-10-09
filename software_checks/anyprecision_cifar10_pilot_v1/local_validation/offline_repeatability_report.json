@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "kind": "OFFLINE SYNTHETIC FIXTURE VALIDATION, NOT CIFAR-10 RESULTS",
+  "profile": {
+    "train_per_class": 2,
+    "val_per_class": 2,
+    "epochs": 1,
+    "batch_size": 2,
+    "profile": "local-check",
+    "seed": 20261009,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "model": "resnet20q",
+    "expand": 5,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      100,
+      150,
+      180
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "drop_last": false,
+    "repeats": 1
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "interpreter": "/opt/pyvenv/bin/python",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "independent_processes": 2,
+  "checks": {
+    "initial_model_equal": true,
+    "final_model_equal": true,
+    "metrics_file_equal": true,
+    "batch_records_and_augmentation_hashes_equal": true,
+    "split_indices_equal": true,
+    "checkpoint_checks_passed": true
+  },
+  "warnings": [
+    [],
+    []
+  ],
+  "full_pilot_on_real_cifar10_run": false,
+  "windows_cuda_pilot_tested_here": false,
+  "production_runner_sha256": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc"
+}

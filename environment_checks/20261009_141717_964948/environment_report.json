@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-10-09T14:17:17.964948+02:00",
+  "purpose": "Omgevingsdiagnose; geen dataset-, referentie- of MX-training",
+  "project_root": "C:\\Users\\renzo\\master-thesis-mx",
+  "python_executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv\\Scripts\\python.exe",
+  "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "python_implementation": "CPython",
+  "python_pointer_bits": 64,
+  "python_prefix": "C:\\Users\\renzo\\master-thesis-mx\\.venv",
+  "python_base_prefix": "C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0",
+  "in_virtual_environment": true,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "logical_cpu_count": 32,
+  "free_disk_GiB": 750.5744667053223,
+  "package_versions": {
+    "pip": "26.1.2",
+    "torch": null,
+    "torchvision": null,
+    "numpy": null,
+    "Pillow": null,
+    "tensorboardX": null,
+    "gpustat": null,
+    "scipy": null
+  },
+  "pip_version": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pip",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "pip 26.1.2 from C:\\Users\\renzo\\master-thesis-mx\\.venv\\Lib\\site-packages\\pip (python 3.13)\n\n",
+    "stderr": ""
+  },
+  "pip_check": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  "pip_freeze": {
+    "command": [
+      "C:\\Users\\renzo\\master-thesis-mx\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pip",
+      "freeze",
+      "--all"
+    ],
+    "returncode": 0,
+    "stdout": "pip==26.1.2\n",
+    "stderr": ""
+  },
+  "nvidia_smi": {
+    "command": [
+      "nvidia-smi"
+    ],
+    "returncode": 0,
+    "stdout": "Fri Oct  9 14:17:24 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.97                 Driver Version: 591.97         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   30C    P0              9W /   42W |       0MiB /   8151MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n",
+    "stderr": ""
+  },
+  "python_launcher": {
+    "command": [
+      "py",
+      "-0p"
+    ],
+    "returncode": null,
+    "stdout": "",
+    "stderr": "FileNotFoundError: [WinError 2] Het systeem kan het opgegeven bestand niet vinden"
+  },
+  "physical_memory_bytes": {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "(Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory"
+    ],
+    "returncode": 0,
+    "stdout": "33479151616\n",
+    "stderr": ""
+  },
+  "torch_probe": {
+    "status": "SKIPPED",
+    "reason": "PyTorch is niet geinstalleerd."
+  }
+}

@@ -1,0 +1,39 @@
+ANY-PRECISION TECHNISCHE UITVOERTEST - geen referentietraining
+Bron-ZIP: gecontroleerd; alleen utils.py aangepast in een nieuwe werkkopie.
+Apparaat: cpu
+Model: resnet20q, expand=5; 2 batches van 2; twee identieke herhalingen.
+Alle verliezen zijn van synthetische data; geen accuracy-resultaat.
+Parameters (inclusief alle BatchNorm-banken): 6786330
+  herhaling 1, batch 1: W32/A32, loss=2.3951511, gradients=OK
+  herhaling 1, batch 1: W8/A8, loss=2.3007860, gradients=OK
+  herhaling 1, batch 1: W4/A4, loss=2.3003614, gradients=OK
+  herhaling 1, batch 1: W2/A2, loss=2.3008275, gradients=OK
+  herhaling 1, batch 1: W1/A1, loss=2.3029003, gradients=OK
+  optimizerstap 1: OK; max |delta mastergewicht|=0.001
+  herhaling 1, batch 2: W32/A32, loss=2.2620897, gradients=OK
+  herhaling 1, batch 2: W8/A8, loss=2.3011222, gradients=OK
+  herhaling 1, batch 2: W4/A4, loss=2.3006735, gradients=OK
+  herhaling 1, batch 2: W2/A2, loss=2.3010254, gradients=OK
+  herhaling 1, batch 2: W1/A1, loss=2.3018508, gradients=OK
+  optimizerstap 2: OK; max |delta mastergewicht|=0.001001358
+Herhaling 1: training en evaluatie op alle precisies OK; BatchNorm-tellers OK.
+  herhaling 2, batch 1: W32/A32, loss=2.3951511, gradients=OK
+  herhaling 2, batch 1: W8/A8, loss=2.3007860, gradients=OK
+  herhaling 2, batch 1: W4/A4, loss=2.3003614, gradients=OK
+  herhaling 2, batch 1: W2/A2, loss=2.3008275, gradients=OK
+  herhaling 2, batch 1: W1/A1, loss=2.3029003, gradients=OK
+  optimizerstap 1: OK; max |delta mastergewicht|=0.001
+  herhaling 2, batch 2: W32/A32, loss=2.2620897, gradients=OK
+  herhaling 2, batch 2: W8/A8, loss=2.3011222, gradients=OK
+  herhaling 2, batch 2: W4/A4, loss=2.3006735, gradients=OK
+  herhaling 2, batch 2: W2/A2, loss=2.3010254, gradients=OK
+  herhaling 2, batch 2: W1/A1, loss=2.3018508, gradients=OK
+  optimizerstap 2: OK; max |delta mastergewicht|=0.001001358
+Herhaling 2: training en evaluatie op alle precisies OK; BatchNorm-tellers OK.
+Checkpoint: opgeslagen bestand opnieuw laden in een nieuw model en nieuwe optimizer.
+Herhaalbaarheid: identieke modeltoestand, optimizertoestand, losses en evaluatie-uitvoer.
+Checkpoint: identieke modeltoestand, optimizertoestand en evaluatie-uitvoer na laden.
+Waarschuwingen: 0 (details in smoke_report.json).
+STATUS: PASS
+Rapportmap: /mnt/data/_smoke_validation/20261009_124630_985796
+Geen CIFAR-10 gedownload. Geen pakketten geinstalleerd. Geen MX toegevoegd.

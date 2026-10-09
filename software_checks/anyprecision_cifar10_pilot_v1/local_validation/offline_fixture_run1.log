@@ -1,0 +1,15 @@
+ANY-PRECISION CIFAR-10 PILOT - geen referentietraining, geen MX
+Apparaat: CPU
+OFFLINE FIXTURE: kunstmatige beelden/labels; GEEN echte CIFAR-10-accuracy.
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Data: 20 train / 20 validatie; officiele testset niet gebruikt.
+Protocol: 1 epochs, batch 2; W32/A32 -> W8/A8 -> W4/A4 -> W2/A2 -> W1/A1.
+Validatie voor training (epoch 0) opgeslagen; geen accuracy-drempel voor succes.
+  epoch 1/1, batch 1/10: W32/A32 CE=2.3108; gradients eindig; update=0.001
+  epoch 1/1, batch 10/10: W32/A32 CE=2.3812; gradients eindig; update=0.00093594
+  validatie top-1: W1/A1=10.00% | W2/A2=10.00% | W4/A4=10.00% | W8/A8=10.00% | W32/A32=10.00%
+Checkpoint opnieuw geladen: model, optimizer, scheduler en validatie-uitvoer identiek.
+Waarschuwingen: 0 (0 unieke meldingen).
+STATUS: PASS
+Rapportmap: /mnt/data/pilot_development/offline_runs1/20261009_132257_176631
+Geen pakketten geinstalleerd. Geen MX. Geen officiele testset-evaluatie.

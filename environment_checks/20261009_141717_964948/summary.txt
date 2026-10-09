@@ -1,0 +1,49 @@
+OMGEVINGSCONTROLE - geen onderzoekstraining
+Python: 3.13.14 (64 bit)
+Interpreter: C:\Users\renzo\master-thesis-mx\.venv\Scripts\python.exe
+Virtual environment: True
+Vrije schijfruimte: 750.6 GiB
+
+Pakketten:
+  pip: 26.1.2
+  torch: NIET GEINSTALLEERD
+  torchvision: NIET GEINSTALLEERD
+  numpy: NIET GEINSTALLEERD
+  Pillow: NIET GEINSTALLEERD
+  tensorboardX: NIET GEINSTALLEERD
+  gpustat: NIET GEINSTALLEERD
+  scipy: NIET GEINSTALLEERD
+
+pip check:
+No broken requirements found.
+
+nvidia-smi:
+Fri Oct  9 14:17:24 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 591.97                 Driver Version: 591.97         CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |
+| N/A   30C    P0              9W /   42W |       0MiB /   8151MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+PyTorch-tests:
+{
+  "status": "SKIPPED",
+  "reason": "PyTorch is niet geinstalleerd."
+}
+
+Rapportmap: C:\Users\renzo\master-thesis-mx\environment_checks\20261009_141717_964948
+Deel deze uitvoer of environment_report.json. Er zijn geen pakketten geinstalleerd.
