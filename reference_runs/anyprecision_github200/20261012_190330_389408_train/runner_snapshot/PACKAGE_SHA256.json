@@ -1,0 +1,21 @@
+{
+  ".gitattributes": "41810797940e4e3694437879bd76a0e092d691b71803eda0eca66cc2d842714d",
+  "CHANGELOG.md": "c5390064d25c111981d6d29d17f0421cbc232c458164e2cdc041e7f3d8392df3",
+  "GITHUB_ALIGNMENT.md": "b8e3820d6a8904f488d087c6f0423712ec279e88476ee7d8d5b2656629c91a68",
+  "PROTOCOL.md": "cec141f7909f8fd5cde2f7a241cf11c60d4702f040a8875d344646c14ab5c577",
+  "README.md": "436821889a5d54a2231863359a2850d68d3385effa0a7cf96560e3c9066e1819",
+  "SOURCE_MANIFEST.json": "c696694c6ecf5f2c961317a169495e94d191f043f0079af96c0d4f41b49cda74",
+  "SOURCE_PROVENANCE.json": "0cc41064023d03bad9f27bfdb448556c2f0d1718abfe2c057334980ad6b611d1",
+  "changes_from_reference_v1.patch": "1e5bbb6db32f7ca9affc8f4992e4c719684cd8383b7a3f296f83bdef6e3515b9",
+  "compatibility.patch": "ff01f32b58a355b987f87d76d6f336a7a2f6203b3f11696aef9952e671635acb",
+  "github_targets.json": "257e6771c96843080dd1d26db7ab8332a35d4fbca9164c78714d07510b253413",
+  "reference_config.json": "3cf78863428d956c7e6ff00abb41edb32594f59347e235266c76f4befe88a0f1",
+  "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+  "resume_worker.py": "3e652d1c852d01be2cdd4551ac8f607fd35ddab7763a3a7db0fe3b94220d5fe3",
+  "run_pilot.py": "3705a9c11aea4286e8b23d1dda0f2b646071a925e234ed295a60cac8cc5c6adc",
+  "run_reference.py": "1ee7686ca45d9f5fc73ec9136d11c86e4196644b483f02a6dd304c2f3cd2362c",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "source_notes/upstream_README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+  "source_notes/upstream_train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

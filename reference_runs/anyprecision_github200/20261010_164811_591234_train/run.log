@@ -1,0 +1,136 @@
+ANY-PRECISION GITHUB-REFERENTIE - 200 epochs; geen MX
+Sessie-/rapportmap: C:\Users\renzo\master-thesis-mx\reference_runs\anyprecision_github200\20261010_164811_591234_train
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Hervat vanaf epoch 30; volgende epoch 31.
+Data: 50000 train; geen validatie/test tijdens deze sessie.
+Protocol: 200 epochs; batch 128; 391 batches/epoch; automatische pauze na epoch 40.
+Learning rate: 0.001; factor 0.1 na epochs 100, 150, 180.
+Testbeleid: vooraf vastgelegd eindpunt, geen beste-checkpointselectie op de testset.
+Stopverzoek mogelijk met request-stop; sluit de terminal niet tijdens opslaan.
+  epoch 31/200, batch 1/391: W32/A32 CE=0.0649; lr=0.001; gradients eindig
+  epoch 31/200, batch 50/391: W32/A32 CE=0.0136; lr=0.001; gradients eindig
+  epoch 31/200, batch 100/391: W32/A32 CE=0.0411; lr=0.001; gradients eindig
+  epoch 31/200, batch 150/391: W32/A32 CE=0.0384; lr=0.001; gradients eindig
+  epoch 31/200, batch 200/391: W32/A32 CE=0.0693; lr=0.001; gradients eindig
+  epoch 31/200, batch 250/391: W32/A32 CE=0.0570; lr=0.001; gradients eindig
+  epoch 31/200, batch 300/391: W32/A32 CE=0.0639; lr=0.001; gradients eindig
+  epoch 31/200, batch 350/391: W32/A32 CE=0.0452; lr=0.001; gradients eindig
+  epoch 31/200, batch 391/391: W32/A32 CE=0.0230; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=93.50% | W2/A2=97.29% | W4/A4=98.28% | W8/A8=98.33% | W32/A32=98.38%
+  Epoch 31 veilig opgeslagen: train=362.44s; checkpoint+controle=0.77s; totaal=363.34s.
+  Voorlopige resterende training: 17.06 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 32/200, batch 1/391: W32/A32 CE=0.0174; lr=0.001; gradients eindig
+  epoch 32/200, batch 50/391: W32/A32 CE=0.0510; lr=0.001; gradients eindig
+  epoch 32/200, batch 100/391: W32/A32 CE=0.0525; lr=0.001; gradients eindig
+  epoch 32/200, batch 150/391: W32/A32 CE=0.1051; lr=0.001; gradients eindig
+  epoch 32/200, batch 200/391: W32/A32 CE=0.0542; lr=0.001; gradients eindig
+  epoch 32/200, batch 250/391: W32/A32 CE=0.0728; lr=0.001; gradients eindig
+  epoch 32/200, batch 300/391: W32/A32 CE=0.0468; lr=0.001; gradients eindig
+  epoch 32/200, batch 350/391: W32/A32 CE=0.0895; lr=0.001; gradients eindig
+  epoch 32/200, batch 391/391: W32/A32 CE=0.0356; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=93.69% | W2/A2=97.39% | W4/A4=98.37% | W8/A8=98.41% | W32/A32=98.45%
+  Epoch 32 veilig opgeslagen: train=368.53s; checkpoint+controle=0.68s; totaal=369.33s.
+  Voorlopige resterende training: 17.24 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 33/200, batch 1/391: W32/A32 CE=0.0128; lr=0.001; gradients eindig
+  epoch 33/200, batch 50/391: W32/A32 CE=0.0097; lr=0.001; gradients eindig
+  epoch 33/200, batch 100/391: W32/A32 CE=0.0533; lr=0.001; gradients eindig
+  epoch 33/200, batch 150/391: W32/A32 CE=0.0404; lr=0.001; gradients eindig
+  epoch 33/200, batch 200/391: W32/A32 CE=0.0404; lr=0.001; gradients eindig
+  epoch 33/200, batch 250/391: W32/A32 CE=0.0490; lr=0.001; gradients eindig
+  epoch 33/200, batch 300/391: W32/A32 CE=0.0193; lr=0.001; gradients eindig
+  epoch 33/200, batch 350/391: W32/A32 CE=0.0251; lr=0.001; gradients eindig
+  epoch 33/200, batch 391/391: W32/A32 CE=0.0399; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=93.92% | W2/A2=97.63% | W4/A4=98.52% | W8/A8=98.51% | W32/A32=98.56%
+  Epoch 33 veilig opgeslagen: train=359.29s; checkpoint+controle=0.69s; totaal=360.12s.
+  Voorlopige resterende training: 16.92 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 34/200, batch 1/391: W32/A32 CE=0.0095; lr=0.001; gradients eindig
+  epoch 34/200, batch 50/391: W32/A32 CE=0.0212; lr=0.001; gradients eindig
+  epoch 34/200, batch 100/391: W32/A32 CE=0.0235; lr=0.001; gradients eindig
+  epoch 34/200, batch 150/391: W32/A32 CE=0.0546; lr=0.001; gradients eindig
+  epoch 34/200, batch 200/391: W32/A32 CE=0.0265; lr=0.001; gradients eindig
+  epoch 34/200, batch 250/391: W32/A32 CE=0.0419; lr=0.001; gradients eindig
+  epoch 34/200, batch 300/391: W32/A32 CE=0.0866; lr=0.001; gradients eindig
+  epoch 34/200, batch 350/391: W32/A32 CE=0.0125; lr=0.001; gradients eindig
+  epoch 34/200, batch 391/391: W32/A32 CE=0.0629; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=94.17% | W2/A2=97.80% | W4/A4=98.70% | W8/A8=98.73% | W32/A32=98.77%
+  Epoch 34 veilig opgeslagen: train=362.83s; checkpoint+controle=0.71s; totaal=363.68s.
+  Voorlopige resterende training: 16.80 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 35/200, batch 1/391: W32/A32 CE=0.0262; lr=0.001; gradients eindig
+  epoch 35/200, batch 50/391: W32/A32 CE=0.0213; lr=0.001; gradients eindig
+  epoch 35/200, batch 100/391: W32/A32 CE=0.0647; lr=0.001; gradients eindig
+  epoch 35/200, batch 150/391: W32/A32 CE=0.0496; lr=0.001; gradients eindig
+  epoch 35/200, batch 200/391: W32/A32 CE=0.0237; lr=0.001; gradients eindig
+  epoch 35/200, batch 250/391: W32/A32 CE=0.0445; lr=0.001; gradients eindig
+  epoch 35/200, batch 300/391: W32/A32 CE=0.0210; lr=0.001; gradients eindig
+  epoch 35/200, batch 350/391: W32/A32 CE=0.0054; lr=0.001; gradients eindig
+  epoch 35/200, batch 391/391: W32/A32 CE=0.1173; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=93.89% | W2/A2=97.79% | W4/A4=98.74% | W8/A8=98.82% | W32/A32=98.80%
+  Epoch 35 veilig opgeslagen: train=349.88s; checkpoint+controle=0.44s; totaal=350.40s.
+  Voorlopige resterende training: 16.54 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 36/200, batch 1/391: W32/A32 CE=0.0262; lr=0.001; gradients eindig
+  epoch 36/200, batch 50/391: W32/A32 CE=0.0400; lr=0.001; gradients eindig
+  epoch 36/200, batch 100/391: W32/A32 CE=0.0080; lr=0.001; gradients eindig
+  epoch 36/200, batch 150/391: W32/A32 CE=0.0568; lr=0.001; gradients eindig
+  epoch 36/200, batch 200/391: W32/A32 CE=0.0540; lr=0.001; gradients eindig
+  epoch 36/200, batch 250/391: W32/A32 CE=0.0086; lr=0.001; gradients eindig
+  epoch 36/200, batch 300/391: W32/A32 CE=0.0276; lr=0.001; gradients eindig
+  epoch 36/200, batch 350/391: W32/A32 CE=0.0339; lr=0.001; gradients eindig
+  epoch 36/200, batch 391/391: W32/A32 CE=0.0148; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=94.28% | W2/A2=97.94% | W4/A4=98.78% | W8/A8=98.80% | W32/A32=98.76%
+  Epoch 36 veilig opgeslagen: train=276.95s; checkpoint+controle=0.48s; totaal=277.50s.
+  Voorlopige resterende training: 15.68 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 37/200, batch 1/391: W32/A32 CE=0.0181; lr=0.001; gradients eindig
+  epoch 37/200, batch 50/391: W32/A32 CE=0.0161; lr=0.001; gradients eindig
+  epoch 37/200, batch 100/391: W32/A32 CE=0.0296; lr=0.001; gradients eindig
+  epoch 37/200, batch 150/391: W32/A32 CE=0.0063; lr=0.001; gradients eindig
+  epoch 37/200, batch 200/391: W32/A32 CE=0.0147; lr=0.001; gradients eindig
+  epoch 37/200, batch 250/391: W32/A32 CE=0.0721; lr=0.001; gradients eindig
+  epoch 37/200, batch 300/391: W32/A32 CE=0.0533; lr=0.001; gradients eindig
+  epoch 37/200, batch 350/391: W32/A32 CE=0.0363; lr=0.001; gradients eindig
+  epoch 37/200, batch 391/391: W32/A32 CE=0.0430; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=94.34% | W2/A2=98.03% | W4/A4=98.87% | W8/A8=98.89% | W32/A32=98.87%
+  Epoch 37 veilig opgeslagen: train=280.27s; checkpoint+controle=0.45s; totaal=280.81s.
+  Voorlopige resterende training: 15.11 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 38/200, batch 1/391: W32/A32 CE=0.0133; lr=0.001; gradients eindig
+  epoch 38/200, batch 50/391: W32/A32 CE=0.0139; lr=0.001; gradients eindig
+  epoch 38/200, batch 100/391: W32/A32 CE=0.0542; lr=0.001; gradients eindig
+  epoch 38/200, batch 150/391: W32/A32 CE=0.0047; lr=0.001; gradients eindig
+  epoch 38/200, batch 200/391: W32/A32 CE=0.0133; lr=0.001; gradients eindig
+  epoch 38/200, batch 250/391: W32/A32 CE=0.0336; lr=0.001; gradients eindig
+  epoch 38/200, batch 300/391: W32/A32 CE=0.0381; lr=0.001; gradients eindig
+  epoch 38/200, batch 350/391: W32/A32 CE=0.0242; lr=0.001; gradients eindig
+  epoch 38/200, batch 391/391: W32/A32 CE=0.0243; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=94.46% | W2/A2=98.04% | W4/A4=98.95% | W8/A8=99.04% | W32/A32=98.98%
+  Epoch 38 veilig opgeslagen: train=281.66s; checkpoint+controle=0.43s; totaal=282.17s.
+  Voorlopige resterende training: 14.68 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 39/200, batch 1/391: W32/A32 CE=0.0523; lr=0.001; gradients eindig
+  epoch 39/200, batch 50/391: W32/A32 CE=0.0261; lr=0.001; gradients eindig
+  epoch 39/200, batch 100/391: W32/A32 CE=0.0090; lr=0.001; gradients eindig
+  epoch 39/200, batch 150/391: W32/A32 CE=0.0341; lr=0.001; gradients eindig
+  epoch 39/200, batch 200/391: W32/A32 CE=0.0362; lr=0.001; gradients eindig
+  epoch 39/200, batch 250/391: W32/A32 CE=0.0214; lr=0.001; gradients eindig
+  epoch 39/200, batch 300/391: W32/A32 CE=0.0707; lr=0.001; gradients eindig
+  epoch 39/200, batch 350/391: W32/A32 CE=0.0122; lr=0.001; gradients eindig
+  epoch 39/200, batch 391/391: W32/A32 CE=0.0397; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=94.79% | W2/A2=98.24% | W4/A4=99.02% | W8/A8=99.06% | W32/A32=99.03%
+  Epoch 39 veilig opgeslagen: train=280.22s; checkpoint+controle=0.43s; totaal=280.75s.
+  Voorlopige resterende training: 14.34 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 40/200, batch 1/391: W32/A32 CE=0.0264; lr=0.001; gradients eindig
+  epoch 40/200, batch 50/391: W32/A32 CE=0.0259; lr=0.001; gradients eindig
+  epoch 40/200, batch 100/391: W32/A32 CE=0.0479; lr=0.001; gradients eindig
+  epoch 40/200, batch 150/391: W32/A32 CE=0.0124; lr=0.001; gradients eindig
+  epoch 40/200, batch 200/391: W32/A32 CE=0.0572; lr=0.001; gradients eindig
+  epoch 40/200, batch 250/391: W32/A32 CE=0.0155; lr=0.001; gradients eindig
+  epoch 40/200, batch 300/391: W32/A32 CE=0.0105; lr=0.001; gradients eindig
+  epoch 40/200, batch 350/391: W32/A32 CE=0.0536; lr=0.001; gradients eindig
+  epoch 40/200, batch 391/391: W32/A32 CE=0.0575; lr=0.001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=94.87% | W2/A2=98.31% | W4/A4=99.08% | W8/A8=99.11% | W32/A32=99.07%
+  Epoch 40 veilig opgeslagen: train=279.87s; checkpoint+controle=0.37s; totaal=280.32s.
+  Voorlopige resterende training: 14.05 uur (exclusief eindtest; schatting op dit apparaat).
+Sessie afgerond; je mag nu de laptop afsluiten. De 200-epochplanning is niet gewijzigd.
+Laatste hervatbare checkpoint: C:\Users\renzo\master-thesis-mx\reference_runs\anyprecision_github200\20261010_164811_591234_train\checkpoints\epoch_00040.pt
+Waarschuwingen: 0; zie reference_report.json.
+STATUS: PAUSED
+Rapportmap: C:\Users\renzo\master-thesis-mx\reference_runs\anyprecision_github200\20261010_164811_591234_train
+Geen downloads. Geen pakketinstallatie. Eerdere resultaten blijven ongewijzigd.

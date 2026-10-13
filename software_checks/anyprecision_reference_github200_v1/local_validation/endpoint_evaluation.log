@@ -1,0 +1,21 @@
+ANY-PRECISION GITHUB-REFERENTIE - 200 epochs; geen MX
+Sessie-/rapportmap: /mnt/data/reference_github200_build/integration_run/endpoint_evaluation/20261010_113537_299177_evaluate
+Apparaat: CPU
+LOCAL SYNTHETIC FIXTURE: geen echte CIFAR-10-data, geen paperbudget.
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+OFFICIELE TEST: epoch 3, W1/A1: top-1=5.00%
+OFFICIELE TEST: epoch 3, W2/A2: top-1=10.00%
+OFFICIELE TEST: epoch 3, W4/A4: top-1=10.00%
+OFFICIELE TEST: epoch 3, W8/A8: top-1=10.00%
+OFFICIELE TEST: epoch 3, W32/A32: top-1=15.00%
+  GitHub-vergelijking W1/A1: eigen=5.00%; README=91.89%; verschil=-86.89 procentpunt.
+  GitHub-vergelijking W2/A2: eigen=10.00%; README=93.90%; verschil=-83.90 procentpunt.
+  GitHub-vergelijking W4/A4: eigen=10.00%; README=93.86%; verschil=-83.86 procentpunt.
+  GitHub-vergelijking W8/A8: eigen=10.00%; README=93.75%; verschil=-83.75 procentpunt.
+  GitHub-vergelijking W32/A32: eigen=15.00%; README=94.11%; verschil=-79.11 procentpunt.
+Vergelijking is met de README-rij Resnet-20-Any (recursive), niet met een gegarandeerde target.
+Dit is een afzonderlijke eindpuntevaluatie; er is niet verder getraind.
+Waarschuwingen: 0; zie reference_report.json.
+STATUS: PASS
+Rapportmap: /mnt/data/reference_github200_build/integration_run/endpoint_evaluation/20261010_113537_299177_evaluate
+Geen downloads. Geen pakketinstallatie. Eerdere resultaten blijven ongewijzigd.

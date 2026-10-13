@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": {
+    "stop_request_sent": true,
+    "stop_after_epoch1": true,
+    "stop_request_recorded": true,
+    "stop_did_not_change_checkpoint": true,
+    "refuses_overwrite": true,
+    "rejects_corruption": true,
+    "rejects_contract_change": true,
+    "real200_scheduler_sequence": true
+  },
+  "synthetic_CPU_only": true,
+  "power_failure_tested": false,
+  "new_CUDA_runner_tested": false
+}

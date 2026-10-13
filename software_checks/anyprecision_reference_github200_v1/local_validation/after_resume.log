@@ -1,0 +1,27 @@
+ANY-PRECISION GITHUB-REFERENTIE - 200 epochs; geen MX
+Sessie-/rapportmap: /mnt/data/reference_github200_build/integration_run/after_resume/20261010_113458_642526_train
+Apparaat: CPU
+LOCAL SYNTHETIC FIXTURE: geen echte CIFAR-10-data, geen paperbudget.
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Hervat vanaf epoch 1; volgende epoch 2.
+Data: 20 train; geen validatie/test tijdens deze sessie.
+Protocol: 3 epochs; batch 8; 3 batches/epoch; automatische pauze na epoch 3.
+Learning rate: 0.001; factor 0.1 na epochs 1, 2.
+Testbeleid: vooraf vastgelegd eindpunt, geen beste-checkpointselectie op de testset.
+Stopverzoek mogelijk met request-stop; sluit de terminal niet tijdens opslaan.
+  epoch 2/3, batch 1/3: W32/A32 CE=2.4228; lr=0.0001; gradients eindig
+  epoch 2/3, batch 3/3: W32/A32 CE=2.3897; lr=0.0001; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=5.00% | W2/A2=10.00% | W4/A4=10.00% | W8/A8=10.00% | W32/A32=15.00%
+  Epoch 2 veilig opgeslagen: train=5.12s; checkpoint+controle=0.31s; totaal=5.48s.
+  Voorlopige resterende training: 0.00 uur (exclusief eindtest; schatting op dit apparaat).
+  epoch 3/3, batch 1/3: W32/A32 CE=2.3484; lr=1e-05; gradients eindig
+  epoch 3/3, batch 3/3: W32/A32 CE=2.6680; lr=1e-05; gradients eindig
+  TRAIN top-1 (geen testaccuracy): W1/A1=10.00% | W2/A2=5.00% | W4/A4=5.00% | W8/A8=5.00% | W32/A32=5.00%
+  Epoch 3 veilig opgeslagen: train=5.74s; checkpoint+controle=0.29s; totaal=6.07s.
+  Voorlopige resterende training: 0.00 uur (exclusief eindtest; schatting op dit apparaat).
+Sessie afgerond; je mag nu de laptop afsluiten. De 3-epochplanning is niet gewijzigd.
+Laatste hervatbare checkpoint: /mnt/data/reference_github200_build/integration_run/after_resume/20261010_113458_642526_train/checkpoints/epoch_00003.pt
+Waarschuwingen: 0; zie reference_report.json.
+STATUS: TRAINING_COMPLETE_TEST_NOT_EVALUATED
+Rapportmap: /mnt/data/reference_github200_build/integration_run/after_resume/20261010_113458_642526_train
+Geen downloads. Geen pakketinstallatie. Eerdere resultaten blijven ongewijzigd.

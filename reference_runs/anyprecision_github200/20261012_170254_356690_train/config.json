@@ -1,0 +1,41 @@
+{
+  "purpose": "github_code_recipe_anyprecision_reference",
+  "schema": "anyprecision-reference-github200-protocol-v1",
+  "dataset": "cifar10",
+  "train_split": "train",
+  "train_examples": 50000,
+  "test_examples": 10000,
+  "validation_examples": 0,
+  "model": "resnet20q",
+  "expand": 5,
+  "bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "planned_epochs": 200,
+  "batch_size": 128,
+  "seed": 20261009,
+  "optimizer": "adam",
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "scheduler_milestones": [
+    100,
+    150,
+    180
+  ],
+  "scheduler_gamma": 0.1,
+  "workers": 0,
+  "pin_memory": false,
+  "drop_last": false,
+  "rng_policy": "continuous_streams_restored_at_epoch_boundary",
+  "evaluation_policy": "no_test_or_validation_during_training; explicit_endpoint_evaluation_only",
+  "checkpoint_policy": "new_checkpoint_after_each_complete_epoch; never_overwrite",
+  "quantizer_policy": "supplied_code_unchanged; requantization_from_FP_master_weights",
+  "precision32_policy": "supplied_code_ReLU_and_tanh_weight_transform; not_plain_FP32",
+  "exact_paper_reproduction": false,
+  "github_result_run_provenance_confirmed": false,
+  "comparison_reference": "github_targets.json"
+}

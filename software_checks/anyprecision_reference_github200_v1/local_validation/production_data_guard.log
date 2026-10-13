@@ -1,0 +1,30 @@
+ANY-PRECISION GITHUB-REFERENTIE - 200 epochs; geen MX
+Sessie-/rapportmap: /mnt/data/reference_github200_build/integration_run/production_data_guard/20261010_113544_366156_train
+Apparaat: CPU
+FOUT/ONDERBREKING: Checksumfout: /mnt/data/reference_github200_build/integration_run/fixture_data/cifar-10-batches-py/data_batch_1; niets wordt overschreven.
+Traceback (most recent call last):
+  File "/mnt/data/anyprecision_reference_github200_v1/run_reference.py", line 501, in main
+    train_session(args, out, report, log)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/anyprecision_reference_github200_v1/run_reference.py", line 179, in train_session
+    ctx = make_context(args, out, report, log)
+  File "/mnt/data/anyprecision_reference_github200_v1/run_reference.py", line 103, in make_context
+    data, selection, data_info, transform = prepare_training_data(
+                                            ~~~~~~~~~~~~~~~~~~~~~^
+        args.data_root.resolve(), source, config, log)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/anyprecision_reference_github200_v1/run_reference.py", line 81, in prepare_training_data
+    info = pilot.ensure_dataset(data_root, dm.CIFAR10, False, log)
+  File "/mnt/data/anyprecision_reference_github200_v1/run_pilot.py", line 109, in ensure_dataset
+    info = verified(target)
+  File "/mnt/data/anyprecision_reference_github200_v1/run_pilot.py", line 104, in verified
+    require(actual == expected, f'Checksumfout: {f}; niets wordt overschreven.')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/anyprecision_reference_github200_v1/smoke_support.py", line 41, in require
+    raise RuntimeError(message)
+RuntimeError: Checksumfout: /mnt/data/reference_github200_build/integration_run/fixture_data/cifar-10-batches-py/data_batch_1; niets wordt overschreven.
+
+Waarschuwingen: 0; zie reference_report.json.
+STATUS: FAIL
+Rapportmap: /mnt/data/reference_github200_build/integration_run/production_data_guard/20261010_113544_366156_train
+Geen downloads. Geen pakketinstallatie. Eerdere resultaten blijven ongewijzigd.

@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "checks": {
+    "same_checkpoint_epoch1": true,
+    "same_entire_final_checkpoint": true,
+    "same_model": true,
+    "same_optimizer": true,
+    "same_scheduler": true,
+    "same_rng": true,
+    "same_training_history": true,
+    "same_exported_metrics_csv": true,
+    "lr_sequence": true,
+    "cumulative_steps9": true,
+    "train_only": true,
+    "bounded_session": true,
+    "unchanged_planning": true,
+    "readback_all": true,
+    "no_warnings": true,
+    "same_from_epoch0": true,
+    "endpoint_evaluation": true,
+    "checkpoint_unchanged_by_evaluation": true,
+    "production_rejects_fake_data": true,
+    "fixture_files_unchanged": true
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "device": "cpu",
+    "cuda_build": null,
+    "cudnn": null,
+    "device_name": "CPU"
+  },
+  "fixture_only": true,
+  "full_reference_config_tested": false,
+  "CUDA_tested_here": false,
+  "checkpoint_bytes": 81935310,
+  "notes": "New runner in separate processes; unchanged source, artificial files and tiny test-only protocol."
+}

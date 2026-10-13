@@ -1,0 +1,36 @@
+{
+  "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\cifar10",
+  "new_download": false,
+  "batch_files": {
+    "data_batch_1": {
+      "md5": "c99cafc152244af753f735de768cd75f",
+      "sha256": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+      "bytes": 31035704
+    },
+    "data_batch_2": {
+      "md5": "d4bba439e000b95fd0a9bffe97cbabec",
+      "sha256": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+      "bytes": 31035320
+    },
+    "data_batch_3": {
+      "md5": "54ebc095f3ab1f0389bbae665268c751",
+      "sha256": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+      "bytes": 31035999
+    },
+    "data_batch_4": {
+      "md5": "634d18415352ddfa80567beed471001a",
+      "sha256": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+      "bytes": 31035696
+    },
+    "data_batch_5": {
+      "md5": "482c414d41f54cd18b22e5b47cb7c3cb",
+      "sha256": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154",
+      "bytes": 31035623
+    },
+    "test_batch": {
+      "md5": "40351d587109b95175f43aff81a1287e",
+      "sha256": "f53d8d457504f7cff4ea9e021afcf0e0ad8e24a91f3fc42091b8adef61157831",
+      "bytes": 31035526
+    }
+  }
+}

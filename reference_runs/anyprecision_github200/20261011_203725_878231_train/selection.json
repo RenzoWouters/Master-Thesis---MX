@@ -1,0 +1,7 @@
+{
+  "split": "official_train",
+  "n": 50000,
+  "indices": "range(0,50000)",
+  "validation_examples": 0,
+  "official_test_examples_used": 0
+}

@@ -1,0 +1,24 @@
+{
+  "source": "README.md in user-supplied Any-Precision-DNNs-master(1).zip",
+  "url": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+  "readme_sha256": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+  "row": "Resnet-20-Any (recursive)",
+  "dataset": "CIFAR-10",
+  "metric": "top1_accuracy_percent",
+  "bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "top1_percent": [
+    91.89,
+    93.9,
+    93.86,
+    93.75,
+    94.11
+  ],
+  "exact_historical_training_recipe_confirmed": false,
+  "note": "Author-reported reference, NOT a success threshold or proof these checkpoints used the bundled 200-epoch script. Historical seed and checkpoint-selection provenance not established."
+}

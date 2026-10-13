@@ -1,0 +1,11 @@
+{
+  "planned_epochs": 200,
+  "first_epoch_this_session": 141,
+  "pause_after_epoch": 150,
+  "train_examples": 50000,
+  "batch_size": 128,
+  "steps_per_epoch": 391,
+  "stop_request_file": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\STOP_AFTER_EPOCH.txt",
+  "resume_input": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00140.pt",
+  "protocol_unchanged_by_pause": true
+}

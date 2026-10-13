@@ -1,0 +1,96 @@
+{
+  "metrics": {
+    "epoch": 141,
+    "train": [
+      {
+        "epoch": 141,
+        "phase": "train",
+        "bits_w_and_a": 1,
+        "n": 50000,
+        "objective_type": "recursive_soft_cross_entropy",
+        "objective_loss": 0.014338951424732804,
+        "hard_ce": 0.013141075623482466,
+        "top1_percent": 99.532,
+        "top5_percent": 100.0,
+        "lr": 0.0001
+      },
+      {
+        "epoch": 141,
+        "phase": "train",
+        "bits_w_and_a": 2,
+        "n": 50000,
+        "objective_type": "recursive_soft_cross_entropy",
+        "objective_loss": 0.0009174754216428846,
+        "hard_ce": 0.0003585083991335705,
+        "top1_percent": 99.994,
+        "top5_percent": 100.0,
+        "lr": 0.0001
+      },
+      {
+        "epoch": 141,
+        "phase": "train",
+        "bits_w_and_a": 4,
+        "n": 50000,
+        "objective_type": "recursive_soft_cross_entropy",
+        "objective_loss": 0.0004749899766012095,
+        "hard_ce": 0.0001618274233400007,
+        "top1_percent": 99.996,
+        "top5_percent": 100.0,
+        "lr": 0.0001
+      },
+      {
+        "epoch": 141,
+        "phase": "train",
+        "bits_w_and_a": 8,
+        "n": 50000,
+        "objective_type": "recursive_soft_cross_entropy",
+        "objective_loss": 0.00030126315181230895,
+        "hard_ce": 0.00014774854969829904,
+        "top1_percent": 99.996,
+        "top5_percent": 100.0,
+        "lr": 0.0001
+      },
+      {
+        "epoch": 141,
+        "phase": "train",
+        "bits_w_and_a": 32,
+        "n": 50000,
+        "objective_type": "hard_cross_entropy",
+        "objective_loss": 7.55335389131369e-05,
+        "hard_ce": 7.55335389131369e-05,
+        "top1_percent": 99.996,
+        "top5_percent": 100.0,
+        "lr": 0.0001
+      }
+    ],
+    "validation": null,
+    "validation_reason": "not_run_no_independent_validation_set",
+    "test": null,
+    "lr_used": 0.0001,
+    "lr_next": 0.0001,
+    "optimizer_steps": 55131,
+    "model_sha256": "6390934fba136dd77970143b9ff8033b914f63badcc9c30fa19e5ef9a944781e",
+    "order_sha256": "f3ff29f9aeefe01862b6b1634d877ccf2f2e0fffac43dc912d7eb77593c2addf",
+    "augmented_inputs_sha256": "b5f1baa425e4076f5298eb5057d50b394d5f288612144128c28d7d7df65a3fc5",
+    "labels_sha256": "388a1e73c9e34ebca5634e4a5f0d6a5844c80d9bf5d3d7bc8b3d2c4b14390d69",
+    "zero_updates_of_watched_weight": 0,
+    "all_train_samples_used_once": true,
+    "finite_states": true,
+    "batchnorm_counters_correct": true
+  },
+  "timing": {
+    "epoch": 141,
+    "training_seconds": 266.6469047999708,
+    "checks_seconds": 0.061995600000955164,
+    "validation_seconds": 0.0,
+    "test_seconds": 0.0,
+    "checkpoint_and_readback_seconds": 0.3813108999747783,
+    "total_epoch_seconds": 267.0902364999056
+  },
+  "checkpoint": {
+    "file": "epoch_00141.pt",
+    "sha256": "7df9b1de19818bbb5647cb51fef8882875ff46d51896ad7fc365d0a2d27d8b89",
+    "bytes": 82083085,
+    "full_readback_identical": true
+  }
+}

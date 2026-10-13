@@ -1,0 +1,21 @@
+{
+  "source_archive": "Any-Precision-DNNs-master(1).zip",
+  "source_archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+  "source_archive_is_byte_identical": true,
+  "source_github_repository": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+  "source_selection": "user supplied ZIP; live repository not substituted",
+  "upstream_git_commit": "not established from ZIP; archive and file SHA-256 used",
+  "previous_reference_zip_sha256": "51ac5167707509be0841df21d94e42514dd5f6a40c033620c502710b51c79a4f",
+  "new_protocol": "200 epochs, milestones 100/150/180; explicit endpoint evaluation",
+  "upstream_training_launcher_executed": false,
+  "unchanged_from_reference_v1": [
+    "resume_core.py",
+    "resume_worker.py",
+    "run_pilot.py",
+    "smoke_support.py",
+    "SOURCE_MANIFEST.json",
+    "compatibility.patch",
+    "upstream/Any-Precision-DNNs-master.zip"
+  ],
+  "not_established": "Historical epoch budget/seed/checkpoint-selection procedure for each README score."
+}
