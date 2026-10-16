@@ -1,0 +1,13 @@
+{
+  "checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00200.pt",
+  "sha256": "f1e05c4cd9cd1372e6736d539bc84b618a58bb307657f0d719220879aff54031",
+  "epoch": 200,
+  "top1_w32_percent": 93.89,
+  "tie_epochs": [
+    200
+  ],
+  "policy": "posthoc_test_selected_checkpoint_for_github_protocol_comparison",
+  "not_independent_test": true,
+  "training_not_modified": true,
+  "content_sha256": "5d9bcd52438307512d9890cd3a2f9f6f75f763627517957a2a489bb8b91d4cfc"
+}

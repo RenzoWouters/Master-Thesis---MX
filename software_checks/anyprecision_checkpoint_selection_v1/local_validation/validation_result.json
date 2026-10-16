@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "checks": {
+    "exact_loss_and_accuracies_vs_original_forward": true,
+    "w32_only_equals_w32_in_full_loop_including_logit_hash": true,
+    "model_and_bn_unchanged": true,
+    "no_gradients": true,
+    "tie_chooses_earliest_epoch": true,
+    "strictly_greater_replaces_previous_best": true,
+    "reject_other_trajectory": true,
+    "reject_bad_checksum": true,
+    "reject_edited_cache": true,
+    "never_overwrite_result": true,
+    "missing_epoch_blocks_selection": true,
+    "identical_duplicates_reported_once": true,
+    "bounded_sweep_pauses": true,
+    "resume_evaluates_only_remaining": true,
+    "cache_only_rerun_no_new_tests": true,
+    "full_and_resumed_same_selection_and_metrics": true,
+    "full_and_resumed_identical_score_csv": true,
+    "w32_allbits_checks_pass": true,
+    "fixtures_not_presented_as_research_results": true,
+    "original_checkpoints_unchanged": true,
+    "no_python_warnings": true,
+    "second_process_lock_rejected": true,
+    "stop_request_file_created": true,
+    "closed_session_stop_rejected": true
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "device": "cpu",
+    "cuda_build": null,
+    "cudnn": null,
+    "device_name": "CPU"
+  },
+  "fixture_only": true,
+  "CUDA_tested_here": false,
+  "Windows_tested_here": false,
+  "real_CIFAR10_or_user_trained_checkpoints_available_here": false,
+  "addon_hashes": {
+    "select_checkpoints.py": "7495d158a9be647cf85f349d79d1390f18f3398c107dfcdcf2ce3d33a8b95540",
+    "REFERENCE_SHA256.json": "655055c41eb28f4c2e3d7679f655f87a2a4cbe9e81d4a0c2354aa4334b14d0b2"
+  }
+}

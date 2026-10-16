@@ -1,0 +1,29 @@
+{
+  "epoch": 74,
+  "checkpoint_sha256": "812e1bc6bb0463f364e0b94d9cb22adf8104e3199c2bc87f79662c3c340ac3b2",
+  "plan_sha256": "099641745381c76ceaecc169419edf63f3d0f17ac649aa5812a90dc027a0e4ab",
+  "row": {
+    "epoch": 74,
+    "phase": "official_test",
+    "bits_w_and_a": 32,
+    "n": 10000,
+    "correct1": 9271,
+    "correct5": 9982,
+    "top1_percent": 92.71,
+    "top5_percent": 99.82,
+    "hard_ce": 0.4625478853225708,
+    "count_top1_percent": 92.71,
+    "logits_sha256": "12c476dcb833aef818d80b4ed49cfb80c8327ba210cbf8f9d983d64e794d9089"
+  },
+  "details": {
+    "seconds": 4.4515380000229925,
+    "ordered_test_indices": "range(0,10000)",
+    "inputs_sha256": "401fafa7034e3e92e96f0c90580ba13a9d5d375152cd910dedf57ec4e00d0a62",
+    "labels_sha256": "cbb7365de8ed11f05cc4c3a1e7f78144127c5e851efd83762fb18202461230bb",
+    "model_state_sha256": "3a69e36d0273b4ed932859fdcd12399a865e23d3c8e9ec507bc0d41e4971cf0f",
+    "model_and_batchnorm_unchanged": true,
+    "no_gradients_or_optimizer_updates": true
+  },
+  "load_and_test_seconds": 5.142725799931213,
+  "content_sha256": "2628cf533544c12da58a059717698d474afd126e190e68e9eeaad70c1506c301"
+}

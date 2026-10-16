@@ -1,0 +1,1612 @@
+{
+  "anchor_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00200.pt",
+  "expected_epochs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ],
+  "selected": [
+    {
+      "epoch": 1,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_134430_221186_train\\checkpoints\\epoch_00001.pt",
+      "sha256": "ef5428bf44966717e24a8a2876d72cd1c9d96a69de5c40b9642a03f3fc329732",
+      "bytes": 81933581,
+      "model_sha256": "1c4700566cb32828919375b50e0b6c48fe9d95aa814158b9b400491f0c8f7f08"
+    },
+    {
+      "epoch": 2,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_134430_221186_train\\checkpoints\\epoch_00002.pt",
+      "sha256": "31d939796ac983859b8729a196b51635c94544db3e6aca84eb76859130b7972b",
+      "bytes": 81934605,
+      "model_sha256": "e107e1932ff76d8fbe2776afc10f5578be98ce529d3ca1f8ac0d9029c65b0f04"
+    },
+    {
+      "epoch": 3,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_134430_221186_train\\checkpoints\\epoch_00003.pt",
+      "sha256": "560589c9d90721c9c3e873425113bddc1b41878b52be000dc0275a7d541d675c",
+      "bytes": 81935629,
+      "model_sha256": "1d795cd273e8f9606cfc7b2a9528384fac10a276f4275bb49db038e9bfe2f1d0"
+    },
+    {
+      "epoch": 4,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_134430_221186_train\\checkpoints\\epoch_00004.pt",
+      "sha256": "e6d325a0edf882f6c15314a44e1a65dd24f68e8bfb37a37a17ce548e5f71abb4",
+      "bytes": 81936589,
+      "model_sha256": "7d30f215a600bfd0c1286015f2237e9c4f0ea750d61e54e38d305dd2f513ea67"
+    },
+    {
+      "epoch": 5,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_134430_221186_train\\checkpoints\\epoch_00005.pt",
+      "sha256": "3be7d9763337825b5d9d75251c7bb36ec1aa763ee2a4b8b77edb243122e7a83c",
+      "bytes": 81937613,
+      "model_sha256": "2ff9ac356a07e7b4be10219e1392eede60fa41e33c0e3aee138e304e983b4493"
+    },
+    {
+      "epoch": 6,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_142849_613235_train\\checkpoints\\epoch_00006.pt",
+      "sha256": "b54789e82bb3e545b950f08ccb1707bffae0d366c61054ac76c6d8584e5d5c14",
+      "bytes": 81939149,
+      "model_sha256": "79d500e1b033365d4458707ed672f6a6880abcf56769c7856781a0bef6bf0c9a"
+    },
+    {
+      "epoch": 7,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_142849_613235_train\\checkpoints\\epoch_00007.pt",
+      "sha256": "1235fdd53c2f30fbaedaf223c2b904b024f4ffecc658c3e35489225256ed6e28",
+      "bytes": 81940173,
+      "model_sha256": "3dc89c4ad6594868e1bd5b5253c9b36b42d50780fec55d942e463509003e2afb"
+    },
+    {
+      "epoch": 8,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_142849_613235_train\\checkpoints\\epoch_00008.pt",
+      "sha256": "d5c65669a5e26849f84fa9cd2a84c7d6024ec8bc6830fc4bd76747ad0579a3b2",
+      "bytes": 81941197,
+      "model_sha256": "033981069c6f764448dfde8f2e84e5d58274a1c08d0b9f72b101e71e221b2480"
+    },
+    {
+      "epoch": 9,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_142849_613235_train\\checkpoints\\epoch_00009.pt",
+      "sha256": "7e2729819403fcee3d097ff1f0d5b30a19680c6ce8565f4ff3adda2c507a3ff2",
+      "bytes": 81942221,
+      "model_sha256": "8f45276f6c75535b2fc466b58944a4b3ee134a0fab6aab65d442ea07739583e2"
+    },
+    {
+      "epoch": 10,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_142849_613235_train\\checkpoints\\epoch_00010.pt",
+      "sha256": "3db9648d8b82ff2a5758d93f92c674fc147fb42515ae5daa5e6b39e038a460a9",
+      "bytes": 81943181,
+      "model_sha256": "5fa41dfd7765ff4739c5f456f127348fc2d8f32f7f0ad8bb6a78e74e8c879f5b"
+    },
+    {
+      "epoch": 11,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00011.pt",
+      "sha256": "3acf8d2a30f250df1b70355ee362eff558213cdad64df9722a59a0f1cac99079",
+      "bytes": 81944781,
+      "model_sha256": "be7bc6b43b149180654ffe359e49ae906bd4ee325cd8e6871c89aff2a3862aa7"
+    },
+    {
+      "epoch": 12,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00012.pt",
+      "sha256": "5bc8013875c8dd9274ca3c88099de63b72d7645d574641eef664df66b40c479a",
+      "bytes": 81945741,
+      "model_sha256": "50fbb7c8a7f0810a7d112ed40b38aff8840c716329eadc122c8ce19258812f67"
+    },
+    {
+      "epoch": 13,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00013.pt",
+      "sha256": "2495e2614fa40eaf349f42026e2ee26465cc5e257e55f2dde5ce9fdf08c42adc",
+      "bytes": 81946765,
+      "model_sha256": "133c3f088a2e947280a31a8feb371ceebd861d2f81f49c8a3149a4cccdd2f66d"
+    },
+    {
+      "epoch": 14,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00014.pt",
+      "sha256": "7dd03bd769fdb7e870be9d00b0c3e65c4ba0bef82023a97d27875ec43d2dc895",
+      "bytes": 81947789,
+      "model_sha256": "05e2023bfa57041247803b053329d632198f11da672d377c8cd2a0146fd74285"
+    },
+    {
+      "epoch": 15,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00015.pt",
+      "sha256": "817a3c56e53c55c06fdd57ec4d25f9a32c20f1668de2b5436f567e1fabaa12f1",
+      "bytes": 81948813,
+      "model_sha256": "090fb536f82652fa96bd3ec67149b6e9f171979b956ae3e56fd52944158b9caa"
+    },
+    {
+      "epoch": 16,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00016.pt",
+      "sha256": "f3ddd90b62d8bc46cc6c96efc9596f8bcb9efad8c14ec7e5178a35a0f8be0a53",
+      "bytes": 81949773,
+      "model_sha256": "b4233966382f4c6a402987b9d8f03af67b1816d393c0334c95b2eab494d60f4a"
+    },
+    {
+      "epoch": 17,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00017.pt",
+      "sha256": "4e950460403dde14fddb558b6e4851e59c1c37cedd979a82f98dfab4227878a4",
+      "bytes": 81950797,
+      "model_sha256": "611cf0f483c856748864f37792d7d55bbd167132ed9e834da2348945c5fb4136"
+    },
+    {
+      "epoch": 18,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00018.pt",
+      "sha256": "0439fefb30ab46c469ba48bec97545ab27f591c86d4426b4338d63a7079709a5",
+      "bytes": 81951821,
+      "model_sha256": "4567753b4e6d86e8815ffd26c21b436d00016abff7f6e0a86517401c72270443"
+    },
+    {
+      "epoch": 19,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00019.pt",
+      "sha256": "47839304832dd369fa0aa847dc67ac5dcfa0bf8ef2d616e28be7e57d02999ca8",
+      "bytes": 81952845,
+      "model_sha256": "d426a21c324d7c5ebaa4e063f21d19bbc862b64ceae9baa649bc7218ec2e3988"
+    },
+    {
+      "epoch": 20,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_145900_136673_train\\checkpoints\\epoch_00020.pt",
+      "sha256": "54244458ac665013f92e38667e9e1a74bcff73c5389589242e3f8ab68dff115e",
+      "bytes": 81953805,
+      "model_sha256": "a5d5b886f7c0f5f955c8f3b6c7173ddf9f94ccf8ab204d35e1e35dacd642b480"
+    },
+    {
+      "epoch": 21,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00021.pt",
+      "sha256": "249c71ab09f3aa99360fb0a59a38f6cb16d60ef41e24427e238d9fb58ac3e82f",
+      "bytes": 81955405,
+      "model_sha256": "6859f4a770b174453e3435936273b71dfecc29c0e92ce8e1f3372a07171e8c83"
+    },
+    {
+      "epoch": 22,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00022.pt",
+      "sha256": "7fad1e87fa725d846f4ffb7197d4ebca12c2908e0d8ed1ad9dae8e8d1de2edb6",
+      "bytes": 81956429,
+      "model_sha256": "c33e73a4a8fff4e8194dbaf9da398f4c4ed37cf5fcd93a341dcaeb5eaf186bb5"
+    },
+    {
+      "epoch": 23,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00023.pt",
+      "sha256": "661e5e717270b5ef9d1278709521ecd673880faa499d47d5080bf58f36e5490f",
+      "bytes": 81957389,
+      "model_sha256": "dde8572eba6605e544f7491765b784d756adea00c6c2e82e58e3eb0cf961f407"
+    },
+    {
+      "epoch": 24,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00024.pt",
+      "sha256": "94710232cd0f510f70f030acad817f990895c27fb4d5987a536d7f15914e8f6d",
+      "bytes": 81958413,
+      "model_sha256": "7c2ea75793b24bf6a4f0b23434cc7b8e015e22657b76ea524f21058da92e40d3"
+    },
+    {
+      "epoch": 25,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00025.pt",
+      "sha256": "f63d691f8b46148fbb9f3d4e9896a1cc05c0a8610e8558ceb4294e0843eacfbd",
+      "bytes": 81959437,
+      "model_sha256": "38dae8879a656ce7b08740bcdfb0448789bf0fb68f4160c77ddda086a95250a2"
+    },
+    {
+      "epoch": 26,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00026.pt",
+      "sha256": "956116e78284f7d8458c7862b5cf87dd0914a7a6d30d43cb21562dc89377268c",
+      "bytes": 81960461,
+      "model_sha256": "893053f5bcc5e3462004d19f53cd682ba19519a543fc26f60e5b7f8ecaac71e5"
+    },
+    {
+      "epoch": 27,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00027.pt",
+      "sha256": "b364d93659f76ced1bc87f8b34865eed05f2ff690e358c7b95aa7837a128bf37",
+      "bytes": 81961421,
+      "model_sha256": "2b6564d87b2a52eae811212122409a155084b221d3f74c54a4b07eda5553753b"
+    },
+    {
+      "epoch": 28,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00028.pt",
+      "sha256": "3ebe8bef3e3422be655c25587223b9b4925a460ce0b8a1621760f70405fc3b82",
+      "bytes": 81962445,
+      "model_sha256": "7b9f58170e5d772083b1d409846e8adf30a1752d0daccc4ca62b2030b9594f75"
+    },
+    {
+      "epoch": 29,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00029.pt",
+      "sha256": "982fb1403b8c1bfd9ffbc10a54ec37942357b4798c9d9ee2a97b0f08772eae95",
+      "bytes": 81963469,
+      "model_sha256": "54fa0651b641acd3a899930fe7c3c5a4817ae549e40b269886f27ef9b8226317"
+    },
+    {
+      "epoch": 30,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_155614_099647_train\\checkpoints\\epoch_00030.pt",
+      "sha256": "ac54ee898984c78ac96296a846470d783ce6a55241bf3574f0a950f0b0fe20e6",
+      "bytes": 81964493,
+      "model_sha256": "5a85f942088c30a956d3f9c8c8d74d48da29eb58041c1fb04f5227023eb6fe93"
+    },
+    {
+      "epoch": 31,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00031.pt",
+      "sha256": "77fe22227f98141c3b625aa1a50e32be04a9b7acb29f91d9615a961cc4190c89",
+      "bytes": 81966029,
+      "model_sha256": "4beb455453a59d10608347309cc6da5dab56c2e272ce09a344ec55589dc914bf"
+    },
+    {
+      "epoch": 32,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00032.pt",
+      "sha256": "eba93f178d788790b03520e4e64bf1e1a8b06bf78e30c17b270f36fd204ee072",
+      "bytes": 81967053,
+      "model_sha256": "6ffee93526a2cb3d32c79e00e5990588b5b59bccf3869f3547f12196047986eb"
+    },
+    {
+      "epoch": 33,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00033.pt",
+      "sha256": "ec930e62f0f95873193b8476207f2696ae0b72a041f0ec7648f633c49799c94d",
+      "bytes": 81968077,
+      "model_sha256": "89f4b3f9dd181fb7cf202c97082b41f425ebede63b06cbb0d4718ff8ad208f16"
+    },
+    {
+      "epoch": 34,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00034.pt",
+      "sha256": "393bd29f472b5884af5085fb83f9cc8988b6734017b67ab47c978fead7225fff",
+      "bytes": 81969037,
+      "model_sha256": "ed0f08a1a47fd1bf6af061370dcba618b3eed0f969184db6bdcb80b8259e7471"
+    },
+    {
+      "epoch": 35,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00035.pt",
+      "sha256": "93dc97818ace15c2915c185bd8db29a285ea87d52fc60d4bdc68a027b9990abe",
+      "bytes": 81970061,
+      "model_sha256": "b79f93160f4f19b68a520479a57d243262c0f8201169e834ee7622cb8d26bca0"
+    },
+    {
+      "epoch": 36,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00036.pt",
+      "sha256": "cc1c4bc2cea40f4725ed10e285f129cae0de1ba2fe0532170859821ef118915c",
+      "bytes": 81971085,
+      "model_sha256": "f2d56aa40eb2eadbb1ab9c9671487f3bb3ad204e0a6e874d7278bca1c489263d"
+    },
+    {
+      "epoch": 37,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00037.pt",
+      "sha256": "8e139ccc62ba4989f26b8ccaa5f847ac6f1f1e01ab74b2d8c0570fadcf9289cd",
+      "bytes": 81972109,
+      "model_sha256": "9e353100429a10e355ccd46300355c2925e1a5a87518f107784d0a3ebdd1db76"
+    },
+    {
+      "epoch": 38,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00038.pt",
+      "sha256": "27448421507c0b57ef4499e36f2b92620ed39d86243b444dfe35cd192e5df517",
+      "bytes": 81973069,
+      "model_sha256": "6f7fc58eea10052749f3ad3df645457974207a877c0fab20617f821ea1fd5650"
+    },
+    {
+      "epoch": 39,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00039.pt",
+      "sha256": "24288efa807b30b5d07fc4f420fa3260f723375fb28d63485ed1c05184a3eb80",
+      "bytes": 81974093,
+      "model_sha256": "e6eff2d1788eb2bc47696f21268cda8bc1979bca854d1c6d06cfbcaac0225f82"
+    },
+    {
+      "epoch": 40,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_164811_591234_train\\checkpoints\\epoch_00040.pt",
+      "sha256": "d0bd837504dd22fd17361f551318cc1673ba76dfaeb8971704064345dd18e834",
+      "bytes": 81975117,
+      "model_sha256": "a27253821fe3acd7cb8f607a88a3c006ddf4cea49b9ef24392aaafe7131fd28f"
+    },
+    {
+      "epoch": 41,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00041.pt",
+      "sha256": "232eb9d3c3534e02e0651e052511875bade6d90ec7966e5e721844a2fbaddebe",
+      "bytes": 81976653,
+      "model_sha256": "e07b63c4517fd16e88f5bc02b73c6216bc301a3d6dd3c70c62441ef84a19f981"
+    },
+    {
+      "epoch": 42,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00042.pt",
+      "sha256": "864dbd6bcdfb8d84202ba7bd8b6c8f96b61c5281ed620fb680cf0392e6550686",
+      "bytes": 81977677,
+      "model_sha256": "32c9a58c369e73a470129b24d6a84e5d9baf86d2138231bb6a6961d7574d9bda"
+    },
+    {
+      "epoch": 43,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00043.pt",
+      "sha256": "1b388011f215f8e358ed9e74ec0e554634103a5d48238e7cd8203c381c4949cc",
+      "bytes": 81978701,
+      "model_sha256": "4541259ac2e9a7a9bad7596ba7ccd9e51188125ff850e7e7947812ec59dbd699"
+    },
+    {
+      "epoch": 44,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00044.pt",
+      "sha256": "a9f842d14561979bbd6858146cb1fad62d56375ef5de14563b4b7631a199a475",
+      "bytes": 81979725,
+      "model_sha256": "c1e28ae8bd5e15b33a4ac2adb4218b348e25872ede973932eaf43b522a8d031f"
+    },
+    {
+      "epoch": 45,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00045.pt",
+      "sha256": "1809b02cc4c4e23d87d51884f242b36463309f9368df8e75dde6f0334e4df4bc",
+      "bytes": 81980685,
+      "model_sha256": "8ea1163e2d6ecf4f3f4cc2ae4547771c67a5d9e460fcac9bcc330163936f6f41"
+    },
+    {
+      "epoch": 46,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00046.pt",
+      "sha256": "c15d1cd36f05c160f93343cb9c533c9ba08a1fbe7a3d5b5c9f0068c14e736fc8",
+      "bytes": 81981709,
+      "model_sha256": "153c19c616149c759450b49447db3c49326cb98584bf50e88680bce037c5c8f9"
+    },
+    {
+      "epoch": 47,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00047.pt",
+      "sha256": "f13d65a197c58e134c9231d6989082357cd5e7da9bc37d47897b04fd5ab24fd1",
+      "bytes": 81982733,
+      "model_sha256": "e6b7f792b1d6c8ea385b3eae1d3d7e7b7652048f1c210351e37b47debf91fbc2"
+    },
+    {
+      "epoch": 48,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00048.pt",
+      "sha256": "5523f318eed37af4530c508e104e9fe949b43355580a531a4e0460cd7cbc4c78",
+      "bytes": 81983757,
+      "model_sha256": "f7362de215f71aaa36b314d7d26922e8d6b72cd2f9e11cd0b1ecbba745613437"
+    },
+    {
+      "epoch": 49,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00049.pt",
+      "sha256": "5647cd05ee024f4658be81ad0ac5720cc94b3d22e8cba928e6f3ddc1bbae5f57",
+      "bytes": 81984717,
+      "model_sha256": "3c761e2a7a864de1c6ed07f1555d4feaeb7534c86bdf8a82a715926788940aa2"
+    },
+    {
+      "epoch": 50,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_174459_864696_train\\checkpoints\\epoch_00050.pt",
+      "sha256": "1da9bb2fa96c83e86e998338744d241b4e9e8788905178a096b5587af93c6c54",
+      "bytes": 81985741,
+      "model_sha256": "36eb1411b1fe63d589c912309c970ea9312978a886f5a2509220e06a2191d07e"
+    },
+    {
+      "epoch": 51,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00051.pt",
+      "sha256": "d1d83ccec32b8eb2dd9284a0c2638fb69f4d51ffe0154ebec37c332ce93a0afe",
+      "bytes": 81987341,
+      "model_sha256": "004bd40eab35537877a0cdc02b927ff8974f0ffb089cb2eea0064c3621dad786"
+    },
+    {
+      "epoch": 52,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00052.pt",
+      "sha256": "096b4e15f24a046a71d434b2b04d4937faacfb44ff6bbcb6f420aee3d16e9666",
+      "bytes": 81988301,
+      "model_sha256": "19ef0c5303dc184a672063e43b01b6ffacfd5be4b38ecc1548b5c1d469dd0b0b"
+    },
+    {
+      "epoch": 53,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00053.pt",
+      "sha256": "80ffa344aa701763a07face0dc70639ed26fabc69c116c1ed1ba6d5b9301f0f2",
+      "bytes": 81989325,
+      "model_sha256": "7da2035b9d08b43ac52aab4bce98c6a8148182add509e465d5590c98dabd2886"
+    },
+    {
+      "epoch": 54,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00054.pt",
+      "sha256": "63de4c8d38e2b721abd662b3e5bc424ff80083875258afea430bb1cc98b6ddfd",
+      "bytes": 81990349,
+      "model_sha256": "0d84a1032574396c1daa014171faebaa114383515166dd12af749a3c8854f91c"
+    },
+    {
+      "epoch": 55,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00055.pt",
+      "sha256": "a235d3c5833236c4985c2f2a75464864cf289ac5525951fc8735cd4715a430eb",
+      "bytes": 81991373,
+      "model_sha256": "39c4d0325581e8924cdeb73db5ba87c3c24eb046b0f62bdc9f33183103c3aadf"
+    },
+    {
+      "epoch": 56,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00056.pt",
+      "sha256": "bb178234d79fe241a3c441ebb895e6ba7c9b3dbcaabd7c27d7900d57eeaaaa22",
+      "bytes": 81992333,
+      "model_sha256": "59a78f752286edfd74e9ec2162f1829f899cddf53a49764f48de409d633994c5"
+    },
+    {
+      "epoch": 57,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00057.pt",
+      "sha256": "9288669646ba76df66d42552ea53b743c24118977cba76794d9e4ed36d988145",
+      "bytes": 81993357,
+      "model_sha256": "f9deff3859ed45cedf6f7047e1aa0d025756e1bdec2094923403078025217674"
+    },
+    {
+      "epoch": 58,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00058.pt",
+      "sha256": "3d295dd0d3249bddf833854eca52d4a090cc4bcdae06ad9e2a076a7de36e8ffe",
+      "bytes": 81994381,
+      "model_sha256": "8df20ba733633f5fe47ec02ab1049d86ab0cfef245c01da01c5cedb6a20ac1fe"
+    },
+    {
+      "epoch": 59,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00059.pt",
+      "sha256": "ccdf768bf7be3f2fb415c060b735793f36e25c9ae6a086cfed55ade36ba757d1",
+      "bytes": 81995405,
+      "model_sha256": "fd2971487c4104363e96e5701ac136fe37a444fa5e83b07d3ee28136f98404e5"
+    },
+    {
+      "epoch": 60,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_185516_173595_train\\checkpoints\\epoch_00060.pt",
+      "sha256": "c251abef7d413dfd1ff2415d5acee9caf1ba21b3acccbe2d8952b024ffac6a03",
+      "bytes": 81996429,
+      "model_sha256": "6d6e6ef43ae5f79497883934878a43febbf1cf511b8e5bd337da2b2dfab9e89d"
+    },
+    {
+      "epoch": 61,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00061.pt",
+      "sha256": "06a1c6a96a563c8a11a6032b7b6119ad33504e60f43c5931bd857abcf51bcc5d",
+      "bytes": 81997965,
+      "model_sha256": "ef12b8b20d523d8d7a81fa6c8a89f9f717bc1185771fb7c92013fe5791d9cacd"
+    },
+    {
+      "epoch": 62,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00062.pt",
+      "sha256": "e0678178c70d46551433348b2c6619c5304ac4eaeeb5914c2bf253a403b32bdf",
+      "bytes": 81998989,
+      "model_sha256": "520144e348b32fe45ece1e1d7b0a996cf0ead67d58337b0b1e9e53a010361f3e"
+    },
+    {
+      "epoch": 63,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00063.pt",
+      "sha256": "daa455e8ad6d04d03289b8e635ffb2fc987a24bbe891e078b02ad9216ffb9c12",
+      "bytes": 81999949,
+      "model_sha256": "26ba5234517bdd4566e9b9964e769fcfcd571102c81086e50cc1fa2fd9009303"
+    },
+    {
+      "epoch": 64,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00064.pt",
+      "sha256": "470896e4e1d4b30d8b5d63268f71d92d08cbb4aa3c36346291a0c05d46c99fd0",
+      "bytes": 82000973,
+      "model_sha256": "14518a40bc9f0fa2fd56c26c505417c8853c66a02fd62335c40aba07c911f2e8"
+    },
+    {
+      "epoch": 65,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00065.pt",
+      "sha256": "925615ceb8a9d93f582d2d5b43f09845d02ccc0b1f4c3a441ac65871a07a18d9",
+      "bytes": 82001997,
+      "model_sha256": "aac9d9208239fda5eeec31f38b1152d5378b6dff5f2f6be99d5a855a699a0362"
+    },
+    {
+      "epoch": 66,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00066.pt",
+      "sha256": "fb786363734462f80e71b267e245361c8f2371f989378f75fa6f1c4770016690",
+      "bytes": 82003021,
+      "model_sha256": "29c92224316c38e661eeebc80aa60cd3c11d9da58aff6d7c203b23b378deb387"
+    },
+    {
+      "epoch": 67,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00067.pt",
+      "sha256": "1fad4b7cc2fa74c0278c3e11c2264324a266c8b0eb53b9f5c5e6cb6d13d75222",
+      "bytes": 82004045,
+      "model_sha256": "622002ab5b6372eea1a89728711b64ed51462e0bd2a604f43b57895b54af7b3e"
+    },
+    {
+      "epoch": 68,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00068.pt",
+      "sha256": "91884a439554f105503de46bbe050b022ea3b6bedf72e1e7aacc22c5f837ee4e",
+      "bytes": 82005005,
+      "model_sha256": "dead05964367ee80fb0bc2a12f063f6056104c295e8bf569f50bbf319ea85115"
+    },
+    {
+      "epoch": 69,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00069.pt",
+      "sha256": "a426d890f6030ebeac50da434328fb0b02f8ace83941dbc95cc55f1905fdca7a",
+      "bytes": 82006029,
+      "model_sha256": "515cfe02a7ddd5e262b768e00366404bbb24ba7b83ed89ffe34b0fe359bc8a6d"
+    },
+    {
+      "epoch": 70,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_195034_826511_train\\checkpoints\\epoch_00070.pt",
+      "sha256": "206e2ccf581a1e07ecb3450051c7b9b8725f6d9b5d28041e98dec6c0874a0649",
+      "bytes": 82007053,
+      "model_sha256": "fb25d9fd912945717dbfd23ef6fd99a1594fe3439e951e6fe9bb16f09ecab7c3"
+    },
+    {
+      "epoch": 71,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00071.pt",
+      "sha256": "32f31e9498bb8dcc96c79c5c4b6efcf6f8d3a0ef729672bfd5a88840c511406b",
+      "bytes": 82008589,
+      "model_sha256": "8581a31f8803693c5439bfc385a177dead3806981d8e76fffd59e9095a00ab70"
+    },
+    {
+      "epoch": 72,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00072.pt",
+      "sha256": "af2031910f72380ebb923899e3c86d4599412d8bce624bdb1d31c13d7deec2f1",
+      "bytes": 82009613,
+      "model_sha256": "5e9736d53fa54158f3aa3ec5947869405ee75a58e6050dec2f9ee46ff567ef13"
+    },
+    {
+      "epoch": 73,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00073.pt",
+      "sha256": "6900f4e7a15ccf9af7a821ecdf546bb6db036fcea8d2de240e5cd592a39ab17c",
+      "bytes": 82010637,
+      "model_sha256": "755ea2b19418ab0256066fc353c2137b9763bed468cd23f7cedb48ef8b7af958"
+    },
+    {
+      "epoch": 74,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00074.pt",
+      "sha256": "812e1bc6bb0463f364e0b94d9cb22adf8104e3199c2bc87f79662c3c340ac3b2",
+      "bytes": 82011597,
+      "model_sha256": "3a69e36d0273b4ed932859fdcd12399a865e23d3c8e9ec507bc0d41e4971cf0f"
+    },
+    {
+      "epoch": 75,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00075.pt",
+      "sha256": "7e0eb59a07ba9f1552629b8ac4d74adb46caebf907c295cd73c5e40de0f262d2",
+      "bytes": 82012621,
+      "model_sha256": "88c96ccf52b6f8d84c8a1380b816382119ecc60dc4b535e3b8dcb48f539615f6"
+    },
+    {
+      "epoch": 76,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00076.pt",
+      "sha256": "9962cb20dd1a370915d849285b8640df815af50935e460d090fb131a084413f8",
+      "bytes": 82013645,
+      "model_sha256": "ba592ab13d46d4cc90477626fa3d5c9b648b05717bb384ad4bb9175d2d6e2d91"
+    },
+    {
+      "epoch": 77,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00077.pt",
+      "sha256": "a4ca94951dd8ef619c6972d1bd726496ed5815735c6b6a7d71a97dc2dd3bb90e",
+      "bytes": 82014669,
+      "model_sha256": "bbb75e70ae1d5a9fc56d485f2af7bbf1205a3f01e2364a94331bc74a7ccea731"
+    },
+    {
+      "epoch": 78,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00078.pt",
+      "sha256": "f3ad4d234b614a8af6743fbe63da861ceedeb1cc4bd0d6ce6e676007da3914f1",
+      "bytes": 82015693,
+      "model_sha256": "a74ee7efb95d90e950565ccb876d7deaed0dfcb410e3371d79640ecd726e913c"
+    },
+    {
+      "epoch": 79,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00079.pt",
+      "sha256": "6ba6f97d3413aba90f2f55e487e88927f99c8b9b09df5398e1c0d6efa0bcaddc",
+      "bytes": 82016653,
+      "model_sha256": "82ebbe08e9af6192cdfbb819eef021a9b419b16d5a65b01ac7122540e03f3451"
+    },
+    {
+      "epoch": 80,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261010_204522_924906_train\\checkpoints\\epoch_00080.pt",
+      "sha256": "ff6f50ce7ac3d3c30472265dced8a6e849826b3ee8dc5530ffee70b369964c5e",
+      "bytes": 82017677,
+      "model_sha256": "aefea865b6791995a64a1b8ab0b556cf41166aac7163fb3e8f3b48202228dae1"
+    },
+    {
+      "epoch": 81,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00081.pt",
+      "sha256": "db2a2193e595335bf0eb078acd0bc3a8d2449c3b57e103062d307596688a279c",
+      "bytes": 82019213,
+      "model_sha256": "beef5d547585d7ecddd84da2798c212e8b70b7ffc32d6dea5936c6f0c3411c32"
+    },
+    {
+      "epoch": 82,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00082.pt",
+      "sha256": "ff86d10711fa3ddac7c3bf59ee418aea786fbac616ed8f96f5b39fde1a0e41fb",
+      "bytes": 82020237,
+      "model_sha256": "ae6b0b41aed0e1956ca73cb074c495a5a5871cc001bfafae93adfadb202b0ba0"
+    },
+    {
+      "epoch": 83,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00083.pt",
+      "sha256": "6f7e81880e63a4b4b0a3606143158222d548fae6efbe59e884b37ee06ee81c17",
+      "bytes": 82021261,
+      "model_sha256": "61a81e7a23a45d49d201faffa17e060860eca30b46ce2d84a093f70003efedf0"
+    },
+    {
+      "epoch": 84,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00084.pt",
+      "sha256": "cab7dddf1358740cfbc4b9c06e49600fc0e418e72d97069829539e11f5ec9b42",
+      "bytes": 82022285,
+      "model_sha256": "d71eacb3ef190317c846636ae28bf3058a88edbbf5a5937dcd8a6be99bdabeca"
+    },
+    {
+      "epoch": 85,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00085.pt",
+      "sha256": "edc72a02353ee75516472f35b70e308e5bb55bb74885e99b2a7c7279fd792323",
+      "bytes": 82023309,
+      "model_sha256": "e9b57099b1a7e3bc7e5586ba6ce3793185dbd50c77eb9534e331d12fbf461265"
+    },
+    {
+      "epoch": 86,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00086.pt",
+      "sha256": "f818cd0bbfae0b44e1a1d53fc058d32ce65ab712f8e6aa4050159aab6cb7e279",
+      "bytes": 82024269,
+      "model_sha256": "743972538cad7a1cecbc2384bdb24ba9d684e0c665eb2f0689310ce317627327"
+    },
+    {
+      "epoch": 87,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00087.pt",
+      "sha256": "c92967478994349316e5e6112e6a98d049a7407aeb4a38175acc399bf24d57fa",
+      "bytes": 82025293,
+      "model_sha256": "c0e9b1e181bdbc2d7a02f9ab690e640d63d6dcf3c20ad6740687fc1f24875c48"
+    },
+    {
+      "epoch": 88,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00088.pt",
+      "sha256": "a8f16300f5c21f00385ed0482e30ac5126de56ef65a4d511193389fb6f9deecf",
+      "bytes": 82026317,
+      "model_sha256": "fd6c39fae81f17a870f420023f112c2355adb3a53edd79aad6d4a727ce8d5dfb"
+    },
+    {
+      "epoch": 89,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00089.pt",
+      "sha256": "6fdd4190414ab5458e1d2a20ce87771a28f54aa4183cb2237304c902568390b6",
+      "bytes": 82027341,
+      "model_sha256": "bac8a216ca6f78b7ab526586fa128f70338ffb6e65f397d63d4e4d9dd2d00a59"
+    },
+    {
+      "epoch": 90,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_194701_423951_train\\checkpoints\\epoch_00090.pt",
+      "sha256": "cf07cf5fffca603427b4014a8eed6f2cfd8cc44cbfbc08e5a7701e6ff5f66890",
+      "bytes": 82028301,
+      "model_sha256": "982833caba0b0471ef3eb340331082e67b585e3f1ea4d23605cfef0213252a17"
+    },
+    {
+      "epoch": 91,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00091.pt",
+      "sha256": "97fa00c953c99183f319ae15f3aa19b9a99575948625711e1c242c1c1e8eb63c",
+      "bytes": 82029901,
+      "model_sha256": "548356868427aacb298836cf173686c5d47d9a36216b0b274a95fcbf7ac4f9ce"
+    },
+    {
+      "epoch": 92,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00092.pt",
+      "sha256": "62a4badf8313c54793b52e5ad2f4d53d8b9ee8ff78eed5bdba307d749efae65f",
+      "bytes": 82030925,
+      "model_sha256": "80fb2c9fb0a4d815145cf47c41db3b38aa61e6234077f1c02476b2ec1af397fd"
+    },
+    {
+      "epoch": 93,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00093.pt",
+      "sha256": "46f53acd4c1c272d5ee0909a03776274177640f93b9d07e41536615efba0eaf7",
+      "bytes": 82031885,
+      "model_sha256": "efaea376eeaa71e87a301d97b309dfef4f8892205fac0837549606255e82981d"
+    },
+    {
+      "epoch": 94,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00094.pt",
+      "sha256": "a2cf7e6542acd3852dd92bef4bea2fbef6a36e847446cbbdfb9a9612b2b59466",
+      "bytes": 82032909,
+      "model_sha256": "54ccafc4870fe584ad19ac3b14ac825d7b879c2313bc7fd396b4e86d06930d0a"
+    },
+    {
+      "epoch": 95,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00095.pt",
+      "sha256": "0eca04f661f32006c63c3623e5d453ee50a6e31868035343e343d490ee471571",
+      "bytes": 82033933,
+      "model_sha256": "83e650a1aeaf63deed7d288c15a24ddcf0e8eb11b485563f771fbd59d846da73"
+    },
+    {
+      "epoch": 96,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00096.pt",
+      "sha256": "6bfdd9a8f6bea043033fb1f49c52785697f351f2a4d4f32c6bbd6a094c82fe11",
+      "bytes": 82034957,
+      "model_sha256": "cadcc57fdb3fff7e812aefddf4421fab5cb24c8d83aa8db669bf35ca8192f6d1"
+    },
+    {
+      "epoch": 97,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00097.pt",
+      "sha256": "7f922b7b6b7af1229876b59209bc1c1aa19889707a0d53f2b206f8c281f34e18",
+      "bytes": 82035917,
+      "model_sha256": "d940073b36db775992538fdc3ae795e76ec2dbb6859bfea9b34896395514c73b"
+    },
+    {
+      "epoch": 98,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00098.pt",
+      "sha256": "1bb7da7e9f47d933dabf84b1fe59348c8741fa1051bba44a16486e919fb4d125",
+      "bytes": 82036941,
+      "model_sha256": "9996b7f12681eaab2fa50b5b55d9591c379374caa90534287a39266d8df5ad4a"
+    },
+    {
+      "epoch": 99,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00099.pt",
+      "sha256": "0a010174a57d443ffe2f28f869879022e014a1b81061a3b8545fbb087d056205",
+      "bytes": 82037965,
+      "model_sha256": "f7b342e7279f93d11db851cd9313f4040217b59c878b5510e39f4c910e8bcf89"
+    },
+    {
+      "epoch": 100,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261011_203725_878231_train\\checkpoints\\epoch_00100.pt",
+      "sha256": "36647fbb9fec3db4fae34ea30d69508c7c2c821bf6b84b1819baf60c47669bdc",
+      "bytes": 82038989,
+      "model_sha256": "95bdf0bd99f51bb8e14d30a2fc6c7ccbe734ad3740daf760c2ff7a541a47ad02"
+    },
+    {
+      "epoch": 101,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00101.pt",
+      "sha256": "81000a3342949d4438651a56e6effbf2351762ac7f11d6a642f4488fe6a81dc0",
+      "bytes": 82040525,
+      "model_sha256": "606d493a015bb100203a6c0c31e6ec649e76d50ae5460719659993a3e3a48695"
+    },
+    {
+      "epoch": 102,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00102.pt",
+      "sha256": "fd5aac75e9221f107a91800589b4622a7f56b8862699bcfd7a1155f6892b9e1d",
+      "bytes": 82041549,
+      "model_sha256": "3c71222c2304c9e7ed39f73fdd5667c8f9d77f0ab74ebf23a7bfb663d6bff51b"
+    },
+    {
+      "epoch": 103,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00103.pt",
+      "sha256": "027731e301ce37776aaa60ae905ec50116813885a0bb24c77b6352eb4d7ccbd9",
+      "bytes": 82042573,
+      "model_sha256": "d5d6692e4cda442cf798351fd09486386df35ebd62d7c058e510dc48c15a1606"
+    },
+    {
+      "epoch": 104,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00104.pt",
+      "sha256": "668ebb015c7f1ec13643d3ab0791c1c736d3de55c64e9a4fb8cd6476840f39a9",
+      "bytes": 82043533,
+      "model_sha256": "dc773c3d3f17a89120547fec97bbffe765a34c027ec5e003b73994fa710f36a5"
+    },
+    {
+      "epoch": 105,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00105.pt",
+      "sha256": "2d41aced865eb032b5c4c6b43b349b92a203a94f98c559dca9328f9522263e37",
+      "bytes": 82044557,
+      "model_sha256": "c403dc1d3a5b7053638d19cf38e321178a4e09a380aa4c9303a12656bf94fac9"
+    },
+    {
+      "epoch": 106,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00106.pt",
+      "sha256": "01d92aac00080eb622f3b490190ec69978c8b433beb3c894145b6c3a2911cea5",
+      "bytes": 82045581,
+      "model_sha256": "86c981d0f77333ac8f7c31ddb0765eee60f675ee052ab82e63997226202d160e"
+    },
+    {
+      "epoch": 107,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00107.pt",
+      "sha256": "769c5d3accf6841f1d8cb543da182ccb8bd2457ae0faa5de4dacab6a8e5ab82d",
+      "bytes": 82046605,
+      "model_sha256": "60681f7f40dd588ebdde7f8e853cff53c8883625d285f543fcc715bca2056f5d"
+    },
+    {
+      "epoch": 108,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00108.pt",
+      "sha256": "b98ffebda27db67650ad33a489939b35ac66e993833ae0ced3bb1120336f7436",
+      "bytes": 82047565,
+      "model_sha256": "6ff57d02482503b02cf10565dd389519fa67e6a4ff6244b59b23abb25df2aac0"
+    },
+    {
+      "epoch": 109,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00109.pt",
+      "sha256": "de63037da7b231841e589a473ad9e142606ab032e6b981062fee7e799e9548dc",
+      "bytes": 82048589,
+      "model_sha256": "e22cea6efcc5d3426b9624ca1288015b079f3d6131ddf5c5bfc40d02754eaaf8"
+    },
+    {
+      "epoch": 110,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_170254_356690_train\\checkpoints\\epoch_00110.pt",
+      "sha256": "355543c7aa474b61a7c41e9afaa994ffb316c77eb1aad6fe364914cb3139438d",
+      "bytes": 82049613,
+      "model_sha256": "232874e4e35212456f4aebaa8747ce746b130560af018f576fca8637a0bb65fa"
+    },
+    {
+      "epoch": 111,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00111.pt",
+      "sha256": "0d4eabdedc9f396cdf5bfd3e19ebb5baa034daaf2a411b47fc7f3782788c4d26",
+      "bytes": 82051149,
+      "model_sha256": "f7e54cae2a907fcd616cc9dbf994570840d73659eaa95c8b98b89c0384671fd1"
+    },
+    {
+      "epoch": 112,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00112.pt",
+      "sha256": "a2fe3031d5c127aa47064b2b9864ba656d268fc611213cba2ca217ec5bea0959",
+      "bytes": 82052173,
+      "model_sha256": "0357ff23356817c158da30a3a79880e6914742d3cba4dfb757dff38e950840ef"
+    },
+    {
+      "epoch": 113,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00113.pt",
+      "sha256": "bd372d3898e5b324e868013a6fb58fe5e38931ddf5973e9542fba7e5be6a2737",
+      "bytes": 82053197,
+      "model_sha256": "914d93b215444458e0d77922142e5d53247666fae13e7ecb1a827b7698e6d00b"
+    },
+    {
+      "epoch": 114,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00114.pt",
+      "sha256": "8e7f18f4e0ccb23e579fd0295d7685df81229a0aa873ecbe675dba4ebf00bb5c",
+      "bytes": 82054221,
+      "model_sha256": "e92e3e9d2a0b753317bc2316f10d62fa18e486a0118d15fc0c021766844fb173"
+    },
+    {
+      "epoch": 115,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00115.pt",
+      "sha256": "3e6dd0eb1ea36987e84fc7925d46dee4d89c94e470b95fd743ce4deb0fba71eb",
+      "bytes": 82055181,
+      "model_sha256": "be894f633e542d076b6292cdf08c5f14d88014ab13471efc3d7ee73f216e3441"
+    },
+    {
+      "epoch": 116,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00116.pt",
+      "sha256": "739f38e8fff2105a37242c5d1426e18bb9a18906cfeb68c3d0c17c8174771fcf",
+      "bytes": 82056205,
+      "model_sha256": "407efaa43c78e512d59ad67ab9f44dd1d04a6f136150f40cfd88e97fc996b3e9"
+    },
+    {
+      "epoch": 117,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00117.pt",
+      "sha256": "3e67b9485b2ec08e06b98fdaeae79fd3a73545f851692674b61b6fcdfe8bf630",
+      "bytes": 82057229,
+      "model_sha256": "66bb84c3a5171fbaae767c29263ca1965f02b4b3383d3d2c8e6422329c93dcd0"
+    },
+    {
+      "epoch": 118,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00118.pt",
+      "sha256": "4ca4b84fbef86668e8be1c00049b9e8c068bb526bdbd2ef20929d7d30fac7d23",
+      "bytes": 82058253,
+      "model_sha256": "65f7c8e4b5152d0bbfce246dcd4ee9b74a92033ce0a85c2c76f0dcdc7a5f2aa8"
+    },
+    {
+      "epoch": 119,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00119.pt",
+      "sha256": "c2e9dcf1248e311a8e76768467d5da760afd38394fe9da03c8c317495a904924",
+      "bytes": 82059213,
+      "model_sha256": "8d2fbc059b74a2a341db05d378436a5b5d50299d491236d11bc89c22840fa10b"
+    },
+    {
+      "epoch": 120,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_175620_873939_train\\checkpoints\\epoch_00120.pt",
+      "sha256": "5f99779d1b912de308ce60c51615d92702e008b2dd51db17887c21e7c168c6f9",
+      "bytes": 82060237,
+      "model_sha256": "2bfff95c3796aeee8363e5e781a91c37a2646dc6aefcdc2cab1023542b6bbba6"
+    },
+    {
+      "epoch": 121,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00121.pt",
+      "sha256": "6c9f2726ae44d6427801b73db44362cfd80527f0319b3ef74d956a027fff6456",
+      "bytes": 82061837,
+      "model_sha256": "f885026c0a7e28cba64911c39b537a1290b34bf0737b5a796c6483b1de384d0f"
+    },
+    {
+      "epoch": 122,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00122.pt",
+      "sha256": "b34ffa7e0ccbfb086f6b9b31e8c688cf6d3094e998068657cec7d928a314d42f",
+      "bytes": 82062797,
+      "model_sha256": "9032b1b0615b41003d5836428cd813a7976e2cbe183750d373d179b05dc624df"
+    },
+    {
+      "epoch": 123,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00123.pt",
+      "sha256": "19aaee4ef604623fa1b3a6dfb677fe136b11e8a3d8cc30ee33ee6b1a3236b2c4",
+      "bytes": 82063821,
+      "model_sha256": "a2d129621aacace23dc8a8f6d4c177c58bb817a3978c0b35501e85b06c44d67c"
+    },
+    {
+      "epoch": 124,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00124.pt",
+      "sha256": "fcbc42a7895031feb6ba62e0598f4ecf6e4f100db8745bee735196a335c2279e",
+      "bytes": 82064845,
+      "model_sha256": "486f4947016bccf5dbf1a99ed1fcbad7235d539ba46b7bd0a1e2e5b5137ce2b1"
+    },
+    {
+      "epoch": 125,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00125.pt",
+      "sha256": "a57014f37cd905489300c699827f53bff3f8243d4e1259513b30da7de78ddd8c",
+      "bytes": 82065869,
+      "model_sha256": "bd3752c63794f48746b46bc9adf6b3bc616fca873559bfbda1d935684d7ada8a"
+    },
+    {
+      "epoch": 126,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00126.pt",
+      "sha256": "5b14ba162a5a59b07506a96df343efb3a24c428592e143a174ecbee2f2954a96",
+      "bytes": 82066829,
+      "model_sha256": "925c6e6ea145108326e90f059305478b9ecffc745e241593dbb1652b73fcde6a"
+    },
+    {
+      "epoch": 127,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00127.pt",
+      "sha256": "a1fa9a43c10f43c406be65e9174703fa2f08578b8490eb8b93c9736fc5142b2a",
+      "bytes": 82067853,
+      "model_sha256": "3ecaa31a9853d11e1aedc6b76c23482fc37c9b2bb24cfad758a9382add5acd87"
+    },
+    {
+      "epoch": 128,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00128.pt",
+      "sha256": "851026aafb7d6c4514e09b8c382618327c053e2c34bee45fae550aca8c16c99e",
+      "bytes": 82068877,
+      "model_sha256": "690172ab177afca1bccd2cbc0e0843030d58f7a63b6e4ecb03c99072868cd737"
+    },
+    {
+      "epoch": 129,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00129.pt",
+      "sha256": "b3e8c63c09cbd7874fe17d20ba5ddee296ad1f6aeffb3fc88685fe4af506c99b",
+      "bytes": 82069901,
+      "model_sha256": "11e0711d14bf9843400fd218428822221b3b3a567905617493b5f2e0c36b329a"
+    },
+    {
+      "epoch": 130,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_190330_389408_train\\checkpoints\\epoch_00130.pt",
+      "sha256": "6896fa690c0f5504e79ae88918e25b518ba1fd079ffd0b36a6aca6613e7f8529",
+      "bytes": 82070861,
+      "model_sha256": "f30aaa95fb413dd9bea2162fe0badf7af421803a50389ed41d9dbadda6e0edca"
+    },
+    {
+      "epoch": 131,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00131.pt",
+      "sha256": "05b6cd1abc1a0f6d04188d6975dae69bf918933df57ed4f491e3c7279abec1c7",
+      "bytes": 82072461,
+      "model_sha256": "f4e3b758002657190d90d7d52996401dd7b6192ee3673bb0028644dff39530aa"
+    },
+    {
+      "epoch": 132,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00132.pt",
+      "sha256": "ab24adfa34786aec274b64bf694b5125281878c79c40cc3961d275adcf435092",
+      "bytes": 82073485,
+      "model_sha256": "185797a20d49cc1bb3e0e2f6df16fcae32d840865b4594dd88b0654b7aa0b421"
+    },
+    {
+      "epoch": 133,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00133.pt",
+      "sha256": "1423d0be72daab0cb50efc47d94826fa7db4d6f906cb8545ff52a417576fd7fb",
+      "bytes": 82074445,
+      "model_sha256": "820867cba0d994024050780ea71ab65d35578a064877b3484a40bc0095d4f01d"
+    },
+    {
+      "epoch": 134,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00134.pt",
+      "sha256": "f041c9bad368e9f7f01d96de64232be7def7286eb0634afd93055c9482ac03eb",
+      "bytes": 82075469,
+      "model_sha256": "2b4c063e0fc4d42d3f1b11bf4c0991aa8eb9f81f289e9b0179622262c7811a64"
+    },
+    {
+      "epoch": 135,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00135.pt",
+      "sha256": "44098e89369f37c63de49062f7b5ad7a911bc223bd4d3f238e3ed6f16fc97f8e",
+      "bytes": 82076493,
+      "model_sha256": "06b696c09079f330b80a9505746de690bc7d7b2475114d6c8f2afee082bb483c"
+    },
+    {
+      "epoch": 136,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00136.pt",
+      "sha256": "3023e986a427c1a57d48af1107f69f8f9e21cd13755e1f7274651235839b9718",
+      "bytes": 82077517,
+      "model_sha256": "504a3b988a4ca16d23d6723ae4f9f8c51dd51f28ce0d33531c0385a0781492a5"
+    },
+    {
+      "epoch": 137,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00137.pt",
+      "sha256": "eaa19dd69d5bc1d9dcf14fc8a07ddfbc232d9efba92c26e55502c2cd7d86fef2",
+      "bytes": 82078477,
+      "model_sha256": "644a138010091c19773c1f15dc43be0ce14dabea06e8845179a25a1aa428108d"
+    },
+    {
+      "epoch": 138,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00138.pt",
+      "sha256": "275c14ff4847498d7bdf0cf43ca3d18d359e289b04c4afef7eeea3be8a96e82f",
+      "bytes": 82079501,
+      "model_sha256": "688f7b19cf970f2e72300f38264eb177943419d4e86861e29dcd2d0abc95bfab"
+    },
+    {
+      "epoch": 139,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00139.pt",
+      "sha256": "13ff7836f079c5a8538262208e775df92c9e8e85b495124d7f2e698922af5cc5",
+      "bytes": 82080525,
+      "model_sha256": "544562ed4eaff439b19225088e0fb8353766fb5a51f72f09b9debeb82fa10a8b"
+    },
+    {
+      "epoch": 140,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_195005_680075_train\\checkpoints\\epoch_00140.pt",
+      "sha256": "232d89a9b3b2af4e60deb0aeb12570cb717755a6bd3f0c72b6ccc78372d29985",
+      "bytes": 82081549,
+      "model_sha256": "d31ca505155c65a1d92f91c8b5e3190d9d7801368f3cf567915c5caa99ca6245"
+    },
+    {
+      "epoch": 141,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00141.pt",
+      "sha256": "7df9b1de19818bbb5647cb51fef8882875ff46d51896ad7fc365d0a2d27d8b89",
+      "bytes": 82083085,
+      "model_sha256": "6390934fba136dd77970143b9ff8033b914f63badcc9c30fa19e5ef9a944781e"
+    },
+    {
+      "epoch": 142,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00142.pt",
+      "sha256": "b0919a9a2d6eb202e6a9c1f9dc44d97e461292830c8130fc95fed7521035f774",
+      "bytes": 82084109,
+      "model_sha256": "60a0d5280dee9fb4b04444df6907d5533613eaea443f10697a585777cac92dc5"
+    },
+    {
+      "epoch": 143,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00143.pt",
+      "sha256": "886dff82fcae174f53b4e6b820a4b6534e58b129c1e427e7bb9be3042bf8f051",
+      "bytes": 82085133,
+      "model_sha256": "6cb3410381da77c33e27cc0138ebaf0f6ead7fa5b2c43802b92af3bc3359bc10"
+    },
+    {
+      "epoch": 144,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00144.pt",
+      "sha256": "6ddd2c8eca1ce9a41e660721f312ff0982e64b13d9ec6c5674a98566d1ea0877",
+      "bytes": 82086093,
+      "model_sha256": "21d5a8b4000411774991052001ecacd7fbe9ee841201ef37f227558add222cc6"
+    },
+    {
+      "epoch": 145,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00145.pt",
+      "sha256": "7fa3806169e95adaf13cfc4ab40f8de2baea6b81e6268f63b09a99e25edadaff",
+      "bytes": 82087117,
+      "model_sha256": "08e67b40765173b7202f15d8ccb5a33f4b31d1d0876c256ec72f66f6515b66ec"
+    },
+    {
+      "epoch": 146,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00146.pt",
+      "sha256": "ff8c80440975c38771b630e6d2c3a144d6daf17146f33a58af2a909ea14aa51d",
+      "bytes": 82088141,
+      "model_sha256": "fa0df6bc1fd6146db71c55776f95881fac809292a419ff31b2921dc3da29f75d"
+    },
+    {
+      "epoch": 147,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00147.pt",
+      "sha256": "e4647a50a7d8645b921e66256773104f68c400cee927cd4e3f3300b5793e4b44",
+      "bytes": 82089165,
+      "model_sha256": "8eb79cbc9474fcab1888f51d8bef4e7116eac0fd2209f8defb6f3c9d44294585"
+    },
+    {
+      "epoch": 148,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00148.pt",
+      "sha256": "b645bdf8d117096773635673825979b6ba0fed7a7b73bc2482b1b5805b0172ec",
+      "bytes": 82090189,
+      "model_sha256": "ca13df0c1536337a7675a398ce7ff8dcb7fc789cbac736f9bd56000628554633"
+    },
+    {
+      "epoch": 149,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00149.pt",
+      "sha256": "6e70d682d4e128290307234ae50165e6c89a4fc0fed0558287724e9089679de0",
+      "bytes": 82091149,
+      "model_sha256": "f12f25ad206a388c6eb7834b6da77f14b5ef638adbc95fde6833a4ac51e16c11"
+    },
+    {
+      "epoch": 150,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261012_203815_173754_train\\checkpoints\\epoch_00150.pt",
+      "sha256": "ef1889bb98ce0900e9442f5cf4528aa5e0ef236349f2c97666246e3f67057a77",
+      "bytes": 82092173,
+      "model_sha256": "c389d17db33279c76cc573ae2000f1ffcbb9cfe3bb18d586b0f7cbd27b053433"
+    },
+    {
+      "epoch": 151,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00151.pt",
+      "sha256": "34f4afbce7b4ed11080aff1f641ff8cacaf3ddd6f49dd228d57db1252f07e58f",
+      "bytes": 82093709,
+      "model_sha256": "27d6114fe4092715e8bf5b5b00d46b2b96a1a226cf98804874cee67e61093c58"
+    },
+    {
+      "epoch": 152,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00152.pt",
+      "sha256": "23abadd7f85cb765272a062f5a809209c1472c716f4977c0a6f42d10493c0ea3",
+      "bytes": 82094733,
+      "model_sha256": "843873b98749074d6f3e5070aafb6d14df34b83873ff681c9f0d9064b4364528"
+    },
+    {
+      "epoch": 153,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00153.pt",
+      "sha256": "0015dc6a5293026dff3686d32f99ab50c023e018adfcfff9bf6780dc8df56c07",
+      "bytes": 82095757,
+      "model_sha256": "03fbff8cbebb882f2fcf0647cc855e0b4ac706c5875be8df2538a0c0ca9f21a0"
+    },
+    {
+      "epoch": 154,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00154.pt",
+      "sha256": "f5cd170cd0a8087fe64bd3ec07296c75bb79fa4375809b980cd5e5dd154a9b90",
+      "bytes": 82096781,
+      "model_sha256": "4dd0d12be28cbe01e049dcd9b6c5715d0fdcf448aded99868ce19a86c11d80bd"
+    },
+    {
+      "epoch": 155,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00155.pt",
+      "sha256": "daf91311b8d5c149c41aa22402e49b768464833f2a37466d110ba71189936cb0",
+      "bytes": 82097805,
+      "model_sha256": "2c5f0b653fb1086ab69145d30a5f752263fa733c94f544028a4705fb822c5eae"
+    },
+    {
+      "epoch": 156,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00156.pt",
+      "sha256": "3c315a636f90b6a0d792d862c9a80a2a77ab83332133293e3787a9add2ebbd70",
+      "bytes": 82098765,
+      "model_sha256": "6b78f2d9ee3ed928e0b6de9d4f1379d7bc27e6b29487ee3d3af5cec0dc225a51"
+    },
+    {
+      "epoch": 157,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00157.pt",
+      "sha256": "7c2c9d102c75f5cf77013bd12517a0aa1bc29122d8ffcae5445c4bd7719a38d3",
+      "bytes": 82099789,
+      "model_sha256": "266077670b3796034ed6aa3473ecf55512c339c148b63c60be5287a7fa2a6e9e"
+    },
+    {
+      "epoch": 158,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00158.pt",
+      "sha256": "fbb8a6b291747811ffd417edebdcb7392e7ba4d2c06740ad2303c6cd41ba0f1e",
+      "bytes": 82100813,
+      "model_sha256": "00d37559d6f7f1f30c1a31e5fb94d7cbc69c6136658cc52de7af38c82c4e34eb"
+    },
+    {
+      "epoch": 159,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00159.pt",
+      "sha256": "8db3ebbfec7eaeb666b43d1e4bde94e29040223e13f51bcad234adc404097006",
+      "bytes": 82101837,
+      "model_sha256": "dc324e74cf8c6507a5eadaf91e9bd78596fc16191e4cf863b11d8c8e3a5f2034"
+    },
+    {
+      "epoch": 160,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_132113_988820_train\\checkpoints\\epoch_00160.pt",
+      "sha256": "0a86f0fe1e1f64606cd83b94a845bb2b0e9d16ae4ab121f596fad1b15ecddec8",
+      "bytes": 82102797,
+      "model_sha256": "cc0a99fd8b04aec36a07923d1f2282151bfd14dc6f4a5689ab22fefc991fcace"
+    },
+    {
+      "epoch": 161,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00161.pt",
+      "sha256": "0426e44cba6686ce1bcca9ee3e760b6aa2cb10ea3bfe7798ff60d7f78d774168",
+      "bytes": 82104397,
+      "model_sha256": "d4257e1261f32eec3896b09953739c7a13872dd0298974d458bd38b882009489"
+    },
+    {
+      "epoch": 162,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00162.pt",
+      "sha256": "762056eb5088ed6d4112e76d7a0ac4d65a76aa50aed1024e147761451e3f44c0",
+      "bytes": 82105357,
+      "model_sha256": "eb9ca25f9ba03d37c84176f5f0660d09bd9091555798195eac5687c6d7e4b05d"
+    },
+    {
+      "epoch": 163,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00163.pt",
+      "sha256": "c1a7fb653d91d6164ca0b2e2b0a2e5b47207e316f3c61dce6dcf82bfc6bf7eff",
+      "bytes": 82106381,
+      "model_sha256": "ce8acd9f8d743516864288ae8d710baf7f254c019a43e1cf966d49b775499ba5"
+    },
+    {
+      "epoch": 164,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00164.pt",
+      "sha256": "492948e20e60c0317bab4f1b031d603d6449e3efab37d700cb0818e33e83ddc2",
+      "bytes": 82107405,
+      "model_sha256": "bfbee5794e480d4d3251ba852fc1409735f7f773937420a0a2217804aeb51109"
+    },
+    {
+      "epoch": 165,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00165.pt",
+      "sha256": "477fd14304429e5a41d1041978c7d42934215e634424151eec6cdbbf24881b99",
+      "bytes": 82108429,
+      "model_sha256": "3698468a261f8e7a37532ca03072d2ddef63c8818a8c1ab6ff04d9334ec1dce4"
+    },
+    {
+      "epoch": 166,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00166.pt",
+      "sha256": "419eeaf5af541811ed1fc2791d5aea0dbebc769e48f38f5ab5fbe54bd4d36092",
+      "bytes": 82109453,
+      "model_sha256": "d7facc6d1980ec197c93a050a69506fa48f6eb717e533d8474722210f24fb8fb"
+    },
+    {
+      "epoch": 167,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00167.pt",
+      "sha256": "7fc5bd76692a7d6ea6a5142ff3114bcee006e19aa789e46c9f58064e13abfa6d",
+      "bytes": 82110413,
+      "model_sha256": "2b31ec9478dc2bd8c846720372efe6f8e9c732fece8f756eda916a8bd8c8f459"
+    },
+    {
+      "epoch": 168,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00168.pt",
+      "sha256": "485aca06677b7aaa1cc4977d6096de6b70f76e24e0959282dd7a0a393bb25e29",
+      "bytes": 82111437,
+      "model_sha256": "d3c6f1bb0116275e907406f3264dd3d3d79477723709daf39b9262a194745d46"
+    },
+    {
+      "epoch": 169,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00169.pt",
+      "sha256": "b3f3255e71533232d0781aaa28974f0852670465964ddaaa6f1c101514eaa208",
+      "bytes": 82112461,
+      "model_sha256": "735a170c157aafbcf194b8c2b745bf6919392a1497a64177e1067be64a75c9d5"
+    },
+    {
+      "epoch": 170,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_140733_234389_train\\checkpoints\\epoch_00170.pt",
+      "sha256": "282605bca878e8b92f4520606ef7daf885a8bb0b4d5ee0c3ff5a5d0525ed3613",
+      "bytes": 82113485,
+      "model_sha256": "0721173d74c8c33e08aad9cbd7fa3cbb8ad22e366464f7f250384cf9779355e1"
+    },
+    {
+      "epoch": 171,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00171.pt",
+      "sha256": "7abf61b98015b2c13da58e5574e6cad8880f4180cd220243fc195990467f6baa",
+      "bytes": 82115021,
+      "model_sha256": "2494b72dd1b643bed0af877b65bee466cc9720aab6f6d632a7841a624e42d968"
+    },
+    {
+      "epoch": 172,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00172.pt",
+      "sha256": "f3c1c74f9b7d33930940a0b6ff243b2190aee1c1589c8a7a17f415942d3d05ce",
+      "bytes": 82116045,
+      "model_sha256": "888f441afded7f2edf2ec1561ff7d405b31ceac80d2201fb659a04f7ac5eb96f"
+    },
+    {
+      "epoch": 173,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00173.pt",
+      "sha256": "5620bff67e7c2d6c824e251c614e7db2c6fc9052b215b554584b10e56dd6fa27",
+      "bytes": 82117069,
+      "model_sha256": "38ce9ea7532e46b67354619098505f8233681bf7d45dd6a6d0b3fafa265bb745"
+    },
+    {
+      "epoch": 174,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00174.pt",
+      "sha256": "732493fdc72d8f7de4700733b6fd0fe9e7820fcbe44c1bbe13211c21c6770d93",
+      "bytes": 82118093,
+      "model_sha256": "b624c22dd78583bc516c152ad331807f45a640e406879fd7565ca40f6878dcd9"
+    },
+    {
+      "epoch": 175,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00175.pt",
+      "sha256": "9de6f509222dd8a17326ffbda9f91de7f3dc776fcb6b4f98f6fb1cfc53ab9d69",
+      "bytes": 82119053,
+      "model_sha256": "13a95da7363e56a3a23fd032d7201f14a2b6eea3ad7c68b06d6ac7a3737e0e37"
+    },
+    {
+      "epoch": 176,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00176.pt",
+      "sha256": "83d24e1867640c640c9d36f879f8a515c4c23ca0f1070d51c5bf0eeea5855e88",
+      "bytes": 82120077,
+      "model_sha256": "1436e03442187c25da4be93326de43ba68bab5fa762d87cc58d9e1aa3b8e2cc9"
+    },
+    {
+      "epoch": 177,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00177.pt",
+      "sha256": "14057c6f6811c49a38de05819ec52441bb1d91296eb93f5074156252ef40d754",
+      "bytes": 82121101,
+      "model_sha256": "d1ff67c2b61ede75f9c6d816639858da6b9e01b66c098fd460b2820316b5a34c"
+    },
+    {
+      "epoch": 178,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00178.pt",
+      "sha256": "6841bbd027550c6fd513a64363c557632c7f8a900d9f31bac35f82d631474fb6",
+      "bytes": 82122125,
+      "model_sha256": "0738da9715469a61ca1b1b8b9a79c73bee16df4d138446a0979be402adb619ff"
+    },
+    {
+      "epoch": 179,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00179.pt",
+      "sha256": "0dd04dcb85ea9add886a11657a9ffb5e68bc734d3ddf00c5f7952239087d4fa9",
+      "bytes": 82123149,
+      "model_sha256": "77992326cd3be869986dcfe1311733ff7651b2deec7b6e3d3395bcaf31e99997"
+    },
+    {
+      "epoch": 180,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_145440_566442_train\\checkpoints\\epoch_00180.pt",
+      "sha256": "0fe2a31d6ca228df4e7fe61fabdf8d6e0114e8beae91f41ad1a8fd9d8089f7a1",
+      "bytes": 82124109,
+      "model_sha256": "76a4a0aeabe955fc5b7ab4a4339a6f1c56ff1a6b83568e52659ff841bd37b797"
+    },
+    {
+      "epoch": 181,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00181.pt",
+      "sha256": "fe60b0105011dfc5c99b4050dadbc2e3b02b1a1b918adea57377714ba7a3076d",
+      "bytes": 82125709,
+      "model_sha256": "9f999469a18c332439b60c7b9c44a336a21ddb9fe7f869556e0df05a9722d873"
+    },
+    {
+      "epoch": 182,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00182.pt",
+      "sha256": "3cf30bb3c2578cc5d09b55982f1b6a53b4eb84bbad7e0f107c71c315252a9583",
+      "bytes": 82126733,
+      "model_sha256": "c5c6af7dbb12939f0516361006f1729255cf20b02e6e4784e4efae1143bf2efe"
+    },
+    {
+      "epoch": 183,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00183.pt",
+      "sha256": "420b6a735128d8c7f5e526be03f93be2e568e85b77b8dd2b497a7e8081033d81",
+      "bytes": 82127693,
+      "model_sha256": "d85fa5d3ab1310b4787bdcbef88e8cb83d93db920fe7d8baffbf91b60ce9eb99"
+    },
+    {
+      "epoch": 184,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00184.pt",
+      "sha256": "a4e643c6e7256eb4a95fd464508ed8c2b398a42f2b3f8090569cf0f50c2efca8",
+      "bytes": 82128717,
+      "model_sha256": "b63268a02563434566e678710c467489a3b47176efdcfaaba5ec9a9d94e9b511"
+    },
+    {
+      "epoch": 185,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00185.pt",
+      "sha256": "da13f0abe660d55e6819110bf81923b1970b80c2f6090b7a6ab3371ed50a044b",
+      "bytes": 82129741,
+      "model_sha256": "04dd76077669235696ae72fa21ee76c5d348dc68d440ecc36609ccb28a435fe7"
+    },
+    {
+      "epoch": 186,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00186.pt",
+      "sha256": "0a8d48e1c5a5c8f9945330bc60fc1de3c238cea9d0b5545d989fae01fd1e20d8",
+      "bytes": 82130765,
+      "model_sha256": "80b1ff0367e7ae1db5d8dc2c4e3779ed7530fa100bbfc20011342e921c4681bb"
+    },
+    {
+      "epoch": 187,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00187.pt",
+      "sha256": "233b89944d7ffe7d447151ad7b9aef61833034abd1794dfaaec19cd4b75a86c2",
+      "bytes": 82131789,
+      "model_sha256": "fda750c79877396b3d9dab50d5ec3fc89b27af1a5e7e4b97a7d7ea6a83dacfd2"
+    },
+    {
+      "epoch": 188,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00188.pt",
+      "sha256": "39fe159f58d7a2f427014c3796e082eff3916febdc581849176d9c494082cc7b",
+      "bytes": 82132749,
+      "model_sha256": "2749c47808b728e5efc407e8453e92cbcbe2208d91c001239e5eeb8aa6e8f0dc"
+    },
+    {
+      "epoch": 189,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00189.pt",
+      "sha256": "2743904b186ca23206a11ecda3374bf5cc9f158b44e153586a4313f9b16b6c7d",
+      "bytes": 82133773,
+      "model_sha256": "328886c769cb137ed0e086a93fbd899dbb81a86df01840bf3c01245c1db9d017"
+    },
+    {
+      "epoch": 190,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_154101_520906_train\\checkpoints\\epoch_00190.pt",
+      "sha256": "35b5f3397d36c9e415efb3b02fdbb49b858679f399fc901d90126aea5eedb906",
+      "bytes": 82134797,
+      "model_sha256": "c5ca2d255d2dd2c7070156907b866ff703a30594aef65a2f4bec672f5516272d"
+    },
+    {
+      "epoch": 191,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00191.pt",
+      "sha256": "3b0b99b0786fd213016724ac5a03c2a8dc7bac72ebf5575cc0f5fb52f5c8fa7d",
+      "bytes": 82136333,
+      "model_sha256": "0608203ca966c13d6d55178618a510ba335883c16147721c06f016dcf57d31a6"
+    },
+    {
+      "epoch": 192,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00192.pt",
+      "sha256": "b6a7b98adafc6cdcf83f0fa6786e928bf9a659f5420562e049ef6821b4d149f1",
+      "bytes": 82137357,
+      "model_sha256": "2922784c3e3e873cdd058d8566f6d52e12c3625ab8c20ce6079ddfe8b160d349"
+    },
+    {
+      "epoch": 193,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00193.pt",
+      "sha256": "061bc041313ae56ac6534a401ce3bd5f649a8ac6843f40ac4c3d0536dc86087d",
+      "bytes": 82138381,
+      "model_sha256": "16749f8118b39ce7b6b82e52c25ec66226a43fb5ea5a6fd5d1f0bb9f9a579c53"
+    },
+    {
+      "epoch": 194,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00194.pt",
+      "sha256": "aeab4b6fa26a48a74f96f3643753b31c6c954943418f53e8e0958239679e6dfb",
+      "bytes": 82139405,
+      "model_sha256": "c743f42f74136f642a528c5de65f061577f474d919342b276cec474ded1707c7"
+    },
+    {
+      "epoch": 195,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00195.pt",
+      "sha256": "c73abbcf783645f63877f2297634ca6431c7637edde68ac42125cadf55173214",
+      "bytes": 82140429,
+      "model_sha256": "3408687d701207c3b9c351eeb1d4aaa5e38b88503d3ec06eb9193a92e8371777"
+    },
+    {
+      "epoch": 196,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00196.pt",
+      "sha256": "cebfc0b6e6922d9e8c1e1e1fba755862466bd43434ac40330035c4b0aba6cecd",
+      "bytes": 82141389,
+      "model_sha256": "d76828121ad12f8de023abd832a628975fddace23e659473378f0d41f9384322"
+    },
+    {
+      "epoch": 197,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00197.pt",
+      "sha256": "93a20432241a81cf44c3799fd461dab5001c773138b8b84d150f8f15cc012847",
+      "bytes": 82142413,
+      "model_sha256": "3bf7e31b881c81e8da6f2eec8ae86dce5ff68cd8774ed265a7b3fb2ce4aacf50"
+    },
+    {
+      "epoch": 198,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00198.pt",
+      "sha256": "6407b18d8be63287a8c63e39ea92aae7fa9191d815dc872b150e3944b16bc0c1",
+      "bytes": 82143437,
+      "model_sha256": "15a0cb602fa8dc3144ff9add4f663d14da5e61848ba40742105d360dd00adbba"
+    },
+    {
+      "epoch": 199,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00199.pt",
+      "sha256": "490135bfbdfa38e9f03f265b5fbbd54050d252867435307d35b0eb315689f3dd",
+      "bytes": 82144461,
+      "model_sha256": "3e7740a7551e454e27ebf3ebce9ede39b94944cb92193ac02553d0f83d6c75dc"
+    },
+    {
+      "epoch": 200,
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00200.pt",
+      "sha256": "f1e05c4cd9cd1372e6736d539bc84b618a58bb307657f0d719220879aff54031",
+      "bytes": 82145485,
+      "model_sha256": "22c82bac8cac584e80badc34506145dcae8e457d53ee2661292c66846eb0f1bb"
+    }
+  ],
+  "excluded": [],
+  "identical_duplicates": [],
+  "missing_epochs": [],
+  "membership_check": "same contract, full trace prefix, model hash and epoch/step counters",
+  "no_selection_based_on_test_score_during_inventory": true
+}

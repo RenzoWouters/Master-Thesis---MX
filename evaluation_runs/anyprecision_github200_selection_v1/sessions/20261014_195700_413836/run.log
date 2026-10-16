@@ -1,0 +1,428 @@
+ANY-PRECISION CHECKPOINTSELECTIE - geen training, geen MX
+Evaluatiemap: C:\Users\renzo\master-thesis-mx\evaluation_runs\anyprecision_github200_selection_v1
+Sessie-/rapportmap: C:\Users\renzo\master-thesis-mx\evaluation_runs\anyprecision_github200_selection_v1\sessions\20261014_195700_413836
+Apparaat: NVIDIA GeForce RTX 5070 Laptop GPU
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Inventarisatie: 201 bestanden gevonden; alle epochs 1-200 worden gecontroleerd.
+  gecontroleerd tot kandidaat-epoch 25; 25 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 50; 50 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 75; 75 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 100; 100 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 125; 125 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 150; 150 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 175; 175 geldige epochs.
+  gecontroleerd tot kandidaat-epoch 200; 200 geldige epochs.
+Inventarisatie OK: alle 200 epochcheckpoints horen bij het opgegeven trainingstraject.
+TEST: 10000 beelden per checkpoint; batch 128; alleen evaluatie.
+Selectie: W32/A32 top-1, hoogste score; bij exact gelijk behoud vroegste epoch.
+Geen losse beste epoch per bitbreedte. We trainen of kalibreren NIET verder.
+  epoch 1/200: W32/A32 top-1=50.87%; test+laden=6.79s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 22.5 minuten, exclusief afsluitende controles.
+  epoch 2/200: W32/A32 top-1=57.80%; test+laden=4.15s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.7 minuten, exclusief afsluitende controles.
+  epoch 3/200: W32/A32 top-1=63.02%; test+laden=4.39s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.0 minuten, exclusief afsluitende controles.
+  epoch 4/200: W32/A32 top-1=74.95%; test+laden=5.09s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.8 minuten, exclusief afsluitende controles.
+  epoch 5/200: W32/A32 top-1=74.71%; test+laden=5.04s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.2 minuten, exclusief afsluitende controles.
+  epoch 6/200: W32/A32 top-1=76.97%; test+laden=5.10s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.4 minuten, exclusief afsluitende controles.
+  epoch 7/200: W32/A32 top-1=79.29%; test+laden=5.07s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.5 minuten, exclusief afsluitende controles.
+  epoch 8/200: W32/A32 top-1=80.21%; test+laden=5.05s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.5 minuten, exclusief afsluitende controles.
+  epoch 9/200: W32/A32 top-1=82.78%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.5 minuten, exclusief afsluitende controles.
+  epoch 10/200: W32/A32 top-1=85.36%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.5 minuten, exclusief afsluitende controles.
+  epoch 11/200: W32/A32 top-1=85.25%; test+laden=5.10s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.5 minuten, exclusief afsluitende controles.
+  epoch 12/200: W32/A32 top-1=83.22%; test+laden=5.01s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.4 minuten, exclusief afsluitende controles.
+  epoch 13/200: W32/A32 top-1=86.46%; test+laden=5.00s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.4 minuten, exclusief afsluitende controles.
+  epoch 14/200: W32/A32 top-1=83.69%; test+laden=5.03s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.3 minuten, exclusief afsluitende controles.
+  epoch 15/200: W32/A32 top-1=85.76%; test+laden=5.02s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.2 minuten, exclusief afsluitende controles.
+  epoch 16/200: W32/A32 top-1=87.37%; test+laden=4.73s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 15.1 minuten, exclusief afsluitende controles.
+  epoch 17/200: W32/A32 top-1=87.34%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.9 minuten, exclusief afsluitende controles.
+  epoch 18/200: W32/A32 top-1=88.07%; test+laden=4.12s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.7 minuten, exclusief afsluitende controles.
+  epoch 19/200: W32/A32 top-1=88.34%; test+laden=4.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.5 minuten, exclusief afsluitende controles.
+  epoch 20/200: W32/A32 top-1=89.07%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.3 minuten, exclusief afsluitende controles.
+  epoch 21/200: W32/A32 top-1=89.42%; test+laden=4.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.1 minuten, exclusief afsluitende controles.
+  epoch 22/200: W32/A32 top-1=89.22%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 14.0 minuten, exclusief afsluitende controles.
+  epoch 23/200: W32/A32 top-1=89.22%; test+laden=4.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.8 minuten, exclusief afsluitende controles.
+  epoch 24/200: W32/A32 top-1=90.69%; test+laden=4.23s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.7 minuten, exclusief afsluitende controles.
+  epoch 25/200: W32/A32 top-1=89.59%; test+laden=4.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.5 minuten, exclusief afsluitende controles.
+  epoch 26/200: W32/A32 top-1=90.71%; test+laden=4.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.4 minuten, exclusief afsluitende controles.
+  epoch 27/200: W32/A32 top-1=91.67%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.3 minuten, exclusief afsluitende controles.
+  epoch 28/200: W32/A32 top-1=91.25%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.2 minuten, exclusief afsluitende controles.
+  epoch 29/200: W32/A32 top-1=91.10%; test+laden=4.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 13.0 minuten, exclusief afsluitende controles.
+  epoch 30/200: W32/A32 top-1=90.90%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.9 minuten, exclusief afsluitende controles.
+  epoch 31/200: W32/A32 top-1=91.10%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.8 minuten, exclusief afsluitende controles.
+  epoch 32/200: W32/A32 top-1=90.52%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.7 minuten, exclusief afsluitende controles.
+  epoch 33/200: W32/A32 top-1=91.40%; test+laden=4.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.6 minuten, exclusief afsluitende controles.
+  epoch 34/200: W32/A32 top-1=90.58%; test+laden=4.23s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.5 minuten, exclusief afsluitende controles.
+  epoch 35/200: W32/A32 top-1=91.30%; test+laden=4.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.4 minuten, exclusief afsluitende controles.
+  epoch 36/200: W32/A32 top-1=91.02%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.3 minuten, exclusief afsluitende controles.
+  epoch 37/200: W32/A32 top-1=90.74%; test+laden=4.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.2 minuten, exclusief afsluitende controles.
+  epoch 38/200: W32/A32 top-1=91.46%; test+laden=4.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.1 minuten, exclusief afsluitende controles.
+  epoch 39/200: W32/A32 top-1=90.38%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 12.0 minuten, exclusief afsluitende controles.
+  epoch 40/200: W32/A32 top-1=92.26%; test+laden=4.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.9 minuten, exclusief afsluitende controles.
+  epoch 41/200: W32/A32 top-1=90.92%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.8 minuten, exclusief afsluitende controles.
+  epoch 42/200: W32/A32 top-1=92.47%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.7 minuten, exclusief afsluitende controles.
+  epoch 43/200: W32/A32 top-1=91.60%; test+laden=4.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.6 minuten, exclusief afsluitende controles.
+  epoch 44/200: W32/A32 top-1=91.22%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.5 minuten, exclusief afsluitende controles.
+  epoch 45/200: W32/A32 top-1=92.62%; test+laden=4.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.5 minuten, exclusief afsluitende controles.
+  epoch 46/200: W32/A32 top-1=91.98%; test+laden=4.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.4 minuten, exclusief afsluitende controles.
+  epoch 47/200: W32/A32 top-1=91.94%; test+laden=4.80s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.3 minuten, exclusief afsluitende controles.
+  epoch 48/200: W32/A32 top-1=91.84%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.3 minuten, exclusief afsluitende controles.
+  epoch 49/200: W32/A32 top-1=92.32%; test+laden=5.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.2 minuten, exclusief afsluitende controles.
+  epoch 50/200: W32/A32 top-1=92.46%; test+laden=5.25s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.2 minuten, exclusief afsluitende controles.
+  epoch 51/200: W32/A32 top-1=92.47%; test+laden=5.31s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.2 minuten, exclusief afsluitende controles.
+  epoch 52/200: W32/A32 top-1=92.06%; test+laden=5.12s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.1 minuten, exclusief afsluitende controles.
+  epoch 53/200: W32/A32 top-1=92.09%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.1 minuten, exclusief afsluitende controles.
+  epoch 54/200: W32/A32 top-1=91.83%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.0 minuten, exclusief afsluitende controles.
+  epoch 55/200: W32/A32 top-1=91.46%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 11.0 minuten, exclusief afsluitende controles.
+  epoch 56/200: W32/A32 top-1=92.22%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.9 minuten, exclusief afsluitende controles.
+  epoch 57/200: W32/A32 top-1=92.31%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.9 minuten, exclusief afsluitende controles.
+  epoch 58/200: W32/A32 top-1=92.29%; test+laden=5.35s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.8 minuten, exclusief afsluitende controles.
+  epoch 59/200: W32/A32 top-1=92.59%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.8 minuten, exclusief afsluitende controles.
+  epoch 60/200: W32/A32 top-1=92.22%; test+laden=5.33s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.8 minuten, exclusief afsluitende controles.
+  epoch 61/200: W32/A32 top-1=92.61%; test+laden=5.28s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.7 minuten, exclusief afsluitende controles.
+  epoch 62/200: W32/A32 top-1=92.47%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.6 minuten, exclusief afsluitende controles.
+  epoch 63/200: W32/A32 top-1=93.04%; test+laden=5.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.6 minuten, exclusief afsluitende controles.
+  epoch 64/200: W32/A32 top-1=92.77%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.5 minuten, exclusief afsluitende controles.
+  epoch 65/200: W32/A32 top-1=91.99%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.5 minuten, exclusief afsluitende controles.
+  epoch 66/200: W32/A32 top-1=92.96%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.4 minuten, exclusief afsluitende controles.
+  epoch 67/200: W32/A32 top-1=92.80%; test+laden=5.21s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.3 minuten, exclusief afsluitende controles.
+  epoch 68/200: W32/A32 top-1=92.39%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.3 minuten, exclusief afsluitende controles.
+  epoch 69/200: W32/A32 top-1=92.80%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.2 minuten, exclusief afsluitende controles.
+  epoch 70/200: W32/A32 top-1=92.32%; test+laden=5.07s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.2 minuten, exclusief afsluitende controles.
+  epoch 71/200: W32/A32 top-1=92.61%; test+laden=5.23s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.1 minuten, exclusief afsluitende controles.
+  epoch 72/200: W32/A32 top-1=92.21%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.0 minuten, exclusief afsluitende controles.
+  epoch 73/200: W32/A32 top-1=92.29%; test+laden=5.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 10.0 minuten, exclusief afsluitende controles.
+  epoch 74/200: W32/A32 top-1=92.71%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.9 minuten, exclusief afsluitende controles.
+  epoch 75/200: W32/A32 top-1=92.60%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.8 minuten, exclusief afsluitende controles.
+  epoch 76/200: W32/A32 top-1=93.08%; test+laden=4.55s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.7 minuten, exclusief afsluitende controles.
+  epoch 77/200: W32/A32 top-1=92.56%; test+laden=4.27s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.7 minuten, exclusief afsluitende controles.
+  epoch 78/200: W32/A32 top-1=92.60%; test+laden=4.69s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.6 minuten, exclusief afsluitende controles.
+  epoch 79/200: W32/A32 top-1=93.47%; test+laden=5.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.5 minuten, exclusief afsluitende controles.
+  epoch 80/200: W32/A32 top-1=92.96%; test+laden=5.24s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.4 minuten, exclusief afsluitende controles.
+  epoch 81/200: W32/A32 top-1=92.86%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.4 minuten, exclusief afsluitende controles.
+  epoch 82/200: W32/A32 top-1=92.92%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.3 minuten, exclusief afsluitende controles.
+  epoch 83/200: W32/A32 top-1=92.73%; test+laden=5.09s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.2 minuten, exclusief afsluitende controles.
+  epoch 84/200: W32/A32 top-1=92.86%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.2 minuten, exclusief afsluitende controles.
+  epoch 85/200: W32/A32 top-1=91.94%; test+laden=5.10s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.1 minuten, exclusief afsluitende controles.
+  epoch 86/200: W32/A32 top-1=92.77%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.0 minuten, exclusief afsluitende controles.
+  epoch 87/200: W32/A32 top-1=93.13%; test+laden=5.15s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 9.0 minuten, exclusief afsluitende controles.
+  epoch 88/200: W32/A32 top-1=93.14%; test+laden=5.15s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.9 minuten, exclusief afsluitende controles.
+  epoch 89/200: W32/A32 top-1=92.77%; test+laden=5.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.8 minuten, exclusief afsluitende controles.
+  epoch 90/200: W32/A32 top-1=93.07%; test+laden=5.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.7 minuten, exclusief afsluitende controles.
+  epoch 91/200: W32/A32 top-1=92.83%; test+laden=5.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.7 minuten, exclusief afsluitende controles.
+  epoch 92/200: W32/A32 top-1=92.70%; test+laden=5.21s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.6 minuten, exclusief afsluitende controles.
+  epoch 93/200: W32/A32 top-1=92.85%; test+laden=5.34s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.5 minuten, exclusief afsluitende controles.
+  epoch 94/200: W32/A32 top-1=92.62%; test+laden=5.34s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.5 minuten, exclusief afsluitende controles.
+  epoch 95/200: W32/A32 top-1=92.77%; test+laden=5.25s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.4 minuten, exclusief afsluitende controles.
+  epoch 96/200: W32/A32 top-1=92.97%; test+laden=5.34s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.3 minuten, exclusief afsluitende controles.
+  epoch 97/200: W32/A32 top-1=93.02%; test+laden=5.37s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.3 minuten, exclusief afsluitende controles.
+  epoch 98/200: W32/A32 top-1=93.13%; test+laden=5.30s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.2 minuten, exclusief afsluitende controles.
+  epoch 99/200: W32/A32 top-1=92.40%; test+laden=5.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.1 minuten, exclusief afsluitende controles.
+  epoch 100/200: W32/A32 top-1=93.02%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.0 minuten, exclusief afsluitende controles.
+  epoch 101/200: W32/A32 top-1=93.30%; test+laden=5.21s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 8.0 minuten, exclusief afsluitende controles.
+  epoch 102/200: W32/A32 top-1=93.45%; test+laden=5.28s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.9 minuten, exclusief afsluitende controles.
+  epoch 103/200: W32/A32 top-1=93.35%; test+laden=5.25s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.8 minuten, exclusief afsluitende controles.
+  epoch 104/200: W32/A32 top-1=93.41%; test+laden=5.27s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.7 minuten, exclusief afsluitende controles.
+  epoch 105/200: W32/A32 top-1=93.48%; test+laden=5.33s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.7 minuten, exclusief afsluitende controles.
+  epoch 106/200: W32/A32 top-1=93.45%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.6 minuten, exclusief afsluitende controles.
+  epoch 107/200: W32/A32 top-1=93.58%; test+laden=5.06s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.5 minuten, exclusief afsluitende controles.
+  epoch 108/200: W32/A32 top-1=93.55%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.4 minuten, exclusief afsluitende controles.
+  epoch 109/200: W32/A32 top-1=93.44%; test+laden=4.24s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.3 minuten, exclusief afsluitende controles.
+  epoch 110/200: W32/A32 top-1=93.57%; test+laden=4.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.3 minuten, exclusief afsluitende controles.
+  epoch 111/200: W32/A32 top-1=93.55%; test+laden=4.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.2 minuten, exclusief afsluitende controles.
+  epoch 112/200: W32/A32 top-1=93.65%; test+laden=4.22s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.1 minuten, exclusief afsluitende controles.
+  epoch 113/200: W32/A32 top-1=93.71%; test+laden=4.68s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 7.0 minuten, exclusief afsluitende controles.
+  epoch 114/200: W32/A32 top-1=93.61%; test+laden=5.12s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.9 minuten, exclusief afsluitende controles.
+  epoch 115/200: W32/A32 top-1=93.56%; test+laden=5.25s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.8 minuten, exclusief afsluitende controles.
+  epoch 116/200: W32/A32 top-1=93.74%; test+laden=5.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.8 minuten, exclusief afsluitende controles.
+  epoch 117/200: W32/A32 top-1=93.78%; test+laden=5.24s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.7 minuten, exclusief afsluitende controles.
+  epoch 118/200: W32/A32 top-1=93.57%; test+laden=5.35s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.6 minuten, exclusief afsluitende controles.
+  epoch 119/200: W32/A32 top-1=93.59%; test+laden=5.36s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.5 minuten, exclusief afsluitende controles.
+  epoch 120/200: W32/A32 top-1=93.55%; test+laden=5.34s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.5 minuten, exclusief afsluitende controles.
+  epoch 121/200: W32/A32 top-1=93.64%; test+laden=5.33s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.4 minuten, exclusief afsluitende controles.
+  epoch 122/200: W32/A32 top-1=93.63%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.3 minuten, exclusief afsluitende controles.
+  epoch 123/200: W32/A32 top-1=93.71%; test+laden=5.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.2 minuten, exclusief afsluitende controles.
+  epoch 124/200: W32/A32 top-1=93.83%; test+laden=5.22s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.2 minuten, exclusief afsluitende controles.
+  epoch 125/200: W32/A32 top-1=93.64%; test+laden=5.29s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.1 minuten, exclusief afsluitende controles.
+  epoch 126/200: W32/A32 top-1=93.63%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 6.0 minuten, exclusief afsluitende controles.
+  epoch 127/200: W32/A32 top-1=93.71%; test+laden=5.22s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.9 minuten, exclusief afsluitende controles.
+  epoch 128/200: W32/A32 top-1=93.72%; test+laden=5.25s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.8 minuten, exclusief afsluitende controles.
+  epoch 129/200: W32/A32 top-1=93.72%; test+laden=5.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.8 minuten, exclusief afsluitende controles.
+  epoch 130/200: W32/A32 top-1=93.68%; test+laden=5.31s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.7 minuten, exclusief afsluitende controles.
+  epoch 131/200: W32/A32 top-1=93.56%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.6 minuten, exclusief afsluitende controles.
+  epoch 132/200: W32/A32 top-1=93.56%; test+laden=5.24s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.5 minuten, exclusief afsluitende controles.
+  epoch 133/200: W32/A32 top-1=93.65%; test+laden=5.30s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.5 minuten, exclusief afsluitende controles.
+  epoch 134/200: W32/A32 top-1=93.64%; test+laden=5.29s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.4 minuten, exclusief afsluitende controles.
+  epoch 135/200: W32/A32 top-1=93.73%; test+laden=5.34s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.3 minuten, exclusief afsluitende controles.
+  epoch 136/200: W32/A32 top-1=93.75%; test+laden=5.28s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.2 minuten, exclusief afsluitende controles.
+  epoch 137/200: W32/A32 top-1=93.75%; test+laden=5.32s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.1 minuten, exclusief afsluitende controles.
+  epoch 138/200: W32/A32 top-1=93.63%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.1 minuten, exclusief afsluitende controles.
+  epoch 139/200: W32/A32 top-1=93.65%; test+laden=5.05s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 5.0 minuten, exclusief afsluitende controles.
+  epoch 140/200: W32/A32 top-1=93.74%; test+laden=5.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.9 minuten, exclusief afsluitende controles.
+  epoch 141/200: W32/A32 top-1=93.67%; test+laden=5.09s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.8 minuten, exclusief afsluitende controles.
+  epoch 142/200: W32/A32 top-1=93.68%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.7 minuten, exclusief afsluitende controles.
+  epoch 143/200: W32/A32 top-1=93.55%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.7 minuten, exclusief afsluitende controles.
+  epoch 144/200: W32/A32 top-1=93.58%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.6 minuten, exclusief afsluitende controles.
+  epoch 145/200: W32/A32 top-1=93.63%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.5 minuten, exclusief afsluitende controles.
+  epoch 146/200: W32/A32 top-1=93.67%; test+laden=5.10s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.4 minuten, exclusief afsluitende controles.
+  epoch 147/200: W32/A32 top-1=93.72%; test+laden=5.05s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.3 minuten, exclusief afsluitende controles.
+  epoch 148/200: W32/A32 top-1=93.67%; test+laden=5.09s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.3 minuten, exclusief afsluitende controles.
+  epoch 149/200: W32/A32 top-1=93.69%; test+laden=5.08s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.2 minuten, exclusief afsluitende controles.
+  epoch 150/200: W32/A32 top-1=93.69%; test+laden=5.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.1 minuten, exclusief afsluitende controles.
+  epoch 151/200: W32/A32 top-1=93.81%; test+laden=5.06s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 4.0 minuten, exclusief afsluitende controles.
+  epoch 152/200: W32/A32 top-1=93.66%; test+laden=5.12s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.9 minuten, exclusief afsluitende controles.
+  epoch 153/200: W32/A32 top-1=93.65%; test+laden=5.16s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.9 minuten, exclusief afsluitende controles.
+  epoch 154/200: W32/A32 top-1=93.77%; test+laden=5.10s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.8 minuten, exclusief afsluitende controles.
+  epoch 155/200: W32/A32 top-1=93.69%; test+laden=5.09s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.7 minuten, exclusief afsluitende controles.
+  epoch 156/200: W32/A32 top-1=93.77%; test+laden=5.06s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.6 minuten, exclusief afsluitende controles.
+  epoch 157/200: W32/A32 top-1=93.60%; test+laden=5.15s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.5 minuten, exclusief afsluitende controles.
+  epoch 158/200: W32/A32 top-1=93.65%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.5 minuten, exclusief afsluitende controles.
+  epoch 159/200: W32/A32 top-1=93.72%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.4 minuten, exclusief afsluitende controles.
+  epoch 160/200: W32/A32 top-1=93.66%; test+laden=5.27s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.3 minuten, exclusief afsluitende controles.
+  epoch 161/200: W32/A32 top-1=93.79%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.2 minuten, exclusief afsluitende controles.
+  epoch 162/200: W32/A32 top-1=93.65%; test+laden=5.22s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.1 minuten, exclusief afsluitende controles.
+  epoch 163/200: W32/A32 top-1=93.67%; test+laden=5.12s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.0 minuten, exclusief afsluitende controles.
+  epoch 164/200: W32/A32 top-1=93.84%; test+laden=5.15s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 3.0 minuten, exclusief afsluitende controles.
+  epoch 165/200: W32/A32 top-1=93.67%; test+laden=5.18s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.9 minuten, exclusief afsluitende controles.
+  epoch 166/200: W32/A32 top-1=93.82%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.8 minuten, exclusief afsluitende controles.
+  epoch 167/200: W32/A32 top-1=93.82%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.7 minuten, exclusief afsluitende controles.
+  epoch 168/200: W32/A32 top-1=93.69%; test+laden=5.44s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.6 minuten, exclusief afsluitende controles.
+  epoch 169/200: W32/A32 top-1=93.72%; test+laden=5.46s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.6 minuten, exclusief afsluitende controles.
+  epoch 170/200: W32/A32 top-1=93.88%; test+laden=5.31s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.5 minuten, exclusief afsluitende controles.
+  epoch 171/200: W32/A32 top-1=93.76%; test+laden=5.35s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.4 minuten, exclusief afsluitende controles.
+  epoch 172/200: W32/A32 top-1=93.76%; test+laden=5.38s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.3 minuten, exclusief afsluitende controles.
+  epoch 173/200: W32/A32 top-1=93.72%; test+laden=5.20s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.2 minuten, exclusief afsluitende controles.
+  epoch 174/200: W32/A32 top-1=93.68%; test+laden=5.09s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.1 minuten, exclusief afsluitende controles.
+  epoch 175/200: W32/A32 top-1=93.73%; test+laden=5.28s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.1 minuten, exclusief afsluitende controles.
+  epoch 176/200: W32/A32 top-1=93.68%; test+laden=5.41s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 2.0 minuten, exclusief afsluitende controles.
+  epoch 177/200: W32/A32 top-1=93.75%; test+laden=5.31s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.9 minuten, exclusief afsluitende controles.
+  epoch 178/200: W32/A32 top-1=93.84%; test+laden=5.12s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.8 minuten, exclusief afsluitende controles.
+  epoch 179/200: W32/A32 top-1=93.75%; test+laden=5.11s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.7 minuten, exclusief afsluitende controles.
+  epoch 180/200: W32/A32 top-1=93.85%; test+laden=5.22s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.7 minuten, exclusief afsluitende controles.
+  epoch 181/200: W32/A32 top-1=93.84%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.6 minuten, exclusief afsluitende controles.
+  epoch 182/200: W32/A32 top-1=93.68%; test+laden=5.15s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.5 minuten, exclusief afsluitende controles.
+  epoch 183/200: W32/A32 top-1=93.82%; test+laden=5.25s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.4 minuten, exclusief afsluitende controles.
+  epoch 184/200: W32/A32 top-1=93.81%; test+laden=5.26s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.3 minuten, exclusief afsluitende controles.
+  epoch 185/200: W32/A32 top-1=93.71%; test+laden=5.29s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.2 minuten, exclusief afsluitende controles.
+  epoch 186/200: W32/A32 top-1=93.78%; test+laden=5.28s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.2 minuten, exclusief afsluitende controles.
+  epoch 187/200: W32/A32 top-1=93.80%; test+laden=5.29s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.1 minuten, exclusief afsluitende controles.
+  epoch 188/200: W32/A32 top-1=93.69%; test+laden=5.27s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 1.0 minuten, exclusief afsluitende controles.
+  epoch 189/200: W32/A32 top-1=93.79%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.9 minuten, exclusief afsluitende controles.
+  epoch 190/200: W32/A32 top-1=93.76%; test+laden=5.14s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.8 minuten, exclusief afsluitende controles.
+  epoch 191/200: W32/A32 top-1=93.80%; test+laden=5.27s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.7 minuten, exclusief afsluitende controles.
+  epoch 192/200: W32/A32 top-1=93.78%; test+laden=5.33s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.7 minuten, exclusief afsluitende controles.
+  epoch 193/200: W32/A32 top-1=93.73%; test+laden=5.33s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.6 minuten, exclusief afsluitende controles.
+  epoch 194/200: W32/A32 top-1=93.60%; test+laden=4.49s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.5 minuten, exclusief afsluitende controles.
+  epoch 195/200: W32/A32 top-1=93.84%; test+laden=4.77s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.4 minuten, exclusief afsluitende controles.
+  epoch 196/200: W32/A32 top-1=93.88%; test+laden=5.17s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.3 minuten, exclusief afsluitende controles.
+  epoch 197/200: W32/A32 top-1=93.80%; test+laden=5.13s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.2 minuten, exclusief afsluitende controles.
+  epoch 198/200: W32/A32 top-1=93.85%; test+laden=5.19s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.2 minuten, exclusief afsluitende controles.
+  epoch 199/200: W32/A32 top-1=93.83%; test+laden=5.30s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.1 minuten, exclusief afsluitende controles.
+  epoch 200/200: W32/A32 top-1=93.89%; test+laden=5.23s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.0 minuten, exclusief afsluitende controles.
+  TEST epoch 200, W1/A1: 92.58%
+  TEST epoch 200, W2/A2: 93.87%
+  TEST epoch 200, W4/A4: 94.12%
+  TEST epoch 200, W8/A8: 93.93%
+  TEST epoch 200, W32/A32: 93.89%
+Beste checkpoint volgens W32/A32: epoch 200; top-1=93.89%.
+Waarschuwingen: 0; zie selection_report.json.
+STATUS: PASS
+Rapportmap: C:\Users\renzo\master-thesis-mx\evaluation_runs\anyprecision_github200_selection_v1\sessions\20261014_195700_413836
+Geen downloads, installaties, training of overschrijving van trainingsbestanden.

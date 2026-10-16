@@ -1,0 +1,17 @@
+{
+  "select_checkpoints.py": "7495d158a9be647cf85f349d79d1390f18f3398c107dfcdcf2ce3d33a8b95540",
+  "README.md": "92ce8cdff68fe0b4ae555003bc0861cb84da0bdad29a27085740d3f7d1ecd3eb",
+  "REFERENCE_SHA256.json": "655055c41eb28f4c2e3d7679f655f87a2a4cbe9e81d4a0c2354aa4334b14d0b2",
+  "CHANGELOG.md": "15ac55b6d83cf2a3f0b876e3cd8896c71c8c02af1d5f2318780e0ab9f080aace",
+  ".gitattributes": "5b45628778ec328e410ca369586b968fe73cf5e0465e0df3855920b25bb40717",
+  "ADDON_SHA256.json": "1a2652165351181d07cdfaf0b5aeb36b450b113b21da4e8fceb7b30a6db1a4b0",
+  "PROTOCOL.md": "0d720e366b474883e81b3b292dfcee5c0fd01c6a88a38ee05ed87f8444c30d49",
+  "local_validation/VALIDATION.md": "b145b6f80cabd785d0e136de9972f75ecbb38bbb475fc2f22d9620a2764497b5",
+  "local_validation/test_selection.py": "c401d855fe0e5d5ec8a150cccb084f8802efdeb2665fc00d7c061e36e451f078",
+  "local_validation/fixture_selection.py": "ee63d169a1dbfc37c7d06f653aea158aa5bc3e46c4ccb72bd02e52b30ecc7d5b",
+  "local_validation/partial.log": "2f43e496e348574a4c3dda7f274cf76c5a9e4bc0397727469948740f55621a14",
+  "local_validation/full.log": "db2ffb1e6cbb1ff4e625b50bc4ec3a969b9645fd9edc28f79708a6cb00356b76",
+  "local_validation/cached.log": "ae46a0579ba3ec351c738594a33584386565dde1b556722af749d0f9a5d6df22",
+  "local_validation/continued.log": "96f043ce06dbc74708c8864e44250e250d2415b100a18c13d2348d48904dd797",
+  "local_validation/validation_result.json": "6e6f35a538e93e9b51f52b6fae6ad5fde1cb325248f36438be3283d9f7c6a6c2"
+}

@@ -1,0 +1,18 @@
+ANY-PRECISION CHECKPOINTSELECTIE - geen training, geen MX
+Evaluatiemap: /mnt/data/eval_build/test_selection_checks_detached/split
+Sessie-/rapportmap: /mnt/data/eval_build/test_selection_checks_detached/split/sessions/20261013_164101_984995
+Apparaat: CPU
+LOCAL SYNTHETIC FIXTURE: geen echte CIFAR-10-data, geen paperbudget.
+CIFAR-10: bestaande batchbestanden gecontroleerd; geen download.
+Inventarisatie: 4 bestanden gevonden; alle epochs 1-3 worden gecontroleerd.
+Inventarisatie OK: alle 3 epochcheckpoints horen bij het opgegeven trainingstraject.
+TEST: 20 beelden per checkpoint; batch 8; alleen evaluatie.
+Selectie: W32/A32 top-1, hoogste score; bij exact gelijk behoud vroegste epoch.
+Geen losse beste epoch per bitbreedte. We trainen of kalibreren NIET verder.
+  epoch 1/3: W32/A32 top-1=15.00%; test+laden=0.59s; resultaat opgeslagen.
+    Raming resterende W32-sweep: 0.0 minuten, exclusief afsluitende controles.
+Evaluatie gepauzeerd: 1/3 checkpoints beschikbaar. Geen definitieve beste epoch.
+Waarschuwingen: 0; zie selection_report.json.
+STATUS: PAUSED
+Rapportmap: /mnt/data/eval_build/test_selection_checks_detached/split/sessions/20261013_164101_984995
+Geen downloads, installaties, training of overschrijving van trainingsbestanden.

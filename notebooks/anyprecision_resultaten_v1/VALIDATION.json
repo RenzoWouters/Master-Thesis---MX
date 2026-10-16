@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Notebook rendering from existing results; no model training or test inference",
+  "python": "3.13.5",
+  "platform": "Linux",
+  "packages": {
+    "matplotlib": "3.10.8",
+    "ipykernel": "7.2.0",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.4"
+  },
+  "checks": {
+    "executed_top_to_bottom_from_notebook_directory": true,
+    "executed_from_project_root": true,
+    "six_code_cells_executed": true,
+    "no_error_outputs": true,
+    "single_figure_output_saved": true,
+    "table_output_saved": true,
+    "numeric_values_cross_checked_with_report_and_counts": true,
+    "input_copies_byte_identical_to_supplied_files": true,
+    "inputs_unchanged_after_execution": true,
+    "optional_png_and_svg_export_tested": true,
+    "png_visually_reviewed": true,
+    "exported_png_matches_previously_approved_figure_pixels": true
+  },
+  "limitations": [
+    "Windows and local VS Code execution not tested here.",
+    "Existing evaluation results visualized, not independently measured again.",
+    "Direct dependencies pinned; indirect dependencies chosen at local installation."
+  ]
+}

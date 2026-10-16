@@ -1,0 +1,22 @@
+{
+  "argv": [
+    ".\\software_checks\\anyprecision_checkpoint_selection_v1\\select_checkpoints.py",
+    "sweep",
+    "--reference-dir",
+    ".\\software_checks\\anyprecision_reference_github200_v1",
+    "--run-root",
+    ".\\reference_runs\\anyprecision_github200",
+    "--final-checkpoint",
+    "C:\\Users\\renzo\\master-thesis-mx\\reference_runs\\anyprecision_github200\\20261013_164217_232547_train\\checkpoints\\epoch_00200.pt",
+    "--data-root",
+    ".\\data\\cifar10",
+    "--output-dir",
+    ".\\evaluation_runs\\anyprecision_github200_selection_v1",
+    "--device",
+    "cuda",
+    "--max-checkpoints",
+    "0"
+  ],
+  "max_new_checkpoints": 0,
+  "stop_request": "C:\\Users\\renzo\\master-thesis-mx\\evaluation_runs\\anyprecision_github200_selection_v1\\sessions\\20261014_195700_413836\\STOP_AFTER_CHECKPOINT.txt"
+}
