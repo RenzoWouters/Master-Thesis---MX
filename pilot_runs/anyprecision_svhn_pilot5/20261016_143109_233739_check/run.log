@@ -1,0 +1,16 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_svhn_pilot5\20261016_143109_233739_check
+pip check: No broken requirements found.
+FAIL: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_svhn_pilot5_v1\run_svhn.py", line 415, in main
+    ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_svhn_pilot5_v1\run_svhn.py", line 75, in create_context
+    rt = s.runtime(c['seed'], args.device)
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_svhn_pilot5_v1\svhn_support.py", line 81, in runtime
+    import scipy.io
+ModuleNotFoundError: No module named 'scipy'
+
+SciPy ontbreekt. Installeer alleen SciPy met --no-deps; zie README.md. Torch/NumPy niet wijzigen.
+Niets wordt verwijderd of overschreven. Deel run_report.json of feedback_bundle.zip.
+EINDSTATUS: FAIL
+Rapport: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_svhn_pilot5\20261016_143109_233739_check\run_report.json

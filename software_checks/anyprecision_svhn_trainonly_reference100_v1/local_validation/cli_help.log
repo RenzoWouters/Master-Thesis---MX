@@ -1,0 +1,25 @@
+usage: run_svhn.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]
+                   [--device {cuda,cuda:0}] [--download]
+                   [--stop-after-epoch STOP_AFTER_EPOCH]
+                   [--checkpoint CHECKPOINT]
+                   {check,run,resume}
+
+One hundred COMPLETE train-only SVHN epochs, starting from scratch.
+Production: CUDA, complete official train only, no extra, no MX, no new
+quantizer. The supplied Any-Precision forward function and the validated epoch
+loop are reused. Run starts fresh; resume is only for interrupted runs of THIS
+full-run package.
+
+positional arguments:
+  {check,run,resume}
+
+options:
+  -h, --help            show this help message and exit
+  --data-root DATA_ROOT
+  --output-root OUTPUT_ROOT
+  --device {cuda,cuda:0}
+  --download
+  --stop-after-epoch STOP_AFTER_EPOCH
+                        Vast eindpunt 100; gecontroleerd onderbreken kan met
+                        een enkele Ctrl+C.
+  --checkpoint CHECKPOINT

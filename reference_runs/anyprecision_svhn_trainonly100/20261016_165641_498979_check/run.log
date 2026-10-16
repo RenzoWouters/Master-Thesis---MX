@@ -1,0 +1,8 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\reference_runs\anyprecision_svhn_trainonly100\20261016_165641_498979_check
+REFERENTIE: 100 train-only epochs; geen extra, geen MX, geen pilot-warmstart.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+CHECK PASS: model, GPU, SciPy, versies en broncontrole. Geen training uitgevoerd.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\reference_runs\anyprecision_svhn_trainonly100\20261016_165641_498979_check\run_report.json

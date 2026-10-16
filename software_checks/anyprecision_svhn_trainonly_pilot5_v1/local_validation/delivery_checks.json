@@ -1,0 +1,28 @@
+{
+  "cli_help": {
+    "status": "PASS",
+    "returncode": 0
+  },
+  "cli_reject_100epochs": {
+    "status": "PASS",
+    "returncode": 2
+  },
+  "cli_reject_CPU": {
+    "status": "PASS",
+    "returncode": 2
+  },
+  "cli_reject_warmstart_run": {
+    "status": "PASS",
+    "returncode": 2
+  },
+  "final_payload_hash_verification": {
+    "status": "PASS",
+    "hashed_files": 17
+  },
+  "previous_zip_and_reused_original_files_unchanged": {
+    "status": "PASS"
+  },
+  "notebook_clean_no_precomputed_research_results": {
+    "status": "PASS"
+  }
+}

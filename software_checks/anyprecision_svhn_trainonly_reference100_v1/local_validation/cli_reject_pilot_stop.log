@@ -1,0 +1,6 @@
+usage: run_svhn.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]
+                   [--device {cuda,cuda:0}] [--download]
+                   [--stop-after-epoch STOP_AFTER_EPOCH]
+                   [--checkpoint CHECKPOINT]
+                   {check,run,resume}
+run_svhn.py: error: Deze referentie heeft een vast eindpunt van 100 epochs; gebruik de aparte pilot voor vijf epochs.

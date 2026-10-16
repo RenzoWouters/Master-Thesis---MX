@@ -1,0 +1,24 @@
+usage: run_svhn.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]
+                   [--device {cuda,cuda:0}] [--download]
+                   [--stop-after-epoch STOP_AFTER_EPOCH]
+                   [--checkpoint CHECKPOINT]
+                   {check,run,resume}
+
+Five COMPLETE SVHN epochs using the supplied Any-Precision training function.
+Production: CUDA, complete SVHN train ONLY, no extra, no MX, no early LR
+decay. The 100-epoch protocol is fixed; this package stops no later than epoch
+5.
+
+positional arguments:
+  {check,run,resume}
+
+options:
+  -h, --help            show this help message and exit
+  --data-root DATA_ROOT
+  --output-root OUTPUT_ROOT
+  --device {cuda,cuda:0}
+  --download
+  --stop-after-epoch STOP_AFTER_EPOCH
+                        Absolute pilotgrens 1..5; verandert NIET het LR-
+                        schema.
+  --checkpoint CHECKPOINT

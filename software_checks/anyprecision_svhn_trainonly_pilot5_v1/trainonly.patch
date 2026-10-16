@@ -1,0 +1,169 @@
+--- previous_pilot/run_svhn.py
++++ trainonly_pilot/run_svhn.py
+@@ -1,6 +1,6 @@
+ """Five COMPLETE SVHN epochs using the supplied Any-Precision training function.
+ 
+-Production: CUDA, original train+extra, no subset, no MX, no early LR decay.
++Production: CUDA, complete SVHN train ONLY, no extra, no MX, no early LR decay.
+ The 100-epoch protocol is fixed; this package stops no later than epoch 5.
+ """
+ from __future__ import annotations
+@@ -31,10 +31,13 @@
+ 
+ def config() -> dict:
+     return {
+-        'schema': 'anyprecision-svhn-pilot5-protocol-v1',
+-        'purpose': 'five_complete_epochs_of_author_code_recipe_not_paper_endpoint',
+-        'dataset': 'svhn', 'train_split': 'train_extra', 'test_split': 'test',
+-        'train_examples': 604388, 'test_examples': 26032, 'validation_examples': 0,
++        'schema': 'anyprecision-svhn-trainonly-pilot5-protocol-v1',
++        'purpose': 'five_complete_train_only_epochs_explicit_variant_of_author_recipe',
++        'dataset': 'svhn', 'train_split': 'train', 'test_split': 'test',
++        'extra_used': False,
++        'research_change': 'train_extra -> complete official train; no held-out subset',
++        'initialization_policy': 'fresh run; never warm-start from train_extra',
++        'train_examples': 73257, 'test_examples': 26032, 'validation_examples': 0,
+         'model': 'svhnq', 'expand': 2, 'parameters': 132954,
+         'bits': s.BITS, 'planned_epochs': 100, 'pilot_stop_epoch': 5,
+         'batch_size': 128, 'optimizer': 'adam', 'lr': .001, 'weight_decay': 0.0,
+@@ -71,6 +74,8 @@
+     source, source_info = s.legacy.prepare_source(out)
+     report.update(config=c, source=source_info, package_sha256=package_hashes,
+                   interpreter=sys.executable)
++    s.write_json(out / 'trainonly_change_manifest.json',
++                 json.loads((ROOT / 'TRAINONLY_CHANGE_MANIFEST.json').read_text(encoding='utf-8')))
+     dependencies(out, log)
+     rt = s.runtime(c['seed'], args.device)
+     modules = s.import_source(source)
+@@ -113,17 +118,24 @@
+     start_load = time.perf_counter()
+     train_tf = modules.data.get_transform('svhn', 'train')
+     test_tf = modules.data.get_transform('svhn', 'val')
+-    train = modules.data.get_dataset('svhn', 'train_extra', train_tf, download=False)
++    s.require(c['train_split'] == 'train' and c['extra_used'] is False,
++              'Deze runner is uitsluitend voor de volledige train-split, zonder extra.')
++    train = modules.data.get_dataset('svhn', c['train_split'], train_tf, download=False)
+     test = modules.data.get_dataset('svhn', 'val', test_tf, download=False)
+-    selection = {'train': s.validate_dataset(train, c['train_examples'], 'SVHN train+extra'),
++    s.require(train.split == 'train' and test.split == 'test', 'Onverwachte datasetsplit.')
++    s.require(set(info['files']) == {'train_32x32.mat', 'test_32x32.mat'},
++              'Train-only mag alleen train en test laden of controleren.')
++    selection = {'train': s.validate_dataset(train, c['train_examples'], 'SVHN train-only'),
+                  'test': s.validate_dataset(test, c['test_examples'], 'SVHN test'),
+-                 'train_split_order': ['train', 'extra'], 'held_out_validation_examples': 0}
++                 'train_split_order': ['train'], 'extra_used': False,
++                 'held_out_validation_examples': 0}
+     report['dataset_load_seconds'] = time.perf_counter() - start_load
+     report['dataset_selection'] = selection
+     report['transforms'] = {'train': repr(train_tf), 'test': repr(test_tf)}
+     s.write_json(out / 'dataset_manifest.json', {'files': info, 'selection': selection,
+                                               'transforms': report['transforms']})
+-    log(f'DATA PASS: train={len(train)}, test={len(test)}; invoer 40x40; geen subset.')
++    log(f'DATA PASS: train={len(train)}, test={len(test)}; extra NIET gebruikt; '
++        'invoer 40x40; volledige train-split; geen validatiesplit.')
+     # No explicit generators: match the global RNG policy of the source loaders.
+     torch = rt.torch
+     loaders = {
+@@ -132,6 +144,8 @@
+         'test': s.TrackedLoader(torch.utils.data.DataLoader(s.IndexedDataset(test),
+                   batch_size=c['batch_size'], shuffle=False, num_workers=0, pin_memory=True, drop_last=False)),
+     }
++    log(f'MINIBATCHES per epoch: train={len(loaders["train"])}; test={len(loaders["test"])}; '
++        f'batch={c["batch_size"]}, drop_last=False.')
+     model = modules.models.svhnq(s.BITS, train.num_classes).to(rt.device)
+     s.require(model.expand == c['expand'] and sum(p.numel() for p in model.parameters()) == c['parameters'],
+               'Onverwacht model; verwacht svhnq expand=2.')
+@@ -318,14 +332,18 @@
+         comparison.append({'role': r['role'], 'epoch': r['epoch'], 'bits_w_and_a': r['bits_w_and_a'],
+                            'our_top1_percent': r['top1_percent'], 'paper_100epoch_top1_percent': value,
+                            'difference_percentage_points': r['top1_percent'] - value,
+-                           'comparable_training_budget': r['epoch'] == 100,
+-                           'note': 'pilot, not a 100-epoch paper replication'})
++                           'comparable_training_budget': False,
++                           'same_training_split': False,
++                           'our_train_split': c['train_split'],
++                           'paper_train_split': 'train_extra',
++                           'note': 'train-only pilot; paper used train+extra for 100 epochs; context only'})
+     s.write_csv(out / 'paper_comparison.csv', comparison)
+     s.write_json(out / 'paper_targets.json', paper)
+     selection = {'policy': c['selection_policy'], 'best': checkpoint_details['best_W32_test'],
+                  'last': checkpoint_details['last_epoch'], 'same_checkpoint': best['epoch'] == last['epoch'],
+                  'selected_on_official_test': True, 'independent_test_estimate': False,
+-                 'completed_epochs': last['epoch'], 'paper_epochs': c['planned_epochs']}
++                 'completed_epochs': last['epoch'], 'paper_epochs': c['planned_epochs'],
++                 'train_split': c['train_split'], 'extra_used': False}
+     s.write_json(out / 'checkpoint_selection.json', selection)
+     s.write_json(out / 'history.json', trace)
+     estimate = s.estimate_time(records, c['planned_epochs'])
+@@ -339,11 +357,11 @@
+                       selected_best_epoch=best['epoch'], selected_last_epoch=last['epoch'],
+                       checkpoint_selection=selection, timing_estimate=estimate,
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'])
+-    notebook = json.loads((ROOT / 'SVHN_pilot5_resultaten.ipynb').read_text(encoding='utf-8'))
++    notebook = json.loads((ROOT / 'SVHN_trainonly_pilot5_resultaten.ipynb').read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+             cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n']
+-    s.write_json(out / 'SVHN_pilot5_resultaten.ipynb', notebook)
++    s.write_json(out / 'SVHN_trainonly_pilot5_resultaten.ipynb', notebook)
+     log(f'BEHOUDEN: beste checkpoint epoch {best["epoch"]}; laatste checkpoint epoch {last["epoch"]}.')
+ 
+ 
+@@ -365,7 +383,8 @@
+         names = ['run_report.json', 'epoch_metrics.csv', 'selected_metrics.csv', 'paper_comparison.csv',
+                  'checkpoint_selection.json', 'timing_estimate.json', 'epoch_times.csv',
+                  'history.json', 'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+-                 'paper_targets.json', 'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log']
++                 'paper_targets.json', 'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
++                 'trainonly_change_manifest.json']
+         for name in names:
+             path = out / name
+             if path.is_file():
+@@ -376,7 +395,7 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('pilot_runs/anyprecision_svhn_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('pilot_runs/anyprecision_svhn_trainonly_pilot5'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+     parser.add_argument('--stop-after-epoch', type=int, default=5,
+@@ -390,10 +409,11 @@
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'anyprecision-svhn-pilot5-report-v1', 'status': 'RUNNING',
++    report = {'schema': 'anyprecision-svhn-trainonly-pilot5-report-v1', 'status': 'RUNNING',
+               'command': args.command, 'started_at': s.now(), 'output_directory': str(out),
+               'argv': sys.argv, 'warnings': [],
+-              'limitations': ['pilot: only first five epochs of the 100-epoch recipe',
++              'limitations': ['train only, NO extra: deliberate dataset variant, NOT a paper replication',
++                              'pilot: first five epochs; original LR milestones 50/75/90 retained',
+                               'test-selected score is not independent of checkpoint selection',
+                               'authors historical seed and environment not established',
+                               'cuDNN benchmark=True: bit-exact CUDA replay is not promised',
+--- previous_pilot/svhn_support.py
++++ trainonly_pilot/svhn_support.py
+@@ -134,7 +134,8 @@
+     """
+     cache.mkdir(parents=True, exist_ok=True)
+     result = {'root': str(cache), 'files': {}, 'download_events': []}
+-    for split in ['train', 'extra', 'test']:
++    # Train-only: extra is not opened, hashed, downloaded or required.
++    for split in ['train', 'test']:
+         url, filename, expected = dataset_class.split_list[split]
+         target = cache / filename
+         if target.exists():
+--- previous_pilot/paper_targets.json
++++ trainonly_pilot/paper_targets.json
+@@ -15,5 +15,9 @@
+   },
+   "dedicated_columns_not_used": true,
+   "historical_checkpoint_selection_proven": false,
+-  "not_a_success_threshold_for_five_epochs": true
++  "not_a_success_threshold_for_five_epochs": true,
++  "train_split": "train_extra",
++  "train_examples": 604388,
++  "usage": "literature context only; neither dataset nor training budget match this pilot",
++  "train_only_results_are_not_a_paper_replication": true
+ }

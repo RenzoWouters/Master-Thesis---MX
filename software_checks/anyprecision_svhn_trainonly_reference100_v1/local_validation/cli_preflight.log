@@ -1,0 +1,19 @@
+RESULTATENMAP: /mnt/data/_svhn100_build/cli_preflight/20261016_144503_549608_check
+REFERENTIE: 100 train-only epochs; geen extra, geen MX, geen pilot-warmstart.
+FAIL: Afhankelijkheidsconflict; zie pip_check.txt. Geen automatische upgrades.
+Traceback (most recent call last):
+  File "/mnt/data/anyprecision_svhn_trainonly_reference100_v1/run_svhn.py", line 507, in main
+    ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+  File "/mnt/data/anyprecision_svhn_trainonly_reference100_v1/run_svhn.py", line 80, in create_context
+    dependencies(out, log)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/data/anyprecision_svhn_trainonly_reference100_v1/run_svhn.py", line 68, in dependencies
+    s.require(check.returncode == 0, 'Afhankelijkheidsconflict; zie pip_check.txt. Geen automatische upgrades.')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/anyprecision_svhn_trainonly_reference100_v1/smoke_support.py", line 41, in require
+    raise RuntimeError(message)
+RuntimeError: Afhankelijkheidsconflict; zie pip_check.txt. Geen automatische upgrades.
+
+Niets wordt verwijderd of overschreven. Deel run_report.json of feedback_bundle.zip.
+EINDSTATUS: FAIL
+Rapport: /mnt/data/_svhn100_build/cli_preflight/20261016_144503_549608_check/run_report.json

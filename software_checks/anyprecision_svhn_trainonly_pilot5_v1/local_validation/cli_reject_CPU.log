@@ -1,0 +1,6 @@
+usage: run_svhn.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]
+                   [--device {cuda,cuda:0}] [--download]
+                   [--stop-after-epoch STOP_AFTER_EPOCH]
+                   [--checkpoint CHECKPOINT]
+                   {check,run,resume}
+run_svhn.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)

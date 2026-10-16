@@ -1,0 +1,19 @@
+{
+  ".gitattributes": "d86d5393f60579ceba78f7323ec03c9ac562d01959bfa15d966a8c12384b21e1",
+  ".gitignore": "8b05df261858040f76ca1fd3ea21cd11ceb221a9fea55d573f9949eae6f663e4",
+  "COMPATIBILITY.md": "a262fad7f44b805c57fabc6c3fe6c6454f4903530055f9d59b50f145baa4a8e4",
+  "PROTOCOL.md": "059cea8fe03d3f6b2104a39283dc0b534a4ffc96e3149e0d7aeabb112b58db06",
+  "README.md": "02eb5e857b242fe68dcbf5cd6ef8f6831247a69325e2cec6c49d5f9fc4ad13e6",
+  "REUSE_MANIFEST.json": "6d8c5aabd9d62bb45b124b5aa6e189e7e4d876540a3088e4b56ff572b5ed00db",
+  "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+  "SVHN_trainonly_pilot5_resultaten.ipynb": "eccdf3eba6333becb675134dc175bb41ddbe3363d45c1bd62c771500ca47546c",
+  "TRAINONLY_CHANGE_MANIFEST.json": "763313de0162fcae71fe16432d6d0c8f4cbfb4bbbe095ade0adfc4ba4a51825f",
+  "compatibility.patch": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742",
+  "paper_targets.json": "8f94667de4ab3e024774cf8d101f08920d2a36016b122f6ba1b2ee11c8f4034e",
+  "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+  "run_svhn.py": "ad863bd7730d0151398353f33a6f332ff6714048d1beff656018cfd82b6f73aa",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+  "trainonly.patch": "6a9aca42dc926bfa6405580f0934d61912e15d9c15ed095c7c74a5d98fcc109b",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

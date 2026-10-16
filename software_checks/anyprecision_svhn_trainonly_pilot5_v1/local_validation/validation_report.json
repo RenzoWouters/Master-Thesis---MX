@@ -1,0 +1,39 @@
+{
+  "test_scope": "OFFLINE SYNTHETIC CPU ONLY",
+  "real_svhn_downloaded": false,
+  "real_svhn_epochs_run": 0,
+  "gpu_tested": false,
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "torchvision": "0.25.0+cpu",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "tests": {
+    "uninstrumented_upstream_vs_instrumented_5epochs_exact_CPU": {
+      "status": "PASS",
+      "model": true,
+      "optimizer": true,
+      "scheduler": true,
+      "all_rng_states": true,
+      "all_epoch_metrics": true,
+      "forward_ast_sha256": "a0db9df47af2b74d8419873f150a97d6919e67b713030ceefeab8c628e503974"
+    },
+    "resume_after_epoch2_matches_5epoch_continuous_CPU_including_dropout": "PASS",
+    "best_and_last_copies_verified_against_saved_model_and_metrics": "PASS",
+    "checkpoint_hash_overwrite_and_contract_guards": "PASS",
+    "cross_split_resume_contract_is_rejected": "PASS",
+    "stop_marker_finishes_current_epoch": "PASS",
+    "original_loader_train_only_no_extra_file_required_label10_and_resize40": "PASS",
+    "extra_present_but_invalid_is_ignored_and_unchanged": "PASS",
+    "production_rejects_subset_dataset": "PASS",
+    "staged_download_and_existing_raw_never_overwritten": "PASS",
+    "selection_strict_W32_earliest_tie_not_low_bit_peak": "PASS",
+    "LR_milestones_50_75_90_not_compressed_into_pilot": "PASS",
+    "production_config_five_full_epochs_no_subset": "PASS",
+    "previous_protocol_unchanged_except_split_and_explicit_metadata": "PASS",
+    "paper_comparison_always_marked_as_different_dataset_and_budget": "PASS",
+    "read_only_notebook_executes_from_saved_synthetic_data": "PASS",
+    "source_and_reused_resume_core_unchanged": "PASS"
+  },
+  "status": "PASS"
+}

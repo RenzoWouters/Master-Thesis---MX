@@ -1,0 +1,11 @@
+role,epoch,bits_w_and_a,our_top1_percent,paper_100epoch_top1_percent,difference_percentage_points,comparable_training_budget,same_training_split,our_train_split,paper_train_split,note
+best_W32_test,5,1,82.22956360463505,88.21,-5.980436395364947,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+best_W32_test,5,2,90.53088505984671,94.94,-4.409114940153287,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+best_W32_test,5,4,92.0251997494595,96.19,-4.164800250540495,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+best_W32_test,5,8,92.25184388444991,96.22,-3.9681561155500873,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+best_W32_test,5,32,92.52074370006146,96.29,-3.7692562999385473,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+last_epoch,5,1,82.22956360463505,88.21,-5.980436395364947,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+last_epoch,5,2,90.53088505984671,94.94,-4.409114940153287,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+last_epoch,5,4,92.0251997494595,96.19,-4.164800250540495,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+last_epoch,5,8,92.25184388444991,96.22,-3.9681561155500873,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only
+last_epoch,5,32,92.52074370006146,96.29,-3.7692562999385473,False,False,train,train_extra,train-only pilot; paper used train+extra for 100 epochs; context only

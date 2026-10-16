@@ -1,0 +1,11 @@
+role,epoch,bits_w_and_a,our_top1_percent,paper_100epoch_top1_percent,difference_percentage_points,comparable_training_budget,note
+best_W32_test,5,1,86.55116779348494,88.21,-1.6588322065150578,False,"pilot, not a 100-epoch paper replication"
+best_W32_test,5,2,93.74231714812538,94.94,-1.1976828518746174,False,"pilot, not a 100-epoch paper replication"
+best_W32_test,5,4,95.21358327273585,96.19,-0.9764167272641515,False,"pilot, not a 100-epoch paper replication"
+best_W32_test,5,8,95.40565456960124,96.22,-0.8143454303987596,False,"pilot, not a 100-epoch paper replication"
+best_W32_test,5,32,95.45559310678624,96.29,-0.8344068932137674,False,"pilot, not a 100-epoch paper replication"
+last_epoch,5,1,86.55116779348494,88.21,-1.6588322065150578,False,"pilot, not a 100-epoch paper replication"
+last_epoch,5,2,93.74231714812538,94.94,-1.1976828518746174,False,"pilot, not a 100-epoch paper replication"
+last_epoch,5,4,95.21358327273585,96.19,-0.9764167272641515,False,"pilot, not a 100-epoch paper replication"
+last_epoch,5,8,95.40565456960124,96.22,-0.8143454303987596,False,"pilot, not a 100-epoch paper replication"
+last_epoch,5,32,95.45559310678624,96.29,-0.8344068932137674,False,"pilot, not a 100-epoch paper replication"

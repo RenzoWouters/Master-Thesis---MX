@@ -1,0 +1,7 @@
+{
+  "source_archive": "anyprecision_reference_github200_v1(1).zip",
+  "byte_identical_files": {
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8"
+  }
+}

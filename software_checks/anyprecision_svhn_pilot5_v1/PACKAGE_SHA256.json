@@ -1,0 +1,11 @@
+{
+  "run_svhn.py": "f21e4b919213ea94ec4dd9a19df17f35b6114bd9557ea2cb6c4fba2aad2bfc6c",
+  "svhn_support.py": "f43179029d83d9be2c3927f9093f6543df46a2b448679ae891f0eceb6cd0259b",
+  "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+  "REUSE_MANIFEST.json": "6d8c5aabd9d62bb45b124b5aa6e189e7e4d876540a3088e4b56ff572b5ed00db",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+  "paper_targets.json": "13eec1ba57747e5457e45ab91504cd7dfcb9747ad926b97bfb33749940894ec8",
+  "SVHN_pilot5_resultaten.ipynb": "dd5410cb40ecf9d8b26ffb17d17e2597f54cb4304e0d8a2ccd18882fd341944a"
+}

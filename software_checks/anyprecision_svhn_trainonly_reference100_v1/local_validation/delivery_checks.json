@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "previous_pilot_archive_unchanged": true,
+  "previous_feedback_archive_unchanged": true,
+  "unchanged_support_hashes_verified": true,
+  "notebook_no_embedded_synthetic_outputs": true,
+  "compiled_files": [
+    "run_svhn.py",
+    "svhn_support.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "local_validation/test_svhn.py",
+    "local_validation/test_cli_export.py"
+  ],
+  "production_CUDA_preflight_tested_here": false
+}

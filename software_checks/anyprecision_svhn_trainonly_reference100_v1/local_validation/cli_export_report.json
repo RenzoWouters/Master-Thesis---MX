@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC fixture, mocked context/epoch execution only; no real training",
+  "default_run_endpoint_100": true,
+  "fresh_run_has_no_checkpoint_argument": true,
+  "CLI_final_report_and_feedback_bundle": true,
+  "real_GPU_test": false
+}

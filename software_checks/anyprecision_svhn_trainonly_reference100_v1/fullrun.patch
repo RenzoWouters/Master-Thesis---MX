@@ -1,0 +1,203 @@
+--- trainonly_pilot/run_svhn.py
++++ trainonly_reference100/run_svhn.py
+@@ -1,7 +1,8 @@
+-"""Five COMPLETE SVHN epochs using the supplied Any-Precision training function.
+-
+-Production: CUDA, complete SVHN train ONLY, no extra, no MX, no early LR decay.
+-The 100-epoch protocol is fixed; this package stops no later than epoch 5.
++"""One hundred COMPLETE train-only SVHN epochs, starting from scratch.
++
++Production: CUDA, complete official train only, no extra, no MX, no new quantizer.
++The supplied Any-Precision forward function and the validated epoch loop are reused.
++Run starts fresh; resume is only for interrupted runs of THIS full-run package.
+ """
+ from __future__ import annotations
+ 
+@@ -31,15 +32,15 @@
+ 
+ def config() -> dict:
+     return {
+-        'schema': 'anyprecision-svhn-trainonly-pilot5-protocol-v1',
+-        'purpose': 'five_complete_train_only_epochs_explicit_variant_of_author_recipe',
++        'schema': 'anyprecision-svhn-trainonly-reference100-protocol-v1',
++        'purpose': 'hundred_complete_train_only_epochs_explicit_variant_of_author_recipe',
+         'dataset': 'svhn', 'train_split': 'train', 'test_split': 'test',
+         'extra_used': False,
+         'research_change': 'train_extra -> complete official train; no held-out subset',
+         'initialization_policy': 'fresh run; never warm-start from train_extra',
+         'train_examples': 73257, 'test_examples': 26032, 'validation_examples': 0,
+         'model': 'svhnq', 'expand': 2, 'parameters': 132954,
+-        'bits': s.BITS, 'planned_epochs': 100, 'pilot_stop_epoch': 5,
++        'bits': s.BITS, 'planned_epochs': 100, 'target_final_epoch': 100,
+         'batch_size': 128, 'optimizer': 'adam', 'lr': .001, 'weight_decay': 0.0,
+         'scheduler_milestones': [50, 75, 90], 'scheduler_gamma': .1,
+         'workers': 0, 'pin_memory': True, 'drop_last': False,
+@@ -74,8 +75,8 @@
+     source, source_info = s.legacy.prepare_source(out)
+     report.update(config=c, source=source_info, package_sha256=package_hashes,
+                   interpreter=sys.executable)
+-    s.write_json(out / 'trainonly_change_manifest.json',
+-                 json.loads((ROOT / 'TRAINONLY_CHANGE_MANIFEST.json').read_text(encoding='utf-8')))
++    s.write_json(out / 'fullrun_change_manifest.json',
++                 json.loads((ROOT / 'FULLRUN_CHANGE_MANIFEST.json').read_text(encoding='utf-8')))
+     dependencies(out, log)
+     rt = s.runtime(c['seed'], args.device)
+     modules = s.import_source(source)
+@@ -297,6 +298,63 @@
+     return trace
+ 
+ 
++def completion_summary(records: list[dict], c: dict, synthetic: bool) -> tuple[dict, list[dict]]:
++    """Validate the complete saved trajectory without model calls or RNG draws."""
++    s.require(bool(records), 'Geen epochs voor eindcontrole.')
++    done = records[-1]['epoch']
++    s.require([r['epoch'] for r in records] == list(range(1, done + 1)),
++              'Ontbrekende, dubbele of ongeordende epochs in geschiedenis.')
++    s.require(done <= c['planned_epochs'], 'Meer epochs dan afgesproken.')
++    steps_per_epoch = math.ceil(c['train_examples'] / c['batch_size'])
++    lr_rows = []
++    for record in records:
++        ep = record['epoch']
++        used = c['lr']
++        next_lr = c['lr']
++        for milestone in c['scheduler_milestones']:
++            if milestone < ep:
++                used *= c['scheduler_gamma']
++            if milestone <= ep:
++                next_lr *= c['scheduler_gamma']
++        s.require(record['lr_used'] == used and record['lr_next'] == next_lr,
++                  'Onjuist LR-schema in opgeslagen epoch ' + str(ep))
++        s.require(record['optimizer_steps'] == ep * steps_per_epoch, 'Onjuist totaal optimizerstappen.')
++        s.require(record['batchnorm_counters_correct'], 'BatchNorm-tellers wijken af.')
++        for phase, expected in [('train', c['train_examples']), ('test', c['test_examples'])]:
++            rows = record[phase]
++            s.require([r['bits_w_and_a'] for r in rows] == c['bits'], 'Onjuiste precisierijen.')
++            s.require(record['coverage'][phase]['complete_once'], 'Onvolledige datadekking.')
++            s.require(record['coverage'][phase]['n'] == expected, 'Onjuist aantal voorbeelden.')
++            for row in rows:
++                s.require(row['epoch'] == ep and row['phase'] == phase and row['n'] == expected,
++                          'Onjuiste metric-identiteit of voorbeeldtelling.')
++                s.require(row['lr'] == used, 'LR in metric wijkt af.')
++                s.require(all(math.isfinite(float(row[k])) for k in
++                              ['objective_loss', 'top1_percent', 'top5_percent']), 'Niet-eindige metrics.')
++                s.require(abs(row['top1_percent'] - 100 * row['correct1'] / expected) < 0.0001,
++                          'Accuracy en correct-aantal spreken elkaar tegen.')
++        lr_rows.append({'epoch': ep, 'lr_used': used, 'lr_after_epoch': next_lr,
++                        'optimizer_steps': record['optimizer_steps']})
++    times = [r.get('total_epoch_seconds') for r in records]
++    timing_complete = all(t is not None and math.isfinite(float(t)) and t >= 0 for t in times)
++    summary = {
++        'schema': 'svhn-trainonly100-completion-v1', 'synthetic_fixture_only': synthetic,
++        'planned_epochs': c['planned_epochs'], 'completed_epochs': done,
++        'full_training_completed': done == c['planned_epochs'],
++        'optimizer_steps': records[-1]['optimizer_steps'],
++        'expected_optimizer_steps_at_completion': steps_per_epoch * c['planned_epochs'],
++        'all_epoch_precisions_complete': True, 'lr_schedule_verified': True,
++        'train_split': c['train_split'], 'extra_used': c['extra_used'],
++        'timing_complete': timing_complete,
++        'measured_completed_epoch_seconds': sum(times) if timing_complete else None,
++        'measured_time_scope': 'train + test + controls + checkpoint writes; excludes startup/final export',
++        'best_epoch_W32_A32': s.best_record(records)['epoch'], 'last_epoch': done,
++        'new_initialization_required_for_run': True,
++        'no_MX_or_stored_code_truncation': True,
++    }
++    return summary, lr_rows
++
++
+ def export_results(ctx, out: Path, trace: dict, log) -> None:
+     c, core = ctx.c, ctx.rt.core
+     records = trace['epochs']
+@@ -336,7 +394,7 @@
+                            'same_training_split': False,
+                            'our_train_split': c['train_split'],
+                            'paper_train_split': 'train_extra',
+-                           'note': 'train-only pilot; paper used train+extra for 100 epochs; context only'})
++                           'note': 'train-only reference; paper used train+extra; different data/update budget; context only'})
+     s.write_csv(out / 'paper_comparison.csv', comparison)
+     s.write_json(out / 'paper_targets.json', paper)
+     selection = {'policy': c['selection_policy'], 'best': checkpoint_details['best_W32_test'],
+@@ -346,7 +404,18 @@
+                  'train_split': c['train_split'], 'extra_used': False}
+     s.write_json(out / 'checkpoint_selection.json', selection)
+     s.write_json(out / 'history.json', trace)
++    summary, lr_rows = completion_summary(records, c, ctx.contract['synthetic_fixture_only'])
++    s.write_json(out / 'completion_summary.json', summary)
++    s.write_csv(out / 'learning_rate_schedule.csv', lr_rows)
++    ctx.report.update(completion_summary=summary, full_training_completed=summary['full_training_completed'])
+     estimate = s.estimate_time(records, c['planned_epochs'])
++    if estimate.get('available'):
++        estimate['limitations'] = [
++            'extrapolation from this run; not a substitute for the measured completed total',
++            'same laptop, backend and data loading conditions required',
++            'no prediction for future MX implementations']
++        estimate['measured_completed_epoch_seconds'] = summary['measured_completed_epoch_seconds']
++        estimate['full_training_completed'] = summary['full_training_completed']
+     s.write_json(out / 'timing_estimate.json', estimate)
+     s.write_csv(out / 'epoch_times.csv', [
+         {'epoch': r['epoch'], **{k: r.get(k) for k in
+@@ -357,11 +426,11 @@
+                       selected_best_epoch=best['epoch'], selected_last_epoch=last['epoch'],
+                       checkpoint_selection=selection, timing_estimate=estimate,
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'])
+-    notebook = json.loads((ROOT / 'SVHN_trainonly_pilot5_resultaten.ipynb').read_text(encoding='utf-8'))
++    notebook = json.loads((ROOT / 'SVHN_trainonly_reference100_resultaten.ipynb').read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+             cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n']
+-    s.write_json(out / 'SVHN_trainonly_pilot5_resultaten.ipynb', notebook)
++    s.write_json(out / 'SVHN_trainonly_reference100_resultaten.ipynb', notebook)
+     log(f'BEHOUDEN: beste checkpoint epoch {best["epoch"]}; laatste checkpoint epoch {last["epoch"]}.')
+ 
+ 
+@@ -384,7 +453,7 @@
+                  'checkpoint_selection.json', 'timing_estimate.json', 'epoch_times.csv',
+                  'history.json', 'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+                  'paper_targets.json', 'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
+-                 'trainonly_change_manifest.json']
++                 'fullrun_change_manifest.json', 'completion_summary.json', 'learning_rate_schedule.csv']
+         for name in names:
+             path = out / name
+             if path.is_file():
+@@ -395,25 +464,25 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('pilot_runs/anyprecision_svhn_trainonly_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('reference_runs/anyprecision_svhn_trainonly100'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+-    parser.add_argument('--stop-after-epoch', type=int, default=5,
+-                        help='Absolute pilotgrens 1..5; verandert NIET het LR-schema.')
++    parser.add_argument('--stop-after-epoch', type=int, default=100,
++                        help='Vast eindpunt 100; gecontroleerd onderbreken kan met een enkele Ctrl+C.')
+     parser.add_argument('--checkpoint', type=Path)
+     args = parser.parse_args()
+-    if not 1 <= args.stop_after_epoch <= 5:
+-        parser.error('Dit pakket laat alleen de pilot tot en met epoch 5 toe, niet de volledige training.')
++    if args.stop_after_epoch != 100:
++        parser.error('Deze referentie heeft een vast eindpunt van 100 epochs; gebruik de aparte pilot voor vijf epochs.')
+     if (args.command == 'resume') != (args.checkpoint is not None):
+         parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf nul.')
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'anyprecision-svhn-trainonly-pilot5-report-v1', 'status': 'RUNNING',
++    report = {'schema': 'anyprecision-svhn-trainonly-reference100-report-v1', 'status': 'RUNNING',
+               'command': args.command, 'started_at': s.now(), 'output_directory': str(out),
+               'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only, NO extra: deliberate dataset variant, NOT a paper replication',
+-                              'pilot: first five epochs; original LR milestones 50/75/90 retained',
++                              '100 train-only epochs; LR milestones 50/75/90; fewer updates than train+extra',
+                               'test-selected score is not independent of checkpoint selection',
+                               'authors historical seed and environment not established',
+                               'cuDNN benchmark=True: bit-exact CUDA replay is not promised',
+@@ -432,6 +501,9 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
++            log('REFERENTIE: 100 train-only epochs; geen extra, geen MX, geen pilot-warmstart.')
++            if args.command == 'run':
++                log('START vanaf initialisatie; alle 100 epochs lopen automatisch achter elkaar.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is not None:
+                 trace = run_epochs(ctx, out, log, args.stop_after_epoch, args.checkpoint)

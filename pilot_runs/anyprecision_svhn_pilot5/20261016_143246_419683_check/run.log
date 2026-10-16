@@ -1,0 +1,7 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_svhn_pilot5\20261016_143246_419683_check
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+CHECK PASS: model, GPU, SciPy, versies en broncontrole. Geen training uitgevoerd.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_svhn_pilot5\20261016_143246_419683_check\run_report.json

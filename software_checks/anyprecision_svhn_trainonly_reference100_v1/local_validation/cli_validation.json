@@ -1,0 +1,21 @@
+{
+  "reject_pilot_stop": {
+    "returncode": 2,
+    "expected_rejection": true
+  },
+  "reject_cpu": {
+    "returncode": 2,
+    "expected_rejection": true
+  },
+  "reject_warmstart": {
+    "returncode": 2,
+    "expected_rejection": true
+  },
+  "reject_resume_without_checkpoint": {
+    "returncode": 2,
+    "expected_rejection": true
+  },
+  "actual_container_preflight": {
+    "returncode": 1
+  }
+}
