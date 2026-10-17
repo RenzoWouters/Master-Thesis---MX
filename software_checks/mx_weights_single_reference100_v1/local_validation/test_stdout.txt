@@ -1,0 +1,37 @@
+PASS pilot_epoch_loop_AST_and_shared_modules_unchanged
+BEGIN control 100 mini-epochs
+PASS control_100_epochs_raw_vs_instrumented_model_optimizer_scheduler_rng_metrics_exact_CPU
+PASS control_100_checkpoints_best_last_LR_measured_completion
+PASS control_resume_50_75_90_99_matches_next_continuous_epoch_CPU
+PASS control_pilot_other_mode_overwrite_corruption_rejected
+BEGIN mx 100 mini-epochs
+PASS mx_100_epochs_raw_vs_instrumented_model_optimizer_scheduler_rng_metrics_exact_CPU
+PASS mx_100_checkpoints_best_last_LR_measured_completion
+PASS mx_resume_50_75_90_99_matches_next_continuous_epoch_CPU
+PASS mx_pilot_other_mode_overwrite_corruption_rejected
+PASS same_initialization_and_all_200_train_test_order_hashes_CPU
+PASS soft_stop_not_reported_as_full_training
+PASS first_strict_maximum_retains_earlier_tie
+PASS MX_export_reconstructs_without_six_FP32_masters
+PASS notebook_100_epoch_and_paired_control_execution
+{
+  "status": "PASS",
+  "checks": [
+    "pilot_epoch_loop_AST_and_shared_modules_unchanged",
+    "codec_and_model",
+    "two_updates_each_mode",
+    "control_100_epochs_raw_vs_instrumented_model_optimizer_scheduler_rng_metrics_exact_CPU",
+    "control_100_checkpoints_best_last_LR_measured_completion",
+    "control_resume_50_75_90_99_matches_next_continuous_epoch_CPU",
+    "control_pilot_other_mode_overwrite_corruption_rejected",
+    "mx_100_epochs_raw_vs_instrumented_model_optimizer_scheduler_rng_metrics_exact_CPU",
+    "mx_100_checkpoints_best_last_LR_measured_completion",
+    "mx_resume_50_75_90_99_matches_next_continuous_epoch_CPU",
+    "mx_pilot_other_mode_overwrite_corruption_rejected",
+    "same_initialization_and_all_200_train_test_order_hashes_CPU",
+    "soft_stop_not_reported_as_full_training",
+    "first_strict_maximum_retains_earlier_tie",
+    "MX_export_reconstructs_without_six_FP32_masters",
+    "notebook_100_epoch_and_paired_control_execution"
+  ]
+}

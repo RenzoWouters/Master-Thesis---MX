@@ -1,0 +1,19 @@
+{
+  "run_train.py": "a97578a12ac5500bae08e3df75f6103161867513170c9b9b61c5e60a4cfa50ca",
+  "single_support.py": "18c0ca6c43a2bfc43089fea857d6cffd8394808e5ece922fdba5f7b035174784",
+  "smoke_single.py": "bd0ed8962cf107f2014dd0cd859c22d8e19469038e0533c25bef7307e3073b15",
+  "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+  "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+  "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+  "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+  "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+  "REUSE_MANIFEST.json": "4cd2319f0e4b80b831ff50e18716413d16d47d5fe5273cb91b0a22a3430f90c3",
+  "TRAINING_CHANGE_MANIFEST.json": "99186e70df7352336e6736c2acad7e301703f820bfff2f646b1c6ffd9ce0c415",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+  "MX_single_reference100_resultaten.ipynb": "345565f6dc2468dfd27c369174212c34d914b7468eb3bac3a8129bc5a861fd04",
+  "PROTOCOL.md": "8454e5d9a0b2ccb9ba91cb9a116fc639f6f8cdddd19bfd03a833a56914fe1e18",
+  "CODEWIJZIGINGEN.md": "a507896507e3895d933ecea9b4dd4c2e8611b7bb70ae9c69e0bcc5d147f64e7f",
+  "fullrun.patch": "5ab5cc679cd01e2f7aaa6c0a49060bc316192873019ce24c34f5e95bb677c80b"
+}

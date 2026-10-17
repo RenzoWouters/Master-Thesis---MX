@@ -1,0 +1,3 @@
+role,epoch,phase,mode,weight_format,activation_bits,upstream_selector,n,objective_type,objective_loss,top1_percent,top5_percent,correct1,correct5,count_top1_percent,lr
+best_active_test,53,test,control,W32_effective,32,32,26032,hard_cross_entropy,0.2500438941041604,94.74492931307351,99.36232329440688,24664,25866,94.74492931776275,0.0001
+last_epoch,100,test,control,W32_effective,32,32,26032,hard_cross_entropy,0.2841033752922933,94.5451751643335,99.35464044253227,24612,25864,94.54517516902274,1.0000000000000002e-06

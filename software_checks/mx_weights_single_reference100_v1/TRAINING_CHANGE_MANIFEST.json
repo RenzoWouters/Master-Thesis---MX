@@ -1,0 +1,31 @@
+{
+  "schema": "mx-single-reference100-changes-v1",
+  "base_archive": "mx_weights_single_pilot5_v1.zip",
+  "base_archive_sha256": "a22e0e8fe7c67b7dab7506d2c2b56b3990836cadb036c4e2403ff5283cc9e770",
+  "changes": [
+    "stop at 100 instead of 5; fresh initialization remains mandatory for new runs",
+    "new protocol/report schema rejects pilot checkpoints",
+    "new output root; two independently started modes; never starts both in parallel",
+    "completion and measured-duration reporting for 100 epochs",
+    "read-only notebook with same-epoch-100 and separately selected-best comparisons"
+  ],
+  "training_epoch_loop_AST_identical_to_pilot": true,
+  "upstream_forward_unchanged": true,
+  "unchanged_files_sha256": {
+    "single_support.py": "18c0ca6c43a2bfc43089fea857d6cffd8394808e5ece922fdba5f7b035174784",
+    "smoke_single.py": "bd0ed8962cf107f2014dd0cd859c22d8e19469038e0533c25bef7307e3073b15",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "REUSE_MANIFEST.json": "4cd2319f0e4b80b831ff50e18716413d16d47d5fe5273cb91b0a22a3430f90c3",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "new_compatibility_changes": [],
+  "old_data_and_results_modified": false,
+  "previous_research_changes": "provenance/pilot5/TRAINING_CHANGE_MANIFEST.json",
+  "fullrun_patch": "fullrun.patch"
+}
