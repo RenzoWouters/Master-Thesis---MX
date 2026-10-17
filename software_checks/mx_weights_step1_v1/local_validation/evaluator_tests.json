@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "synthetic integration, not SVHN; no reference weights provided here",
+  "real_evaluate_function_exercised": true,
+  "eight_metric_rows": true,
+  "six_layer_rows_per_checkpoint": true,
+  "no_input_files_modified": true,
+  "standalone_fresh_process_export_test": "PASS: fresh process loaded only codes, auxiliary state and input probe",
+  "notebook_executed_on_saved_synthetic_reports": true,
+  "no_real_dataset_or_user_checkpoint_evaluated": true
+}

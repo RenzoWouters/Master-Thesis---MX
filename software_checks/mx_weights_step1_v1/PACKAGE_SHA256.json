@@ -1,0 +1,17 @@
+{
+  "compatibility.patch": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742",
+  "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+  "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+  "REUSE_MANIFEST.json": "2187286ed197801c94b658a8fb73fd010390918367af89af42e3ffc1cfdb2062",
+  "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+  "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+  "README.md": "e083f0cb40ec4321a1a24f02e87ab32baabd3258001a3afa17ae85555e46fbee",
+  "run_mx.py": "06a28c072d8b1eff34132efdbfbf7c03d3ea129ffe2f2be660908dc777662c05",
+  "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+  "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+  "BRONCODE_MET_REGELNUMMERS.txt": "240613015e49be13ba86ea004512404e33bd3b2bcd90054a690c498a8870a8b4",
+  "CODEWIJZIGINGEN.md": "f8b2011984b57b33172531d51a94e4e74f84f583305bca0a1430d3180b7b88a2",
+  "MX_weights_resultaten.ipynb": "ae097acd911fc553a551ec1e7e77060dae222e60a43eb2779084584a9f765bf0",
+  "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+  "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

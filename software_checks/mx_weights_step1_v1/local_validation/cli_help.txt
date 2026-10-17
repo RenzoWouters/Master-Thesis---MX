@@ -1,0 +1,18 @@
+usage: run_mx.py [-h] [--reference-run REFERENCE_RUN] [--data-root DATA_ROOT]
+                 [--output-root OUTPUT_ROOT] [--device DEVICE]
+                 {check,evaluate}
+
+Step 1: read-only W32/A32 vs weight-only MXFP6 E2M3/A32 evaluation. No
+optimizer, no calibration, no training, no precision search. The source
+checkpoints and datasets are never overwritten. The actual training runner is
+deliberately not patched until the representation has passed this check.
+
+positional arguments:
+  {check,evaluate}
+
+options:
+  -h, --help            show this help message and exit
+  --reference-run REFERENCE_RUN
+  --data-root DATA_ROOT
+  --output-root OUTPUT_ROOT
+  --device DEVICE
