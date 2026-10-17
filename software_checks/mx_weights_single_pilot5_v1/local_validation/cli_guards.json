@@ -1,0 +1,48 @@
+[
+  {
+    "args": [
+      "--help"
+    ],
+    "expected": 0,
+    "actual": 0,
+    "output": "usage: run_train.py [-h] [--mode {mx,control}] [--data-root DATA_ROOT]\n                    [--output-root OUTPUT_ROOT] [--device {cuda,cuda:0}]\n                    [--download] [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\n\nFive-epoch single-mode MX weight-training pilot, with an optional matched\ncontrol. CUDA production; SVHN train only. No warm-start, truncation or\ndistillation. The original forward function is used with internal selector\n[32]; the adapter selects actual MX weights, while activations and the BN bank\nremain at A32.\n\npositional arguments:\n  {check,run,resume}\n\noptions:\n  -h, --help            show this help message and exit\n  --mode {mx,control}\n  --data-root DATA_ROOT\n  --output-root OUTPUT_ROOT\n  --device {cuda,cuda:0}\n  --download\n  --stop-after-epoch STOP_AFTER_EPOCH\n  --checkpoint CHECKPOINT\n"
+  },
+  {
+    "args": [
+      "run",
+      "--device",
+      "cpu"
+    ],
+    "expected": 2,
+    "actual": 2,
+    "output": "usage: run_train.py [-h] [--mode {mx,control}] [--data-root DATA_ROOT]\n                    [--output-root OUTPUT_ROOT] [--device {cuda,cuda:0}]\n                    [--download] [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)\n"
+  },
+  {
+    "args": [
+      "run",
+      "--stop-after-epoch",
+      "100"
+    ],
+    "expected": 2,
+    "actual": 2,
+    "output": "usage: run_train.py [-h] [--mode {mx,control}] [--data-root DATA_ROOT]\n                    [--output-root OUTPUT_ROOT] [--device {cuda,cuda:0}]\n                    [--download] [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: Dit pakket is een proef van vijf epochs; geen automatische honderd-epochtraining.\n"
+  },
+  {
+    "args": [
+      "run",
+      "--checkpoint",
+      "unused.pt"
+    ],
+    "expected": 2,
+    "actual": 2,
+    "output": "usage: run_train.py [-h] [--mode {mx,control}] [--data-root DATA_ROOT]\n                    [--output-root OUTPUT_ROOT] [--device {cuda,cuda:0}]\n                    [--download] [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.\n"
+  },
+  {
+    "args": [
+      "resume"
+    ],
+    "expected": 2,
+    "actual": 2,
+    "output": "usage: run_train.py [-h] [--mode {mx,control}] [--data-root DATA_ROOT]\n                    [--output-root OUTPUT_ROOT] [--device {cuda,cuda:0}]\n                    [--download] [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.\n"
+  }
+]

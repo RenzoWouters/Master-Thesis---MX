@@ -1,0 +1,573 @@
+--- reference100/run_svhn.py
++++ single_pilot5/run_train.py
+@@ -1,8 +1,8 @@
+-"""One hundred COMPLETE train-only SVHN epochs, starting from scratch.
+-
+-Production: CUDA, complete official train only, no extra, no MX, no new quantizer.
+-The supplied Any-Precision forward function and the validated epoch loop are reused.
+-Run starts fresh; resume is only for interrupted runs of THIS full-run package.
++"""Five-epoch single-mode MX weight-training pilot, with an optional matched control.
++
++CUDA production; SVHN train only. No warm-start, truncation or distillation.
++The original forward function is used with internal selector [32]; the adapter
++selects actual MX weights, while activations and the BN bank remain at A32.
+ """
+ from __future__ import annotations
+ 
+@@ -26,33 +26,47 @@
+ 
+ sys.dont_write_bytecode = True
+ import svhn_support as s
++import single_support as t
+ 
+ ROOT = Path(__file__).resolve().parent
+ 
+ 
+-def config() -> dict:
++def config(mode: str = 'mx') -> dict:
++    s.require(mode in ('mx', 'control'), 'Onbekende modus.')
+     return {
+-        'schema': 'anyprecision-svhn-trainonly-reference100-protocol-v1',
+-        'purpose': 'hundred_complete_train_only_epochs_explicit_variant_of_author_recipe',
+-        'dataset': 'svhn', 'train_split': 'train', 'test_split': 'test',
+-        'extra_used': False,
+-        'research_change': 'train_extra -> complete official train; no held-out subset',
+-        'initialization_policy': 'fresh run; never warm-start from train_extra',
++        'schema': 'mx-weights-single-pilot5-protocol-v1',
++        'purpose': 'five complete epochs: single-mode weight-only QAT, or matched single-mode control',
++        'mode': mode, 'weight_format': t.weight_format(mode),
++        'weight_preprocess': 'original W32: G(W)=mean(abs(W)).detach()*tanh(W)/max(abs(tanh(W)))',
++        'activation_bits': 32, 'activation_policy': 'original A32/ReLU',
++        'master_dtype': 'float32', 'gradient_dtype': 'float32', 'adam_moments_dtype': 'float32',
++        'mx_block_size': 32 if mode == 'mx' else None,
++        'mx_scale_format': 'E8M0' if mode == 'mx' else None,
++        'mx_group_axis': 'flatten Cin*Kh*Kw within each Cout, zero-pad tail' if mode == 'mx' else None,
++        'mx_scale_policy': 'recomputed per forward from current effective weights' if mode == 'mx' else None,
++        'mx_rounding': 'nearest ties-to-even; same step1 codec' if mode == 'mx' else None,
++        'ste_policy': 'identity through MX; retain G(W) derivative' if mode == 'mx' else None,
++        'numeric_kernel': 'FP32 F.conv2d; codec uses FP64 intermediates; no native MX speed claim',
++        'truncation': False, 'distillation': False,
++        'loss': 'hard-label CrossEntropyLoss, mean reduction',
++        'passes_per_training_batch': 1, 'optimizer_steps_per_training_batch': 1,
++        'internal_upstream_selectors': [32], 'model_bank_structure': s.BITS,
++        'batchnorm_policy': 'bank32 trains; banks1/2/4/8 unused, unchanged, no Adam state',
++        'dataset': 'svhn', 'train_split': 'train', 'test_split': 'test', 'extra_used': False,
+         'train_examples': 73257, 'test_examples': 26032, 'validation_examples': 0,
++        'initialization_policy': 'fresh run, seed-matched across modes; never load old reference/pilot',
+         'model': 'svhnq', 'expand': 2, 'parameters': 132954,
+-        'bits': s.BITS, 'planned_epochs': 100, 'target_final_epoch': 100,
++        'planned_epochs': 100, 'pilot_stop_epoch': 5,
+         'batch_size': 128, 'optimizer': 'adam', 'lr': .001, 'weight_decay': 0.0,
+         'scheduler_milestones': [50, 75, 90], 'scheduler_gamma': .1,
+         'workers': 0, 'pin_memory': True, 'drop_last': False,
+-        'train_shuffle': True, 'test_shuffle': False,
+-        'seed': 20261009,
+-        'evaluation_policy': 'all five precisions on official test after EVERY epoch',
+-        'selection_policy': 'first strict maximum of upstream W32/A32 test top1',
+-        'reporting_policy': 'same best checkpoint at all bits AND final epoch at all bits',
++        'train_shuffle': True, 'test_shuffle': False, 'seed': 20261009,
++        'evaluation_policy': 'single active mode on complete official test after every epoch',
++        'selection_policy': 'first strict maximum of active-mode official-test top1',
++        'reporting_policy': 'best and last checkpoint of this run, not a per-mode mixture',
+         'backend_policy': 'github: cudnn.benchmark=True; no deterministic override',
+-        'quantizer': 'original, FP master requantization; NO MX; NO stored-code truncation',
+-        'rng_policy': 'global streams as upstream; saved/restored at epoch boundaries',
+-        'checkpoint_policy': 'immutable per epoch, plus separate best and last copies',
++        'rng_policy': 'global streams as upstream; save/restore at epoch boundaries',
++        'checkpoint_policy': 'immutable full FP32 training state per epoch plus best/last copies',
+         'exact_historical_paper_reproduction_proven': False,
+     }
+ 
+@@ -71,12 +85,12 @@
+ 
+ def create_context(args, out: Path, report: dict, log, check_only: bool = False):
+     package_hashes = s.verify_package()
+-    c = config()
++    c = config(args.mode)
+     source, source_info = s.legacy.prepare_source(out)
+     report.update(config=c, source=source_info, package_sha256=package_hashes,
+                   interpreter=sys.executable)
+-    s.write_json(out / 'fullrun_change_manifest.json',
+-                 json.loads((ROOT / 'FULLRUN_CHANGE_MANIFEST.json').read_text(encoding='utf-8')))
++    s.write_json(out / 'training_change_manifest.json',
++                 json.loads((ROOT / 'TRAINING_CHANGE_MANIFEST.json').read_text(encoding='utf-8')))
+     dependencies(out, log)
+     rt = s.runtime(c['seed'], args.device)
+     modules = s.import_source(source)
+@@ -85,30 +99,20 @@
+     log('Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.')
+     model = None
+     if check_only:
+-        model = modules.models.svhnq(s.BITS).to(rt.device)
+-        s.require(model.expand == c['expand'], 'Onverwachte modelbreedte.')
+-        s.require(sum(p.numel() for p in model.parameters()) == c['parameters'], 'Parametertelling wijkt af.')
+-        model.eval()
+-        # A zero tensor does not advance RNG streams. This is not SVHN training.
+-        with rt.torch.no_grad():
+-            x = rt.torch.zeros(2, 3, 40, 40, device=rt.device)
+-            for bit in s.BITS:
+-                s.legacy.select_precision(model, bit)
+-                y = model(x)
+-                s.require(tuple(y.shape) == (2, 10) and bool(rt.torch.isfinite(y).all()),
+-                          'GPU-vormcontrole mislukt.')
+-        _, forward_hash = s.load_forward(source, modules.utils, log)
+-        report.update(checks={'model_factory_expand2': True, 'five_gpu_forward_shapes': True,
+-                              'source_hashes_verified': True, 'optimizer_steps': 0,
+-                              'dataset_downloaded': False}, forward_ast_sha256=forward_hash)
+-        optional = {}
++        import test_mx
++        import smoke_single
++        report['codec_tests'] = test_mx.run_tests(modules, str(rt.device))
++        report['synthetic_training_checks'] = smoke_single.check(modules, rt)
++        _, forward_hash = t.load_single_forward(source, modules.utils, log)
++        report.update(forward_ast_sha256=forward_hash, dataset_downloaded=False,
++                      synthetic_checks_only=True)
++        report['notebook_dependencies'] = {}
+         for name in ['pandas', 'matplotlib', 'ipykernel']:
+             try:
+-                optional[name] = metadata.version(name)
++                report['notebook_dependencies'][name] = metadata.version(name)
+             except metadata.PackageNotFoundError:
+-                optional[name] = 'MISSING (only required for notebook)'
+-        report['notebook_dependencies'] = optional
+-        log('CHECK PASS: model, GPU, SciPy, versies en broncontrole. Geen training uitgevoerd.')
++                report['notebook_dependencies'][name] = 'MISSING: notebook only'
++        log('CHECK PASS: codec, model, gradient en twee synthetische updates per modus. Geen SVHN-training.')
+         return None
+ 
+     start_data = time.perf_counter()
+@@ -147,7 +151,7 @@
+     }
+     log(f'MINIBATCHES per epoch: train={len(loaders["train"])}; test={len(loaders["test"])}; '
+         f'batch={c["batch_size"]}, drop_last=False.')
+-    model = modules.models.svhnq(s.BITS, train.num_classes).to(rt.device)
++    model = t.build_model(modules, c['mode'], rt.device)
+     s.require(model.expand == c['expand'] and sum(p.numel() for p in model.parameters()) == c['parameters'],
+               'Onverwacht model; verwacht svhnq expand=2.')
+     optimizer = modules.optimizer.get_optimizer_config(model, 'adam', c['lr'], c['weight_decay'])
+@@ -230,15 +234,18 @@
+                 if milestone < epoch:
+                     expected_lr *= c['scheduler_gamma']
+             s.require(lr == expected_lr, f'LR-schema wijkt af in epoch {epoch}: {lr} vs {expected_lr}')
+-            log(f'EPOCH {epoch}/{stop_after} (origineel schema: {c["planned_epochs"]}); LR={lr:g}')
+-            train_rows, train_s, ast_hash = s.phase(rt, ctx.source, ctx.modules, model, optimizer,
+-                  loaders['train'], epoch, 'train', lr, out / 'batch_metrics', log)
++            log(f'EPOCH {epoch}/{stop_after}; MODE={c["mode"]}; LR={lr:g}; volledig schema={c["planned_epochs"]}')
++            before_weights = t.layer_snapshot(model, c['mode'])
++            train_rows, train_s, ast_hash, grad_audit = t.phase(rt, ctx.source, ctx.modules, model, optimizer,
++                  loaders['train'], epoch, 'train', lr, out / 'batch_metrics', log, c['mode'])
+             steps += expected_steps
+-            s.legacy.finite_gradients(model, require_all=True)
++            t.validate_gradients(model)
++            update_rows = t.layer_updates(before_weights, t.layer_snapshot(model, c['mode']), c['mode'], epoch)
++            adam_check = t.validate_adam_state(model, optimizer, steps)
+             s.legacy.finite_state(model)
+             state_before_eval = s.legacy.state_digest(model.state_dict())
+-            test_rows, test_s, test_ast_hash = s.phase(rt, ctx.source, ctx.modules, model, optimizer,
+-                  loaders['test'], epoch, 'test', lr, out / 'batch_metrics', log)
++            test_rows, test_s, test_ast_hash, test_audit = t.phase(rt, ctx.source, ctx.modules, model, optimizer,
++                  loaders['test'], epoch, 'test', lr, out / 'batch_metrics', log, c['mode'])
+             s.require(ast_hash == test_ast_hash, 'Train- en evaluatiefunctie zijn niet identiek.')
+             s.require(s.legacy.state_digest(model.state_dict()) == state_before_eval,
+                       'Evaluatie heeft modelgewichten of BatchNorm-statistieken gewijzigd.')
+@@ -246,7 +253,7 @@
+                         for name, loader in loaders.items()}
+             for rows, expected in [(train_rows, c['train_examples']), (test_rows, c['test_examples'])]:
+                 s.require(all(r['n'] == expected for r in rows), 'Metric bevat niet de volledige dataset.')
+-            bn_check = s.legacy.bn_check(model, steps)
++            bn_check = t.validate_bn(model, steps)
+             scheduler.step()  # EXACT original position: after train and test.
+             s.require(scheduler.last_epoch == epoch, 'Scheduler-epoch wijkt af.')
+             checkpoint = out / 'checkpoints' / f'epoch_{epoch:05d}.pt'
+@@ -255,6 +262,8 @@
+                 'lr_used': lr, 'lr_next': float(optimizer.param_groups[0]['lr']),
+                 'optimizer_steps': steps, 'coverage': coverage,
+                 'batchnorm_counters_correct': bn_check['all_counters_correct'],
++                'gradient_checks': grad_audit, 'adam_checks': adam_check, 'weight_updates': update_rows,
++                'test_optimizer_steps': test_audit['optimizer_steps_in_phase'],
+                 'model_sha256': state_before_eval, 'checkpoint_path': str(checkpoint.resolve()),
+                 'forward_ast_sha256': ast_hash, 'train_seconds': train_s, 'test_seconds': test_s,
+                 'first_epoch_in_process': epoch == first_epoch,
+@@ -262,14 +271,14 @@
+                 'peak_gpu_reserved_bytes': torch.cuda.max_memory_reserved(device) if device.type == 'cuda' else None,
+             }
+             trace['epochs'].append(record)
+-            best = s.best_record(trace['epochs'])
++            best = t.best_record(trace['epochs'])
+             record['is_best_at_this_epoch'] = best['epoch'] == epoch
+             record['best_epoch_so_far'] = best['epoch']
+             t_save = time.perf_counter()
+             payload = core.capture_checkpoint(model, optimizer, scheduler, {}, device, epoch, steps,
+                                               ctx.contract, trace, {})
+             # Empty validation_logits is intentional: scores are in trace; there
+-            # is NO reason to copy 5x26032x10 logits into every training checkpoint.
++            # is NO reason to copy all test logits into every training checkpoint.
+             payload['best_prec1'] = best['test'][-1]['top1_percent']
+             core.atomic_save(checkpoint, payload)
+             record['checkpoint_seconds'] = time.perf_counter() - t_save
+@@ -281,7 +290,7 @@
+             ctx.report['completed_epoch'] = epoch
+             log(f'KLAAR epoch {epoch}: train={train_s:.1f}s; test={test_s:.1f}s; '
+                 f'totaal={record["total_epoch_seconds"]:.1f}s; beste epoch={best["epoch"]}')
+-            log('  TEST ' + ' | '.join(f'W{r["bits_w_and_a"]}/A{r["bits_w_and_a"]}: '
++            log('  TEST ' + ' | '.join(f'{r["weight_format"]}/A32: '
+                                     f'{r["top1_percent"]:.4f}%' for r in test_rows))
+             estimate = s.estimate_time(trace['epochs'])
+             if estimate['available']:
+@@ -298,147 +307,117 @@
+     return trace
+ 
+ 
+-def completion_summary(records: list[dict], c: dict, synthetic: bool) -> tuple[dict, list[dict]]:
+-    """Validate the complete saved trajectory without model calls or RNG draws."""
+-    s.require(bool(records), 'Geen epochs voor eindcontrole.')
+-    done = records[-1]['epoch']
+-    s.require([r['epoch'] for r in records] == list(range(1, done + 1)),
+-              'Ontbrekende, dubbele of ongeordende epochs in geschiedenis.')
+-    s.require(done <= c['planned_epochs'], 'Meer epochs dan afgesproken.')
+-    steps_per_epoch = math.ceil(c['train_examples'] / c['batch_size'])
+-    lr_rows = []
++def export_results(ctx, out: Path, trace: dict, log):
++    import torch
++    import mx_adapter as a
++    import mx_format as f
++    records, c, core = trace['epochs'], ctx.c, ctx.rt.core
++    s.require(records and [r['epoch'] for r in records] == list(range(1, records[-1]['epoch'] + 1)),
++              'Onvolledige epochgeschiedenis.')
++    expected_steps = math.ceil(c['train_examples'] / c['batch_size'])
+     for record in records:
+-        ep = record['epoch']
+-        used = c['lr']
+-        next_lr = c['lr']
++        epoch = record['epoch']
++        s.require(record['optimizer_steps'] == expected_steps * epoch, 'Verkeerd totaal aantal updates.')
++        expected_lr = c['lr']
+         for milestone in c['scheduler_milestones']:
+-            if milestone < ep:
+-                used *= c['scheduler_gamma']
+-            if milestone <= ep:
+-                next_lr *= c['scheduler_gamma']
+-        s.require(record['lr_used'] == used and record['lr_next'] == next_lr,
+-                  'Onjuist LR-schema in opgeslagen epoch ' + str(ep))
+-        s.require(record['optimizer_steps'] == ep * steps_per_epoch, 'Onjuist totaal optimizerstappen.')
+-        s.require(record['batchnorm_counters_correct'], 'BatchNorm-tellers wijken af.')
+-        for phase, expected in [('train', c['train_examples']), ('test', c['test_examples'])]:
+-            rows = record[phase]
+-            s.require([r['bits_w_and_a'] for r in rows] == c['bits'], 'Onjuiste precisierijen.')
+-            s.require(record['coverage'][phase]['complete_once'], 'Onvolledige datadekking.')
+-            s.require(record['coverage'][phase]['n'] == expected, 'Onjuist aantal voorbeelden.')
+-            for row in rows:
+-                s.require(row['epoch'] == ep and row['phase'] == phase and row['n'] == expected,
+-                          'Onjuiste metric-identiteit of voorbeeldtelling.')
+-                s.require(row['lr'] == used, 'LR in metric wijkt af.')
+-                s.require(all(math.isfinite(float(row[k])) for k in
+-                              ['objective_loss', 'top1_percent', 'top5_percent']), 'Niet-eindige metrics.')
+-                s.require(abs(row['top1_percent'] - 100 * row['correct1'] / expected) < 0.0001,
+-                          'Accuracy en correct-aantal spreken elkaar tegen.')
+-        lr_rows.append({'epoch': ep, 'lr_used': used, 'lr_after_epoch': next_lr,
+-                        'optimizer_steps': record['optimizer_steps']})
+-    times = [r.get('total_epoch_seconds') for r in records]
+-    timing_complete = all(t is not None and math.isfinite(float(t)) and t >= 0 for t in times)
+-    summary = {
+-        'schema': 'svhn-trainonly100-completion-v1', 'synthetic_fixture_only': synthetic,
+-        'planned_epochs': c['planned_epochs'], 'completed_epochs': done,
+-        'full_training_completed': done == c['planned_epochs'],
+-        'optimizer_steps': records[-1]['optimizer_steps'],
+-        'expected_optimizer_steps_at_completion': steps_per_epoch * c['planned_epochs'],
+-        'all_epoch_precisions_complete': True, 'lr_schedule_verified': True,
+-        'train_split': c['train_split'], 'extra_used': c['extra_used'],
+-        'timing_complete': timing_complete,
+-        'measured_completed_epoch_seconds': sum(times) if timing_complete else None,
+-        'measured_time_scope': 'train + test + controls + checkpoint writes; excludes startup/final export',
+-        'best_epoch_W32_A32': s.best_record(records)['epoch'], 'last_epoch': done,
+-        'new_initialization_required_for_run': True,
+-        'no_MX_or_stored_code_truncation': True,
+-    }
+-    return summary, lr_rows
+-
+-
+-def export_results(ctx, out: Path, trace: dict, log) -> None:
+-    c, core = ctx.c, ctx.rt.core
+-    records = trace['epochs']
+-    s.require(bool(records), 'Geen volledig afgeronde epoch.')
+-    best, last = s.best_record(records), records[-1]
+-    all_rows = [r for ep in records for phase in ['train', 'test'] for r in ep[phase]]
+-    s.write_csv(out / 'epoch_metrics.csv', all_rows)
+-    selected, checkpoint_details = [], {}
+-    for role, record in [('best_W32_test', best), ('last_epoch', last)]:
++            if milestone < epoch:
++                expected_lr *= c['scheduler_gamma']
++        s.require(record['lr_used'] == expected_lr, 'Onjuist LR-schema.')
++        s.require(record['gradient_checks']['finite_gradient_checks'] == expected_steps,
++                  'Onvolledige gradientcontroles.')
++        for phase, count in [('train', c['train_examples']), ('test', c['test_examples'])]:
++            s.require(len(record[phase]) == 1 and record[phase][0]['n'] == count, 'Onvolledige metrics.')
++            row = record[phase][0]
++            s.require(row['weight_format'] == c['weight_format'] and row['objective_type'] == 'hard_cross_entropy',
++                      'Onjuiste modus of loss in metric.')
++            s.require(abs(row['top1_percent'] - row['count_top1_percent']) < 1e-4,
++                      'Accuracy strookt niet met correcte aantallen.')
++    best, last = t.best_record(records), records[-1]
++    selected, details, mx_exports = [], {}, {}
++    for role, record in [('best_active_test', best), ('last_epoch', last)]:
+         path = Path(record['checkpoint_path'])
+         state = core.load_verified(path)
+-        s.require(state['completed_epoch'] == record['epoch'], 'Onjuiste checkpoint-epoch.')
++        s.require(not core.differences(state['contract'], ctx.contract), 'Checkpointcontract wijkt af.')
++        s.require(state['completed_epoch'] == record['epoch'], 'Verkeerde checkpointepoch.')
++        s.require(s.legacy.state_digest(state['model']) == record['model_sha256'], 'Modelhash wijkt af.')
+         s.require(not core.differences(state['trace']['epochs'][-1]['test'], record['test']),
+-                  'Rapportage komt niet overeen met checkpointmetrics.')
+-        s.require(s.legacy.state_digest(state['model']) == record['model_sha256'],
+-                  'Checkpointgewichten komen niet overeen met geevalueerd model.')
+-        filename = 'best_checkpoint.pt' if role == 'best_W32_test' else 'last_checkpoint.pt'
++                  'Opgeslagen testmetrics verschillen.')
++        filename = 'best_checkpoint.pt' if role == 'best_active_test' else 'last_checkpoint.pt'
+         target = out / filename
+-        with path.open('rb') as f, target.open('xb') as g:
+-            shutil.copyfileobj(f, g)
++        with path.open('rb') as src, target.open('xb') as dst:
++            shutil.copyfileobj(src, dst)
+         digest = core.file_sha256(target)
+         s.require(digest == core.file_sha256(path), 'Checkpointkopie wijkt af.')
+         target.with_suffix('.pt.sha256').write_text(digest + '\n', encoding='ascii')
+-        checkpoint_details[role] = {'epoch': record['epoch'], 'file': filename, 'sha256': digest,
+-                                    'original_checkpoint': str(path),
+-                                    'selection_score_W32_A32': record['test'][-1]['top1_percent']}
+-        selected.extend([{'role': role, **row} for row in record['test']])
++        details[role] = {'epoch': record['epoch'], 'file': filename, 'sha256': digest,
++                         'original_checkpoint': str(path), 'selection_score': record['test'][0]['top1_percent']}
++        selected.append({'role': role, **record['test'][0]})
++        if c['mode'] == 'mx':
++            # Export after training only. No optimizer call, no calibration.
++            model = copy.deepcopy(ctx.model).cpu().eval()
++            model.load_state_dict(state['model'], strict=True)
++            payload, layer_rows = a.export_payload(model, {
++                'training_mode': 'single E2M3/A32, identity STE, FP32 update master',
++                'source_epoch': record['epoch'], 'training_checkpoint_sha256': digest,
++                'bn32_origin': 'learned during this single-mode run; no post-training recalibration',
++                'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']})
++            suffix = 'best' if role == 'best_active_test' else 'last'
++            mx_file = out / f'mx_source_{suffix}.pt'
++            mx_details = core.atomic_save(mx_file, payload)
++            loaded = torch.load(mx_file, map_location='cpu', weights_only=True)
++            for name in a.TARGET_LAYERS:
++                restored = f.MXTensor.from_payload(loaded['mx_layers'][name]).decode()
++                effective = a.effective_reference_weight(model.get_submodule(name).weight.detach())
++                s.require(torch.equal(restored, f.encode_tensor(effective).decode()), 'MX-exportgewichten verschillen.')
++                s.require(name + '.weight' not in loaded['auxiliary_fp32_state'], 'FP32-master in MX-export.')
++            mx_exports[role] = {**mx_details, 'epoch': record['epoch'], 'decoded_weights_exact': True,
++                               'six_fp32_masters_absent': True, 'full_test_forward_rerun': False}
++            s.write_csv(out / f'mx_export_layers_{suffix}.csv', layer_rows)
+     s.write_csv(out / 'selected_metrics.csv', selected)
+-    paper = json.loads((ROOT / 'paper_targets.json').read_text(encoding='utf-8'))
+-    comparison = []
+-    for r in selected:
+-        value = paper['accuracy_percent_by_bits'][str(r['bits_w_and_a'])]
+-        comparison.append({'role': r['role'], 'epoch': r['epoch'], 'bits_w_and_a': r['bits_w_and_a'],
+-                           'our_top1_percent': r['top1_percent'], 'paper_100epoch_top1_percent': value,
+-                           'difference_percentage_points': r['top1_percent'] - value,
+-                           'comparable_training_budget': False,
+-                           'same_training_split': False,
+-                           'our_train_split': c['train_split'],
+-                           'paper_train_split': 'train_extra',
+-                           'note': 'train-only reference; paper used train+extra; different data/update budget; context only'})
+-    s.write_csv(out / 'paper_comparison.csv', comparison)
+-    s.write_json(out / 'paper_targets.json', paper)
+-    selection = {'policy': c['selection_policy'], 'best': checkpoint_details['best_W32_test'],
+-                 'last': checkpoint_details['last_epoch'], 'same_checkpoint': best['epoch'] == last['epoch'],
+-                 'selected_on_official_test': True, 'independent_test_estimate': False,
+-                 'completed_epochs': last['epoch'], 'paper_epochs': c['planned_epochs'],
+-                 'train_split': c['train_split'], 'extra_used': False}
++    s.write_csv(out / 'epoch_metrics.csv', [row for r in records for p in ('train', 'test') for row in r[p]])
++    s.write_csv(out / 'weight_updates.csv', [row for r in records for row in r['weight_updates']])
++    selection = {'policy': c['selection_policy'], 'best': details['best_active_test'], 'last': details['last_epoch'],
++                 'same_checkpoint': best['epoch'] == last['epoch'], 'selected_on_official_test': True,
++                 'independent_test_estimate': False, 'selection_mode': c['weight_format'] + '/A32'}
+     s.write_json(out / 'checkpoint_selection.json', selection)
+     s.write_json(out / 'history.json', trace)
+-    summary, lr_rows = completion_summary(records, c, ctx.contract['synthetic_fixture_only'])
+-    s.write_json(out / 'completion_summary.json', summary)
+-    s.write_csv(out / 'learning_rate_schedule.csv', lr_rows)
+-    ctx.report.update(completion_summary=summary, full_training_completed=summary['full_training_completed'])
++    elapsed = sum(r['total_epoch_seconds'] for r in records)
++    summary = {'completed_epochs': last['epoch'], 'pilot_completed': last['epoch'] == 5,
++               'full_100_epoch_training_completed': False, 'optimizer_steps': last['optimizer_steps'],
++               'train_examples': c['train_examples'], 'test_examples': c['test_examples'],
++               'mode': c['mode'], 'distillation': False, 'truncation': False,
++               'initial_model_sha256': trace['initial_model_sha256'],
++               'measured_completed_epoch_seconds': elapsed,
++               'gradient_checks_before_every_update': True, 'fp32_masters_and_moments_verified': True,
++               'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']}
++    s.write_json(out / 'training_summary.json', summary)
+     estimate = s.estimate_time(records, c['planned_epochs'])
+-    if estimate.get('available'):
+-        estimate['limitations'] = [
+-            'extrapolation from this run; not a substitute for the measured completed total',
+-            'same laptop, backend and data loading conditions required',
+-            'no prediction for future MX implementations']
+-        estimate['measured_completed_epoch_seconds'] = summary['measured_completed_epoch_seconds']
+-        estimate['full_training_completed'] = summary['full_training_completed']
++    estimate['weight_mode'] = c['weight_format']
++    estimate['includes'] = ['training', 'test', 'epoch diagnostics', 'checkpoint write']
++    estimate['measured_completed_epoch_seconds'] = elapsed
+     s.write_json(out / 'timing_estimate.json', estimate)
+     s.write_csv(out / 'epoch_times.csv', [
+-        {'epoch': r['epoch'], **{k: r.get(k) for k in
+-         ['train_seconds', 'test_seconds', 'checkpoint_seconds', 'other_seconds', 'total_epoch_seconds',
+-          'first_epoch_in_process', 'peak_gpu_allocated_bytes', 'peak_gpu_reserved_bytes']}}
+-        for r in records])
++        {'epoch': r['epoch'], **{k: r.get(k) for k in ['train_seconds', 'test_seconds', 'checkpoint_seconds',
++          'other_seconds', 'total_epoch_seconds', 'first_epoch_in_process',
++          'peak_gpu_allocated_bytes', 'peak_gpu_reserved_bytes']}} for r in records])
+     ctx.report.update(completed_epoch=last['epoch'], optimizer_steps=last['optimizer_steps'],
+                       selected_best_epoch=best['epoch'], selected_last_epoch=last['epoch'],
+-                      checkpoint_selection=selection, timing_estimate=estimate,
++                      initial_model_sha256=trace['initial_model_sha256'], checkpoint_selection=selection,
++                      training_summary=summary, timing_estimate=estimate, mx_exports=mx_exports,
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'])
+-    notebook = json.loads((ROOT / 'SVHN_trainonly_reference100_resultaten.ipynb').read_text(encoding='utf-8'))
++    notebook = json.loads((ROOT / 'MX_single_training_resultaten.ipynb').read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+-            cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n']
+-    s.write_json(out / 'SVHN_trainonly_reference100_resultaten.ipynb', notebook)
+-    log(f'BEHOUDEN: beste checkpoint epoch {best["epoch"]}; laatste checkpoint epoch {last["epoch"]}.')
++            cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n',
++                              'CONTROL_DIR = None  # Optioneel: pad naar afzonderlijke control-run\n']
++    s.write_json(out / 'MX_single_training_resultaten.ipynb', notebook)
++    log(f'BEHOUDEN: beste actieve modus epoch {best["epoch"]}; laatste epoch {last["epoch"]}.')
+ 
+ 
+ def verify_unchanged(ctx, log):
+     for name, expected in ctx.source_info['workcopy_files_sha256'].items():
+         s.require(ctx.rt.core.file_sha256(ctx.source / name) == expected, 'Bronbestand gewijzigd: ' + name)
+     s.verify_package()
+-    # Raw input verification is outside epoch time estimates.
+     for name, expected in ctx.report['dataset_files']['files'].items():
+         actual = s.hashes(Path(ctx.report['dataset_files']['root']) / name)
+         s.require(all(actual[key] == expected[key] for key in actual), 'Ruwe dataset gewijzigd: ' + name)
+@@ -446,85 +425,82 @@
+     log('Eindcontrole: bronbestanden en ruwe datasetbestanden ongewijzigd.')
+ 
+ 
+-def feedback_bundle(out: Path):
+-    # Small read-only export for sharing: no model/data/source/order arrays.
++def feedback_bundle(out):
++    names = ['run_report.json', 'epoch_metrics.csv', 'selected_metrics.csv', 'weight_updates.csv',
++             'checkpoint_selection.json', 'timing_estimate.json', 'epoch_times.csv', 'history.json',
++             'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
++             'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
++             'training_change_manifest.json', 'training_summary.json',
++             'mx_export_layers_best.csv', 'mx_export_layers_last.csv']
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+-        names = ['run_report.json', 'epoch_metrics.csv', 'selected_metrics.csv', 'paper_comparison.csv',
+-                 'checkpoint_selection.json', 'timing_estimate.json', 'epoch_times.csv',
+-                 'history.json', 'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+-                 'paper_targets.json', 'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
+-                 'fullrun_change_manifest.json', 'completion_summary.json', 'learning_rate_schedule.csv']
+         for name in names:
+             path = out / name
+             if path.is_file():
+                 z.write(path, name)
+ 
+ 
+-def main() -> int:
++def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
++    parser.add_argument('--mode', choices=['mx', 'control'], default='mx')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('reference_runs/anyprecision_svhn_trainonly100'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_weights_single_pilot5'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+-    parser.add_argument('--stop-after-epoch', type=int, default=100,
+-                        help='Vast eindpunt 100; gecontroleerd onderbreken kan met een enkele Ctrl+C.')
++    parser.add_argument('--stop-after-epoch', type=int, default=5)
+     parser.add_argument('--checkpoint', type=Path)
+     args = parser.parse_args()
+-    if args.stop_after_epoch != 100:
+-        parser.error('Deze referentie heeft een vast eindpunt van 100 epochs; gebruik de aparte pilot voor vijf epochs.')
++    if args.stop_after_epoch != 5:
++        parser.error('Dit pakket is een proef van vijf epochs; geen automatische honderd-epochtraining.')
+     if (args.command == 'resume') != (args.checkpoint is not None):
+-        parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf nul.')
++        parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.')
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+-    out = (args.output_root / (stamp + '_' + args.command)).resolve()
++    out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'anyprecision-svhn-trainonly-reference100-report-v1', 'status': 'RUNNING',
+-              'command': args.command, 'started_at': s.now(), 'output_directory': str(out),
+-              'argv': sys.argv, 'warnings': [],
+-              'limitations': ['train only, NO extra: deliberate dataset variant, NOT a paper replication',
+-                              '100 train-only epochs; LR milestones 50/75/90; fewer updates than train+extra',
+-                              'test-selected score is not independent of checkpoint selection',
+-                              'authors historical seed and environment not established',
+-                              'cuDNN benchmark=True: bit-exact CUDA replay is not promised',
+-                              'no MX, truncation or hardware energy measurement']}
++    report = {'schema': 'mx-weights-single-pilot5-report-v1', 'status': 'RUNNING',
++              'command': args.command, 'mode': args.mode, 'started_at': s.now(),
++              'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
++              'limitations': ['train only; single mode; this is not a paper reproduction',
++                              'FP32 update master, FP32 gradients/Adam; A32; no truncation',
++                              'one forward/backward and hard CE, no distillation',
++                              'no same-protocol accuracy comparison with the older five-mode reference',
++                              'official test used for checkpoint selection, not an independent test estimate',
++                              'numerical weight-only MX emulation; no native MX kernel or energy claim',
++                              'GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism',
++                              'five epochs test learning mechanics, not final convergence']}
+     log = s.legacy.Log(out / 'run.log')
+-    t0 = time.perf_counter()
++    started = time.perf_counter()
+     exit_code = 1
+     def warning_handler(message, category, filename, lineno, file=None, line=None):
+         entry = {'category': category.__name__, 'message': str(message), 'file': filename, 'line': lineno}
+         report['warnings'].append(entry)
+         log('WARNING ' + str(message))
+-        with (out / 'warnings.log').open('a', encoding='utf-8') as f:
+-            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
++        with (out / 'warnings.log').open('a', encoding='utf-8') as handle:
++            handle.write(json.dumps(entry, ensure_ascii=False) + '\n')
+     try:
+         with warnings.catch_warnings():
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log('REFERENTIE: 100 train-only epochs; geen extra, geen MX, geen pilot-warmstart.')
+-            if args.command == 'run':
+-                log('START vanaf initialisatie; alle 100 epochs lopen automatisch achter elkaar.')
++            log(f'EENMODUSPROEF: {args.mode}; A32; FP32-master; geen distillatie of truncatie.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+-            if ctx is not None:
+-                trace = run_epochs(ctx, out, log, args.stop_after_epoch, args.checkpoint)
++            if ctx is None:
++                report['status'] = 'PASS'
++            else:
++                trace = run_epochs(ctx, out, log, 5, args.checkpoint)
+                 export_results(ctx, out, trace, log)
+                 verify_unchanged(ctx, log)
+-                report['status'] = 'PASS' if report['completed_epoch'] == args.stop_after_epoch else 'STOPPED_AT_EPOCH_BOUNDARY'
+-            else:
+-                report['status'] = 'PASS'
++                report['status'] = 'PASS' if report['completed_epoch'] == 5 else 'STOPPED_AT_EPOCH_BOUNDARY'
+             exit_code = 0
+     except BaseException as exc:
+         report['status'] = 'INTERRUPTED' if isinstance(exc, KeyboardInterrupt) else 'FAIL'
+-        report['error'] = repr(exc)
+-        report['traceback'] = traceback.format_exc()
++        report['error'], report['traceback'] = repr(exc), traceback.format_exc()
+         log(report['status'] + ': ' + str(exc))
+         log(report['traceback'])
+-        if isinstance(exc, ModuleNotFoundError) and exc.name and exc.name.startswith('scipy'):
+-            log('SciPy ontbreekt. Installeer alleen SciPy met --no-deps; zie README.md. Torch/NumPy niet wijzigen.')
+-        log('Niets wordt verwijderd of overschreven. Deel run_report.json of feedback_bundle.zip.')
++        log('Geen bestaande data of eerdere resultaten gewijzigd. Deel de feedback_bundle.zip uit deze map.')
+     finally:
+         report['ended_at'] = s.now()
+-        report['session_wall_seconds'] = time.perf_counter() - t0
++        report['session_wall_seconds'] = time.perf_counter() - started
+         log('EINDSTATUS: ' + report['status'])
+         log('Rapport: ' + str(out / 'run_report.json'))
+         log.handle.close()

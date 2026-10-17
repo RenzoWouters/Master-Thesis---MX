@@ -1,0 +1,358 @@
+{
+  "schema": "mx-weights-single-pilot5-report-v1",
+  "status": "PASS",
+  "command": "run",
+  "mode": "control",
+  "started_at": "2026-10-17T17:43:30.129049+02:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_single_pilot5\\20261017_174330_128339_control_run",
+  "argv": [
+    ".\\software_checks\\mx_weights_single_pilot5_v1\\run_train.py",
+    "run",
+    "--mode",
+    "control"
+  ],
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "limitations": [
+    "train only; single mode; this is not a paper reproduction",
+    "FP32 update master, FP32 gradients/Adam; A32; no truncation",
+    "one forward/backward and hard CE, no distillation",
+    "no same-protocol accuracy comparison with the older five-mode reference",
+    "official test used for checkpoint selection, not an independent test estimate",
+    "numerical weight-only MX emulation; no native MX kernel or energy claim",
+    "GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism",
+    "five epochs test learning mechanics, not final convergence"
+  ],
+  "config": {
+    "schema": "mx-weights-single-pilot5-protocol-v1",
+    "purpose": "five complete epochs: single-mode weight-only QAT, or matched single-mode control",
+    "mode": "control",
+    "weight_format": "W32_effective",
+    "weight_preprocess": "original W32: G(W)=mean(abs(W)).detach()*tanh(W)/max(abs(tanh(W)))",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": null,
+    "mx_scale_format": null,
+    "mx_group_axis": null,
+    "mx_scale_policy": null,
+    "mx_rounding": null,
+    "ste_policy": null,
+    "numeric_kernel": "FP32 F.conv2d; codec uses FP64 intermediates; no native MX speed claim",
+    "truncation": false,
+    "distillation": false,
+    "loss": "hard-label CrossEntropyLoss, mean reduction",
+    "passes_per_training_batch": 1,
+    "optimizer_steps_per_training_batch": 1,
+    "internal_upstream_selectors": [
+      32
+    ],
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "batchnorm_policy": "bank32 trains; banks1/2/4/8 unused, unchanged, no Adam state",
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh run, seed-matched across modes; never load old reference/pilot",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "planned_epochs": 100,
+    "pilot_stop_epoch": 5,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "single active mode on complete official test after every epoch",
+    "selection_policy": "first strict maximum of active-mode official-test top1",
+    "reporting_policy": "best and last checkpoint of this run, not a per-mode mixture",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; save/restore at epoch boundaries",
+    "checkpoint_policy": "immutable full FP32 training state per epoch plus best/last copies",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "package_sha256": {
+    "run_train.py": "157be4ad4047e7505f1d82ddd2459698dc71edb0af17f6f2bb5e0c2e093b9567",
+    "single_support.py": "18c0ca6c43a2bfc43089fea857d6cffd8394808e5ece922fdba5f7b035174784",
+    "smoke_single.py": "bd0ed8962cf107f2014dd0cd859c22d8e19469038e0533c25bef7307e3073b15",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "REUSE_MANIFEST.json": "4cd2319f0e4b80b831ff50e18716413d16d47d5fe5273cb91b0a22a3430f90c3",
+    "TRAINING_CHANGE_MANIFEST.json": "d8ee58fcc63ad4a392aadc43f1a6745f884aa8a7908d6a57508de1006abba080",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "MX_single_training_resultaten.ipynb": "317075ecd221aa37366d92a058ce052b1dc0a8a6f6e1f249dd25203f899ea390"
+  },
+  "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "seed_source": "explicit local seed, not reported by authors",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "torch_num_threads": 16,
+    "matmul_fp32_precision": "none",
+    "cudnn_conv_fp32_precision": "tf32",
+    "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "exact_cuda_resume_guaranteed": false
+  },
+  "data_preparation_seconds_including_download_and_checksums": 0.42020599998068064,
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": []
+  },
+  "dataset_load_seconds": 1.444579299975885,
+  "dataset_selection": {
+    "train": {
+      "n": 73257,
+      "labels_histogram": [
+        4948,
+        13861,
+        10585,
+        8497,
+        7458,
+        6882,
+        5727,
+        5595,
+        5045,
+        4659
+      ],
+      "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "train_split_order": [
+      "train"
+    ],
+    "extra_used": false,
+    "held_out_validation_examples": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  },
+  "contract_sha256": "e92c8868eecc32c4837413abf7a9563115622e553ebd2539380763e0594d8bcf",
+  "completed_epoch": 5,
+  "optimizer_steps": 2865,
+  "selected_best_epoch": 5,
+  "selected_last_epoch": 5,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "checkpoint_selection": {
+    "policy": "first strict maximum of active-mode official-test top1",
+    "best": {
+      "epoch": 5,
+      "file": "best_checkpoint.pt",
+      "sha256": "dc6354cc4ce46665626d8d18c095e044aa99e7afba9531159d565587844b69f4",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_single_pilot5\\20261017_174330_128339_control_run\\checkpoints\\epoch_00005.pt",
+      "selection_score": 93.4580516287646
+    },
+    "last": {
+      "epoch": 5,
+      "file": "last_checkpoint.pt",
+      "sha256": "dc6354cc4ce46665626d8d18c095e044aa99e7afba9531159d565587844b69f4",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_single_pilot5\\20261017_174330_128339_control_run\\checkpoints\\epoch_00005.pt",
+      "selection_score": 93.4580516287646
+    },
+    "same_checkpoint": true,
+    "selected_on_official_test": true,
+    "independent_test_estimate": false,
+    "selection_mode": "W32_effective/A32"
+  },
+  "training_summary": {
+    "completed_epochs": 5,
+    "pilot_completed": true,
+    "full_100_epoch_training_completed": false,
+    "optimizer_steps": 2865,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "mode": "control",
+    "distillation": false,
+    "truncation": false,
+    "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "measured_completed_epoch_seconds": 74.89290730000357,
+    "gradient_checks_before_every_update": true,
+    "fp32_masters_and_moments_verified": true,
+    "synthetic_fixture_only": false
+  },
+  "timing_estimate": {
+    "available": true,
+    "planned_epochs": 100,
+    "steady_epoch_seconds": [
+      14.894427599996561,
+      14.33112990000518,
+      14.386611099995207,
+      14.397628200007603
+    ],
+    "steady_epochs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "median_epoch_seconds": 14.392119650001405,
+    "first_epoch_seconds": 16.88311049999902,
+    "estimated_100_epoch_seconds": 1441.702955850138,
+    "observed_range_projection_seconds": [
+      1435.6649706005119,
+      1491.4314428996586
+    ],
+    "range_is_confidence_interval": false,
+    "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+    "excludes": [
+      "download",
+      "dependency installation",
+      "dataset loading",
+      "final report export"
+    ],
+    "limitations": [
+      "same laptop/backend/data loading conditions required",
+      "five epochs do not measure the LR transitions at 50/75/90",
+      "thermal and background-load drift over a long run not established"
+    ],
+    "weight_mode": "W32_effective",
+    "includes": [
+      "training",
+      "test",
+      "epoch diagnostics",
+      "checkpoint write"
+    ],
+    "measured_completed_epoch_seconds": 74.89290730000357
+  },
+  "mx_exports": {},
+  "synthetic_fixture_only": false,
+  "source_unchanged": true,
+  "dataset_files_unchanged": true,
+  "ended_at": "2026-10-17T17:44:51.671120+02:00",
+  "session_wall_seconds": 81.5418490000011
+}
