@@ -1,0 +1,51 @@
+{
+  "source_package": "mx_weights_single_pilot5_v1.zip",
+  "source_archive_sha256": "a22e0e8fe7c67b7dab7506d2c2b56b3990836cadb036c4e2403ff5283cc9e770",
+  "unchanged_files": {
+    "svhn_support.py": {
+      "prior_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "current_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "byte_identical": true
+    },
+    "resume_core.py": {
+      "prior_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "current_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "byte_identical": true
+    },
+    "smoke_support.py": {
+      "prior_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "current_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "byte_identical": true
+    },
+    "mx_format.py": {
+      "prior_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "current_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "byte_identical": true
+    },
+    "mx_adapter.py": {
+      "prior_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "current_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "byte_identical": true
+    },
+    "test_mx.py": {
+      "prior_sha256": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+      "current_sha256": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+      "byte_identical": true
+    },
+    "SOURCE_MANIFEST.json": {
+      "prior_sha256": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+      "current_sha256": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+      "byte_identical": true
+    },
+    "compatibility.patch": {
+      "prior_sha256": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742",
+      "current_sha256": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742",
+      "byte_identical": true
+    },
+    "upstream/Any-Precision-DNNs-master.zip": {
+      "prior_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "current_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "byte_identical": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_dual_pilot5\20261019_175030_735015_joint_check
+TWEEMODUSPROEF: E2M3 -> E2M1; A32; FP32-masters; distillatie; geen truncatie.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.31, prec1 33.33, prec5 66.67
+FAIL: 
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_weights_dual_pilot5_v1\run_train.py", line 495, in main
+    ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_weights_dual_pilot5_v1\run_train.py", line 109, in create_context
+    report['synthetic_training_checks'] = test_dual.run_tests(modules, rt, source, log)
+                                          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_weights_dual_pilot5_v1\test_dual.py", line 147, in run_tests
+    assert all(torch.allclose(v, model.state_dict()[n], rtol=1e-4, atol=1e-5)
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               for n, v in reference.state_dict().items())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Geen bestaande data of eerdere resultaten gewijzigd. Deel de feedback_bundle.zip uit deze map.
+EINDSTATUS: FAIL
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_dual_pilot5\20261019_175030_735015_joint_check\run_report.json

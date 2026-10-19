@@ -1,0 +1,13 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_dual_pilot5_v1_1\20261019_180439_438856_joint_check
+TWEEMODUSPROEF: E2M3 -> E2M1; A32; FP32-masters; distillatie; geen truncatie.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.31, prec1 33.33, prec5 66.67
+ZELFTEST productiebeleid: 0 tensors buiten tolerantie; RNG exact=True
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.31, prec1 33.33, prec5 66.67
+ZELFTEST deterministisch: 0 tensors buiten tolerantie; RNG exact=True
+VERGELIJKING PASS: deterministische test; geen versoepelde toleranties. Oorspronkelijke backendinstellingen hersteld.
+CHECK PASS: E2M3/E2M1, A32, twee BN-banken, distillatie en gezamenlijke updates. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_dual_pilot5_v1_1\20261019_180439_438856_joint_check\run_report.json

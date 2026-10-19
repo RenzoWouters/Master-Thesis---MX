@@ -1,0 +1,45 @@
+[
+  {
+    "arguments": [
+      "run",
+      "--stop-after-epoch",
+      "100"
+    ],
+    "exit_code": 2,
+    "last_error": "run_train.py: error: Dit pakket is een proef van vijf epochs; geen automatische honderd-epochtraining."
+  },
+  {
+    "arguments": [
+      "run",
+      "--device",
+      "cpu"
+    ],
+    "exit_code": 2,
+    "last_error": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+  },
+  {
+    "arguments": [
+      "run",
+      "--checkpoint",
+      "previous.pt"
+    ],
+    "exit_code": 2,
+    "last_error": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+  },
+  {
+    "arguments": [
+      "resume"
+    ],
+    "exit_code": 2,
+    "last_error": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+  },
+  {
+    "arguments": [
+      "run",
+      "--mode",
+      "mx"
+    ],
+    "exit_code": 2,
+    "last_error": "run_train.py: error: unrecognized arguments: --mode mx"
+  }
+]

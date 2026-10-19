@@ -1,0 +1,334 @@
+--- v1/test_dual.py
++++ v1_1/test_dual.py
+@@ -7,6 +7,8 @@
+ import ast
+ import copy
+ import math
++from contextlib import contextmanager
++import os
+ import torch
+ import mx_format as high
+ import mx_e2m1 as low
+@@ -17,10 +19,11 @@
+ from test_mx import rejected
+ 
+ 
+-def run_tests(modules, rt, source, log):
++def run_tests(modules, rt, source, log, checks=None):
+     d = rt.device
+     torch.manual_seed(71203)
+-    checks = {}
++    if checks is None:
++        checks = {}
+     codes = torch.arange(16, dtype=torch.uint8, device=d)
+     levels = [0., .5, 1., 1.5, 2., 3., 4., 6.]  # OCP v1.0 table 5, p13.
+     values = low.decode_elements(codes)
+@@ -106,52 +109,37 @@
+     assert ast.dump(aa, include_attributes=False) == ast.dump(bb, include_attributes=False)
+     checks['original_forward_AST_identical_except_three_mode_selector_pairs'] = True
+ 
+-    torch.manual_seed(83411)
+-    model = t.build_model(modules, 'joint', d)
+-    initial = t.layer_snapshot(model)
++    checks['comparison_policy'] = {
++        'production_replay': 'diagnostic only for floating-point numerical differences',
++        'deterministic_replay': 'mandatory; original rtol=1e-4, atol=1e-5, not widened',
++        'CPU': 'exact equality required',
++        'NaN_structure_RNG_BN_and_Adam_health': 'mandatory on both paths',
++        'scope': 'synthetic checks only; run/resume protocol not changed'}
++    checks['training_comparisons'] = {}
++    before = backend_state()
++    prod = checks['training_comparisons']['production_backend'] = {}
++    model = training_pair(modules, rt, source, log, prod)
++    prod['mandatory_health_checks_passed'] = True
++    if d.type == 'cpu':
++        require_pair_match(prod, exact=True)
++    elif not prod['all_numerically_close']:
++        log('DIAGNOSE: herhaling met productiebackend verschilt; zie training_comparisons. '
++            'Dit is nog GEEN PASS. De deterministische vergelijking moet slagen.')
++    strict = checks['training_comparisons']['deterministic_backend'] = {}
++    with deterministic_validation(d):
++        model = training_pair(modules, rt, source, log, strict)
++        require_pair_match(strict, exact=(d.type == 'cpu'))
++    checks['production_backend_restored'] = backend_state() == before
++    s.require(checks['production_backend_restored'], 'Zelftest heeft backendbeleid veranderd.')
++    checks['two_joint_updates_match_explicit_manual_distillation'] = True
++    checks['manual_match_scope'] = 'deterministic synthetic replay; see per-tensor comparisons'
++    checks['two_BN_banks_once_per_batch_A32_unchanged_FP32_masters_and_Adam'] = True
++    checks['synthetic_optimizer_steps_not_research_results'] = {
++        'production_pair': {'tested': 2, 'manual_reference': 2},
++        'deterministic_pair': {'tested': 2, 'manual_reference': 2}}
++    log('VERGELIJKING PASS: deterministische test; geen versoepelde toleranties. '
++        'Oorspronkelijke backendinstellingen hersteld.')
+     x = torch.linspace(-1, 1, 3*3*40*40, device=d).reshape(3, 3, 40, 40)
+-    labels = torch.tensor([1, 4, 9], device=d)
+-    reference = copy.deepcopy(model)
+-    opt = modules.optimizer.get_optimizer_config(model, 'adam', .001, 0.)
+-    reference_opt = modules.optimizer.get_optimizer_config(reference, 'adam', .001, 0.)
+-    rng = core.capture_rng({}, d)
+-    reference.train()
+-    criterion = torch.nn.CrossEntropyLoss()
+-    soft = modules.losses.CrossEntropyLossSoft()
+-    expected = []
+-    for _ in range(2):
+-        reference_opt.zero_grad()
+-        a.select_mode(reference, 6)
+-        teacher_logits = reference(x)
+-        hard_loss = criterion(teacher_logits, labels); hard_loss.backward()
+-        # Low bank is not trained by the teacher pass.
+-        assert all(p.grad is None for n, p in reference.named_parameters() if '.bn_dict.4.' in n)
+-        teacher = torch.softmax(teacher_logits.detach(), dim=1)
+-        a.select_mode(reference, 4)
+-        student_logits = reference(x)
+-        soft_loss = soft(student_logits, teacher); soft_loss.backward()
+-        t.validate_gradients(reference)
+-        reference_opt.step()
+-        expected.append((float(hard_loss.detach()), float(soft_loss.detach())))
+-    final_rng = core.capture_rng({}, d)
+-    core.restore_rng(rng, {}, d)
+-    forward, _ = t.load_dual_forward(source, modules.utils, log)
+-    model.train()
+-    forward([(x, labels), (x, labels)], model, criterion, soft, 0, True, opt, None)
+-    if d.type == 'cpu':
+-        assert not core.differences(reference.state_dict(), model.state_dict())
+-        assert not core.differences(reference_opt.state_dict(), opt.state_dict())
+-        assert not core.differences(final_rng, core.capture_rng({}, d))
+-    else:
+-        # cuDNN policy can be nondeterministic; do not demand bit equality.
+-        assert all(torch.allclose(v, model.state_dict()[n], rtol=1e-4, atol=1e-5)
+-                   for n, v in reference.state_dict().items())
+-    t.assert_policy(model); t.validate_bn(model, 2); t.validate_adam_state(model, opt, 2)
+-    updates = t.layer_updates(initial, t.layer_snapshot(model), 'joint', 0)
+-    assert all(row['master_changed_values'] > 0 for row in updates)
+-    checks['two_joint_updates_match_explicit_manual_distillation'] = True
+-    checks['two_BN_banks_once_per_batch_A32_unchanged_FP32_masters_and_Adam'] = True
+-    checks['synthetic_optimizer_steps_not_research_results'] = {'tested': 2, 'manual_reference': 2}
+ 
+     # Verify separately reconstructed direct exports, not truncation.
+     model.eval()
+@@ -161,7 +149,9 @@
+         a.select_mode(model, bit)
+         with torch.no_grad():
+             yf, ym = frozen(x), model(x)
+-        assert torch.allclose(yf, ym, rtol=1e-5, atol=1e-6)
++        export_check = tensor_comparison(yf, ym, 'export_logits_' + str(bit), 1e-5, 1e-6)
++        checks.setdefault('export_logit_comparisons', []).append(export_check)
++        s.require(export_check['close'], 'Exportlogits verschillen: ' + str(export_check))
+         assert not any(n + '.weight' in dict(frozen.named_parameters()) for n in a.TARGET_LAYERS)
+         for name in a.TARGET_LAYERS:
+             layer = model.get_submodule(name)
+@@ -169,3 +159,166 @@
+     checks['both_direct_mode_exports_reconstruct_without_six_FP32_masters'] = True
+     checks['no_SVHN_data'] = True
+     return checks
++
++
++def backend_state():
++    return {'cudnn_benchmark': torch.backends.cudnn.benchmark,
++            'cudnn_deterministic': torch.backends.cudnn.deterministic,
++            'deterministic_algorithms': torch.are_deterministic_algorithms_enabled(),
++            'deterministic_warn_only': torch.is_deterministic_algorithms_warn_only_enabled()}
++
++
++@contextmanager
++def deterministic_validation(device):
++    """Only test execution. Restore flags even when a comparison raises."""
++    previous = backend_state()
++    if device.type == 'cuda':
++        s.require(os.environ.get('CUBLAS_WORKSPACE_CONFIG') in (':4096:8', ':16:8'),
++                  'Start opnieuw met run_train.py check; deterministische cuBLAS-config ontbreekt.')
++        torch.cuda.synchronize(device)
++    try:
++        torch.backends.cudnn.benchmark = False
++        torch.backends.cudnn.deterministic = True
++        torch.use_deterministic_algorithms(True, warn_only=False)
++        yield
++    finally:
++        torch.use_deterministic_algorithms(previous['deterministic_algorithms'],
++                                          warn_only=previous['deterministic_warn_only'])
++        torch.backends.cudnn.deterministic = previous['cudnn_deterministic']
++        torch.backends.cudnn.benchmark = previous['cudnn_benchmark']
++
++
++def tensor_comparison(expected, actual, name, rtol=1e-4, atol=1e-5):
++    result = {'name': name, 'rtol': rtol, 'atol': atol,
++              'expected_shape': list(expected.shape), 'expected_dtype': str(expected.dtype)}
++    result['structure_ok'] = (isinstance(actual, torch.Tensor)
++                              and expected.dtype == actual.dtype and expected.shape == actual.shape)
++    if not result['structure_ok']:
++        return {**result, 'finite': False, 'exact': False, 'close': False}
++    x, y = expected.detach().cpu(), actual.detach().cpu()
++    finite = bool(torch.isfinite(x).all() and torch.isfinite(y).all())
++    result.update(finite=finite, exact=torch.equal(x, y))
++    if not finite:
++        return {**result, 'close': False}
++    if x.is_floating_point() or x.is_complex():
++        close_mask = torch.isclose(x, y, rtol=rtol, atol=atol, equal_nan=False)
++    else:
++        close_mask = x == y
++    # Diagnostic arithmetic only; no changes to the model tensors.
++    difference = (x.to(torch.float64) - y.to(torch.float64)).abs()
++    result.update(close=bool(close_mask.all()),
++                  different_elements=int((x != y).sum()),
++                  outside_tolerance_elements=int((~close_mask).sum()),
++                  max_abs_difference=float(difference.max()) if x.numel() else 0.0)
++    return result
++
++
++def compare_tree(expected, actual, path, rows):
++    if isinstance(expected, torch.Tensor):
++        rows.append(tensor_comparison(expected, actual, path))
++    elif isinstance(expected, dict):
++        s.require(isinstance(actual, dict) and set(expected) == set(actual), 'Structuurverschil: ' + path)
++        for key in expected:
++            compare_tree(expected[key], actual[key], path + '/' + str(key), rows)
++    elif isinstance(expected, (tuple, list)):
++        s.require(type(expected) is type(actual) and len(expected) == len(actual), 'Structuurverschil: ' + path)
++        for i, (x, y) in enumerate(zip(expected, actual)):
++            compare_tree(x, y, path + '/' + str(i), rows)
++    else:
++        s.require(type(expected) is type(actual) and expected == actual, 'Niet-tensorverschil: ' + path)
++
++
++def require_pair_match(details, exact=False):
++    bad = [row for row in details['tensor_comparisons'] if not row['exact' if exact else 'close']]
++    if bad:
++        worst = sorted(bad, key=lambda row: row.get('max_abs_difference', float('inf')), reverse=True)
++        first = worst[0]
++        raise RuntimeError('Manuele/Any-Precision-vergelijking mislukt: '
++                           + str(len(bad)) + ' tensors; grootste afwijking: ' + str(first)
++                           + '. Volledige diagnose staat in run_report.json. Geen SVHN-training starten.')
++    s.require(details['rng_exact'], 'RNG-toestanden verschillen in vergelijking.')
++    details['mandatory_match_passed'] = True
++
++
++def training_pair(modules, rt, source, log, details):
++    """Independent manual loop vs unchanged-loss upstream loop; two updates."""
++    d = rt.device
++    details.update(backend=backend_state(), device=str(d), status='RUNNING')
++    torch.manual_seed(83411)
++    model = t.build_model(modules, 'joint', d)
++    initial = t.layer_snapshot(model)
++    x = torch.linspace(-1, 1, 3*3*40*40, device=d).reshape(3, 3, 40, 40)
++    labels = torch.tensor([1, 4, 9], device=d)
++    reference = copy.deepcopy(model)
++    s.require(not core.differences(reference.state_dict(), model.state_dict()), 'Startgewichten verschillen.')
++    opt = modules.optimizer.get_optimizer_config(model, 'adam', .001, 0.)
++    reference_opt = modules.optimizer.get_optimizer_config(reference, 'adam', .001, 0.)
++    reference_outputs, outputs, reference_gradients, gradients = [], [], [], []
++    def output_hook(store):
++        def hook(module, inputs, result):
++            store.append(result.detach().cpu().clone())
++        return hook
++    def gradient_hook(net, store):
++        def hook(optimizer, args, kwargs):
++            t.validate_gradients(net)
++            store.append({name: None if p.grad is None else p.grad.detach().cpu().clone()
++                          for name, p in net.named_parameters()})
++        return hook
++    hooks = [reference.register_forward_hook(output_hook(reference_outputs)),
++             model.register_forward_hook(output_hook(outputs)),
++             reference_opt.register_step_pre_hook(gradient_hook(reference, reference_gradients)),
++             opt.register_step_pre_hook(gradient_hook(model, gradients))]
++    try:
++        rng = core.capture_rng({}, d)
++        reference.train()
++        criterion = torch.nn.CrossEntropyLoss()
++        soft = modules.losses.CrossEntropyLossSoft()
++        expected = []
++        for _ in range(2):
++            reference_opt.zero_grad()
++            a.select_mode(reference, 6)
++            teacher_logits = reference(x)
++            hard_loss = criterion(teacher_logits, labels); hard_loss.backward()
++            s.require(all(p.grad is None for n, p in reference.named_parameters() if '.bn_dict.4.' in n),
++                      'Teacherpass wijzigt gradients in student-BN.')
++            teacher = torch.softmax(teacher_logits.detach(), dim=1)
++            a.select_mode(reference, 4)
++            student_logits = reference(x)
++            soft_loss = soft(student_logits, teacher); soft_loss.backward()
++            t.validate_gradients(reference)
++            reference_opt.step()
++            expected.append((float(hard_loss.detach()), float(soft_loss.detach())))
++        final_rng = core.capture_rng({}, d)
++        core.restore_rng(rng, {}, d)
++        forward, _ = t.load_dual_forward(source, modules.utils, log)
++        model.train()
++        actual = forward([(x, labels), (x, labels)], model, criterion, soft, 0, True, opt, None)
++        details['rng_exact'] = not core.differences(final_rng, core.capture_rng({}, d))
++        details['manual_losses_high_low'] = expected
++        details['upstream_mean_losses_low_high'] = actual[0]
++        rows = details['tensor_comparisons'] = []
++        compare_tree(reference_outputs, outputs, 'forward_logits', rows)
++        compare_tree(reference_gradients, gradients, 'pre_update_gradients', rows)
++        compare_tree(reference.state_dict(), model.state_dict(), 'model_after_two_updates', rows)
++        compare_tree(reference_opt.state_dict(), opt.state_dict(), 'adam_after_two_updates', rows)
++        ref_losses = torch.tensor([sum(item[1] for item in expected)/2,
++                                   sum(item[0] for item in expected)/2], dtype=torch.float64)
++        rows.append(tensor_comparison(ref_losses, torch.tensor(actual[0], dtype=torch.float64), 'mean_losses'))
++        details['all_exact'] = all(row['exact'] for row in rows)
++        details['all_numerically_close'] = all(row['close'] for row in rows)
++        details['outside_tolerance_tensors'] = [row['name'] for row in rows if not row['close']]
++        s.require(all(row['structure_ok'] and row['finite'] for row in rows), 'Niet-eindige/ongeldige vergelijking.')
++        s.require(details['rng_exact'], 'Handmatige lus en auteurslus verbruiken andere RNG-toestanden.')
++        for net, optimizer in ((model, opt), (reference, reference_opt)):
++            t.assert_policy(net); t.validate_bn(net, 2); t.validate_adam_state(net, optimizer, 2)
++        updates = t.layer_updates(initial, t.layer_snapshot(model), 'joint', 0)
++        s.require(all(row['master_changed_values'] > 0 for row in updates), 'Geen masterupdates.')
++        details['mandatory_health_checks_passed'] = True
++        details['status'] = 'COMPARISON_RECORDED'
++        log('ZELFTEST ' + ('deterministisch' if torch.are_deterministic_algorithms_enabled() else 'productiebeleid')
++            + ': ' + str(len(details['outside_tolerance_tensors'])) + ' tensors buiten tolerantie; '
++            + 'RNG exact=' + str(details['rng_exact']))
++    finally:
++        for hook in hooks:
++            hook.remove()
++    return model
+--- v1/run_train.py
++++ v1_1/run_train.py
+@@ -106,7 +106,8 @@
+         import test_mx
+         import test_dual
+         report['codec_tests'] = test_mx.run_tests(modules, str(rt.device))
+-        report['synthetic_training_checks'] = test_dual.run_tests(modules, rt, source, log)
++        report['synthetic_training_checks'] = {}
++        test_dual.run_tests(modules, rt, source, log, checks=report['synthetic_training_checks'])
+         _, forward_hash = t.load_dual_forward(source, modules.utils, log)
+         report.update(forward_ast_sha256=forward_hash, dataset_downloaded=False,
+                       synthetic_checks_only=True)
+@@ -453,7 +454,7 @@
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.set_defaults(mode='joint')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_weights_dual_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_weights_dual_pilot5_v1_1'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+     parser.add_argument('--stop-after-epoch', type=int, default=5)
+@@ -463,6 +464,14 @@
+         parser.error('Dit pakket is een proef van vijf epochs; geen automatische honderd-epochtraining.')
+     if (args.command == 'resume') != (args.checkpoint is not None):
+         parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.')
++    # CHECK ONLY: configure cuBLAS before any CUDA context is initialized.
++    # This Python process cannot modify the parent PowerShell environment.
++    # The run/resume paths never set this variable.
++    if args.command == 'check':
++        import os
++        previous_workspace = os.environ.get('CUBLAS_WORKSPACE_CONFIG')
++        if previous_workspace not in (':4096:8', ':16:8'):
++            os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+@@ -477,6 +486,11 @@
+                               'numerical weight-only MX emulation; no native MX kernel or energy claim',
+                               'GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism',
+                               'five epochs test learning mechanics, not final convergence']}
++    if args.command == 'check':
++        report['check_only_workspace'] = {
++            'before': previous_workspace,
++            'during_check_process': os.environ['CUBLAS_WORKSPACE_CONFIG'],
++            'training_process_changed': False}
+     log = s.legacy.Log(out / 'run.log')
+     started = time.perf_counter()
+     exit_code = 1

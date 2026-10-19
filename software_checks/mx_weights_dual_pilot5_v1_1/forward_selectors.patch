@@ -1,0 +1,32 @@
+--- original/train.py:forward
++++ dual/forward
+@@ -13,8 +13,7 @@
+                 target = target.cuda(non_blocking=True)
+ 
+                 for bw, am_l, am_t1, am_t5 in zip(bit_width_list, losses, top1, top5):
+-                    model.apply(lambda m: setattr(m, 'wbit', bw))
+-                    model.apply(lambda m: setattr(m, 'abit', bw))
++                    select_mode(model, bw)
+                     output = model(input)
+                     loss = criterion(output, target)
+ 
+@@ -29,8 +28,7 @@
+             optimizer.zero_grad()
+ 
+             # train full-precision supervisor
+-            model.apply(lambda m: setattr(m, 'wbit', bit_width_list[-1]))
+-            model.apply(lambda m: setattr(m, 'abit', bit_width_list[-1]))
++            select_mode(model, bit_width_list[-1])
+             output = model(input)
+             loss = criterion(output, target)
+             loss.backward()
+@@ -43,8 +41,7 @@
+             target_soft = torch.nn.functional.softmax(output.detach(), dim=1)
+             for bw, am_l, am_t1, am_t5 in zip(bit_width_list[:-1][::-1], losses[:-1][::-1], top1[:-1][::-1],
+                                               top5[:-1][::-1]):
+-                model.apply(lambda m: setattr(m, 'wbit', bw))
+-                model.apply(lambda m: setattr(m, 'abit', bw))
++                select_mode(model, bw)
+                 output = model(input)
+                 # hard cross entropy
+                 # loss = criterion(output, target)
