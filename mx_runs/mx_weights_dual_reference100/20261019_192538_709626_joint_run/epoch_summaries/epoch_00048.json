@@ -1,0 +1,262 @@
+{
+  "epoch": 48,
+  "train": [
+    {
+      "epoch": 48,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 73257,
+      "objective_type": "recursive_soft_cross_entropy",
+      "objective_loss": 0.14170137137898337,
+      "top1_percent": 97.20026755382742,
+      "top5_percent": 99.94403265216975,
+      "correct1": 71206,
+      "correct5": 73216,
+      "count_top1_percent": 97.20026755122377,
+      "lr": 0.001
+    },
+    {
+      "epoch": 48,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.08358943936905576,
+      "top1_percent": 97.4664537203371,
+      "top5_percent": 99.94130253764145,
+      "correct1": 71401,
+      "correct5": 73214,
+      "count_top1_percent": 97.46645371773346,
+      "lr": 0.001
+    }
+  ],
+  "test": [
+    {
+      "epoch": 48,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.1975680616052882,
+      "top1_percent": 94.71035648432698,
+      "top5_percent": 99.38537185003074,
+      "correct1": 24655,
+      "correct5": 25872,
+      "count_top1_percent": 94.71035648432698,
+      "lr": 0.001
+    },
+    {
+      "epoch": 48,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.2208464431868936,
+      "top1_percent": 94.67962507682851,
+      "top5_percent": 99.36616472034419,
+      "correct1": 24647,
+      "correct5": 25867,
+      "count_top1_percent": 94.67962507682851,
+      "lr": 0.001
+    }
+  ],
+  "lr_used": 0.001,
+  "lr_next": 0.001,
+  "optimizer_steps": 27504,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "bb82b52c6901ac3b07f2bf44d5a39bda8a8bb80d99d75879d695a770b1e3b12e",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\train_00048.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\test_00048.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.3580830991268158,
+    "gradient_l2_max": 2.1567583084106445,
+    "forward_calls_E2M3": 573,
+    "forward_calls_E2M1": 573,
+    "active_gradient_tensors": 30,
+    "detached_teacher_checks": 573,
+    "no_extra_FP32_teacher": true
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 30,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.4306510090827942,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 367,
+      "changed_scale_codes": 2
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.4306510090827942,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 970,
+      "changed_scale_codes": 2
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.5482491850852966,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 558,
+      "changed_scale_codes": 3
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.5482491850852966,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1317,
+      "changed_scale_codes": 3
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.9064105153083801,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1211,
+      "changed_scale_codes": 5
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.9064105153083801,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 2953,
+      "changed_scale_codes": 5
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.3550794124603271,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 2854,
+      "changed_scale_codes": 22
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.3550794124603271,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 6193,
+      "changed_scale_codes": 22
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.7157503366470337,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 3827,
+      "changed_scale_codes": 38
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.7157503366470337,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 6898,
+      "changed_scale_codes": 38
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.20",
+      "master_changed_values": 98525,
+      "master_update_l2": 6.346415042877197,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 41680,
+      "changed_scale_codes": 298
+    },
+    {
+      "epoch": 48,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.20",
+      "master_changed_values": 98525,
+      "master_update_l2": 6.346415042877197,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 78030,
+      "changed_scale_codes": 298
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "77f077b109f4a995b083a9c908136c2ba773b0802ab38c3f3882474b3591050e",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00048.pt",
+  "forward_ast_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "train_seconds": 31.8457541000098,
+  "test_seconds": 8.955549100006465,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 65260032,
+  "peak_gpu_reserved_bytes": 109051904,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 29,
+  "checkpoint_seconds": 0.033202200022060424,
+  "total_epoch_seconds": 40.92510360002052,
+  "other_seconds": 0.09059819998219609
+}

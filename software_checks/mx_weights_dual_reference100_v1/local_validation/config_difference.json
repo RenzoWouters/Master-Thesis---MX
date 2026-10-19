@@ -1,0 +1,18 @@
+{
+  "pilot_stop_epoch": [
+    5,
+    null
+  ],
+  "purpose": [
+    "five complete train-only epochs: joint weight-only MX quantization without truncation",
+    "hundred complete train-only epochs: joint weight-only MX quantization without truncation"
+  ],
+  "schema": [
+    "mx-weights-dual-pilot5-protocol-v1",
+    "mx-weights-dual-reference100-protocol-v1"
+  ],
+  "target_final_epoch": [
+    null,
+    100
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "epoch": 45,
+  "train": [
+    {
+      "epoch": 45,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 73257,
+      "objective_type": "recursive_soft_cross_entropy",
+      "objective_loss": 0.14514061633918482,
+      "top1_percent": 97.01871493769517,
+      "top5_percent": 99.90444599150935,
+      "correct1": 71073,
+      "correct5": 73187,
+      "count_top1_percent": 97.01871493509152,
+      "lr": 0.001
+    },
+    {
+      "epoch": 45,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.08820514186248733,
+      "top1_percent": 97.35588408194077,
+      "top5_percent": 99.92082667867918,
+      "correct1": 71320,
+      "correct5": 73199,
+      "count_top1_percent": 97.35588407933713,
+      "lr": 0.001
+    }
+  ],
+  "test": [
+    {
+      "epoch": 45,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.19904967165279036,
+      "top1_percent": 94.76029502151198,
+      "top5_percent": 99.36232329440688,
+      "correct1": 24668,
+      "correct5": 25866,
+      "count_top1_percent": 94.76029502151198,
+      "lr": 0.001
+    },
+    {
+      "epoch": 45,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.2212634669833192,
+      "top1_percent": 94.6681007990166,
+      "top5_percent": 99.39689612315341,
+      "correct1": 24644,
+      "correct5": 25875,
+      "count_top1_percent": 94.6681007990166,
+      "lr": 0.001
+    }
+  ],
+  "lr_used": 0.001,
+  "lr_next": 0.001,
+  "optimizer_steps": 25785,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "d43a6283028b25880def40948aded480bf78d9f46955b3ffdbd8e6f44a27cd7d",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\train_00045.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\test_00045.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.43990933895111084,
+    "gradient_l2_max": 2.422959327697754,
+    "forward_calls_E2M3": 573,
+    "forward_calls_E2M1": 573,
+    "active_gradient_tensors": 30,
+    "detached_teacher_checks": 573,
+    "no_extra_FP32_teacher": true
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 30,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.4234238266944885,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 468,
+      "changed_scale_codes": 7
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.4234238266944885,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 986,
+      "changed_scale_codes": 7
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.5359550714492798,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 603,
+      "changed_scale_codes": 8
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.5359550714492798,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1438,
+      "changed_scale_codes": 8
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.8492755889892578,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1424,
+      "changed_scale_codes": 16
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.8492755889892578,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 2987,
+      "changed_scale_codes": 16
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.344443440437317,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 3758,
+      "changed_scale_codes": 61
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.344443440437317,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 6528,
+      "changed_scale_codes": 61
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.7096688747406006,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 4051,
+      "changed_scale_codes": 43
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.7096688747406006,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 7027,
+      "changed_scale_codes": 43
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.20",
+      "master_changed_values": 98400,
+      "master_update_l2": 6.373529434204102,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 41856,
+      "changed_scale_codes": 297
+    },
+    {
+      "epoch": 45,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.20",
+      "master_changed_values": 98400,
+      "master_update_l2": 6.373529434204102,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 77581,
+      "changed_scale_codes": 297
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "62cc61d238019e7f36b6a4659b24f546afdfe7d152d6bc82ad23cadee1e9c29e",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00045.pt",
+  "forward_ast_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "train_seconds": 32.38250090001384,
+  "test_seconds": 9.061986699991394,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 65260032,
+  "peak_gpu_reserved_bytes": 109051904,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 29,
+  "checkpoint_seconds": 0.034156100009568036,
+  "total_epoch_seconds": 41.580313400016166,
+  "other_seconds": 0.10166970000136644
+}

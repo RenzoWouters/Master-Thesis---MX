@@ -1,0 +1,28 @@
+{
+  "schema": "mx-dual-pilot5-change-v1",
+  "new_research_run": true,
+  "truncation": false,
+  "unchanged_epoch_loop_AST": true,
+  "forward_modified_selector_pairs": 3,
+  "forward_remaining_AST_matches_source_tested": true,
+  "dual_forward_AST_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "new_modules": [
+    "mx_e2m1.py",
+    "dual_adapter.py",
+    "dual_support.py",
+    "test_dual.py"
+  ],
+  "modified_runner": "run_train.py: configuration, preflight, metrics/export; run_epochs AST unchanged",
+  "research_changes": [
+    "two direct MX modes 6/4 instead of one",
+    "detached E2M3 teacher for E2M1 soft CE",
+    "two passes but one Adam step, no division by 2",
+    "independent weight-mode BN selection; activations always32",
+    "legacy BN keys32 for6,4 for4; banks1/2/8 unused",
+    "select best by E2M3 and report both modes",
+    "separate direct mode exports; not one truncatable high source"
+  ],
+  "compatibility_changes": "only previously used utils.py patch, no new dependency upgrades",
+  "preexisting_files_overwritten": false,
+  "production_training_performed_here": false
+}

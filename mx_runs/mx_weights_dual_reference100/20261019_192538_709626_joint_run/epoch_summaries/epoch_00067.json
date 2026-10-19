@@ -1,0 +1,262 @@
+{
+  "epoch": 67,
+  "train": [
+    {
+      "epoch": 67,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 73257,
+      "objective_type": "recursive_soft_cross_entropy",
+      "objective_loss": 0.10168016336501594,
+      "top1_percent": 98.35647105396072,
+      "top5_percent": 99.97269885471695,
+      "correct1": 72053,
+      "correct5": 73237,
+      "count_top1_percent": 98.35647105396072,
+      "lr": 0.0001
+    },
+    {
+      "epoch": 67,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.04503380521751646,
+      "top1_percent": 98.63903790764023,
+      "top5_percent": 99.98771448462263,
+      "correct1": 72260,
+      "correct5": 73248,
+      "count_top1_percent": 98.63903790764023,
+      "lr": 0.0001
+    }
+  ],
+  "test": [
+    {
+      "epoch": 67,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.19277478194925488,
+      "top1_percent": 95.08681621680468,
+      "top5_percent": 99.37768899815612,
+      "correct1": 24753,
+      "correct5": 25870,
+      "count_top1_percent": 95.08681622618316,
+      "lr": 0.0001
+    },
+    {
+      "epoch": 67,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.2351987063884735,
+      "top1_percent": 94.98693914243468,
+      "top5_percent": 99.35848186846958,
+      "correct1": 24727,
+      "correct5": 25865,
+      "count_top1_percent": 94.98693915181315,
+      "lr": 0.0001
+    }
+  ],
+  "lr_used": 0.0001,
+  "lr_next": 0.0001,
+  "optimizer_steps": 38391,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "dc34149126574b559a3f400714a7154c4c4ada350aa7ff33a36982b3be961151",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\train_00067.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\test_00067.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.2912801206111908,
+    "gradient_l2_max": 1.9420781135559082,
+    "forward_calls_E2M3": 573,
+    "forward_calls_E2M1": 573,
+    "active_gradient_tensors": 30,
+    "detached_teacher_checks": 573,
+    "no_extra_FP32_teacher": true
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 30,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.0623704195022583,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 69,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.0623704195022583,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 189,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.07594479620456696,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 111,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.07594479620456696,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 256,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.11740370839834213,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 252,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.11740370839834213,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 551,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.16794076561927795,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 533,
+      "changed_scale_codes": 3
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.16794076561927795,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1170,
+      "changed_scale_codes": 3
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.1956491470336914,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 624,
+      "changed_scale_codes": 6
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.1956491470336914,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1571,
+      "changed_scale_codes": 6
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.20",
+      "master_changed_values": 98400,
+      "master_update_l2": 0.6750136613845825,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 4585,
+      "changed_scale_codes": 15
+    },
+    {
+      "epoch": 67,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.20",
+      "master_changed_values": 98400,
+      "master_update_l2": 0.6750136613845825,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 15156,
+      "changed_scale_codes": 15
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "caf4f51ed0287b7805a188c4a36e0be5dce412be62ba00a09edc10b8e10d440d",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00067.pt",
+  "forward_ast_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "train_seconds": 35.75927270000102,
+  "test_seconds": 10.937040099990554,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 65260032,
+  "peak_gpu_reserved_bytes": 109051904,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 54,
+  "checkpoint_seconds": 0.037379899993538857,
+  "total_epoch_seconds": 46.84871659998316,
+  "other_seconds": 0.11502389999805018
+}

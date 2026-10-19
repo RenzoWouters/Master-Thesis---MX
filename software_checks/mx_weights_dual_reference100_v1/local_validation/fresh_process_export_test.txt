@@ -1,0 +1,1 @@
+PASS: four exports reconstruct in fresh process

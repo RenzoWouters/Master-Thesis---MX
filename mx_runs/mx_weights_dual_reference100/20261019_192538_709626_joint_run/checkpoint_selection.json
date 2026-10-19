@@ -1,0 +1,22 @@
+{
+  "policy": "first strict maximum of E2M3/A32 official-test top1",
+  "best": {
+    "epoch": 75,
+    "file": "best_checkpoint.pt",
+    "sha256": "29ac42977d4146df0b9f3c760467e512c03ec8af6cfad6fafe4e6944ec030ade",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00075.pt",
+    "selection_score_E2M3": 95.15596188367623
+  },
+  "last": {
+    "epoch": 100,
+    "file": "last_checkpoint.pt",
+    "sha256": "9542d282201da6483b7b56e0f15619e53a78ca1ceae6c00c80e7f74f4c9fd9b5",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00100.pt",
+    "selection_score_E2M3": 95.03303625368237
+  },
+  "same_checkpoint": false,
+  "selected_on_official_test": true,
+  "independent_test_estimate": false,
+  "selection_mode": "MXFP6_E2M3/A32",
+  "both_modes_from_same_selected_checkpoint": true
+}

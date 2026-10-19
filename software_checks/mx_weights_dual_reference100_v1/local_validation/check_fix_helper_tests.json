@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "CPU_HELPER_TESTS_ONLY",
+  "checks": {
+    "backend_restored_on_exception": true,
+    "genuine_weight_mismatch_rejected_with_name_and_error": true,
+    "integer_counters_require_exact_match": true,
+    "NaN_never_accepted": true,
+    "wrong_shape_rejected": true,
+    "RNG_mismatch_rejected": true,
+    "partial_diagnostics_survive_exception": true
+  }
+}

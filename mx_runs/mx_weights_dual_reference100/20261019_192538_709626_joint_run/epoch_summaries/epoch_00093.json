@@ -1,0 +1,262 @@
+{
+  "epoch": 93,
+  "train": [
+    {
+      "epoch": 93,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 73257,
+      "objective_type": "recursive_soft_cross_entropy",
+      "objective_loss": 0.09308993512192255,
+      "top1_percent": 98.60218136150812,
+      "top5_percent": 99.98498437009432,
+      "correct1": 72233,
+      "correct5": 73246,
+      "count_top1_percent": 98.60218136150812,
+      "lr": 1.0000000000000002e-06
+    },
+    {
+      "epoch": 93,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.03880904271571617,
+      "top1_percent": 98.85744706990458,
+      "top5_percent": 99.98771448462263,
+      "correct1": 72420,
+      "correct5": 73248,
+      "count_top1_percent": 98.85744706990458,
+      "lr": 1.0000000000000002e-06
+    }
+  ],
+  "test": [
+    {
+      "epoch": 93,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.19603000446632002,
+      "top1_percent": 95.13675475398968,
+      "top5_percent": 99.3700061462815,
+      "correct1": 24766,
+      "correct5": 25868,
+      "count_top1_percent": 95.13675476336816,
+      "lr": 1.0000000000000002e-06
+    },
+    {
+      "epoch": 93,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.23837333880983105,
+      "top1_percent": 95.07145051305545,
+      "top5_percent": 99.36232329440688,
+      "correct1": 24749,
+      "correct5": 25866,
+      "count_top1_percent": 95.07145052243392,
+      "lr": 1.0000000000000002e-06
+    }
+  ],
+  "lr_used": 1.0000000000000002e-06,
+  "lr_next": 1.0000000000000002e-06,
+  "optimizer_steps": 53289,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "55d4e3a368e947a7c4be55e90253d4c43fe2047cc58675ace94a3e6bed8a8482",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\train_00093.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\test_00093.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.15096724033355713,
+    "gradient_l2_max": 1.8943982124328613,
+    "forward_calls_E2M3": 573,
+    "forward_calls_E2M1": 573,
+    "active_gradient_tensors": 30,
+    "detached_teacher_checks": 573,
+    "no_extra_FP32_teacher": true
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 30,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.3",
+      "master_changed_values": 1727,
+      "master_update_l2": 0.0008457711664959788,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 2,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.3",
+      "master_changed_values": 1727,
+      "master_update_l2": 0.0008457711664959788,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 3,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.6",
+      "master_changed_values": 2303,
+      "master_update_l2": 0.000983832636848092,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 11,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.6",
+      "master_changed_values": 2303,
+      "master_update_l2": 0.000983832636848092,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 2,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.10",
+      "master_changed_values": 4607,
+      "master_update_l2": 0.0013177009532228112,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 16,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.10",
+      "master_changed_values": 4607,
+      "master_update_l2": 0.0013177009532228112,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 8,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.13",
+      "master_changed_values": 9213,
+      "master_update_l2": 0.001972963334992528,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 23,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.13",
+      "master_changed_values": 9213,
+      "master_update_l2": 0.001972963334992528,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 15,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.0021333300974220037,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 12,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.0021333300974220037,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 19,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.20",
+      "master_changed_values": 98382,
+      "master_update_l2": 0.006952090188860893,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 39,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 93,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.20",
+      "master_changed_values": 98382,
+      "master_update_l2": 0.006952090188860893,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 159,
+      "changed_scale_codes": 0
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "6b6acc3f447a6d24d647d5bb7c20197d6be4899d59b894e384544dc947b092fd",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00093.pt",
+  "forward_ast_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "train_seconds": 36.208480999979656,
+  "test_seconds": 11.086885199998505,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 65260032,
+  "peak_gpu_reserved_bytes": 109051904,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 75,
+  "checkpoint_seconds": 0.05442100000800565,
+  "total_epoch_seconds": 47.4646153000067,
+  "other_seconds": 0.11482810002053156
+}

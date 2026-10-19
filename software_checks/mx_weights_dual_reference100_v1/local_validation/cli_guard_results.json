@@ -1,0 +1,38 @@
+[
+  {
+    "args": [
+      "--help"
+    ],
+    "exit": 0,
+    "stdout": "usage: run_train.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]\n                    [--device {cuda,cuda:0}] [--download]\n                    [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\n\nOne hundred complete train-only epochs: joint E2M3 + E2M1, A32, FP32 masters.\nUpstream recursive distillation: hard CE at E2M3, detached teacher soft CE at\nE2M1, summed gradients then ONE Adam update. No truncation or old checkpoint.\n\npositional arguments:\n  {check,run,resume}\n\noptions:\n  -h, --help            show this help message and exit\n  --data-root DATA_ROOT\n  --output-root OUTPUT_ROOT\n  --device {cuda,cuda:0}\n  --download\n  --stop-after-epoch STOP_AFTER_EPOCH\n  --checkpoint CHECKPOINT\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "run",
+      "--stop-after-epoch",
+      "5"
+    ],
+    "exit": 2,
+    "stdout": "",
+    "stderr": "usage: run_train.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]\n                    [--device {cuda,cuda:0}] [--download]\n                    [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: Dit pakket heeft eindpunt 100; voor vijf epochs blijft het afzonderlijke pilotpakket beschikbaar.\n"
+  },
+  {
+    "args": [
+      "run",
+      "--checkpoint",
+      "pilot.pt"
+    ],
+    "exit": 2,
+    "stdout": "",
+    "stderr": "usage: run_train.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]\n                    [--device {cuda,cuda:0}] [--download]\n                    [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.\n"
+  },
+  {
+    "args": [
+      "resume"
+    ],
+    "exit": 2,
+    "stdout": "",
+    "stderr": "usage: run_train.py [-h] [--data-root DATA_ROOT] [--output-root OUTPUT_ROOT]\n                    [--device {cuda,cuda:0}] [--download]\n                    [--stop-after-epoch STOP_AFTER_EPOCH]\n                    [--checkpoint CHECKPOINT]\n                    {check,run,resume}\nrun_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.\n"
+  }
+]

@@ -1,0 +1,262 @@
+{
+  "epoch": 19,
+  "train": [
+    {
+      "epoch": 19,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 73257,
+      "objective_type": "recursive_soft_cross_entropy",
+      "objective_loss": 0.19762354250744316,
+      "top1_percent": 95.45708942406822,
+      "top5_percent": 99.63962488226382,
+      "correct1": 69929,
+      "correct5": 72993,
+      "count_top1_percent": 95.45708942490137,
+      "lr": 0.001
+    },
+    {
+      "epoch": 19,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.1508283302868731,
+      "top1_percent": 95.69187927433556,
+      "top5_percent": 99.6628308557544,
+      "correct1": 70101,
+      "correct5": 73010,
+      "count_top1_percent": 95.69187927433556,
+      "lr": 0.001
+    }
+  ],
+  "test": [
+    {
+      "epoch": 19,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.19566634587700849,
+      "top1_percent": 94.53365088183233,
+      "top5_percent": 99.49293177627536,
+      "correct1": 24609,
+      "correct5": 25900,
+      "count_top1_percent": 94.53365089121081,
+      "lr": 0.001
+    },
+    {
+      "epoch": 19,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.19172142836200584,
+      "top1_percent": 94.7103564749485,
+      "top5_percent": 99.45835894283958,
+      "correct1": 24655,
+      "correct5": 25891,
+      "count_top1_percent": 94.71035648432698,
+      "lr": 0.001
+    }
+  ],
+  "lr_used": 0.001,
+  "lr_next": 0.001,
+  "optimizer_steps": 10887,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "e239f5515eb2b6ab27dae8d16b84c04206a93f45269c70f188473ff9af7657cd",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\train_00019.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\test_00019.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.542253851890564,
+    "gradient_l2_max": 2.1658618450164795,
+    "forward_calls_E2M3": 573,
+    "forward_calls_E2M1": 573,
+    "active_gradient_tensors": 30,
+    "detached_teacher_checks": 573,
+    "no_extra_FP32_teacher": true
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 30,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.4209526479244232,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 524,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.4209526479244232,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1174,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.4909541606903076,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 724,
+      "changed_scale_codes": 1
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.4909541606903076,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1571,
+      "changed_scale_codes": 1
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.774583101272583,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1577,
+      "changed_scale_codes": 2
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.774583101272583,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 3268,
+      "changed_scale_codes": 2
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.1824517250061035,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 3302,
+      "changed_scale_codes": 5
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.1824517250061035,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 6785,
+      "changed_scale_codes": 5
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.5205044746398926,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 4310,
+      "changed_scale_codes": 25
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.5205044746398926,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 7430,
+      "changed_scale_codes": 25
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.20",
+      "master_changed_values": 97313,
+      "master_update_l2": 6.093509674072266,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 52122,
+      "changed_scale_codes": 352
+    },
+    {
+      "epoch": 19,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.20",
+      "master_changed_values": 97313,
+      "master_update_l2": 6.093509674072266,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 83084,
+      "changed_scale_codes": 352
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "e4a4fe264adff2f6af51df8b2bb65b2a7a9afb26272a1455eb7484785e7da067",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00019.pt",
+  "forward_ast_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "train_seconds": 36.667044800007716,
+  "test_seconds": 11.325418199994601,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 65260032,
+  "peak_gpu_reserved_bytes": 109051904,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 17,
+  "checkpoint_seconds": 0.035371000005397946,
+  "total_epoch_seconds": 48.1362264000345,
+  "other_seconds": 0.10839240002678707
+}

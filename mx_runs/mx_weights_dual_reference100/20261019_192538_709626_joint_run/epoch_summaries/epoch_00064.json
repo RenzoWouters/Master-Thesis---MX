@@ -1,0 +1,262 @@
+{
+  "epoch": 64,
+  "train": [
+    {
+      "epoch": 64,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 73257,
+      "objective_type": "recursive_soft_cross_entropy",
+      "objective_loss": 0.10361694292315951,
+      "top1_percent": 98.35374093859924,
+      "top5_percent": 99.97269885471695,
+      "correct1": 72051,
+      "correct5": 73237,
+      "count_top1_percent": 98.35374093943241,
+      "lr": 0.0001
+    },
+    {
+      "epoch": 64,
+      "phase": "train",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.04709312448180611,
+      "top1_percent": 98.5912609033949,
+      "top5_percent": 99.98771448462263,
+      "correct1": 72225,
+      "correct5": 73248,
+      "count_top1_percent": 98.5912609033949,
+      "lr": 0.0001
+    }
+  ],
+  "test": [
+    {
+      "epoch": 64,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "activation_bits": 32,
+      "bn_bank_key": "4",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.19303120949752653,
+      "top1_percent": 95.08297479086737,
+      "top5_percent": 99.37768899815612,
+      "correct1": 24752,
+      "correct5": 25870,
+      "count_top1_percent": 95.08297480024585,
+      "lr": 0.0001
+    },
+    {
+      "epoch": 64,
+      "phase": "test",
+      "mode": "joint",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "activation_bits": 32,
+      "bn_bank_key": "32",
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.2311961877662929,
+      "top1_percent": 95.03687767961968,
+      "top5_percent": 99.35464044253227,
+      "correct1": 24740,
+      "correct5": 25864,
+      "count_top1_percent": 95.03687768899816,
+      "lr": 0.0001
+    }
+  ],
+  "lr_used": 0.0001,
+  "lr_next": 0.0001,
+  "optimizer_steps": 36672,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "bf9b766a9d88a35e6686c94ed72c1163554cdd4f5fa5fe1713496836c670fcde",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\train_00064.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\sample_order\\test_00064.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.3382902145385742,
+    "gradient_l2_max": 1.9105968475341797,
+    "forward_calls_E2M3": 573,
+    "forward_calls_E2M1": 573,
+    "active_gradient_tensors": 30,
+    "detached_teacher_checks": 573,
+    "no_extra_FP32_teacher": true
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 30,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.06597840040922165,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 65,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.06597840040922165,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 178,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.0755271464586258,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 99,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.0755271464586258,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 253,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.11269095540046692,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 249,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.11269095540046692,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 528,
+      "changed_scale_codes": 0
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.16556786000728607,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 478,
+      "changed_scale_codes": 3
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.16556786000728607,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1145,
+      "changed_scale_codes": 3
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.19373755156993866,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 593,
+      "changed_scale_codes": 6
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 0.19373755156993866,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1516,
+      "changed_scale_codes": 6
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 4,
+      "layer": "layers.20",
+      "master_changed_values": 98400,
+      "master_update_l2": 0.6733390092849731,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 4890,
+      "changed_scale_codes": 25
+    },
+    {
+      "epoch": 64,
+      "mode": "joint",
+      "weight_bits": 6,
+      "layer": "layers.20",
+      "master_changed_values": 98400,
+      "master_update_l2": 0.6733390092849731,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 15287,
+      "changed_scale_codes": 25
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "023a3e8e901a2ade49e857aa732d7e4b2264f997c17436ae45aa4ea101e4c7d5",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_reference100\\20261019_192538_709626_joint_run\\checkpoints\\epoch_00064.pt",
+  "forward_ast_sha256": "b77fa94de8e9f540721b07550e28a3030f193c1257296facf4195bed0752cfbe",
+  "train_seconds": 35.891463199979626,
+  "test_seconds": 10.9878514999873,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 65260032,
+  "peak_gpu_reserved_bytes": 109051904,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 54,
+  "checkpoint_seconds": 0.03972790000261739,
+  "total_epoch_seconds": 47.028707000019494,
+  "other_seconds": 0.10966440004995093
+}

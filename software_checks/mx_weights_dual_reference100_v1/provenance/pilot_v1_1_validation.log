@@ -1,0 +1,68 @@
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.36, prec1 0.00, prec5 33.33
+ZELFTEST productiebeleid: 0 tensors buiten tolerantie; RNG exact=True
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.36, prec1 0.00, prec5 33.33
+ZELFTEST deterministisch: 0 tensors buiten tolerantie; RNG exact=True
+VERGELIJKING PASS: deterministische test; geen versoepelde toleranties. Oorspronkelijke backendinstellingen hersteld.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+UPSTREAM epoch 1, iter 0/2, bit_width_max loss 2.07, prec1 75.00, prec5 100.00
+UPSTREAM epoch 2, iter 0/2, bit_width_max loss 1.83, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 0/2, bit_width_max loss 1.63, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 0/2, bit_width_max loss 1.35, prec1 100.00, prec5 100.00
+NIEUWE initialisatie. Geen ResNet- of proefcheckpoint ingeladen.
+EPOCH 1/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+KLAAR epoch 1: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+EPOCH 2/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 1, iter 0/2, bit_width_max loss 2.07, prec1 75.00, prec5 100.00
+KLAAR epoch 2: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 3/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 2, iter 0/2, bit_width_max loss 1.83, prec1 100.00, prec5 100.00
+KLAAR epoch 3: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 4/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 3, iter 0/2, bit_width_max loss 1.63, prec1 100.00, prec5 100.00
+KLAAR epoch 4: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 5/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 4, iter 0/2, bit_width_max loss 1.35, prec1 100.00, prec5 100.00
+KLAAR epoch 5: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.01 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+BEHOUDEN: beide modi uit beste E2M3-checkpoint 1; laatste 5.
+NIEUWE initialisatie. Geen ResNet- of proefcheckpoint ingeladen.
+EPOCH 1/2; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+KLAAR epoch 1: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+EPOCH 2/2; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 1, iter 0/2, bit_width_max loss 2.07, prec1 75.00, prec5 100.00
+KLAAR epoch 2: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+HERVAT na epoch 2; geen initialisatie van het model of LR-schema opnieuw.
+EPOCH 3/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 2, iter 0/2, bit_width_max loss 1.83, prec1 100.00, prec5 100.00
+KLAAR epoch 3: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 4/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 3, iter 0/2, bit_width_max loss 1.63, prec1 100.00, prec5 100.00
+KLAAR epoch 4: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 5/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 4, iter 0/2, bit_width_max loss 1.35, prec1 100.00, prec5 100.00
+KLAAR epoch 5: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+NIEUWE initialisatie. Geen ResNet- of proefcheckpoint ingeladen.
+EPOCH 1/5; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+KLAAR epoch 1: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+Gecontroleerd gestopt op epochgrens; brondata en checkpoints blijven behouden.

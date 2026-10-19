@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_CPU_ONLY",
+  "real_svhn_training": false,
+  "CUDA_validation_executed_here": false,
+  "training_epochs_uninstrumented": 100,
+  "training_epochs_full_runner": 100,
+  "synthetic_train_images": 6,
+  "synthetic_test_images": 4,
+  "batch_size": 4,
+  "optimizer_steps_in_100_epoch_fixture": 200,
+  "forward_passes_in_100_epoch_fixture": 400,
+  "resume_test_boundaries": [
+    50,
+    75,
+    90
+  ],
+  "code_hashes_confirmed_against_successful_laptop_pilot": true,
+  "actual_training_expected_updates": 57300,
+  "actual_training_expected_forwards": 114600,
+  "numerical_training_loop_unchanged": true,
+  "first_validation_attempt": "Tool execution timeout after synthetic epoch84; not an assertion failure. Full identical-script rerun in fresh validation2 passed.",
+  "checks": [
+    "existing_E2M3_regression",
+    "new_E2M1_joint_training_checks",
+    "hundred_epochs_uninstrumented_vs_full_runner_model_optimizer_scheduler_RNG_metrics_exact_CPU",
+    "resume_after_50_75_90_matches_continuous100_CPU_dropout_two_BN_banks",
+    "changed_mode_or_pilot_contract_overwrite_corruption_rejected",
+    "stop_marker_finishes_epoch_and_never_claims_full_completion",
+    "hundred_checkpoints_400_metric_rows_200_sample_orders_and_completion",
+    "wrong_next_LR_or_missing_mode_rejected",
+    "first_strict_E2M3_peak_not_low_mode_peak",
+    "unchanged_LR_milestones_50_75_90_parameter_only_test",
+    "four_selected_exports_reconstruct_fresh_process_no_checkpoint",
+    "read_only_hundred_epoch_notebook_executed",
+    "partial_notebook_does_not_claim_100_epochs"
+  ],
+  "production_preflight": "BLOCKED by existing MoviePy 2.2.1 / Pillow 12.3.0 requirement conflict; no dependencies changed or checks bypassed."
+}
