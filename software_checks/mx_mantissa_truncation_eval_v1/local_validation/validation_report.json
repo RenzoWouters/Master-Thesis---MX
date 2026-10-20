@@ -1,0 +1,94 @@
+{
+  "synthetic_fixture_only": true,
+  "SVHN_used": false,
+  "optimizer_steps": 0,
+  "device": "cpu",
+  "all_64_source_codes_oracle_C_and_B": true,
+  "sign_exponent_subnormal_signed_zero_packing_verified": true,
+  "all_255_scale_codes_preserved": true,
+  "round_vs_truncate_and_double_rounding_examples": true,
+  "multirow_padding_zero_blocks": true,
+  "negative_tests": [
+    "NaN_scale_255",
+    "code_64",
+    "nonzero_padding",
+    "signed_code_storage",
+    "mismatched_source_scale",
+    "wrong_BN_bank",
+    "hidden_master",
+    "unknown_method",
+    "wrong_checksum",
+    "overwrite_refused"
+  ],
+  "C_requires_no_quantizer_or_master": true,
+  "live_vs_export_6": {
+    "allclose_rtol1e4_atol1e5": true,
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  "live_vs_export_4": {
+    "allclose_rtol1e4_atol1e5": true,
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  "paired_correctness_accounting": true,
+  "synthetic_full_evaluator": {
+    "all_model_and_bn_states_unchanged": true,
+    "all_models_no_grad": true,
+    "low_paths_all_use_same_trained_bank4": true,
+    "six_FP32_master_parameters_absent_all_paths": true,
+    "optimizer_steps": 0,
+    "n_test": 7,
+    "label_sha256": "81845a01dafa45c9b26e10a7af52a92e8604d5d8ef690f1e3ccdcfe3b5c6ae98",
+    "sample_order_sha256": "e1a613aa4b331588d97b5feef1faabe8e8138d8c488ee9122b8533bfdda3c189",
+    "paired_evaluation_seconds_not_a_speed_benchmark": 0.018307309000192618,
+    "per_image_file": "synthetic_per_image_outputs.npz",
+    "per_image_sha256": "b42bbf29346e94ef75923c630211d799ab1a757fa05b6ddb37b7fa8e50a1ad05",
+    "per_image_data_in_feedback": true
+  },
+  "no_training_or_calibration": true,
+  "all_negative_tests_rejected": true,
+  "source_export_unchanged": true,
+  "status": "PASS",
+  "fresh_process_C_logits_exact": true,
+  "fresh_process_no_master_no_direct_low": true,
+  "cli_guards_rejected": [
+    [
+      "run"
+    ],
+    [
+      "check",
+      "--device",
+      "cpu"
+    ],
+    [
+      "evaluate"
+    ],
+    [
+      "check",
+      "--download"
+    ],
+    [
+      "evaluate",
+      "--reference-run",
+      "/mnt/data/_mxtrunc_work/validation2",
+      "--output-root",
+      "/mnt/data/_mxtrunc_work/validation2/inside"
+    ]
+  ],
+  "notebook_executed_only_synthetic_data": true,
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "production_GPU_training_or_evaluation_performed": false
+}

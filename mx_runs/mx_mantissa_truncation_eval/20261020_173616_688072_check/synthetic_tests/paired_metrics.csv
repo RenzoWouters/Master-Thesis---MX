@@ -1,0 +1,5 @@
+role,epoch,comparison,reference_path,other_path,n,reference_correct1,other_correct1,accuracy_difference_pp,prediction_changes,wrong_to_correct,correct_to_wrong,both_correct,both_wrong,wrong_to_other_wrong,net_correct_change,mean_abs_logit_difference,max_abs_logit_difference
+synthetic,0,C_minus_A,A_direct_E2M1,C_truncate_E2M3,7,0,0,0.0,0,0,0,0,7,0,0,0.0,0.0
+synthetic,0,B_minus_A,A_direct_E2M1,B_round_from_E2M3,7,0,0,0.0,0,0,0,0,7,0,0,0.0,0.0
+synthetic,0,C_minus_B,B_round_from_E2M3,C_truncate_E2M3,7,0,0,0.0,0,0,0,0,7,0,0,0.0,0.0
+synthetic,0,A_minus_H,H_source_E2M3,A_direct_E2M1,7,0,0,0.0,0,0,0,0,7,0,0,1.9420616860900607e-05,4.869699478149414e-05

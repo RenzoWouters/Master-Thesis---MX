@@ -1,0 +1,9 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_truncation_eval\20261020_173616_688072_check
+MANTISSATRUNCATIE: opgeslagen E2M3 -> E2M1; vaste schalen/A32/lage BN; geen training.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+synthetic: batch 1/3; vier paden, geen updates.
+synthetic: batch 3/3; vier paden, geen updates.
+CHECK PASS: codebitshift, schalen, signed zero, twee BN-banken en opslag/herladen.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_truncation_eval\20261020_173616_688072_check\run_report.json

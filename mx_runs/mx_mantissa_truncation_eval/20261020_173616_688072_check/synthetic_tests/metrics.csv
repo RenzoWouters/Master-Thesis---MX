@@ -1,0 +1,5 @@
+role,epoch,path,weight_bits,activation_bits,bn_bank_key,n,correct1,correct5,top1_percent,top5_percent,hard_cross_entropy,optimizer_steps,batchnorm_recalibrated
+synthetic,0,H_source_E2M3,6,32,32,7,0,3,0.0,42.857142857142854,2.321406466620309,0,False
+synthetic,0,A_direct_E2M1,4,32,4,7,0,3,0.0,42.857142857142854,2.3214107240949358,0,False
+synthetic,0,B_round_from_E2M3,4,32,4,7,0,3,0.0,42.857142857142854,2.3214107240949358,0,False
+synthetic,0,C_truncate_E2M3,4,32,4,7,0,3,0.0,42.857142857142854,2.3214107240949358,0,False

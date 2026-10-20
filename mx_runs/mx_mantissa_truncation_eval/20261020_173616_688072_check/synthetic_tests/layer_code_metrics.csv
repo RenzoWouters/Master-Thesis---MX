@@ -1,0 +1,7 @@
+role,epoch,layer,n_weights,blocks,padding_slots,high_local_subnormal_count,nonzero_dropped_suffix_count,C_new_zero_vs_high,A_zero_count,B_zero_count,C_zero_count,scale_exp_min,scale_exp_max,high_code_and_scale_bytes,low_code_and_scale_bytes,sign_exponent_scale_preserved_C
+synthetic,0,layers.3,1728,64,320,251,1255,103,76,93,125,-7,-7,1600,1088,True
+synthetic,0,layers.6,2304,80,256,369,1760,162,99,122,181,-8,-7,2000,1360,True
+synthetic,0,layers.10,4608,160,512,707,3574,304,210,266,361,-8,-7,4000,2720,True
+synthetic,0,layers.13,9216,288,0,1062,7087,477,298,388,546,-8,-8,7200,4896,True
+synthetic,0,layers.16,9216,288,0,1040,7190,433,278,357,497,-8,-8,7200,4896,True
+synthetic,0,layers.20,102400,3200,0,19721,74032,8437,5546,6939,9777,-9,-8,80000,54400,True
