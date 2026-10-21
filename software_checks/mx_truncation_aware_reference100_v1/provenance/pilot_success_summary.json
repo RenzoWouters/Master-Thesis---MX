@@ -1,0 +1,148 @@
+{
+  "source": "feedback_bundle(20261021-124513).zip",
+  "status": "PASS",
+  "completed_epoch": 5,
+  "optimizer_steps": 2865,
+  "config": {
+    "schema": "mx-truncation-aware-pilot5-protocol-v1",
+    "purpose": "five complete train-only epochs: joint MX with low codes truncated from high source",
+    "mode": "joint",
+    "weight_format": "MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6
+    ],
+    "weight_formats": {
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in BOTH modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "high power-3 frexp rule on current G(W); same cached high codes/scales for both modes; low copies scales",
+    "mx_rounding": "high nearest ties-to-even; low code shift2; finite FP32 source, scalar subnormal flush, local subnormals supported",
+    "ste_policy": "identity wrt G(W) for high and complete high-to-low truncation path; retain original G(W) derivatives",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": true,
+    "distillation": true,
+    "low_path": "cached_high_codes >> 2; no direct E2M1 encode",
+    "source_cache": "one detached high source per layer per paired minibatch; cleared before Adam",
+    "loss": "E2M3 hard CE + E2M1 upstream soft CE with detached E2M3 teacher; T=1; no division by 2",
+    "passes_per_training_batch": 2,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "two active weight-mode banks; legacy keys32/4 do NOT imply A32/A4; banks1/2/8 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "planned_epochs": 100,
+    "pilot_stop_epoch": 5,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "both modes on complete official test after every epoch; hard CE for both",
+    "selection_policy": "first strict maximum of E2M3/A32 official-test top1",
+    "reporting_policy": "both modes from same selected best checkpoint; also both at final epoch",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "one high MX source with both BN banks per checkpoint; companion low derived from reloaded source; FP32 resume checkpoint separate",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "timing": {
+    "available": true,
+    "planned_epochs": 100,
+    "steady_epoch_seconds": [
+      37.66935379995266,
+      39.41896539996378,
+      39.41606439999305,
+      39.07454230001895
+    ],
+    "steady_epochs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "median_epoch_seconds": 39.245303350006,
+    "first_epoch_seconds": 42.758297299966216,
+    "estimated_100_epoch_seconds": 3928.04332895056,
+    "observed_range_projection_seconds": [
+      3772.0243234952795,
+      3945.2358718963806
+    ],
+    "range_is_confidence_interval": false,
+    "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+    "excludes": [
+      "download",
+      "dependency installation",
+      "dataset loading",
+      "final report export"
+    ],
+    "limitations": [
+      "same laptop/backend/data loading conditions required",
+      "five epochs do not measure the LR transitions at 50/75/90",
+      "thermal and background-load drift over a long run not established"
+    ],
+    "weight_mode": "MXFP6_E2M3+MXFP4_E2M1",
+    "includes": [
+      "two-mode training",
+      "two-mode test",
+      "epoch diagnostics",
+      "checkpoint write"
+    ],
+    "measured_completed_epoch_seconds": 198.33722319989465
+  }
+}

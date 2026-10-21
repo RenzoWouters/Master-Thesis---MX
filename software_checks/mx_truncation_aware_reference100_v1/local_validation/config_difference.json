@@ -1,0 +1,18 @@
+{
+  "pilot_stop_epoch": {
+    "pilot": 5,
+    "reference100": null
+  },
+  "purpose": {
+    "pilot": "five complete train-only epochs: joint MX with low codes truncated from high source",
+    "reference100": "one hundred complete train-only epochs: same shared-source truncation-aware pilot method"
+  },
+  "schema": {
+    "pilot": "mx-truncation-aware-pilot5-protocol-v1",
+    "reference100": "mx-truncation-aware-reference100-protocol-v1"
+  },
+  "target_final_epoch": {
+    "pilot": null,
+    "reference100": 100
+  }
+}

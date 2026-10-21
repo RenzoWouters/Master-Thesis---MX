@@ -1,0 +1,14 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_truncation_aware_reference100\20261021_153547_944939_joint_check
+TRUNCATIEBEWUSTE TRAINING: 100 epochs; E2M3 -> codes >> 2 -> E2M1; A32; FP32-masters; geen pilot-warmstart.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.31, prec1 33.33, prec5 66.67
+ZELFTEST productiebeleid: 0 tensors buiten tolerantie; RNG exact=True
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.31, prec1 33.33, prec5 66.67
+ZELFTEST deterministisch: 0 tensors buiten tolerantie; RNG exact=True
+VERGELIJKING PASS: deterministische test; geen versoepelde toleranties. Oorspronkelijke backendinstellingen hersteld.
+UPSTREAM epoch 0, iter 0/1, bit_width_max loss 2.32, prec1 0.00, prec5 33.33
+CHECK PASS: gezamenlijke E2M3-bron, code-truncatie, STE, A32, BN en updates. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_truncation_aware_reference100\20261021_153547_944939_joint_check\run_report.json

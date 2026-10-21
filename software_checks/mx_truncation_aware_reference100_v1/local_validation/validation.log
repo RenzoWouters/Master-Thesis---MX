@@ -1,0 +1,1046 @@
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.36, prec1 0.00, prec5 33.33
+ZELFTEST productiebeleid: 0 tensors buiten tolerantie; RNG exact=True
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.36, prec1 0.00, prec5 33.33
+ZELFTEST deterministisch: 0 tensors buiten tolerantie; RNG exact=True
+VERGELIJKING PASS: deterministische test; geen versoepelde toleranties. Oorspronkelijke backendinstellingen hersteld.
+UPSTREAM epoch 0, iter 0/1, bit_width_max loss 2.31, prec1 0.00, prec5 66.67
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+UPSTREAM epoch 1, iter 0/2, bit_width_max loss 2.07, prec1 50.00, prec5 100.00
+UPSTREAM epoch 2, iter 0/2, bit_width_max loss 1.82, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 0/2, bit_width_max loss 1.60, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 0/2, bit_width_max loss 1.33, prec1 100.00, prec5 100.00
+UPSTREAM epoch 5, iter 0/2, bit_width_max loss 1.20, prec1 100.00, prec5 100.00
+UPSTREAM epoch 6, iter 0/2, bit_width_max loss 0.86, prec1 100.00, prec5 100.00
+UPSTREAM epoch 7, iter 0/2, bit_width_max loss 0.71, prec1 100.00, prec5 100.00
+UPSTREAM epoch 8, iter 0/2, bit_width_max loss 0.62, prec1 100.00, prec5 100.00
+UPSTREAM epoch 9, iter 0/2, bit_width_max loss 0.41, prec1 100.00, prec5 100.00
+UPSTREAM epoch 10, iter 0/2, bit_width_max loss 0.41, prec1 100.00, prec5 100.00
+UPSTREAM epoch 11, iter 0/2, bit_width_max loss 0.32, prec1 100.00, prec5 100.00
+UPSTREAM epoch 12, iter 0/2, bit_width_max loss 0.15, prec1 100.00, prec5 100.00
+UPSTREAM epoch 13, iter 0/2, bit_width_max loss 0.15, prec1 100.00, prec5 100.00
+UPSTREAM epoch 14, iter 0/2, bit_width_max loss 0.14, prec1 100.00, prec5 100.00
+UPSTREAM epoch 15, iter 0/2, bit_width_max loss 0.06, prec1 100.00, prec5 100.00
+UPSTREAM epoch 16, iter 0/2, bit_width_max loss 0.06, prec1 100.00, prec5 100.00
+UPSTREAM epoch 17, iter 0/2, bit_width_max loss 0.07, prec1 100.00, prec5 100.00
+UPSTREAM epoch 18, iter 0/2, bit_width_max loss 0.04, prec1 100.00, prec5 100.00
+UPSTREAM epoch 19, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 20, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 21, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 22, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 23, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 24, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 25, iter 0/2, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 26, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 27, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 28, iter 0/2, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 29, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 30, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 31, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 32, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 33, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 34, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 35, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 36, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 37, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 38, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 39, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 40, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 41, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 42, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 43, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 44, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 45, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 46, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 47, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 48, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 49, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 50, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 51, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 52, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 53, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 54, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 55, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 56, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 57, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 58, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 59, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 60, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 61, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 62, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 63, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 64, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 65, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 66, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 67, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 68, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 69, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 70, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 71, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 72, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 73, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 74, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 75, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 76, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 77, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 78, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 79, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 80, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 81, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 82, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 83, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 84, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 85, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 86, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 87, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 88, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 89, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 90, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 91, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 92, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 93, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 94, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+UPSTREAM epoch 95, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 96, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 97, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 98, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+UPSTREAM epoch 99, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+NIEUWE initialisatie. Geen ResNet- of proefcheckpoint ingeladen.
+EPOCH 1/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+KLAAR epoch 1: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+EPOCH 2/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 1, iter 0/2, bit_width_max loss 2.07, prec1 50.00, prec5 100.00
+KLAAR epoch 2: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 3/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 2, iter 0/2, bit_width_max loss 1.82, prec1 100.00, prec5 100.00
+KLAAR epoch 3: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 4/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 3, iter 0/2, bit_width_max loss 1.60, prec1 100.00, prec5 100.00
+KLAAR epoch 4: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 5/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 4, iter 0/2, bit_width_max loss 1.33, prec1 100.00, prec5 100.00
+KLAAR epoch 5: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 6/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 5, iter 0/2, bit_width_max loss 1.20, prec1 100.00, prec5 100.00
+KLAAR epoch 6: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 7/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 6, iter 0/2, bit_width_max loss 0.86, prec1 100.00, prec5 100.00
+KLAAR epoch 7: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 8/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 7, iter 0/2, bit_width_max loss 0.71, prec1 100.00, prec5 100.00
+KLAAR epoch 8: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 9/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 8, iter 0/2, bit_width_max loss 0.62, prec1 100.00, prec5 100.00
+KLAAR epoch 9: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 10/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 9, iter 0/2, bit_width_max loss 0.41, prec1 100.00, prec5 100.00
+KLAAR epoch 10: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 50.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 11/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 10, iter 0/2, bit_width_max loss 0.41, prec1 100.00, prec5 100.00
+KLAAR epoch 11: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 12/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 11, iter 0/2, bit_width_max loss 0.32, prec1 100.00, prec5 100.00
+KLAAR epoch 12: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 13/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 12, iter 0/2, bit_width_max loss 0.15, prec1 100.00, prec5 100.00
+KLAAR epoch 13: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 14/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 13, iter 0/2, bit_width_max loss 0.15, prec1 100.00, prec5 100.00
+KLAAR epoch 14: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 15/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 14, iter 0/2, bit_width_max loss 0.14, prec1 100.00, prec5 100.00
+KLAAR epoch 15: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 16/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 15, iter 0/2, bit_width_max loss 0.06, prec1 100.00, prec5 100.00
+KLAAR epoch 16: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 17/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 16, iter 0/2, bit_width_max loss 0.06, prec1 100.00, prec5 100.00
+KLAAR epoch 17: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 18/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 17, iter 0/2, bit_width_max loss 0.07, prec1 100.00, prec5 100.00
+KLAAR epoch 18: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 19/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 18, iter 0/2, bit_width_max loss 0.04, prec1 100.00, prec5 100.00
+KLAAR epoch 19: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 75.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 20/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 19, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+KLAAR epoch 20: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 21/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 20, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+KLAAR epoch 21: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 22/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 21, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+KLAAR epoch 22: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 23/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 22, iter 0/2, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+KLAAR epoch 23: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 24/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 23, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 24: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 25/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 24, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 25: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 26/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 25, iter 0/2, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+KLAAR epoch 26: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 27/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 26, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 27: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 28/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 27, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 28: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 29/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 28, iter 0/2, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+KLAAR epoch 29: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 30/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 29, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 30: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 31/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 30, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 31: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 32/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 31, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 32: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 33/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 32, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 33: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 34/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 33, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 34: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 35/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 34, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 35: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 36/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 35, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 36: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 37/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 36, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 37: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 38/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 37, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 38: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 39/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 38, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 39: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 40/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 39, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 40: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 41/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 40, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 41: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 42/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 41, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 42: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 43/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 42, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 43: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 44/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 43, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 44: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 45/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 44, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 45: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 46/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 45, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 46: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 47/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 46, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 47: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 48/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 47, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 48: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 49/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 48, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 49: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 50/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 49, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 50: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 51/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 50, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 51: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 52/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 51, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 52: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 53/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 52, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 53: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 54/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 53, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 54: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 55/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 54, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 55: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 56/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 55, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 56: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 57/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 56, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 57: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 58/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 57, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 58: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 59/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 58, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 59: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 60/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 59, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 60: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 61/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 60, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 61: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 62/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 61, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 62: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 63/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 62, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 63: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 64/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 63, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 64: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 65/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 64, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 65: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 66/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 65, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 66: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 67/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 66, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 67: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 68/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 67, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 68: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 69/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 68, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 69: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 70/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 69, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 70: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 71/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 70, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 71: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 72/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 71, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 72: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 73/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 72, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 73: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 74/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 73, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 74: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 75/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 74, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 75: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 76/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 75, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 76: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 77/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 76, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 77: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 78/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 77, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 78: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 79/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 78, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 79: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 80/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 79, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 80: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 81/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 80, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 81: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 82/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 81, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 82: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 83/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 82, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 83: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 84/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 83, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 84: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 85/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 84, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 85: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 86/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 85, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 86: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 87/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 86, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 87: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 88/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 87, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 88: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 89/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 88, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 89: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 90/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 89, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 90: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 91/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 90, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 91: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 92/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 91, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 92: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 93/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 92, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 93: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 94/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 93, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 94: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 95/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 94, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 95: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 96/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 95, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 96: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 97/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 96, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 97: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 98/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 97, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 98: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 99/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 98, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 99: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 100/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 99, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 100: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+BEHOUDEN: beide modi uit beste E2M3-checkpoint 19; laatste 100.
+VOLTOOIING: 100/100 epochs; 200 updates; 400 trainingspasses; gemeten epochtijd=0.29 min.
+HERVAT na epoch 50; geen initialisatie van het model of LR-schema opnieuw.
+EPOCH 51/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 50, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 51: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 52/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 51, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 52: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 53/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 52, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 53: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 54/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 53, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 54: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 55/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 54, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 55: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 56/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 55, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 56: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 57/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 56, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 57: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 58/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 57, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 58: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 59/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 58, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 59: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 60/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 59, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 60: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 61/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 60, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 61: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 62/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 61, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 62: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 63/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 62, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 63: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 64/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 63, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 64: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 65/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 64, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 65: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 66/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 65, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 66: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 67/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 66, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 67: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 68/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 67, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 68: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 69/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 68, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 69: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 70/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 69, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 70: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 71/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 70, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 71: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 72/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 71, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 72: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 73/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 72, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 73: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 74/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 73, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 74: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 75/100; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 74, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 75: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 76/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 75, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 76: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 77/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 76, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 77: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 78/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 77, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 78: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 79/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 78, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 79: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 80/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 79, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 80: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 81/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 80, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 81: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 82/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 81, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 82: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 83/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 82, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 83: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 84/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 83, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 84: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 85/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 84, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 85: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 86/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 85, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 86: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 87/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 86, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 87: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 88/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 87, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 88: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 89/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 88, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 89: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 90/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 89, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 90: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 91/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 90, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 91: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 92/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 91, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 92: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 93/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 92, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 93: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 94/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 93, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 94: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 95/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 94, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 95: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 96/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 95, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 96: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 97/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 96, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 97: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 98/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 97, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 98: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 99/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 98, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 99: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 100/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 99, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 100: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+HERVAT na epoch 75; geen initialisatie van het model of LR-schema opnieuw.
+EPOCH 76/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 75, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 76: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 77/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 76, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 77: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 78/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 77, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 78: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 79/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 78, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 79: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 80/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 79, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 80: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 81/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 80, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 81: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 82/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 81, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 82: train=0.1s; test=0.0s; totaal=0.3s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 83/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 82, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 83: train=0.1s; test=0.0s; totaal=0.4s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 84/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 83, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 84: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 85/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 84, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 85: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 86/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 85, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 86: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 87/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 86, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 87: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 88/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 87, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 88: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 89/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 88, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 89: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 90/100; MODE=joint; LR=1e-05; volledig schema=100
+UPSTREAM epoch 89, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 90: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 91/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 90, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 91: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 92/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 91, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 92: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 93/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 92, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 93: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 94/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 93, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 94: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 95/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 94, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 95: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 96/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 95, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 96: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 97/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 96, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 97: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 98/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 97, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 98: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 99/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 98, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 99: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 100/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 99, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 100: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+HERVAT na epoch 90; geen initialisatie van het model of LR-schema opnieuw.
+EPOCH 91/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 90, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 91: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 92/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 91, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 92: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 93/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 92, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 93: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 94/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 93, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 94: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 95/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 94, iter 0/2, bit_width_max loss 0.01, prec1 100.00, prec5 100.00
+KLAAR epoch 95: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 96/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 95, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 96: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 97/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 96, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 97: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 98/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 97, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 98: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 99/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 98, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 99: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 100/100; MODE=joint; LR=1e-06; volledig schema=100
+UPSTREAM epoch 99, iter 0/2, bit_width_max loss 0.00, prec1 100.00, prec5 100.00
+KLAAR epoch 100: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=19
+  TEST MXFP4_E2M1/A32: 100.0000% | MXFP6_E2M3/A32: 100.0000%
+  SCHATTING 100 epochs: 0.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+BEHOUDEN: beide modi uit beste E2M3-checkpoint 19; laatste 100.
+VOLTOOIING: 100/100 epochs; 200 updates; 400 trainingspasses; gemeten epochtijd=0.30 min.
+NIEUWE initialisatie. Geen ResNet- of proefcheckpoint ingeladen.
+EPOCH 1/100; MODE=joint; LR=0.001; volledig schema=100
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.35, prec1 0.00, prec5 25.00
+KLAAR epoch 1: train=0.1s; test=0.0s; totaal=0.2s; beste epoch=1
+  TEST MXFP4_E2M1/A32: 25.0000% | MXFP6_E2M3/A32: 25.0000%
+Gecontroleerd gestopt op epochgrens; brondata en checkpoints blijven behouden.
+BEHOUDEN: beide modi uit beste E2M3-checkpoint 1; laatste 1.
+VOLTOOIING: 1/100 epochs; 2 updates; 4 trainingspasses; gemeten epochtijd=0.00 min.

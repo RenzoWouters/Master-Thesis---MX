@@ -1,0 +1,1 @@
+PASS: both modes reconstruct from high exports only in fresh process

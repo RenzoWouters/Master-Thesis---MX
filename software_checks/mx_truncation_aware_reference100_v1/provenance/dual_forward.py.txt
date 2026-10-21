@@ -1,0 +1,65 @@
+# Only the three mode-selector pairs differ from the supplied forward.
+def forward(data_loader, model, criterion, criterion_soft, epoch, training=True, optimizer=None, sum_writer=None):
+    bit_width_list = list(map(int, args.bit_width_list.split(',')))
+    bit_width_list.sort()
+
+    losses = [AverageMeter() for _ in bit_width_list]
+    top1 = [AverageMeter() for _ in bit_width_list]
+    top5 = [AverageMeter() for _ in bit_width_list]
+
+    for i, (input, target) in enumerate(data_loader):
+        if not training:
+            with torch.no_grad():
+                input = input.cuda()
+                target = target.cuda(non_blocking=True)
+
+                for bw, am_l, am_t1, am_t5 in zip(bit_width_list, losses, top1, top5):
+                    select_mode(model, bw)
+                    output = model(input)
+                    loss = criterion(output, target)
+
+                    prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
+                    am_l.update(loss.item(), input.size(0))
+                    am_t1.update(prec1.item(), input.size(0))
+                    am_t5.update(prec5.item(), input.size(0))
+        else:
+            input = input.cuda()
+            target = target.cuda(non_blocking=True)
+
+            optimizer.zero_grad()
+
+            # train full-precision supervisor
+            select_mode(model, bit_width_list[-1])
+            output = model(input)
+            loss = criterion(output, target)
+            loss.backward()
+            prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
+            losses[-1].update(loss.item(), input.size(0))
+            top1[-1].update(prec1.item(), input.size(0))
+            top5[-1].update(prec5.item(), input.size(0))
+
+            # train less-bit-wdith models
+            target_soft = torch.nn.functional.softmax(output.detach(), dim=1)
+            for bw, am_l, am_t1, am_t5 in zip(bit_width_list[:-1][::-1], losses[:-1][::-1], top1[:-1][::-1],
+                                              top5[:-1][::-1]):
+                select_mode(model, bw)
+                output = model(input)
+                # hard cross entropy
+                # loss = criterion(output, target)
+                # soft cross entropy
+                loss = criterion_soft(output, target_soft)
+                loss.backward()
+                # recursive supervision
+                target_soft = torch.nn.functional.softmax(output.detach(), dim=1)
+
+                prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
+                am_l.update(loss.item(), input.size(0))
+                am_t1.update(prec1.item(), input.size(0))
+                am_t5.update(prec5.item(), input.size(0))
+            optimizer.step()
+
+            if i % args.print_freq == 0:
+                logging.info('epoch {0}, iter {1}/{2}, bit_width_max loss {3:.2f}, prec1 {4:.2f}, prec5 {5:.2f}'.format(
+                    epoch, i, len(data_loader), losses[-1].val, top1[-1].val, top5[-1].val))
+
+    return [_.avg for _ in losses], [_.avg for _ in top1], [_.avg for _ in top5]
