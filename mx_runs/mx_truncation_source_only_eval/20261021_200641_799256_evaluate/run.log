@@ -1,0 +1,34 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_truncation_source_only_eval\20261021_200641_799256_evaluate
+BRON-ONLY: beide MX-modi uit opgeslagen E2M3; geen training of FP32-checkpoint.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+BRONCONTROLE best_E2M3_test, epoch 52: nieuw proces, alleen hoge export.
+DATA PASS: alleen test=26032; batch=128; 204 batches; train en extra niet gelezen.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+best_E2M3_test: batch 1/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 50/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 100/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 150/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 200/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 204/204; E2M1 uit bron + E2M3; geen updates.
+WORKER STATUS: PASS
+WAARSCHUWING: unclosed file <_io.TextIOWrapper name=4 encoding='utf-8'>
+BRONCONTROLE last_epoch, epoch 100: nieuw proces, alleen hoge export.
+DATA PASS: alleen test=26032; batch=128; 204 batches; train en extra niet gelezen.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+last_epoch: batch 1/204; E2M1 uit bron + E2M3; geen updates.
+last_epoch: batch 50/204; E2M1 uit bron + E2M3; geen updates.
+last_epoch: batch 100/204; E2M1 uit bron + E2M3; geen updates.
+last_epoch: batch 150/204; E2M1 uit bron + E2M3; geen updates.
+last_epoch: batch 200/204; E2M1 uit bron + E2M3; geen updates.
+last_epoch: batch 204/204; E2M1 uit bron + E2M3; geen updates.
+WORKER STATUS: PASS
+best_E2M3_test, W4/A32: 95.0023%; verschil training -2 correct; REVIEW_DIFFERENCE.
+best_E2M3_test, W6/A32: 95.0830%; verschil training +2 correct; REVIEW_DIFFERENCE.
+last_epoch, W4/A32: 94.9447%; verschil training +1 correct; REVIEW_DIFFERENCE.
+last_epoch, W6/A32: 94.9677%; verschil training +1 correct; REVIEW_DIFFERENCE.
+WAARSCHUWING: Uitvoering technisch voltooid, maar minstens een historische score wijkt af. Geen toleranties, BN of gewichten aangepast. Deel de feedbackbundel.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_truncation_source_only_eval\20261021_200641_799256_evaluate\run_report.json

@@ -1,0 +1,1 @@
+PASS: real report structure; no checkpoint/low files required; mismatched protocol, schema and hash rejected.

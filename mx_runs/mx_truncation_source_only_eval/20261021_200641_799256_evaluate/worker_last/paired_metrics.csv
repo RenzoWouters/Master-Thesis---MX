@@ -1,0 +1,2 @@
+role,epoch,n,comparison,prediction_changes,correct_to_wrong,wrong_to_correct,wrong_to_other_wrong,net_correct_change,accuracy_difference_pp
+last_epoch,100,26032,E2M1_from_source_minus_E2M3,362,146,140,76,-6,-0.023048555623847573

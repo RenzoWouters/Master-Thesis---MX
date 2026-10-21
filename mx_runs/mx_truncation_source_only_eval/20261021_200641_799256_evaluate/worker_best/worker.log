@@ -1,0 +1,10 @@
+DATA PASS: alleen test=26032; batch=128; 204 batches; train en extra niet gelezen.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+best_E2M3_test: batch 1/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 50/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 100/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 150/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 200/204; E2M1 uit bron + E2M3; geen updates.
+best_E2M3_test: batch 204/204; E2M1 uit bron + E2M3; geen updates.
+WORKER STATUS: PASS

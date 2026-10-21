@@ -1,0 +1,2 @@
+role,epoch,n,comparison,prediction_changes,correct_to_wrong,wrong_to_correct,wrong_to_other_wrong,net_correct_change,accuracy_difference_pp
+synthetic_only,100,7,E2M1_from_source_minus_E2M3,0,0,0,0,0,0.0

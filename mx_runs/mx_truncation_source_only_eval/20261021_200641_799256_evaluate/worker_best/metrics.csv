@@ -1,0 +1,3 @@
+role,epoch,weight_bits,weight_format,activation_bits,bn_bank_key,n,correct1,correct5,top1_percent,hard_cross_entropy,source_only,truncated_from_high,optimizer_steps
+best_E2M3_test,52,4,MXFP4_E2M1,32,4,26032,24731,25879,95.00230485556239,0.1883516224341036,True,True,0
+best_E2M3_test,52,6,MXFP6_E2M3,32,32,26032,24752,25877,95.08297480024585,0.21449391382642002,True,False,0

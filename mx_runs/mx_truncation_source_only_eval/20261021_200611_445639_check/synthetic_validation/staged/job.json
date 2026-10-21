@@ -1,0 +1,9 @@
+{
+  "synthetic_fixture_only": true,
+  "seed": 20261009,
+  "device": "cuda:0",
+  "role": "synthetic_only",
+  "epoch": 100,
+  "source_sha256": "212f4826ae36511b3b9d45c7ab1cfe60a6ca6cc11f143b9c83e033086082b232",
+  "checkpoint_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

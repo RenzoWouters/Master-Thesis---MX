@@ -1,0 +1,2 @@
+role,epoch,n,comparison,prediction_changes,correct_to_wrong,wrong_to_correct,wrong_to_other_wrong,net_correct_change,accuracy_difference_pp
+best_E2M3_test,52,26032,E2M1_from_source_minus_E2M3,405,176,155,74,-21,-0.0806699446834665
