@@ -1,0 +1,38 @@
+{
+  "export_policy": {
+    "previous": "independent direct E2M3 and E2M1 files per selected checkpoint; NOT one truncatable source",
+    "new": "one high MX source with both BN banks per checkpoint; companion low derived from reloaded source; FP32 resume checkpoint separate"
+  },
+  "low_path": {
+    "previous": null,
+    "new": "cached_high_codes >> 2; no direct E2M1 encode"
+  },
+  "mx_rounding": {
+    "previous": "nearest ties-to-even; finite FP32 source, scalar subnormal flush, local subnormals supported",
+    "new": "high nearest ties-to-even; low code shift2; finite FP32 source, scalar subnormal flush, local subnormals supported"
+  },
+  "mx_scale_policy": {
+    "previous": "same power-3 frexp rule on current G(W) for both modes; independent direct encoding; scales equal for same W",
+    "new": "high power-3 frexp rule on current G(W); same cached high codes/scales for both modes; low copies scales"
+  },
+  "purpose": {
+    "previous": "five complete train-only epochs: joint weight-only MX quantization without truncation",
+    "new": "five complete train-only epochs: joint MX with low codes truncated from high source"
+  },
+  "schema": {
+    "previous": "mx-weights-dual-pilot5-protocol-v1",
+    "new": "mx-truncation-aware-pilot5-protocol-v1"
+  },
+  "source_cache": {
+    "previous": null,
+    "new": "one detached high source per layer per paired minibatch; cleared before Adam"
+  },
+  "ste_policy": {
+    "previous": "identity through each MX quantizer; retain original G(W) derivatives",
+    "new": "identity wrt G(W) for high and complete high-to-low truncation path; retain original G(W) derivatives"
+  },
+  "truncation": {
+    "previous": false,
+    "new": true
+  }
+}

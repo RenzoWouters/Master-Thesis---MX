@@ -1,0 +1,42 @@
+--- direct_v1_1/test_dual.py
++++ truncation/test_trunc_training.py
+@@ -12,8 +12,8 @@
+ import torch
+ import mx_format as high
+ import mx_e2m1 as low
+-import dual_adapter as a
+-import dual_support as t
++import trunc_adapter as a
++import trunc_support as t
+ import svhn_support as s
+ import resume_core as core
+ from test_mx import rejected
+@@ -91,7 +91,7 @@
+     (value * coef).sum().backward()
+     (a.effective_reference_weight(master2) * coef).sum().backward()
+     assert torch.equal(master1.grad, master2.grad)
+-    assert torch.equal(value.detach(), low.encode_tensor(a.effective_reference_weight(master1)).decode())
++    assert torch.equal(value.detach(), a.truncate_codes(high.encode_tensor(a.effective_reference_weight(master1))).decode())
+     checks['E2M1_identity_STE_through_original_GW'] = True
+ 
+     original, changed, _ = t.adapt_forward_text(source)
+@@ -141,7 +141,7 @@
+         'Oorspronkelijke backendinstellingen hersteld.')
+     x = torch.linspace(-1, 1, 3*3*40*40, device=d).reshape(3, 3, 40, 40)
+ 
+-    # Verify separately reconstructed direct exports, not truncation.
++    # Verify high source and source-derived low exports.
+     model.eval()
+     for bit in (6, 4):
+         payload, _ = a.export_payload(model, bit, {'synthetic_fixture_only': True})
+@@ -156,7 +156,9 @@
+         for name in a.TARGET_LAYERS:
+             layer = model.get_submodule(name)
+             assert torch.equal(layer.quantize_fn(layer.weight), frozen.get_submodule(name).decoded_weight)
+-    checks['both_direct_mode_exports_reconstruct_without_six_FP32_masters'] = True
++    checks['high_and_truncated_exports_reconstruct_without_six_FP32_masters'] = True
++    import trunc_invariants
++    checks['truncation_invariants'] = trunc_invariants.run_tests(modules, rt, source, log)
+     checks['no_SVHN_data'] = True
+     return checks
+ 

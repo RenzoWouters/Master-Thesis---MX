@@ -1,0 +1,52 @@
+--- direct_v1_1/dual_support.py
++++ truncation/trunc_support.py
+@@ -14,7 +14,7 @@
+ from types import SimpleNamespace
+ import torch
+ import svhn_support as s
+-import dual_adapter as a
++import trunc_adapter as a
+ 
+ 
+ def weight_format(mode='joint'):
+@@ -159,7 +159,14 @@
+                  'AverageMeter': meter_class or utils.AverageMeter, 'accuracy': utils.accuracy,
+                  'logging': s.UpstreamLog(log), 'select_mode': a.select_mode}
+     exec(compile(changed, str(Path(source) / 'train.py') + ' [dual selectors]', 'exec'), namespace)
+-    return namespace['forward'], digest
++    raw_forward = namespace['forward']
++    def forward_with_sources(*args, **kwargs):
++        model = args[1] if len(args) > 1 else kwargs['model']
++        with a.shared_source_pairs(model) as source_audit:
++            value = raw_forward(*args, **kwargs)
++        model._last_source_audit = dict(source_audit)
++        return value
++    return forward_with_sources, digest
+ 
+ 
+ class CheckedSoftLoss(torch.nn.Module):
+@@ -219,6 +226,13 @@
+         s.require(audit['forward_calls_E2M3'] == audit['forward_calls_E2M1'] == len(loader),
+                   'Verkeerd aantal forwards per modus.')
+         audit.update(detached_teacher_checks=criterion_soft.calls, no_extra_FP32_teacher=True)
++        source_audit = dict(model._last_source_audit)
++        s.require(source_audit['source_pairs'] == len(loader), 'Verkeerd aantal bronparen.')
++        s.require(source_audit['high_encodings'] == source_audit['low_from_same_source'] ==
++                  source_audit['scale_copies_unchanged'] == len(loader)*6,
++                  'E2M1 moet dezelfde zes bronnen en schalen gebruiken.')
++        s.require(source_audit['source_cache_cleared'], 'Broncache bleef aanwezig na fase.')
++        audit['shared_source_checks'] = source_audit
+         assert_policy(model, mode)
+     finally:
+         for h in handles: h.remove()
+@@ -233,8 +247,9 @@
+         weight = model.get_submodule(name).weight
+         effective = a.effective_reference_weight(weight)
+         row = {'master': weight.detach().cpu().clone()}
++        pair = a.encode_pair(effective)
+         for bit in a.MODES:
+-            encoded = a.codec(bit).encode_tensor(effective)
++            encoded = pair[bit]
+             row[str(bit)] = {'codes': encoded.codes.cpu(), 'scales': encoded.scale_codes.cpu()}
+         s.require(torch.equal(row['4']['scales'], row['6']['scales']), 'E2M3/E2M1-schalen moeten gelijk zijn.')
+         result[name] = row

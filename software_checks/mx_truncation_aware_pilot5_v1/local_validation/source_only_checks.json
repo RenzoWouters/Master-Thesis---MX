@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "synthetic_CPU_only",
+  "source_only_fresh_process": true,
+  "four_logits_exact_against_training_models": true,
+  "encoder_access_blocked": true,
+  "checkpoint_access_blocked": true,
+  "corrupt_and_hidden_master_rejected": true
+}
