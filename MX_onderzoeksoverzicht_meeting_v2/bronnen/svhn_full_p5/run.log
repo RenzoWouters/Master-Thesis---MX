@@ -1,0 +1,1360 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_svhn_pilot5\20261016_143302_354821_run
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+DOWNLOAD http://ufldl.stanford.edu/housenumbers/train_32x32.mat
+  train_32x32.mat: 32.0 MiB ontvangen
+  train_32x32.mat: 44.0 MiB ontvangen
+  train_32x32.mat: 52.0 MiB ontvangen
+  train_32x32.mat: 76.0 MiB ontvangen
+  train_32x32.mat: 84.0 MiB ontvangen
+  train_32x32.mat: 100.0 MiB ontvangen
+  train_32x32.mat: 108.0 MiB ontvangen
+  train_32x32.mat: 116.0 MiB ontvangen
+  train_32x32.mat: 128.0 MiB ontvangen
+  train_32x32.mat: 140.0 MiB ontvangen
+  train_32x32.mat: 152.0 MiB ontvangen
+  train_32x32.mat: 168.0 MiB ontvangen
+DOWNLOAD http://ufldl.stanford.edu/housenumbers/extra_32x32.mat
+  extra_32x32.mat: 12.0 MiB ontvangen
+  extra_32x32.mat: 32.0 MiB ontvangen
+  extra_32x32.mat: 44.0 MiB ontvangen
+  extra_32x32.mat: 56.0 MiB ontvangen
+  extra_32x32.mat: 68.0 MiB ontvangen
+  extra_32x32.mat: 84.0 MiB ontvangen
+  extra_32x32.mat: 92.0 MiB ontvangen
+  extra_32x32.mat: 104.0 MiB ontvangen
+  extra_32x32.mat: 124.0 MiB ontvangen
+  extra_32x32.mat: 132.0 MiB ontvangen
+  extra_32x32.mat: 152.0 MiB ontvangen
+  extra_32x32.mat: 160.0 MiB ontvangen
+  extra_32x32.mat: 176.0 MiB ontvangen
+  extra_32x32.mat: 200.0 MiB ontvangen
+  extra_32x32.mat: 224.0 MiB ontvangen
+  extra_32x32.mat: 240.0 MiB ontvangen
+  extra_32x32.mat: 264.0 MiB ontvangen
+  extra_32x32.mat: 280.0 MiB ontvangen
+  extra_32x32.mat: 292.0 MiB ontvangen
+  extra_32x32.mat: 304.0 MiB ontvangen
+  extra_32x32.mat: 312.0 MiB ontvangen
+  extra_32x32.mat: 320.0 MiB ontvangen
+  extra_32x32.mat: 332.0 MiB ontvangen
+  extra_32x32.mat: 344.0 MiB ontvangen
+  extra_32x32.mat: 360.0 MiB ontvangen
+  extra_32x32.mat: 368.0 MiB ontvangen
+  extra_32x32.mat: 376.0 MiB ontvangen
+  extra_32x32.mat: 388.0 MiB ontvangen
+  extra_32x32.mat: 396.0 MiB ontvangen
+  extra_32x32.mat: 404.0 MiB ontvangen
+  extra_32x32.mat: 416.0 MiB ontvangen
+  extra_32x32.mat: 420.0 MiB ontvangen
+  extra_32x32.mat: 428.0 MiB ontvangen
+  extra_32x32.mat: 432.0 MiB ontvangen
+  extra_32x32.mat: 440.0 MiB ontvangen
+  extra_32x32.mat: 448.0 MiB ontvangen
+  extra_32x32.mat: 460.0 MiB ontvangen
+  extra_32x32.mat: 472.0 MiB ontvangen
+  extra_32x32.mat: 480.0 MiB ontvangen
+  extra_32x32.mat: 492.0 MiB ontvangen
+  extra_32x32.mat: 504.0 MiB ontvangen
+  extra_32x32.mat: 512.0 MiB ontvangen
+  extra_32x32.mat: 520.0 MiB ontvangen
+  extra_32x32.mat: 528.0 MiB ontvangen
+  extra_32x32.mat: 536.0 MiB ontvangen
+  extra_32x32.mat: 544.0 MiB ontvangen
+  extra_32x32.mat: 548.0 MiB ontvangen
+  extra_32x32.mat: 556.0 MiB ontvangen
+  extra_32x32.mat: 564.0 MiB ontvangen
+  extra_32x32.mat: 572.0 MiB ontvangen
+  extra_32x32.mat: 576.0 MiB ontvangen
+  extra_32x32.mat: 588.0 MiB ontvangen
+  extra_32x32.mat: 592.0 MiB ontvangen
+  extra_32x32.mat: 600.0 MiB ontvangen
+  extra_32x32.mat: 608.0 MiB ontvangen
+  extra_32x32.mat: 616.0 MiB ontvangen
+  extra_32x32.mat: 628.0 MiB ontvangen
+  extra_32x32.mat: 636.0 MiB ontvangen
+  extra_32x32.mat: 640.0 MiB ontvangen
+  extra_32x32.mat: 648.0 MiB ontvangen
+  extra_32x32.mat: 656.0 MiB ontvangen
+  extra_32x32.mat: 664.0 MiB ontvangen
+  extra_32x32.mat: 672.0 MiB ontvangen
+  extra_32x32.mat: 684.0 MiB ontvangen
+  extra_32x32.mat: 692.0 MiB ontvangen
+  extra_32x32.mat: 696.0 MiB ontvangen
+  extra_32x32.mat: 700.0 MiB ontvangen
+  extra_32x32.mat: 704.0 MiB ontvangen
+  extra_32x32.mat: 712.0 MiB ontvangen
+  extra_32x32.mat: 720.0 MiB ontvangen
+  extra_32x32.mat: 740.0 MiB ontvangen
+  extra_32x32.mat: 752.0 MiB ontvangen
+  extra_32x32.mat: 768.0 MiB ontvangen
+  extra_32x32.mat: 788.0 MiB ontvangen
+  extra_32x32.mat: 800.0 MiB ontvangen
+  extra_32x32.mat: 820.0 MiB ontvangen
+  extra_32x32.mat: 836.0 MiB ontvangen
+  extra_32x32.mat: 844.0 MiB ontvangen
+  extra_32x32.mat: 860.0 MiB ontvangen
+  extra_32x32.mat: 872.0 MiB ontvangen
+  extra_32x32.mat: 896.0 MiB ontvangen
+  extra_32x32.mat: 900.0 MiB ontvangen
+  extra_32x32.mat: 908.0 MiB ontvangen
+  extra_32x32.mat: 916.0 MiB ontvangen
+  extra_32x32.mat: 920.0 MiB ontvangen
+  extra_32x32.mat: 924.0 MiB ontvangen
+  extra_32x32.mat: 928.0 MiB ontvangen
+  extra_32x32.mat: 936.0 MiB ontvangen
+  extra_32x32.mat: 944.0 MiB ontvangen
+  extra_32x32.mat: 956.0 MiB ontvangen
+  extra_32x32.mat: 960.0 MiB ontvangen
+  extra_32x32.mat: 964.0 MiB ontvangen
+  extra_32x32.mat: 972.0 MiB ontvangen
+  extra_32x32.mat: 980.0 MiB ontvangen
+  extra_32x32.mat: 984.0 MiB ontvangen
+  extra_32x32.mat: 1000.0 MiB ontvangen
+  extra_32x32.mat: 1008.0 MiB ontvangen
+  extra_32x32.mat: 1012.0 MiB ontvangen
+  extra_32x32.mat: 1016.0 MiB ontvangen
+  extra_32x32.mat: 1024.0 MiB ontvangen
+  extra_32x32.mat: 1036.0 MiB ontvangen
+  extra_32x32.mat: 1052.0 MiB ontvangen
+  extra_32x32.mat: 1064.0 MiB ontvangen
+  extra_32x32.mat: 1072.0 MiB ontvangen
+  extra_32x32.mat: 1088.0 MiB ontvangen
+  extra_32x32.mat: 1104.0 MiB ontvangen
+  extra_32x32.mat: 1112.0 MiB ontvangen
+  extra_32x32.mat: 1120.0 MiB ontvangen
+  extra_32x32.mat: 1128.0 MiB ontvangen
+  extra_32x32.mat: 1136.0 MiB ontvangen
+  extra_32x32.mat: 1148.0 MiB ontvangen
+  extra_32x32.mat: 1160.0 MiB ontvangen
+  extra_32x32.mat: 1168.0 MiB ontvangen
+  extra_32x32.mat: 1180.0 MiB ontvangen
+  extra_32x32.mat: 1188.0 MiB ontvangen
+  extra_32x32.mat: 1204.0 MiB ontvangen
+  extra_32x32.mat: 1220.0 MiB ontvangen
+  extra_32x32.mat: 1228.0 MiB ontvangen
+  extra_32x32.mat: 1236.0 MiB ontvangen
+  extra_32x32.mat: 1248.0 MiB ontvangen
+  extra_32x32.mat: 1256.0 MiB ontvangen
+  extra_32x32.mat: 1267.7 MiB ontvangen
+DOWNLOAD http://ufldl.stanford.edu/housenumbers/test_32x32.mat
+  test_32x32.mat: 12.0 MiB ontvangen
+  test_32x32.mat: 20.0 MiB ontvangen
+  test_32x32.mat: 28.0 MiB ontvangen
+  test_32x32.mat: 36.0 MiB ontvangen
+  test_32x32.mat: 48.0 MiB ontvangen
+  test_32x32.mat: 56.0 MiB ontvangen
+  test_32x32.mat: 61.3 MiB ontvangen
+DATA PASS: train=604388, test=26032; invoer 40x40; geen subset.
+NIEUWE initialisatie. Geen ResNet- of proefcheckpoint ingeladen.
+EPOCH 1/5 (origineel schema: 100); LR=0.001
+WARNING The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WARNING The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+UPSTREAM epoch 0, iter 0/4722, bit_width_max loss 2.30, prec1 9.38, prec5 50.00
+UPSTREAM epoch 0, iter 20/4722, bit_width_max loss 2.03, prec1 31.25, prec5 71.09
+UPSTREAM epoch 0, iter 40/4722, bit_width_max loss 1.52, prec1 46.88, prec5 85.94
+UPSTREAM epoch 0, iter 60/4722, bit_width_max loss 0.91, prec1 67.19, prec5 95.31
+UPSTREAM epoch 0, iter 80/4722, bit_width_max loss 0.83, prec1 75.78, prec5 97.66
+UPSTREAM epoch 0, iter 100/4722, bit_width_max loss 0.69, prec1 78.91, prec5 96.88
+UPSTREAM epoch 0, iter 120/4722, bit_width_max loss 0.45, prec1 89.06, prec5 98.44
+UPSTREAM epoch 0, iter 140/4722, bit_width_max loss 0.37, prec1 86.72, prec5 100.00
+UPSTREAM epoch 0, iter 160/4722, bit_width_max loss 0.41, prec1 88.28, prec5 100.00
+UPSTREAM epoch 0, iter 180/4722, bit_width_max loss 0.34, prec1 89.06, prec5 98.44
+UPSTREAM epoch 0, iter 200/4722, bit_width_max loss 0.38, prec1 87.50, prec5 100.00
+UPSTREAM epoch 0, iter 220/4722, bit_width_max loss 0.37, prec1 85.94, prec5 98.44
+UPSTREAM epoch 0, iter 240/4722, bit_width_max loss 0.30, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 260/4722, bit_width_max loss 0.24, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 280/4722, bit_width_max loss 0.29, prec1 92.19, prec5 100.00
+UPSTREAM epoch 0, iter 300/4722, bit_width_max loss 0.30, prec1 89.84, prec5 99.22
+UPSTREAM epoch 0, iter 320/4722, bit_width_max loss 0.16, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 340/4722, bit_width_max loss 0.32, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 360/4722, bit_width_max loss 0.36, prec1 92.19, prec5 98.44
+UPSTREAM epoch 0, iter 380/4722, bit_width_max loss 0.25, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 400/4722, bit_width_max loss 0.30, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 420/4722, bit_width_max loss 0.26, prec1 90.62, prec5 100.00
+UPSTREAM epoch 0, iter 440/4722, bit_width_max loss 0.12, prec1 97.66, prec5 99.22
+UPSTREAM epoch 0, iter 460/4722, bit_width_max loss 0.26, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 480/4722, bit_width_max loss 0.18, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 500/4722, bit_width_max loss 0.46, prec1 86.72, prec5 98.44
+UPSTREAM epoch 0, iter 520/4722, bit_width_max loss 0.27, prec1 90.62, prec5 100.00
+UPSTREAM epoch 0, iter 540/4722, bit_width_max loss 0.31, prec1 92.19, prec5 98.44
+UPSTREAM epoch 0, iter 560/4722, bit_width_max loss 0.19, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 580/4722, bit_width_max loss 0.30, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 600/4722, bit_width_max loss 0.25, prec1 92.97, prec5 100.00
+UPSTREAM epoch 0, iter 620/4722, bit_width_max loss 0.14, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 640/4722, bit_width_max loss 0.17, prec1 95.31, prec5 98.44
+UPSTREAM epoch 0, iter 660/4722, bit_width_max loss 0.24, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 680/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 700/4722, bit_width_max loss 0.27, prec1 89.84, prec5 100.00
+UPSTREAM epoch 0, iter 720/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 740/4722, bit_width_max loss 0.18, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 760/4722, bit_width_max loss 0.27, prec1 89.06, prec5 100.00
+UPSTREAM epoch 0, iter 780/4722, bit_width_max loss 0.21, prec1 92.19, prec5 100.00
+UPSTREAM epoch 0, iter 800/4722, bit_width_max loss 0.39, prec1 91.41, prec5 96.88
+UPSTREAM epoch 0, iter 820/4722, bit_width_max loss 0.24, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 840/4722, bit_width_max loss 0.22, prec1 92.97, prec5 100.00
+UPSTREAM epoch 0, iter 860/4722, bit_width_max loss 0.18, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 880/4722, bit_width_max loss 0.24, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 900/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 920/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 940/4722, bit_width_max loss 0.35, prec1 89.84, prec5 99.22
+UPSTREAM epoch 0, iter 960/4722, bit_width_max loss 0.24, prec1 92.19, prec5 99.22
+UPSTREAM epoch 0, iter 980/4722, bit_width_max loss 0.10, prec1 96.88, prec5 99.22
+UPSTREAM epoch 0, iter 1000/4722, bit_width_max loss 0.27, prec1 92.19, prec5 98.44
+UPSTREAM epoch 0, iter 1020/4722, bit_width_max loss 0.20, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 1040/4722, bit_width_max loss 0.20, prec1 92.19, prec5 100.00
+UPSTREAM epoch 0, iter 1060/4722, bit_width_max loss 0.36, prec1 90.62, prec5 98.44
+UPSTREAM epoch 0, iter 1080/4722, bit_width_max loss 0.25, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 1100/4722, bit_width_max loss 0.17, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 1120/4722, bit_width_max loss 0.17, prec1 96.09, prec5 98.44
+UPSTREAM epoch 0, iter 1140/4722, bit_width_max loss 0.26, prec1 92.97, prec5 98.44
+UPSTREAM epoch 0, iter 1160/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 1180/4722, bit_width_max loss 0.26, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 1200/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 1220/4722, bit_width_max loss 0.21, prec1 93.75, prec5 98.44
+UPSTREAM epoch 0, iter 1240/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 1260/4722, bit_width_max loss 0.16, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 1280/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 1300/4722, bit_width_max loss 0.20, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 1320/4722, bit_width_max loss 0.15, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 1340/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 1360/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 1380/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 1400/4722, bit_width_max loss 0.17, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 1420/4722, bit_width_max loss 0.30, prec1 94.53, prec5 98.44
+UPSTREAM epoch 0, iter 1440/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 1460/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 1480/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 1500/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 1520/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 1540/4722, bit_width_max loss 0.19, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 1560/4722, bit_width_max loss 0.21, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 1580/4722, bit_width_max loss 0.08, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 1600/4722, bit_width_max loss 0.31, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 1620/4722, bit_width_max loss 0.26, prec1 92.97, prec5 98.44
+UPSTREAM epoch 0, iter 1640/4722, bit_width_max loss 0.18, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 1660/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 1680/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 1700/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 1720/4722, bit_width_max loss 0.21, prec1 93.75, prec5 98.44
+UPSTREAM epoch 0, iter 1740/4722, bit_width_max loss 0.11, prec1 98.44, prec5 99.22
+UPSTREAM epoch 0, iter 1760/4722, bit_width_max loss 0.27, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 1780/4722, bit_width_max loss 0.16, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 1800/4722, bit_width_max loss 0.17, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 1820/4722, bit_width_max loss 0.20, prec1 97.66, prec5 99.22
+UPSTREAM epoch 0, iter 1840/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 1860/4722, bit_width_max loss 0.34, prec1 92.19, prec5 99.22
+UPSTREAM epoch 0, iter 1880/4722, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 1900/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 1920/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 1940/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 1960/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 1980/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 2000/4722, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 2020/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 2040/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 2060/4722, bit_width_max loss 0.26, prec1 92.19, prec5 100.00
+UPSTREAM epoch 0, iter 2080/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 2100/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 2120/4722, bit_width_max loss 0.23, prec1 94.53, prec5 98.44
+UPSTREAM epoch 0, iter 2140/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2160/4722, bit_width_max loss 0.23, prec1 93.75, prec5 97.66
+UPSTREAM epoch 0, iter 2180/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2200/4722, bit_width_max loss 0.15, prec1 96.88, prec5 99.22
+UPSTREAM epoch 0, iter 2220/4722, bit_width_max loss 0.10, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 2240/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 2260/4722, bit_width_max loss 0.16, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 2280/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 2300/4722, bit_width_max loss 0.13, prec1 96.09, prec5 98.44
+UPSTREAM epoch 0, iter 2320/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 2340/4722, bit_width_max loss 0.15, prec1 96.88, prec5 98.44
+UPSTREAM epoch 0, iter 2360/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 2380/4722, bit_width_max loss 0.18, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2400/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2420/4722, bit_width_max loss 0.17, prec1 92.97, prec5 98.44
+UPSTREAM epoch 0, iter 2440/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 2460/4722, bit_width_max loss 0.20, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 2480/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2500/4722, bit_width_max loss 0.18, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 2520/4722, bit_width_max loss 0.21, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 2540/4722, bit_width_max loss 0.28, prec1 96.88, prec5 99.22
+UPSTREAM epoch 0, iter 2560/4722, bit_width_max loss 0.17, prec1 92.97, prec5 100.00
+UPSTREAM epoch 0, iter 2580/4722, bit_width_max loss 0.18, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 2600/4722, bit_width_max loss 0.20, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 2620/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2640/4722, bit_width_max loss 0.19, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 2660/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 2680/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 2700/4722, bit_width_max loss 0.14, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 2720/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 2740/4722, bit_width_max loss 0.14, prec1 96.88, prec5 98.44
+UPSTREAM epoch 0, iter 2760/4722, bit_width_max loss 0.17, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 2780/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 2800/4722, bit_width_max loss 0.14, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 2820/4722, bit_width_max loss 0.20, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 2840/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 2860/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 2880/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 2900/4722, bit_width_max loss 0.19, prec1 92.97, prec5 100.00
+UPSTREAM epoch 0, iter 2920/4722, bit_width_max loss 0.24, prec1 94.53, prec5 98.44
+UPSTREAM epoch 0, iter 2940/4722, bit_width_max loss 0.13, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 2960/4722, bit_width_max loss 0.16, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 2980/4722, bit_width_max loss 0.20, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 3000/4722, bit_width_max loss 0.24, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 3020/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 3040/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 3060/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 3080/4722, bit_width_max loss 0.20, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 3100/4722, bit_width_max loss 0.16, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 3120/4722, bit_width_max loss 0.20, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 3140/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 0, iter 3160/4722, bit_width_max loss 0.24, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 3180/4722, bit_width_max loss 0.19, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 3200/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 3220/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 3240/4722, bit_width_max loss 0.14, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 3260/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 3280/4722, bit_width_max loss 0.15, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 3300/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 3320/4722, bit_width_max loss 0.25, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 3340/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 3360/4722, bit_width_max loss 0.10, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 3380/4722, bit_width_max loss 0.20, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 3400/4722, bit_width_max loss 0.15, prec1 92.97, prec5 100.00
+UPSTREAM epoch 0, iter 3420/4722, bit_width_max loss 0.19, prec1 96.88, prec5 98.44
+UPSTREAM epoch 0, iter 3440/4722, bit_width_max loss 0.25, prec1 94.53, prec5 98.44
+UPSTREAM epoch 0, iter 3460/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 3480/4722, bit_width_max loss 0.25, prec1 96.88, prec5 99.22
+UPSTREAM epoch 0, iter 3500/4722, bit_width_max loss 0.16, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 3520/4722, bit_width_max loss 0.26, prec1 92.97, prec5 98.44
+UPSTREAM epoch 0, iter 3540/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 3560/4722, bit_width_max loss 0.23, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 3580/4722, bit_width_max loss 0.10, prec1 95.31, prec5 100.00
+UPSTREAM epoch 0, iter 3600/4722, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 3620/4722, bit_width_max loss 0.18, prec1 91.41, prec5 100.00
+UPSTREAM epoch 0, iter 3640/4722, bit_width_max loss 0.15, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 3660/4722, bit_width_max loss 0.17, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 3680/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 3700/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 0, iter 3720/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 0, iter 3740/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 3760/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 3780/4722, bit_width_max loss 0.21, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 3800/4722, bit_width_max loss 0.25, prec1 92.97, prec5 98.44
+UPSTREAM epoch 0, iter 3820/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 0, iter 3840/4722, bit_width_max loss 0.17, prec1 92.19, prec5 100.00
+UPSTREAM epoch 0, iter 3860/4722, bit_width_max loss 0.12, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 3880/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 3900/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 3920/4722, bit_width_max loss 0.22, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 3940/4722, bit_width_max loss 0.17, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 3960/4722, bit_width_max loss 0.20, prec1 91.41, prec5 99.22
+UPSTREAM epoch 0, iter 3980/4722, bit_width_max loss 0.21, prec1 92.19, prec5 99.22
+UPSTREAM epoch 0, iter 4000/4722, bit_width_max loss 0.26, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 4020/4722, bit_width_max loss 0.13, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 4040/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 0, iter 4060/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 4080/4722, bit_width_max loss 0.12, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 4100/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 4120/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 4140/4722, bit_width_max loss 0.20, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 4160/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 0, iter 4180/4722, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 0, iter 4200/4722, bit_width_max loss 0.16, prec1 96.88, prec5 99.22
+UPSTREAM epoch 0, iter 4220/4722, bit_width_max loss 0.23, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 4240/4722, bit_width_max loss 0.24, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 4260/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 0, iter 4280/4722, bit_width_max loss 0.16, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 4300/4722, bit_width_max loss 0.20, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 4320/4722, bit_width_max loss 0.18, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 4340/4722, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 0, iter 4360/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 4380/4722, bit_width_max loss 0.19, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 4400/4722, bit_width_max loss 0.22, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 4420/4722, bit_width_max loss 0.21, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 4440/4722, bit_width_max loss 0.09, prec1 99.22, prec5 100.00
+UPSTREAM epoch 0, iter 4460/4722, bit_width_max loss 0.34, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 4480/4722, bit_width_max loss 0.16, prec1 96.09, prec5 100.00
+UPSTREAM epoch 0, iter 4500/4722, bit_width_max loss 0.21, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 4520/4722, bit_width_max loss 0.16, prec1 94.53, prec5 99.22
+UPSTREAM epoch 0, iter 4540/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 0, iter 4560/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 0, iter 4580/4722, bit_width_max loss 0.15, prec1 94.53, prec5 100.00
+UPSTREAM epoch 0, iter 4600/4722, bit_width_max loss 0.15, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 4620/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 0, iter 4640/4722, bit_width_max loss 0.14, prec1 93.75, prec5 99.22
+UPSTREAM epoch 0, iter 4660/4722, bit_width_max loss 0.12, prec1 95.31, prec5 99.22
+UPSTREAM epoch 0, iter 4680/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 0, iter 4700/4722, bit_width_max loss 0.15, prec1 93.75, prec5 100.00
+UPSTREAM epoch 0, iter 4720/4722, bit_width_max loss 0.17, prec1 93.75, prec5 99.22
+KLAAR epoch 1: train=225.8s; test=5.5s; totaal=231.4s; beste epoch=1
+  TEST W1/A1: 83.3474% | W2/A2: 92.1404% | W4/A4: 93.3467% | W8/A8: 93.5925% | W32/A32: 93.4581%
+EPOCH 2/5 (origineel schema: 100); LR=0.001
+UPSTREAM epoch 1, iter 0/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 20/4722, bit_width_max loss 0.17, prec1 94.53, prec5 98.44
+UPSTREAM epoch 1, iter 40/4722, bit_width_max loss 0.14, prec1 92.97, prec5 100.00
+UPSTREAM epoch 1, iter 60/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 80/4722, bit_width_max loss 0.18, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 100/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 120/4722, bit_width_max loss 0.12, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 140/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 160/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 180/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 200/4722, bit_width_max loss 0.17, prec1 92.97, prec5 100.00
+UPSTREAM epoch 1, iter 220/4722, bit_width_max loss 0.15, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 240/4722, bit_width_max loss 0.20, prec1 95.31, prec5 98.44
+UPSTREAM epoch 1, iter 260/4722, bit_width_max loss 0.25, prec1 92.19, prec5 99.22
+UPSTREAM epoch 1, iter 280/4722, bit_width_max loss 0.19, prec1 95.31, prec5 98.44
+UPSTREAM epoch 1, iter 300/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 320/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 340/4722, bit_width_max loss 0.17, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 360/4722, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 380/4722, bit_width_max loss 0.25, prec1 93.75, prec5 98.44
+UPSTREAM epoch 1, iter 400/4722, bit_width_max loss 0.16, prec1 92.19, prec5 100.00
+UPSTREAM epoch 1, iter 420/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 440/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 460/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 480/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 500/4722, bit_width_max loss 0.20, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 520/4722, bit_width_max loss 0.20, prec1 92.19, prec5 100.00
+UPSTREAM epoch 1, iter 540/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 560/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 580/4722, bit_width_max loss 0.20, prec1 92.97, prec5 100.00
+UPSTREAM epoch 1, iter 600/4722, bit_width_max loss 0.07, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 620/4722, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 640/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 660/4722, bit_width_max loss 0.14, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 680/4722, bit_width_max loss 0.18, prec1 96.88, prec5 98.44
+UPSTREAM epoch 1, iter 700/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 720/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 740/4722, bit_width_max loss 0.27, prec1 93.75, prec5 98.44
+UPSTREAM epoch 1, iter 760/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 780/4722, bit_width_max loss 0.16, prec1 93.75, prec5 98.44
+UPSTREAM epoch 1, iter 800/4722, bit_width_max loss 0.18, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 820/4722, bit_width_max loss 0.10, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 840/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 860/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 880/4722, bit_width_max loss 0.38, prec1 93.75, prec5 99.22
+UPSTREAM epoch 1, iter 900/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 920/4722, bit_width_max loss 0.13, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 940/4722, bit_width_max loss 0.10, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 960/4722, bit_width_max loss 0.13, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 980/4722, bit_width_max loss 0.16, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 1000/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 1020/4722, bit_width_max loss 0.11, prec1 96.88, prec5 98.44
+UPSTREAM epoch 1, iter 1040/4722, bit_width_max loss 0.20, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 1060/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 1080/4722, bit_width_max loss 0.05, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 1100/4722, bit_width_max loss 0.19, prec1 92.97, prec5 100.00
+UPSTREAM epoch 1, iter 1120/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 1140/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1160/4722, bit_width_max loss 0.28, prec1 92.97, prec5 98.44
+UPSTREAM epoch 1, iter 1180/4722, bit_width_max loss 0.09, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 1200/4722, bit_width_max loss 0.16, prec1 95.31, prec5 98.44
+UPSTREAM epoch 1, iter 1220/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1240/4722, bit_width_max loss 0.19, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 1260/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 1280/4722, bit_width_max loss 0.15, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 1300/4722, bit_width_max loss 0.17, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 1320/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 1340/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1360/4722, bit_width_max loss 0.15, prec1 93.75, prec5 100.00
+UPSTREAM epoch 1, iter 1380/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 1400/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1420/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 1440/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 1460/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 1480/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1500/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 1520/4722, bit_width_max loss 0.14, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 1540/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 1560/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 1580/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 1600/4722, bit_width_max loss 0.16, prec1 92.97, prec5 100.00
+UPSTREAM epoch 1, iter 1620/4722, bit_width_max loss 0.18, prec1 92.19, prec5 99.22
+UPSTREAM epoch 1, iter 1640/4722, bit_width_max loss 0.10, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 1660/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 1680/4722, bit_width_max loss 0.12, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 1700/4722, bit_width_max loss 0.20, prec1 93.75, prec5 99.22
+UPSTREAM epoch 1, iter 1720/4722, bit_width_max loss 0.13, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 1740/4722, bit_width_max loss 0.12, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 1760/4722, bit_width_max loss 0.30, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 1780/4722, bit_width_max loss 0.18, prec1 94.53, prec5 98.44
+UPSTREAM epoch 1, iter 1800/4722, bit_width_max loss 0.15, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1820/4722, bit_width_max loss 0.34, prec1 93.75, prec5 99.22
+UPSTREAM epoch 1, iter 1840/4722, bit_width_max loss 0.35, prec1 94.53, prec5 98.44
+UPSTREAM epoch 1, iter 1860/4722, bit_width_max loss 0.10, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 1880/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 1900/4722, bit_width_max loss 0.12, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 1920/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 1940/4722, bit_width_max loss 0.05, prec1 100.00, prec5 100.00
+UPSTREAM epoch 1, iter 1960/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 1980/4722, bit_width_max loss 0.25, prec1 94.53, prec5 99.22
+UPSTREAM epoch 1, iter 2000/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 2020/4722, bit_width_max loss 0.17, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2040/4722, bit_width_max loss 0.08, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 2060/4722, bit_width_max loss 0.25, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 2080/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2100/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 2120/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 2140/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 2160/4722, bit_width_max loss 0.18, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 2180/4722, bit_width_max loss 0.16, prec1 93.75, prec5 99.22
+UPSTREAM epoch 1, iter 2200/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 2220/4722, bit_width_max loss 0.06, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 2240/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 2260/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 2280/4722, bit_width_max loss 0.15, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 2300/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 2320/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 2340/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 2360/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 2380/4722, bit_width_max loss 0.10, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 2400/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2420/4722, bit_width_max loss 0.15, prec1 94.53, prec5 98.44
+UPSTREAM epoch 1, iter 2440/4722, bit_width_max loss 0.10, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 2460/4722, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 1, iter 2480/4722, bit_width_max loss 0.18, prec1 96.09, prec5 98.44
+UPSTREAM epoch 1, iter 2500/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 2520/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 2540/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 2560/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 2580/4722, bit_width_max loss 0.39, prec1 92.19, prec5 96.88
+UPSTREAM epoch 1, iter 2600/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 2620/4722, bit_width_max loss 0.17, prec1 96.88, prec5 98.44
+UPSTREAM epoch 1, iter 2640/4722, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 2660/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 2680/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 2700/4722, bit_width_max loss 0.18, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2720/4722, bit_width_max loss 0.14, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 2740/4722, bit_width_max loss 0.22, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 2760/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2780/4722, bit_width_max loss 0.10, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 2800/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 2820/4722, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 2840/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 2860/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2880/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2900/4722, bit_width_max loss 0.14, prec1 96.88, prec5 98.44
+UPSTREAM epoch 1, iter 2920/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 2940/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 1, iter 2960/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 2980/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3000/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3020/4722, bit_width_max loss 0.13, prec1 96.88, prec5 98.44
+UPSTREAM epoch 1, iter 3040/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 3060/4722, bit_width_max loss 0.09, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 3080/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3100/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3120/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 3140/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3160/4722, bit_width_max loss 0.12, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 3180/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3200/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3220/4722, bit_width_max loss 0.22, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 3240/4722, bit_width_max loss 0.10, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 3260/4722, bit_width_max loss 0.10, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 3280/4722, bit_width_max loss 0.15, prec1 95.31, prec5 98.44
+UPSTREAM epoch 1, iter 3300/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 3320/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3340/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3360/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3380/4722, bit_width_max loss 0.17, prec1 95.31, prec5 98.44
+UPSTREAM epoch 1, iter 3400/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 3420/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3440/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3460/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 3480/4722, bit_width_max loss 0.12, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 3500/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 3520/4722, bit_width_max loss 0.18, prec1 96.09, prec5 98.44
+UPSTREAM epoch 1, iter 3540/4722, bit_width_max loss 0.12, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 3560/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3580/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3600/4722, bit_width_max loss 0.19, prec1 94.53, prec5 100.00
+UPSTREAM epoch 1, iter 3620/4722, bit_width_max loss 0.17, prec1 94.53, prec5 99.22
+UPSTREAM epoch 1, iter 3640/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3660/4722, bit_width_max loss 0.15, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 3680/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3700/4722, bit_width_max loss 0.23, prec1 94.53, prec5 99.22
+UPSTREAM epoch 1, iter 3720/4722, bit_width_max loss 0.23, prec1 96.09, prec5 99.22
+UPSTREAM epoch 1, iter 3740/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3760/4722, bit_width_max loss 0.20, prec1 92.19, prec5 100.00
+UPSTREAM epoch 1, iter 3780/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3800/4722, bit_width_max loss 0.08, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 3820/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 3840/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3860/4722, bit_width_max loss 0.07, prec1 98.44, prec5 99.22
+UPSTREAM epoch 1, iter 3880/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 3900/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 3920/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 3940/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 3960/4722, bit_width_max loss 0.20, prec1 93.75, prec5 100.00
+UPSTREAM epoch 1, iter 3980/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 4000/4722, bit_width_max loss 0.19, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 4020/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 4040/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 4060/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 4080/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 4100/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 4120/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 4140/4722, bit_width_max loss 0.18, prec1 93.75, prec5 99.22
+UPSTREAM epoch 1, iter 4160/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 4180/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 4200/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 4220/4722, bit_width_max loss 0.25, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 4240/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 4260/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 4280/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 4300/4722, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 4320/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 4340/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 4360/4722, bit_width_max loss 0.33, prec1 95.31, prec5 98.44
+UPSTREAM epoch 1, iter 4380/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 4400/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 4420/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 4440/4722, bit_width_max loss 0.18, prec1 96.88, prec5 100.00
+UPSTREAM epoch 1, iter 4460/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 4480/4722, bit_width_max loss 0.19, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 4500/4722, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 1, iter 4520/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 4540/4722, bit_width_max loss 0.07, prec1 97.66, prec5 99.22
+UPSTREAM epoch 1, iter 4560/4722, bit_width_max loss 0.19, prec1 95.31, prec5 99.22
+UPSTREAM epoch 1, iter 4580/4722, bit_width_max loss 0.14, prec1 94.53, prec5 99.22
+UPSTREAM epoch 1, iter 4600/4722, bit_width_max loss 0.17, prec1 93.75, prec5 100.00
+UPSTREAM epoch 1, iter 4620/4722, bit_width_max loss 0.03, prec1 98.44, prec5 100.00
+UPSTREAM epoch 1, iter 4640/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 1, iter 4660/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 1, iter 4680/4722, bit_width_max loss 0.18, prec1 94.53, prec5 99.22
+UPSTREAM epoch 1, iter 4700/4722, bit_width_max loss 0.12, prec1 96.88, prec5 99.22
+UPSTREAM epoch 1, iter 4720/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+KLAAR epoch 2: train=247.6s; test=4.6s; totaal=252.3s; beste epoch=2
+  TEST W1/A1: 86.2477% | W2/A2: 93.1354% | W4/A4: 94.4722% | W8/A8: 94.6335% | W32/A32: 94.6220%
+  SCHATTING 100 epochs: 7.00 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 3/5 (origineel schema: 100); LR=0.001
+UPSTREAM epoch 2, iter 0/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 20/4722, bit_width_max loss 0.17, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 40/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 60/4722, bit_width_max loss 0.21, prec1 92.19, prec5 99.22
+UPSTREAM epoch 2, iter 80/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 100/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 120/4722, bit_width_max loss 0.04, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 140/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 160/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 180/4722, bit_width_max loss 0.15, prec1 94.53, prec5 99.22
+UPSTREAM epoch 2, iter 200/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 220/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 240/4722, bit_width_max loss 0.34, prec1 92.97, prec5 98.44
+UPSTREAM epoch 2, iter 260/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 280/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 300/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 320/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 340/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 360/4722, bit_width_max loss 0.06, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 380/4722, bit_width_max loss 0.18, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 400/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 420/4722, bit_width_max loss 0.28, prec1 95.31, prec5 98.44
+UPSTREAM epoch 2, iter 440/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 460/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 480/4722, bit_width_max loss 0.05, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 500/4722, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 2, iter 520/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 540/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 560/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 580/4722, bit_width_max loss 0.10, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 600/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 620/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 640/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 660/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 680/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 700/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 720/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 740/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 760/4722, bit_width_max loss 0.16, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 780/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 800/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 820/4722, bit_width_max loss 0.16, prec1 94.53, prec5 98.44
+UPSTREAM epoch 2, iter 840/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 860/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 880/4722, bit_width_max loss 0.09, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 900/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 920/4722, bit_width_max loss 0.17, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 940/4722, bit_width_max loss 0.25, prec1 92.97, prec5 99.22
+UPSTREAM epoch 2, iter 960/4722, bit_width_max loss 0.11, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 980/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1000/4722, bit_width_max loss 0.12, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 1020/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 1040/4722, bit_width_max loss 0.11, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 1060/4722, bit_width_max loss 0.12, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 1080/4722, bit_width_max loss 0.18, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 1100/4722, bit_width_max loss 0.23, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 1120/4722, bit_width_max loss 0.26, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 1140/4722, bit_width_max loss 0.23, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 1160/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 1180/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1200/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 1220/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 1240/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 1260/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 1280/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1300/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1320/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 1340/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1360/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 1380/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 1400/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1420/4722, bit_width_max loss 0.19, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 1440/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1460/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 1480/4722, bit_width_max loss 0.10, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 1500/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 1520/4722, bit_width_max loss 0.11, prec1 98.44, prec5 98.44
+UPSTREAM epoch 2, iter 1540/4722, bit_width_max loss 0.15, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1560/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 1580/4722, bit_width_max loss 0.12, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 1600/4722, bit_width_max loss 0.12, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1620/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1640/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 1660/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1680/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 1700/4722, bit_width_max loss 0.17, prec1 95.31, prec5 98.44
+UPSTREAM epoch 2, iter 1720/4722, bit_width_max loss 0.25, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 1740/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1760/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 1780/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 1800/4722, bit_width_max loss 0.19, prec1 94.53, prec5 98.44
+UPSTREAM epoch 2, iter 1820/4722, bit_width_max loss 0.12, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 1840/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1860/4722, bit_width_max loss 0.20, prec1 96.09, prec5 98.44
+UPSTREAM epoch 2, iter 1880/4722, bit_width_max loss 0.26, prec1 96.88, prec5 98.44
+UPSTREAM epoch 2, iter 1900/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 1920/4722, bit_width_max loss 0.09, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 1940/4722, bit_width_max loss 0.15, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 1960/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 1980/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 2000/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 2020/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 2040/4722, bit_width_max loss 0.28, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 2060/4722, bit_width_max loss 0.18, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 2080/4722, bit_width_max loss 0.40, prec1 92.19, prec5 99.22
+UPSTREAM epoch 2, iter 2100/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 2120/4722, bit_width_max loss 0.18, prec1 93.75, prec5 100.00
+UPSTREAM epoch 2, iter 2140/4722, bit_width_max loss 0.17, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 2160/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 2180/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 2200/4722, bit_width_max loss 0.38, prec1 91.41, prec5 98.44
+UPSTREAM epoch 2, iter 2220/4722, bit_width_max loss 0.31, prec1 90.62, prec5 100.00
+UPSTREAM epoch 2, iter 2240/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 2260/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 2280/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 2300/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 2320/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 2340/4722, bit_width_max loss 0.20, prec1 93.75, prec5 100.00
+UPSTREAM epoch 2, iter 2360/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 2380/4722, bit_width_max loss 0.09, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 2400/4722, bit_width_max loss 0.10, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 2420/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 2440/4722, bit_width_max loss 0.21, prec1 95.31, prec5 98.44
+UPSTREAM epoch 2, iter 2460/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 2480/4722, bit_width_max loss 0.13, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 2500/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 2520/4722, bit_width_max loss 0.06, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 2540/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 2560/4722, bit_width_max loss 0.21, prec1 93.75, prec5 98.44
+UPSTREAM epoch 2, iter 2580/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 2600/4722, bit_width_max loss 0.08, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 2620/4722, bit_width_max loss 0.02, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 2640/4722, bit_width_max loss 0.05, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 2660/4722, bit_width_max loss 0.17, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 2680/4722, bit_width_max loss 0.24, prec1 94.53, prec5 98.44
+UPSTREAM epoch 2, iter 2700/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 2720/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 2740/4722, bit_width_max loss 0.24, prec1 95.31, prec5 98.44
+UPSTREAM epoch 2, iter 2760/4722, bit_width_max loss 0.12, prec1 96.88, prec5 98.44
+UPSTREAM epoch 2, iter 2780/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 2800/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 2820/4722, bit_width_max loss 0.11, prec1 96.88, prec5 98.44
+UPSTREAM epoch 2, iter 2840/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 2860/4722, bit_width_max loss 0.06, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 2880/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 2900/4722, bit_width_max loss 0.12, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 2920/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 2940/4722, bit_width_max loss 0.12, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 2960/4722, bit_width_max loss 0.10, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 2980/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3000/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 3020/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 3040/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3060/4722, bit_width_max loss 0.16, prec1 92.97, prec5 100.00
+UPSTREAM epoch 2, iter 3080/4722, bit_width_max loss 0.17, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 3100/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 3120/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 3140/4722, bit_width_max loss 0.06, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 3160/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3180/4722, bit_width_max loss 0.22, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 3200/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3220/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 3240/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3260/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 3280/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3300/4722, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3320/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 3340/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3360/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3380/4722, bit_width_max loss 0.21, prec1 93.75, prec5 100.00
+UPSTREAM epoch 2, iter 3400/4722, bit_width_max loss 0.10, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 3420/4722, bit_width_max loss 0.07, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 3440/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3460/4722, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 2, iter 3480/4722, bit_width_max loss 0.16, prec1 95.31, prec5 98.44
+UPSTREAM epoch 2, iter 3500/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3520/4722, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 3540/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3560/4722, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3580/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 3600/4722, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3620/4722, bit_width_max loss 0.18, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 3640/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3660/4722, bit_width_max loss 0.16, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 3680/4722, bit_width_max loss 0.38, prec1 92.19, prec5 99.22
+UPSTREAM epoch 2, iter 3700/4722, bit_width_max loss 0.20, prec1 96.09, prec5 98.44
+UPSTREAM epoch 2, iter 3720/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3740/4722, bit_width_max loss 0.12, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 3760/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3780/4722, bit_width_max loss 0.24, prec1 94.53, prec5 99.22
+UPSTREAM epoch 2, iter 3800/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3820/4722, bit_width_max loss 0.16, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 3840/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3860/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 3880/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 3900/4722, bit_width_max loss 0.19, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 3920/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3940/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 3960/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 3980/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 4000/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 4020/4722, bit_width_max loss 0.19, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 4040/4722, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 4060/4722, bit_width_max loss 0.30, prec1 96.09, prec5 98.44
+UPSTREAM epoch 2, iter 4080/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 4100/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 4120/4722, bit_width_max loss 0.10, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 4140/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 4160/4722, bit_width_max loss 0.11, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 4180/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 4200/4722, bit_width_max loss 0.19, prec1 94.53, prec5 99.22
+UPSTREAM epoch 2, iter 4220/4722, bit_width_max loss 0.06, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 4240/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 2, iter 4260/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 4280/4722, bit_width_max loss 0.08, prec1 96.88, prec5 99.22
+UPSTREAM epoch 2, iter 4300/4722, bit_width_max loss 0.08, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 4320/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 4340/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 4360/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 4380/4722, bit_width_max loss 0.11, prec1 97.66, prec5 99.22
+UPSTREAM epoch 2, iter 4400/4722, bit_width_max loss 0.07, prec1 98.44, prec5 99.22
+UPSTREAM epoch 2, iter 4420/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 2, iter 4440/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 4460/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 4480/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 4500/4722, bit_width_max loss 0.27, prec1 93.75, prec5 99.22
+UPSTREAM epoch 2, iter 4520/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 4540/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 4560/4722, bit_width_max loss 0.13, prec1 95.31, prec5 99.22
+UPSTREAM epoch 2, iter 4580/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 4600/4722, bit_width_max loss 0.06, prec1 96.88, prec5 100.00
+UPSTREAM epoch 2, iter 4620/4722, bit_width_max loss 0.28, prec1 96.09, prec5 97.66
+UPSTREAM epoch 2, iter 4640/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 2, iter 4660/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 2, iter 4680/4722, bit_width_max loss 0.10, prec1 96.09, prec5 99.22
+UPSTREAM epoch 2, iter 4700/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 2, iter 4720/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+KLAAR epoch 3: train=244.3s; test=5.3s; totaal=249.7s; beste epoch=3
+  TEST W1/A1: 86.1593% | W2/A2: 93.5003% | W4/A4: 94.8102% | W8/A8: 94.8986% | W32/A32: 95.0254%
+  SCHATTING 100 epochs: 6.97 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 4/5 (origineel schema: 100); LR=0.001
+UPSTREAM epoch 3, iter 0/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 20/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 40/4722, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 60/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 80/4722, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 100/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 120/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 140/4722, bit_width_max loss 0.17, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 160/4722, bit_width_max loss 0.10, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 180/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 200/4722, bit_width_max loss 0.13, prec1 93.75, prec5 99.22
+UPSTREAM epoch 3, iter 220/4722, bit_width_max loss 0.24, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 240/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 260/4722, bit_width_max loss 0.22, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 280/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 300/4722, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 320/4722, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 340/4722, bit_width_max loss 0.12, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 360/4722, bit_width_max loss 0.08, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 380/4722, bit_width_max loss 0.09, prec1 99.22, prec5 99.22
+UPSTREAM epoch 3, iter 400/4722, bit_width_max loss 0.18, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 420/4722, bit_width_max loss 0.23, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 440/4722, bit_width_max loss 0.13, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 460/4722, bit_width_max loss 0.16, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 480/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 500/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 520/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 540/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 560/4722, bit_width_max loss 0.17, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 580/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 600/4722, bit_width_max loss 0.19, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 620/4722, bit_width_max loss 0.09, prec1 99.22, prec5 99.22
+UPSTREAM epoch 3, iter 640/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 660/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 680/4722, bit_width_max loss 0.09, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 700/4722, bit_width_max loss 0.15, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 720/4722, bit_width_max loss 0.18, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 740/4722, bit_width_max loss 0.25, prec1 93.75, prec5 98.44
+UPSTREAM epoch 3, iter 760/4722, bit_width_max loss 0.09, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 780/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 800/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 820/4722, bit_width_max loss 0.32, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 840/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 860/4722, bit_width_max loss 0.20, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 880/4722, bit_width_max loss 0.17, prec1 97.66, prec5 98.44
+UPSTREAM epoch 3, iter 900/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 920/4722, bit_width_max loss 0.16, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 940/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 960/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 980/4722, bit_width_max loss 0.17, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 1000/4722, bit_width_max loss 0.14, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1020/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 1040/4722, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1060/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1080/4722, bit_width_max loss 0.03, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1100/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1120/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1140/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 1160/4722, bit_width_max loss 0.15, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1180/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 1200/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1220/4722, bit_width_max loss 0.11, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 1240/4722, bit_width_max loss 0.13, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1260/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 1280/4722, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 1300/4722, bit_width_max loss 0.05, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1320/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 1340/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 1360/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1380/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1400/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1420/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 1440/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 1460/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1480/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1500/4722, bit_width_max loss 0.17, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 1520/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1540/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1560/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1580/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1600/4722, bit_width_max loss 0.19, prec1 92.97, prec5 100.00
+UPSTREAM epoch 3, iter 1620/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1640/4722, bit_width_max loss 0.04, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 1660/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 1680/4722, bit_width_max loss 0.14, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 1700/4722, bit_width_max loss 0.23, prec1 95.31, prec5 98.44
+UPSTREAM epoch 3, iter 1720/4722, bit_width_max loss 0.17, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 1740/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 1760/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 1780/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 1800/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 1820/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1840/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 1860/4722, bit_width_max loss 0.10, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 1880/4722, bit_width_max loss 0.27, prec1 92.97, prec5 100.00
+UPSTREAM epoch 3, iter 1900/4722, bit_width_max loss 0.44, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 1920/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 1940/4722, bit_width_max loss 0.14, prec1 93.75, prec5 100.00
+UPSTREAM epoch 3, iter 1960/4722, bit_width_max loss 0.10, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 1980/4722, bit_width_max loss 0.12, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 2000/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 2020/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 2040/4722, bit_width_max loss 0.12, prec1 98.44, prec5 98.44
+UPSTREAM epoch 3, iter 2060/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 2080/4722, bit_width_max loss 0.07, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 2100/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 3, iter 2120/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 2140/4722, bit_width_max loss 0.19, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2160/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 2180/4722, bit_width_max loss 0.11, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 2200/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2220/4722, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 2240/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 2260/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 2280/4722, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2300/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 2320/4722, bit_width_max loss 0.15, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2340/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 2360/4722, bit_width_max loss 0.19, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 2380/4722, bit_width_max loss 0.06, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2400/4722, bit_width_max loss 0.20, prec1 94.53, prec5 98.44
+UPSTREAM epoch 3, iter 2420/4722, bit_width_max loss 0.05, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 2440/4722, bit_width_max loss 0.27, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 2460/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 2480/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 2500/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 2520/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 2540/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2560/4722, bit_width_max loss 0.26, prec1 94.53, prec5 98.44
+UPSTREAM epoch 3, iter 2580/4722, bit_width_max loss 0.17, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 2600/4722, bit_width_max loss 0.07, prec1 99.22, prec5 99.22
+UPSTREAM epoch 3, iter 2620/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 2640/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 2660/4722, bit_width_max loss 0.22, prec1 96.88, prec5 98.44
+UPSTREAM epoch 3, iter 2680/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2700/4722, bit_width_max loss 0.09, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 2720/4722, bit_width_max loss 0.13, prec1 96.88, prec5 98.44
+UPSTREAM epoch 3, iter 2740/4722, bit_width_max loss 0.07, prec1 99.22, prec5 99.22
+UPSTREAM epoch 3, iter 2760/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2780/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 2800/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 2820/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 2840/4722, bit_width_max loss 0.15, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 2860/4722, bit_width_max loss 0.19, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 2880/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 2900/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 2920/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 2940/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 2960/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 2980/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 3000/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 3020/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 3040/4722, bit_width_max loss 0.11, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 3060/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 3080/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3100/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 3120/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3140/4722, bit_width_max loss 0.17, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 3160/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3180/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3200/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3220/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 3240/4722, bit_width_max loss 0.18, prec1 95.31, prec5 98.44
+UPSTREAM epoch 3, iter 3260/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 3280/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3300/4722, bit_width_max loss 0.07, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 3320/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3340/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3360/4722, bit_width_max loss 0.09, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 3380/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 3400/4722, bit_width_max loss 0.29, prec1 93.75, prec5 100.00
+UPSTREAM epoch 3, iter 3420/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3440/4722, bit_width_max loss 0.15, prec1 93.75, prec5 99.22
+UPSTREAM epoch 3, iter 3460/4722, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 3480/4722, bit_width_max loss 0.12, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 3500/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 3520/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3540/4722, bit_width_max loss 0.17, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 3560/4722, bit_width_max loss 0.17, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 3580/4722, bit_width_max loss 0.13, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 3600/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 3620/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 3640/4722, bit_width_max loss 0.19, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 3660/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3680/4722, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 3700/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 3720/4722, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 3740/4722, bit_width_max loss 0.23, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 3760/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3780/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 3800/4722, bit_width_max loss 0.11, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 3820/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 3840/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 3860/4722, bit_width_max loss 0.11, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 3880/4722, bit_width_max loss 0.14, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 3900/4722, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 3920/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3940/4722, bit_width_max loss 0.22, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 3960/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 3980/4722, bit_width_max loss 0.14, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 4000/4722, bit_width_max loss 0.15, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 4020/4722, bit_width_max loss 0.11, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 4040/4722, bit_width_max loss 0.09, prec1 97.66, prec5 98.44
+UPSTREAM epoch 3, iter 4060/4722, bit_width_max loss 0.17, prec1 94.53, prec5 98.44
+UPSTREAM epoch 3, iter 4080/4722, bit_width_max loss 0.11, prec1 93.75, prec5 99.22
+UPSTREAM epoch 3, iter 4100/4722, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 4120/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 4140/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 4160/4722, bit_width_max loss 0.25, prec1 92.19, prec5 100.00
+UPSTREAM epoch 3, iter 4180/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 4200/4722, bit_width_max loss 0.12, prec1 93.75, prec5 100.00
+UPSTREAM epoch 3, iter 4220/4722, bit_width_max loss 0.11, prec1 97.66, prec5 98.44
+UPSTREAM epoch 3, iter 4240/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 4260/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 4280/4722, bit_width_max loss 0.12, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 4300/4722, bit_width_max loss 0.14, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 4320/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 4340/4722, bit_width_max loss 0.15, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 4360/4722, bit_width_max loss 0.11, prec1 97.66, prec5 99.22
+UPSTREAM epoch 3, iter 4380/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 4400/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 4420/4722, bit_width_max loss 0.14, prec1 94.53, prec5 100.00
+UPSTREAM epoch 3, iter 4440/4722, bit_width_max loss 0.16, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 4460/4722, bit_width_max loss 0.13, prec1 95.31, prec5 99.22
+UPSTREAM epoch 3, iter 4480/4722, bit_width_max loss 0.02, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 4500/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 4520/4722, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 4540/4722, bit_width_max loss 0.13, prec1 96.88, prec5 99.22
+UPSTREAM epoch 3, iter 4560/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 3, iter 4580/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 4600/4722, bit_width_max loss 0.19, prec1 98.44, prec5 99.22
+UPSTREAM epoch 3, iter 4620/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 3, iter 4640/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 3, iter 4660/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 4680/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 4700/4722, bit_width_max loss 0.14, prec1 96.09, prec5 99.22
+UPSTREAM epoch 3, iter 4720/4722, bit_width_max loss 0.21, prec1 96.09, prec5 100.00
+KLAAR epoch 4: train=230.8s; test=5.5s; totaal=236.5s; beste epoch=4
+  TEST W1/A1: 87.0467% | W2/A2: 93.5656% | W4/A4: 95.0254% | W8/A8: 95.0561% | W32/A32: 95.0791%
+  SCHATTING 100 epochs: 6.93 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+EPOCH 5/5 (origineel schema: 100); LR=0.001
+UPSTREAM epoch 4, iter 0/4722, bit_width_max loss 0.08, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 20/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 40/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 60/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 80/4722, bit_width_max loss 0.09, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 100/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 120/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 140/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 160/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 180/4722, bit_width_max loss 0.15, prec1 97.66, prec5 98.44
+UPSTREAM epoch 4, iter 200/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 220/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 240/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 260/4722, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 280/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 300/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 320/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 340/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 360/4722, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 380/4722, bit_width_max loss 0.18, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 400/4722, bit_width_max loss 0.18, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 420/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 440/4722, bit_width_max loss 0.08, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 460/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 480/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 500/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 520/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 540/4722, bit_width_max loss 0.21, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 560/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 580/4722, bit_width_max loss 0.21, prec1 96.09, prec5 98.44
+UPSTREAM epoch 4, iter 600/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 620/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 640/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 660/4722, bit_width_max loss 0.11, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 680/4722, bit_width_max loss 0.16, prec1 96.09, prec5 98.44
+UPSTREAM epoch 4, iter 700/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 720/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 740/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 760/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 780/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 800/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 820/4722, bit_width_max loss 0.15, prec1 95.31, prec5 98.44
+UPSTREAM epoch 4, iter 840/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 860/4722, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 880/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 900/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 920/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 940/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 960/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 980/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1000/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 1020/4722, bit_width_max loss 0.14, prec1 94.53, prec5 99.22
+UPSTREAM epoch 4, iter 1040/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1060/4722, bit_width_max loss 0.12, prec1 94.53, prec5 99.22
+UPSTREAM epoch 4, iter 1080/4722, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 1100/4722, bit_width_max loss 0.23, prec1 95.31, prec5 97.66
+UPSTREAM epoch 4, iter 1120/4722, bit_width_max loss 0.12, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 1140/4722, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1160/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 1180/4722, bit_width_max loss 0.12, prec1 94.53, prec5 100.00
+UPSTREAM epoch 4, iter 1200/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 1220/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 1240/4722, bit_width_max loss 0.10, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 1260/4722, bit_width_max loss 0.10, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 1280/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 1300/4722, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 1320/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 1340/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 1360/4722, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 1380/4722, bit_width_max loss 0.14, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 1400/4722, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 1420/4722, bit_width_max loss 0.19, prec1 96.88, prec5 98.44
+UPSTREAM epoch 4, iter 1440/4722, bit_width_max loss 0.14, prec1 94.53, prec5 99.22
+UPSTREAM epoch 4, iter 1460/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 1480/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 1500/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 1520/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 1540/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 1560/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 1580/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 1600/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 1620/4722, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 1640/4722, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 1660/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1680/4722, bit_width_max loss 0.11, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 1700/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 1720/4722, bit_width_max loss 0.29, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 1740/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 1760/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1780/4722, bit_width_max loss 0.13, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 1800/4722, bit_width_max loss 0.05, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 1820/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1840/4722, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 1860/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 1880/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 1900/4722, bit_width_max loss 0.17, prec1 94.53, prec5 100.00
+UPSTREAM epoch 4, iter 1920/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 1940/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 1960/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 1980/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 2000/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2020/4722, bit_width_max loss 0.09, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 2040/4722, bit_width_max loss 0.26, prec1 94.53, prec5 98.44
+UPSTREAM epoch 4, iter 2060/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2080/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 2100/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 2120/4722, bit_width_max loss 0.36, prec1 96.09, prec5 98.44
+UPSTREAM epoch 4, iter 2140/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2160/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 2180/4722, bit_width_max loss 0.12, prec1 94.53, prec5 99.22
+UPSTREAM epoch 4, iter 2200/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 2220/4722, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2240/4722, bit_width_max loss 0.03, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2260/4722, bit_width_max loss 0.24, prec1 92.19, prec5 100.00
+UPSTREAM epoch 4, iter 2280/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2300/4722, bit_width_max loss 0.11, prec1 96.88, prec5 98.44
+UPSTREAM epoch 4, iter 2320/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2340/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2360/4722, bit_width_max loss 0.15, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2380/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 2400/4722, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 2420/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 2440/4722, bit_width_max loss 0.12, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2460/4722, bit_width_max loss 0.06, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2480/4722, bit_width_max loss 0.14, prec1 93.75, prec5 100.00
+UPSTREAM epoch 4, iter 2500/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2520/4722, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 2540/4722, bit_width_max loss 0.09, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 2560/4722, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 2580/4722, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 2600/4722, bit_width_max loss 0.06, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 2620/4722, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2640/4722, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 2660/4722, bit_width_max loss 0.07, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 2680/4722, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 2700/4722, bit_width_max loss 0.20, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 2720/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2740/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2760/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 2780/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 2800/4722, bit_width_max loss 0.15, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 2820/4722, bit_width_max loss 0.14, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 2840/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2860/4722, bit_width_max loss 0.11, prec1 94.53, prec5 100.00
+UPSTREAM epoch 4, iter 2880/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 2900/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 2920/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 2940/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2960/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 2980/4722, bit_width_max loss 0.13, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 3000/4722, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 3020/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3040/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3060/4722, bit_width_max loss 0.11, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 3080/4722, bit_width_max loss 0.21, prec1 95.31, prec5 97.66
+UPSTREAM epoch 4, iter 3100/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3120/4722, bit_width_max loss 0.07, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 3140/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 3160/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3180/4722, bit_width_max loss 0.09, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 3200/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 3220/4722, bit_width_max loss 0.08, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 3240/4722, bit_width_max loss 0.10, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 3260/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3280/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3300/4722, bit_width_max loss 0.18, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 3320/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3340/4722, bit_width_max loss 0.08, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 3360/4722, bit_width_max loss 0.11, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 3380/4722, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 3400/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3420/4722, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 3440/4722, bit_width_max loss 0.24, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 3460/4722, bit_width_max loss 0.12, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3480/4722, bit_width_max loss 0.15, prec1 93.75, prec5 99.22
+UPSTREAM epoch 4, iter 3500/4722, bit_width_max loss 0.04, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 3520/4722, bit_width_max loss 0.10, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 3540/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 3560/4722, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3580/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3600/4722, bit_width_max loss 0.08, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 3620/4722, bit_width_max loss 0.22, prec1 93.75, prec5 99.22
+UPSTREAM epoch 4, iter 3640/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 3660/4722, bit_width_max loss 0.15, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 3680/4722, bit_width_max loss 0.25, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 3700/4722, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3720/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 3740/4722, bit_width_max loss 0.24, prec1 94.53, prec5 98.44
+UPSTREAM epoch 4, iter 3760/4722, bit_width_max loss 0.11, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 3780/4722, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 3800/4722, bit_width_max loss 0.08, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 3820/4722, bit_width_max loss 0.13, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 3840/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3860/4722, bit_width_max loss 0.02, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 3880/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 3900/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 3920/4722, bit_width_max loss 0.29, prec1 91.41, prec5 99.22
+UPSTREAM epoch 4, iter 3940/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 3960/4722, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 3980/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 4000/4722, bit_width_max loss 0.36, prec1 94.53, prec5 97.66
+UPSTREAM epoch 4, iter 4020/4722, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 4040/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 4060/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 4080/4722, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 4100/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 4120/4722, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 4140/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 4160/4722, bit_width_max loss 0.08, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 4180/4722, bit_width_max loss 0.17, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 4200/4722, bit_width_max loss 0.10, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 4220/4722, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 4240/4722, bit_width_max loss 0.13, prec1 94.53, prec5 99.22
+UPSTREAM epoch 4, iter 4260/4722, bit_width_max loss 0.15, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 4280/4722, bit_width_max loss 0.10, prec1 95.31, prec5 99.22
+UPSTREAM epoch 4, iter 4300/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 4320/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 4340/4722, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 4360/4722, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 4380/4722, bit_width_max loss 0.09, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 4400/4722, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 4, iter 4420/4722, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 4440/4722, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 4460/4722, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 4, iter 4480/4722, bit_width_max loss 0.25, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 4500/4722, bit_width_max loss 0.15, prec1 94.53, prec5 99.22
+UPSTREAM epoch 4, iter 4520/4722, bit_width_max loss 0.23, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 4540/4722, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 4, iter 4560/4722, bit_width_max loss 0.12, prec1 98.44, prec5 99.22
+UPSTREAM epoch 4, iter 4580/4722, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 4600/4722, bit_width_max loss 0.17, prec1 93.75, prec5 99.22
+UPSTREAM epoch 4, iter 4620/4722, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 4640/4722, bit_width_max loss 0.14, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 4660/4722, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 4, iter 4680/4722, bit_width_max loss 0.04, prec1 100.00, prec5 100.00
+UPSTREAM epoch 4, iter 4700/4722, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 4, iter 4720/4722, bit_width_max loss 0.14, prec1 95.31, prec5 98.44
+KLAAR epoch 5: train=237.3s; test=6.0s; totaal=243.4s; beste epoch=5
+  TEST W1/A1: 86.5512% | W2/A2: 93.7423% | W4/A4: 95.2136% | W8/A8: 95.4057% | W32/A32: 95.4556%
+  SCHATTING 100 epochs: 6.84 uur (zonder download/data-inladen; geen nauwkeurigheidsvoorspelling).
+BEHOUDEN: beste checkpoint epoch 5; laatste checkpoint epoch 5.
+Eindcontrole: bronbestanden en ruwe datasetbestanden ongewijzigd.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\pilot_runs\anyprecision_svhn_pilot5\20261016_143302_354821_run\run_report.json

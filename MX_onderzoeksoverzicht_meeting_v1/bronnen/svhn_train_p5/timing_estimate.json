@@ -1,0 +1,36 @@
+{
+  "available": true,
+  "planned_epochs": 100,
+  "steady_epoch_seconds": [
+    34.529536500005634,
+    31.775779300005524,
+    35.136835500001325,
+    34.426805200011586
+  ],
+  "steady_epochs": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "median_epoch_seconds": 34.47817085000861,
+  "first_epoch_seconds": 34.082318500004476,
+  "estimated_100_epoch_seconds": 3447.421232650857,
+  "observed_range_projection_seconds": [
+    3179.8844692005514,
+    3512.6290330001357
+  ],
+  "range_is_confidence_interval": false,
+  "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+  "excludes": [
+    "download",
+    "dependency installation",
+    "dataset loading",
+    "final report export"
+  ],
+  "limitations": [
+    "same laptop/backend/data loading conditions required",
+    "five epochs do not measure the LR transitions at 50/75/90",
+    "thermal and background-load drift over a long run not established"
+  ]
+}

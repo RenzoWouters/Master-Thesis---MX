@@ -1,0 +1,5 @@
+run_id,traject,groep,epoch,accuracy_percent,correct1,test_ce,best_epoch,best_accuracy_percent,selection_policy,bron
+cast,Any-Precision vijfmodustraining + E2M3-conversie,Conversie zonder MX-hertraining,100,94.72956361401353,24660,0.1944950551170107,54,94.96004917025199,W32/A32 brontraining,bronnen/cast/metrics.csv
+single_mx100,Dedicated E2M3/A32,MX tijdens training,100,94.82559926244622,24685,0.2648712515730248,73,94.8678549477566,E2M3/A32 eigen run,bronnen/single_mx100/selected_metrics.csv
+dual100,Gezamenlijk direct E2M3/A32,MX tijdens training,100,95.03303626306085,24739,0.2412773963217363,75,95.1559618930547,E2M3/A32 eigen run,bronnen/dual100/selected_metrics.csv
+trunc100,Gezamenlijk truncatiebewust E2M3/A32,MX tijdens training,100,94.9638905961893,24721,0.2389135364381242,52,95.07529194837123,E2M3/A32 eigen run,bronnen/trunc100/selected_metrics.csv

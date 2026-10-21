@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_DEDICATED_DATA_ONLY",
+  "completed_overview_notebook_executed": true,
+  "original_overview_byte_identical": true,
+  "production_rejects_synthetic": true,
+  "overwrite_rejected": true,
+  "wrong_schema_rejected": true,
+  "no_real_E2M1_accuracy_available": true,
+  "dedicated_payload_code_scale_bytes": 69360
+}

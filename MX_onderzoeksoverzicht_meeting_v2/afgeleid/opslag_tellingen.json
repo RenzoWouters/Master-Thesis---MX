@@ -1,0 +1,21 @@
+{
+  "n_weights": 129472,
+  "blocks": 4080,
+  "padding": 1088,
+  "scale_bytes": 4080,
+  "high_code_bytes": 97920,
+  "low_code_bytes": 65280,
+  "high_bytes": 102000,
+  "low_bytes": 69360,
+  "fp32_target_bytes": 517888,
+  "auxiliary_bytes": 19248,
+  "fp32_all_state_bytes": 537136,
+  "source_high_all_bytes": 121248,
+  "view_low_all_bytes": 88608,
+  "source_two_dedup_bytes": 186528,
+  "source_two_independent_bytes": 209856,
+  "six_weights_ratio_fp32_to_high": 5.077333333333334,
+  "all_state_ratio_fp32_to_high": 4.430060702032199,
+  "target_traffic_reduction_6_to_4_pct": 31.999999999999996,
+  "source_dedup_reduction_pct": 34.99742665980443
+}

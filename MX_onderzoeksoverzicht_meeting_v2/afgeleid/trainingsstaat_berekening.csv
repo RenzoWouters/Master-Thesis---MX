@@ -1,0 +1,7 @@
+run_id,master_parameters_bytes_all_banks,model_state_bytes_including_BN_buffers,adam_two_moments_bytes,subtotal_state_plus_moments_bytes,excluded
+single_fp100,531816,537136,1055440,1592576,"gradients, Adam step counters, activations, temporary caches, workspaces, allocator, Python, saved RNG"
+single_mx100,531816,537136,1055440,1592576,"gradients, Adam step counters, activations, temporary caches, workspaces, allocator, Python, saved RNG"
+dedicated_e2m1_100,531816,537136,1055440,1592576,"gradients, Adam step counters, activations, temporary caches, workspaces, allocator, Python, saved RNG"
+dual100,531816,537136,1057488,1594624,"gradients, Adam step counters, activations, temporary caches, workspaces, allocator, Python, saved RNG"
+trunc100,531816,537136,1057488,1594624,"gradients, Adam step counters, activations, temporary caches, workspaces, allocator, Python, saved RNG"
+any100,531816,537136,1063632,1600768,"gradients, Adam step counters, activations, temporary caches, workspaces, allocator, Python, saved RNG"

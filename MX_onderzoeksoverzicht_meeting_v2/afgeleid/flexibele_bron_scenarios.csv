@@ -1,0 +1,5 @@
+scenario,code_bytes,scale_bytes,aux_bytes,total_bytes,evidence
+"FP32-bron, doelprecisie herkwantiseren",517888,0,19248,537136,Layoutberekening; bestaande FP32-masterafhankelijke route
+"Twee directe MX-codesets, metadata gedeeld",163200,4080,19248,186528,Berekenbaar scenario; schalen/aux gelijk bevestigd; gedeeld containerformaat niet gebouwd
+Twee zelfstandige exports van hetzelfde gezamenlijke model,163200,8160,38496,209856,Twee exports dupliceren schalen en overige staat; dit zijn geen twee dedicated trainingen
+Een E2M3-bron met mantissatruncatie,97920,4080,19248,121248,Bronexport gerapporteerd; volledige nieuwe exportevaluatie nog open

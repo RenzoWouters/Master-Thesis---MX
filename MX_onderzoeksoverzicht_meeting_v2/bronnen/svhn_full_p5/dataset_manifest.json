@@ -1,0 +1,112 @@
+{
+  "files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "extra_32x32.mat": {
+        "split": "extra",
+        "md5": "a93ce644f1a588dc4d68dda5feec44a7",
+        "sha256": "a133a4beb38a00fcdda90c9489e0c04f900b660ce8a316a5e854838379a71eb3",
+        "bytes": 1329278602
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": [
+      {
+        "split": "train",
+        "requested_url": "http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
+        "started_at": "2026-10-16T14:33:07.347224+02:00",
+        "partial_file": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn\\.download_deb9d2fd23174831a5fcc3040cb4946b\\train_32x32.mat.attempt1.part",
+        "response_url": "http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
+        "status": "PASS",
+        "ended_at": "2026-10-16T14:37:06.539999+02:00",
+        "hashes": {
+          "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+          "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+          "bytes": 182040794
+        }
+      },
+      {
+        "split": "extra",
+        "requested_url": "http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
+        "started_at": "2026-10-16T14:37:06.541764+02:00",
+        "partial_file": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn\\.download_e15d260bfc5e40bba7c89d4632e7e407\\extra_32x32.mat.attempt1.part",
+        "response_url": "http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
+        "status": "PASS",
+        "ended_at": "2026-10-16T15:18:07.178134+02:00",
+        "hashes": {
+          "md5": "a93ce644f1a588dc4d68dda5feec44a7",
+          "sha256": "a133a4beb38a00fcdda90c9489e0c04f900b660ce8a316a5e854838379a71eb3",
+          "bytes": 1329278602
+        }
+      },
+      {
+        "split": "test",
+        "requested_url": "http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
+        "started_at": "2026-10-16T15:18:07.179242+02:00",
+        "partial_file": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn\\.download_fe448e87a2574d7f95ae5334f9efa514\\test_32x32.mat.attempt1.part",
+        "response_url": "http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
+        "status": "PASS",
+        "ended_at": "2026-10-16T15:20:12.705272+02:00",
+        "hashes": {
+          "md5": "eb5a983be6a315427106f1b164d9cef3",
+          "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+          "bytes": 64275384
+        }
+      }
+    ]
+  },
+  "selection": {
+    "train": {
+      "n": 604388,
+      "labels_histogram": [
+        50498,
+        104421,
+        85325,
+        69262,
+        58091,
+        60372,
+        47309,
+        49592,
+        40403,
+        39115
+      ],
+      "label_sha256": "93062062776ba0edc29e80fab21f8e0e3a96665c945a01916087fdc086c253a3"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "train_split_order": [
+      "train",
+      "extra"
+    ],
+    "held_out_validation_examples": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  }
+}

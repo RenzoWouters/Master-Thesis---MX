@@ -1,0 +1,174 @@
+{
+  "schema": "meeting-overview-checks-v1",
+  "source_files_verified": 234,
+  "run_audits": [
+    {
+      "run_id": "svhn_full_p5",
+      "label": "Any-Precision - train + extra (pilot)",
+      "epochs": 5,
+      "modes": "1,2,4,8,32",
+      "optimizer_steps": 23610,
+      "metric_rows": 50,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "svhn_train_p5",
+      "label": "Any-Precision - train-only (pilot)",
+      "epochs": 5,
+      "modes": "1,2,4,8,32",
+      "optimizer_steps": 2865,
+      "metric_rows": 50,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "any100",
+      "label": "Any-Precision, vijf W/A-modi",
+      "epochs": 100,
+      "modes": "1,2,4,8,32",
+      "optimizer_steps": 57300,
+      "metric_rows": 1000,
+      "best_epoch": 54,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_mx_p5",
+      "label": "E2M3 afzonderlijk (pilot)",
+      "epochs": 5,
+      "modes": "6",
+      "optimizer_steps": 2865,
+      "metric_rows": 10,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_fp_p5",
+      "label": "W32/A32 afzonderlijk (pilot)",
+      "epochs": 5,
+      "modes": "32",
+      "optimizer_steps": 2865,
+      "metric_rows": 10,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_mx100",
+      "label": "E2M3 afzonderlijk",
+      "epochs": 100,
+      "modes": "6",
+      "optimizer_steps": 57300,
+      "metric_rows": 200,
+      "best_epoch": 73,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_fp100",
+      "label": "W32/A32 afzonderlijk",
+      "epochs": 100,
+      "modes": "32",
+      "optimizer_steps": 57300,
+      "metric_rows": 200,
+      "best_epoch": 53,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "dual_p5",
+      "label": "Twee MX-modi direct (pilot)",
+      "epochs": 5,
+      "modes": "4,6",
+      "optimizer_steps": 2865,
+      "metric_rows": 20,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "dual100",
+      "label": "Twee MX-modi direct",
+      "epochs": 100,
+      "modes": "4,6",
+      "optimizer_steps": 57300,
+      "metric_rows": 400,
+      "best_epoch": 75,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "trunc_p5",
+      "label": "Twee MX-modi truncatiebewust (pilot)",
+      "epochs": 5,
+      "modes": "4,6",
+      "optimizer_steps": 2865,
+      "metric_rows": 20,
+      "best_epoch": 4,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "trunc100",
+      "label": "Twee MX-modi truncatiebewust",
+      "epochs": 100,
+      "modes": "4,6",
+      "optimizer_steps": 57300,
+      "metric_rows": 400,
+      "best_epoch": 52,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    }
+  ],
+  "pair_checks": [
+    {
+      "run_a": "single_fp100",
+      "run_b": "single_mx100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "dual100",
+      "run_b": "trunc100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "single_mx100",
+      "run_b": "dual100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    }
+  ],
+  "tensor_inventory": {
+    "fp32_total_bytes": 537136,
+    "target_weights": 129472,
+    "blocks": 4080,
+    "padding": 1088
+  },
+  "limitations": [
+    "reported hash consistency, not reexecution of models",
+    "no trained checkpoints or latest exports in package",
+    "one seed per method; no independence across epochs",
+    "test was used for checkpoint selection and development",
+    "storage is explicit layout arithmetic, not energy/VRAM measurement",
+    "no dedicated E2M1, no full train+extra or continual learning results",
+    "early microexperiment raw outputs unavailable here"
+  ]
+}

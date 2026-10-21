@@ -1,0 +1,346 @@
+{
+  "schema": "meeting-overview-checks-v2",
+  "source_files_verified": 254,
+  "run_audits": [
+    {
+      "run_id": "svhn_full_p5",
+      "label": "Any-Precision - train + extra (pilot)",
+      "epochs": 5,
+      "modes": "1,2,4,8,32",
+      "optimizer_steps": 23610,
+      "metric_rows": 50,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "svhn_train_p5",
+      "label": "Any-Precision - train-only (pilot)",
+      "epochs": 5,
+      "modes": "1,2,4,8,32",
+      "optimizer_steps": 2865,
+      "metric_rows": 50,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "any100",
+      "label": "Any-Precision, vijf W/A-modi",
+      "epochs": 100,
+      "modes": "1,2,4,8,32",
+      "optimizer_steps": 57300,
+      "metric_rows": 1000,
+      "best_epoch": 54,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_mx_p5",
+      "label": "E2M3 afzonderlijk (pilot)",
+      "epochs": 5,
+      "modes": "6",
+      "optimizer_steps": 2865,
+      "metric_rows": 10,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_fp_p5",
+      "label": "W32/A32 afzonderlijk (pilot)",
+      "epochs": 5,
+      "modes": "32",
+      "optimizer_steps": 2865,
+      "metric_rows": 10,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_mx100",
+      "label": "E2M3 afzonderlijk",
+      "epochs": 100,
+      "modes": "6",
+      "optimizer_steps": 57300,
+      "metric_rows": 200,
+      "best_epoch": 73,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "single_fp100",
+      "label": "W32/A32 afzonderlijk",
+      "epochs": 100,
+      "modes": "32",
+      "optimizer_steps": 57300,
+      "metric_rows": 200,
+      "best_epoch": 53,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "dual_p5",
+      "label": "Twee MX-modi direct (pilot)",
+      "epochs": 5,
+      "modes": "4,6",
+      "optimizer_steps": 2865,
+      "metric_rows": 20,
+      "best_epoch": 5,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "dual100",
+      "label": "Twee MX-modi direct",
+      "epochs": 100,
+      "modes": "4,6",
+      "optimizer_steps": 57300,
+      "metric_rows": 400,
+      "best_epoch": 75,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "trunc_p5",
+      "label": "Twee MX-modi truncatiebewust (pilot)",
+      "epochs": 5,
+      "modes": "4,6",
+      "optimizer_steps": 2865,
+      "metric_rows": 20,
+      "best_epoch": 4,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "trunc100",
+      "label": "Twee MX-modi truncatiebewust",
+      "epochs": 100,
+      "modes": "4,6",
+      "optimizer_steps": 57300,
+      "metric_rows": 400,
+      "best_epoch": 52,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    },
+    {
+      "run_id": "dedicated_e2m1_100",
+      "label": "E2M1 afzonderlijk (dedicated)",
+      "epochs": 100,
+      "modes": "4",
+      "optimizer_steps": 57300,
+      "metric_rows": 200,
+      "best_epoch": 97,
+      "warnings": 2,
+      "status": "PASS (rapportcontrole)"
+    }
+  ],
+  "pair_checks": [
+    {
+      "run_a": "single_fp100",
+      "run_b": "single_mx100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "dual100",
+      "run_b": "trunc100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "single_mx100",
+      "run_b": "dual100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "dedicated_e2m1_100",
+      "run_b": "single_mx100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "dedicated_e2m1_100",
+      "run_b": "dual100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    },
+    {
+      "run_a": "dedicated_e2m1_100",
+      "run_b": "trunc100",
+      "initialization_hash_equal": true,
+      "order_hashes_equal": 200,
+      "order_hashes_compared": 200,
+      "environment_equal": true,
+      "backend_equal": true,
+      "note": "Reported hashes only; underlying sample arrays and checkpoints not provided. Different mode counts/losses remain possible."
+    }
+  ],
+  "dedicated_check": {
+    "schema": "dedicated-e2m1-overview-audit-v2",
+    "status": "PASS (report and byte checks)",
+    "epochs": 100,
+    "metric_rows": 200,
+    "optimizer_steps": 57300,
+    "training_forward_passes": 57300,
+    "best_epoch": 97,
+    "last_epoch": 100,
+    "last_correct1": 24684,
+    "last_accuracy_percent": 94.82175783650891,
+    "package_files_verified": 38,
+    "package_files": [
+      ".gitattributes",
+      ".gitignore",
+      "CODEWIJZIGINGEN.md",
+      "COMPATIBILITY.md",
+      "DEDICATED_CHANGE_MANIFEST.json",
+      "MX_E2M1_dedicated_resultaten.ipynb",
+      "PROTOCOL.md",
+      "README.md",
+      "SOURCE_MANIFEST.json",
+      "TRAINING_CHANGE_MANIFEST.json",
+      "dedicated.patch",
+      "dedicated_data.py",
+      "e2m1_adapter.py",
+      "local_validation/VALIDATION.md",
+      "local_validation/container_pip_check.txt",
+      "local_validation/container_run_report.json",
+      "local_validation/integration_stdout.txt",
+      "local_validation/integration_validation.json",
+      "local_validation/test_integration.py",
+      "local_validation/test_reference100.py",
+      "local_validation/test_stdout.txt",
+      "local_validation/validation_report.json",
+      "mx_adapter.py",
+      "mx_e2m1.py",
+      "mx_format.py",
+      "provenance/single_reference100_PROTOCOL.md",
+      "provenance/single_reference100_mx_adapter.py",
+      "provenance/single_reference100_run_train.py",
+      "provenance/single_reference100_single_support.py",
+      "resume_core.py",
+      "run_train.py",
+      "single_support.py",
+      "smoke_single.py",
+      "smoke_support.py",
+      "svhn_support.py",
+      "test_e2m1.py",
+      "upstream/Any-Precision-DNNs-master.zip",
+      "voeg_toe_aan_overzicht.py"
+    ],
+    "code_scale_bytes": 69360,
+    "raw_model_payload_bytes_with_all_preserved_BN": 88608,
+    "reported_physical_export_bytes": 131301,
+    "full_test_from_export_performed": false,
+    "measured_epochs_seconds": 2645.150970800605,
+    "measured_session_seconds": 2652.6398207999882,
+    "pairs": [
+      {
+        "run": "single_fp100",
+        "initialization_equal": true,
+        "order_hashes_equal": 200,
+        "order_hashes_compared": 200,
+        "environment_equal": true,
+        "backend_equal": true,
+        "dataset_manifest_equal": true,
+        "dataset_selection_equal": true,
+        "transforms_equal": true,
+        "interpretation": "Recorded common setup, not identical loss, compute budget or deterministic CUDA."
+      },
+      {
+        "run": "single_mx100",
+        "initialization_equal": true,
+        "order_hashes_equal": 200,
+        "order_hashes_compared": 200,
+        "environment_equal": true,
+        "backend_equal": true,
+        "dataset_manifest_equal": true,
+        "dataset_selection_equal": true,
+        "transforms_equal": true,
+        "interpretation": "Recorded common setup, not identical loss, compute budget or deterministic CUDA."
+      },
+      {
+        "run": "dual100",
+        "initialization_equal": true,
+        "order_hashes_equal": 200,
+        "order_hashes_compared": 200,
+        "environment_equal": true,
+        "backend_equal": true,
+        "dataset_manifest_equal": true,
+        "dataset_selection_equal": true,
+        "transforms_equal": true,
+        "interpretation": "Recorded common setup, not identical loss, compute budget or deterministic CUDA."
+      },
+      {
+        "run": "trunc100",
+        "initialization_equal": true,
+        "order_hashes_equal": 200,
+        "order_hashes_compared": 200,
+        "environment_equal": true,
+        "backend_equal": true,
+        "dataset_manifest_equal": true,
+        "dataset_selection_equal": true,
+        "transforms_equal": true,
+        "interpretation": "Recorded common setup, not identical loss, compute budget or deterministic CUDA."
+      }
+    ],
+    "warnings": [
+      {
+        "category": "DeprecationWarning",
+        "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+        "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+        "line": 57
+      },
+      {
+        "category": "DeprecationWarning",
+        "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+        "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+        "line": 57
+      }
+    ],
+    "pip_check": "No broken requirements found.",
+    "source_unchanged_reported": true,
+    "data_unchanged_reported": true,
+    "limits": [
+      "Model checkpoints, exports and individual predictions are absent from this feedback bundle.",
+      "One seed per method; test selected best checkpoints; different training regimes.",
+      "No statistical equivalence, significance, full export inference or hardware performance tested."
+    ]
+  },
+  "tensor_inventory": {
+    "fp32_total_bytes": 537136,
+    "target_weights": 129472,
+    "blocks": 4080,
+    "padding": 1088
+  },
+  "limitations": [
+    "reported hash consistency, not reexecution of models",
+    "no trained checkpoints or latest exports in package",
+    "one seed per method; no independence across epochs",
+    "test was used for checkpoint selection and development",
+    "storage is explicit layout arithmetic, not energy/VRAM measurement",
+    "dedicated E2M1 added; no full train+extra or continual learning results",
+    "early microexperiment raw outputs unavailable here"
+  ]
+}

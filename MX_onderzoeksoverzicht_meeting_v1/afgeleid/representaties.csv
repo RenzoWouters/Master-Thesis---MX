@@ -1,0 +1,4 @@
+representatie,element_bits,theoretical_bits_with_scale,weight_code_bytes,shared_scale_bytes,auxiliary_bytes,total_bytes,scope
+FP32-referentie,32,32.0,517888,0,19248,537136,FP32 modeltensorinhoud; geen optimizer
+E2M3-bron (ondersteunt 6 en 4 bit),6,6.25,97920,4080,19248,121248,Benodigde behouden bron; vijf BN-banken ongewijzigd
+E2M1-uitvoeringskopie (alleen 4 bit),4,4.25,65280,4080,19248,88608,Actieve lage kopie; onvoldoende om later 6 bit te herstellen

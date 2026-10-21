@@ -1,0 +1,5 @@
+methode,path,accuracy_percent,correct1,test_ce,source
+Directe training / direct E2M1,A_direct_E2M1,95.02535341118623,24737,0.1975736443230925,bronnen/gap/metrics.csv
+Directe training / afronden uit E2M3,B_round_from_E2M3,94.45298094652735,24588,0.2132679627061106,bronnen/gap/metrics.csv
+Directe training / trunceren uit E2M3,C_truncate_E2M3,93.58097725875845,24361,0.2293545586077087,bronnen/gap/metrics.csv
+Truncatiebewuste training / trunceren,TA,94.94084204056546,24715,0.1944021041875392,bronnen/trunc100/epoch_metrics.csv

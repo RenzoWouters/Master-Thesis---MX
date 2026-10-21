@@ -1,0 +1,1747 @@
+{
+  "schema": "source-model-tensor-inventory-v1",
+  "method": "Instantiate original supplied svhnq factory with expand=2 and five original BN banks; inspect shape/dtype only; no forward, dataset or optimizer. Not a measurement of trained checkpoint bytes. Exact tensor metadata suffice for storage arithmetic.",
+  "torch_used_here": "2.10.0+cpu",
+  "source_model_sha256": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+  "target_layers": [
+    "layers.3",
+    "layers.6",
+    "layers.10",
+    "layers.13",
+    "layers.16",
+    "layers.20"
+  ],
+  "tensors": [
+    {
+      "name": "layers.0.weight",
+      "shape": [
+        12,
+        3,
+        5,
+        5
+      ],
+      "dtype": "torch.float32",
+      "numel": 900,
+      "element_bytes": 4,
+      "bytes": 3600,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.0.bias",
+      "shape": [
+        12
+      ],
+      "dtype": "torch.float32",
+      "numel": 12,
+      "element_bytes": 4,
+      "bytes": 48,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.3.weight",
+      "shape": [
+        16,
+        12,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 1728,
+      "element_bytes": 4,
+      "bytes": 6912,
+      "is_parameter": true,
+      "mx_target": true,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.4.bn_dict.1.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.4.bn_dict.1.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.4.bn_dict.1.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.4.bn_dict.1.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.4.bn_dict.1.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.4.bn_dict.2.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.4.bn_dict.2.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.4.bn_dict.2.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.4.bn_dict.2.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.4.bn_dict.2.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.4.bn_dict.4.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.4.bn_dict.4.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.4.bn_dict.4.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.4.bn_dict.4.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.4.bn_dict.4.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.4.bn_dict.8.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.4.bn_dict.8.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.4.bn_dict.8.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.4.bn_dict.8.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.4.bn_dict.8.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.4.bn_dict.32.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.4.bn_dict.32.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.4.bn_dict.32.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.4.bn_dict.32.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.4.bn_dict.32.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.6.weight",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2304,
+      "element_bytes": 4,
+      "bytes": 9216,
+      "is_parameter": true,
+      "mx_target": true,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.7.bn_dict.1.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.7.bn_dict.1.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.7.bn_dict.1.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.7.bn_dict.1.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.7.bn_dict.1.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.7.bn_dict.2.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.7.bn_dict.2.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.7.bn_dict.2.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.7.bn_dict.2.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.7.bn_dict.2.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.7.bn_dict.4.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.7.bn_dict.4.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.7.bn_dict.4.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.7.bn_dict.4.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.7.bn_dict.4.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.7.bn_dict.8.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.7.bn_dict.8.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.7.bn_dict.8.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.7.bn_dict.8.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.7.bn_dict.8.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.7.bn_dict.32.weight",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.7.bn_dict.32.bias",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.7.bn_dict.32.running_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.7.bn_dict.32.running_var",
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16,
+      "element_bytes": 4,
+      "bytes": 64,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.7.bn_dict.32.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.10.weight",
+      "shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 4608,
+      "element_bytes": 4,
+      "bytes": 18432,
+      "is_parameter": true,
+      "mx_target": true,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.11.bn_dict.1.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.11.bn_dict.1.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.11.bn_dict.1.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.11.bn_dict.1.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.11.bn_dict.1.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.11.bn_dict.2.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.11.bn_dict.2.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.11.bn_dict.2.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.11.bn_dict.2.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.11.bn_dict.2.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.11.bn_dict.4.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.11.bn_dict.4.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.11.bn_dict.4.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.11.bn_dict.4.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.11.bn_dict.4.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.11.bn_dict.8.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.11.bn_dict.8.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.11.bn_dict.8.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.11.bn_dict.8.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.11.bn_dict.8.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.11.bn_dict.32.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.11.bn_dict.32.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.11.bn_dict.32.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.11.bn_dict.32.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.11.bn_dict.32.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.13.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 9216,
+      "element_bytes": 4,
+      "bytes": 36864,
+      "is_parameter": true,
+      "mx_target": true,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.14.bn_dict.1.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.14.bn_dict.1.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.14.bn_dict.1.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.14.bn_dict.1.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.14.bn_dict.1.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.14.bn_dict.2.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.14.bn_dict.2.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.14.bn_dict.2.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.14.bn_dict.2.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.14.bn_dict.2.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.14.bn_dict.4.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.14.bn_dict.4.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.14.bn_dict.4.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.14.bn_dict.4.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.14.bn_dict.4.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.14.bn_dict.8.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.14.bn_dict.8.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.14.bn_dict.8.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.14.bn_dict.8.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.14.bn_dict.8.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.14.bn_dict.32.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.14.bn_dict.32.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.14.bn_dict.32.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.14.bn_dict.32.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.14.bn_dict.32.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.16.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 9216,
+      "element_bytes": 4,
+      "bytes": 36864,
+      "is_parameter": true,
+      "mx_target": true,
+      "bn_bank": null
+    },
+    {
+      "name": "layers.17.bn_dict.1.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.17.bn_dict.1.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.17.bn_dict.1.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.17.bn_dict.1.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.17.bn_dict.1.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "1"
+    },
+    {
+      "name": "layers.17.bn_dict.2.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.17.bn_dict.2.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.17.bn_dict.2.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.17.bn_dict.2.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.17.bn_dict.2.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "2"
+    },
+    {
+      "name": "layers.17.bn_dict.4.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.17.bn_dict.4.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.17.bn_dict.4.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.17.bn_dict.4.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.17.bn_dict.4.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "4"
+    },
+    {
+      "name": "layers.17.bn_dict.8.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.17.bn_dict.8.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.17.bn_dict.8.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.17.bn_dict.8.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.17.bn_dict.8.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "8"
+    },
+    {
+      "name": "layers.17.bn_dict.32.weight",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.17.bn_dict.32.bias",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.17.bn_dict.32.running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.17.bn_dict.32.running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "numel": 32,
+      "element_bytes": 4,
+      "bytes": 128,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.17.bn_dict.32.num_batches_tracked",
+      "shape": [],
+      "dtype": "torch.int64",
+      "numel": 1,
+      "element_bytes": 8,
+      "bytes": 8,
+      "is_parameter": false,
+      "mx_target": false,
+      "bn_bank": "32"
+    },
+    {
+      "name": "layers.20.weight",
+      "shape": [
+        128,
+        32,
+        5,
+        5
+      ],
+      "dtype": "torch.float32",
+      "numel": 102400,
+      "element_bytes": 4,
+      "bytes": 409600,
+      "is_parameter": true,
+      "mx_target": true,
+      "bn_bank": null
+    },
+    {
+      "name": "fc.weight",
+      "shape": [
+        10,
+        128
+      ],
+      "dtype": "torch.float32",
+      "numel": 1280,
+      "element_bytes": 4,
+      "bytes": 5120,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": null
+    },
+    {
+      "name": "fc.bias",
+      "shape": [
+        10
+      ],
+      "dtype": "torch.float32",
+      "numel": 10,
+      "element_bytes": 4,
+      "bytes": 40,
+      "is_parameter": true,
+      "mx_target": false,
+      "bn_bank": null
+    }
+  ],
+  "parameters": 132954,
+  "total_state_bytes": 537136,
+  "target_weight_bytes_fp32": 517888,
+  "auxiliary_bytes_all_banks": 19248
+}

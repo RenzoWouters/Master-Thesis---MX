@@ -1,0 +1,22 @@
+{
+  "policy": "first strict maximum of upstream W32/A32 test top1",
+  "best": {
+    "epoch": 5,
+    "file": "best_checkpoint.pt",
+    "sha256": "ff3a670fc1e3a15249bbfe7b222aac03fe45b81aa2464682d42d1ca52ae7c269",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\pilot_runs\\anyprecision_svhn_pilot5\\20261016_143302_354821_run\\checkpoints\\epoch_00005.pt",
+    "selection_score_W32_A32": 95.45559310678624
+  },
+  "last": {
+    "epoch": 5,
+    "file": "last_checkpoint.pt",
+    "sha256": "ff3a670fc1e3a15249bbfe7b222aac03fe45b81aa2464682d42d1ca52ae7c269",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\pilot_runs\\anyprecision_svhn_pilot5\\20261016_143302_354821_run\\checkpoints\\epoch_00005.pt",
+    "selection_score_W32_A32": 95.45559310678624
+  },
+  "same_checkpoint": true,
+  "selected_on_official_test": true,
+  "independent_test_estimate": false,
+  "completed_epochs": 5,
+  "paper_epochs": 100
+}

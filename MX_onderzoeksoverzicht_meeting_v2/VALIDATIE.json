@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "notebook_file": "MX_onderzoeksoverzicht.ipynb",
+  "original_structure": "8 hoofdsecties + alle oorspronkelijke bijlagen behouden",
+  "cells": 43,
+  "code_cells_executed": 20,
+  "execution": "Alle celbronnen sequentieel uitgevoerd in een geisoleerd IPython-proces; zie UITVOERING.json.",
+  "source_files_sha256_verified": 254,
+  "original_source_files_unchanged": 234,
+  "new_feedback_files": 19,
+  "dedicated_package_hashes_verified": 38,
+  "png_figures": 11,
+  "svg_figures": 11,
+  "figures_visually_checked": [
+    "01_truncatiekloof_en_herstel",
+    "03_leercurve_lage_modus",
+    "06_accuracy_tegen_modelpayload",
+    "08_E2M3_alle_trajecten_epoch100"
+  ],
+  "missing_source_links": [],
+  "scope": "Rapportvalidatie en afgeleide tabellen/figuren, geen nieuwe training of model-evaluatie.",
+  "limitations": [
+    "Echte checkpoints/exports ontbreken; geen nieuwe testpass ervan uitgevoerd.",
+    "Een seed per methode, niet-volledig-deterministische GPU, testgestuurde selectie.",
+    "Automatische nbclient-transportuitvoering was onbetrouwbaar in deze container; alle codecellen zijn wel zonder fouten uitgevoerd in IPython."
+  ]
+}

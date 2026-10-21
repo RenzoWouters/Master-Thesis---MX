@@ -1,0 +1,32 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_truncation_eval\20261020_173705_352283_evaluate
+MANTISSATRUNCATIE: opgeslagen E2M3 -> E2M1; vaste schalen/A32/lage BN; geen training.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+DATA PASS: alleen test=26032; batch=128; 204 batches; train en extra niet gelezen.
+EVALUATIE: best_E2M3_test, epoch 75. A/B/C gebruiken alle de oorspronkelijke lage BN-bank.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+best_E2M3_test: batch 1/204; vier paden, geen updates.
+best_E2M3_test: batch 50/204; vier paden, geen updates.
+best_E2M3_test: batch 100/204; vier paden, geen updates.
+best_E2M3_test: batch 150/204; vier paden, geen updates.
+best_E2M3_test: batch 200/204; vier paden, geen updates.
+best_E2M3_test: batch 204/204; vier paden, geen updates.
+  H_source_E2M3: 95.1560%; correct=24771/26032; CE=0.235921
+  A_direct_E2M1: 94.9255%; correct=24711/26032; CE=0.197198
+  B_round_from_E2M3: 94.6374%; correct=24636/26032; CE=0.211957
+  C_truncate_E2M3: 93.7346%; correct=24401/26032; CE=0.234023
+EVALUATIE: last_epoch, epoch 100. A/B/C gebruiken alle de oorspronkelijke lage BN-bank.
+last_epoch: batch 1/204; vier paden, geen updates.
+last_epoch: batch 50/204; vier paden, geen updates.
+last_epoch: batch 100/204; vier paden, geen updates.
+last_epoch: batch 150/204; vier paden, geen updates.
+last_epoch: batch 200/204; vier paden, geen updates.
+last_epoch: batch 204/204; vier paden, geen updates.
+  H_source_E2M3: 95.0330%; correct=24739/26032; CE=0.241277
+  A_direct_E2M1: 95.0254%; correct=24737/26032; CE=0.197574
+  B_round_from_E2M3: 94.4530%; correct=24588/26032; CE=0.213268
+  C_truncate_E2M3: 93.5810%; correct=24361/26032; CE=0.229355
+EVALUATIE VOLTOOID: H/A/B/C voor beide vaste checkpoints; geen nieuwe selectie of training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_truncation_eval\20261020_173705_352283_evaluate\run_report.json

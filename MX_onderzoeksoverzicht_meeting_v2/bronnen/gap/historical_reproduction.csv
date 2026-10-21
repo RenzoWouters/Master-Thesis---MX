@@ -1,0 +1,5 @@
+role,epoch,path,historical_correct1,reevaluated_correct1,difference_correct1,accuracy_difference_pp,historical_ce,reevaluated_ce,correct1_matches_history
+best_E2M3_test,75,H_source_E2M3,24771,24771,0,0.0,0.23592076170788856,0.23592077119803373,True
+best_E2M3_test,75,A_direct_E2M1,24711,24711,0,0.0,0.19719823308348583,0.19719824288200785,True
+last_epoch,100,H_source_E2M3,24739,24739,0,0.0,0.2412773963217363,0.24127736670208141,True
+last_epoch,100,A_direct_E2M1,24737,24737,0,0.0,0.1975735850270423,0.19757364432309257,True

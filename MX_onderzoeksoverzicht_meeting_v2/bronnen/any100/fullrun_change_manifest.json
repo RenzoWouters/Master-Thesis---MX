@@ -1,0 +1,44 @@
+{
+  "schema": "svhn-trainonly-reference100-change-manifest-v1",
+  "previous_package": "anyprecision_svhn_trainonly_pilot5_v1.zip",
+  "previous_package_sha256": "5161db0ac544443f277b3fbdd774144f5a5206778ab9b21354325e239f296d1e",
+  "previous_feedback_bundle_sha256": "6ed33fbf95bc02c9138a8325b5f66e1c0d3e1a73e42af1fe5c18d253dd2aef33",
+  "change_from_successful_pilot": "finish all 100 epochs rather than stop at 5; fresh run, no warmstart",
+  "research_change_from_author_recipe": "official train only; extra excluded",
+  "new_training_hyperparameter_changes_from_trainonly_pilot": [],
+  "new_compatibility_changes": [],
+  "unchanged_epoch_functions_ast_sha256": {
+    "run_epochs": "934965ecd57847533342802996ba180e316c811c6db0f64869ba4086268cc2bb",
+    "restore_timing_sidecar": "25e2a3c0bb04850aba8b12f9abc40abedb797c8b823b07c7d94e317030091854",
+    "dependencies": "7f48a4cffe6a3722e3b73b5b6f5b75941f71c779d245089854dcbf7c765b0513",
+    "verify_unchanged": "03a5c5ab796fb73b105cc146a0ac96a2639960060b7bb0916e9e0690774821da"
+  },
+  "byte_identical_files_from_pilot": {
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "compatibility.patch": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742"
+  },
+  "infrastructure_changes": [
+    "new schema and separate output root",
+    "100-epoch-only production endpoint",
+    "fresh-run CLI rejects checkpoint argument; resume rejects pilot contract",
+    "read-only completion and LR schedule verification",
+    "100-epoch result notebook and actual total time",
+    "new full-length synthetic tests including LR boundaries"
+  ],
+  "initialization": "same explicit seed 20261009; new model, optimizer and scheduler; no pilot checkpoint",
+  "test_policy": "all five precisions every epoch; strict first best W32/A32; best and last preserved",
+  "extra_file_policy": "not opened, required, checked, loaded, downloaded, modified or deleted",
+  "MX": false,
+  "planned_epochs": 100,
+  "train_examples": 73257,
+  "test_examples": 26032,
+  "batch_size": 128,
+  "steps_per_epoch": 573,
+  "planned_optimizer_steps": 57300,
+  "prior_split_change_audit": "provenance/TRAINONLY_CHANGE_MANIFEST.json (historical pilot audit, not current endpoint)",
+  "exact_paper_reproduction": false
+}

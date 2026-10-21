@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "engine": "IPython InteractiveShell, sequential original notebook cell sources; real captured display outputs",
+  "cells": [
+    {
+      "cell_index": 1,
+      "execution_count": 1,
+      "seconds": 17.735540306000075,
+      "status": "PASS",
+      "rich_outputs": 0,
+      "stderr": ""
+    },
+    {
+      "cell_index": 3,
+      "execution_count": 2,
+      "seconds": 0.0829716489997736,
+      "status": "PASS",
+      "rich_outputs": 5,
+      "stderr": ""
+    },
+    {
+      "cell_index": 6,
+      "execution_count": 3,
+      "seconds": 0.07725728400009757,
+      "status": "PASS",
+      "rich_outputs": 3,
+      "stderr": ""
+    },
+    {
+      "cell_index": 7,
+      "execution_count": 4,
+      "seconds": 0.031098595000003115,
+      "status": "PASS",
+      "rich_outputs": 1,
+      "stderr": ""
+    },
+    {
+      "cell_index": 9,
+      "execution_count": 5,
+      "seconds": 0.8638485010001205,
+      "status": "PASS",
+      "rich_outputs": 5,
+      "stderr": ""
+    },
+    {
+      "cell_index": 11,
+      "execution_count": 6,
+      "seconds": 0.04495589900034247,
+      "status": "PASS",
+      "rich_outputs": 3,
+      "stderr": ""
+    },
+    {
+      "cell_index": 13,
+      "execution_count": 7,
+      "seconds": 0.6843047620000107,
+      "status": "PASS",
+      "rich_outputs": 4,
+      "stderr": ""
+    },
+    {
+      "cell_index": 16,
+      "execution_count": 8,
+      "seconds": 4.981553696999981,
+      "status": "PASS",
+      "rich_outputs": 5,
+      "stderr": ""
+    },
+    {
+      "cell_index": 18,
+      "execution_count": 9,
+      "seconds": 0.06569622799997887,
+      "status": "PASS",
+      "rich_outputs": 6,
+      "stderr": ""
+    },
+    {
+      "cell_index": 20,
+      "execution_count": 10,
+      "seconds": 0.8233024429996476,
+      "status": "PASS",
+      "rich_outputs": 2,
+      "stderr": ""
+    },
+    {
+      "cell_index": 22,
+      "execution_count": 11,
+      "seconds": 0.7570977099999254,
+      "status": "PASS",
+      "rich_outputs": 3,
+      "stderr": ""
+    },
+    {
+      "cell_index": 24,
+      "execution_count": 12,
+      "seconds": 0.019220114999825455,
+      "status": "PASS",
+      "rich_outputs": 2,
+      "stderr": ""
+    },
+    {
+      "cell_index": 26,
+      "execution_count": 13,
+      "seconds": 1.1387090100001842,
+      "status": "PASS",
+      "rich_outputs": 4,
+      "stderr": ""
+    },
+    {
+      "cell_index": 29,
+      "execution_count": 14,
+      "seconds": 0.0531606960003046,
+      "status": "PASS",
+      "rich_outputs": 5,
+      "stderr": ""
+    },
+    {
+      "cell_index": 31,
+      "execution_count": 15,
+      "seconds": 0.15956684699995094,
+      "status": "PASS",
+      "rich_outputs": 4,
+      "stderr": ""
+    },
+    {
+      "cell_index": 33,
+      "execution_count": 16,
+      "seconds": 2.0825839640001504,
+      "status": "PASS",
+      "rich_outputs": 2,
+      "stderr": ""
+    },
+    {
+      "cell_index": 35,
+      "execution_count": 17,
+      "seconds": 0.22356465899974864,
+      "status": "PASS",
+      "rich_outputs": 7,
+      "stderr": ""
+    },
+    {
+      "cell_index": 37,
+      "execution_count": 18,
+      "seconds": 4.841949067999849,
+      "status": "PASS",
+      "rich_outputs": 2,
+      "stderr": ""
+    },
+    {
+      "cell_index": 39,
+      "execution_count": 19,
+      "seconds": 0.07696731500027454,
+      "status": "PASS",
+      "rich_outputs": 5,
+      "stderr": ""
+    },
+    {
+      "cell_index": 41,
+      "execution_count": 20,
+      "seconds": 0.26622260800013464,
+      "status": "PASS",
+      "rich_outputs": 2,
+      "stderr": ""
+    }
+  ],
+  "total_seconds": 44.69674949599994,
+  "jupyter_transport_note": "Automatic nbclient kernel execution did not finish reliably in this container (kernel startup/transport errors); all code cells were therefore executed sequentially in an isolated IPython process. No errors in notebook cell code."
+}

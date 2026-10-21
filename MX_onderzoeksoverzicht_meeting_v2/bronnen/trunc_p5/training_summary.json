@@ -1,0 +1,18 @@
+{
+  "completed_epochs": 5,
+  "pilot_completed": true,
+  "full_100_epoch_training_completed": false,
+  "optimizer_steps": 2865,
+  "training_forward_passes": 5730,
+  "train_examples": 73257,
+  "test_examples": 26032,
+  "mode": "joint",
+  "distillation": true,
+  "truncation": true,
+  "one_shared_high_source_per_paired_batch_verified": true,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "measured_completed_epoch_seconds": 198.33722319989465,
+  "gradient_checks_before_every_update": true,
+  "fp32_masters_and_moments_verified": true,
+  "synthetic_fixture_only": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "meeting-notebook-execution-v1",
+  "completed": true,
+  "code_cells_executed": 17,
+  "notebook_cells": 37,
+  "error_outputs": 0,
+  "stderr_outputs": [],
+  "figures_created": 7,
+  "no_training": true,
+  "no_checkpoints_loaded": true,
+  "no_dataset_read": true,
+  "sources_reverified_on_execution": true
+}

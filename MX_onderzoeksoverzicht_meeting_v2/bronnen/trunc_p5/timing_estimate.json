@@ -1,0 +1,44 @@
+{
+  "available": true,
+  "planned_epochs": 100,
+  "steady_epoch_seconds": [
+    37.66935379995266,
+    39.41896539996378,
+    39.41606439999305,
+    39.07454230001895
+  ],
+  "steady_epochs": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "median_epoch_seconds": 39.245303350006,
+  "first_epoch_seconds": 42.758297299966216,
+  "estimated_100_epoch_seconds": 3928.04332895056,
+  "observed_range_projection_seconds": [
+    3772.0243234952795,
+    3945.2358718963806
+  ],
+  "range_is_confidence_interval": false,
+  "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+  "excludes": [
+    "download",
+    "dependency installation",
+    "dataset loading",
+    "final report export"
+  ],
+  "limitations": [
+    "same laptop/backend/data loading conditions required",
+    "five epochs do not measure the LR transitions at 50/75/90",
+    "thermal and background-load drift over a long run not established"
+  ],
+  "weight_mode": "MXFP6_E2M3+MXFP4_E2M1",
+  "includes": [
+    "two-mode training",
+    "two-mode test",
+    "epoch diagnostics",
+    "checkpoint write"
+  ],
+  "measured_completed_epoch_seconds": 198.33722319989465
+}

@@ -1,0 +1,8 @@
+run_id,methode,weight_bits,modus,epoch,accuracy_percent,correct1,test_ce,best_epoch,best_accuracy_percent,source
+single_fp100,W32/A32 afzonderlijk,32,W32/A32,100,94.54517516902274,24612,0.2841033752922933,53,94.74492931776275,bronnen/single_fp100/selected_metrics.csv
+single_mx100,E2M3/A32 afzonderlijk,6,E2M3/A32,100,94.82559926244622,24685,0.2648712515730248,73,94.8678549477566,bronnen/single_mx100/selected_metrics.csv
+dedicated_e2m1_100,E2M1/A32 afzonderlijk,4,E2M1/A32,100,94.82175783650891,24684,0.2492345711685712,97,94.9062692071297,bronnen/dedicated_e2m1_100/selected_metrics.csv
+dual100,Gezamenlijk: directe MX-kwantisatie,6,E2M3/A32,100,95.03303626306085,24739,0.2412773963217363,75,95.1559618930547,bronnen/dual100/selected_metrics.csv
+dual100,Gezamenlijk: directe MX-kwantisatie,4,E2M1/A32,100,95.02535341118623,24737,0.1975735850270423,75,94.92547633681623,bronnen/dual100/selected_metrics.csv
+trunc100,Gezamenlijk: truncatiebewust,6,E2M3/A32,100,94.9638905961893,24721,0.2389135364381242,52,95.07529194837123,bronnen/trunc100/selected_metrics.csv
+trunc100,Gezamenlijk: truncatiebewust,4,E2M1/A32,100,94.94084204056546,24715,0.1944021041875392,52,95.009987707437,bronnen/trunc100/selected_metrics.csv

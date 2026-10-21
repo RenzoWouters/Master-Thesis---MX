@@ -1,0 +1,349 @@
+{
+  "schema": "anyprecision-svhn-pilot5-report-v1",
+  "status": "PASS",
+  "command": "run",
+  "started_at": "2026-10-16T14:33:02.355279+02:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\pilot_runs\\anyprecision_svhn_pilot5\\20261016_143302_354821_run",
+  "argv": [
+    ".\\software_checks\\anyprecision_svhn_pilot5_v1\\run_svhn.py",
+    "run",
+    "--download",
+    "--stop-after-epoch",
+    "5"
+  ],
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "limitations": [
+    "pilot: only first five epochs of the 100-epoch recipe",
+    "test-selected score is not independent of checkpoint selection",
+    "authors historical seed and environment not established",
+    "cuDNN benchmark=True: bit-exact CUDA replay is not promised",
+    "no MX, truncation or hardware energy measurement"
+  ],
+  "config": {
+    "schema": "anyprecision-svhn-pilot5-protocol-v1",
+    "purpose": "five_complete_epochs_of_author_code_recipe_not_paper_endpoint",
+    "dataset": "svhn",
+    "train_split": "train_extra",
+    "test_split": "test",
+    "train_examples": 604388,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "planned_epochs": 100,
+    "pilot_stop_epoch": 5,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "all five precisions on official test after EVERY epoch",
+    "selection_policy": "first strict maximum of upstream W32/A32 test top1",
+    "reporting_policy": "same best checkpoint at all bits AND final epoch at all bits",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "quantizer": "original, FP master requantization; NO MX; NO stored-code truncation",
+    "rng_policy": "global streams as upstream; saved/restored at epoch boundaries",
+    "checkpoint_policy": "immutable per epoch, plus separate best and last copies",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "package_sha256": {
+    "run_svhn.py": "f21e4b919213ea94ec4dd9a19df17f35b6114bd9557ea2cb6c4fba2aad2bfc6c",
+    "svhn_support.py": "f43179029d83d9be2c3927f9093f6543df46a2b448679ae891f0eceb6cd0259b",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "REUSE_MANIFEST.json": "6d8c5aabd9d62bb45b124b5aa6e189e7e4d876540a3088e4b56ff572b5ed00db",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "paper_targets.json": "13eec1ba57747e5457e45ab91504cd7dfcb9747ad926b97bfb33749940894ec8",
+    "SVHN_pilot5_resultaten.ipynb": "dd5410cb40ecf9d8b26ffb17d17e2597f54cb4304e0d8a2ccd18882fd341944a"
+  },
+  "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "seed_source": "explicit local seed, not reported by authors",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "torch_num_threads": 16,
+    "matmul_fp32_precision": "none",
+    "cudnn_conv_fp32_precision": "tf32",
+    "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "exact_cuda_resume_guaranteed": false
+  },
+  "data_preparation_seconds_including_download_and_checksums": 2825.360108699999,
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "extra_32x32.mat": {
+        "split": "extra",
+        "md5": "a93ce644f1a588dc4d68dda5feec44a7",
+        "sha256": "a133a4beb38a00fcdda90c9489e0c04f900b660ce8a316a5e854838379a71eb3",
+        "bytes": 1329278602
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": [
+      {
+        "split": "train",
+        "requested_url": "http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
+        "started_at": "2026-10-16T14:33:07.347224+02:00",
+        "partial_file": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn\\.download_deb9d2fd23174831a5fcc3040cb4946b\\train_32x32.mat.attempt1.part",
+        "response_url": "http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
+        "status": "PASS",
+        "ended_at": "2026-10-16T14:37:06.539999+02:00",
+        "hashes": {
+          "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+          "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+          "bytes": 182040794
+        }
+      },
+      {
+        "split": "extra",
+        "requested_url": "http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
+        "started_at": "2026-10-16T14:37:06.541764+02:00",
+        "partial_file": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn\\.download_e15d260bfc5e40bba7c89d4632e7e407\\extra_32x32.mat.attempt1.part",
+        "response_url": "http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
+        "status": "PASS",
+        "ended_at": "2026-10-16T15:18:07.178134+02:00",
+        "hashes": {
+          "md5": "a93ce644f1a588dc4d68dda5feec44a7",
+          "sha256": "a133a4beb38a00fcdda90c9489e0c04f900b660ce8a316a5e854838379a71eb3",
+          "bytes": 1329278602
+        }
+      },
+      {
+        "split": "test",
+        "requested_url": "http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
+        "started_at": "2026-10-16T15:18:07.179242+02:00",
+        "partial_file": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn\\.download_fe448e87a2574d7f95ae5334f9efa514\\test_32x32.mat.attempt1.part",
+        "response_url": "http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
+        "status": "PASS",
+        "ended_at": "2026-10-16T15:20:12.705272+02:00",
+        "hashes": {
+          "md5": "eb5a983be6a315427106f1b164d9cef3",
+          "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+          "bytes": 64275384
+        }
+      }
+    ]
+  },
+  "dataset_load_seconds": 8.292864499991992,
+  "dataset_selection": {
+    "train": {
+      "n": 604388,
+      "labels_histogram": [
+        50498,
+        104421,
+        85325,
+        69262,
+        58091,
+        60372,
+        47309,
+        49592,
+        40403,
+        39115
+      ],
+      "label_sha256": "93062062776ba0edc29e80fab21f8e0e3a96665c945a01916087fdc086c253a3"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "train_split_order": [
+      "train",
+      "extra"
+    ],
+    "held_out_validation_examples": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  },
+  "contract_sha256": "0a473b9d47ca578c7296387e57f39261e275faca8be1e80797566b9740488bd1",
+  "completed_epoch": 5,
+  "optimizer_steps": 23610,
+  "selected_best_epoch": 5,
+  "selected_last_epoch": 5,
+  "checkpoint_selection": {
+    "policy": "first strict maximum of upstream W32/A32 test top1",
+    "best": {
+      "epoch": 5,
+      "file": "best_checkpoint.pt",
+      "sha256": "ff3a670fc1e3a15249bbfe7b222aac03fe45b81aa2464682d42d1ca52ae7c269",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\pilot_runs\\anyprecision_svhn_pilot5\\20261016_143302_354821_run\\checkpoints\\epoch_00005.pt",
+      "selection_score_W32_A32": 95.45559310678624
+    },
+    "last": {
+      "epoch": 5,
+      "file": "last_checkpoint.pt",
+      "sha256": "ff3a670fc1e3a15249bbfe7b222aac03fe45b81aa2464682d42d1ca52ae7c269",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\pilot_runs\\anyprecision_svhn_pilot5\\20261016_143302_354821_run\\checkpoints\\epoch_00005.pt",
+      "selection_score_W32_A32": 95.45559310678624
+    },
+    "same_checkpoint": true,
+    "selected_on_official_test": true,
+    "independent_test_estimate": false,
+    "completed_epochs": 5,
+    "paper_epochs": 100
+  },
+  "timing_estimate": {
+    "available": true,
+    "planned_epochs": 100,
+    "steady_epoch_seconds": [
+      252.34887639999215,
+      249.7420232000004,
+      236.4993950000062,
+      243.35313679999672
+    ],
+    "steady_epochs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "median_epoch_seconds": 246.54757999999856,
+    "first_epoch_seconds": 231.3849590000027,
+    "estimated_100_epoch_seconds": 24639.59537899986,
+    "observed_range_projection_seconds": [
+      23644.825064000615,
+      25213.923722599226
+    ],
+    "range_is_confidence_interval": false,
+    "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+    "excludes": [
+      "download",
+      "dependency installation",
+      "dataset loading",
+      "final report export"
+    ],
+    "limitations": [
+      "same laptop/backend/data loading conditions required",
+      "five epochs do not measure the LR transitions at 50/75/90",
+      "thermal and background-load drift over a long run not established"
+    ]
+  },
+  "synthetic_fixture_only": false,
+  "source_unchanged": true,
+  "dataset_files_unchanged": true,
+  "ended_at": "2026-10-16T15:40:37.156439+02:00",
+  "session_wall_seconds": 4054.8009592000017
+}

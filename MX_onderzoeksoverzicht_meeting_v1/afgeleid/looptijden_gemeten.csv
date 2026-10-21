@@ -1,0 +1,6 @@
+run_id,methode,passes_per_batch,train_s,test_s,epoch_total_s,session_s,source
+any100,Any-Precision vijf W/A-modi,5,3130.7414669000573,577.5606078001874,3717.05783949999,3723.6524808999966,bronnen/any100/epoch_times.csv
+single_fp100,W32/A32 afzonderlijk,1,1244.634428700083,298.72741780010983,1551.297778200009,1558.6002404000028,bronnen/single_fp100/epoch_times.csv
+single_mx100,E2M3/A32 afzonderlijk,1,2168.5391551999783,677.6654628000688,2857.8228113998193,2865.595845700009,bronnen/single_mx100/epoch_times.csv
+dual100,Gezamenlijk: directe MX-kwantisatie,2,3519.512571300089,1066.761082499812,4600.825822799816,4608.853562400036,bronnen/dual100/epoch_times.csv
+trunc100,Gezamenlijk: truncatiebewust,2,3079.8140936999116,846.6431677999208,3939.265022800071,3947.3369545000023,bronnen/trunc100/epoch_times.csv

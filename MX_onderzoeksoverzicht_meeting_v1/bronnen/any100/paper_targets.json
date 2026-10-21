@@ -1,0 +1,23 @@
+{
+  "source": "User-supplied Any-Precision_Deep_Neural_Networks_ResearchPaper.pdf",
+  "authors": "Haichao Yu et al.",
+  "table": "Table 1, CNN-8 / SVHN / Ours",
+  "pdf_page": 6,
+  "printed_page": 10768,
+  "training_protocol_page": 5,
+  "epochs": 100,
+  "accuracy_percent_by_bits": {
+    "1": 88.21,
+    "2": 94.94,
+    "4": 96.19,
+    "8": 96.22,
+    "32": 96.29
+  },
+  "dedicated_columns_not_used": true,
+  "historical_checkpoint_selection_proven": false,
+  "not_a_success_threshold_for_five_epochs": true,
+  "train_split": "train_extra",
+  "train_examples": 604388,
+  "usage": "literature context only; neither dataset nor training budget match this pilot",
+  "train_only_results_are_not_a_paper_replication": true
+}

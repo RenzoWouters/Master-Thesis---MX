@@ -1,0 +1,50 @@
+{
+  "schema": "svhn-trainonly-change-manifest-v1",
+  "previous_package": "anyprecision_svhn_pilot5_v1.zip",
+  "previous_package_sha256": "3a74c3dd14063b9dccf4c52eb20901341475cffff34c28da5c67b6cde52c2253",
+  "research_change": "complete official train only instead of train+extra; fresh initialization",
+  "unchanged_training_hyperparameters_except_data": [
+    "model",
+    "expand",
+    "batch_size",
+    "optimizer",
+    "lr",
+    "weight_decay",
+    "planned_epochs",
+    "scheduler_milestones",
+    "scheduler_gamma",
+    "bits",
+    "workers",
+    "pin_memory",
+    "drop_last",
+    "seed",
+    "train_shuffle",
+    "test_shuffle"
+  ],
+  "unchanged_functions_ast_sha256": {
+    "run_svhn.py:run_epochs": "934965ecd57847533342802996ba180e316c811c6db0f64869ba4086268cc2bb",
+    "run_svhn.py:restore_timing_sidecar": "25e2a3c0bb04850aba8b12f9abc40abedb797c8b823b07c7d94e317030091854",
+    "run_svhn.py:dependencies": "7f48a4cffe6a3722e3b73b5b6f5b75941f71c779d245089854dcbf7c765b0513",
+    "run_svhn.py:verify_unchanged": "03a5c5ab796fb73b105cc146a0ac96a2639960060b7bb0916e9e0690774821da",
+    "svhn_support.py:runtime": "ce99e17895dc22c329f6f8cdabe43da60683f5041c6b34df77af2bc3499281b8",
+    "svhn_support.py:import_source": "1c216d3d574529c37de571d840bc6ccdb746831298219c81137b9961852b10ee",
+    "svhn_support.py:load_forward": "a08ecb6243d948e757648a601378c5e02b3e9ba38a020a900316e73b65fcf31d",
+    "svhn_support.py:phase": "ee13e352349fc953a77c8470e9db822d746f6ba998ea60b12a461a2dfed86ab5",
+    "svhn_support.py:MeterRecorder": "63c98f0e2b9581a1521376a0e86e84da004e41819e4d30fd0523e323de31e5d4",
+    "svhn_support.py:TrackedLoader": "e2bc2229877567576e9e7290cf2c0d9d009397d7af15276d81616dd6a2c00a8e",
+    "svhn_support.py:IndexedDataset": "2da123e00215c80a4e632451a3a0042e31020e6ee592810a12f907c070717fe1",
+    "svhn_support.py:best_record": "ca29d96b55dcd40a9b23eb1ca55c65bf0171e65c67a11006299a936a30381a06",
+    "svhn_support.py:estimate_time": "0a163cd0780da94f30d74eb108c47be2ef1273a9584ba5fa1db2e4b8221bcc60",
+    "svhn_support.py:validate_dataset": "b4563b9e8e50881f0bdc76f5c0938058d0adbe0ebc0ec84e9db7076a54fcc0f7"
+  },
+  "extra_file_policy": "not opened, checked, loaded, downloaded, modified or deleted",
+  "validation_split_added": false,
+  "pilot_limit_epochs": 5,
+  "reported_checkpoints": [
+    "first strict best W32/A32 on official test",
+    "last completed epoch"
+  ],
+  "compatibility_patch": "same two utils.py compatibility changes as previous pilot; separate compatibility.patch",
+  "original_source_archive_unchanged": true,
+  "not_a_paper_reproduction": true
+}

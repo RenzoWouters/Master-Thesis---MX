@@ -1,0 +1,7 @@
+run_id,bits,file,reported_file_bytes,raw_tensor_bytes,full_test_rerun,source
+single_mx100,6,mx_source_last.pt,163941,121248,False,bronnen/single_mx100/run_report.json:mx_exports.last_epoch
+dedicated_e2m1_100,4,mx_source_last.pt,131301,88608,False,bronnen/dedicated_e2m1_100/run_report.json:mx_exports.last_epoch
+dual100,6,mx_direct_MXFP6_E2M3_last.pt,163813,121248,False,bronnen/dual100/run_report.json:mx_exports.last_epoch
+dual100,4,mx_direct_MXFP4_E2M1_last.pt,131173,88608,False,bronnen/dual100/run_report.json:mx_exports.last_epoch
+trunc100,6,mx_source_E2M3_last.pt,164005,121248,False,bronnen/trunc100/run_report.json:mx_exports.last_epoch
+trunc100,4,mx_derived_E2M1_last.pt,131621,88608,False,bronnen/trunc100/run_report.json:mx_exports.last_epoch

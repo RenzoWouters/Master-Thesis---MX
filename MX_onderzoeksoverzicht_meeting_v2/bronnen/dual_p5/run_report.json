@@ -1,0 +1,468 @@
+{
+  "schema": "mx-weights-dual-pilot5-report-v1",
+  "status": "PASS",
+  "command": "run",
+  "mode": "joint",
+  "started_at": "2026-10-19T18:11:08.652670+02:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_pilot5_v1_1\\20261019_181108_652166_joint_run",
+  "argv": [
+    ".\\software_checks\\mx_weights_dual_pilot5_v1_1\\run_train.py",
+    "run",
+    "--stop-after-epoch",
+    "5"
+  ],
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "limitations": [
+    "train only; two MX weight modes; this is not a paper reproduction",
+    "FP32 update master, FP32 gradients/Adam; A32; no truncation",
+    "two forward/backwards: E2M3 hard CE, E2M1 detached soft CE, one Adam step",
+    "no same-protocol accuracy comparison with the older five-mode reference",
+    "official test used for checkpoint selection, not an independent test estimate",
+    "numerical weight-only MX emulation; no native MX kernel or energy claim",
+    "GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism",
+    "five epochs test learning mechanics, not final convergence"
+  ],
+  "config": {
+    "schema": "mx-weights-dual-pilot5-protocol-v1",
+    "purpose": "five complete train-only epochs: joint weight-only MX quantization without truncation",
+    "mode": "joint",
+    "weight_format": "MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6
+    ],
+    "weight_formats": {
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in BOTH modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "same power-3 frexp rule on current G(W) for both modes; independent direct encoding; scales equal for same W",
+    "mx_rounding": "nearest ties-to-even; finite FP32 source, scalar subnormal flush, local subnormals supported",
+    "ste_policy": "identity through each MX quantizer; retain original G(W) derivatives",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": false,
+    "distillation": true,
+    "loss": "E2M3 hard CE + E2M1 upstream soft CE with detached E2M3 teacher; T=1; no division by 2",
+    "passes_per_training_batch": 2,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "two active weight-mode banks; legacy keys32/4 do NOT imply A32/A4; banks1/2/8 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "planned_epochs": 100,
+    "pilot_stop_epoch": 5,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "both modes on complete official test after every epoch; hard CE for both",
+    "selection_policy": "first strict maximum of E2M3/A32 official-test top1",
+    "reporting_policy": "both modes from same selected best checkpoint; also both at final epoch",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "independent direct E2M3 and E2M1 files per selected checkpoint; NOT one truncatable source",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "package_sha256": {
+    ".gitattributes": "d86d5393f60579ceba78f7323ec03c9ac562d01959bfa15d966a8c12384b21e1",
+    ".gitignore": "063f899b95586d652fc56d403f02d4402a78cff4ee4b41b90333b5063c270d65",
+    "CHECK_FIX.md": "4d5df677df350b6c2cbd8a7c4c87268309033a302fa4aa3408e5b5be95386ac4",
+    "CHECK_FIX_MANIFEST.json": "bcc11e0ec0bf7eacc769af8fa5b31a5e7f09d818bc13b6396dc0e566163cc267",
+    "CODEWIJZIGINGEN.md": "78076d11657c5fee5e611b0b297ff1b5e965b5e2c1f1d558ae2590f829d389c8",
+    "COMPATIBILITY.md": "8dbea03e569e016725107c819eafe38483d1694bc1bbcd956b907867eb447262",
+    "MX_dual_pilot5_resultaten.ipynb": "2f6bc8e14362d06b45a5edfcf9c68d2af36b92849aafd855649a10c162869d13",
+    "PROTOCOL.md": "0a026d681c1092af8c36ed9e278b8da7058f1f5617c29021e37c045d228c4e59",
+    "README.md": "7961ae1505230b58e342c9241e6f4ab254f4a0b0aacd79f252a477b50b556672",
+    "REUSE_MANIFEST.json": "644b86358ac16960d8e7f1f0d7e2faa577bc467bc203b6dbd0e11ed046b68f1c",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "e3c9352e59e947dd3c2e77f88cdc78a2d6ac64eae01a8d966aab9fac3e389051",
+    "check_fix.patch": "f5f4a9ad52374ead1c47b3ad841a6f0ff79b70c2daeb040111001df961b002e6",
+    "codec_e2m1.patch": "e8c13ccdbab28968e8100c14ab991e5c8cf7cff95e627e6b9c49235fb37143a0",
+    "compatibility.patch": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742",
+    "dual_adapter.py": "77cb991a8fb0f412708ec90503fba83b8f1c3d27bafa6043e1e6f0a3358b16c6",
+    "dual_support.py": "be5505ae8c64af09158f075e2d7502a2174346dba899499b5e0877090aabd307",
+    "forward_selectors.patch": "b9536fef186655c2947266a07b3afd7e98f77bcf099c0f98134bbcbc5b77fc6b",
+    "local_validation/VALIDATION.md": "f29ccc4ffdb925c25ca2360e44c2d2328c97fecd6f030a3d93701e0d4eb49c54",
+    "local_validation/check_fix_helper_tests.json": "09cb12b4a122ddc0c3c70970f5d58e1c131384316759a7a33d997496a2f42fb6",
+    "local_validation/container_pip_check.txt": "b7031ca67e6591aaa5a68e5d144db6f56229eaf671276a5db4f3a9295fbb347a",
+    "local_validation/container_preflight_report.json": "00a9e6a6eb2e92633913c1d3e5b9fc66d65bc31828fb7ac7d90ce649970ec19b",
+    "local_validation/fresh_process_export_test.txt": "44ed7324ddae303a54ec1087538f378372c9877bdd0df88e61bbe3474625f6dd",
+    "local_validation/test_check_fix.py": "36b1090ea77ddd1b2091894c4bbb1c45e3e534efda473b42b69f2662ed54c74e",
+    "local_validation/test_training.py": "606628c678beb4502bc1de0641981c5c0219f283ca033837eb14902ec3866779",
+    "local_validation/validation.log": "e3799e284c3b9de98e5b4637a6b2b1c4a57afdfcbca5e8b122953bd1ee2688cb",
+    "local_validation/validation_report.json": "e78eccc7e85f817581bd27ba84d85e4d0b8129dff315485292c1c94f85761612",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "provenance/dual_forward.py.txt": "e2f5e0fbf8673b637b87b5a49b197d57e9968a842ef6f6b966baa9ea886dda01",
+    "provenance/single_CODEWIJZIGINGEN.md": "cbae51038a878f1115307bb467e01088c86d95d75934bfe767d8faca4cbf905b",
+    "provenance/single_PROTOCOL.md": "2ae2d40f59d4a8f152d45184673b0e3fefd261e0faaf4f7bc5106933353c15e4",
+    "provenance/single_TRAINING_CHANGE_MANIFEST.json": "d8ee58fcc63ad4a392aadc43f1a6745f884aa8a7908d6a57508de1006abba080",
+    "provenance/single_run_train.py": "157be4ad4047e7505f1d82ddd2459698dc71edb0af17f6f2bb5e0c2e093b9567",
+    "provenance/single_single_support.py": "18c0ca6c43a2bfc43089fea857d6cffd8394808e5ece922fdba5f7b035174784",
+    "provenance/v1_cli_guards.json": "1eeba3f7920380a60664aec3d4fbe87e858d6729f40ef341bccfa01b90485c6b",
+    "provenance/v1_container_pip_check.txt": "b7031ca67e6591aaa5a68e5d144db6f56229eaf671276a5db4f3a9295fbb347a",
+    "provenance/v1_container_preflight_report.json": "5a2c9f48cba423a4c560706797ed95011467558a8d521f6f6aab2612a5e298f5",
+    "provenance/v1_test_dual.py.txt": "b78bdecc48230b5f2acf9a10a231cb66ef0944df4fdbde4d10755cee132cdc5d",
+    "provenance/v1_validation.md": "bff0a8ecae6fa37b59c712460a8af369fd2e3baa35abbf782755424abef8158b",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "d303c5c8bcc18b7a3ba84087ed1e496ac5bfa87e7e2c8c1650ad661b1f6a6db1",
+    "runner_changes.patch": "6646dd18a6a371747671babe7bc104233d89bf617683a6670e86a439ae52fc60",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_dual.py": "ba1179ff9c41d43f7b7f89e8f7ca39b8c680e1987d4e5d8a7490d4358954db41",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "seed_source": "explicit local seed, not reported by authors",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "torch_num_threads": 16,
+    "matmul_fp32_precision": "none",
+    "cudnn_conv_fp32_precision": "tf32",
+    "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "exact_cuda_resume_guaranteed": false
+  },
+  "data_preparation_seconds_including_download_and_checksums": 0.7745930000091903,
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": []
+  },
+  "dataset_load_seconds": 2.8075007000006735,
+  "dataset_selection": {
+    "train": {
+      "n": 73257,
+      "labels_histogram": [
+        4948,
+        13861,
+        10585,
+        8497,
+        7458,
+        6882,
+        5727,
+        5595,
+        5045,
+        4659
+      ],
+      "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "train_split_order": [
+      "train"
+    ],
+    "extra_used": false,
+    "held_out_validation_examples": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  },
+  "contract_sha256": "77482bc29694ea7fd63ab70395bac09a14b8b2133f8f26caaed4aada315f043c",
+  "completed_epoch": 5,
+  "optimizer_steps": 2865,
+  "selected_best_epoch": 5,
+  "selected_last_epoch": 5,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "checkpoint_selection": {
+    "policy": "first strict maximum of E2M3/A32 official-test top1",
+    "best": {
+      "epoch": 5,
+      "file": "best_checkpoint.pt",
+      "sha256": "30f17be91f6e8d214ef680e2fce6a46369c433d6ab7b8d1ec7789fbc1c3d763b",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_pilot5_v1_1\\20261019_181108_652166_joint_run\\checkpoints\\epoch_00005.pt",
+      "selection_score_E2M3": 92.9663490994107
+    },
+    "last": {
+      "epoch": 5,
+      "file": "last_checkpoint.pt",
+      "sha256": "30f17be91f6e8d214ef680e2fce6a46369c433d6ab7b8d1ec7789fbc1c3d763b",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_dual_pilot5_v1_1\\20261019_181108_652166_joint_run\\checkpoints\\epoch_00005.pt",
+      "selection_score_E2M3": 92.9663490994107
+    },
+    "same_checkpoint": true,
+    "selected_on_official_test": true,
+    "independent_test_estimate": false,
+    "selection_mode": "MXFP6_E2M3/A32",
+    "both_modes_from_same_selected_checkpoint": true
+  },
+  "training_summary": {
+    "completed_epochs": 5,
+    "pilot_completed": true,
+    "full_100_epoch_training_completed": false,
+    "optimizer_steps": 2865,
+    "training_forward_passes": 5730,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "mode": "joint",
+    "distillation": true,
+    "truncation": false,
+    "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "measured_completed_epoch_seconds": 363.8901249000919,
+    "gradient_checks_before_every_update": true,
+    "fp32_masters_and_moments_verified": true,
+    "synthetic_fixture_only": false
+  },
+  "timing_estimate": {
+    "available": true,
+    "planned_epochs": 100,
+    "steady_epoch_seconds": [
+      73.68042400002014,
+      73.28103660000488,
+      80.61965100001544,
+      55.743056300038006
+    ],
+    "steady_epochs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "median_epoch_seconds": 73.48073030001251,
+    "first_epoch_seconds": 80.56595700001344,
+    "estimated_100_epoch_seconds": 7355.158256701252,
+    "observed_range_projection_seconds": [
+      5599.128530703776,
+      8061.911406001542
+    ],
+    "range_is_confidence_interval": false,
+    "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+    "excludes": [
+      "download",
+      "dependency installation",
+      "dataset loading",
+      "final report export"
+    ],
+    "limitations": [
+      "same laptop/backend/data loading conditions required",
+      "five epochs do not measure the LR transitions at 50/75/90",
+      "thermal and background-load drift over a long run not established"
+    ],
+    "weight_mode": "MXFP6_E2M3+MXFP4_E2M1",
+    "includes": [
+      "two-mode training",
+      "two-mode test",
+      "epoch diagnostics",
+      "checkpoint write"
+    ],
+    "measured_completed_epoch_seconds": 363.8901249000919
+  },
+  "mx_exports": {
+    "best_E2M3_test": {
+      "6": {
+        "file": "mx_direct_MXFP6_E2M3_best.pt",
+        "sha256": "46927d52c061b7f560c606dbd8ec3b2d888b8f883374a1df8d45183bbc691e2f",
+        "bytes": 163813,
+        "epoch": 5,
+        "weight_bits": 6,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": false
+      },
+      "4": {
+        "file": "mx_direct_MXFP4_E2M1_best.pt",
+        "sha256": "4ac381274b112a4e6a4643723f0cc915a80668e50abdd1f242505aefd0f4eac5",
+        "bytes": 131173,
+        "epoch": 5,
+        "weight_bits": 4,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": false
+      }
+    },
+    "last_epoch": {
+      "6": {
+        "file": "mx_direct_MXFP6_E2M3_last.pt",
+        "sha256": "46927d52c061b7f560c606dbd8ec3b2d888b8f883374a1df8d45183bbc691e2f",
+        "bytes": 163813,
+        "epoch": 5,
+        "weight_bits": 6,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": false
+      },
+      "4": {
+        "file": "mx_direct_MXFP4_E2M1_last.pt",
+        "sha256": "4ac381274b112a4e6a4643723f0cc915a80668e50abdd1f242505aefd0f4eac5",
+        "bytes": 131173,
+        "epoch": 5,
+        "weight_bits": 4,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": false
+      }
+    }
+  },
+  "synthetic_fixture_only": false,
+  "source_unchanged": true,
+  "dataset_files_unchanged": true,
+  "ended_at": "2026-10-19T18:17:21.489311+02:00",
+  "session_wall_seconds": 372.83589260000736
+}

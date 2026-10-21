@@ -1,0 +1,12 @@
+RESULTATEN: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_step1\20261016_200801_390866_evaluate
+CONFIG: MXFP6 E2M3; groep=32; schaal=E8M0; A32/ReLU; BN32; geen training/truncatie.
+EVALUATIE best, epoch 54: vier controlepaden; geen training.
+  reference_W32_A32: 94.9447% (24716/26032)
+  wrapper_MX_off_A32: 94.9447% (24716/26032)
+  MXFP6_E2M3_A32: 94.9600% (24720/26032)
+  stored_MXFP6_E2M3_A32: 94.9600% (24720/26032)
+EVALUATIE last, epoch 100: vier controlepaden; geen training.
+  reference_W32_A32: 94.7872% (24675/26032)
+  wrapper_MX_off_A32: 94.7872% (24675/26032)
+  MXFP6_E2M3_A32: 94.7296% (24660/26032)
+  stored_MXFP6_E2M3_A32: 94.7296% (24660/26032)

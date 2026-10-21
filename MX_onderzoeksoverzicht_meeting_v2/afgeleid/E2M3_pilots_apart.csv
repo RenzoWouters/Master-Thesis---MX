@@ -1,0 +1,4 @@
+run_id,traject,epoch,correct1,accuracy_percent
+single_mx_p5,E2M3 dedicated (pilot),5,24253,93.1661032575292
+dual_p5,Twee modi direct (pilot),5,24201,92.96634910878919
+trunc_p5,Twee modi truncatiebewust (pilot),5,24163,92.82037492317147

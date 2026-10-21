@@ -1,0 +1,6 @@
+uitvoering,path,epoch,accuracy_percent,correct1,n,test_ce,bron,delta_vs_dedicated_pp,net_correct_difference_vs_dedicated
+Gezamenlijk direct / direct E2M1 (A),A_direct_E2M1,100,95.02535341118623,24737,26032,0.1975736443230925,bronnen/gap/metrics.csv,0.2035955746773226,53
+Zelfde model / afronden uit E2M3 (B),B_round_from_E2M3,100,94.45298094652735,24588,26032,0.2132679627061106,bronnen/gap/metrics.csv,-0.3687768899815609,-96
+Zelfde model / achteraf trunceren (C),C_truncate_E2M3,100,93.58097725875845,24361,26032,0.2293545586077087,bronnen/gap/metrics.csv,-1.2407805777504564,-323
+Gezamenlijk truncatiebewust / trunceren,TA,100,94.94084204056546,24715,26032,0.1944021041875392,bronnen/trunc100/epoch_metrics.csv,0.11908420405654851,31
+Dedicated / direct E2M1,DED,100,94.82175783650891,24684,26032,0.2492345711685712,bronnen/dedicated_e2m1_100/epoch_metrics.csv,0.0,0

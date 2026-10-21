@@ -1,0 +1,13 @@
+role,epoch,layer,n_weights,blocks,padding_slots,high_local_subnormal_count,nonzero_dropped_suffix_count,C_new_zero_vs_high,A_zero_count,B_zero_count,C_zero_count,scale_exp_min,scale_exp_max,high_code_and_scale_bytes,low_code_and_scale_bytes,sign_exponent_scale_preserved_C
+best_E2M3_test,75,layers.3,1728,64,320,452,1340,191,133,170,222,-6,-5,1600,1088,True
+best_E2M3_test,75,layers.6,2304,80,256,573,1822,241,165,221,280,-5,-5,2000,1360,True
+best_E2M3_test,75,layers.10,4608,160,512,1264,3611,550,382,487,639,-6,-5,4000,2720,True
+best_E2M3_test,75,layers.13,9216,288,0,2759,7273,1263,793,1056,1444,-6,-5,7200,4896,True
+best_E2M3_test,75,layers.16,9216,288,0,2640,7076,1187,790,1002,1364,-6,-5,7200,4896,True
+best_E2M3_test,75,layers.20,102400,3200,0,30166,77376,13559,8787,11218,15656,-9,-5,80000,54400,True
+last_epoch,100,layers.3,1728,64,320,452,1341,195,132,170,221,-6,-5,1600,1088,True
+last_epoch,100,layers.6,2304,80,256,569,1824,249,163,224,286,-5,-5,2000,1360,True
+last_epoch,100,layers.10,4608,160,512,1258,3649,553,383,489,643,-6,-5,4000,2720,True
+last_epoch,100,layers.13,9216,288,0,2752,7251,1255,781,1049,1437,-6,-5,7200,4896,True
+last_epoch,100,layers.16,9216,288,0,2653,7058,1213,794,1020,1393,-6,-5,7200,4896,True
+last_epoch,100,layers.20,102400,3200,0,30117,77485,13576,8764,11255,15660,-9,-5,80000,54400,True

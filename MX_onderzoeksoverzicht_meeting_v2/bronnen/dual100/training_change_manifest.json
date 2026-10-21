@@ -1,0 +1,38 @@
+{
+  "schema": "mx-dual-reference100-change-v1",
+  "parent": "mx_weights_dual_pilot5_v1_1.zip",
+  "parent_sha256": "29869637c9ff3a37adde6a64dcae81dad822ca2d5655315b4191fb4bee2c75a7",
+  "old_config_schema": "mx-weights-dual-pilot5-protocol-v1",
+  "new_config_schema": "mx-weights-dual-reference100-protocol-v1",
+  "changed_config_keys": [
+    "schema",
+    "purpose",
+    "pilot_stop_epoch (removed)",
+    "target_final_epoch (added)"
+  ],
+  "unchanged_numeric_epoch_loop": true,
+  "run_epochs_sha256": "f5f8d36fcc5d8f8845e88cd305aaae4f46739ff8399136c26ea86d243485facd",
+  "inherited_numeric_files": {
+    "dual_support.py": "be5505ae8c64af09158f075e2d7502a2174346dba899499b5e0877090aabd307",
+    "dual_adapter.py": "77cb991a8fb0f412708ec90503fba83b8f1c3d27bafa6043e1e6f0a3358b16c6",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "test_dual.py": "ba1179ff9c41d43f7b7f89e8f7ca39b8c680e1987d4e5d8a7490d4358954db41",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "compatibility.patch": "2b811c3debf1754da3d0a6e55b302b4c4c95d02f65cef7ff7751b0eb85000742",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "changes": [
+    "100-epoch endpoint, fresh run",
+    "separate output folder and resume contract",
+    "strict completion and lr_next audit",
+    "notebook actual durations and LR plot"
+  ],
+  "no_new_optimization_or_quantizer_changes": true,
+  "pilot_checkpoint_warmstart_allowed": false
+}

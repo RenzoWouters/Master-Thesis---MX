@@ -1,0 +1,15 @@
+{
+  "completed_epochs": 100,
+  "full_100_epoch_training_completed": true,
+  "optimizer_steps": 57300,
+  "train_examples": 73257,
+  "test_examples": 26032,
+  "mode": "mx",
+  "distillation": false,
+  "truncation": false,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "measured_completed_epoch_seconds": 2645.150970800605,
+  "gradient_checks_before_every_update": true,
+  "fp32_masters_and_moments_verified": true,
+  "synthetic_fixture_only": false
+}

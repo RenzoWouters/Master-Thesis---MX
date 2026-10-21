@@ -1,0 +1,8 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_e2m1_dedicated_reference100\20261021_182548_162551_mx_check
+DEDICATED E2M1/A32: mx; 100 epochs vanaf initialisatie; A32; FP32-master; geen distillatie of truncatie.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+CHECK PASS: codec, model, gradient en twee synthetische updates per modus. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_e2m1_dedicated_reference100\20261021_182548_162551_mx_check\run_report.json
