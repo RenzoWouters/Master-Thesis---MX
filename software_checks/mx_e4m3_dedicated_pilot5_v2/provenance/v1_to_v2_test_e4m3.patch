@@ -1,0 +1,145 @@
+--- v1/test_e4m3.py
++++ v2/test_e4m3.py
+@@ -78,16 +78,86 @@
+             and (not a.is_floating_point() or torch.equal(torch.signbit(a), torch.signbit(b))))
+ 
+ 
+-def run_tests(device: str = 'cpu') -> dict:
++def _comparison_details(actual: torch.Tensor, expected: torch.Tensor,
++                        labels: list | None = None) -> dict:
++    """JSON-safe exact diagnostic, including signed zero and FP64 bit patterns."""
++    a, b = actual.detach().cpu(), expected.detach().cpu()
++    result = {'actual_dtype': str(a.dtype), 'expected_dtype': str(b.dtype),
++              'actual_shape': list(a.shape), 'expected_shape': list(b.shape),
++              'exact': _exact(a, b)}
++    if a.dtype != b.dtype or a.shape != b.shape:
++        return result
++    a, b = a.contiguous().flatten(), b.contiguous().flatten()
++    numeric = a != b
++    signs = torch.signbit(a) != torch.signbit(b)
++    mismatches = torch.nonzero(numeric | signs).flatten().tolist()
++    error = float((a - b).abs().max()) if a.numel() else 0.0
++    result.update(numeric_mismatch_count=int(numeric.sum()),
++                  signbit_mismatch_count=int(signs.sum()),
++                  max_abs_error=error if math.isfinite(error) else repr(error),
++                  first_mismatches=[])
++    for index in mismatches[:16]:
++        av, bv = float(a[index]), float(b[index])
++        abits = int(a[index].view(torch.int64)) & ((1 << 64) - 1)
++        bbits = int(b[index].view(torch.int64)) & ((1 << 64) - 1)
++        entry = {'index': index, 'label': labels[index] if labels is not None else index,
++                 'actual_hex': av.hex(), 'expected_hex': bv.hex(),
++                 'actual_fp64_bits': f'0x{abits:016x}',
++                 'expected_fp64_bits': f'0x{bbits:016x}',
++                 'actual_signbit': bool(torch.signbit(a[index])),
++                 'expected_signbit': bool(torch.signbit(b[index])),
++                 'same_sign_ulp_distance': abs(abits - bbits)
++                    if math.isfinite(av) and math.isfinite(bv)
++                    and bool(torch.signbit(a[index])) == bool(torch.signbit(b[index])) else None}
++        result['first_mismatches'].append(entry)
++    return result
++
++
++def legacy_decode_diagnostics(device: str = 'cpu') -> dict:
++    """Measure the v1 arithmetic; diagnostic only, never used for v2 weights.
++
++    PyTorch 2.10 implements ldexp as multiplication by pow(2, exponent).
++    Retaining this tiny probe lets the laptop identify the actual v1 mismatch.
++    Exact v2 tests determine PASS; a legacy mismatch is explicitly reported.
++    """
++    target = torch.device(device)
++    finite = [c for c in range(256) if c not in (127, 255)]
++    c = torch.tensor(finite, dtype=torch.int64, device=target)
++    exponent, mantissa = (c >> 3) & 15, c & 7
++    fraction = mantissa.to(torch.float64) / 8.0
++    magnitude = torch.where(exponent == 0, fraction / 64.0,
++                            torch.ldexp(1.0 + fraction, (exponent - 7).int()))
++    values = torch.where((c & 128) != 0, -magnitude, magnitude)
++    expected = torch.tensor([_decode(code) for code in finite], dtype=torch.float64)
++    k = torch.arange(-127, 128, dtype=torch.int32, device=target)
++    old_powers = torch.ldexp(torch.ones(255, dtype=torch.float64, device=target), k)
++    expected_powers = torch.tensor([math.ldexp(1.0, i) for i in range(-127, 128)],
++                                   dtype=torch.float64)
++    return {'purpose': 'non-gating v1 arithmetic diagnostic; no model or dataset',
++            'device': str(target), 'torch_version': torch.__version__,
++            'finite_code_decode': _comparison_details(values, expected, finite),
++            'e8m0_powers': _comparison_details(old_powers, expected_powers, list(range(-127, 128)))}
++
++
++def run_tests(device: str = 'cpu', report: dict | None = None) -> dict:
+     """Run codec tests on the requested device and return a JSON-safe report."""
+     target = torch.device(device)
+     checks: dict[str, bool] = {}
+     rejected: list[str] = []
++    if report is None:
++        report = {}
++    report.update(status='RUNNING', device=str(target), torch_version=torch.__version__,
++                  format=mx.FORMAT, codec_revision=mx.CODEC_REVISION,
++                  checks=checks, expected_rejection_cases=rejected,
++                  training_performed=False, dataset_used=False)
+ 
+     def check(condition: bool, label: str) -> None:
++        checks[label] = bool(condition)
+         if not condition:
+-            raise AssertionError('E4M3 codec check failed: ' + label)
+-        checks[label] = True
++            report.update(status='FAIL', failed_check=label)
++            details = report.get('exact_comparisons', {}).get(label)
++            suffix = '' if details is None else '; details=' + json.dumps(details, ensure_ascii=False)
++            raise AssertionError('E4M3 codec check failed: ' + label + suffix)
+ 
+     def reject(action, label: str) -> None:
+         try:
+@@ -95,6 +165,7 @@
+         except ValueError:
+             rejected.append(label)
+         else:
++            report.update(status='FAIL', failed_check='unexpectedly_accepted_' + label)
+             raise AssertionError('E4M3 codec unexpectedly accepted: ' + label)
+ 
+     # Exhaustive decoding and exact re-encoding, including both signed zeros.
+@@ -102,8 +173,26 @@
+     code_tensor = torch.tensor(finite, dtype=torch.uint8, device=target)
+     expected = torch.tensor([_decode(c) for c in finite], dtype=torch.float64)
+     values = mx.decode_elements(code_tensor)
++    report['exact_comparisons'] = {
++        'all_254_finite_codes_match_independent_decode':
++            _comparison_details(values, expected, finite)}
+     check(_exact(values, expected), 'all_254_finite_codes_match_independent_decode')
+     check(_exact(mx.encode_elements(values), code_tensor), 'all_254_finite_codes_roundtrip')
++
++    # Exhaustive exact scale construction, including both ends of E8M0.
++    scale_exponents = torch.arange(-127, 128, dtype=torch.int32, device=target)
++    powers = mx._scale_power_of_two(scale_exponents)
++    expected_powers = torch.tensor([math.ldexp(1.0, k) for k in range(-127, 128)],
++                                   dtype=torch.float64)
++    report['exact_comparisons']['all_255_scale_powers_are_exact'] = _comparison_details(
++        powers, expected_powers, list(range(-127, 128)))
++    check(_exact(powers, expected_powers), 'all_255_scale_powers_are_exact')
++    products = values[:, None] * powers[None, :]
++    expected_products = torch.tensor([[math.ldexp(_decode(c), k) for k in range(-127, 128)]
++                                     for c in finite], dtype=torch.float64)
++    report['exact_comparisons']['all_64770_code_scale_products_are_exact_fp64'] = (
++        _comparison_details(products, expected_products))
++    check(_exact(products, expected_products), 'all_64770_code_scale_products_are_exact_fp64')
+     check(_decode(1) == 2 ** -9 and _decode(8) == 2 ** -6 and _decode(126) == 448.0,
+           'element_boundaries_are_2pow_minus9_2pow_minus6_and_448')
+     for code in (127, 255):
+@@ -287,12 +376,11 @@
+     check(_exact(encoded.codes, saved_codes) and _exact(encoded.scale_codes, saved_scales),
+           'all_readonly_operations_preserve_encoded_source')
+ 
+-    return {'status': 'PASS', 'device': str(target), 'torch_version': torch.__version__,
+-            'format': mx.FORMAT, 'finite_bit_patterns_checked': 254,
+-            'nan_bit_patterns_rejected': [127, 255], 'signed_midpoint_ties_checked': 252,
+-            'adjacent_midpoint_probes_checked': 504, 'checks': checks,
+-            'expected_rejection_cases': rejected,
+-            'training_performed': False, 'dataset_used': False}
++    report.update(status='PASS', finite_bit_patterns_checked=254,
++                  finite_scale_powers_checked=255, exact_fp64_code_scale_products_checked=64770,
++                  nan_bit_patterns_rejected=[127, 255], signed_midpoint_ties_checked=252,
++                  adjacent_midpoint_probes_checked=504)
++    return report
+ 
+ 
+ if __name__ == '__main__':

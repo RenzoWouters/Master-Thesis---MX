@@ -1,0 +1,10 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_e4m3_dedicated_pilot5\20261022_184045_822590_mx_check
+DEDICATED E4M3: vijf epochs; A32; FP32-master; hard CE; één pass per minibatch.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+V1-DIAGNOSE finite_code_decode: numerieke afwijkingen=16, tekenbitafwijkingen=0
+V1-DIAGNOSE e8m0_powers: numerieke afwijkingen=35, tekenbitafwijkingen=0
+CHECK PASS: E4M3-codec, model, gradients en twee synthetische updates. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_e4m3_dedicated_pilot5\20261022_184045_822590_mx_check\run_report.json

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "scope": "Focused v2 codec and real check-entry reporting regression on CPU",
+  "torch_version": "2.10.0+cpu",
+  "device": "cpu",
+  "strict_codec_checks": 33,
+  "strict_expected_rejections": 21,
+  "finite_codes_checked": 254,
+  "scale_powers_checked": 255,
+  "code_scale_products_checked": 64770,
+  "one_ulp_and_signed_zero_fault_rejected_with_exact_details": true,
+  "nan_inf_diagnostics_serialize_with_allow_nan_false": true,
+  "legacy_CPU_probe_exact": true,
+  "runner_cases": {
+    "success": {
+      "status": "PASS",
+      "case": "success",
+      "runner_exit_code": 0,
+      "run_directory": "/tmp/mx_e4m3_v2_cuda_fix_validation_20261022/success/runs/20261022_181945_310405_mx_check",
+      "feedback_contains_all_three_reports": true,
+      "package_and_source_hash_checks_executed": true,
+      "cpu_redirect_is_test_only": true,
+      "CNN_smoke_is_explicit_test_stub": true,
+      "dataset_access": false,
+      "optimizer_updates": 0,
+      "injected_failure_details": null
+    },
+    "injected_failure": {
+      "status": "PASS",
+      "case": "injected_failure",
+      "runner_exit_code": 1,
+      "run_directory": "/tmp/mx_e4m3_v2_cuda_fix_validation_20261022/injected_failure/runs/20261022_181948_813707_mx_check",
+      "feedback_contains_all_three_reports": true,
+      "package_and_source_hash_checks_executed": true,
+      "cpu_redirect_is_test_only": true,
+      "CNN_smoke_is_explicit_test_stub": true,
+      "dataset_access": false,
+      "optimizer_updates": 0,
+      "injected_failure_details": {
+        "actual_dtype": "torch.float64",
+        "expected_dtype": "torch.float64",
+        "actual_shape": [
+          254
+        ],
+        "expected_shape": [
+          254
+        ],
+        "exact": false,
+        "numeric_mismatch_count": 1,
+        "signbit_mismatch_count": 1,
+        "max_abs_error": 2.220446049250313e-16,
+        "first_mismatches": [
+          {
+            "index": 56,
+            "label": 56,
+            "actual_hex": "0x1.0000000000001p+0",
+            "expected_hex": "0x1.0000000000000p+0",
+            "actual_fp64_bits": "0x3ff0000000000001",
+            "expected_fp64_bits": "0x3ff0000000000000",
+            "actual_signbit": false,
+            "expected_signbit": false,
+            "same_sign_ulp_distance": 1
+          },
+          {
+            "index": 127,
+            "label": 128,
+            "actual_hex": "0x0.0p+0",
+            "expected_hex": "-0x0.0p+0",
+            "actual_fp64_bits": "0x0000000000000000",
+            "expected_fp64_bits": "0x8000000000000000",
+            "actual_signbit": false,
+            "expected_signbit": true,
+            "same_sign_ulp_distance": null
+          }
+        ]
+      }
+    }
+  },
+  "training_performed": false,
+  "optimizer_updates": 0,
+  "dataset_used": false,
+  "not_a_CUDA_runtime_validation": true
+}

@@ -1,0 +1,168 @@
+--- prior/provenance/single_run_train.py
++++ new/run_train.py
+@@ -1,4 +1,4 @@
+-"""Five-epoch single-mode MX weight-training pilot, with an optional matched control.
++"""Dedicated E4M3/A32 weight-training pilot: exactly five complete epochs.
+ 
+ CUDA production; SVHN train only. No warm-start, truncation or distillation.
+ The original forward function is used with internal selector [32]; the adapter
+@@ -32,19 +32,21 @@
+ 
+ 
+ def config(mode: str = 'mx') -> dict:
+-    s.require(mode in ('mx', 'control'), 'Onbekende modus.')
++    s.require(mode == 'mx', 'Dit pakket voert uitsluitend dedicated E4M3/A32 uit.')
+     return {
+-        'schema': 'mx-weights-single-pilot5-protocol-v1',
+-        'purpose': 'five complete epochs: single-mode weight-only QAT, or matched single-mode control',
++        'schema': 'mx-e4m3-dedicated-pilot5-protocol-v1',
++        'purpose': 'five complete epochs: dedicated E4M3 weight-only QAT and runtime estimate',
+         'mode': mode, 'weight_format': t.weight_format(mode),
+-        'weight_preprocess': 'original W32: G(W)=mean(abs(W)).detach()*tanh(W)/max(abs(tanh(W)))',
++        'weight_preprocess': 'original W32: G(W)=(tanh(W)/max(abs(tanh(W))))*mean(abs(W)).detach(); safe all-zero guard',
+         'activation_bits': 32, 'activation_policy': 'original A32/ReLU',
+         'master_dtype': 'float32', 'gradient_dtype': 'float32', 'adam_moments_dtype': 'float32',
+         'mx_block_size': 32 if mode == 'mx' else None,
+         'mx_scale_format': 'E8M0' if mode == 'mx' else None,
+         'mx_group_axis': 'flatten Cin*Kh*Kw within each Cout, zero-pad tail' if mode == 'mx' else None,
+-        'mx_scale_policy': 'recomputed per forward from current effective weights' if mode == 'mx' else None,
+-        'mx_rounding': 'nearest ties-to-even; same step1 codec' if mode == 'mx' else None,
++        'mx_scale_policy': 'floor(log2(block_amax))-8; clip to [-127,127]; all-zero block exponent=0; recomputed per forward',
++        'mx_rounding': 'nearest ties-to-even; finite saturation to +/-448; nonfinite input rejected',
++        'mx_element_layout': 's eeee mmm; exponent bias7; NaN codes0x7f and0xff rejected',
++        'mx_subnormal_policy': 'local E4M3 subnormals supported; scalar FP32 input subnormals flushed to signed zero',
+         'ste_policy': 'identity through MX; retain G(W) derivative' if mode == 'mx' else None,
+         'numeric_kernel': 'FP32 F.conv2d; codec uses FP64 intermediates; no native MX speed claim',
+         'truncation': False, 'distillation': False,
+@@ -99,9 +101,9 @@
+     log('Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.')
+     model = None
+     if check_only:
+-        import test_mx
++        import test_e4m3
+         import smoke_single
+-        report['codec_tests'] = test_mx.run_tests(modules, str(rt.device))
++        report['codec_tests'] = test_e4m3.run_tests(str(rt.device))
+         report['synthetic_training_checks'] = smoke_single.check(modules, rt)
+         _, forward_hash = t.load_single_forward(source, modules.utils, log)
+         report.update(forward_ast_sha256=forward_hash, dataset_downloaded=False,
+@@ -112,7 +114,7 @@
+                 report['notebook_dependencies'][name] = metadata.version(name)
+             except metadata.PackageNotFoundError:
+                 report['notebook_dependencies'][name] = 'MISSING: notebook only'
+-        log('CHECK PASS: codec, model, gradient en twee synthetische updates per modus. Geen SVHN-training.')
++        log('CHECK PASS: E4M3-codec, model, gradients en twee synthetische updates. Geen SVHN-training.')
+         return None
+ 
+     start_data = time.perf_counter()
+@@ -310,7 +312,7 @@
+ def export_results(ctx, out: Path, trace: dict, log):
+     import torch
+     import mx_adapter as a
+-    import mx_format as f
++    import mx_e4m3 as f
+     records, c, core = trace['epochs'], ctx.c, ctx.rt.core
+     s.require(records and [r['epoch'] for r in records] == list(range(1, records[-1]['epoch'] + 1)),
+               'Onvolledige epochgeschiedenis.')
+@@ -354,23 +356,29 @@
+         selected.append({'role': role, **record['test'][0]})
+         if c['mode'] == 'mx':
+             # Export after training only. No optimizer call, no calibration.
+-            model = copy.deepcopy(ctx.model).cpu().eval()
++            # Retain the training device when recomputing G(W) and the codec.
++            # Moving masters to CPU first can change G(W) numerically and is
++            # not a check against the actual CUDA quantizer route.
++            model = copy.deepcopy(ctx.model).to(ctx.rt.device).eval()
+             model.load_state_dict(state['model'], strict=True)
+             payload, layer_rows = a.export_payload(model, {
+-                'training_mode': 'single E2M3/A32, identity STE, FP32 update master',
++                'training_mode': 'dedicated E4M3/A32, identity STE, FP32 update master',
+                 'source_epoch': record['epoch'], 'training_checkpoint_sha256': digest,
+                 'bn32_origin': 'learned during this single-mode run; no post-training recalibration',
++                'encoding_device': str(ctx.rt.device),
+                 'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']})
+             suffix = 'best' if role == 'best_active_test' else 'last'
+             mx_file = out / f'mx_source_{suffix}.pt'
+             mx_details = core.atomic_save(mx_file, payload)
+             loaded = torch.load(mx_file, map_location='cpu', weights_only=True)
+             for name in a.TARGET_LAYERS:
+-                restored = f.MXTensor.from_payload(loaded['mx_layers'][name]).decode()
++                restored = f.MXTensor.from_payload(loaded['mx_layers'][name], ctx.rt.device).decode()
+                 effective = a.effective_reference_weight(model.get_submodule(name).weight.detach())
+                 s.require(torch.equal(restored, f.encode_tensor(effective).decode()), 'MX-exportgewichten verschillen.')
+                 s.require(name + '.weight' not in loaded['auxiliary_fp32_state'], 'FP32-master in MX-export.')
+             mx_exports[role] = {**mx_details, 'epoch': record['epoch'], 'decoded_weights_exact': True,
++                               'encoding_and_comparison_device': str(ctx.rt.device),
++                               'export_validation_scope': 'weights only on training device; no full test rerun',
+                                'six_fp32_masters_absent': True, 'full_test_forward_rerun': False}
+             s.write_csv(out / f'mx_export_layers_{suffix}.csv', layer_rows)
+     s.write_csv(out / 'selected_metrics.csv', selected)
+@@ -385,7 +393,8 @@
+     summary = {'completed_epochs': last['epoch'], 'pilot_completed': last['epoch'] == 5,
+                'full_100_epoch_training_completed': False, 'optimizer_steps': last['optimizer_steps'],
+                'train_examples': c['train_examples'], 'test_examples': c['test_examples'],
+-               'mode': c['mode'], 'distillation': False, 'truncation': False,
++               'mode': c['mode'], 'weight_format': c['weight_format'],
++               'activation_bits': 32, 'distillation': False, 'truncation': False,
+                'initial_model_sha256': trace['initial_model_sha256'],
+                'measured_completed_epoch_seconds': elapsed,
+                'gradient_checks_before_every_update': True, 'fp32_masters_and_moments_verified': True,
+@@ -405,12 +414,15 @@
+                       initial_model_sha256=trace['initial_model_sha256'], checkpoint_selection=selection,
+                       training_summary=summary, timing_estimate=estimate, mx_exports=mx_exports,
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'])
+-    notebook = json.loads((ROOT / 'MX_single_training_resultaten.ipynb').read_text(encoding='utf-8'))
++    notebook_name = 'MX_E4M3_dedicated_pilot5_resultaten.ipynb'
++    notebook = json.loads((ROOT / notebook_name).read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+             cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n',
+-                              'CONTROL_DIR = None  # Optioneel: pad naar afzonderlijke control-run\n']
+-    s.write_json(out / 'MX_single_training_resultaten.ipynb', notebook)
++                              'SAVE_FIGURES = True  # Nieuwe analysemap; ruwe resultaten blijven behouden.\n']
++    s.write_json(out / notebook_name, notebook)
++    with (ROOT / 'notebook_support.py').open('rb') as src, (out / 'notebook_support.py').open('xb') as dst:
++        shutil.copyfileobj(src, dst)
+     log(f'BEHOUDEN: beste actieve modus epoch {best["epoch"]}; laatste epoch {last["epoch"]}.')
+ 
+ 
+@@ -431,7 +443,8 @@
+              'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+              'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
+              'training_change_manifest.json', 'training_summary.json',
+-             'mx_export_layers_best.csv', 'mx_export_layers_last.csv']
++             'mx_export_layers_best.csv', 'mx_export_layers_last.csv',
++             'MX_E4M3_dedicated_pilot5_resultaten.ipynb', 'notebook_support.py']
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+         for name in names:
+             path = out / name
+@@ -442,9 +455,9 @@
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+-    parser.add_argument('--mode', choices=['mx', 'control'], default='mx')
++    parser.add_argument('--mode', choices=['mx'], default='mx')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_weights_single_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_e4m3_dedicated_pilot5'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+     parser.add_argument('--stop-after-epoch', type=int, default=5)
+@@ -457,7 +470,7 @@
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'mx-weights-single-pilot5-report-v1', 'status': 'RUNNING',
++    report = {'schema': 'mx-e4m3-dedicated-pilot5-report-v1', 'status': 'RUNNING',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only; single mode; this is not a paper reproduction',
+@@ -482,7 +495,7 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log(f'EENMODUSPROEF: {args.mode}; A32; FP32-master; geen distillatie of truncatie.')
++            log('DEDICATED E4M3: vijf epochs; A32; FP32-master; hard CE; één pass per minibatch.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is None:
+                 report['status'] = 'PASS'

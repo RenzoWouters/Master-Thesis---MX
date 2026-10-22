@@ -1,0 +1,53 @@
+--- prior/mx_adapter.py
++++ new/mx_adapter.py
+@@ -1,6 +1,6 @@
+ """The research change: replace only six weight-quantizer modules in a copy.
+ 
+-A32/ReLU and BN32 remain selected throughout the first diagnostic experiment.
++Dedicated MXFP8 E4M3 QAT with A32/ReLU and BN32 selected throughout.
+ The original model files and the original reference checkpoint stay untouched.
+ """
+ from __future__ import annotations
+@@ -8,13 +8,13 @@
+ import torch
+ from torch import Tensor, nn
+ import torch.nn.functional as F
+-from mx_format import MXTensor, encode_tensor, fake_quantize_mx, distortion, require
++from mx_e4m3 import MXTensor, encode_tensor, fake_quantize_mx, distortion, require
+ 
+ TARGET_LAYERS = ('layers.3', 'layers.6', 'layers.10', 'layers.13', 'layers.16', 'layers.20')
+ 
+ def select_a32(model: nn.Module) -> None:
+     # Matches the reference's 32-bit mode, including Activate and SwitchBatchNorm.
+-    # DO NOT set abit=6: this is a weight FORMAT, not an activation bit setting.
++    # DO NOT set abit=8: this is a weight FORMAT, not an activation bit setting.
+     model.apply(lambda m: setattr(m, 'abit', 32))
+     model.apply(lambda m: setattr(m, 'wbit', 32))
+ 
+@@ -40,7 +40,7 @@
+ 
+     def forward(self, weight: Tensor) -> Tensor:
+         require(self.abit == 32 and self.wbit == 32,
+-                "Stap 1 vereist A32 en W32-bronvoorbewerking; gebruik niet de oude vijf-bitlus.")
++                "De dedicated E4M3-proef vereist A32 en W32-bronvoorbewerking.")
+         effective = effective_reference_weight(weight)
+         return fake_quantize_mx(effective) if self.enabled else effective
+ 
+@@ -88,7 +88,7 @@
+     remove = {name + '.weight' for name in TARGET_LAYERS}
+     auxiliary = {k: v.detach().cpu().clone() for k, v in reference_model.state_dict().items() if k not in remove}
+     require(not remove.intersection(auxiliary), 'FP-mastergewichten lekken in MX-export.')
+-    payload = {'schema': 'mx-weights-e2m3-source-v1', 'model': 'svhnq', 'expand': 2,
++    payload = {'schema': 'mx-weights-e4m3-source-v1', 'model': 'svhnq', 'expand': 2,
+                'activation_policy': 'A32_original_ReLU', 'bn_policy': 'existing_bank32_no_recalibration',
+                'weight_preprocess': 'original_W32_tanh_normalization_before_MX',
+                'mx_layers': encoded, 'auxiliary_fp32_state': auxiliary,
+@@ -96,7 +96,7 @@
+     return payload, rows
+ 
+ def load_exported_model(models_module, payload: dict, device: str | torch.device) -> nn.Module:
+-    require(payload.get('schema') == 'mx-weights-e2m3-source-v1', 'Onbekend exportschema.')
++    require(payload.get('schema') == 'mx-weights-e4m3-source-v1', 'Onbekend exportschema.')
+     require(payload.get('model') == 'svhnq' and payload.get('expand') == 2, 'Onbekend model.')
+     require(tuple(payload['mx_layers']) == TARGET_LAYERS, 'MX-lagen ontbreken of volgorde wijkt af.')
+     require(payload.get('activation_policy') == 'A32_original_ReLU', 'Onbekend activatiebeleid.')

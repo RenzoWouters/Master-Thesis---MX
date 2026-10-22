@@ -1,0 +1,253 @@
+--- prior/mx_format.py
++++ new/mx_e4m3.py
+@@ -1,57 +1,72 @@
+-"""Readable finite-FP32 MXFP6 E2M3 codec. No activation quantization.
+-
+-Format: 1 sign + 2 exponent + 3 fraction bits; bias=1; E8M0 scale;
+-32 elements per block, within each output channel. RNE ties-to-even.
+-Paper algorithm 1 determines scales. Finite input only (NaN/Inf rejected).
+-Scalar FP32 subnormals are flushed to signed zero, following that paper's
+-example conversion. LOCAL E2M3 subnormals are supported. E8M0 exponent
+-range clipping is explicit. This is a numerical emulator, not a GPU kernel.
++"""Finite-FP32 MXFP8 E4M3 weight codec, adapted from the validated E2M3 codec.
++
++Element layout is [s eeee mmm], exponent bias 7. Codes 0x7f and 0xff are
++NaNs and are rejected; all other codes are finite, including signed zeros
++and local subnormals. Maximum finite magnitude is 448. Finite overflow in
++element encoding saturates to that maximum. Rounding is nearest, ties even.
++
++Blocks contain 32 values within an output channel. Their E8M0 scale follows
++the existing paper-algorithm policy, with emax_element=8 for E4M3. FP32 input
++subnormals are flushed to signed zero as in the established E2M3 codec.
++This module does not quantize activations, alter FP32 masters or implement
++exponent truncation. Execution remains a FP32 numerical emulator.
+ """
+ from __future__ import annotations
++
+ from dataclasses import dataclass
+ import math
++
+ import torch
+ import torch.nn.functional as F
+ from torch import Tensor
+ 
++
+ BLOCK_SIZE = 32
+-FORMAT = 'MXFP6_E2M3'
++FORMAT = 'MXFP8_E4M3'
++LAYOUT = 'row_Cin_Kh_Kw; one_code_per_byte'
++MAX_FINITE = 448.0
++
+ 
+ def require(ok: bool, message: str) -> None:
+     if not ok:
+         raise ValueError(message)
+ 
++
+ def decode_elements(codes: Tensor) -> Tensor:
+-    """Decode [s ee mmm] codes to FP64, preserving signed zero."""
++    """Decode finite [s eeee mmm] codes to FP64, preserving signed zero."""
+     require(codes.dtype == torch.uint8, 'Elementcodes moeten uint8 zijn.')
+-    require(bool((codes <= 63).all()), 'E2M3: alleen codes 0 t/m 63 toegestaan.')
++    require(bool(((codes & 127) != 127).all()),
++            'E4M3 NaN-codes 127 en 255 zijn niet toegestaan.')
+     c = codes.to(torch.int64)
+-    exponent, mantissa = (c >> 3) & 3, c & 7
++    exponent, mantissa = (c >> 3) & 15, c & 7
+     fraction = mantissa.to(torch.float64) / 8.0
+-    magnitude = torch.where(exponent == 0, fraction,
+-                            torch.ldexp(1.0 + fraction, (exponent - 1).int()))
+-    return torch.where((c & 32) != 0, -magnitude, magnitude)
++    magnitude = torch.where(exponent == 0, fraction / 64.0,
++                            torch.ldexp(1.0 + fraction, (exponent - 7).int()))
++    return torch.where((c & 128) != 0, -magnitude, magnitude)
++
+ 
+ def encode_elements(values: Tensor) -> Tensor:
+-    """Nearest E2M3 value, even least-significant code bit at a tie.
+-
+-    Lookup uses the 32 nonnegative values; not nearest integer rounding.
+-    A finite value outside the element range saturates to +/-7.5.
++    """Nearest finite E4M3 value, even least-significant code bit at a tie.
++
++    The 127 nonnegative finite codes are monotone. A finite magnitude above
++    448 saturates; input NaN/Inf is rejected instead of silently repaired.
+     """
+     require(bool(torch.isfinite(values).all()), 'NaN/Inf in elementconversie.')
+     values = values.to(torch.float64)
+-    levels = decode_elements(torch.arange(32, device=values.device, dtype=torch.uint8))
+-    magnitude = values.abs().clamp_max(7.5).contiguous()
+-    hi = torch.bucketize(magnitude, levels).clamp(0, 31)
++    levels = decode_elements(torch.arange(127, device=values.device, dtype=torch.uint8))
++    magnitude = values.abs().clamp_max(MAX_FINITE).contiguous()
++    hi = torch.bucketize(magnitude, levels).clamp(0, 126)
+     lo = (hi - 1).clamp_min(0)
+     dl, dh = magnitude - levels[lo], levels[hi] - magnitude
+     choose_hi = (dh < dl) | ((dh == dl) & ((hi & 1) == 0))
+     unsigned = torch.where(choose_hi, hi, lo)
+-    return (unsigned | (torch.signbit(values).to(torch.int64) << 5)).to(torch.uint8)
++    return (unsigned | (torch.signbit(values).to(torch.int64) << 7)).to(torch.uint8)
++
+ 
+ @dataclass(frozen=True)
+ class MXTensor:
+     """codes[C_out, blocks_per_row, 32], scales[C_out, blocks_per_row]."""
++
+     codes: Tensor
+     scale_codes: Tensor
+     shape: tuple[int, ...]
+@@ -65,7 +80,8 @@
+         require(tuple(self.scale_codes.shape) == (rows, blocks), 'Onjuiste schaalvorm.')
+         require(self.codes.dtype == self.scale_codes.dtype == torch.uint8, 'Codes moeten uint8 zijn.')
+         require(self.codes.device == self.scale_codes.device, 'Codes en schalen op verschillend device.')
+-        require(bool((self.codes <= 63).all()), 'Ongeldige E2M3-code.')
++        require(bool(((self.codes & 127) != 127).all()),
++                'E4M3 NaN-codes 127 en 255 zijn niet toegestaan.')
+         require(bool((self.scale_codes < 255).all()), 'E8M0 NaN-code 255 is niet toegestaan.')
+         padding = blocks * BLOCK_SIZE - cols
+         if padding:
+@@ -81,36 +97,38 @@
+         return result
+ 
+     def payload(self) -> dict:
+-        """Packed 6-bit data: four element codes occupy exactly three bytes.
+-
+-        Ordering is explicitly our little-endian bit layout; MX does not
+-        prescribe the storage layout. One 32-element block = 24+1 bytes.
+-        There are no FP master weights in this object.
++        """One byte per element and one byte per scale: 32+1 bytes per block.
++
++        The legacy key ``packed_codes`` is retained for schema consistency;
++        E4M3 codes are already byte-sized and undergo no additional packing.
++        Payload tensors own their storage and contain no FP32 master weights.
+         """
+         self.validate()
+         return {'format': FORMAT, 'block_size': BLOCK_SIZE, 'shape': list(self.shape),
+-                'layout': 'row_Cin_Kh_Kw; four_codes_lsb_first_in_three_bytes',
+-                'packed_codes': pack6(self.codes).cpu(),
+-                'scale_codes': self.scale_codes.cpu().clone()}
++                'layout': LAYOUT, 'packed_codes': self.codes.detach().cpu().clone(),
++                'scale_codes': self.scale_codes.detach().cpu().clone()}
+ 
+     @staticmethod
+     def from_payload(p: dict, device: str | torch.device = 'cpu') -> 'MXTensor':
+-        require(set(p) == {'format', 'block_size', 'shape', 'layout', 'packed_codes', 'scale_codes'},
++        require(type(p) is dict and
++                set(p) == {'format', 'block_size', 'shape', 'layout', 'packed_codes', 'scale_codes'},
+                 'Onverwachte velden in MX-bron; geen verborgen FP-gewichten toegestaan.')
+         require(p.get('format') == FORMAT and p.get('block_size') == BLOCK_SIZE, 'Onbekend MX-formaat.')
+-        require(p.get('layout') == 'row_Cin_Kh_Kw; four_codes_lsb_first_in_three_bytes', 'Onbekende layout.')
+-        result = MXTensor(unpack6(p['packed_codes'].to(device)),
+-                          p['scale_codes'].to(device), tuple(p['shape']))
++        require(p.get('layout') == LAYOUT, 'Onbekende layout.')
++        result = MXTensor(p['packed_codes'].detach().to(device).clone(),
++                          p['scale_codes'].detach().to(device).clone(), tuple(p['shape']))
+         result.validate()
+         return result
+ 
++
+ def encode_tensor(weight: Tensor) -> MXTensor:
+-    """Encode a weight tensor. First dimension is output channel, never mixed.
+-
+-    Scalar FP64 intermediates make the numerical rules explicit near powers
+-    of two and scale limits. Only finite FP32 input is accepted.
++    """Encode finite FP32 weights, grouping within each output channel.
++
++    FP64 intermediates make behavior explicit near powers of two and scale
++    limits. For nonzero blocks, scale exponent is floor(log2(maxabs))-8.
++    E8M0 exponents are clipped to [-127,127]; an all-zero block gets scale 1.
+     """
+-    require(weight.dtype == torch.float32, 'Deze eerste codec verwacht FP32-gewichten.')
++    require(weight.dtype == torch.float32, 'Deze codec verwacht FP32-gewichten.')
+     require(weight.ndim >= 2 and weight.numel() > 0, 'Verwacht niet-lege gewichtstensor.')
+     require(bool(torch.isfinite(weight).all()), 'NaN/Inf in brongewicht: stop, niet verbergen.')
+     with torch.no_grad():
+@@ -121,10 +139,10 @@
+         padding = (-cols) % BLOCK_SIZE
+         blocks = F.pad(w.reshape(rows, cols), (0, padding)).reshape(rows, -1, BLOCK_SIZE)
+         maxima = blocks.abs().amax(dim=-1)
+-        # frexp(v) gives v = fraction * 2**power, fraction in [0.5, 1).
+-        # floor(log2(maxima)) - emax_elem = power - 1 - 2.
++        # frexp gives maxabs = fraction * 2**power, fraction in [0.5,1).
++        # floor(log2(maxabs)) - emax_element = power - 1 - 8.
+         _, power = torch.frexp(maxima)
+-        scale_exp = torch.where(maxima == 0, torch.zeros_like(power), power - 3)
++        scale_exp = torch.where(maxima == 0, torch.zeros_like(power), power - 9)
+         scale_exp = scale_exp.clamp(-127, 127).to(torch.int32)
+         normalized = torch.ldexp(blocks, -scale_exp[..., None])
+         codes = encode_elements(normalized)
+@@ -132,23 +150,10 @@
+         result.validate()
+         return result
+ 
+-def pack6(codes: Tensor) -> Tensor:
+-    require(codes.dtype == torch.uint8 and codes.shape[-1] == 32, 'Verwacht 32 uint8-codes per blok.')
+-    require(bool((codes <= 63).all()), 'Ongeldige E2M3-code.')
+-    q = codes.to(torch.int64).reshape(*codes.shape[:-1], 8, 4)
+-    word = q[..., 0] | (q[..., 1] << 6) | (q[..., 2] << 12) | (q[..., 3] << 18)
+-    return torch.stack([word & 255, (word >> 8) & 255, (word >> 16) & 255], -1).to(
+-        torch.uint8).reshape(*codes.shape[:-1], 24)
+-
+-def unpack6(data: Tensor) -> Tensor:
+-    require(data.dtype == torch.uint8 and data.shape[-1] == 24, 'Verwacht 24 bytes per blok.')
+-    b = data.to(torch.int64).reshape(*data.shape[:-1], 8, 3)
+-    word = b[..., 0] | (b[..., 1] << 8) | (b[..., 2] << 16)
+-    return torch.stack([(word >> shift) & 63 for shift in (0, 6, 12, 18)], -1).to(
+-        torch.uint8).reshape(*data.shape[:-1], 32)
+ 
+ def distortion(weight: Tensor, encoded: MXTensor) -> dict:
+-    """Diagnostics, not a speed/energy or whole-model storage claim."""
++    """Numerical diagnostics; no speed, energy or whole-model storage claim."""
++    require(tuple(weight.shape) == encoded.shape, 'Gewichts- en MX-vorm verschillen.')
+     q = encoded.decode()
+     w = weight.detach().to(torch.float64)
+     err = q.to(torch.float64) - w
+@@ -156,11 +161,11 @@
+     code = encoded.codes.reshape(encoded.shape[0], -1)[:, :cols]
+     scalar_sub = (w.abs() > 0) & (w.abs() < torch.finfo(torch.float32).tiny)
+     src = torch.where(scalar_sub, torch.zeros_like(w), w)
+-    padded = F.pad(src.reshape(encoded.shape[0], -1), (0, (-cols) % 32)).reshape_as(encoded.codes)
++    padded = F.pad(src.reshape(encoded.shape[0], -1), (0, (-cols) % BLOCK_SIZE)).reshape_as(encoded.codes)
+     normalized = torch.ldexp(padded, -(encoded.scale_codes.int() - 127)[..., None])
+     maxima = padded.abs().amax(-1)
+     _, power = torch.frexp(maxima)
+-    raw_exp = torch.where(maxima == 0, torch.zeros_like(power), power - 3)
++    raw_exp = torch.where(maxima == 0, torch.zeros_like(power), power - 9)
+     nblocks = encoded.scale_codes.numel()
+     return {'n_weights': weight.numel(), 'blocks': nblocks,
+             'padded_slots': encoded.codes.numel() - weight.numel(),
+@@ -168,21 +173,19 @@
+             'max_abs_error': float(err.abs().max()),
+             'relative_l2': float(err.norm() / w.norm()) if float(w.norm()) else 0.0,
+             'new_zero_count': int(((q == 0) & (weight != 0)).sum()),
+-            'local_subnormal_count': int((((code & 24) == 0) & ((code & 7) != 0)).sum()),
+-            'out_of_element_range_before_round': int((normalized.abs() > 7.5).sum()),
++            'local_subnormal_count': int((((code & 120) == 0) & ((code & 7) != 0)).sum()),
++            'out_of_element_range_before_round': int((normalized.abs() > MAX_FINITE).sum()),
+             'fp32_subnormal_input_count': int(scalar_sub.sum()),
+             'scale_range_clamped_blocks': int(((raw_exp < -127) | (raw_exp > 127)).sum()),
+             'scale_exponent_min': int(encoded.scale_codes.min()) - 127,
+             'scale_exponent_max': int(encoded.scale_codes.max()) - 127,
+-            'packed_weight_and_scale_bytes': nblocks * 25,
++            'packed_weight_and_scale_bytes': nblocks * 33,
+             'fp32_weight_bytes': weight.numel() * 4}
+ 
++
+ class _MXIdentitySTE(torch.autograd.Function):
+-    """Exact quantized forward; intentionally approximate identity backward.
+-
+-    Ordinary finite-difference gradcheck is NOT the test for an STE: the
+-    true derivative of quantization is not the proposed surrogate gradient.
+-    """
++    """Exact quantized forward with an intentional identity surrogate backward."""
++
+     @staticmethod
+     def forward(ctx, value: Tensor) -> Tensor:
+         return encode_tensor(value).decode()
+@@ -192,5 +195,6 @@
+     def backward(ctx, grad_output: Tensor) -> tuple[Tensor]:
+         return (grad_output.clone(),)
+ 
++
+ def fake_quantize_mx(weight: Tensor) -> Tensor:
+     return _MXIdentitySTE.apply(weight)

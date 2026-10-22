@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "device": "CPU; test-only Tensor.cuda redirection",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "tests": {
+    "five_synthetic_epochs_10_updates": true,
+    "resume_model_optimizer_scheduler_rng_metrics_exact_on_CPU": true,
+    "resume_covers_synthetic_LR_transitions": true,
+    "wrong_format_contract_corruption_and_overwrite_rejected": true,
+    "stop_marker_finishes_epoch_without_false_completion": true,
+    "best_selection_first_strict_maximum": true,
+    "production_CLI_limits_enforced": {
+      "run --stop-after-epoch 100": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit pakket is een proef van vijf epochs; geen automatische honderd-epochtraining."
+      },
+      "run --device cpu": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+      },
+      "run --mode control": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: argument --mode: invalid choice: 'control' (choose from mx)"
+      },
+      "resume": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+      }
+    },
+    "no_production_output_created_by_rejected_CLI": true,
+    "production_config_and_source_unchanged": true
+  },
+  "not_a_SVHN_accuracy_or_GPU_timing_result": true
+}

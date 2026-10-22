@@ -1,0 +1,56 @@
+--- v1/run_train.py
++++ v2/run_train.py
+@@ -37,6 +37,7 @@
+         'schema': 'mx-e4m3-dedicated-pilot5-protocol-v1',
+         'purpose': 'five complete epochs: dedicated E4M3 weight-only QAT and runtime estimate',
+         'mode': mode, 'weight_format': t.weight_format(mode),
++        'codec_revision': 'e4m3-exact-binary-v2',
+         'weight_preprocess': 'original W32: G(W)=(tanh(W)/max(abs(tanh(W))))*mean(abs(W)).detach(); safe all-zero guard',
+         'activation_bits': 32, 'activation_policy': 'original A32/ReLU',
+         'master_dtype': 'float32', 'gradient_dtype': 'float32', 'adam_moments_dtype': 'float32',
+@@ -103,7 +104,28 @@
+     if check_only:
+         import test_e4m3
+         import smoke_single
+-        report['codec_tests'] = test_e4m3.run_tests(str(rt.device))
++        # Preserve precise old-path evidence without using it for v2 weights.
++        try:
++            legacy_diagnostic = test_e4m3.legacy_decode_diagnostics(str(rt.device))
++            for field in ('finite_code_decode', 'e8m0_powers'):
++                detail = legacy_diagnostic[field]
++                log('V1-DIAGNOSE ' + field + ': numerieke afwijkingen='
++                    + str(detail.get('numeric_mismatch_count', '?'))
++                    + ', tekenbitafwijkingen=' + str(detail.get('signbit_mismatch_count', '?')))
++        except Exception as exc:
++            legacy_diagnostic = {'purpose': 'non-gating v1 diagnostic',
++                                 'error': repr(exc), 'traceback': traceback.format_exc()}
++            log('V1-DIAGNOSE niet beschikbaar: ' + repr(exc))
++        report['legacy_codec_diagnostics'] = legacy_diagnostic
++        s.write_json(out / 'legacy_codec_diagnostics.json', legacy_diagnostic)
++        report['codec_tests'] = {}
++        try:
++            test_e4m3.run_tests(str(rt.device), report=report['codec_tests'])
++        except BaseException as exc:
++            report['codec_tests'].update(status='FAIL', error=repr(exc))
++            raise
++        finally:
++            s.write_json(out / 'codec_report.json', report['codec_tests'])
+         report['synthetic_training_checks'] = smoke_single.check(modules, rt)
+         _, forward_hash = t.load_single_forward(source, modules.utils, log)
+         report.update(forward_ast_sha256=forward_hash, dataset_downloaded=False,
+@@ -443,6 +465,7 @@
+              'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+              'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
+              'training_change_manifest.json', 'training_summary.json',
++             'codec_report.json', 'legacy_codec_diagnostics.json',
+              'mx_export_layers_best.csv', 'mx_export_layers_last.csv',
+              'MX_E4M3_dedicated_pilot5_resultaten.ipynb', 'notebook_support.py']
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+@@ -471,6 +494,7 @@
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+     report = {'schema': 'mx-e4m3-dedicated-pilot5-report-v1', 'status': 'RUNNING',
++              'package_revision': 'mx_e4m3_dedicated_pilot5_v2',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only; single mode; this is not a paper reproduction',

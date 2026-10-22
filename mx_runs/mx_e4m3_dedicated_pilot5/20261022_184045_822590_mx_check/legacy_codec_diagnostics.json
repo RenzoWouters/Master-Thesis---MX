@@ -1,0 +1,389 @@
+{
+  "purpose": "non-gating v1 arithmetic diagnostic; no model or dataset",
+  "device": "cuda:0",
+  "torch_version": "2.10.0+cu128",
+  "finite_code_decode": {
+    "actual_dtype": "torch.float64",
+    "expected_dtype": "torch.float64",
+    "actual_shape": [
+      254
+    ],
+    "expected_shape": [
+      254
+    ],
+    "exact": false,
+    "numeric_mismatch_count": 16,
+    "signbit_mismatch_count": 0,
+    "max_abs_error": 1.3877787807814457e-17,
+    "first_mismatches": [
+      {
+        "index": 24,
+        "label": 24,
+        "actual_hex": "0x1.fffffffffffffp-5",
+        "expected_hex": "0x1.0000000000000p-4",
+        "actual_fp64_bits": "0x3fafffffffffffff",
+        "expected_fp64_bits": "0x3fb0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 25,
+        "label": 25,
+        "actual_hex": "0x1.1ffffffffffffp-4",
+        "expected_hex": "0x1.2000000000000p-4",
+        "actual_fp64_bits": "0x3fb1ffffffffffff",
+        "expected_fp64_bits": "0x3fb2000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 26,
+        "label": 26,
+        "actual_hex": "0x1.3ffffffffffffp-4",
+        "expected_hex": "0x1.4000000000000p-4",
+        "actual_fp64_bits": "0x3fb3ffffffffffff",
+        "expected_fp64_bits": "0x3fb4000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 27,
+        "label": 27,
+        "actual_hex": "0x1.5ffffffffffffp-4",
+        "expected_hex": "0x1.6000000000000p-4",
+        "actual_fp64_bits": "0x3fb5ffffffffffff",
+        "expected_fp64_bits": "0x3fb6000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 28,
+        "label": 28,
+        "actual_hex": "0x1.7ffffffffffffp-4",
+        "expected_hex": "0x1.8000000000000p-4",
+        "actual_fp64_bits": "0x3fb7ffffffffffff",
+        "expected_fp64_bits": "0x3fb8000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 29,
+        "label": 29,
+        "actual_hex": "0x1.9ffffffffffffp-4",
+        "expected_hex": "0x1.a000000000000p-4",
+        "actual_fp64_bits": "0x3fb9ffffffffffff",
+        "expected_fp64_bits": "0x3fba000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 30,
+        "label": 30,
+        "actual_hex": "0x1.bffffffffffffp-4",
+        "expected_hex": "0x1.c000000000000p-4",
+        "actual_fp64_bits": "0x3fbbffffffffffff",
+        "expected_fp64_bits": "0x3fbc000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 31,
+        "label": 31,
+        "actual_hex": "0x1.dffffffffffffp-4",
+        "expected_hex": "0x1.e000000000000p-4",
+        "actual_fp64_bits": "0x3fbdffffffffffff",
+        "expected_fp64_bits": "0x3fbe000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 151,
+        "label": 152,
+        "actual_hex": "-0x1.fffffffffffffp-5",
+        "expected_hex": "-0x1.0000000000000p-4",
+        "actual_fp64_bits": "0xbfafffffffffffff",
+        "expected_fp64_bits": "0xbfb0000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 152,
+        "label": 153,
+        "actual_hex": "-0x1.1ffffffffffffp-4",
+        "expected_hex": "-0x1.2000000000000p-4",
+        "actual_fp64_bits": "0xbfb1ffffffffffff",
+        "expected_fp64_bits": "0xbfb2000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 153,
+        "label": 154,
+        "actual_hex": "-0x1.3ffffffffffffp-4",
+        "expected_hex": "-0x1.4000000000000p-4",
+        "actual_fp64_bits": "0xbfb3ffffffffffff",
+        "expected_fp64_bits": "0xbfb4000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 154,
+        "label": 155,
+        "actual_hex": "-0x1.5ffffffffffffp-4",
+        "expected_hex": "-0x1.6000000000000p-4",
+        "actual_fp64_bits": "0xbfb5ffffffffffff",
+        "expected_fp64_bits": "0xbfb6000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 155,
+        "label": 156,
+        "actual_hex": "-0x1.7ffffffffffffp-4",
+        "expected_hex": "-0x1.8000000000000p-4",
+        "actual_fp64_bits": "0xbfb7ffffffffffff",
+        "expected_fp64_bits": "0xbfb8000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 156,
+        "label": 157,
+        "actual_hex": "-0x1.9ffffffffffffp-4",
+        "expected_hex": "-0x1.a000000000000p-4",
+        "actual_fp64_bits": "0xbfb9ffffffffffff",
+        "expected_fp64_bits": "0xbfba000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 157,
+        "label": 158,
+        "actual_hex": "-0x1.bffffffffffffp-4",
+        "expected_hex": "-0x1.c000000000000p-4",
+        "actual_fp64_bits": "0xbfbbffffffffffff",
+        "expected_fp64_bits": "0xbfbc000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 158,
+        "label": 159,
+        "actual_hex": "-0x1.dffffffffffffp-4",
+        "expected_hex": "-0x1.e000000000000p-4",
+        "actual_fp64_bits": "0xbfbdffffffffffff",
+        "expected_fp64_bits": "0xbfbe000000000000",
+        "actual_signbit": true,
+        "expected_signbit": true,
+        "same_sign_ulp_distance": 1
+      }
+    ]
+  },
+  "e8m0_powers": {
+    "actual_dtype": "torch.float64",
+    "expected_dtype": "torch.float64",
+    "actual_shape": [
+      255
+    ],
+    "expected_shape": [
+      255
+    ],
+    "exact": false,
+    "numeric_mismatch_count": 35,
+    "signbit_mismatch_count": 0,
+    "max_abs_error": 4.722366482869645e+21,
+    "first_mismatches": [
+      {
+        "index": 14,
+        "label": -113,
+        "actual_hex": "0x1.fffffffffffffp-114",
+        "expected_hex": "0x1.0000000000000p-113",
+        "actual_fp64_bits": "0x38dfffffffffffff",
+        "expected_fp64_bits": "0x38e0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 22,
+        "label": -105,
+        "actual_hex": "0x1.fffffffffffffp-106",
+        "expected_hex": "0x1.0000000000000p-105",
+        "actual_fp64_bits": "0x395fffffffffffff",
+        "expected_fp64_bits": "0x3960000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 24,
+        "label": -103,
+        "actual_hex": "0x1.fffffffffffffp-104",
+        "expected_hex": "0x1.0000000000000p-103",
+        "actual_fp64_bits": "0x397fffffffffffff",
+        "expected_fp64_bits": "0x3980000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 37,
+        "label": -90,
+        "actual_hex": "0x1.fffffffffffffp-91",
+        "expected_hex": "0x1.0000000000000p-90",
+        "actual_fp64_bits": "0x3a4fffffffffffff",
+        "expected_fp64_bits": "0x3a50000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 47,
+        "label": -80,
+        "actual_hex": "0x1.fffffffffffffp-81",
+        "expected_hex": "0x1.0000000000000p-80",
+        "actual_fp64_bits": "0x3aefffffffffffff",
+        "expected_fp64_bits": "0x3af0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 52,
+        "label": -75,
+        "actual_hex": "0x1.fffffffffffffp-76",
+        "expected_hex": "0x1.0000000000000p-75",
+        "actual_fp64_bits": "0x3b3fffffffffffff",
+        "expected_fp64_bits": "0x3b40000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 60,
+        "label": -67,
+        "actual_hex": "0x1.fffffffffffffp-68",
+        "expected_hex": "0x1.0000000000000p-67",
+        "actual_fp64_bits": "0x3bbfffffffffffff",
+        "expected_fp64_bits": "0x3bc0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 67,
+        "label": -60,
+        "actual_hex": "0x1.fffffffffffffp-61",
+        "expected_hex": "0x1.0000000000000p-60",
+        "actual_fp64_bits": "0x3c2fffffffffffff",
+        "expected_fp64_bits": "0x3c30000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 70,
+        "label": -57,
+        "actual_hex": "0x1.fffffffffffffp-58",
+        "expected_hex": "0x1.0000000000000p-57",
+        "actual_fp64_bits": "0x3c5fffffffffffff",
+        "expected_fp64_bits": "0x3c60000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 75,
+        "label": -52,
+        "actual_hex": "0x1.fffffffffffffp-53",
+        "expected_hex": "0x1.0000000000000p-52",
+        "actual_fp64_bits": "0x3cafffffffffffff",
+        "expected_fp64_bits": "0x3cb0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 95,
+        "label": -32,
+        "actual_hex": "0x1.fffffffffffffp-33",
+        "expected_hex": "0x1.0000000000000p-32",
+        "actual_fp64_bits": "0x3defffffffffffff",
+        "expected_fp64_bits": "0x3df0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 108,
+        "label": -19,
+        "actual_hex": "0x1.fffffffffffffp-20",
+        "expected_hex": "0x1.0000000000000p-19",
+        "actual_fp64_bits": "0x3ebfffffffffffff",
+        "expected_fp64_bits": "0x3ec0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 110,
+        "label": -17,
+        "actual_hex": "0x1.fffffffffffffp-18",
+        "expected_hex": "0x1.0000000000000p-17",
+        "actual_fp64_bits": "0x3edfffffffffffff",
+        "expected_fp64_bits": "0x3ee0000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 113,
+        "label": -14,
+        "actual_hex": "0x1.fffffffffffffp-15",
+        "expected_hex": "0x1.0000000000000p-14",
+        "actual_fp64_bits": "0x3f0fffffffffffff",
+        "expected_fp64_bits": "0x3f10000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 115,
+        "label": -12,
+        "actual_hex": "0x1.fffffffffffffp-13",
+        "expected_hex": "0x1.0000000000000p-12",
+        "actual_fp64_bits": "0x3f2fffffffffffff",
+        "expected_fp64_bits": "0x3f30000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      },
+      {
+        "index": 118,
+        "label": -9,
+        "actual_hex": "0x1.fffffffffffffp-10",
+        "expected_hex": "0x1.0000000000000p-9",
+        "actual_fp64_bits": "0x3f5fffffffffffff",
+        "expected_fp64_bits": "0x3f60000000000000",
+        "actual_signbit": false,
+        "expected_signbit": false,
+        "same_sign_ulp_distance": 1
+      }
+    ]
+  }
+}

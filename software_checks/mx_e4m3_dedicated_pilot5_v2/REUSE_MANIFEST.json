@@ -1,0 +1,69 @@
+{
+  "schema": "mx-e4m3-pilot5-reuse-v1",
+  "handoff_date": "2026-10-22",
+  "source_package_sha256": "6f4bf98f30df85cf9ae654731dfd4c27f6e15a47091cfecb1f809c9ca6a539f3",
+  "byte_identical_reused_files": [
+    {
+      "file": "svhn_support.py",
+      "source_package": "mx_weights_dual_reference100_v1.zip",
+      "source_path": "svhn_support.py",
+      "sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "byte_identical": true
+    },
+    {
+      "file": "smoke_support.py",
+      "source_package": "mx_weights_dual_reference100_v1.zip",
+      "source_path": "smoke_support.py",
+      "sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "byte_identical": true
+    },
+    {
+      "file": "resume_core.py",
+      "source_package": "mx_weights_dual_reference100_v1.zip",
+      "source_path": "resume_core.py",
+      "sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "byte_identical": true
+    },
+    {
+      "file": "SOURCE_MANIFEST.json",
+      "source_package": "mx_weights_dual_reference100_v1.zip",
+      "source_path": "SOURCE_MANIFEST.json",
+      "sha256": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+      "byte_identical": true
+    },
+    {
+      "file": "upstream/Any-Precision-DNNs-master.zip",
+      "source_package": "mx_weights_dual_reference100_v1.zip",
+      "source_path": "upstream/Any-Precision-DNNs-master.zip",
+      "sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "byte_identical": true
+    }
+  ],
+  "adapted_files": [
+    {
+      "file": "run_train.py",
+      "based_on": "provenance/single_run_train.py",
+      "source_sha256": "157be4ad4047e7505f1d82ddd2459698dc71edb0af17f6f2bb5e0c2e093b9567",
+      "new_sha256": "ba993f23e2fe25f1c178ffee26277f1667b3d64810e71e2de7e2400bc6411641"
+    },
+    {
+      "file": "single_support.py",
+      "based_on": "provenance/single_single_support.py",
+      "source_sha256": "18c0ca6c43a2bfc43089fea857d6cffd8394808e5ece922fdba5f7b035174784",
+      "new_sha256": "951519df077ef09e2594f5b3142de5834b4c4f966a59864b9b1c500017b3c269"
+    },
+    {
+      "file": "mx_adapter.py",
+      "based_on": "mx_adapter.py",
+      "source_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "new_sha256": "4d1073e878c1a1b4cdd1a3bb3400881096ec81cd05aa8c992e0309441ce563f6"
+    },
+    {
+      "file": "mx_e4m3.py",
+      "based_on": "mx_format.py",
+      "source_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "new_sha256": "e6df674950848d6f32c7b668b6d821f0370d674d5416246b8308477ed8f680b7"
+    }
+  ],
+  "prior_source_files_modified": false
+}

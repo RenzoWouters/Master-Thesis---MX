@@ -1,0 +1,51 @@
+{
+  "schema": "mx-e4m3-dedicated-pilot5-change-v1",
+  "scope": "dedicated E4M3/A32, five epochs only",
+  "baseline": "prior dedicated E2M3/A32 pilot embedded in handed-over dual package",
+  "research_changes": [
+    "new MXFP8_E4M3 codec (bias7, max448, NaN rejected, RNE, emax8 scale)",
+    "six existing MX-layer adapters now call E4M3; original G(W) and identitySTE preserved"
+  ],
+  "export_validation_change": "recompute G(W)/codes and compare loaded decoded weights on training device; no full test rerun",
+  "reporting_changes": [
+    "new output directory and E4M3 schema",
+    "notebook accuracy figures last5 and best; epoch100 explicitly unavailable",
+    "new codec/integration checks",
+    "only mx mode and 5epoch stop exposed"
+  ],
+  "unchanged": [
+    "CNN8 svhnq expand2",
+    "SVHN train-only preprocessing",
+    "FP32 update masters, gradients, Adam moments",
+    "A32 and BN32 policy",
+    "hard CE one pass per minibatch",
+    "Adam lr0.001 no weightdecay",
+    "batch128 workers0 drop_lastFalse",
+    "seed20261009 fresh initialization",
+    "100epoch LR milestones50/75/90, pilot stop5",
+    "source forward AST",
+    "existing utils compatibility patch",
+    "no raw data or past result mutation"
+  ],
+  "mantissa_policy": "existing mantissa truncation retained for next joint experiment; dedicated single-mode pilot has no lower-mode pass",
+  "exponent_truncation_in_this_pilot": false,
+  "learned_or_corrected_shared_scales": false,
+  "old_export_reproduction_issue_resolved_by_this_pilot": false,
+  "synthetic_validation_is_not_SVHN_training": true,
+  "package_revision": "mx_e4m3_dedicated_pilot5_v2",
+  "implementation_correction_v2": {
+    "trigger": "user GPU check failed at all_254_finite_codes_match_independent_decode before training",
+    "element_arithmetic": "exact integer E4M3 units times 2^-9",
+    "scale_arithmetic": "exact normal FP64 power-of-two constructed from exponent bits",
+    "scale_selection_or_compensation_changed": false,
+    "training_protocol_changed": false,
+    "strict_codec_acceptance_preserved": true,
+    "extra_checks": [
+      "all 255 finite scale powers",
+      "all 64770 finite element/scale FP64 products"
+    ],
+    "legacy_probe": "diagnostic only; numerical and signbit mismatch counts; not used for v2 weights",
+    "gpu_root_cause_status": "pow evaluation route confirmed in PyTorch2.10 source; actual failing laptop values still to be measured",
+    "reporting_fix": "persist partial codec report on FAIL and include exact comparison details in feedback bundle"
+  }
+}

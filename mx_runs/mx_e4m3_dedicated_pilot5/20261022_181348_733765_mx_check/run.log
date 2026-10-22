@@ -1,0 +1,22 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_e4m3_dedicated_pilot5\20261022_181348_733765_mx_check
+DEDICATED E4M3: vijf epochs; A32; FP32-master; hard CE; één pass per minibatch.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+FAIL: E4M3 codec check failed: all_254_finite_codes_match_independent_decode
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_e4m3_dedicated_pilot5_v1\run_train.py", line 499, in main
+    ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_e4m3_dedicated_pilot5_v1\run_train.py", line 106, in create_context
+    report['codec_tests'] = test_e4m3.run_tests(str(rt.device))
+                            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_e4m3_dedicated_pilot5_v1\test_e4m3.py", line 105, in run_tests
+    check(_exact(values, expected), 'all_254_finite_codes_match_independent_decode')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_e4m3_dedicated_pilot5_v1\test_e4m3.py", line 89, in check
+    raise AssertionError('E4M3 codec check failed: ' + label)
+AssertionError: E4M3 codec check failed: all_254_finite_codes_match_independent_decode
+
+Geen bestaande data of eerdere resultaten gewijzigd. Deel de feedback_bundle.zip uit deze map.
+EINDSTATUS: FAIL
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_e4m3_dedicated_pilot5\20261022_181348_733765_mx_check\run_report.json

@@ -1,0 +1,42 @@
+--- prior/provenance/single_single_support.py
++++ new/single_support.py
+@@ -1,6 +1,7 @@
+ """One-mode extension of the validated SVHN infrastructure.
+ 
+-No changes to the upstream forward AST, optimizer, MX codec or STE.
++The upstream forward AST and optimizer remain unchanged. Only the weight
++codec changes from E2M3 to E4M3; the identity-STE policy is retained.
+ The internal upstream selector '32' selects A32 + BN32 + W32 preprocessing.
+ The actual weight format is controlled independently by MXWeightQuantizer.
+ """
+@@ -15,12 +16,12 @@
+ import torch
+ import svhn_support as s
+ import mx_adapter as a
+-import mx_format as f
++import mx_e4m3 as f
+ 
+ 
+ def weight_format(mode: str) -> str:
+     s.require(mode in ('mx', 'control'), 'Onbekende modus.')
+-    return 'MXFP6_E2M3' if mode == 'mx' else 'W32_effective'
++    return 'MXFP8_E4M3' if mode == 'mx' else 'W32_effective'
+ 
+ 
+ def inactive_bn(name: str) -> bool:
+@@ -28,6 +29,7 @@
+ 
+ 
+ def build_model(modules, mode: str, device):
++    weight_format(mode)  # Reject an unknown mode before it could become a control.
+     # Preserve topology and parameter initialization from the reference. Banks
+     # 1/2/4/8 remain present but unused (no gradients or optimizer state).
+     original = modules.models.svhnq(s.BITS, num_classes=10, expand=2).to(device)
+@@ -39,6 +41,7 @@
+ 
+ 
+ def assert_policy(model, mode: str):
++    weight_format(mode)
+     quantizers = [m for m in model.modules() if isinstance(m, a.MXWeightQuantizer)]
+     s.require(len(quantizers) == 6 and all(q.enabled == (mode == 'mx') for q in quantizers),
+               'Verkeerde MX-laagselectie of modus.')

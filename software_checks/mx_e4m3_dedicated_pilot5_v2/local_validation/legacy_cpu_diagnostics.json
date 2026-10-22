@@ -1,0 +1,35 @@
+{
+  "purpose": "non-gating v1 arithmetic diagnostic; no model or dataset",
+  "device": "cpu",
+  "torch_version": "2.10.0+cpu",
+  "finite_code_decode": {
+    "actual_dtype": "torch.float64",
+    "expected_dtype": "torch.float64",
+    "actual_shape": [
+      254
+    ],
+    "expected_shape": [
+      254
+    ],
+    "exact": true,
+    "numeric_mismatch_count": 0,
+    "signbit_mismatch_count": 0,
+    "max_abs_error": 0.0,
+    "first_mismatches": []
+  },
+  "e8m0_powers": {
+    "actual_dtype": "torch.float64",
+    "expected_dtype": "torch.float64",
+    "actual_shape": [
+      255
+    ],
+    "expected_shape": [
+      255
+    ],
+    "exact": true,
+    "numeric_mismatch_count": 0,
+    "signbit_mismatch_count": 0,
+    "max_abs_error": 0.0,
+    "first_mismatches": []
+  }
+}
