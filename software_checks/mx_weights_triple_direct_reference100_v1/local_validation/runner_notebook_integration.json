@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "scope": "actual runner-produced synthetic CPU reports; no SVHN metrics or new training",
+  "synthetic_fixture_only": true,
+  "training_started": false,
+  "checkpoint_loaded": false,
+  "no_executed_notebook_saved": true,
+  "cases": {
+    "continuous100": {
+      "status": "PASS",
+      "source_status": "PASS",
+      "completed_epochs": 100,
+      "confirmed_epoch100": true,
+      "observed_best_E4M3_epoch": 26,
+      "no_analysis_errors": true,
+      "input_hashes_unchanged": true,
+      "notebook_cells_executed": 9,
+      "executed_notebook_saved": false,
+      "input_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/continuous100/20261023_150206_938456_joint_run"
+    },
+    "resume99_to100": {
+      "status": "PASS",
+      "source_status": "PASS",
+      "completed_epochs": 100,
+      "confirmed_epoch100": true,
+      "observed_best_E4M3_epoch": 26,
+      "no_analysis_errors": true,
+      "input_hashes_unchanged": true,
+      "notebook_cells_executed": 0,
+      "executed_notebook_saved": false,
+      "input_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/resume99_to100/20261023_150227_712951_joint_resume"
+    },
+    "early_stop": {
+      "status": "PASS",
+      "source_status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "completed_epochs": 1,
+      "confirmed_epoch100": false,
+      "observed_best_E4M3_epoch": 1,
+      "no_analysis_errors": true,
+      "input_hashes_unchanged": true,
+      "notebook_cells_executed": 0,
+      "executed_notebook_saved": false,
+      "input_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/early_stop/20261023_150228_758583_joint_run"
+    }
+  },
+  "tested_file_sha256": {
+    "run_train.py": "24cdc0cd7e9dd0a02052e404ae47c51243177f89ffded246973b403164d481c3",
+    "notebook_support.py": "5f645ab78ce904c527def92469e1d14165db77c97bf0f1cb03fde5c592292783",
+    "MX_triple_direct_reference100_resultaten.ipynb": "6258a35657eaced77ecca273514a42f2547b02f6c9aa64ef2b410a04c380c64f"
+  }
+}

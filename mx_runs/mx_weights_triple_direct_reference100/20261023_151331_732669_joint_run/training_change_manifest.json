@@ -1,0 +1,53 @@
+{
+  "schema": "mx-triple-direct-reference100-change-v1",
+  "package": "mx_weights_triple_direct_reference100_v1",
+  "decision_date": "2026-10-23",
+  "source": "successful mx_weights_triple_direct_pilot5_v1; numerical and joint-training core unchanged",
+  "scope": "100 full train-only SVHN epochs; three direct weight modes",
+  "weight_formats": [
+    "MXFP8_E4M3",
+    "MXFP6_E2M3",
+    "MXFP4_E2M1"
+  ],
+  "quantization_source": "each mode directly from the same current FP32 G(W)",
+  "mantissa_truncation": false,
+  "exponent_truncation": false,
+  "shared_scale_compensation": false,
+  "learned_shared_scale": false,
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "training_order": [
+    8,
+    6,
+    4
+  ],
+  "test_order": [
+    4,
+    6,
+    8
+  ],
+  "bn_mapping": {
+    "8": "8",
+    "6": "32",
+    "4": "4"
+  },
+  "teacher_chain": "labels -> E4M3 -> detached E4M3 softmax to E2M3 -> detached E2M3 softmax to E2M1",
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "loss_gradient_reduction": "sum, no division by three",
+  "selection": "all three modes at first strict E4M3 test maximum, and all three at epoch100",
+  "configured_full_schedule_epochs": 100,
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "new_output_root": "mx_runs/mx_weights_triple_direct_reference100",
+  "old_results_modified": false,
+  "executed_notebook_delivered": false,
+  "reference_end_epoch": 100,
+  "initialization": "fresh seed20261009; no warmstart from pilot; resume only same full100 contract",
+  "pass_requires_full_100_epochs": true
+}

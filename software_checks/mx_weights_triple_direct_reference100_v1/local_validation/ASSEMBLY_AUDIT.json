@@ -1,0 +1,38 @@
+{
+  "schema": "mx-triple-direct-reference100-assembly-v1",
+  "status": "PASS",
+  "original_pilot_all_manifest_files_unchanged": 45,
+  "unchanged_core_files": 14,
+  "tested_runtime_files_sha256_match": {
+    "MX_triple_direct_reference100_resultaten.ipynb": "6258a35657eaced77ecca273514a42f2547b02f6c9aa64ef2b410a04c380c64f",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "cdfdf0b971edcc5a8b10e3d72c707fda16b5fd6c589422a1dc500565b0ebc932",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "5f645ab78ce904c527def92469e1d14165db77c97bf0f1cb03fde5c592292783",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "24cdc0cd7e9dd0a02052e404ae47c51243177f89ffded246973b403164d481c3",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "blank_notebook_count": 1,
+  "blank_code_cell_count": 9,
+  "active_python_files_parse": 16,
+  "fixture_data_or_executed_notebooks_packaged": false,
+  "actual_SVHN_or_GPU_training_started_here": false,
+  "validation_reports_pass": [
+    "reference100_validation_report.json",
+    "notebook_validation_report.json",
+    "runner_notebook_integration.json",
+    "independent_review.json",
+    "pilot_feedback_audit.json"
+  ]
+}

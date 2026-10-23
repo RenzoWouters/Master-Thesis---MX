@@ -1,0 +1,54 @@
+{
+  "schema": "independent-reference100-change-review-v1",
+  "status": "PASS",
+  "reviewed_sha256": {
+    "run_train.py": "24cdc0cd7e9dd0a02052e404ae47c51243177f89ffded246973b403164d481c3",
+    "notebook_support.py": "5f645ab78ce904c527def92469e1d14165db77c97bf0f1cb03fde5c592292783"
+  },
+  "unchanged_core_sha256": {
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "findings": [
+    "No training or release blocker found in inspected changes.",
+    "Production training loop AST identical to successful pilot except the Dutch resume error text.",
+    "Full training completion is tied to epoch100 after checks across every epoch; partial stop remains STOPPED_AT_EPOCH_BOUNDARY.",
+    "New config schema/reference_end_epoch and package hashes separate full100 checkpoint contract from pilot checkpoint.",
+    "LR schedule remains50/75/90 after train/test; first lower LR epochs51/76/91.",
+    "Checkpoint selection remains first strict E4M3 maximum with all three reported modes at that same checkpoint.",
+    "Measured100 timing is sum of100 epoch durations including restored earlier epochs; no projection substituted.",
+    "Notebook main checkpoint figure explicitly shows epoch100 and common E4M3-best; unavailable/unconfirmed100 stays blank.",
+    "Core source/codecs/adapter/training support remain byte-identical to GPU-tested pilot."
+  ],
+  "evidence_limits": [
+    "Code review only; actual synthetic100 schedule/resume/STOPPED and notebook fixture tests belong to separate agents.",
+    "No real SVHN or GPU training performed in this audit."
+  ],
+  "minor_reporting_note_resolved": "The new export_results overrides timing limitations with duration-aware wording for full100 and partial runs. Both branches inspected/evaluated; shared timing helper and all14 core files remain unchanged.",
+  "documentation_review": {
+    "files": [
+      "README.md",
+      "PROTOCOL.md",
+      "CODEWIJZIGINGEN.md"
+    ],
+    "status": "PASS",
+    "scope": "Commands/paths, fresh initialization, direct precision policy, A32/FP32, LR intervals, counts, selection, resume instructions, measured/projected runtime and reported export scope checked; no materially incorrect instruction found."
+  },
+  "reviewed_documentation_sha256": {
+    "README.md": "b419dacf0efd4145ecdad6b811345bbbec7e4225547fcb7cc1073ba3c9950800",
+    "PROTOCOL.md": "8a45f899e1586c8edb5c89d9c0fc2888ea21233831014a9d5332217b9de94029",
+    "CODEWIJZIGINGEN.md": "0017b4473951a0c7b2bd12cb0ae06ad9d1f950d89740f562fb6abacf7ebf66d2"
+  }
+}

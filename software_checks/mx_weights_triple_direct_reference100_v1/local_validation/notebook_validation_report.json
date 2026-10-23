@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "scope": "GENERATED_SYNTHETIC_REPORTS_ONLY_NO_TRAINING",
+  "empty_template_outputs_confirmed": true,
+  "template_default_save_figures": false,
+  "explicit_save_switch_tested": true,
+  "no_executed_notebook_created": true,
+  "tested_file_sha256": {
+    "MX_triple_direct_reference100_resultaten.ipynb": "6258a35657eaced77ecca273514a42f2547b02f6c9aa64ef2b410a04c380c64f",
+    "notebook_support.py": "5f645ab78ce904c527def92469e1d14165db77c97bf0f1cb03fde5c592292783",
+    "local_validation/test_notebook.py": "c2311967607bdf0a8acb02cb36691e17b3c16737fd1e9cd31e1bf94a8d77dd06"
+  },
+  "cases": {
+    "synthetic_complete100": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 100,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple100_notebook_validation_20261023/synthetic_complete100/preview"
+    },
+    "synthetic_stopped5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 5,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple100_notebook_validation_20261023/synthetic_stopped5/preview"
+    }
+  },
+  "expected_negative_cases": {
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+      ]
+    },
+    "missing_test_mode": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 5/test: niet precies drie verschillende modi."
+      ]
+    },
+    "wrong_soft_loss_label": {
+      "expected_rejection": true,
+      "messages": [
+        "Losslabels wijken af: train-E4M3 hard CE; train-E2M3/E2M1 soft CE; test alle modi hard CE."
+      ]
+    },
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Volledige referentie niet bevestigd: vereist PASS en alle drie modi voor epochs 1 t/m 100."
+      ]
+    },
+    "wrong_teacher_count": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: gradient-, teacher- of forwardtellingen passen niet bij drie passes en één gezamenlijke update."
+      ]
+    },
+    "complete100_mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs.",
+        "Volledige referentie niet bevestigd: vereist PASS en alle drie modi voor epochs 1 t/m 100.",
+        "Gemeten honderd-epochtotaal gerapporteerd zonder volledige referentie."
+      ]
+    },
+    "complete100_wrong_measured_duration": {
+      "expected_rejection": true,
+      "messages": [
+        "measured_100_epoch_seconds verschilt van de som van gemeten epochtijden."
+      ]
+    }
+  },
+  "visual_qa": {
+    "status": "PASS",
+    "figures_inspected": [
+      "complete100/checkpoint_accuracy",
+      "stopped5/checkpoint_accuracy",
+      "complete100/timing",
+      "complete100/accuracy_curves",
+      "complete100/objective_losses",
+      "complete100/gpu_memory"
+    ],
+    "no_fixture_images_packaged": true
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "scope": "Real triple-direct reference100 main/model/loop/exports on two synthetic CPU images only",
+  "device": "CPU; test-only Tensor.cuda redirection",
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_SVHN_accuracy_or_GPU_timing_result": true,
+  "notebook_executed": false,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "production_config": {
+    "schema": "mx-weights-triple-direct-reference100-protocol-v1",
+    "purpose": "100 complete train-only epochs: joint direct E4M3/E2M3/E2M1 without weight truncation",
+    "mode": "joint",
+    "weight_format": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6,
+      8
+    ],
+    "weight_formats": {
+      "8": "MXFP8_E4M3",
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "codec_revision": {
+      "8": "e4m3-exact-binary-v2",
+      "6": "unchanged-direct-E2M3",
+      "4": "unchanged-direct-E2M1"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in ALL THREE modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "independent direct encoding of current G(W); E4M3 floor(log2(amax))-8; E2M3/E2M1 floor(log2(amax))-2; clip[-127,127], zero block exponent0; only E2 scales equal",
+    "mx_rounding": "nearest ties-to-even; finite FP32 source, scalar subnormal flush, local subnormals supported",
+    "ste_policy": "identity through each MX quantizer; retain original G(W) derivatives",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": false,
+    "mantissa_truncation": false,
+    "exponent_truncation": false,
+    "shared_scale_compensation": false,
+    "learned_shared_scale": false,
+    "quantization_source": "same current FP32 G(W), independently per weight format",
+    "distillation": true,
+    "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+    "passes_per_training_batch": 3,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      8,
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6,
+      8
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6,
+      8
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "8": "8",
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "three active weight-mode banks: E4M3=8, E2M3=32, E2M1=4; keys are storage IDs, all A32; banks1/2 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "planned_epochs": 100,
+    "reference_end_epoch": 100,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "all three modes on complete official test after every epoch; hard CE for each",
+    "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+    "reporting_policy": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "independent direct E4M3/E2M3/E2M1 files per selected checkpoint; not a truncatable source model",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "fixture_changes": {
+    "train_examples": 2,
+    "test_examples": 2,
+    "batch_size": 2
+  },
+  "package_sha256": {
+    "MX_triple_direct_reference100_resultaten.ipynb": "6258a35657eaced77ecca273514a42f2547b02f6c9aa64ef2b410a04c380c64f",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "cdfdf0b971edcc5a8b10e3d72c707fda16b5fd6c589422a1dc500565b0ebc932",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "5f645ab78ce904c527def92469e1d14165db77c97bf0f1cb03fde5c592292783",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "24cdc0cd7e9dd0a02052e404ae47c51243177f89ffded246973b403164d481c3",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "source_sha256": {
+    ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+    "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+    "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+    "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+    "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+    "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+    "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+    "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+    "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+    "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+    "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+    "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+    "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+    "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+    "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+    "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+    "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+    "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+  },
+  "test_duration_seconds": 39.409831592000046,
+  "total_synthetic_optimizer_updates": 102,
+  "cases": {
+    "continuous100": {
+      "optimizer_updates_in_process": 100,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/continuous100/20261023_150206_938456_joint_run"
+    },
+    "resume99_to100": {
+      "optimizer_updates_in_process": 1,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/resume99_to100/20261023_150227_712951_joint_resume"
+    },
+    "early_stop": {
+      "optimizer_updates_in_process": 1,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/early_stop/20261023_150228_758583_joint_run"
+    },
+    "reject_old_pilot": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/reject_old_pilot/20261023_150229_383894_joint_resume"
+    },
+    "reject_completed100": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/reject_completed100/20261023_150229_425813_joint_resume"
+    }
+  },
+  "actual_LR_boundaries": {
+    "1": {
+      "lr_used": 0.001,
+      "lr_next": 0.001
+    },
+    "50": {
+      "lr_used": 0.001,
+      "lr_next": 0.0001
+    },
+    "51": {
+      "lr_used": 0.0001,
+      "lr_next": 0.0001
+    },
+    "75": {
+      "lr_used": 0.0001,
+      "lr_next": 1e-05
+    },
+    "76": {
+      "lr_used": 1e-05,
+      "lr_next": 1e-05
+    },
+    "90": {
+      "lr_used": 1e-05,
+      "lr_next": 1.0000000000000002e-06
+    },
+    "91": {
+      "lr_used": 1.0000000000000002e-06,
+      "lr_next": 1.0000000000000002e-06
+    },
+    "99": {
+      "lr_used": 1.0000000000000002e-06,
+      "lr_next": 1.0000000000000002e-06
+    },
+    "100": {
+      "lr_used": 1.0000000000000002e-06,
+      "lr_next": 1.0000000000000002e-06
+    }
+  },
+  "tests": {
+    "real_main_default100_and_PASS_only_at100": true,
+    "100_synthetic_epochs_100_updates_300_forwards_600_metrics": true,
+    "unchanged_50_75_90_LR_schedule_all_four_phases": true,
+    "three_forwards_two_teacher_checks_one_update_per_batch": true,
+    "A32_FP32_master_Adam_and_three_BN_audits": true,
+    "train_recursive_teacher_labels_test_all_hard_CE": true,
+    "highest_E4M3_first_strict_maximum_not_lower_mode_peak": true,
+    "six_selected_metric_rows_from_common_best_or_epoch100_checkpoint": true,
+    "six_direct_exports_with_verified_decoded_weights": true,
+    "feedback_and_unexecuted_notebook_copied": true,
+    "resume99_to100_model_optimizer_scheduler_rng_exact_CPU": true,
+    "measured100_time_only_after100": true,
+    "early_stop_complete_epoch_without_false_PASS_or100_result": true,
+    "old_pilot_contract_rejected_before_restore_and_updates": true,
+    "completed100_resume_rejected_before_updates": true,
+    "fresh_seed_state_identical_before_every_optional_restore": true,
+    "production_config_package_source_and_fixture_data_unchanged": true,
+    "production_CLI_refusals": {
+      "run --stop-after-epoch -1": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop."
+      },
+      "run --stop-after-epoch 0": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop."
+      },
+      "run --stop-after-epoch 5": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop."
+      },
+      "run --stop-after-epoch 99": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop."
+      },
+      "run --stop-after-epoch 101": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop."
+      },
+      "run --stop-after-epoch 100.0": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: argument --stop-after-epoch: invalid int value: '100.0'"
+      },
+      "run --device cpu": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+      },
+      "run --synthetic": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: unrecognized arguments: --synthetic"
+      },
+      "run --mode control": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: unrecognized arguments: --mode control"
+      },
+      "resume": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+      },
+      "run --checkpoint /workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/continuous100/20261023_150206_938456_joint_run/checkpoints/epoch_00099.pt": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+      },
+      "run --warmstart /workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/continuous100/20261023_150206_938456_joint_run/checkpoints/epoch_00099.pt": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: unrecognized arguments: --warmstart /workspace/scratch/4619498905be/work/triple100_runner_final_integration_20261023/continuous100/20261023_150206_938456_joint_run/checkpoints/epoch_00099.pt"
+      }
+    },
+    "rejected_CLI_created_no_production_output": true
+  }
+}

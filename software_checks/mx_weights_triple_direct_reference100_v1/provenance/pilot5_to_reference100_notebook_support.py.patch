@@ -1,0 +1,54 @@
+--- mx_weights_triple_direct_pilot5_v1/notebook_support.py
++++ mx_weights_triple_direct_reference100_v1/notebook_support.py
+@@ -86,6 +86,7 @@
+     def reference_complete(self):
+         return (self.report.get("status") == "PASS"
+                 and self.summary.get("full_100_epoch_training_completed") is True
++                and not any(item["Niveau"] in ("FOUT", "RUNFOUT") for item in self.issues)
+                 and self.last_epoch == 100
+                 and all(self.test.loc[self.test["weight_format"] == fmt, "epoch"].astype(int).tolist()
+                         == list(range(1, 101)) for fmt in FORMATS.values()))
+@@ -377,7 +378,7 @@
+     if run.reference_complete:
+         endpoint = "**Alle honderd epochs voor alle drie modi aanwezig; volledige referentie volgens het runrapport.** Epoch100 staat naast het door E4M3 gekozen beste checkpoint."
+     else:
+-        endpoint = "**Epoch100 niet gemeten als bevestigd eindresultaat.** De laatste beschikbare epoch en het door E4M3 gekozen beste checkpoint blijven zichtbaar. Er wordt geen ontbrekende accuracy voorspeld."
++        endpoint = "**Epoch100 niet gemeten als bevestigd eindresultaat.** Het epoch100-paneel blijft leeg. De laatste beschikbare epoch staat apart in de tabel; het door E4M3 gekozen beste checkpoint blijft zichtbaar. Er wordt geen ontbrekende accuracy voorspeld."
+     if run.synthetic:
+         endpoint += " **Alle getoonde fixturecijfers zijn uitsluitend synthetische softwarecontroles.**"
+     if run.pilot_complete:
+@@ -408,7 +409,7 @@
+              ("Train / test", f"{c.get('train_examples', '?')} / {c.get('test_examples', '?')}"),
+              ("Groepsgrootte / schaal", f"{c.get('mx_block_size', '?')} / {c.get('mx_scale_format', '?')}"),
+              ("Batch / seed", f"{c.get('batch_size', '?')} / {c.get('seed', '?')}"),
+-             ("Pilot / gepland LR-schema", f"{c.get('pilot_stop_epoch', '?')} / {c.get('planned_epochs', '?')} epochs"),
++             ("Trainingsdoel / LR-schema", f"{c.get('planned_epochs', '?')} epochs; mijlpalen {c.get('scheduler_milestones', 'niet gerapporteerd')}"),
+              ("Afgeronde epochs", run.last_epoch if run.last_epoch is not None else "geen"),
+              ("Beste checkpoint", run.selection.get("policy", "selectiebestand ontbreekt"))]
+     return pd.DataFrame(items, columns=["Onderdeel", "Opgeslagen configuratie"])
+@@ -566,10 +567,14 @@
+         fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.9), constrained_layout=True)
+         fig.suptitle(_title(run, "Drie directe MX-modi — hetzelfde checkpoint per groep"), fontsize=14, fontweight="bold")
+         table = checkpoint_table(run)
+-        for ax, role, title in zip(axes, ("last_epoch", "best_E4M3_test"),
+-                                   ("Laatste beschikbare epoch", "Beste checkpoint gekozen door E4M3")):
++        for ax, role, title in zip(axes, ("epoch100", "best_E4M3_test"),
++                                   ("Vast eindpunt", "Beste checkpoint gekozen door E4M3")):
+             rows = table.loc[table["Rol"] == role]
+             epoch = rows.iloc[0]["Epoch"] if not rows.empty else None
++            if role == "epoch100" and not run.reference_complete:
++                _empty(ax, "Epoch100 ontbreekt als bevestigd eindresultaat\n\nGeen vervanging door de laatste beschikbare epoch\nLaatste beschikbare epoch: " + str(run.last_epoch or "geen"))
++                ax.set_title("Vast eindpunt: epoch 100")
++                continue
+             if run.test.empty:
+                 _empty(ax, "Nog geen gemeten checkpointaccuracies")
+                 continue
+@@ -679,7 +684,7 @@
+     return (prefix + measured + f"Warme epochs volgens het tijdsrapport: **{t.get('steady_epochs', [])}**; mediaan: **{warm}**. "
+             "De afzonderlijke projectie geldt voor een **nieuwe volledige run van honderd epochs vanaf initialisatie**. Zij is geen gemeten eindtijd en geen resterende hervattijd. "
+             "Het waargenomen minimum/maximum van de warme epochs levert een scenario-bereik, geen betrouwbaarheidsinterval. "
+-            "Vijf epochs meten de LR-overgangen op 50/75/90 en langdurige thermische omstandigheden nog niet. "
++            "Een onvolledige run geeft geen zekerheid over latere LR-fasen of langdurige thermische omstandigheden. "
+             "Download, installatie, data-inladen en eindrapportage zijn niet inbegrepen. **Geen accuracy voor epoch100 wordt voorspeld.**")
+ 
+ 

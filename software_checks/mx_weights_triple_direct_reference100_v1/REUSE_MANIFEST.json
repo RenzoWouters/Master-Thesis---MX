@@ -1,0 +1,82 @@
+{
+  "schema": "mx-triple-direct-reference100-reuse-v1",
+  "immediate_parent_package": "mx_weights_triple_direct_pilot5_v1",
+  "parent_package_manifest_sha256": "7d02471fe62c7fb8c9fe2330029dcebea625af0b264d1335e6b82c30f9dbaa67",
+  "successful_pilot_feedback_file": "feedback_bundle(20261023-125617).zip",
+  "successful_pilot_feedback_sha256": "d8ad773e4b2298ac6c0885d6fdc4f04cc3c141f864196340ef83a97c4814ecfc",
+  "unchanged_files": {
+    "mx_format.py": {
+      "sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "mx_e2m1.py": {
+      "sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "mx_adapter.py": {
+      "sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "test_mx.py": {
+      "sha256": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "svhn_support.py": {
+      "sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "smoke_support.py": {
+      "sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "resume_core.py": {
+      "sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "SOURCE_MANIFEST.json": {
+      "sha256": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "upstream/Any-Precision-DNNs-master.zip": {
+      "sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "direct_dual"
+    },
+    "mx_e4m3.py": {
+      "sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "dedicated_e4m3"
+    },
+    "test_e4m3.py": {
+      "sha256": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+      "origin": "triple_direct_pilot5",
+      "historical_origin": "dedicated_e4m3"
+    },
+    "joint_adapter.py": {
+      "sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "origin": "triple_direct_pilot5"
+    },
+    "joint_support.py": {
+      "sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "origin": "triple_direct_pilot5"
+    },
+    "test_joint.py": {
+      "sha256": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+      "origin": "triple_direct_pilot5"
+    }
+  },
+  "production_files_changed_from_pilot": [
+    "run_train.py",
+    "notebook_support.py",
+    "MX_triple_direct_reference100_resultaten.ipynb"
+  ],
+  "original_pilot_package_preserved": true
+}
