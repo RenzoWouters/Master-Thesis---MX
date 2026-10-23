@@ -1,0 +1,28 @@
+{
+  "schema": "mx-triple-truncation-aware-runner-notebook-integration-v1",
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "scope": "Actual synthetic five-epoch runner output read through all copied notebook code cells; no additional model/training calls",
+  "source_directory": "/workspace/scratch/4619498905be/work/triple_trunc_training_integration_20261023/continuous5/20261023_180541_991938_joint_run",
+  "all_ten_copied_notebook_code_cells_executed": true,
+  "all_six_figures_created_in_memory": true,
+  "both_fixed_checkpoint_roles_confirmed": true,
+  "observed_last_epoch": 5,
+  "observed_E4M3_best_epoch": 1,
+  "metric_rows": 30,
+  "prediction_distribution_rows": 15,
+  "prediction_counts_match_full_test_coverage": true,
+  "source_and_derived_export_metadata_accepted": true,
+  "no_analysis_errors": true,
+  "raw_input_hashes_unchanged": true,
+  "SAVE_FIGURES": false,
+  "no_executed_notebook_saved": true,
+  "no_training_or_model_import": true,
+  "tested_file_sha256": {
+    "notebook_support.py": "e8e9f441e67ac708591c6edf6fe89169b957a3ec261396ad8a97b3d861f3eb1c",
+    "MX_triple_truncation_aware_pilot5_resultaten.ipynb": "866946e5f1e32566b10ca62639632217b768ac0eda09ceb6f582f3fc6ad94c9d",
+    "local_validation/test_notebook.py": "38d9a3b96b6ce73841cc9b613779e3ea874ea6d0e79d63a4f933847944c9bb93"
+  },
+  "copied_notebook_sha256": "e6999937966afd7a9e5e2fceab4d1dac0ed62e1410c7f161917c326c23ecb887",
+  "source_report_sha256": "ec583de77559c97beb083b8c6817f4f9d5888dfaed7d1ab9820b2b00bea47418"
+}

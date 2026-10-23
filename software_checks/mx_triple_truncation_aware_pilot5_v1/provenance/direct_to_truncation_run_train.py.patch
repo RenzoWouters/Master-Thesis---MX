@@ -1,0 +1,345 @@
+--- direct_triple_pilot/run_train.py
++++ truncation_triple_pilot/run_train.py
+@@ -1,9 +1,11 @@
+-"""Five full train-only epochs: joint DIRECT E4M3, E2M3 and E2M1, A32.
+-
+-Each mode is quantized directly from the same current FP32 G(W).
++"""Five train-only epochs: shared E4M3 source, exponent and mantissa truncation, A32.
++
++E4M3 is encoded once per layer/minibatch from current FP32 G(W).
++E2M3 keeps the highest exponent bits; E2M1 then keeps the highest mantissa bit.
++Both derived modes copy the current E4M3 source scale bytes unchanged.
+ Upstream recursive distillation: E4M3 hard CE; E2M3 learns from detached E4M3;
+ E2M1 learns from detached E2M3; summed gradients then ONE Adam update.
+-No weight truncation, scale compensation, learned scale or warm-start.
++No scale compensation, learned scale or warm-start. Identity STE through G(W).
+ The unchanged 100-epoch LR schedule is configured, but this pilot stops at 5.
+ """
+ from __future__ import annotations
+@@ -28,39 +30,44 @@
+ 
+ sys.dont_write_bytecode = True
+ import svhn_support as s
+-import joint_support as t
+-import joint_adapter as a
++import trunc_support as t
++import trunc_adapter as a
+ 
+ ROOT = Path(__file__).resolve().parent
+ 
+ 
+ def config(mode: str = 'joint') -> dict:
+-    s.require(mode == 'joint', 'Deze proef heeft exact drie gezamenlijke directe MX-modi.')
++    s.require(mode == 'joint', 'Deze proef heeft exact drie gezamenlijke MX-modi uit één E4M3-bron.')
+     return {
+-        'schema': 'mx-weights-triple-direct-pilot5-protocol-v1',
+-        'purpose': 'five complete train-only epochs: joint direct E4M3/E2M3/E2M1 without weight truncation',
++        'schema': 'mx-triple-truncation-aware-pilot5-protocol-v1',
++        'purpose': 'five complete train-only epochs: E4M3 source, naive exponent truncation to E2M3, then mantissa truncation to E2M1',
+         'mode': mode, 'weight_format': t.weight_format(mode), 'weight_bits': [4, 6, 8],
+         'weight_formats': {'8': 'MXFP8_E4M3', '6': 'MXFP6_E2M3', '4': 'MXFP4_E2M1'},
+-        'codec_revision': {'8': 'e4m3-exact-binary-v2', '6': 'unchanged-direct-E2M3', '4': 'unchanged-direct-E2M1'},
++        'codec_revision': {'8': 'e4m3-exact-binary-v2', '6': 'unchanged-E2M3-decode', '4': 'unchanged-E2M1-decode'},
+         'weight_preprocess': 'original W32 G(W); detached mean(abs(W)), tanh/max normalization',
+         'activation_bits': 32, 'activation_policy': 'original A32/ReLU in ALL THREE modes',
+         'master_dtype': 'float32', 'gradient_dtype': 'float32', 'adam_moments_dtype': 'float32',
+         'mx_block_size': 32, 'mx_scale_format': 'E8M0',
+         'mx_group_axis': 'flatten Cin*Kh*Kw within each Cout, zero-pad tail',
+-        'mx_scale_policy': 'independent direct encoding of current G(W); E4M3 floor(log2(amax))-8; E2M3/E2M1 floor(log2(amax))-2; clip[-127,127], zero block exponent0; only E2 scales equal',
+-        'mx_rounding': 'nearest ties-to-even; finite FP32 source, scalar subnormal flush, local subnormals supported',
+-        'ste_policy': 'identity through each MX quantizer; retain original G(W) derivatives',
++        'mx_scale_policy': 'encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; copy same E4M3 scale bytes to both lower modes; scales are not fixed across optimizer steps',
++        'mx_rounding': 'E4M3 source nearest ties-to-even; finite FP32 source, scalar subnormal flush; lower modes exact bit mappings without additional rounding',
++        'ste_policy': 'identity wrt G(W) for E4M3 and entire E4-to-E2 code path; retain original G(W) derivatives; no gradient through codes or scales',
+         'numeric_kernel': 'FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels',
+-        'truncation': False, 'mantissa_truncation': False, 'exponent_truncation': False,
++        'truncation': True, 'mantissa_truncation': True, 'exponent_truncation': True,
+         'shared_scale_compensation': False, 'learned_shared_scale': False,
+-        'quantization_source': 'same current FP32 G(W), independently per weight format',
++        'quantization_source': 'one current E4M3 encoding per MX layer and minibatch, shared across all three modes',
++        'source_weight_bits': 8,
++        'exponent_mapping': 's e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation',
++        'mantissa_mapping': 'derived E2M3 uint8 codes >> 2; same original E4M3 scale',
++        'source_cache_policy': 'detached integer source and derived codes; one triplet per minibatch; cleared before Adam',
++        'direct_lower_quantization': False, 'exponent_bias_compensation': False,
+         'distillation': True,
+         'loss': 'E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3',
+         'passes_per_training_batch': 3, 'optimizer_steps_per_training_batch': 1,
+         'training_mode_order': [8, 6, 4], 'test_mode_order': [4, 6, 8],
+         'internal_upstream_selectors': [4, 6, 8], 'legacy_abits_and_wbits': 32,
+         'model_bank_structure': s.BITS, 'bn_bank_mapping': {'8': '8', '6': '32', '4': '4'},
+-        'batchnorm_policy': 'three active weight-mode banks: E4M3=8, E2M3=32, E2M1=4; keys are storage IDs, all A32; banks1/2 unused',
++        'batchnorm_policy': 'normal training updates of three mode banks E4M3=8,E2M3=32,E2M1=4; parameters and running stats learn per mode; eval frozen; keys are storage IDs, all A32; banks1/2 unused',
+         'extra_FP32_teacher_forward': False,
+         'dataset': 'svhn', 'train_split': 'train', 'test_split': 'test', 'extra_used': False,
+         'train_examples': 73257, 'test_examples': 26032, 'validation_examples': 0,
+@@ -77,7 +84,7 @@
+         'backend_policy': 'github: cudnn.benchmark=True; no deterministic override',
+         'rng_policy': 'global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries',
+         'checkpoint_policy': 'immutable FP32 training state per epoch and selected best/last copies',
+-        'export_policy': 'independent direct E4M3/E2M3/E2M1 files per selected checkpoint; not a truncatable source model',
++        'export_policy': 'one E4M3 source with all BN auxiliary state per selected checkpoint; lower exports derived only from saved/reloaded source codes and scale bytes; separate FP32 resume checkpoint',
+         'exact_historical_paper_reproduction_proven': False,
+     }
+ 
+@@ -112,7 +119,7 @@
+     if check_only:
+         import test_mx
+         import test_e4m3
+-        import test_joint
++        import test_trunc_training
+         report['codec_tests'] = {'E2M3': {}, 'E4M3': {}}
+         try:
+             report['codec_tests']['E2M3'] = test_mx.run_tests(modules, str(rt.device))
+@@ -126,14 +133,14 @@
+             s.write_json(out / 'codec_report.json', report['codec_tests'])
+         report['synthetic_training_checks'] = {}
+         try:
+-            test_joint.run_tests(modules, rt, source, log, checks=report['synthetic_training_checks'])
++            test_trunc_training.run_tests(modules, rt, source, log, checks=report['synthetic_training_checks'])
+         except BaseException as exc:
+             report['synthetic_training_checks'].update(status='FAIL', error=repr(exc))
+             raise
+         else:
+             report['synthetic_training_checks']['status'] = 'PASS'
+         finally:
+-            s.write_json(out / 'joint_check_report.json', report['synthetic_training_checks'])
++            s.write_json(out / 'trunc_training_check_report.json', report['synthetic_training_checks'])
+         _, forward_hash = t.load_joint_forward(source, modules.utils, log)
+         report.update(forward_ast_sha256=forward_hash, dataset_downloaded=False,
+                       synthetic_checks_only=True)
+@@ -143,7 +150,7 @@
+                 report['notebook_dependencies'][name] = metadata.version(name)
+             except metadata.PackageNotFoundError:
+                 report['notebook_dependencies'][name] = 'MISSING: notebook only'
+-        log('CHECK PASS: directe E4M3/E2M3/E2M1, A32, drie BN-banken, recursieve distillatie en gezamenlijke updates. Geen SVHN-training.')
++        log('CHECK PASS: E4M3-bron, exponent- en mantissabittruncatie, schaalbehoud, STE, A32, drie BN-banken en recursieve updates. Geen SVHN-training.')
+         return None
+ 
+     start_data = time.perf_counter()
+@@ -272,6 +279,8 @@
+             steps += expected_steps
+             t.validate_gradients(model)
+             update_rows = t.layer_updates(before_weights, t.layer_snapshot(model, c['mode']), c['mode'], epoch)
++            if not any(row['master_changed_values'] > 0 for row in update_rows):
++                log('DIAGNOSE: geen gewijzigde MX-masterwaarden in deze epoch; eindige gradients en Adamstappen worden afzonderlijk gecontroleerd.')
+             adam_check = t.validate_adam_state(model, optimizer, steps)
+             s.legacy.finite_state(model)
+             state_before_eval = s.legacy.state_digest(model.state_dict())
+@@ -295,6 +304,9 @@
+                 'batchnorm_counters_correct': bn_check['all_counters_correct'],
+                 'gradient_checks': grad_audit, 'adam_checks': adam_check, 'weight_updates': update_rows,
+                 'test_optimizer_steps': test_audit['optimizer_steps_in_phase'],
++                'test_source_checks': test_audit['shared_source_checks'],
++                'test_prediction_counts': test_audit['prediction_counts'],
++                'test_label_counts': test_audit['label_counts'],
+                 'model_sha256': state_before_eval, 'checkpoint_path': str(checkpoint.resolve()),
+                 'forward_ast_sha256': ast_hash, 'train_seconds': train_s, 'test_seconds': test_s,
+                 'first_epoch_in_process': epoch == first_epoch,
+@@ -323,6 +335,9 @@
+                 f'totaal={record["total_epoch_seconds"]:.1f}s; beste epoch={best["epoch"]}')
+             log('  TEST ' + ' | '.join(f'{r["weight_format"]}/A32: '
+                                     f'{r["top1_percent"]:.4f}%' for r in test_rows))
++            for bit, counts in record['test_prediction_counts'].items():
++                if max(counts) == sum(counts):
++                    log(f'  DIAGNOSE {a.FORMATS[int(bit)]}: alle testbeelden krijgen klasse {counts.index(max(counts))}; meetresultaat, geen technische FAIL.')
+             estimate = s.estimate_time(trace['epochs'])
+             if estimate['available']:
+                 log(f'  SCHATTING 100 epochs: {estimate["estimated_100_epoch_seconds"] / 3600:.2f} uur '
+@@ -370,6 +385,25 @@
+                   'Er moeten twee losgekoppelde teachercontroles per minibatch zijn.')
+         s.require(audit['forward_calls_E4M3'] == audit['forward_calls_E2M3']
+                   == audit['forward_calls_E2M1'] == expected_steps, 'Verkeerd aantal forwards.')
++        s.require(audit['cache_empty_before_all_optimizer_steps'],
++                  'Broncache niet leeg voor optimizerupdate.')
++        for phase_name, count in [('train', c['train_examples']), ('test', c['test_examples'])]:
++            source_audit = (audit['shared_source_checks'] if phase_name == 'train'
++                            else record['test_source_checks'])
++            batches = math.ceil(count / c['batch_size'])
++            s.require(source_audit['source_triplets'] == batches
++                      and source_audit['high_encodings'] == source_audit['exponent_derivations']
++                      == source_audit['mantissa_derivations'] == batches * len(a.TARGET_LAYERS)
++                      and source_audit['scale_copies_unchanged'] == 2 * batches * len(a.TARGET_LAYERS)
++                      and source_audit['source_cache_cleared']
++                      and source_audit['no_direct_lower_quantizer']
++                      and source_audit['cache_cleared_before_adam'],
++                      'Onvolledige gedeelde E4M3-broncontrole: ' + phase_name)
++        s.require(set(record['test_prediction_counts']) == {'8', '6', '4'},
++                  'Voorspellingsverdelingen ontbreken.')
++        for counts in [record['test_label_counts'], *record['test_prediction_counts'].values()]:
++            s.require(len(counts) == 10 and all(type(n) is int and n >= 0 for n in counts)
++                      and sum(counts) == c['test_examples'], 'Onvolledige klasseverdeling.')
+         for phase, count in [('train', c['train_examples']), ('test', c['test_examples'])]:
+             s.require([row['weight_bits'] for row in record[phase]] == list(a.MODES), 'Onvolledige modi.')
+             for row in record[phase]:
+@@ -405,27 +439,55 @@
+         model = copy.deepcopy(ctx.model).to(ctx.rt.device).eval()
+         model.load_state_dict(state['model'], strict=True)
+         exports_for_role = {}
++        provenance = {
++            'training': 'joint E4M3 source -> exponent-MSB E2M3 -> mantissa E2M1; identity STE; unchanged E4M3 scale; A32',
++            'source_epoch': record['epoch'], 'checkpoint_sha256': digest,
++            'encoding_device': str(ctx.rt.device),
++            'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']}
++        source_payload, all_layer_rows = a.source_payload(model, provenance)
++        source_file = out / f'mx_source_MXFP8_E4M3_{suffix}.pt'
++        source_details = core.atomic_save(source_file, source_payload)
++        # Derivation starts from the verified saved source. The compact source
++        # has all BN/FP32 auxiliary state but no masters for the six MX layers.
++        loaded_source = a.load_verified_payload(source_file)
++        a.validate_source(loaded_source)
++        source_digest = core.file_sha256(source_file)
+         for bit in (8, 6, 4):
+             f = a.codec(bit)
+-            payload, layer_rows = a.export_payload(model, bit, {
+-                'training': 'joint recursive E4M3->E2M3->E2M1 distillation; all weights direct from FP32 G(W); A32; no truncation',
+-                'source_epoch': record['epoch'], 'checkpoint_sha256': digest,
+-                'encoding_device': str(ctx.rt.device),
+-                'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']})
+-            mx_file = out / f'mx_direct_{a.FORMATS[bit]}_{suffix}.pt'
+-            mx_details = core.atomic_save(mx_file, payload)
+-            loaded = torch.load(mx_file, map_location='cpu', weights_only=True)
++            if bit == 8:
++                mx_file, mx_details, loaded = source_file, source_details, loaded_source
++            else:
++                payload = a.derive_payload(loaded_source, bit, source_digest)
++                mx_file = out / f'mx_derived_{a.FORMATS[bit]}_{suffix}.pt'
++                mx_details = core.atomic_save(mx_file, payload)
++                loaded = a.load_verified_payload(mx_file)
++            a.select_mode(model, bit)
+             for name in a.TARGET_LAYERS:
+-                restored = f.MXTensor.from_payload(loaded['mx_layers'][name], ctx.rt.device).decode()
+-                effective = a.effective_reference_weight(model.get_submodule(name).weight.detach())
+-                s.require(torch.equal(restored, f.encode_tensor(effective).decode()), 'MX-exportgewichten verschillen.')
++                encoded = f.MXTensor.from_payload(loaded['mx_layers'][name], ctx.rt.device)
++                restored = encoded.decode()
++                layer = model.get_submodule(name)
++                with torch.no_grad():
++                    live = layer.quantize_fn(layer.weight.detach())
++                s.require(torch.equal(restored, live), 'Export verschilt van dezelfde trainingsroute.')
++                source_scale = loaded_source['mx_layers'][name]['scale_codes']
++                s.require(torch.equal(encoded.scale_codes.cpu(), source_scale.cpu()), 'E4M3-bronschaal gewijzigd in export.')
+                 s.require(name + '.weight' not in loaded['auxiliary_fp32_state'], 'FP32-master in export.')
+             exports_for_role[str(bit)] = {**mx_details, 'epoch': record['epoch'], 'weight_bits': bit,
+                                          'decoded_weights_exact': True, 'six_fp32_masters_absent': True,
+-                                         'full_test_forward_rerun': False, 'truncation': False,
++                                         'full_test_forward_rerun': False, 'truncation': bit != 8,
++                                         'source_weight_bits': 8, 'is_source_export': bit == 8,
++                                         'derived_from_saved_source': bit != 8,
++                                         'source_file_sha256': source_digest,
++                                         'source_scale_bytes_copied': True,
++                                         'master_weights_read_to_derive': False,
++                                         'master_weights_read_to_encode_source': bit == 8,
++                                         'saved_and_reloaded': True,
+                                          'encoding_and_comparison_device': str(ctx.rt.device),
+-                                         'export_validation_scope': 'weights only on training device; no full test rerun'}
++                                         'export_validation_scope': 'exact weights versus live shared-source route on training device; no full test rerun'}
++            layer_rows = [row for row in all_layer_rows if row['weight_bits'] == bit]
++            s.require(len(layer_rows) == len(a.TARGET_LAYERS), 'Onvolledige exportdiagnostiek.')
+             s.write_csv(out / f'mx_export_layers_{bit}_{suffix}.csv', layer_rows)
++        s.require(core.file_sha256(source_file) == source_digest, 'Opgeslagen E4M3-bron gewijzigd tijdens afleiding.')
+         mx_exports[role] = exports_for_role
+     s.write_csv(out / 'selected_metrics.csv', selected)
+     s.write_csv(out / 'epoch_metrics.csv', [row for r in records for phase in ('train', 'test') for row in r[phase]])
+@@ -436,10 +498,21 @@
+                  'all_modes_from_same_selected_checkpoint': True}
+     s.write_json(out / 'checkpoint_selection.json', selection)
+     s.write_json(out / 'history.json', trace)
++    prediction_rows = []
++    for record in records:
++        for bit in a.MODES:
++            counts = record['test_prediction_counts'][str(bit)]
++            prediction_rows.append({'epoch': record['epoch'], 'weight_bits': bit,
++                'weight_format': a.FORMATS[bit], 'n': sum(counts),
++                **{f'predicted_class_{k}': count for k, count in enumerate(counts)},
++                'classes_predicted': sum(n > 0 for n in counts),
++                'dominant_predicted_class': counts.index(max(counts)),
++                'dominant_prediction_fraction': max(counts) / sum(counts)})
++    s.write_csv(out / 'test_prediction_counts.csv', prediction_rows)
+     elapsed = sum(r['total_epoch_seconds'] for r in records)
+     pilot_completed = last['epoch'] == c['pilot_stop_epoch']
+     full_completed = False  # This executable cannot perform the full 100-epoch experiment.
+-    summary = {'schema': 'mx-triple-direct-pilot5-completion-v1',
++    summary = {'schema': 'mx-triple-truncation-aware-pilot5-completion-v1',
+                'planned_epochs': c['planned_epochs'], 'pilot_stop_epoch': c['pilot_stop_epoch'],
+                'completed_epochs': last['epoch'], 'pilot_completed': pilot_completed,
+                'full_training_completed': full_completed,
+@@ -454,11 +527,17 @@
+                'training_forward_passes': last['optimizer_steps'] * 3,
+                'train_examples': c['train_examples'], 'test_examples': c['test_examples'],
+                'mode': c['mode'], 'weight_formats': c['weight_formats'], 'activation_bits': 32,
+-               'distillation': True, 'truncation': False,
++               'distillation': True, 'truncation': True, 'source_weight_bits': 8,
++               'exponent_truncation': True, 'mantissa_truncation': True,
++               'shared_scale_compensation': False, 'learned_shared_scale': False,
+                'quantization_source': c['quantization_source'],
+                'initial_model_sha256': trace['initial_model_sha256'],
+                'measured_completed_epoch_seconds': elapsed,
+                'gradient_checks_before_every_update': True, 'fp32_masters_and_moments_verified': True,
++               'one_E4_source_per_layer_per_minibatch_verified': True,
++               'all_lower_scale_bytes_equal_current_E4_source': True,
++               'source_cache_cleared_before_every_optimizer_update': True,
++               'batchnorm_learned_during_training_eval_frozen': True,
+                'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']}
+     s.write_json(out / 'training_summary.json', summary)
+     estimate = s.estimate_time(records, c['planned_epochs'])
+@@ -483,7 +562,7 @@
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'],
+                       full_training_completed=full_completed, pilot_completed=pilot_completed,
+                       training_forward_passes=last['optimizer_steps'] * 3)
+-    notebook_name = 'MX_triple_direct_pilot5_resultaten.ipynb'
++    notebook_name = 'MX_triple_truncation_aware_pilot5_resultaten.ipynb'
+     notebook = json.loads((ROOT / notebook_name).read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+@@ -514,8 +593,9 @@
+              'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+              'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
+              'training_change_manifest.json', 'training_summary.json',
+-             'codec_report.json', 'joint_check_report.json',
+-             'MX_triple_direct_pilot5_resultaten.ipynb', 'notebook_support.py']
++             'test_prediction_counts.csv',
++             'codec_report.json', 'trunc_training_check_report.json',
++             'MX_triple_truncation_aware_pilot5_resultaten.ipynb', 'notebook_support.py']
+     names += [f'mx_export_layers_{bit}_{role}.csv' for bit in a.MODES for role in ('best', 'last')]
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+         for name in names:
+@@ -529,7 +609,7 @@
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.set_defaults(mode='joint')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_weights_triple_direct_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_truncation_aware_pilot5'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+     parser.add_argument('--stop-after-epoch', type=int, default=5)
+@@ -550,14 +630,15 @@
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'mx-weights-triple-direct-pilot5-report-v1', 'status': 'RUNNING',
+-              'package_revision': 'mx_weights_triple_direct_pilot5_v1',
++    report = {'schema': 'mx-triple-truncation-aware-pilot5-report-v1', 'status': 'RUNNING',
++              'package_revision': 'mx_triple_truncation_aware_pilot5_v1',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+-              'limitations': ['train only; three direct MX weight modes; this is not a paper reproduction',
+-                              'FP32 update master, FP32 gradients/Adam; A32; no truncation',
++              'limitations': ['train only; shared E4M3 source and two code-derived MX modes; this is not a paper reproduction',
++                              'FP32 update master, FP32 gradients/Adam; A32; exponent MSB and mantissa truncation with unchanged source scales',
+                               'three forward/backwards: E4M3 hard CE, E2M3/E2M1 recursive detached soft CE, one Adam step',
+-                              'no same-protocol accuracy comparison with the older five-mode reference',
++                              'BN banks learn during training; no explicit shared-scale correction, bias correction or learned scale',
++                              'five-epoch pilot is not evidence about final100epoch convergence; low accuracy is a valid measured outcome',
+                               'official test used for checkpoint selection, not an independent test estimate',
+                               'numerical weight-only MX emulation; no native MX kernel or energy claim',
+                               'GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism',
+@@ -581,7 +662,7 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log('GEZAMENLIJKE DIRECTE PILOT: 5 epochs; E4M3/E2M3/E2M1; A32; FP32-masters; geen truncatie.')
++            log('GEZAMENLIJKE TRUNCATIEPILOT: 5 epochs; E4M3 -> E2M3 -> E2M1; vaste E4M3-bronschaal per minibatch; A32; FP32-masters.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is None:
+                 report['status'] = 'PASS'

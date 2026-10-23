@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "Independent read-only review and bounded synthetic runner validation",
+  "reviewed_runtime_sha256": {
+    "MX_triple_truncation_aware_pilot5_resultaten.ipynb": "866946e5f1e32566b10ca62639632217b768ac0eda09ceb6f582f3fc6ad94c9d",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "a8f25dca5ae6a004628ddc88a7152be6e070c3d0a63627de9dba9cf12fc9cad9",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "e8e9f441e67ac708591c6edf6fe89169b957a3ec261396ad8a97b3d861f3eb1c",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "da1b3624edef37dd9d8fc92f499511df15da5b4ff1f66598c090751b1ee5252c",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_trunc_training.py": "307c76535fbda6dd4823f2f3fe82b8a1605f1aa1046177c689db6aa7ead6504c",
+    "trunc_adapter.py": "2d49ef58e2a170f75ff1f9760c9b972b08dd3eb75ecacc0c4495b30b97dcd1dc",
+    "trunc_support.py": "68a674909337cc9da717ebb0ae3382b64ba3239a296dff52f1e5a9f65f4b9798",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "unchanged_files_against_previous_direct_pilot": [
+    "SOURCE_MANIFEST.json",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "mx_e2m1.py",
+    "mx_e4m3.py",
+    "mx_format.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "test_e4m3.py",
+    "test_joint.py",
+    "test_mx.py",
+    "upstream/Any-Precision-DNNs-master.zip"
+  ],
+  "production_files_changed_during_validation": false,
+  "research_results_modified": false,
+  "findings": [
+    "Same fresh seed, source model, G(W), train/test transforms, data split, FP32 master/gradients/Adam, A32, and full-100-epoch LR schedule as the direct pilot; only the first five epochs execute.",
+    "One current E4M3 source per MX layer per minibatch; E2M3 uses sign plus the two highest E4 exponent bits and the same three mantissa bits; E2M1 is the resulting six-bit code shifted right by two. All lower scale bytes match the current source.",
+    "The integer cache shares source codes only, while each precision has its own current G(W) autograd graph. Identity STE is applied to G(W); no gradient passes through integer codes or shared scales.",
+    "The original high-hard-CE, middle-detached-soft-CE, low-detached-soft-CE order retains three backwards and one Adam update. Three BatchNorm banks update during training and remain unchanged during evaluation.",
+    "Zero gradients, unchanged master values, poor accuracy and single-class predictions are valid measured outcomes. Finite-state, pass-count, cache, scale and optimizer invariants remain enforced.",
+    "Both selected checkpoints export one high source and two lower payloads derived only from that saved and verified source. All three precisions reconstruct exactly from the saved high source when source encoders and G(W) are prohibited.",
+    "Last epoch and first highest-E4M3 maximum each report all three modes from one common checkpoint. Synthetic notebook integration by the notebook owner verified every cell and six figures without changing run data."
+  ],
+  "resolved_before_runtime_freeze": [
+    "Runner audit key corrected to cache_empty_before_all_optimizer_steps.",
+    "Unchanged MX master values made diagnostic rather than a scientific-outcome failure gate."
+  ],
+  "harness_correction": {
+    "reason": "The real-user-run initialization hash is not a valid reference for a fixture that imports source modules before resetting RNG.",
+    "method": "Build the unchanged direct-MX model in the exact same seeded CPU context and compare its state hash against every new fixture case.",
+    "initial_state_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+    "also_matches_previous_direct_pilot_CPU_integration_fixture": true
+  },
+  "blocking_issues_remaining": [],
+  "limits": [
+    "No SVHN dataset loaded or downloaded; no real five-epoch or long training run executed here.",
+    "CPU-only synthetic validation does not establish GPU performance, real accuracy, or bit-exact CUDA resume.",
+    "The fixture moves LR milestones to 2/3/4 only to exercise resume across schedule boundaries; production remains 50/75/90.",
+    "No assertion requires accuracy improvement; this experiment must measure whether training helps the severe fixed-scale truncation."
+  ],
+  "evidence": {
+    "test_training_integration.py": "fcb4ee65d4fd37ae332074bd760625926134e3e04cd332dcace4a61bad3abbd4",
+    "training_integration_report.json": "b50dd85956078cf71d64c3989659e778c38d38378af7edc03a7219da2eeb99c0",
+    "check_entry_validation_report.json": "c38fa0b7312aea46511924081dbb62b41cd9c830d3c338730db18fa99ea9f52c"
+  }
+}

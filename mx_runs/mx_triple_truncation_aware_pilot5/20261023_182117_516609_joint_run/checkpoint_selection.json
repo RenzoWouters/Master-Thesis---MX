@@ -1,0 +1,22 @@
+{
+  "policy": "first strict maximum of E4M3/A32 official-test top1",
+  "best": {
+    "epoch": 5,
+    "file": "best_checkpoint.pt",
+    "sha256": "ddfceac8b336c6e2c9c2591b97cde55bb5b6f88d953073904a110622642a2af3",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_truncation_aware_pilot5\\20261023_182117_516609_joint_run\\checkpoints\\epoch_00005.pt",
+    "selection_score_E4M3": 82.07590657183196
+  },
+  "last": {
+    "epoch": 5,
+    "file": "last_checkpoint.pt",
+    "sha256": "ddfceac8b336c6e2c9c2591b97cde55bb5b6f88d953073904a110622642a2af3",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_truncation_aware_pilot5\\20261023_182117_516609_joint_run\\checkpoints\\epoch_00005.pt",
+    "selection_score_E4M3": 82.07590657183196
+  },
+  "same_checkpoint": true,
+  "selected_on_official_test": true,
+  "independent_test_estimate": false,
+  "selection_mode": "MXFP8_E4M3/A32",
+  "all_modes_from_same_selected_checkpoint": true
+}

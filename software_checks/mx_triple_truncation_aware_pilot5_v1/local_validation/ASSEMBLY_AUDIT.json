@@ -1,0 +1,71 @@
+{
+  "schema": "mx-triple-truncation-aware-assembly-audit-v1",
+  "status": "PASS",
+  "scope": "Final package integrity after synthetic validation; no real SVHN/GPU training",
+  "frozen_runtime_files_verified": 22,
+  "all_validation_reports": [
+    {
+      "report": "check_entry_validation_report.json",
+      "status": "PASS",
+      "sha256": "c38fa0b7312aea46511924081dbb62b41cd9c830d3c338730db18fa99ea9f52c",
+      "recorded_current_file_hashes_verified": 23
+    },
+    {
+      "report": "core_training_validation.json",
+      "status": "PASS",
+      "sha256": "f1f95bcb71a638a241b6304963350fa57d881f0186083c4cf2794d49dbdcab71",
+      "recorded_current_file_hashes_verified": 9
+    },
+    {
+      "report": "independent_runner_review.json",
+      "status": "PASS",
+      "sha256": "fb5ba80b3fc95c753ca185526d079755313d5d644f6f86ba0a1ee17bf428a4b5",
+      "recorded_current_file_hashes_verified": 22
+    },
+    {
+      "report": "notebook_validation_report.json",
+      "status": "PASS",
+      "sha256": "43b17718a7ee8b6eb569e15b8dc27c0291a65df8ded2e47e6093404ee7eed0f9",
+      "recorded_current_file_hashes_verified": 3
+    },
+    {
+      "report": "runner_notebook_integration.json",
+      "status": "PASS",
+      "sha256": "1181f71c71dffdd17898bced293ab66f55a476e641523327452c21cd88d2db09",
+      "recorded_current_file_hashes_verified": 3
+    },
+    {
+      "report": "training_integration_report.json",
+      "status": "PASS",
+      "sha256": "b50dd85956078cf71d64c3989659e778c38d38378af7edc03a7219da2eeb99c0",
+      "recorded_current_file_hashes_verified": 23
+    }
+  ],
+  "unchanged_direct_pilot_files": 14,
+  "posthoc_bit_module_byte_identical": true,
+  "existing_packages": [
+    {
+      "package": "mx_weights_triple_direct_pilot5_v1",
+      "verified_files": 45,
+      "manifest_sha256": "7d02471fe62c7fb8c9fe2330029dcebea625af0b264d1335e6b82c30f9dbaa67",
+      "unchanged": true
+    },
+    {
+      "package": "mx_weights_triple_direct_reference100_v1",
+      "verified_files": 50,
+      "manifest_sha256": "145493e9c6b2e27ee30f405cfcc35a2b8ea8b39105c9d1fb32cd7d1d3123e8b8",
+      "unchanged": true
+    },
+    {
+      "package": "mx_triple_posthoc_truncation_eval_v1",
+      "verified_files": 41,
+      "manifest_sha256": "e4c50b4920ac40970b12cbed9632862839c27472ce5465ef0d8802f12d711c52",
+      "unchanged": true
+    }
+  ],
+  "single_blank_notebook": true,
+  "notebook_code_cells_compiled": 10,
+  "python_files_parsed": 30,
+  "synthetic_models_datasets_or_executed_notebooks_in_package": false,
+  "real_SVHN_training_started": false
+}

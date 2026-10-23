@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "scope": "GENERATED_SYNTHETIC_REPORTS_ONLY_NO_TRAINING",
+  "empty_template_outputs_confirmed": true,
+  "template_default_save_figures": false,
+  "explicit_save_switch_tested": true,
+  "no_executed_notebook_created": true,
+  "all_ten_code_cells_executed": true,
+  "all_six_figures_rendered": true,
+  "constant_class_is_valid_research_outcome": true,
+  "epoch100_never_claimed": true,
+  "cases": {
+    "synthetic_complete5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 5,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple_trunc_training_notebook_validation_20261023_final/synthetic_complete5/preview"
+    },
+    "synthetic_stopped3": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 3,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple_trunc_training_notebook_validation_20261023_final/synthetic_stopped3/preview"
+    },
+    "synthetic_constant_class5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 5,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple_trunc_training_notebook_validation_20261023_final/synthetic_constant_class5/preview"
+    },
+    "synthetic_check_only": {
+      "status": "PASS",
+      "check_only_not_presented_as_training": true,
+      "raw_input_hashes_unchanged": true
+    }
+  },
+  "expected_negative_cases": {
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+      ]
+    },
+    "missing_test_mode": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 5/test: niet precies drie verschillende modi."
+      ]
+    },
+    "wrong_soft_loss_label": {
+      "expected_rejection": true,
+      "messages": [
+        "Losslabels wijken af: train-E4M3 hard CE; train-E2M3/E2M1 soft CE; test alle modi hard CE."
+      ]
+    },
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Deze vijf-epochpilot kan geen voltooide honderd-epochtraining bevestigen."
+      ]
+    },
+    "wrong_teacher_count": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: gradient-, teacher- of forwardtellingen passen niet bij drie passes en één gezamenlijke update."
+      ]
+    },
+    "wrong_direct_contract": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: truncation=False; verwacht True."
+      ]
+    },
+    "scale_compensation_enabled": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: shared_scale_compensation=True; verwacht False."
+      ]
+    },
+    "missing_predictions": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: volledige label- en voorspellingstellingen per testmodus ontbreken."
+      ]
+    },
+    "wrong_prediction_sum": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: verwacht tien niet-negatieve tellingen met som n."
+      ]
+    },
+    "impossible_constant_prediction_accuracy": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: correct-aantal is onmogelijk bij de label-/voorspellingstellingen.",
+        "Epoch 1/E2M3: constante voorspelling strookt niet met de accuracy."
+      ]
+    },
+    "changed_test_labels": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 2: labelverdeling verschilt van eerdere volledige testepochs."
+      ]
+    },
+    "export_source_scale_changed": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/6: afleiding uit codes met ongewijzigde bronschaal niet bevestigd."
+      ]
+    }
+  },
+  "tested_file_sha256": {
+    "notebook_support.py": "e8e9f441e67ac708591c6edf6fe89169b957a3ec261396ad8a97b3d861f3eb1c",
+    "MX_triple_truncation_aware_pilot5_resultaten.ipynb": "866946e5f1e32566b10ca62639632217b768ac0eda09ceb6f582f3fc6ad94c9d",
+    "local_validation/test_notebook.py": "38d9a3b96b6ce73841cc9b613779e3ea874ea6d0e79d63a4f933847944c9bb93"
+  },
+  "visual_qa": {
+    "status": "PASS",
+    "figures_inspected": [
+      "checkpoint_accuracy",
+      "accuracy_curves",
+      "objective_losses",
+      "prediction_diversity",
+      "timing",
+      "gpu_memory"
+    ],
+    "synthetic_previews_only": true,
+    "no_real_accuracy_claim": true,
+    "scope": "All six figure types inspected; final change affects only validation wording and check-only fixture."
+  }
+}
