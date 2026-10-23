@@ -1,0 +1,174 @@
+--- direct_dual/dual_support.py
++++ triple_direct/joint_support.py
+@@ -1,4 +1,4 @@
+-"""Two-mode extension; same upstream loss/backprop/optimizer sequencing.
++"""Three-mode direct extension; same upstream loss/backprop/optimizer sequencing.
+ 
+ Only six legacy selector lines are replaced by three select_mode calls.
+ Model, data, loss definitions, Adam and scheduler come from the supplied source.
+@@ -14,12 +14,12 @@
+ from types import SimpleNamespace
+ import torch
+ import svhn_support as s
+-import dual_adapter as a
++import joint_adapter as a
+ 
+ 
+ def weight_format(mode='joint'):
+-    s.require(mode == 'joint', 'Deze proef heeft een gezamenlijk tweemodusmodel.')
+-    return 'MXFP6_E2M3+MXFP4_E2M1'
++    s.require(mode == 'joint', 'Deze proef heeft een gezamenlijk driemodusmodel.')
++    return 'MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1'
+ 
+ 
+ inactive_bn = a.inactive_bn
+@@ -37,7 +37,7 @@
+ 
+ def assert_policy(model, mode='joint'):
+     weight_format(mode)
+-    quantizers = [m for m in model.modules() if isinstance(m, a.DualMXQuantizer)]
++    quantizers = [m for m in model.modules() if isinstance(m, a.JointMXQuantizer)]
+     norms = [m for m in model.modules() if isinstance(m, a.WeightModeBatchNorm)]
+     s.require(len(quantizers) == 6 and len(norms) == 5, 'Verkeerde MX-/BN-laagselectie.')
+     s.require(all(m.weight_mode == model.weight_mode for m in quantizers + norms), 'Modusselectie inconsistent.')
+@@ -69,7 +69,7 @@
+     for name, value in counts.items():
+         s.require(value == (0 if inactive_bn(name) else steps), 'Verkeerde BN-teller: ' + name)
+     return {'all_counters_correct': True, 'counts': counts,
+-            'note': 'E2M3-bank32 en E2M1-bank4 elk eenmaal per minibatch; overige banken ongebruikt.'}
++            'note': 'E4M3-bank8, E2M3-bank32 en E2M1-bank4 elk eenmaal per minibatch; banken1/2 ongebruikt.'}
+ 
+ 
+ def validate_adam_state(model, optimizer, steps):
+@@ -89,30 +89,31 @@
+             'moments_fp32_finite': True, 'unused_bn_has_no_optimizer_state': True}
+ 
+ 
+-class DualMeterRecorder(s.MeterRecorder):
+-    """Same upstream AverageMeter arithmetic; six meters, two modes."""
++class JointMeterRecorder(s.MeterRecorder):
++    """Same upstream AverageMeter arithmetic; nine meters, three modes."""
+     def __init__(self, base_class, epoch, phase, lr, path, mode):
+         super().__init__(base_class, epoch, phase, lr, path)
+         self.mode = mode
+-        self.correct1, self.correct5 = [0, 0], [0, 0]
++        self.correct1, self.correct5 = [0] * len(a.MODES), [0] * len(a.MODES)
+ 
+     def updated(self, position, val, n):
+         s.require(position not in self.pending, 'Dubbele batchmetric.')
+         self.pending[position] = (val, n)
+-        if len(self.pending) != 6:
++        if len(self.pending) != 3 * len(a.MODES):
+             return
+-        s.require(set(self.pending) == set(range(6)), 'Verwacht zes meters.')
++        s.require(set(self.pending) == set(range(3 * len(a.MODES))), 'Verwacht negen meters.')
+         s.require(len({v[1] for v in self.pending.values()}) == 1, 'Batchgroottes verschillen.')
+         self.batch += 1; self.n += n
+         records = []
+         for i, bit in enumerate(a.MODES):
+-            loss, top1, top5 = [self.pending[i + offset][0] for offset in (0, 2, 4)]
++            loss, top1, top5 = [self.pending[i + offset][0] for offset in (0, len(a.MODES), 2 * len(a.MODES))]
+             c1, c5 = round(top1 * n / 100), round(top5 * n / 100)
+             s.require(abs(top1 * n / 100 - c1) < .001 and abs(top5 * n / 100 - c5) < .001,
+                       'Accuracy niet naar correcte aantallen te herleiden.')
+             self.correct1[i] += c1; self.correct5[i] += c5
+             records.append({'weight_bits': bit, 'weight_format': a.FORMATS[bit], 'activation_bits': 32,
+-                            'objective_type': self.objective(bit), 'objective_loss': loss,
++                            'objective_type': self.objective(bit), 'teacher_weight_format': self.teacher(bit),
++                            'objective_loss': loss,
+                             'top1_percent': top1, 'top5_percent': top5, 'correct1': c1, 'correct5': c5})
+         self.file.write(json.dumps({'epoch': self.epoch, 'phase': self.phase, 'batch': self.batch,
+                                     'n': n, 'lr': self.lr, 'precisions': records}, allow_nan=False) + '\n')
+@@ -121,15 +122,21 @@
+         self.pending.clear()
+ 
+     def objective(self, bit):
+-        return 'recursive_soft_cross_entropy' if self.phase == 'train' and bit == 4 else 'hard_cross_entropy'
++        return 'recursive_soft_cross_entropy' if self.phase == 'train' and bit != a.MODES[-1] else 'hard_cross_entropy'
++
++    def teacher(self, bit):
++        if self.phase != 'train' or bit == a.MODES[-1]:
++            return None
++        return a.FORMATS[a.MODES[a.MODES.index(bit) + 1]]
+ 
+     def rows(self, values):
+-        s.require(not self.pending and len(self.meters) == 6 and self.batch > 0, 'Onvolledige metrics.')
+-        s.require(all(len(x) == 2 for x in values), 'Verwacht twee modi.')
++        s.require(not self.pending and len(self.meters) == 3 * len(a.MODES) and self.batch > 0, 'Onvolledige metrics.')
++        s.require(all(len(x) == len(a.MODES) for x in values), 'Verwacht drie modi.')
+         losses, top1, top5 = values
+         return [{'epoch': self.epoch, 'phase': self.phase, 'mode': self.mode, 'weight_bits': bit,
+                  'weight_format': a.FORMATS[bit], 'activation_bits': 32, 'bn_bank_key': a.BANK[bit],
+-                 'n': self.n, 'objective_type': self.objective(bit), 'objective_loss': float(losses[i]),
++                 'n': self.n, 'objective_type': self.objective(bit), 'teacher_weight_format': self.teacher(bit),
++                 'objective_loss': float(losses[i]),
+                  'top1_percent': float(top1[i]), 'top5_percent': float(top5[i]),
+                  'correct1': self.correct1[i], 'correct5': self.correct5[i],
+                  'count_top1_percent': 100 * self.correct1[i] / self.n, 'lr': self.lr}
+@@ -153,12 +160,12 @@
+     return original, changed, digest
+ 
+ 
+-def load_dual_forward(source, utils, log, meter_class=None):
++def load_joint_forward(source, utils, log, meter_class=None):
+     _, changed, digest = adapt_forward_text(source)
+-    namespace = {'torch': torch, 'args': SimpleNamespace(bit_width_list='4,6', print_freq=20),
++    namespace = {'torch': torch, 'args': SimpleNamespace(bit_width_list='4,6,8', print_freq=20),
+                  'AverageMeter': meter_class or utils.AverageMeter, 'accuracy': utils.accuracy,
+                  'logging': s.UpstreamLog(log), 'select_mode': a.select_mode}
+-    exec(compile(changed, str(Path(source) / 'train.py') + ' [dual selectors]', 'exec'), namespace)
++    exec(compile(changed, str(Path(source) / 'train.py') + ' [joint direct selectors]', 'exec'), namespace)
+     return namespace['forward'], digest
+ 
+ 
+@@ -175,22 +182,23 @@
+ def phase(rt, source, modules, model, optimizer, loader, epoch, phase_name, lr, out, log, mode='joint'):
+     train = phase_name == 'train'
+     assert_policy(model, mode); model.train(train)
+-    recorder = DualMeterRecorder(modules.utils.AverageMeter, epoch, phase_name, lr,
++    recorder = JointMeterRecorder(modules.utils.AverageMeter, epoch, phase_name, lr,
+                                 out / f'{phase_name}_batches_epoch_{epoch:05d}.jsonl', mode)
+-    forward, ast_hash = load_dual_forward(source, modules.utils, log, recorder.factory)
++    forward, ast_hash = load_joint_forward(source, modules.utils, log, recorder.factory)
+     criterion_soft = CheckedSoftLoss(modules.losses.CrossEntropyLossSoft())
++    forward_names = {bit: 'forward_calls_' + a.FORMATS[bit].rsplit('_', 1)[1] for bit in a.MODES}
+     audit = {'optimizer_steps_in_phase': 0, 'finite_gradient_checks': 0,
+              'gradient_l2_min': None, 'gradient_l2_max': None,
+-             'forward_calls_E2M3': 0, 'forward_calls_E2M1': 0}
++             **{name: 0 for name in forward_names.values()}}
+     pending_modes = []
+     def model_pre(module, inputs):
+         pending_modes.append(module.weight_mode)
+-        audit['forward_calls_E2M3' if module.weight_mode == 6 else 'forward_calls_E2M1'] += 1
+-        if not train and len(pending_modes) == 2:
+-            s.require(pending_modes == [4, 6], 'Verkeerde evaluatievolgorde.')
++        audit[forward_names[module.weight_mode]] += 1
++        if not train and len(pending_modes) == len(a.MODES):
++            s.require(pending_modes == list(a.MODES), 'Verkeerde evaluatievolgorde.')
+             pending_modes.clear()
+     def pre_step(opt, args, kwargs):
+-        s.require(pending_modes == [6, 4], 'Elke update vereist eerst E2M3, dan E2M1 op dezelfde minibatch.')
++        s.require(pending_modes == [8, 6, 4], 'Elke update vereist E4M3, E2M3, E2M1 op dezelfde minibatch.')
+         pending_modes.clear()
+         r = validate_gradients(model)
+         audit['finite_gradient_checks'] += 1; audit['active_gradient_tensors'] = r['active_gradient_tensors']
+@@ -215,8 +223,8 @@
+         expected = len(loader) if train else 0
+         s.require(audit['optimizer_steps_in_phase'] == audit['finite_gradient_checks'] == expected,
+                   'Verkeerd aantal gecontroleerde updates.')
+-        s.require(not pending_modes and criterion_soft.calls == expected, 'Onvolledige distillatie/forward.')
+-        s.require(audit['forward_calls_E2M3'] == audit['forward_calls_E2M1'] == len(loader),
++        s.require(not pending_modes and criterion_soft.calls == 2 * expected, 'Onvolledige recursieve distillatie/forward.')
++        s.require(all(audit[name] == len(loader) for name in forward_names.values()),
+                   'Verkeerd aantal forwards per modus.')
+         audit.update(detached_teacher_checks=criterion_soft.calls, no_extra_FP32_teacher=True)
+         assert_policy(model, mode)
+@@ -250,7 +258,7 @@
+         b, e = before[name], after[name]
+         difference = e['master'] - b['master']
+         for bit in a.MODES:
+-            rows.append({'epoch': epoch, 'mode': mode, 'weight_bits': bit, 'layer': name,
++            rows.append({'epoch': epoch, 'mode': mode, 'weight_bits': bit, 'weight_format': a.FORMATS[bit], 'layer': name,
+                          'master_changed_values': int((difference != 0).sum()),
+                          'master_update_l2': float(difference.norm()), 'master_dtype': str(e['master'].dtype),
+                          'changed_element_codes_including_padding': int((b[str(bit)]['codes'] != e[str(bit)]['codes']).sum()),

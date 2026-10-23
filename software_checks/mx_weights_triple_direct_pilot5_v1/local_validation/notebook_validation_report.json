@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "scope": "GENERATED_SYNTHETIC_REPORTS_ONLY_NO_TRAINING",
+  "empty_template_outputs_confirmed": true,
+  "template_default_save_figures": false,
+  "explicit_save_switch_tested": true,
+  "no_executed_notebook_created": true,
+  "cases": {
+    "synthetic_complete5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 5,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple_notebook_validation_20261023_a/synthetic_complete5/preview"
+    },
+    "synthetic_stopped3": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 3,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_triple_notebook_validation_20261023_a/synthetic_stopped3/preview"
+    }
+  },
+  "expected_negative_cases": {
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+      ]
+    },
+    "missing_test_mode": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 5/test: niet precies drie verschillende modi."
+      ]
+    },
+    "wrong_soft_loss_label": {
+      "expected_rejection": true,
+      "messages": [
+        "Losslabels wijken af: train-E4M3 hard CE; train-E2M3/E2M1 soft CE; test alle modi hard CE."
+      ]
+    },
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Volledige referentie niet bevestigd: vereist PASS en alle drie modi voor epochs 1 t/m 100."
+      ]
+    },
+    "wrong_teacher_count": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: gradient-, teacher- of forwardtellingen passen niet bij drie passes en één gezamenlijke update."
+      ]
+    }
+  }
+}

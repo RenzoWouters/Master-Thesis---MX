@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-10-23T12:57:22.183943+00:00",
+  "analysis_only": true,
+  "training_started": false,
+  "checkpoint_loaded": false,
+  "synthetic_fixture_only": false,
+  "source_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_triple_direct_pilot5\\20261023_144246_066123_joint_run",
+  "input_sha256": {
+    "run_report.json": "48a80721805ba0eaf67420a1a202e9a4ff936def12a2df916655cbd1f6c9be83",
+    "history.json": "739e91a23b5de1c9f455bd52cb02005e3c20762620287b254557a7a5c18b2f82",
+    "training_summary.json": "3b841bbf90007019d3116ac7d6ad3ce6b50074da2061e5b4b5ea10f508b479ca",
+    "checkpoint_selection.json": "35a04feeeec4135a15e196df0def13584e40f0d87bf38eef73d7ce74ef3e7d81",
+    "timing_estimate.json": "bae1b8640403b47a798748d4d2e4ff6ec0f75168250f4dd3b6ec2c2c56bd720a",
+    "epoch_metrics.csv": "eaae7eb3fb73ff075439a42777f8d0e074748033584e3d8425d0806553515f45",
+    "selected_metrics.csv": "932fef94fa09426dfc02669b3883374280d6c11d4f86f98d0e6f73d3efd98a00",
+    "epoch_times.csv": "a6d8c4ce93cd2f4e24458dc62fcea9c7c75c8b5b2b0d57c1a73e5ce523cfc729",
+    "weight_updates.csv": "cbe66071ed080ba4bd7e80c16669d865e40793895df697cb4ca442c1e92a0c22"
+  },
+  "figures": [
+    "checkpoint_accuracy.png",
+    "accuracy_curves.png",
+    "objective_losses.png",
+    "timing.png",
+    "gpu_memory.png"
+  ],
+  "issues": [
+    {
+      "Niveau": "RUNWAARSCHUWING",
+      "Melding": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)"
+    },
+    {
+      "Niveau": "RUNWAARSCHUWING",
+      "Melding": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)"
+    }
+  ]
+}

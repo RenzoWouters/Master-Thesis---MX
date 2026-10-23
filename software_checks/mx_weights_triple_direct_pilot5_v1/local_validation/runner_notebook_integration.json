@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "read-only helper on actual synthetic runner outputs; no notebook execution",
+  "cases": {
+    "continuous5": {
+      "last_epoch": 5,
+      "best_E4M3_epoch": 1,
+      "pilot_complete": true,
+      "reference_complete": false,
+      "synthetic_fixture_only": true,
+      "analysis_errors": []
+    },
+    "early_stop": {
+      "last_epoch": 1,
+      "best_E4M3_epoch": 1,
+      "pilot_complete": false,
+      "reference_complete": false,
+      "synthetic_fixture_only": true,
+      "analysis_errors": []
+    }
+  }
+}

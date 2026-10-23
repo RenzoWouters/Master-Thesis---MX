@@ -1,0 +1,285 @@
+--- direct_dual/test_dual.py
++++ triple_direct/test_joint.py
+@@ -1,19 +1,23 @@
+-"""Small synthetic two-mode/codec checks. No SVHN data or research accuracies.
+-
+-CPU Tensor.cuda substitution exists ONLY in local_validation/test_training.py.
++"""Small synthetic three-mode direct-quantization and recursive-distillation checks. No SVHN data or research accuracies.
++
++CPU Tensor.cuda substitution exists ONLY in local validation test harnesses.
+ On the laptop these checks use the actual production CUDA device.
+ """
+ from __future__ import annotations
+ import ast
+ import copy
+ import math
++import json
++from pathlib import Path
++import tempfile
+ from contextlib import contextmanager
+ import os
+ import torch
+ import mx_format as high
++import mx_e4m3 as highest
+ import mx_e2m1 as low
+-import dual_adapter as a
+-import dual_support as t
++import joint_adapter as a
++import joint_support as t
+ import svhn_support as s
+ import resume_core as core
+ from test_mx import rejected
+@@ -82,17 +86,57 @@
+     rejected(lambda: low.MXTensor(bad_padding, ml.scale_codes, ml.shape).decode())
+     checks['E2M1_scales_padding_saturation_extremes_roundtrip_and_direct_not_truncated'] = True
+ 
+-    # Exact encoder forward, declared identity backward including G(W).
+-    master1 = torch.linspace(-2, 2, 66, device=d).reshape(2, 33).requires_grad_()
+-    master2 = master1.detach().clone().requires_grad_()
++    # An exact binary witness separates direct E2M3 from both proposed alternatives.
++    # 47/256 rounds to 3/16 in E4M3, whose second E2M3 rounding gives 1/4;
++    # direct E2M3 gives 1/8. The leading 7 fixes the independent block scales.
++    witness = torch.zeros(1, 32, dtype=torch.float32, device=d)
++    witness[0, :2] = torch.tensor([7., 47. / 256.], device=d)
++    source8, direct6 = highest.encode_tensor(witness), high.encode_tensor(witness)
++    from_decoded8 = high.encode_tensor(source8.decode())
++    code8 = source8.codes.to(torch.int64)
++    # Retain s, the TWO highest exponent bits and all three mantissa bits;
++    # keep the source scale. This is a negative control, never a training route.
++    kept = (((code8 & 0xe0) >> 2) | (code8 & 7)).to(torch.uint8)
++    exponent_msb_truncation = high.MXTensor(kept, source8.scale_codes.clone(), source8.shape)
++    assert float(direct6.decode()[0, 1]) == .125
++    assert float(from_decoded8.decode()[0, 1]) == .25
++    assert not torch.equal(direct6.decode(), from_decoded8.decode())
++    assert not torch.equal(direct6.decode(), exponent_msb_truncation.decode())
++    assert int(source8.scale_codes.item()) - 127 == -6
++    assert int(direct6.scale_codes.item()) - 127 == 0
++    checks['direct_quantization_negative_controls'] = {
++        'direct_E2M1_vs_E2M3_mantissa_shift': {'direct': 1.5, 'shifted': 1.0},
++        'source_for_E2M3_witness': witness[0, :2].cpu().tolist(),
++        'direct_E2M3': direct6.decode()[0, :2].cpu().tolist(),
++        'E2M3_from_decoded_E4M3': from_decoded8.decode()[0, :2].cpu().tolist(),
++        'E2M3_exponent_MSB_keep_with_E4M3_scale': exponent_msb_truncation.decode()[0, :2].cpu().tolist(),
++        'no_negative_control_used_in_training': True,
++    }
++
++    # Every adapter route equals direct encode/decode of the SAME G(W), and
++    # identity-STE preserves its derivative. Repeating after a master change
++    # also rules out a stale quantized source being reused across passes.
++    checks['direct_forward_and_identity_STE_by_format'] = {}
+     coef = torch.linspace(-.7, .9, 66, device=d).reshape(2, 33)
+-    q = a.DualMXQuantizer(); q.weight_mode = 4
+-    value = q(master1)
+-    (value * coef).sum().backward()
+-    (a.effective_reference_weight(master2) * coef).sum().backward()
+-    assert torch.equal(master1.grad, master2.grad)
+-    assert torch.equal(value.detach(), low.encode_tensor(a.effective_reference_weight(master1)).decode())
+-    checks['E2M1_identity_STE_through_original_GW'] = True
++    for bit in a.MODES:
++        master1 = torch.linspace(-2, 2, 66, device=d).reshape(2, 33).requires_grad_()
++        master2 = master1.detach().clone().requires_grad_()
++        untouched = master1.detach().clone()
++        q = a.JointMXQuantizer(); q.weight_mode = bit
++        value = q(master1)
++        (value * coef).sum().backward()
++        (a.effective_reference_weight(master2) * coef).sum().backward()
++        assert torch.equal(master1.grad, master2.grad)
++        assert torch.equal(value.detach(), a.codec(bit).encode_tensor(a.effective_reference_weight(master1)).decode())
++        assert torch.equal(master1.detach(), untouched) and not q.state_dict()
++        with torch.no_grad():
++            master1[0, 5] += .25
++        changed_value = q(master1)
++        assert torch.equal(changed_value.detach(), a.codec(bit).encode_tensor(a.effective_reference_weight(master1)).decode())
++        assert not torch.equal(value.detach(), changed_value.detach())
++        checks['direct_forward_and_identity_STE_by_format'][a.FORMATS[bit]] = True
++    for invalid in (True, 2, 32, '8'):
++        rejected(lambda invalid=invalid: a.codec(invalid))
+ 
+     original, changed, _ = t.adapt_forward_text(source)
+     normalized_original = ast.parse(original)
+@@ -133,7 +177,7 @@
+     s.require(checks['production_backend_restored'], 'Zelftest heeft backendbeleid veranderd.')
+     checks['two_joint_updates_match_explicit_manual_distillation'] = True
+     checks['manual_match_scope'] = 'deterministic synthetic replay; see per-tensor comparisons'
+-    checks['two_BN_banks_once_per_batch_A32_unchanged_FP32_masters_and_Adam'] = True
++    checks['three_BN_banks_once_per_batch_A32_unchanged_FP32_masters_and_Adam'] = True
+     checks['synthetic_optimizer_steps_not_research_results'] = {
+         'production_pair': {'tested': 2, 'manual_reference': 2},
+         'deterministic_pair': {'tested': 2, 'manual_reference': 2}}
+@@ -143,7 +187,7 @@
+ 
+     # Verify separately reconstructed direct exports, not truncation.
+     model.eval()
+-    for bit in (6, 4):
++    for bit in (8, 6, 4):
+         payload, _ = a.export_payload(model, bit, {'synthetic_fixture_only': True})
+         frozen = a.load_exported_model(modules.models, payload, d)
+         a.select_mode(model, bit)
+@@ -155,8 +199,9 @@
+         assert not any(n + '.weight' in dict(frozen.named_parameters()) for n in a.TARGET_LAYERS)
+         for name in a.TARGET_LAYERS:
+             layer = model.get_submodule(name)
++            assert frozen.get_submodule(name).decoded_weight.device == d
+             assert torch.equal(layer.quantize_fn(layer.weight), frozen.get_submodule(name).decoded_weight)
+-    checks['both_direct_mode_exports_reconstruct_without_six_FP32_masters'] = True
++    checks['all_three_direct_exports_reconstruct_without_six_FP32_masters'] = True
+     checks['no_SVHN_data'] = True
+     return checks
+ 
+@@ -240,8 +285,28 @@
+     details['mandatory_match_passed'] = True
+ 
+ 
++class AuditedSoftLoss(torch.nn.Module):
++    """Test-only proof that each student receives its immediately preceding teacher."""
++    def __init__(self, original, mode_order, logits):
++        super().__init__()
++        self.original, self.mode_order, self.logits = original, mode_order, logits
++        self.targets, self.checks = [], []
++
++    def forward(self, output, target):
++        s.require(not target.requires_grad and target.grad_fn is None, 'Teacher moet detached zijn.')
++        student, teacher = self.mode_order[-1], self.mode_order[-2]
++        s.require({6: 8, 4: 6}.get(student) == teacher, 'Geen recursieve E4M3->E2M3->E2M1-teachervolgorde.')
++        expected = torch.softmax(self.logits[-2].detach(), dim=1)
++        s.require(torch.equal(target, expected), 'Student ontvangt niet de direct voorgaande detached teacher.')
++        self.targets.append(target.detach().clone())
++        self.checks.append({'teacher_weight_bits': teacher, 'teacher_weight_format': a.FORMATS[teacher],
++                            'student_weight_bits': student, 'student_weight_format': a.FORMATS[student],
++                            'detached': True, 'matches_preceding_teacher_exactly': True})
++        return self.original(output, target)
++
++
+ def training_pair(modules, rt, source, log, details):
+-    """Independent manual loop vs unchanged-loss upstream loop; two updates."""
++    """Independent manual three-pass loop vs the selector-adapted author loop."""
+     d = rt.device
+     details.update(backend=backend_state(), device=str(d), status='RUNNING')
+     torch.manual_seed(83411)
+@@ -254,9 +319,11 @@
+     opt = modules.optimizer.get_optimizer_config(model, 'adam', .001, 0.)
+     reference_opt = modules.optimizer.get_optimizer_config(reference, 'adam', .001, 0.)
+     reference_outputs, outputs, reference_gradients, gradients = [], [], [], []
+-    def output_hook(store):
++    reference_modes, modes = [], []
++    def output_hook(store, order):
+         def hook(module, inputs, result):
+-            store.append(result.detach().cpu().clone())
++            store.append(result.detach().clone())
++            order.append(module.weight_mode)
+         return hook
+     def gradient_hook(net, store):
+         def hook(optimizer, args, kwargs):
+@@ -264,45 +331,76 @@
+             store.append({name: None if p.grad is None else p.grad.detach().cpu().clone()
+                           for name, p in net.named_parameters()})
+         return hook
+-    hooks = [reference.register_forward_hook(output_hook(reference_outputs)),
+-             model.register_forward_hook(output_hook(outputs)),
++    hooks = [reference.register_forward_hook(output_hook(reference_outputs, reference_modes)),
++             model.register_forward_hook(output_hook(outputs, modes)),
+              reference_opt.register_step_pre_hook(gradient_hook(reference, reference_gradients)),
+              opt.register_step_pre_hook(gradient_hook(model, gradients))]
++    temporary = tempfile.TemporaryDirectory(prefix='mx_joint3_check_')
++    recorder = None
+     try:
+         rng = core.capture_rng({}, d)
+         reference.train()
+         criterion = torch.nn.CrossEntropyLoss()
+-        soft = modules.losses.CrossEntropyLossSoft()
++        reference_soft = AuditedSoftLoss(modules.losses.CrossEntropyLossSoft(),
++                                         reference_modes, reference_outputs)
+         expected = []
+         for _ in range(2):
+             reference_opt.zero_grad()
++            a.select_mode(reference, 8)
++            high_logits = reference(x)
++            hard_loss = criterion(high_logits, labels); hard_loss.backward()
++            s.require(all(p.grad is None for n, p in reference.named_parameters()
++                          if '.bn_dict.32.' in n or '.bn_dict.4.' in n),
++                      'Hoogste teacherpass wijzigt gradients in student-BN.')
++            high_teacher = torch.softmax(high_logits.detach(), dim=1)
+             a.select_mode(reference, 6)
+-            teacher_logits = reference(x)
+-            hard_loss = criterion(teacher_logits, labels); hard_loss.backward()
++            middle_logits = reference(x)
++            middle_loss = reference_soft(middle_logits, high_teacher); middle_loss.backward()
+             s.require(all(p.grad is None for n, p in reference.named_parameters() if '.bn_dict.4.' in n),
+-                      'Teacherpass wijzigt gradients in student-BN.')
+-            teacher = torch.softmax(teacher_logits.detach(), dim=1)
++                      'Middelste pass wijzigt gradients in laagste BN.')
++            middle_teacher = torch.softmax(middle_logits.detach(), dim=1)
+             a.select_mode(reference, 4)
+-            student_logits = reference(x)
+-            soft_loss = soft(student_logits, teacher); soft_loss.backward()
++            low_logits = reference(x)
++            low_loss = reference_soft(low_logits, middle_teacher); low_loss.backward()
+             t.validate_gradients(reference)
+             reference_opt.step()
+-            expected.append((float(hard_loss.detach()), float(soft_loss.detach())))
++            expected.append((float(hard_loss.detach()), float(middle_loss.detach()), float(low_loss.detach())))
+         final_rng = core.capture_rng({}, d)
+         core.restore_rng(rng, {}, d)
+-        forward, _ = t.load_dual_forward(source, modules.utils, log)
++        metric_file = Path(temporary.name) / 'training_batches.jsonl'
++        recorder = t.JointMeterRecorder(modules.utils.AverageMeter, 1, 'train', .001, metric_file, 'joint')
++        forward, _ = t.load_joint_forward(source, modules.utils, log, recorder.factory)
+         model.train()
+-        actual = forward([(x, labels), (x, labels)], model, criterion, soft, 0, True, opt, None)
++        actual_soft = AuditedSoftLoss(modules.losses.CrossEntropyLossSoft(), modes, outputs)
++        actual = forward([(x, labels), (x, labels)], model, criterion, actual_soft, 0, True, opt, None)
+         details['rng_exact'] = not core.differences(final_rng, core.capture_rng({}, d))
+-        details['manual_losses_high_low'] = expected
+-        details['upstream_mean_losses_low_high'] = actual[0]
++        metric_rows = recorder.rows(actual)
++        assert len(recorder.meters) == 9 and recorder.batch == 2 and recorder.n == 6
++        assert [row['weight_bits'] for row in metric_rows] == [4, 6, 8]
++        assert [row['objective_type'] for row in metric_rows] == [
++            'recursive_soft_cross_entropy', 'recursive_soft_cross_entropy', 'hard_cross_entropy']
++        assert [row['teacher_weight_format'] for row in metric_rows] == [a.FORMATS[6], a.FORMATS[8], None]
++        assert all(row['weight_format'] == a.FORMATS[row['weight_bits']] for row in metric_rows)
++        recorder.close(); recorder = None
++        batch_rows = [json.loads(line) for line in metric_file.read_text().splitlines()]
++        assert len(batch_rows) == 2 and all(len(row['precisions']) == 3 for row in batch_rows)
++        assert modes == reference_modes == [8, 6, 4, 8, 6, 4]
++        assert len(gradients) == len(reference_gradients) == 2
++        assert len(actual_soft.checks) == len(reference_soft.checks) == 4
++        details['manual_losses_high_middle_low'] = expected
++        details['upstream_mean_losses_low_middle_high'] = actual[0]
++        details['recorded_training_metrics_low_to_high'] = metric_rows
++        details['nine_meters_three_modes_two_batches_verified'] = True
++        details['forward_mode_order'] = modes
++        details['detached_teacher_source_checks'] = actual_soft.checks
+         rows = details['tensor_comparisons'] = []
+         compare_tree(reference_outputs, outputs, 'forward_logits', rows)
++        compare_tree(reference_soft.targets, actual_soft.targets, 'detached_teacher_targets', rows)
+         compare_tree(reference_gradients, gradients, 'pre_update_gradients', rows)
+         compare_tree(reference.state_dict(), model.state_dict(), 'model_after_two_updates', rows)
+         compare_tree(reference_opt.state_dict(), opt.state_dict(), 'adam_after_two_updates', rows)
+-        ref_losses = torch.tensor([sum(item[1] for item in expected)/2,
+-                                   sum(item[0] for item in expected)/2], dtype=torch.float64)
++        ref_losses = torch.tensor([sum(item[index] for item in expected) / 2 for index in (2, 1, 0)],
++                                  dtype=torch.float64)
+         rows.append(tensor_comparison(ref_losses, torch.tensor(actual[0], dtype=torch.float64), 'mean_losses'))
+         details['all_exact'] = all(row['exact'] for row in rows)
+         details['all_numerically_close'] = all(row['close'] for row in rows)
+@@ -312,13 +410,18 @@
+         for net, optimizer in ((model, opt), (reference, reference_opt)):
+             t.assert_policy(net); t.validate_bn(net, 2); t.validate_adam_state(net, optimizer, 2)
+         updates = t.layer_updates(initial, t.layer_snapshot(model), 'joint', 0)
+-        s.require(all(row['master_changed_values'] > 0 for row in updates), 'Geen masterupdates.')
++        s.require(len(updates) == 18 and all(row['master_changed_values'] > 0 for row in updates), 'Geen masterupdates.')
++        s.require(all(row['weight_format'] == a.FORMATS[row['weight_bits']] for row in updates),
++                  'Formaatlabel van update wijkt af.')
+         details['mandatory_health_checks_passed'] = True
+         details['status'] = 'COMPARISON_RECORDED'
+         log('ZELFTEST ' + ('deterministisch' if torch.are_deterministic_algorithms_enabled() else 'productiebeleid')
+             + ': ' + str(len(details['outside_tolerance_tensors'])) + ' tensors buiten tolerantie; '
+             + 'RNG exact=' + str(details['rng_exact']))
+     finally:
++        if recorder is not None:
++            recorder.close()
++        temporary.cleanup()
+         for hook in hooks:
+             hook.remove()
+     return model

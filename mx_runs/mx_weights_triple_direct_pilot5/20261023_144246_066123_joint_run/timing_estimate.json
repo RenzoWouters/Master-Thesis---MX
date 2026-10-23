@@ -1,0 +1,49 @@
+{
+  "available": true,
+  "planned_epochs": 100,
+  "steady_epoch_seconds": [
+    62.69025789992884,
+    64.23399510001764,
+    63.55439579999074,
+    64.12828900001477
+  ],
+  "steady_epochs": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "median_epoch_seconds": 63.84134240000276,
+  "first_epoch_seconds": 60.9687513000099,
+  "estimated_100_epoch_seconds": 6381.261648900283,
+  "observed_range_projection_seconds": [
+    6267.304283392965,
+    6420.134266201756
+  ],
+  "range_is_confidence_interval": false,
+  "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+  "excludes": [
+    "download",
+    "dependency installation",
+    "dataset loading",
+    "final report export"
+  ],
+  "limitations": [
+    "same laptop/backend/data loading conditions required",
+    "five epochs do not measure the LR transitions at 50/75/90",
+    "thermal and background-load drift over a long run not established"
+  ],
+  "weight_mode": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+  "includes": [
+    "three-mode training",
+    "three-mode test",
+    "epoch diagnostics",
+    "checkpoint write"
+  ],
+  "measured_completed_epoch_seconds": 315.5756890999619,
+  "pilot_completed": true,
+  "full_training_completed": false,
+  "full_100_epoch_training_completed": false,
+  "measured_100_epoch_seconds": null,
+  "interpretation": "Measured pilot time covers the completed epochs. The 100-epoch estimate is a projection for a fresh run under comparable conditions, not measured or remaining time."
+}

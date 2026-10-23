@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "production_files_match_validated_snapshot": 22,
+  "reused_files_byte_identical": 11,
+  "original_packages_unchanged": {
+    "mx_e4m3_dedicated_reference100_v1": 55,
+    "mx_weights_dual_reference100_v1": 72
+  },
+  "new_feedback_members_byte_identical": 21,
+  "new_feedback_sha256": "db59f4677a72bbbe5d5abe5fdb91afb53d6330904218dfd5620a8b7285c6407d",
+  "unchanged_runner_function_AST": [
+    "run_epochs",
+    "restore_timing_sidecar",
+    "dependencies",
+    "verify_unchanged"
+  ],
+  "compiled_python_files": 23,
+  "notebooks_delivered": 1,
+  "notebook_code_cells": 9,
+  "notebook_outputs_empty": true,
+  "synthetic_fixture_images_or_training_checkpoints_included": false,
+  "validation_reports_all_PASS": [
+    "joint_module_validation_report.json",
+    "check_entry_validation_report.json",
+    "integration_report.json",
+    "notebook_validation_report.json",
+    "runner_notebook_integration.json"
+  ],
+  "new_real_SVHN_training_executed_here": false,
+  "CUDA_verified_here": false
+}
