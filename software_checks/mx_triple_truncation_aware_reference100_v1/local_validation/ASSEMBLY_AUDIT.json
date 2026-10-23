@@ -1,0 +1,74 @@
+{
+  "schema": "mx-triple-truncation-aware-reference100-assembly-audit-v1",
+  "status": "PASS",
+  "frozen_runtime_files_verified": 22,
+  "validation_reports": [
+    {
+      "file": "check_entry_validation_report.json",
+      "status": "PASS",
+      "sha256": "d1570ce0c1284a619354ad91edf8f3f518b1aa53978b3a6354d1dc55767b5811",
+      "recorded_file_hashes_verified": 23
+    },
+    {
+      "file": "config_difference.json",
+      "status": "PASS",
+      "sha256": "1fbcd4d29a9584b4d9500cd9bae8f80f728160d9939fd4f95a43f87a1c9c590f",
+      "recorded_file_hashes_verified": 0
+    },
+    {
+      "file": "independent_runner_review.json",
+      "status": "PASS",
+      "sha256": "e70eff344f296465fbc3505b9122cfd5e49a27f0210c987a98de320387abb332",
+      "recorded_file_hashes_verified": 22
+    },
+    {
+      "file": "notebook_validation_report.json",
+      "status": "PASS",
+      "sha256": "096b6a2dcc2f90c24f850c270e0e46af6db1e444e16ae66059491e3a86e1ccf5",
+      "recorded_file_hashes_verified": 3
+    },
+    {
+      "file": "runner_notebook_integration.json",
+      "status": "PASS",
+      "sha256": "6e6ef2f0fb0467ed47cafb39f26d1fdad65e55d20c040c38e4c3ab1a7676ede4",
+      "recorded_file_hashes_verified": 3
+    },
+    {
+      "file": "training_integration_report.json",
+      "status": "PASS",
+      "sha256": "ef0014cbf575537c988d8d0c2881929062c4943a8d31ad1cb91c08bb316704f1",
+      "recorded_file_hashes_verified": 23
+    }
+  ],
+  "unchanged_core_and_source_files": 18,
+  "existing_packages": [
+    {
+      "package": "mx_triple_truncation_aware_pilot5_v1",
+      "verified_files": 52,
+      "unchanged": true
+    },
+    {
+      "package": "mx_weights_triple_direct_pilot5_v1",
+      "verified_files": 45,
+      "unchanged": true
+    },
+    {
+      "package": "mx_weights_triple_direct_reference100_v1",
+      "verified_files": 50,
+      "unchanged": true
+    },
+    {
+      "package": "mx_triple_posthoc_truncation_eval_v1",
+      "verified_files": 41,
+      "unchanged": true
+    }
+  ],
+  "actual_pilot_audit_checks": 2314,
+  "copied_real_result_files_byte_identical": 13,
+  "original_feedback_unchanged": true,
+  "single_blank_notebook": true,
+  "notebook_code_cells_compiled": 10,
+  "python_files_parsed": 22,
+  "no_real_SVHN_training_or_dataset_inference_during_preparation": true,
+  "synthetic_models_or_datasets_in_package": false
+}

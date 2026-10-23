@@ -1,0 +1,66 @@
+{
+  "schema": "mx-triple-truncation-aware-reference100-change-v1",
+  "package": "mx_triple_truncation_aware_reference100_v1",
+  "decision_date": "2026-10-23",
+  "source": "unchanged validated five-epoch triple truncation-aware pilot core; identical exponent/mantissa mapping, source scales, STE and recursive training",
+  "scope": "100 full train-only SVHN epochs; one E4M3 code source and two derived weight modes",
+  "weight_formats": [
+    "MXFP8_E4M3",
+    "MXFP6_E2M3",
+    "MXFP4_E2M1"
+  ],
+  "quantization_source": "one current E4M3 source encoding per MX layer and minibatch; E2M3 exponent MSBs; E2M1 subsequent mantissa shift",
+  "mantissa_truncation": true,
+  "exponent_truncation": true,
+  "shared_scale_compensation": false,
+  "learned_shared_scale": false,
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "training_order": [
+    8,
+    6,
+    4
+  ],
+  "test_order": [
+    4,
+    6,
+    8
+  ],
+  "bn_mapping": {
+    "8": "8",
+    "6": "32",
+    "4": "4"
+  },
+  "teacher_chain": "labels -> E4M3 -> detached E4M3 softmax to E2M3 -> detached E2M3 softmax to E2M1",
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "loss_gradient_reduction": "sum, no division by three",
+  "selection": "all three modes at first strict E4M3 test maximum, and all three at epoch100; incomplete runs retain last completed epoch",
+  "configured_full_schedule_epochs": 100,
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "new_output_root": "mx_runs/mx_triple_truncation_aware_reference100",
+  "old_results_modified": false,
+  "executed_notebook_delivered": false,
+  "source_weight_bits": 8,
+  "exponent_bias_compensation": false,
+  "direct_lower_quantization": false,
+  "shared_scale_policy": "E4 source scale determined from current G(W); unchanged bytes copied to both lower modes; source scale may change after master updates",
+  "source_cache_policy": "detached integer codes shared across three passes; fresh G(W) autograd graph each pass; cache cleared before Adam",
+  "ste_policy": "identity through complete code path wrt G(W), retaining G(W) derivatives",
+  "bn_training_policy": "three mode banks learn parameters and running statistics normally; eval frozen",
+  "research_outcome_policy": "low accuracy, constant-class predictions, zero finite gradients or zero finite MX-master updates are diagnostics, not automatic failure; structural/finite/state checks mandatory",
+  "reference_epochs": 100,
+  "initialization_policy": "fresh original seed20261009, not a warmstart or resume from pilot5",
+  "changes_from_pilot": [
+    "endpoint raised from5 to100 using already configured 50/75/90 LR schedule",
+    "new experiment contract and output namespace",
+    "completion and measured timing refer to100epochs",
+    "blank result notebook reports epoch100 and E4M3-best"
+  ]
+}

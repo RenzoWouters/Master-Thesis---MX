@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "scope": "Independent read-only pilot-to-reference100 runner review and actual synthetic CLI integration; no real SVHN run",
+  "reviewed_runtime_sha256": {
+    "MX_triple_truncation_aware_reference100_resultaten.ipynb": "8eb8e64d778ab6eab1f2d379d93694f5be86bdfd6dcd9f1cb6d645b95463e442",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "fa1360fa51daf316cf504f69119b4dd1c7da6923922d9b1ed1fd812f3afa158a",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "fa6c020a079a1a2e53f57f8dcefe777304b521a484c88537339441b14ef2c4d3",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "131ea51fb5564eccce18ffb75fa8238630245e7288a3057d6c530c0943535ca2",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_trunc_training.py": "307c76535fbda6dd4823f2f3fe82b8a1605f1aa1046177c689db6aa7ead6504c",
+    "trunc_adapter.py": "2d49ef58e2a170f75ff1f9760c9b972b08dd3eb75ecacc0c4495b30b97dcd1dc",
+    "trunc_support.py": "68a674909337cc9da717ebb0ae3382b64ba3239a296dff52f1e5a9f65f4b9798",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "unchanged_files_against_truncation_pilot": [
+    "SOURCE_MANIFEST.json",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "mx_e2m1.py",
+    "mx_e4m3.py",
+    "mx_format.py",
+    "posthoc_truncation.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "test_e4m3.py",
+    "test_joint.py",
+    "test_mx.py",
+    "test_trunc_training.py",
+    "trunc_adapter.py",
+    "trunc_support.py",
+    "upstream/Any-Precision-DNNs-master.zip"
+  ],
+  "configuration_changes_only": {
+    "pilot_stop_epoch": {
+      "pilot": 5,
+      "reference100": null
+    },
+    "purpose": {
+      "pilot": "five complete train-only epochs: E4M3 source, naive exponent truncation to E2M3, then mantissa truncation to E2M1",
+      "reference100": "100 complete train-only epochs: E4M3 source, naive exponent truncation to E2M3, then mantissa truncation to E2M1"
+    },
+    "reference_end_epoch": {
+      "pilot": null,
+      "reference100": 100
+    },
+    "reporting_policy": {
+      "pilot": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+      "reference100": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch"
+    },
+    "schema": {
+      "pilot": "mx-triple-truncation-aware-pilot5-protocol-v1",
+      "reference100": "mx-triple-truncation-aware-reference100-protocol-v1"
+    }
+  },
+  "unchanged_runner_function_AST": [
+    "dependencies",
+    "create_context",
+    "restore_timing_sidecar",
+    "verify_unchanged"
+  ],
+  "run_epochs_AST_unchanged_except_endpoint_error_text": true,
+  "production_files_changed_during_validation": false,
+  "research_results_modified": false,
+  "findings": [
+    "All 18 inherited core/source files match the successful truncation-aware pilot byte for byte, including bit routes, scale copying, STE, recursive passes and exports.",
+    "The fresh initialization policy, seed, data split, transforms, A32 activations, FP32 masters/gradients/Adam and 50/75/90 learning-rate schedule remain unchanged.",
+    "Only the configured endpoint/experiment namespace/reporting differ from the pilot. The CLI accepts the fixed endpoint 100; Ctrl+C and STOP_AFTER_EPOCH retain the existing reversible stop/resume workflow.",
+    "The actual runner executes all 100 synthetic epochs, checks each source cycle, and produces 200 Adam updates, 600 training forwards, 600 train/test metric rows and 300 prediction histograms.",
+    "All four original learning-rate phases and both sides of all three schedule boundaries are explicitly checked.",
+    "Resume from epoch99 yields the exact CPU model, optimizer, scheduler, RNG and substantive epoch history of the uninterrupted run.",
+    "The first strict E4M3 maximum selects one common checkpoint for all modes, and epoch100 is reported separately. Early stop cannot claim PASS or a measured full100 duration.",
+    "Both selected checkpoints retain an E4M3 source and two derived exports. All three export modes reconstruct exactly from the saved E4 source with all encoders and G(W) explicitly prohibited.",
+    "Former pilot-contract checkpoints and already-completed epoch100 checkpoints are rejected before any optimizer update; source files and synthetic input tensors remain unchanged.",
+    "The actual main/check entry passes with only a test-harness CPU device substitution; the production CLI exposes no CPU or synthetic-data bypass."
+  ],
+  "blocking_issues_remaining": [],
+  "limits": [
+    "No real SVHN data was loaded or downloaded and no actual long GPU training was run.",
+    "The synthetic 100 epochs use only three images in batches of two plus one; their accuracy and timing are not research results.",
+    "CPU exact-resume evidence does not establish bit-exact CUDA resumption with the retained production backend.",
+    "Only software behavior is validated here; no required accuracy improvement is imposed."
+  ],
+  "initialization_reference": {
+    "builder": "unchanged joint_support.build_model",
+    "same_runtime_seed_and_CPU_context": true,
+    "initial_model_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148"
+  },
+  "synthetic_optimizer_updates": 204,
+  "synthetic_validation_seconds": 44.57120869999926,
+  "evidence": {
+    "test_training_integration.py": "f86525fd65fa041469c9f647d0c95fc1a8ca9e33f566b056cf9eb2a8b3fd60a9",
+    "training_integration_report.json": "ef0014cbf575537c988d8d0c2881929062c4943a8d31ad1cb91c08bb316704f1",
+    "check_entry_validation_report.json": "d1570ce0c1284a619354ad91edf8f3f518b1aa53978b3a6354d1dc55767b5811",
+    "runner_notebook_integration.json": "6e6ef2f0fb0467ed47cafb39f26d1fdad65e55d20c040c38e4c3ab1a7676ede4"
+  }
+}

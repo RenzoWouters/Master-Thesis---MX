@@ -1,0 +1,12 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_truncation_aware_reference100\20261023_184041_421827_joint_check
+GEZAMENLIJKE TRUNCATIEREFERENTIE: 100 epochs; E4M3 -> E2M3 -> E2M1; gedeelde E4M3-bronschaal per minibatch; A32; FP32-masters.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.30, prec1 33.33, prec5 66.67
+ZELFTEST productiebeleid: 1 tensors buiten tolerantie; RNG exact=True
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.30, prec1 33.33, prec5 66.67
+ZELFTEST deterministisch: 0 tensors buiten tolerantie; RNG exact=True
+CHECK PASS: E4M3-bron, exponent- en mantissabittruncatie, schaalbehoud, STE, A32, drie BN-banken en recursieve updates. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_truncation_aware_reference100\20261023_184041_421827_joint_check\run_report.json

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "only_intended_config_changes": {
+    "pilot_stop_epoch": {
+      "pilot": "Constant(value=5)",
+      "reference100": null
+    },
+    "purpose": {
+      "pilot": "Constant(value='five complete train-only epochs: E4M3 source, naive exponent truncation to E2M3, then mantissa truncation to E2M1')",
+      "reference100": "Constant(value='100 complete train-only epochs: E4M3 source, naive exponent truncation to E2M3, then mantissa truncation to E2M1')"
+    },
+    "reference_end_epoch": {
+      "pilot": null,
+      "reference100": "Constant(value=100)"
+    },
+    "reporting_policy": {
+      "pilot": "Constant(value='all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch')",
+      "reference100": "Constant(value='all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch')"
+    },
+    "schema": {
+      "pilot": "Constant(value='mx-triple-truncation-aware-pilot5-protocol-v1')",
+      "reference100": "Constant(value='mx-triple-truncation-aware-reference100-protocol-v1')"
+    }
+  }
+}
