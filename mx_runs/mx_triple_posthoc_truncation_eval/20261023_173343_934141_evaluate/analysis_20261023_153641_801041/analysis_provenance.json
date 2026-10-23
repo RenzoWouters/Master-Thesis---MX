@@ -1,0 +1,25 @@
+{
+  "schema": "mx-triple-posthoc-analysis-v1",
+  "synthetic_fixture_only": false,
+  "source_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate",
+  "confirmed_evaluation": true,
+  "input_sha256": {
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\run_report.json": "5fe8681e7ceccdc9482ed1011aea43bcb324e0da27de82bbae8c60c92164b2f9",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\metrics.csv": "eb5dcd4e8def1adcd731a7ec366451276c245183128b29491cf425d3b117c83c",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\paired_metrics.csv": "34ab833c0212d938326334a7260f529006b49e7702b7765068e7a2f93a42331e",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\weight_pair_metrics.csv": "31148814e54a5663b3c889ac643e8ec13e19c5f0861ad878130671400daad069",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\layer_code_metrics.csv": "3af114e2a29a049e35eaa476f24e535e840cfecafef7f471fe4366633625f91e",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\historical_reproduction.csv": "8115e59cdb58208a146b715b046c2ed8a63937b599b2a1b1e9db86b22cc29f52",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\last_epoch_per_image_outputs.npz": "d934d4e74b28159a8eb3b8b93aab77ad06d52cc2510fd93cd98c8353ed7a1ccf",
+    "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_posthoc_truncation_eval\\20261023_173343_934141_evaluate\\best_E4M3_test_per_image_outputs.npz": "501d121d41ce14514e8c95531e4a51170b825c4a8a31ed5100ba081ef1b6ed7b"
+  },
+  "figures": [
+    "checkpoint_accuracy",
+    "accuracy_deltas",
+    "paired_changes",
+    "weight_differences",
+    "weight_magnitudes"
+  ],
+  "raw_inputs_unchanged": true,
+  "training_or_model_evaluation_performed": false
+}

@@ -1,0 +1,27 @@
+{
+  "source_run": "mx_runs/mx_weights_triple_direct_reference100/20261023_151331_732669_joint_run",
+  "best_epoch_E4M3": 54,
+  "last_epoch": 100,
+  "checkpoint_selection": {
+    "policy": "first strict maximum of E4M3/A32 official-test top1",
+    "best": {
+      "epoch": 54,
+      "file": "best_checkpoint.pt",
+      "sha256": "ab2e05d40d82cccc971aa117cd08f5182174bc44b9f4b4919a829c3275f7e8c4",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_triple_direct_reference100\\20261023_151331_732669_joint_run\\checkpoints\\epoch_00054.pt",
+      "selection_score_E4M3": 95.03687767961968
+    },
+    "last": {
+      "epoch": 100,
+      "file": "last_checkpoint.pt",
+      "sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_triple_direct_reference100\\20261023_151331_732669_joint_run\\checkpoints\\epoch_00100.pt",
+      "selection_score_E4M3": 94.86017208650351
+    },
+    "same_checkpoint": false,
+    "selected_on_official_test": true,
+    "independent_test_estimate": false,
+    "selection_mode": "MXFP8_E4M3/A32",
+    "all_modes_from_same_selected_checkpoint": true
+  }
+}

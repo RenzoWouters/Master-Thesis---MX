@@ -1,0 +1,41 @@
+{
+  "schema": "mx-triple-posthoc-runner-notebook-integration-v1",
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "scope": "Read-only integration using actual synthetic CLI evaluator output; no model or training calls",
+  "source_directory": "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/evaluate/20261023_171435_209747_evaluate",
+  "all_nine_copied_notebook_code_cells_executed": true,
+  "all_five_figures_created_in_memory": true,
+  "both_fixed_checkpoint_roles_confirmed": true,
+  "all_eight_routes_confirmed": true,
+  "NPZ_integrity_and_predictions_verified": true,
+  "no_analysis_errors": true,
+  "raw_input_hashes_unchanged": true,
+  "SAVE_FIGURES": false,
+  "no_executed_notebook_saved": true,
+  "no_training_or_model_import": true,
+  "tested_file_sha256": {
+    "notebook_support.py": "06617e26831452fd1050b8b580cf5290b5c741109210996401bdf08bdd63aca6",
+    "MX_triple_posthoc_truncatie_resultaten.ipynb": "f627474e1eb9f3f54149a7d27cbca2cca3baf49a90262f5b229f23c1f69f8d83",
+    "local_validation/test_notebook.py": "519d53d88d8fc21715a2effd99afc5cc47530c0ba66ebfa94f8031d4cd7ba3a2"
+  },
+  "source_report_sha256": "2b1bad9ceb4b026f70a512b6f7fc0d628ef292a0c3cccd10e94f3c0664629289",
+  "output_checks": [
+    {
+      "Rol": "last_epoch",
+      "Epoch": 100,
+      "Testbeelden": 3,
+      "NPZ-checksum": "PASS",
+      "Acht routes": "PASS",
+      "Gepaarde tellingen": "PASS"
+    },
+    {
+      "Rol": "best_E4M3_test",
+      "Epoch": 54,
+      "Testbeelden": 3,
+      "NPZ-checksum": "PASS",
+      "Acht routes": "PASS",
+      "Gepaarde tellingen": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "schema": "mx-triple-posthoc-integration-validation-v1",
+  "synthetic_fixture_only": true,
+  "scope": "Actual check/evaluate CLI with three synthetic CPU images, random exports and test-only dependency/runtime/data patches",
+  "no_real_SVHN_data_or_user_checkpoint_loaded": true,
+  "no_training_or_BN_recalibration": true,
+  "production_bypass_added": false,
+  "executed_notebook_delivered": false,
+  "protocol_guard_fixture_note": "Private synthetic exports plus copied real protocol metadata; not research results.",
+  "runtime_environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "package_sha256": {
+    "MX_triple_posthoc_truncatie_resultaten.ipynb": "f627474e1eb9f3f54149a7d27cbca2cca3baf49a90262f5b229f23c1f69f8d83",
+    "REFERENCE_PROTOCOL.json": "463243188cb62f8886f8681682a0caa65320a89d8eafb1b8b778d740bdf3e0e1",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "evaluation.py": "2c5f7e427de63934714ad35d70a17998535b292b54f25bc085dd7eea932d309e",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "06617e26831452fd1050b8b580cf5290b5c741109210996401bdf08bdd63aca6",
+    "provenance/reference100_PACKAGE_SHA256.json": "145493e9c6b2e27ee30f405cfcc35a2b8ea8b39105c9d1fb32cd7d1d3123e8b8",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_eval.py": "92ba5da7502b2e3a50094ba9e3fef735abd86e88337396212979a2e79778705f",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_truncation.py": "1b77725066013dab889249f682ae25d43866241fe1cd82d0b80db69f017bda62",
+    "truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "feedback_metadata_input_sha256": "68b55b2432bdc6802094e8968ad5d97252b8166ebbca4d1651fc438c6c66e259",
+  "cases": {
+    "check": {
+      "status": "PASS",
+      "expected_status": "PASS",
+      "output_directory": "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/check/20261023_171434_251512_check"
+    },
+    "evaluate": {
+      "status": "PASS",
+      "expected_status": "PASS",
+      "output_directory": "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/evaluate/20261023_171435_209747_evaluate"
+    },
+    "reject_payload_checkpoint": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/reject_payload_checkpoint/20261023_171436_364199_evaluate"
+    },
+    "reject_payload_format": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/reject_payload_format/20261023_171436_477941_evaluate"
+    },
+    "reject_payload_truncated": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/reject_payload_truncated/20261023_171436_582098_evaluate"
+    }
+  },
+  "reference_guard_tests": {
+    "wrong_reference_schema": {
+      "rejected": true,
+      "message": "Verwacht een geslaagde gezamenlijke directe E4M3/E2M3/E2M1-referentie."
+    },
+    "unfinished_reference": {
+      "rejected": true,
+      "message": "Geen echte volledige honderd-epochreferentie met drie directe gewichtsmodi."
+    },
+    "synthetic_reference_flag": {
+      "rejected": true,
+      "message": "Geen echte volledige honderd-epochreferentie met drie directe gewichtsmodi."
+    },
+    "different_checkpoint_selection": {
+      "rejected": true,
+      "message": "Checkpointselectierapporten verschillen."
+    },
+    "changed_direct_export_hash": {
+      "rejected": true,
+      "message": "Exporthash wijkt af: mx_direct_MXFP8_E4M3_best.pt"
+    },
+    "truncated_source_export": {
+      "rejected": true,
+      "message": "Bronexport is niet de afgesproken directe export."
+    },
+    "unsafe_source_export_path": {
+      "rejected": true,
+      "message": "Onveilig bestandsveld in referentierapport."
+    }
+  },
+  "CLI_guards": [
+    {
+      "arguments": [
+        "run"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--download"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "evaluate",
+        "--reference-run",
+        "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/SYNTHETIC_evaluation_reference",
+        "--output-root",
+        "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/SYNTHETIC_evaluation_reference/inside"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--reference-run",
+        "/workspace/scratch/4619498905be/work/posthoc_cli_integration_20261023/SYNTHETIC_evaluation_reference"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--synthetic"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--epochs",
+        "5"
+      ],
+      "exit_code": 2
+    }
+  ],
+  "metric_rows": 16,
+  "paired_rows": 22,
+  "paths_per_checkpoint": 8,
+  "checkpoint_roles": [
+    "best_E4M3_test",
+    "last_epoch"
+  ],
+  "per_image_logits_counts_CE_and_paired_tables_consistent": true,
+  "all_10_derived_models_saved_reloaded_and_evaluated": true,
+  "historical_direct_correct_counts_match_synthetic_baselines": true,
+  "all_inputs_and_package_unchanged": true,
+  "seconds": 4.499640158999682,
+  "test_source_sha256": "ab8a6479930a95a26a054d13d77204419f840846cfff0e8dfc62de8f48e3462b"
+}

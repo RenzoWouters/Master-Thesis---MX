@@ -1,0 +1,40 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_posthoc_truncation_eval\20261023_173343_934141_evaluate
+POST-HOC: drie directe modi, exponent- en mantissatruncatie op dezelfde checkpoints; A32; vaste bronschalen.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+DATA PASS: uitsluitend test=26032; 204 batches; train en extra niet ingelezen.
+EVALUATIE: best_E4M3_test, epoch 54; acht paden; bevroren BN-bank van de doelprecisie.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+best_E4M3_test: batch 1/204; acht paden; uitsluitend evaluatie.
+best_E4M3_test: batch 50/204; acht paden; uitsluitend evaluatie.
+best_E4M3_test: batch 100/204; acht paden; uitsluitend evaluatie.
+best_E4M3_test: batch 150/204; acht paden; uitsluitend evaluatie.
+best_E4M3_test: batch 200/204; acht paden; uitsluitend evaluatie.
+best_E4M3_test: batch 204/204; acht paden; uitsluitend evaluatie.
+  direct8: 95.0369%; correct=24740/26032; CE=0.214138
+  direct6: 95.1137%; correct=24760/26032; CE=0.189811
+  direct4: 95.1368%; correct=24766/26032; CE=0.182220
+  round64: 94.6911%; correct=24650/26032; CE=0.192031
+  mantissa64: 94.1879%; correct=24519/26032; CE=0.212324
+  round86: 15.9381%; correct=4149/26032; CE=2.271782
+  exponent86: 15.9381%; correct=4149/26032; CE=2.273138
+  combined864: 15.9381%; correct=4149/26032; CE=2.274157
+EVALUATIE: last_epoch, epoch 100; acht paden; bevroren BN-bank van de doelprecisie.
+last_epoch: batch 1/204; acht paden; uitsluitend evaluatie.
+last_epoch: batch 50/204; acht paden; uitsluitend evaluatie.
+last_epoch: batch 100/204; acht paden; uitsluitend evaluatie.
+last_epoch: batch 150/204; acht paden; uitsluitend evaluatie.
+last_epoch: batch 200/204; acht paden; uitsluitend evaluatie.
+last_epoch: batch 204/204; acht paden; uitsluitend evaluatie.
+  direct8: 94.8602%; correct=24694/26032; CE=0.236221
+  direct6: 95.0061%; correct=24732/26032; CE=0.200406
+  direct4: 95.0715%; correct=24749/26032; CE=0.186246
+  round64: 94.5951%; correct=24625/26032; CE=0.198839
+  mantissa64: 94.3877%; correct=24571/26032; CE=0.212873
+  round86: 15.9381%; correct=4149/26032; CE=2.272554
+  exponent86: 15.9381%; correct=4149/26032; CE=2.274756
+  combined864: 15.9381%; correct=4149/26032; CE=2.274692
+EVALUATIE VOLTOOID: beide vaste checkpoints; exponent, mantissa en combinatie; geen updates.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_posthoc_truncation_eval\20261023_173343_934141_evaluate\run_report.json

@@ -1,0 +1,46 @@
+{
+  "schema": "mx-triple-posthoc-assembly-audit-v1",
+  "status": "PASS",
+  "original_full100_manifest_50_files_unchanged": true,
+  "reused_files_byte_identical": 14,
+  "runtime_validation_snapshot_files": 22,
+  "all_runtime_validation_hashes_match_final_files": true,
+  "actual_training_feedback_audit_checks": 636,
+  "latest_feedback_audit_includes_direct_weight_diagnostics": true,
+  "validation_reports": {
+    "codec_and_frozen_model_validation.json": {
+      "status": "PASS",
+      "sha256": "424268e0878550db231788f5c2d73c9f8f4c638e1e2d84764c291a2c0a2de5e3"
+    },
+    "independent_posthoc_review.json": {
+      "status": "PASS",
+      "sha256": "eb02437230f262f7109d9d09eee16ba9918954f2cd1674ff8675087337a25ffc"
+    },
+    "notebook_validation_report.json": {
+      "status": "PASS",
+      "sha256": "65a14ce35492dffd7423a0a8260ac1dcecb585f6119bea546b773432fef43580"
+    },
+    "posthoc_integration_report.json": {
+      "status": "PASS",
+      "sha256": "4cbdf5345d46798a1bb245a425de844af65e9ef48c8c4deff35c76553ea488de"
+    },
+    "runner_notebook_integration.json": {
+      "status": "PASS",
+      "sha256": "63bcc1f5274f15c273380c6a000622db93af8252a7ce7de1cab1d5278cdd6453"
+    }
+  },
+  "all_reported_tested_and_reviewed_file_hashes_match": true,
+  "notebook_templates": 1,
+  "notebook_code_cells": 9,
+  "notebook_has_no_outputs_or_execution_counts": true,
+  "active_and_validation_python_files_AST_checked": 19,
+  "no_model_dataset_synthetic_prediction_or_figure_artifacts_in_package": true,
+  "four_old_mantissa_provenance_files_unchanged": true,
+  "real_SVHN_posthoc_evaluation_performed_here": false,
+  "training_performed_here": false,
+  "actual_GPU_check_remains_on_user_laptop": true,
+  "reference_checkpoint_epochs": {
+    "last_epoch": 100,
+    "best_E4M3_test": 54
+  }
+}

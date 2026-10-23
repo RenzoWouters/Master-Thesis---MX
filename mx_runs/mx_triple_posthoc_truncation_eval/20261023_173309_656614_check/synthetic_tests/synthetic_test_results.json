@@ -1,0 +1,63 @@
+{
+  "synthetic_fixture_only": true,
+  "SVHN_used": false,
+  "optimizer_steps": 0,
+  "batchnorm_recalibration": false,
+  "device": "cuda:0",
+  "all_254_finite_E4_codes_MSB_exponent_and_combined_oracles": true,
+  "all_254_finite_E4_codes_RNE_fixed_scale_oracle": true,
+  "all_64_E2M3_codes_mantissa_and_RNE_oracles": true,
+  "signed_zero_subnormals_and_packed_roundtrip": true,
+  "all_255_finite_E8M0_codes_preserved_all_five_derivations": true,
+  "naive_exponent_is_not_uniform_numeric_scaling": true,
+  "round86_fixed_source_scale_saturation_explicit": true,
+  "previous_mantissa_examples_and_double_rounding_repeated": true,
+  "multirow_padding_and_zero_blocks": true,
+  "source_set_checks": {
+    "same_checkpoint_provenance": true,
+    "same_auxiliary_state": true,
+    "all_E2_source_scales_equal": true,
+    "E4_scale_equality_not_required": true,
+    "blocks": 4080,
+    "E4_minus_E2_scale_exponent_counts": {
+      "-6": 4080
+    }
+  },
+  "three_bit_routes_require_no_encoder_G_or_quantized_layer_master": true,
+  "live_vs_export_direct8": {
+    "exact": true,
+    "max_abs_difference": 0.0,
+    "allclose_rtol1e4_atol1e5": true
+  },
+  "live_vs_export_direct6": {
+    "exact": true,
+    "max_abs_difference": 0.0,
+    "allclose_rtol1e4_atol1e5": true
+  },
+  "live_vs_export_direct4": {
+    "exact": true,
+    "max_abs_difference": 0.0,
+    "allclose_rtol1e4_atol1e5": true
+  },
+  "all_eight_models_A32_frozen_target_BN_no_state_mutation": true,
+  "weight_diagnostics_48_pairs_48_route_layer_rows": true,
+  "negative_tests": [
+    "E4_NaN_127",
+    "E4_NaN_255",
+    "E8M0_NaN_255",
+    "wrong_code_dtype",
+    "nonzero_padding",
+    "wrong_source_type",
+    "unknown_path",
+    "mismatched_E2_direct_scales",
+    "wrong_target_BN_bank",
+    "hidden_quantized_layer_master",
+    "bias_compensation_not_allowed",
+    "mixed_checkpoint_provenance",
+    "invalid_source_digest",
+    "source_overwrite_refused"
+  ],
+  "source_exports_unchanged": true,
+  "no_training_or_calibration": true,
+  "status": "PASS"
+}

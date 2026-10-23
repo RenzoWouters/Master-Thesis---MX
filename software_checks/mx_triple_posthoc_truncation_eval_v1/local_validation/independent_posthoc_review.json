@@ -1,0 +1,39 @@
+{
+  "schema": "independent-posthoc-runner-code-review-v1",
+  "status": "PASS",
+  "review_scope": "Read-only review of new run_eval.py/evaluation.py, source-derivation interface, and real reference metadata",
+  "reviewed_sha256": {
+    "run_eval.py": "92ba5da7502b2e3a50094ba9e3fef735abd86e88337396212979a2e79778705f",
+    "evaluation.py": "2c5f7e427de63934714ad35d70a17998535b292b54f25bc085dd7eea932d309e",
+    "truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "REFERENCE_PROTOCOL.json": "463243188cb62f8886f8681682a0caa65320a89d8eafb1b8b778d740bdf3e0e1",
+    "provenance/reference100_PACKAGE_SHA256.json": "145493e9c6b2e27ee30f405cfcc35a2b8ea8b39105c9d1fb32cd7d1d3123e8b8"
+  },
+  "real_reference_feedback": "feedback_bundle(20261023-150530).zip",
+  "real_reference_config_and_package_contract_match": true,
+  "real_selected_epochs": {
+    "best_E4M3_test": 54,
+    "last_epoch": 100
+  },
+  "reused_numerical_and_source_code_hashes_match_training": true,
+  "findings": [
+    "Source guard requires a genuine successful full100 triple-direct run, the exact archived protocol/package, matching environment/backend, and complete600-row history.",
+    "Best is independently recovered as the first E4M3 maximum; epoch100 stays fixed; no selection on new post-hoc scores.",
+    "Six direct MX export files are verified against size, report SHA256 and sidecar before weights_only tensor load; provenance ties them to the selected checkpoint.",
+    "FP32 training checkpoints and their optimizer state are not opened; derived paths use only archived source codes/scales and shared auxiliary state.",
+    "Five derived files are saved, checksummed and reloaded before frozen model reconstruction; bit routes preserve source scales and do not call a quantizer or G(W).",
+    "All paths select the target precision BN bank and use eval/no_grad/frozen parameters; full model/BN state digests are checked before and after inference.",
+    "Only test split is loaded; test file hash, original preprocessing, labels and complete ordered sample coverage are checked.",
+    "Every path sees each same batch; NPZ arrays and metrics derive from the same stored logits/topk predictions/labels; paired net changes are asserted.",
+    "Historical direct accuracy differences generate explicit warnings and are not corrected; newly reevaluated direct modes remain comparison baselines.",
+    "Original report/export/sidecar and test-data hashes are rechecked; new timestamped output is outside original reference directory.",
+    "No train/run/resume/download/partial-dataset CLI route exists; no optimizer/backward or BN recalibration occurs in evaluate.",
+    "Low truncation accuracy is accepted as a measured result; finite-state, source, scale or provenance inconsistency causes FAIL."
+  ],
+  "concrete_blockers": [],
+  "evidence_limits": [
+    "The real attachment contains reports and CSVs, not source model export tensors or SVHN arrays; real post-hoc outputs were not recomputed here.",
+    "This review is separate from the bounded synthetic runner/evaluator integration tests performed by the parent/test agent.",
+    "Exact CUDA repeatability is not guaranteed under the preserved backend; the code records any historical count differences."
+  ]
+}

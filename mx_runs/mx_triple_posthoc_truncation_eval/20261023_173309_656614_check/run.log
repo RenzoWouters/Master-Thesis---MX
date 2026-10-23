@@ -1,0 +1,8 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_posthoc_truncation_eval\20261023_173309_656614_check
+POST-HOC: drie directe modi, exponent- en mantissatruncatie op dezelfde checkpoints; A32; vaste bronschalen.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+CHECK PASS: 254 E4-codes, 64 E2M3-codes, vaste schalen, acht bevroren A32-routes en doel-BN.
+CHECK PASS: bitbewerkingen, vaste schalen, frozen modellen en opslaan/herladen.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_posthoc_truncation_eval\20261023_173309_656614_check\run_report.json

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "scope": "GENERATED_SYNTHETIC_REPORTS_ONLY_NO_MODEL_OR_TRAINING",
+  "empty_template_outputs_confirmed": true,
+  "no_executed_notebook_created": true,
+  "all_nine_code_cells_executed": true,
+  "all_five_figure_types_created": true,
+  "both_fixed_checkpoints_all_eight_routes": true,
+  "lower_precision_higher_accuracy_accepted": true,
+  "tied_logits_compatible_with_torch_topk_prediction": true,
+  "NPZ_hash_counts_CE_and_pairs_verified": true,
+  "input_hashes_unchanged_after_execute_and_save": true,
+  "explicit_save_new_directory_PNG_PDF": true,
+  "per_image_verification_required_for_confirmation": true,
+  "check_only_not_presented_as_evaluation": true,
+  "expected_negative_cases": {
+    "mixed_checkpoint_epoch": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch: routes komen niet uit één volledige checkpointepoch."
+      ]
+    },
+    "missing_route": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch: verwacht precies de acht vastgelegde evaluatieroutes."
+      ]
+    },
+    "wrong_target_BN": {
+      "expected_rejection": true,
+      "messages": [
+        "exponent86: verkeerde doelprecisie of BN-bank."
+      ]
+    },
+    "changed_shared_scale": {
+      "expected_rejection": true,
+      "messages": [
+        "Niet alle routes behouden hun vastgelegde bronschaal."
+      ]
+    },
+    "pair_counts_inconsistent_with_predictions": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch: Gepaarde tellingen wijken af van de per-beeldvoorspellingen.",
+        "best_E4M3_test: Gepaarde tellingen wijken af van de per-beeldvoorspellingen."
+      ]
+    },
+    "NPZ_checksum_mismatch": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch: Checksum per-beeldbestand wijkt af."
+      ]
+    },
+    "changed_original_checkpoint": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: oorspronkelijke checkpointselectie is niet behouden."
+      ]
+    },
+    "unconfirmed_real_provenance": {
+      "expected_rejection": true,
+      "messages": [
+        "Herkomst ontbreekt: niet als echte SVHN-evaluatie bevestigen.",
+        "Een echte proef moet alle 26.032 SVHN-testbeelden bevatten."
+      ]
+    }
+  },
+  "preview_directory": "/tmp/mx_triple_posthoc_notebook_validation_20261023_final/synthetic_complete/analysis_20261023_151332_089354",
+  "tested_file_sha256": {
+    "notebook_support.py": "06617e26831452fd1050b8b580cf5290b5c741109210996401bdf08bdd63aca6",
+    "MX_triple_posthoc_truncatie_resultaten.ipynb": "f627474e1eb9f3f54149a7d27cbca2cca3baf49a90262f5b229f23c1f69f8d83",
+    "local_validation/test_notebook.py": "519d53d88d8fc21715a2effd99afc5cc47530c0ba66ebfa94f8031d4cd7ba3a2"
+  },
+  "visual_qa": {
+    "status": "PASS",
+    "figures_inspected": [
+      "checkpoint_accuracy",
+      "accuracy_deltas",
+      "paired_changes",
+      "weight_differences",
+      "weight_magnitudes"
+    ],
+    "synthetic_labels_visible": true,
+    "no_fixture_images_packaged": true
+  }
+}
