@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "actual_pilot_package_files_unchanged": 43,
+  "reused_files_byte_identical": 10,
+  "original_feedback_files_byte_identical": 21,
+  "python_files_compile": 14,
+  "new_template_code_cells_blank": 8,
+  "actual_pilot_code_cells_executed": 8,
+  "actual_pilot_embedded_figures": 4,
+  "production_runner_codec_adapter_and_notebook_match_tested_hashes": true,
+  "main_synthetic_validation_status": "PASS",
+  "notebook_synthetic_validation_status": "PASS",
+  "real_100_epoch_training_performed": false,
+  "source_feedback_sha256": "f0401e655e91ed447885291aecaf1d3390fd3078aaaa07e7d4d5484ae43a8391"
+}

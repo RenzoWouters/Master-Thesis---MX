@@ -1,0 +1,153 @@
+--- pilot5_v2/run_train.py
++++ reference100_v1/run_train.py
+@@ -1,4 +1,4 @@
+-"""Dedicated E4M3/A32 weight-training pilot: exactly five complete epochs.
++"""Dedicated E4M3/A32 reference: 100 complete epochs from initialization.
+ 
+ CUDA production; SVHN train only. No warm-start, truncation or distillation.
+ The original forward function is used with internal selector [32]; the adapter
+@@ -34,8 +34,8 @@
+ def config(mode: str = 'mx') -> dict:
+     s.require(mode == 'mx', 'Dit pakket voert uitsluitend dedicated E4M3/A32 uit.')
+     return {
+-        'schema': 'mx-e4m3-dedicated-pilot5-protocol-v1',
+-        'purpose': 'five complete epochs: dedicated E4M3 weight-only QAT and runtime estimate',
++        'schema': 'mx-e4m3-dedicated-reference100-protocol-v1',
++        'purpose': '100 complete epochs from initialization: dedicated E4M3 weight-only QAT',
+         'mode': mode, 'weight_format': t.weight_format(mode),
+         'codec_revision': 'e4m3-exact-binary-v2',
+         'weight_preprocess': 'original W32: G(W)=(tanh(W)/max(abs(tanh(W))))*mean(abs(W)).detach(); safe all-zero guard',
+@@ -59,7 +59,7 @@
+         'train_examples': 73257, 'test_examples': 26032, 'validation_examples': 0,
+         'initialization_policy': 'fresh run, seed-matched across modes; never load old reference/pilot',
+         'model': 'svhnq', 'expand': 2, 'parameters': 132954,
+-        'planned_epochs': 100, 'pilot_stop_epoch': 5,
++        'planned_epochs': 100, 'reference_end_epoch': 100,
+         'batch_size': 128, 'optimizer': 'adam', 'lr': .001, 'weight_decay': 0.0,
+         'scheduler_milestones': [50, 75, 90], 'scheduler_gamma': .1,
+         'workers': 0, 'pin_memory': True, 'drop_last': False,
+@@ -223,7 +223,7 @@
+     if resume is not None:
+         resume = resume.resolve()
+         state = core.load_verified(resume)
+-        s.require(0 < state['completed_epoch'] < stop_after, 'Dit checkpoint laat geen nieuwe pilot-epochs toe.')
++        s.require(0 < state['completed_epoch'] < stop_after, 'Dit checkpoint laat geen nieuwe referentie-epochs toe.')
+         ctx.report['restore_checks'] = core.restore_checkpoint(state, model, optimizer, scheduler, {},
+                                                               device, ctx.contract)
+         trace = copy.deepcopy(state['trace'])
+@@ -338,6 +338,9 @@
+     records, c, core = trace['epochs'], ctx.c, ctx.rt.core
+     s.require(records and [r['epoch'] for r in records] == list(range(1, records[-1]['epoch'] + 1)),
+               'Onvolledige epochgeschiedenis.')
++    s.require(c['planned_epochs'] == 100 and c['reference_end_epoch'] == 100,
++              'Dit is uitsluitend het honderd-epochprotocol.')
++    s.require(0 < records[-1]['epoch'] <= 100, 'Ongeldige eindepoch.')
+     expected_steps = math.ceil(c['train_examples'] / c['batch_size'])
+     for record in records:
+         epoch = record['epoch']
+@@ -412,8 +415,9 @@
+     s.write_json(out / 'checkpoint_selection.json', selection)
+     s.write_json(out / 'history.json', trace)
+     elapsed = sum(r['total_epoch_seconds'] for r in records)
+-    summary = {'completed_epochs': last['epoch'], 'pilot_completed': last['epoch'] == 5,
+-               'full_100_epoch_training_completed': False, 'optimizer_steps': last['optimizer_steps'],
++    summary = {'completed_epochs': last['epoch'],
++               'full_100_epoch_training_completed': last['epoch'] == c['planned_epochs'],
++               'optimizer_steps': last['optimizer_steps'],
+                'train_examples': c['train_examples'], 'test_examples': c['test_examples'],
+                'mode': c['mode'], 'weight_format': c['weight_format'],
+                'activation_bits': 32, 'distillation': False, 'truncation': False,
+@@ -426,6 +430,14 @@
+     estimate['weight_mode'] = c['weight_format']
+     estimate['includes'] = ['training', 'test', 'epoch diagnostics', 'checkpoint write']
+     estimate['measured_completed_epoch_seconds'] = elapsed
++    estimate['full_100_epoch_training_completed'] = last['epoch'] == 100
++    estimate['measured_100_epoch_seconds'] = elapsed if last['epoch'] == 100 else None
++    estimate['limitations'] = [
++        'The estimate is a projection, not the measured sum of all epochs.',
++        'Use measured_100_epoch_seconds after completing 100 epochs.',
++        'Same laptop/backend/data loading conditions required; no hardware speedup claim.',
++        'Synthetic CPU tests do not provide a production timing estimate.',
++    ]
+     s.write_json(out / 'timing_estimate.json', estimate)
+     s.write_csv(out / 'epoch_times.csv', [
+         {'epoch': r['epoch'], **{k: r.get(k) for k in ['train_seconds', 'test_seconds', 'checkpoint_seconds',
+@@ -435,8 +447,11 @@
+                       selected_best_epoch=best['epoch'], selected_last_epoch=last['epoch'],
+                       initial_model_sha256=trace['initial_model_sha256'], checkpoint_selection=selection,
+                       training_summary=summary, timing_estimate=estimate, mx_exports=mx_exports,
+-                      synthetic_fixture_only=ctx.contract['synthetic_fixture_only'])
+-    notebook_name = 'MX_E4M3_dedicated_pilot5_resultaten.ipynb'
++                      synthetic_fixture_only=ctx.contract['synthetic_fixture_only'],
++                      full_training_completed=last['epoch'] == 100)
++    log(f'GEMETEN: {len(records)} epochs samen {elapsed / 60:.2f} minuten; '
++        f'volledige training={last["epoch"] == 100}; updates={last["optimizer_steps"]}.')
++    notebook_name = 'MX_E4M3_dedicated_reference100_resultaten.ipynb'
+     notebook = json.loads((ROOT / notebook_name).read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+@@ -467,7 +482,7 @@
+              'training_change_manifest.json', 'training_summary.json',
+              'codec_report.json', 'legacy_codec_diagnostics.json',
+              'mx_export_layers_best.csv', 'mx_export_layers_last.csv',
+-             'MX_E4M3_dedicated_pilot5_resultaten.ipynb', 'notebook_support.py']
++             'MX_E4M3_dedicated_reference100_resultaten.ipynb', 'notebook_support.py']
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+         for name in names:
+             path = out / name
+@@ -480,21 +495,21 @@
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.add_argument('--mode', choices=['mx'], default='mx')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_e4m3_dedicated_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_e4m3_dedicated_reference100'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+-    parser.add_argument('--stop-after-epoch', type=int, default=5)
++    parser.add_argument('--stop-after-epoch', type=int, default=100)
+     parser.add_argument('--checkpoint', type=Path)
+     args = parser.parse_args()
+-    if args.stop_after_epoch != 5:
+-        parser.error('Dit pakket is een proef van vijf epochs; geen automatische honderd-epochtraining.')
++    if args.stop_after_epoch != 100:
++        parser.error('Dit pakket heeft een vast eindpunt van 100 epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een hervatbare vroege stop.')
+     if (args.command == 'resume') != (args.checkpoint is not None):
+         parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.')
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'mx-e4m3-dedicated-pilot5-report-v1', 'status': 'RUNNING',
+-              'package_revision': 'mx_e4m3_dedicated_pilot5_v2',
++    report = {'schema': 'mx-e4m3-dedicated-reference100-report-v1', 'status': 'RUNNING',
++              'package_revision': 'mx_e4m3_dedicated_reference100_v1',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only; single mode; this is not a paper reproduction',
+@@ -504,7 +519,7 @@
+                               'official test used for checkpoint selection, not an independent test estimate',
+                               'numerical weight-only MX emulation; no native MX kernel or energy claim',
+                               'GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism',
+-                              'five epochs test learning mechanics, not final convergence']}
++                              'one fixed seed; no across-seed uncertainty estimate']}
+     log = s.legacy.Log(out / 'run.log')
+     started = time.perf_counter()
+     exit_code = 1
+@@ -519,15 +534,15 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log('DEDICATED E4M3: vijf epochs; A32; FP32-master; hard CE; één pass per minibatch.')
++            log('DEDICATED E4M3: 100 epochs vanaf initialisatie; A32; FP32-master; hard CE; één pass per minibatch.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is None:
+                 report['status'] = 'PASS'
+             else:
+-                trace = run_epochs(ctx, out, log, 5, args.checkpoint)
++                trace = run_epochs(ctx, out, log, args.stop_after_epoch, args.checkpoint)
+                 export_results(ctx, out, trace, log)
+                 verify_unchanged(ctx, log)
+-                report['status'] = 'PASS' if report['completed_epoch'] == 5 else 'STOPPED_AT_EPOCH_BOUNDARY'
++                report['status'] = 'PASS' if report['completed_epoch'] == 100 else 'STOPPED_AT_EPOCH_BOUNDARY'
+             exit_code = 0
+     except BaseException as exc:
+         report['status'] = 'INTERRUPTED' if isinstance(exc, KeyboardInterrupt) else 'FAIL'

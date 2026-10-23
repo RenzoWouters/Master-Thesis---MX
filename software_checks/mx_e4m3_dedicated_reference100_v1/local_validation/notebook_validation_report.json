@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "GENERATED_SYNTHETIC_REPORTS_ONLY_NO_TRAINING",
+  "empty_template_outputs_confirmed": true,
+  "cases": {
+    "synthetic_complete100": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 100,
+      "raw_input_hashes_unchanged": true,
+      "notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_e4m3_reference100_notebook_qbnxdpld/validation/synthetic_complete100/preview"
+    },
+    "synthetic_stopped37": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 37,
+      "raw_input_hashes_unchanged": true,
+      "notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_e4m3_reference100_notebook_qbnxdpld/validation/synthetic_stopped37/preview"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "source_archive": "feedback_bundle(20261022-164547).zip",
+  "source_archive_sha256": "f0401e655e91ed447885291aecaf1d3390fd3078aaaa07e7d4d5484ae43a8391",
+  "all_raw_members_byte_identical": true,
+  "original_notebook_preserved_byte_identical": true,
+  "raw_member_sha256": {
+    "run_report.json": "4de153d6827dd927b2c36b7482589ccf1bc4fb7b2f521634aa19fa64ce7fea9d",
+    "epoch_metrics.csv": "999ae452777cce53c65e2d074bad683ba485ba09d6812a1059ed3010a665306b",
+    "selected_metrics.csv": "8f254cd642cb47d4ec3699c2693cf9ebbd3938cdbac0817c6e3346788bafe7cb",
+    "weight_updates.csv": "d5cd85eb21304e3eb45b805c6436a6d12eceb0f998d1d6a7f25a1bc8a6de25fc",
+    "checkpoint_selection.json": "d14342f6e8e00c2a3564f9bbd6228f3da9f343f7ca0dfa477c9d107b950fe8e1",
+    "timing_estimate.json": "63cee8ffbaabb15df8472d4e83d4963f8698ec2353dd9b372dcc8207f7c7d47e",
+    "epoch_times.csv": "4f84bc39bb41644c64cfe07da1be4986c920afad496ed66cf8669888c21d81fe",
+    "history.json": "d4597d280170b3db3b263900a432d41ada82c6d52dc35d9dd6f5d6d72514b19f",
+    "dataset_manifest.json": "5563e05a2aac2a4f688ccb154f2cc17641d130574d9b16cad2966654629bccf0",
+    "source_manifest.json": "110b8e9f5e9cc565e38340996a1479fb2938e8b95fbfa51510bb6b39d1e04cde",
+    "compatibility.patch": "cf87916df48da6559ecf4c44e619f885c1a056dd774dc7df9138490cbae973d5",
+    "pip_freeze.txt": "c8bfb152b6e1269aa2ed6b8ee7f5601273f4d9f73db2643c7c211501d2f314b4",
+    "pip_check.txt": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "run.log": "2dadb33cf177022e676828e149fe16c02f65647079ff3738347771d4f8646711",
+    "warnings.log": "ddf2cbfa58bca04dbb34c9a7cb4763c372fa8533aa88aefe522da731f811c37a",
+    "training_change_manifest.json": "b9888a08d2320c0131caa4eef2f751385f6a2be3d1069025b48235203e69beff",
+    "training_summary.json": "786b383ccd4f93a7c3a0d4349cc8a770f846e4d778bc3a59934473bfeeca01ce",
+    "mx_export_layers_best.csv": "a8726b13505490493af92be7b1c30692cf545c2f2eaeb7e8d93ae0e2fe7291f0",
+    "mx_export_layers_last.csv": "a8726b13505490493af92be7b1c30692cf545c2f2eaeb7e8d93ae0e2fe7291f0",
+    "MX_E4M3_dedicated_pilot5_resultaten.ipynb": "185f5f61ffc539839027b2772efe3e8435fe754989bc0d0a2988cc53953c3338",
+    "notebook_support.py": "aaa64c618d6aba1e2fb78922f2f719f3d3a96db6d672430e58903b8d0b32cb91"
+  },
+  "analysis_notebook": "MX_E4M3_dedicated_pilot5_analyse_uitgevoerd.ipynb",
+  "executed_code_cells": 8,
+  "embedded_png_outputs": 4,
+  "analysis_errors": [],
+  "recorded_run_warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "synthetic_fixture_only": false,
+  "training_started": false,
+  "checkpoint_loaded": false,
+  "last_epoch": 5,
+  "selected_best_epoch": 5,
+  "epoch100_present": false,
+  "figures": {
+    "checkpoint_accuracy.png": "9c8b22448d4c6c3139a6637709ab5b4c920e79a98bad00ca1507ee5f311dbc56",
+    "gpu_memory.png": "f167b79faee685b7707290b115b2e5af9d2d449347438165506bce093142a995",
+    "learning_curves.png": "c808a4ce2e7d6e431e784d7814fa30d371e63fd50902d288dd6825691e82a4c3",
+    "timing.png": "e4ae0293563cfa4ec992554d2cf7efdc0c80c9e7be931e94aeaee8308f5eff31"
+  },
+  "visual_qa": "PASS: all four saved PNG figures inspected; labels legible, no clipped content, best=last=epoch5 and missing epoch100 shown correctly"
+}

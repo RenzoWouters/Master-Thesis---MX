@@ -1,0 +1,148 @@
+{
+  "epoch": 20,
+  "train": [
+    {
+      "epoch": 20,
+      "phase": "train",
+      "mode": "mx",
+      "weight_format": "MXFP8_E4M3",
+      "activation_bits": 32,
+      "upstream_selector": 32,
+      "n": 73257,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.15033790504461145,
+      "top1_percent": 95.52807240524093,
+      "top5_percent": 99.70514763094312,
+      "correct1": 69981,
+      "correct5": 73041,
+      "count_top1_percent": 95.52807240263729,
+      "lr": 0.001
+    }
+  ],
+  "test": [
+    {
+      "epoch": 20,
+      "phase": "test",
+      "mode": "mx",
+      "weight_format": "MXFP8_E4M3",
+      "activation_bits": 32,
+      "upstream_selector": 32,
+      "n": 26032,
+      "objective_type": "hard_cross_entropy",
+      "objective_loss": 0.20758258592115272,
+      "top1_percent": 94.38767670559312,
+      "top5_percent": 99.40842040565458,
+      "correct1": 24571,
+      "correct5": 25878,
+      "count_top1_percent": 94.38767670559312,
+      "lr": 0.001
+    }
+  ],
+  "lr_used": 0.001,
+  "lr_next": 0.001,
+  "optimizer_steps": 11460,
+  "coverage": {
+    "train": {
+      "n": 73257,
+      "order_sha256": "3775b38265309cc0ce0455a60965d94a089eba7cb53b322dcec4a3e204837043",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_e4m3_dedicated_reference100\\20261023_132558_081080_mx_run\\sample_order\\train_00020.npy",
+      "complete_once": true
+    },
+    "test": {
+      "n": 26032,
+      "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+      "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_e4m3_dedicated_reference100\\20261023_132558_081080_mx_run\\sample_order\\test_00020.npy",
+      "complete_once": true
+    }
+  },
+  "batchnorm_counters_correct": true,
+  "gradient_checks": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "gradient_l2_min": 0.37382715940475464,
+    "gradient_l2_max": 2.6277682781219482,
+    "active_gradient_tensors": 20
+  },
+  "adam_checks": {
+    "active_parameter_tensors": 20,
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "unused_bn_has_no_optimizer_state": true
+  },
+  "weight_updates": [
+    {
+      "epoch": 20,
+      "mode": "mx",
+      "layer": "layers.3",
+      "master_changed_values": 1728,
+      "master_update_l2": 0.5605406761169434,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1342,
+      "changed_scale_codes": 6
+    },
+    {
+      "epoch": 20,
+      "mode": "mx",
+      "layer": "layers.6",
+      "master_changed_values": 2304,
+      "master_update_l2": 0.5412241220474243,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 1800,
+      "changed_scale_codes": 7
+    },
+    {
+      "epoch": 20,
+      "mode": "mx",
+      "layer": "layers.10",
+      "master_changed_values": 4608,
+      "master_update_l2": 0.8523698449134827,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 3739,
+      "changed_scale_codes": 16
+    },
+    {
+      "epoch": 20,
+      "mode": "mx",
+      "layer": "layers.13",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.262831449508667,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 7302,
+      "changed_scale_codes": 18
+    },
+    {
+      "epoch": 20,
+      "mode": "mx",
+      "layer": "layers.16",
+      "master_changed_values": 9216,
+      "master_update_l2": 1.5958929061889648,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 7736,
+      "changed_scale_codes": 38
+    },
+    {
+      "epoch": 20,
+      "mode": "mx",
+      "layer": "layers.20",
+      "master_changed_values": 95201,
+      "master_update_l2": 6.011022090911865,
+      "master_dtype": "torch.float32",
+      "changed_element_codes_including_padding": 80418,
+      "changed_scale_codes": 213
+    }
+  ],
+  "test_optimizer_steps": 0,
+  "model_sha256": "5da4c40c1feb37e5903cdaab7c95f338ccef699b2e7b1df065996733ea8b0146",
+  "checkpoint_path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_e4m3_dedicated_reference100\\20261023_132558_081080_mx_run\\checkpoints\\epoch_00020.pt",
+  "forward_ast_sha256": "a0db9df47af2b74d8419873f150a97d6919e67b713030ceefeab8c628e503974",
+  "train_seconds": 19.57653500000015,
+  "test_seconds": 5.916775400051847,
+  "first_epoch_in_process": false,
+  "peak_gpu_allocated_bytes": 64716800,
+  "peak_gpu_reserved_bytes": 106954752,
+  "is_best_at_this_epoch": false,
+  "best_epoch_so_far": 16,
+  "checkpoint_seconds": 0.027541200048290193,
+  "total_epoch_seconds": 25.67309490009211,
+  "other_seconds": 0.15224329999182373
+}

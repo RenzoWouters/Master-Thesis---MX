@@ -1,0 +1,32 @@
+{
+  "schema": "mx-e4m3-dedicated-reference100-change-v1",
+  "scope": "dedicated E4M3/A32,100 epochs from fresh initialization",
+  "baseline": "mx_e4m3_dedicated_pilot5_v2 with successful user GPU check and actual five-epoch training",
+  "research_changes": [
+    "duration: full100epoch dedicated reference from fresh same-seed initialization"
+  ],
+  "unchanged": [
+    "E4M3exactbinaryv2codec",
+    "G(W) and identitySTE",
+    "CNN8svhnq expand2 sixMXlayers",
+    "A32,FP32masters/gradients/Adam",
+    "Adam0.001 no weightdecay",
+    "SVHNtrainonly same preprocessing",
+    "batch128 workers0 drop_lastFalse",
+    "seed20261009",
+    "LRmilestones50/75/90 gamma0.1",
+    "originalforwardAST",
+    "installedbackenddefaults and cudnn.benchmarkTrue",
+    "exportweightcomparison on trainingdevice"
+  ],
+  "reporting_changes": [
+    "newrunoutputpath/contracts",
+    "full100completion and measured100time",
+    "notebookepoch100 vsbest with lastavailable"
+  ],
+  "pilot_checkpoint_used": false,
+  "mantissa_policy": "retained for later joint E4M3/E2M3/E2M1 experiment; dedicated has single mode",
+  "exponent_truncation": false,
+  "learned_or_corrected_shared_scales": false,
+  "full_test_forward_rerun_after_export": false
+}

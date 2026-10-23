@@ -1,0 +1,17 @@
+{
+  "baseline_package": "mx_e4m3_dedicated_pilot5_v2",
+  "confirmed_by_real_pilot_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_e4m3_dedicated_pilot5\\20261022_184112_866638_mx_run",
+  "source_feedback_sha256": "f0401e655e91ed447885291aecaf1d3390fd3078aaaa07e7d4d5484ae43a8391",
+  "unchanged_files": {
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_adapter.py": "4d1073e878c1a1b4cdd1a3bb3400881096ec81cd05aa8c992e0309441ce563f6",
+    "single_support.py": "951519df077ef09e2594f5b3142de5834b4c4f966a59864b9b1c500017b3c269",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_single.py": "daf628fff2cb667f42ff7bce14d8602f9f274f7c6c1f350a172007553c9af768",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  }
+}
