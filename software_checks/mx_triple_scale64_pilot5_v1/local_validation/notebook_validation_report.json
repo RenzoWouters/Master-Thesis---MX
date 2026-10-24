@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "scope": "GENERATED_SYNTHETIC_REPORTS_ONLY_NO_TRAINING",
+  "empty_template_outputs_confirmed": true,
+  "template_default_save_figures": false,
+  "explicit_save_switch_tested": true,
+  "no_executed_notebook_created": true,
+  "all_ten_code_cells_executed": true,
+  "all_six_figures_rendered": true,
+  "constant_class_is_valid_research_outcome": true,
+  "epoch100_never_claimed": true,
+  "cases": {
+    "synthetic_complete5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 5,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_scale64_pilot_notebook_validation_20261024_v2/synthetic_complete5/preview"
+    },
+    "synthetic_stopped3": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 3,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_scale64_pilot_notebook_validation_20261024_v2/synthetic_stopped3/preview"
+    },
+    "synthetic_constant_class5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "last_epoch_in_generated_fixture": 5,
+      "selected_shared_epoch": 2,
+      "raw_input_hashes_unchanged": true,
+      "all_notebook_code_cells_executed": true,
+      "model_checkpoint_or_training_imported": false,
+      "preview_directory": "/tmp/mx_scale64_pilot_notebook_validation_20261024_v2/synthetic_constant_class5/preview"
+    },
+    "synthetic_large_CE_round_trip": {
+      "status": "PASS",
+      "exact_decimal_round_trip_preserved": true,
+      "raw_input_hashes_unchanged": true
+    },
+    "synthetic_check_only": {
+      "status": "PASS",
+      "check_only_not_presented_as_training": true,
+      "raw_input_hashes_unchanged": true
+    }
+  },
+  "expected_negative_cases": {
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+      ]
+    },
+    "missing_test_mode": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 5/test: niet precies drie verschillende modi."
+      ]
+    },
+    "wrong_soft_loss_label": {
+      "expected_rejection": true,
+      "messages": [
+        "Losslabels wijken af: train-E4M3 hard CE; train-E2M3/E2M1 soft CE; test alle modi hard CE."
+      ]
+    },
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Deze vijf-epochpilot kan geen voltooide honderd-epochtraining bevestigen."
+      ]
+    },
+    "wrong_teacher_count": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: gradient-, teacher- of forwardtellingen passen niet bij drie passes en één gezamenlijke update."
+      ]
+    },
+    "wrong_direct_contract": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: truncation=False; verwacht True."
+      ]
+    },
+    "scale_compensation_disabled": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: shared_scale_compensation=False; verwacht True."
+      ]
+    },
+    "missing_predictions": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: volledige label- en voorspellingstellingen per testmodus ontbreken."
+      ]
+    },
+    "wrong_prediction_sum": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: verwacht tien niet-negatieve tellingen met som n."
+      ]
+    },
+    "impossible_constant_prediction_accuracy": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: correct-aantal is onmogelijk bij de label-/voorspellingstellingen.",
+        "Epoch 1/E2M3: constante voorspelling strookt niet met de accuracy."
+      ]
+    },
+    "changed_test_labels": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 2: labelverdeling verschilt van eerdere volledige testepochs."
+      ]
+    },
+    "export_source_scale_changed": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/6: bron-E4-schaal of vaste lagere schaaloffset +6 wijkt af."
+      ]
+    },
+    "wrong_scale_offset": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: scale_exponent_offset=5; verwacht 6."
+      ]
+    },
+    "learned_scale": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: learned_shared_scale=True; verwacht False."
+      ]
+    },
+    "shifted_E4_source": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/8: bron-E4-schaal of vaste lagere schaaloffset +6 wijkt af."
+      ]
+    },
+    "wrong_source_hash": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/4: opgeslagen E4-bron, bronhash of afleiding zonder master niet bevestigd."
+      ]
+    },
+    "wrong_train_source_audit": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/train: één bron, lagere schaal +6, mantissaschaalbehoud of cachecontrole niet bevestigd."
+      ]
+    },
+    "wrong_test_source_audit": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/test: één bron, lagere schaal +6, mantissaschaalbehoud of cachecontrole niet bevestigd."
+      ]
+    },
+    "old_scale_summary": {
+      "expected_rejection": true,
+      "messages": [
+        "Samenvatting bevestigt het vaste schaal64-beleid niet correct."
+      ]
+    }
+  },
+  "tested_file_sha256": {
+    "notebook_support.py": "89018af70ab3cf180180335591fdd639dbcb4204c9dce45d1f9e850524bc45de",
+    "MX_triple_scale64_pilot5_resultaten.ipynb": "3ebf7b739ff93d96ff195ecd4ff775f3c294c6ede04b3a0ccf62821f6deb19e9",
+    "local_validation/test_notebook.py": "9c0695b105d25682b4f4de9ad1f9acb38c31758e2bdd2c7da440d9dd073641c2"
+  },
+  "visual_qa": {
+    "status": "PASS",
+    "figures": [
+      "accuracy_curves",
+      "checkpoint_accuracy",
+      "objective_losses",
+      "timing",
+      "gpu_memory",
+      "prediction_diversity"
+    ],
+    "basis": "All six rendered previews inspected; epoch5 and shared E4-best panels, explicit epoch100-unavailable footer, distinct hard/soft objectives, readable labels and legends; no clipping."
+  }
+}

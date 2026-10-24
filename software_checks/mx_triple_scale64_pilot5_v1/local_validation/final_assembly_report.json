@@ -1,0 +1,70 @@
+{
+  "schema": "mx-triple-scale64-pilot5-final-assembly-v1",
+  "status": "PASS",
+  "frozen_runtime_and_document_files_verified": 37,
+  "all_runtime_hashes_equal_validated_versions": true,
+  "validation_reports": {
+    "core_training_validation.json": {
+      "status": "PASS",
+      "sha256": "0c2db49d4c8d7a6d53a89c55689b0962fdd0fe7f7174d1e34870c67f291a2f8d"
+    },
+    "check_entry_validation_report.json": {
+      "status": "PASS",
+      "sha256": "be3ac49bd9976cf9dd35e4f243f201d4120a6da29fc33b8c93b72dfb6bec780d"
+    },
+    "training_integration_report.json": {
+      "status": "PASS",
+      "sha256": "35b2029063b9be228c5749298b62b4184c6eb2371af7fc52b102594ba01fbb5e"
+    },
+    "notebook_validation_report.json": {
+      "status": "PASS",
+      "sha256": "b7be8b84c23c7211032514fd804fbacebe0f16f60f16e79faf4e6dc13ec1c080"
+    },
+    "runner_notebook_integration.json": {
+      "status": "PASS",
+      "sha256": "23db51a27f96f1a92fb83f8145a0af0139e986e90aa8c35c4f936dc170229338"
+    },
+    "independent_runner_review.json": {
+      "status": "PASS",
+      "sha256": "b962bc0e8e90b25c1200db0b7ecbbed3a60d4aa84ae95b05bee54569903210e6"
+    },
+    "prior_packages_unchanged.json": {
+      "status": "PASS",
+      "sha256": "8034f0898ae23db12160af3b0a39a3e6b136bbc8aee66a851faf084c3511c453"
+    }
+  },
+  "independent_review_blockers": [],
+  "reused_files_identical_to_previous_pilot": 15,
+  "previous_packages_still_match_their_manifests": {
+    "mx_triple_truncation_aware_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 52
+    },
+    "mx_triple_truncation_aware_reference100_v1": {
+      "unchanged": true,
+      "files_checked": 58
+    },
+    "mx_triple_scale64_posthoc_eval_v1": {
+      "unchanged": true,
+      "files_checked": 48
+    },
+    "mx_triple_scale64_notebook_fix_v1": {
+      "unchanged": true,
+      "files_checked": 6
+    }
+  },
+  "all_python_files_parse": 28,
+  "notebooks": {
+    "count": 1,
+    "code_cells": 10,
+    "all_outputs_empty": true,
+    "default_save_figures": false
+  },
+  "no_dataset_or_checkpoint_or_synthetic_figure_deliverables": true,
+  "root_visual_inspection": {
+    "accuracy_curves": "PASS",
+    "checkpoint_accuracy": "PASS",
+    "basis": "Synthetic labelled preview only; no research measurements."
+  },
+  "real_SVHN_training_or_CUDA_validation_performed_here": false
+}

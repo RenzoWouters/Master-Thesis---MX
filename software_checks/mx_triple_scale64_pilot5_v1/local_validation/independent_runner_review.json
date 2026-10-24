@@ -1,0 +1,223 @@
+{
+  "schema": "mx-triple-scale64-pilot5-independent-runner-review-v1",
+  "status": "PASS",
+  "reviewer": "independent runner-validation agent; runtime ownership remained with other agents",
+  "review_completed_utc": "2026-10-24T12:48:35.270396+00:00",
+  "scope": "Frozen route-B five-epoch package; source review, actual check entry, actual run/resume/export loop on tiny synthetic CPU fixtures, and independent notebook integration evidence",
+  "blocking_findings": [],
+  "runtime_modified_by_reviewer": false,
+  "real_SVHN_training_started_here": false,
+  "all_frozen_production_files_still_match": true,
+  "reviewed_frozen_file_count": 37,
+  "reviewed_frozen_file_sha256": {
+    "CODEWIJZIGINGEN.md": "054994159a2f5cd0ecafb956e0423f5d2d6fd0dd62360cee77176aeb5e51facb",
+    "MX_triple_scale64_pilot5_resultaten.ipynb": "3ebf7b739ff93d96ff195ecd4ff775f3c294c6ede04b3a0ccf62821f6deb19e9",
+    "PROTOCOL.md": "d8d783ffdf797a923d453373e182c3360c62e9b13669f020d273669ae2ac9f30",
+    "README.md": "abf2e34989c16cc81fb172f35b0afca1e985b6a7ac301b834b0bd19a66cb3187",
+    "REUSE_MANIFEST.json": "8fd1438cb6f2a98027c9eb7a824635259959d025a12feae13cc99b5d4bb05389",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "2f4ce6953a8da235f0bcac9515fbac6c968bb399bde67f2a4a01c4d3d58da01d",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "89018af70ab3cf180180335591fdd639dbcb4204c9dce45d1f9e850524bc45de",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "provenance/naive_pilot5_PACKAGE_SHA256.json": "f2603c777f318f4a242202780d8f957c280b79e5d04cdbedff0c6bdfd0f21a2c",
+    "provenance/naive_pilot5_PROTOCOL.md": "2d9b0d20a2e40f132e79485b1f05b05eb98b53ec87471d9ed81e5dbdad990783",
+    "provenance/naive_pilot5_TRAINING_CHANGE_MANIFEST.json": "a8f25dca5ae6a004628ddc88a7152be6e070c3d0a63627de9dba9cf12fc9cad9",
+    "provenance/naive_pilot5_notebook_support.py": "e8e9f441e67ac708591c6edf6fe89169b957a3ec261396ad8a97b3d861f3eb1c",
+    "provenance/naive_pilot5_reference.json": "8b0cd148fd353af7d169f04aec98de17614385520045b6f2d7167e96f15ede4b",
+    "provenance/naive_pilot5_run_train.py": "da1b3624edef37dd9d8fc92f499511df15da5b4ff1f66598c090751b1ee5252c",
+    "provenance/naive_pilot5_test_trunc_training.py": "307c76535fbda6dd4823f2f3fe82b8a1605f1aa1046177c689db6aa7ead6504c",
+    "provenance/naive_pilot5_trunc_adapter.py": "2d49ef58e2a170f75ff1f9760c9b972b08dd3eb75ecacc0c4495b30b97dcd1dc",
+    "provenance/naive_pilot5_trunc_support.py": "68a674909337cc9da717ebb0ae3382b64ba3239a296dff52f1e5a9f65f4b9798",
+    "provenance/posthoc_scale64.py": "b3199677d527256ef06bf51d8058261c73d9211f94a06a58d84af1a932cea179",
+    "provenance/posthoc_scale64_PROTOCOL.md": "829ef5b8c1ad6f857d3f0b19a70b6eeeeeb0d4489b4c37a5e37b447402a4529c",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "3d971c1fffb9df44d9357758169100b00f6e94c5033e7a2fe85f731586e091b1",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_trunc_training.py": "36eaf80ee900aafdd07f3fe0d6c01d2d916aa9280d3989321d7cf27642da2385",
+    "trunc_adapter.py": "3fe6f0b07c4cc9dd02a8da4b228f27e054ff4db0d76c3548dc6cb885b7122b6c",
+    "trunc_support.py": "02272898901ea11e13f5a2a44f252a4d1121a077c09f8ddb590d4a3e435ab735",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "runner_AST_unchanged_functions_vs_archived_naive_pilot": [
+    "dependencies",
+    "restore_timing_sidecar",
+    "run_epochs",
+    "verify_unchanged"
+  ],
+  "runner_AST_changed_functions_vs_archived_naive_pilot": [
+    "config",
+    "create_context",
+    "export_results",
+    "feedback_bundle",
+    "main"
+  ],
+  "findings": [
+    {
+      "area": "Experiment scope and comparison",
+      "status": "PASS",
+      "finding": "Fresh seed 20261009 initialization equals unchanged direct model builder in the same CPU runtime. All training hyperparameters and ordered mechanics remain the archived naive pilot policy; only declared route-B identities, fixed scale offset, STE documentation and export metadata differ. Production milestones remain 50/75/90; CLI hard-stops at 5 and rejects warmstart, 100-epoch run requests and unsupported CPU/synthetic/control arguments.",
+      "evidence": [
+        "training_integration_report.json: production_config/comparison_to_naive_pilot/initialization_reference/tests.production_CLI_refusals",
+        "run_train.py: config/main; unchanged run_epochs AST"
+      ]
+    },
+    {
+      "area": "Numerical route",
+      "status": "PASS",
+      "finding": "E4 source codes and scales remain unchanged. E2M3 keeps sign, two highest source exponent bits and three mantissa bits, then source E8M0 code+6 after integer promotion; E2M1 is derived E2M3 code>>2 with identical E2M3 scales. No lower encoder, rounding route C, learned scales, clipping, wrapping or element-bias correction. All 254 finite source codes agree with an independent oracle and archived posthoc route B; all 249 shiftable scale codes and zero/padding cases are covered, with overflow/nonfinite guards.",
+      "evidence": [
+        "core_training_validation.json",
+        "training_integration_report.json: independent_forward_and_identity_STE_no_extra64_gradient",
+        "test_training_integration.py: verify_exports/verify_independent_routeB_and_STE"
+      ]
+    },
+    {
+      "area": "Backward and optimizer semantics",
+      "status": "PASS",
+      "finding": "Identity STE is exact with respect to G(W), without multiplying backward by 64; original G(W) derivatives remain. High/middle/low passes 8,6,4 use original hard CE then recursive detached softteachers, summed gradients and one Adam update per minibatch. A32, FP32 masters/gradients/Adam, dropout RNG sequence and normal three-bank BN learning remain unchanged. Independent manual training comparisons pass.",
+      "evidence": [
+        "core_training_validation.json: complete_route_identity_STE_no_factor64_in_backward_G_derivatives_retained/two_threepass_updates_match_independent_manual_loop",
+        "training_integration_report.json: tests",
+        "run_train.py: run_epochs AST exactly equal archived runner"
+      ]
+    },
+    {
+      "area": "Real check entry",
+      "status": "PASS",
+      "finding": "Actual main/check and create_context/dependency/codeccheck/trainingcheck/feedback path completes with PASS. Only runtime device selection and legacy Tensor.cuda calls are adapted to CPU in the test process. No real dataset was downloaded or trained.",
+      "evidence": [
+        "check_entry_validation_report.json"
+      ]
+    },
+    {
+      "area": "Actual runner, cache and accounting",
+      "status": "PASS",
+      "finding": "Actual main/run loop completed five tiny epochs, 10 Adam updates and 30 training passes. Direct lower tensor and element encoders were patched to raise; all passes succeeded using the shared source chain. Source-triplet and plus6/mantissa scale audits, end-of-phase cache cleanup, teacher labels, short final batch coverage, prediction histograms, master updates, BN state and selected checkpoint metrics passed.",
+      "evidence": [
+        "training_integration_report.json: cases.continuous5/tests"
+      ]
+    },
+    {
+      "area": "Saved source exports",
+      "status": "PASS",
+      "finding": "Both common selected checkpoints produce saved E4 sources and all six compact mode exports with matching source hashes and correct scale metadata. Independent bit-field comparisons match saved lower codes; lower scales equal saved source+6. Frozen models reconstructed solely from saved E4 codes have exact logits matching each own-mode export while every encoder and G(W) is forbidden. FP32 MX masters are absent from compact payloads; required BN/auxiliary state remains.",
+      "evidence": [
+        "training_integration_report.json: tests.two_high_sources_and_four_bit_derived_exports_without_masters/tests.all_export_modes_reconstruct_from_E4_source_with_encoders_and_G_forbidden",
+        "test_training_integration.py: verify_exports"
+      ]
+    },
+    {
+      "area": "Resume, early stop and preservation",
+      "status": "PASS",
+      "finding": "Own epoch 2 checkpoint resumes through epoch 5 with exact CPU model/optimizer/scheduler/RNG agreement with continuous training, including testfixture LR transitions. Epoch-boundary stop is reported as stopped rather than completed; old naive contract and already completed pilot checkpoints are refused before restore/updates. Invalid production CLI requests create no output. Verified source files, runtime package, fixture data and input checkpoint hashes remain unchanged.",
+      "evidence": [
+        "training_integration_report.json: cases/tests"
+      ]
+    },
+    {
+      "area": "Notebook and reporting",
+      "status": "PASS",
+      "finding": "All 10 notebook cells and 6 figures execute in memory on actual continuous, early-stop and resumed runner outputs. Epoch 5/last and common E4-selected-best checkpoints, scale64 audit totals, hard/soft loss labels and synthetic diagnostic outcomes are handled correctly; no epoch 100 accuracy is claimed. Template remains blank; SAVE_FIGURES=False by default; round-trip CSV parser retained. No model, checkpoint or training import occurs. All 76/45/60 source run files remain byte-identical.",
+      "evidence": [
+        "notebook_validation_report.json",
+        "runner_notebook_integration.json"
+      ]
+    }
+  ],
+  "test_adaptations": {
+    "runtime": "Isolated Python 3.12 / torch 2.10 CPU environment; Linux only",
+    "legacy_cuda_calls": "test-only Tensor.cuda identity redirection on CPU tensors",
+    "check_entry": "actual main/create_context retained; only runtime device overridden",
+    "run_context": "test-only create_context supplies 3 synthetic images/labels, batch 2, no SVHN filesystem inputs",
+    "scheduler": "testfixture milestones 2/3/4 exercise restore transitions; production remains 50/75/90",
+    "actual_loop_checkpoint_export_main": "not replaced",
+    "integration_optimizer_updates": 18,
+    "integration_update_breakdown": {
+      "continuous5": 10,
+      "resume2_to5": 6,
+      "early_stop": 2,
+      "reject_old_contract": 0,
+      "reject_completed5": 0
+    },
+    "separate_core_and_check_synthetic_training_steps": "small bounded selfchecks additional to integration update count"
+  },
+  "limitations": [
+    "No genuine SVHN accuracy or real GPU training/timing was measured here.",
+    "Windows PowerShell commands and CUDA runtime still require the user local check; exact epoch-boundary restore was verified on CPU only.",
+    "Original cudnn.benchmark backend policy remains, so bitexact CUDA resume is not promised.",
+    "FP32 convolution with emulated MX weights is retained; no native low-bit throughput claim.",
+    "Five-epoch software validation does not predict 100-epoch accuracy or validate scientific improvement."
+  ],
+  "evidence_report_sha256": {
+    "training_integration_report.json": "35b2029063b9be228c5749298b62b4184c6eb2371af7fc52b102594ba01fbb5e",
+    "check_entry_validation_report.json": "be3ac49bd9976cf9dd35e4f243f201d4120a6da29fc33b8c93b72dfb6bec780d",
+    "core_training_validation.json": "0c2db49d4c8d7a6d53a89c55689b0962fdd0fe7f7174d1e34870c67f291a2f8d",
+    "notebook_validation_report.json": "b7be8b84c23c7211032514fd804fbacebe0f16f60f16e79faf4e6dc13ec1c080",
+    "runner_notebook_integration.json": "23db51a27f96f1a92fb83f8145a0af0139e986e90aa8c35c4f936dc170229338"
+  },
+  "validation_test_file_sha256": {
+    "test_training_integration.py": "9a9488a56ede16686e6d2923119efc1a9b7a191a5b9803c2927c806ae05ee08b",
+    "test_core.py": "14f7c82d532c913c1f129d6ede1720a6a719024b4088fdd7e6f94470c4ccf943",
+    "test_notebook.py": "9c0695b105d25682b4f4de9ad1f9acb38c31758e2bdd2c7da440d9dd073641c2",
+    "test_runner_notebook.py": "1d5da0983f4f34bc97ab18605a2a9f69013ada45b02933cc20d481c9766679e1"
+  },
+  "actual_runner_check_entry_status": "PASS",
+  "actual_runner_check_entry_directory": "/workspace/scratch/4619498905be/work/scale64_train_checkentry_20261024_r1/output/20261024_144614_474528_joint_check",
+  "actual_runner_cases": {
+    "continuous5": {
+      "optimizer_updates_in_process": 10,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_train_integration_20261024_r1/continuous5/20261024_144615_437491_joint_run"
+    },
+    "resume2_to5": {
+      "optimizer_updates_in_process": 6,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_train_integration_20261024_r1/resume2_to5/20261024_144617_281317_joint_resume"
+    },
+    "early_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_train_integration_20261024_r1/early_stop/20261024_144618_494716_joint_run"
+    },
+    "reject_old_contract": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_train_integration_20261024_r1/reject_old_contract/20261024_144619_141019_joint_resume"
+    },
+    "reject_completed5": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_train_integration_20261024_r1/reject_completed5/20261024_144619_180670_joint_resume"
+    }
+  },
+  "notebook_run_file_preservation_counts": [
+    76,
+    45,
+    60
+  ]
+}
