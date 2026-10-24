@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_RUNNER_SYNTHETIC_CPU_FIXTURE",
+  "source_run": "/workspace/scratch/4619498905be/work/scale32_integration_actual_20261024/continuous5/20261024_191315_603863_joint_run",
+  "synthetic_fixture_only": true,
+  "all_11_code_cells_executed": true,
+  "all_8_figures_rendered": true,
+  "last_epoch": 5,
+  "selected_common_E4_epoch": 1,
+  "analysis_errors": [],
+  "pinned_real_scale64_reference_valid": true,
+  "synthetic_current_vs_real_reference_comparison_blocked": true,
+  "raw_input_hashes_unchanged": true,
+  "no_executed_notebook_created": true,
+  "tested_file_sha256": {
+    "notebook_support.py": "03a5aab2aa2e2eadf68cb115c3991999a48e28397f43c1954a8b135cd42d3f78",
+    "MX_triple_scale32_pilot5_resultaten.ipynb": "02e12a47cd20b10165bdf7594e0f97cfdab2ae8d9b279565648c02bc601d3d91",
+    "local_validation/test_notebook.py": "c13bdd44617c46e0feb578c0ecd46d4b395685f9cc7c2b32a0f25c61d55438a3"
+  }
+}

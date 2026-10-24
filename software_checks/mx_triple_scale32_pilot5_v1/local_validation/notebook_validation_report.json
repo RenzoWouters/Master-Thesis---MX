@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_REPORTS_AND_READ_ONLY_PINNED_REFERENCE",
+  "all_11_notebook_code_cells_executed": true,
+  "eight_figure_types_rendered": true,
+  "blank_deliverable_notebook": true,
+  "no_executed_notebook_created": true,
+  "no_training_or_model_imports": true,
+  "existing_data_unchanged": true,
+  "cases": {
+    "synthetic_complete5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "completed_epochs": 5,
+      "common_selected_E4_epoch": 2,
+      "all_11_code_cells_executed": true,
+      "all_8_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked_for_synthetic_run": true
+    },
+    "synthetic_stopped3": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "completed_epochs": 3,
+      "common_selected_E4_epoch": 2,
+      "all_11_code_cells_executed": true,
+      "all_8_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked_for_synthetic_run": true
+    },
+    "synthetic_constant_class5": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "completed_epochs": 5,
+      "common_selected_E4_epoch": 2,
+      "all_11_code_cells_executed": true,
+      "all_8_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked_for_synthetic_run": true
+    },
+    "large_CE_round_trip": {
+      "status": "PASS"
+    },
+    "check_only": {
+      "status": "PASS",
+      "no_training_metrics_invented": true
+    },
+    "synthetic_comparison": {
+      "status": "PASS",
+      "different_best_epochs_and_tie_checked": true,
+      "common_checkpoint_per_precision_group": true,
+      "future_epoch100_ignored": true,
+      "partial_range_bounded": true
+    },
+    "real_reference_guards": {
+      "status": "PASS",
+      "pinned_source_hash_checked": true,
+      "first_five_only_best_epoch5_not_global42": true,
+      "configuration_mismatch_blocks_comparison": true,
+      "changed_reference_bytes_rejected": true
+    }
+  },
+  "expected_negative_cases": {
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+      ]
+    },
+    "missing_test_mode": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 5/test: niet precies drie verschillende modi."
+      ]
+    },
+    "wrong_soft_loss_label": {
+      "expected_rejection": true,
+      "messages": [
+        "Losslabels wijken af: train-E4M3 hard CE; train-E2M3/E2M1 soft CE; test alle modi hard CE."
+      ]
+    },
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Deze vijf-epochpilot kan geen voltooide honderd-epochtraining bevestigen."
+      ]
+    },
+    "wrong_teacher_count": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: gradient-, teacher- of forwardtellingen passen niet bij drie passes en één gezamenlijke update."
+      ]
+    },
+    "wrong_direct_contract": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: truncation=False; verwacht True."
+      ]
+    },
+    "scale_compensation_disabled": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: shared_scale_compensation=False; verwacht True."
+      ]
+    },
+    "missing_predictions": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1: volledige label- en voorspellingstellingen per testmodus ontbreken."
+      ]
+    },
+    "wrong_prediction_sum": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: verwacht tien niet-negatieve tellingen met som n."
+      ]
+    },
+    "impossible_constant_prediction_accuracy": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: correct-aantal is onmogelijk bij de label-/voorspellingstellingen.",
+        "Epoch 1/E2M3: constante voorspelling strookt niet met de accuracy."
+      ]
+    },
+    "changed_test_labels": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 2: labelverdeling verschilt van eerdere volledige testepochs."
+      ]
+    },
+    "export_source_scale_changed": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/6: bron-E4-schaal of vaste lagere schaaloffset +5 wijkt af."
+      ]
+    },
+    "wrong_scale_offset": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: scale_exponent_offset=6; verwacht 5."
+      ]
+    },
+    "learned_scale": {
+      "expected_rejection": true,
+      "messages": [
+        "Runcontract: learned_shared_scale=True; verwacht False."
+      ]
+    },
+    "shifted_E4_source": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/8: bron-E4-schaal of vaste lagere schaaloffset +5 wijkt af."
+      ]
+    },
+    "wrong_source_hash": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/4: opgeslagen E4-bron, bronhash of afleiding zonder master niet bevestigd."
+      ]
+    },
+    "wrong_train_source_audit": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/train: één bron, lagere schaal +5, mantissaschaalbehoud of cachecontrole niet bevestigd."
+      ]
+    },
+    "wrong_test_source_audit": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/test: één bron, lagere schaal +5, mantissaschaalbehoud of cachecontrole niet bevestigd."
+      ]
+    },
+    "old_scale_summary": {
+      "expected_rejection": true,
+      "messages": [
+        "Samenvatting bevestigt het vaste schaal32-beleid niet correct."
+      ]
+    }
+  },
+  "tested_file_sha256": {
+    "notebook_support.py": "03a5aab2aa2e2eadf68cb115c3991999a48e28397f43c1954a8b135cd42d3f78",
+    "MX_triple_scale32_pilot5_resultaten.ipynb": "02e12a47cd20b10165bdf7594e0f97cfdab2ae8d9b279565648c02bc601d3d91",
+    "local_validation/test_notebook.py": "c13bdd44617c46e0feb578c0ecd46d4b395685f9cc7c2b32a0f25c61d55438a3"
+  }
+}

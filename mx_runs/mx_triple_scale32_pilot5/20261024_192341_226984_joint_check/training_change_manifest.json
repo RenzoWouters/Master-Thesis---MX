@@ -1,0 +1,71 @@
+{
+  "schema": "mx-triple-scale32-pilot5-change-v1",
+  "package": "mx_triple_scale32_pilot5_v1",
+  "decision_date": "2026-10-24",
+  "source": "validated scale64 numerical core and archived scale64 pilot5 runner; fixed lower scale offset changes from+6 to+5",
+  "scope": "five complete train-only SVHN epochs; fresh initialization; three modes from one current E4M3 source",
+  "numerical_change": {
+    "previous_scale_exponent_offset": 6,
+    "previous_scale_factor": 64,
+    "scale_exponent_offset": 5,
+    "scale_factor": 32
+  },
+  "weight_formats": [
+    "MXFP8_E4M3",
+    "MXFP6_E2M3",
+    "MXFP4_E2M1"
+  ],
+  "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+  "exponent_mapping": "s e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation",
+  "mantissa_mapping": "derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times32",
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "mantissa_truncation": true,
+  "exponent_truncation": true,
+  "shared_scale_compensation": true,
+  "learned_shared_scale": false,
+  "direct_lower_quantization": false,
+  "exponent_bias_compensation": false,
+  "source_weight_bits": 8,
+  "training_order": [
+    8,
+    6,
+    4
+  ],
+  "test_order": [
+    4,
+    6,
+    8
+  ],
+  "bn_mapping": {
+    "8": "8",
+    "6": "32",
+    "4": "4"
+  },
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+  "ste_policy": "identity wrt G(W) for E4M3 and complete scale32 E4-to-E2 code path; no extra factor32 in backward; retain original G(W) derivatives; no gradient through codes or scales",
+  "shared_scale_policy": "encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+5; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps",
+  "source_cache_policy": "detached integer source and derived codes; one triplet per minibatch; cleared before Adam",
+  "pilot_epochs": 5,
+  "configured_full_schedule_epochs": 100,
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "seed": 20261009,
+  "expected_initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "selection": "first strict maximum of E4M3/A32 official-test top1",
+  "reporting": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+  "reference_comparison": "only epochs1-5 of actual scale64 reference100 run; E4-best reselected within1-5; never globalbest42",
+  "new_output_root": "mx_runs/mx_triple_scale32_pilot5",
+  "old_results_modified": false,
+  "executed_notebook_delivered": false,
+  "round_trip_CSV_parser": true,
+  "notebook_default_SAVE_FIGURES": false,
+  "research_outcome_policy": "low accuracy, constant predictions or zero finite gradients/updates are diagnostics, not automatic FAIL"
+}
