@@ -1,0 +1,209 @@
+--- mx_triple_scale64_pilot5_v1/run_train.py
++++ mx_triple_scale64_reference100_v1/run_train.py
+@@ -1,4 +1,4 @@
+-"""Five train-only epochs: route B, E4M3 source, exponent truncation + scale64, A32.
++"""100 train-only epochs: route B, E4M3 source, exponent truncation + scale64, A32.
+ 
+ E4M3 is encoded once per layer/minibatch from current FP32 G(W).
+ E2M3 keeps the highest exponent bits; E2M1 then keeps the highest mantissa bit.
+@@ -6,7 +6,7 @@
+ Upstream recursive distillation: E4M3 hard CE; E2M3 learns from detached E4M3;
+ E2M1 learns from detached E2M3; summed gradients then ONE Adam update.
+ Fixed +6 scale offset, no learned scale or warm-start. Whole-path identity STE through G(W).
+-The unchanged 100-epoch LR schedule is configured, but this pilot stops at 5.
++Fresh initialization, the unchanged 50/75/90 LR schedule, and endpoint 100.
+ """
+ from __future__ import annotations
+ 
+@@ -39,8 +39,8 @@
+ def config(mode: str = 'joint') -> dict:
+     s.require(mode == 'joint', 'Deze proef heeft exact drie gezamenlijke MX-modi uit één E4M3-bron.')
+     return {
+-        'schema': 'mx-triple-scale64-pilot5-protocol-v1',
+-        'purpose': 'five complete train-only epochs: route B, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1',
++        'schema': 'mx-triple-scale64-reference100-protocol-v1',
++        'purpose': '100 complete train-only epochs: route B, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1',
+         'mode': mode, 'weight_format': t.weight_format(mode), 'weight_bits': [4, 6, 8],
+         'weight_formats': {'8': 'MXFP8_E4M3', '6': 'MXFP6_E2M3', '4': 'MXFP4_E2M1'},
+         'codec_revision': {'8': 'e4m3-exact-binary-v2', '6': 'unchanged-E2M3-decode', '4': 'unchanged-E2M1-decode'},
+@@ -74,14 +74,14 @@
+         'train_examples': 73257, 'test_examples': 26032, 'validation_examples': 0,
+         'initialization_policy': 'fresh seed20261009; same untrained state as prior model construction; no warmstart',
+         'model': 'svhnq', 'expand': 2, 'parameters': 132954,
+-        'planned_epochs': 100, 'pilot_stop_epoch': 5,
++        'planned_epochs': 100, 'reference_end_epoch': 100,
+         'batch_size': 128, 'optimizer': 'adam', 'lr': .001, 'weight_decay': 0.0,
+         'scheduler_milestones': [50, 75, 90], 'scheduler_gamma': .1,
+         'workers': 0, 'pin_memory': True, 'drop_last': False,
+         'train_shuffle': True, 'test_shuffle': False, 'seed': 20261009,
+         'evaluation_policy': 'all three modes on complete official test after every epoch; hard CE for each',
+         'selection_policy': 'first strict maximum of E4M3/A32 official-test top1',
+-        'reporting_policy': 'all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch',
++        'reporting_policy': 'all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch',
+         'backend_policy': 'github: cudnn.benchmark=True; no deterministic override',
+         'rng_policy': 'global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries',
+         'checkpoint_policy': 'immutable FP32 training state per epoch and selected best/last copies',
+@@ -238,7 +238,7 @@
+     if resume is not None:
+         resume = resume.resolve()
+         state = core.load_verified(resume)
+-        s.require(0 < state['completed_epoch'] < stop_after, 'Dit checkpoint laat geen nieuwe pilot-epochs toe.')
++        s.require(0 < state['completed_epoch'] < stop_after, 'Dit checkpoint laat geen nieuwe referentie-epochs toe.')
+         ctx.report['restore_checks'] = core.restore_checkpoint(state, model, optimizer, scheduler, {},
+                                                               device, ctx.contract)
+         trace = copy.deepcopy(state['trace'])
+@@ -360,8 +360,9 @@
+     s.require(records and [r['epoch'] for r in records] == list(range(1, records[-1]['epoch'] + 1)),
+               'Onvolledige epochgeschiedenis.')
+     expected_steps = math.ceil(c['train_examples'] / c['batch_size'])
+-    s.require(c['planned_epochs'] == 100 and c['pilot_stop_epoch'] == 5, 'Onjuist vijf-epochpilotcontract.')
+-    s.require(0 < records[-1]['epoch'] <= 5, 'Pilot moet uiterlijk na vijf epochs stoppen.')
++    s.require(c['planned_epochs'] == c['reference_end_epoch'] == 100,
++              'Onjuist honderd-epochreferentiecontract.')
++    s.require(0 < records[-1]['epoch'] <= 100, 'Referentierun moet uiterlijk na honderd epochs stoppen.')
+     for record in records:
+         epoch = record['epoch']
+         s.require(record['optimizer_steps'] == expected_steps * epoch, 'Verkeerd aantal updates.')
+@@ -520,16 +521,15 @@
+                 'dominant_prediction_fraction': max(counts) / sum(counts)})
+     s.write_csv(out / 'test_prediction_counts.csv', prediction_rows)
+     elapsed = sum(r['total_epoch_seconds'] for r in records)
+-    pilot_completed = last['epoch'] == c['pilot_stop_epoch']
+-    full_completed = False  # This executable cannot perform the full 100-epoch experiment.
+-    summary = {'schema': 'mx-triple-scale64-pilot5-completion-v1',
+-               'planned_epochs': c['planned_epochs'], 'pilot_stop_epoch': c['pilot_stop_epoch'],
+-               'completed_epochs': last['epoch'], 'pilot_completed': pilot_completed,
++    full_completed = last['epoch'] == c['reference_end_epoch']
++    summary = {'schema': 'mx-triple-scale64-reference100-completion-v1',
++               'planned_epochs': c['planned_epochs'], 'reference_end_epoch': c['reference_end_epoch'],
++               'completed_epochs': last['epoch'],
+                'full_training_completed': full_completed,
+                'full_100_epoch_training_completed': full_completed,
+                'optimizer_steps': last['optimizer_steps'],
+-               'expected_optimizer_steps_at_pilot_completion': expected_steps * c['pilot_stop_epoch'],
+-               'expected_training_forward_passes_at_pilot_completion': expected_steps * c['pilot_stop_epoch'] * 3,
++               'expected_optimizer_steps_at_reference_completion': expected_steps * c['reference_end_epoch'],
++               'expected_training_forward_passes_at_reference_completion': expected_steps * c['reference_end_epoch'] * 3,
+                'best_epoch_E4M3_A32': best['epoch'], 'last_epoch': last['epoch'],
+                'lr_schedule_verified': True, 'all_epoch_modes_complete': True,
+                'resumed': 'resumed_from' in ctx.report,
+@@ -557,12 +557,23 @@
+     estimate['weight_mode'] = c['weight_format']
+     estimate['includes'] = ['three-mode training', 'three-mode test', 'epoch diagnostics', 'checkpoint write']
+     estimate['measured_completed_epoch_seconds'] = elapsed
+-    estimate['pilot_completed'] = pilot_completed
+     estimate['full_training_completed'] = full_completed
+-    estimate['full_100_epoch_training_completed'] = False
+-    estimate['measured_100_epoch_seconds'] = None
+-    estimate['interpretation'] = ('Measured pilot time covers the completed epochs. The 100-epoch estimate is a '
+-                                  'projection for a fresh run under comparable conditions, not measured or remaining time.')
++    estimate['full_100_epoch_training_completed'] = full_completed
++    estimate['measured_100_epoch_seconds'] = elapsed if full_completed else None
++    estimate['interpretation'] = (
++        'The measured 100-epoch time is the sum of all 100 recorded epoch durations, including restored epochs.'
++        if full_completed else
++        'Only completed epochs have measured durations. The 100-epoch estimate is a projection for a fresh '
++        'run under comparable conditions, not measured or remaining time.')
++    estimate['limitations'] = [
++        'The epoch sum excludes dependency installation, dataset preparation/loading and final report export.',
++        'The projection is distinct from measured duration and requires comparable laptop/backend/data loading conditions.',
++        ('All 100 epochs, including the LR transitions at 50/75/90, are represented in the measured history; '
++         'this observed duration does not guarantee the duration of a future run.'
++         if full_completed else
++         'Only completed epochs are observed; future epochs, LR transitions not yet reached, '
++         'thermal drift and changing background load can alter the projected duration.'),
++    ]
+     s.write_json(out / 'timing_estimate.json', estimate)
+     s.write_csv(out / 'epoch_times.csv', [
+         {'epoch': r['epoch'], **{k: r.get(k) for k in ['train_seconds', 'test_seconds', 'checkpoint_seconds',
+@@ -573,9 +584,9 @@
+                       initial_model_sha256=trace['initial_model_sha256'], checkpoint_selection=selection,
+                       training_summary=summary, timing_estimate=estimate, mx_exports=mx_exports,
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'],
+-                      full_training_completed=full_completed, pilot_completed=pilot_completed,
++                      full_training_completed=full_completed,
+                       training_forward_passes=last['optimizer_steps'] * 3)
+-    notebook_name = 'MX_triple_scale64_pilot5_resultaten.ipynb'
++    notebook_name = 'MX_triple_scale64_reference100_resultaten.ipynb'
+     notebook = json.loads((ROOT / notebook_name).read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+@@ -585,7 +596,7 @@
+     with (ROOT / 'notebook_support.py').open('rb') as src, (out / 'notebook_support.py').open('xb') as dst:
+         shutil.copyfileobj(src, dst)
+     log(f'BEHOUDEN: alle drie modi uit beste E4M3-checkpoint {best["epoch"]}; laatste {last["epoch"]}.')
+-    log(f'PILOT: {last["epoch"]}/5 epochs; {last["optimizer_steps"]} updates; '
++    log(f'REFERENTIE: {last["epoch"]}/100 epochs; {last["optimizer_steps"]} updates; '
+         f'{last["optimizer_steps"] * 3} trainingspasses; gemeten epochtijd={elapsed / 60:.2f} min.')
+ 
+ 
+@@ -608,7 +619,7 @@
+              'training_change_manifest.json', 'training_summary.json',
+              'test_prediction_counts.csv',
+              'codec_report.json', 'trunc_training_check_report.json',
+-             'MX_triple_scale64_pilot5_resultaten.ipynb', 'notebook_support.py']
++             'MX_triple_scale64_reference100_resultaten.ipynb', 'notebook_support.py']
+     names += [f'mx_export_layers_{bit}_{role}.csv' for bit in a.MODES for role in ('best', 'last')]
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+         for name in names:
+@@ -622,14 +633,14 @@
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.set_defaults(mode='joint')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_scale64_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_scale64_reference100'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+-    parser.add_argument('--stop-after-epoch', type=int, default=5)
++    parser.add_argument('--stop-after-epoch', type=int, default=100)
+     parser.add_argument('--checkpoint', type=Path)
+     args = parser.parse_args()
+-    if args.stop_after_epoch != 5:
+-        parser.error('Dit pilotpakket stopt vast na vijf epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop.')
++    if args.stop_after_epoch != 100:
++        parser.error('Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop.')
+     if (args.command == 'resume') != (args.checkpoint is not None):
+         parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.')
+     # CHECK ONLY: configure cuBLAS before any CUDA context is initialized.
+@@ -643,19 +654,19 @@
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'mx-triple-scale64-pilot5-report-v1', 'status': 'RUNNING',
+-              'package_revision': 'mx_triple_scale64_pilot5_v1',
++    report = {'schema': 'mx-triple-scale64-reference100-report-v1', 'status': 'RUNNING',
++              'package_revision': 'mx_triple_scale64_reference100_v1',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only; shared E4M3 source and two code-derived MX modes; this is not a paper reproduction',
+                               'FP32 update master/gradients/Adam; A32; exponent MSB and mantissa truncation, lower scales exactly current E4 source scale times64',
+                               'three forward/backwards: E4M3 hard CE, E2M3/E2M1 recursive detached soft CE, one Adam step',
+                               'BN banks learn during training; fixed scale exponent offset+6; no element-bias correction or learned scale',
+-                              'five-epoch pilot is not evidence about final100epoch convergence; low accuracy is a valid measured outcome',
++                              'low accuracy or constant-class predictions are valid measured outcomes, not an automatic technical failure',
+                               'official test used for checkpoint selection, not an independent test estimate',
+                               'numerical weight-only MX emulation; no native MX kernel or energy claim',
+                               'GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism',
+-                              'one seed, five train-only pilot epochs; no proof of general superiority or convergence']}
++                              'one fixed seed; no across-seed uncertainty estimate or proof of general superiority']}
+     if args.command == 'check':
+         report['check_only_workspace'] = {
+             'before': previous_workspace,
+@@ -675,7 +686,7 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log('GEZAMENLIJKE ROUTE-B-PILOT: 5 epochs; E4M3 -> E2M3 -> E2M1; lagere schalen exact E4-bronschaal x64; A32; FP32-masters.')
++            log('GEZAMENLIJKE ROUTE-B-REFERENTIE: 100 epochs; E4M3 -> E2M3 -> E2M1; lagere schalen exact E4-bronschaal x64; A32; FP32-masters.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is None:
+                 report['status'] = 'PASS'
+@@ -683,7 +694,7 @@
+                 trace = run_epochs(ctx, out, log, args.stop_after_epoch, args.checkpoint)
+                 export_results(ctx, out, trace, log)
+                 verify_unchanged(ctx, log)
+-                report['status'] = 'PASS' if report['pilot_completed'] else 'STOPPED_AT_EPOCH_BOUNDARY'
++                report['status'] = 'PASS' if report['full_training_completed'] else 'STOPPED_AT_EPOCH_BOUNDARY'
+             exit_code = 0
+     except BaseException as exc:
+         report['status'] = 'INTERRUPTED' if isinstance(exc, KeyboardInterrupt) else 'FAIL'

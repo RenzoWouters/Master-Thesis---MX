@@ -1,0 +1,69 @@
+{
+  "schema": "mx-triple-scale64-reference100-change-v1",
+  "package": "mx_triple_scale64_reference100_v1",
+  "decision_date": "2026-10-24",
+  "source": "validated actual scale64 pilot5; unchanged numerical core; reference100 reporting structure",
+  "scope": "100 full train-only SVHN epochs; same current E4M3 source and two derived route-B modes",
+  "weight_formats": [
+    "MXFP8_E4M3",
+    "MXFP6_E2M3",
+    "MXFP4_E2M1"
+  ],
+  "quantization_source": "one current E4M3 source encoding per MX layer/minibatch; E2M3 highest exponent bits with scale64; E2M1 subsequent mantissa shift with same scale64",
+  "mantissa_truncation": true,
+  "exponent_truncation": true,
+  "shared_scale_compensation": true,
+  "learned_shared_scale": false,
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "training_order": [
+    8,
+    6,
+    4
+  ],
+  "test_order": [
+    4,
+    6,
+    8
+  ],
+  "bn_mapping": {
+    "8": "8",
+    "6": "32",
+    "4": "4"
+  },
+  "teacher_chain": "labels -> E4M3 -> detached E4M3 softmax to E2M3 -> detached E2M3 softmax to E2M1",
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "loss_gradient_reduction": "sum, no division by three",
+  "selection": "all three modes at first strict E4M3 test maximum, and all three at epoch100; last available epoch for incomplete runs",
+  "configured_full_schedule_epochs": 100,
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "new_output_root": "mx_runs/mx_triple_scale64_reference100",
+  "old_results_modified": false,
+  "executed_notebook_delivered": false,
+  "source_weight_bits": 8,
+  "exponent_bias_compensation": false,
+  "direct_lower_quantization": false,
+  "shared_scale_policy": "E4 source scale determined from current G(W); each lower scale code=source+6; promote before adding; reject overflow without clipping/wrap including zero blocks; source can change after master updates",
+  "source_cache_policy": "detached integer codes shared across three passes; fresh G(W) autograd graph each pass; cache cleared before Adam",
+  "ste_policy": "identity through complete route-B code path wrt G(W), no factor64 in backward; retain G(W) derivatives",
+  "bn_training_policy": "three mode banks learn parameters and running statistics normally; eval frozen",
+  "research_outcome_policy": "low accuracy, constant-class predictions, zero finite gradients or zero finite MX-master updates are diagnostics, not automatic failure; structural/finite/state checks mandatory",
+  "scale_exponent_offset": 6,
+  "scale_factor": 64,
+  "round_trip_CSV_parser": true,
+  "notebook_default_SAVE_FIGURES": false,
+  "reference_epochs": 100,
+  "initialization_policy": "fresh original model with seed20261009; distinct full reference run; own reference100 checkpoints only for resume",
+  "unchanged_core_files": 18,
+  "original_pilot_epochs": 5,
+  "actual_pilot_status": "PASS",
+  "expected_optimizer_steps": 57300,
+  "expected_training_forward_passes": 171900
+}

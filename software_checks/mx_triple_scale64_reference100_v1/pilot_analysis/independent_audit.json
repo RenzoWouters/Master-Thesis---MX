@@ -1,0 +1,126 @@
+{
+  "schema": "mx-scale64-actual-pilot5-metadata-audit-v1",
+  "status": "PASS",
+  "blocking_findings": [],
+  "scope": "Read-only independent consistency assertions over original user ZIP entries, copied raw metadata, integer metric counts, and live-run audit fields. Checkpoint tensors and SVHN tensors are absent; no tensor re-decode or model inference was performed.",
+  "original_upload_provenance": {
+    "scale64": {
+      "archive_filename": "feedback_bundle(20261024-125844).zip",
+      "archive_sha256": "7c01d802617b584579416165bccb01cd3fd10a907093bd903de4758c08ed5310",
+      "archive_bytes": 57059,
+      "copied_directory": "raw",
+      "copied_files_sha256": {
+        "checkpoint_selection.json": "0e3a80c749e3ad65cfa0e46886c313cf0a7426329ed13949f0e7e3687b082df2",
+        "epoch_metrics.csv": "6400b0a49b357e9c31357086ddf96546c8290b51cf4dd349670fa86a87e22d4b",
+        "epoch_times.csv": "5dc805b9c920f317cfe4242a890d2b7af2cd14def277dfbb14bcb9549eaa82e4",
+        "history.json": "dcfe8fc3b3d6a7be0f788a289f77b615681fffc732b3fa6246545fe777845282",
+        "run_report.json": "699d200891596a3b4869dfe172cca0b6780c4248c0257fdf30768bb0d6f943c0",
+        "selected_metrics.csv": "2798864d2212676dde7ee6efcb7274d8500d1494bcfc622aec10bbb02f072bd2",
+        "test_prediction_counts.csv": "22c0e3476f42479f9fa0fc4068ee732b50c433c9656ceabd33cbce61b7687d99",
+        "timing_estimate.json": "0a475a71ebdac3c4e2098f3afd4ec70657255e10d16098cafbeaf64409d01987",
+        "training_summary.json": "c1fb51922af901d9578c0db5f64a1cd6a783480c9f60b77d2db097d157a2d4fd",
+        "weight_updates.csv": "da0a54c0589eae7bd08da91e891f3f1642357f3a19ed9b37704b0cbe229de2f5"
+      },
+      "all_copied_files_byte_identical_to_original_upload": true
+    },
+    "naive": {
+      "archive_filename": "feedback_bundle(20261023-162654).zip",
+      "archive_sha256": "73df4f1adaa0ff6efcb15da0b1dcbd80413d122175369d8e112c27729dacb7b7",
+      "archive_bytes": 55563,
+      "copied_directory": "naive_reference_raw",
+      "copied_files_sha256": {
+        "checkpoint_selection.json": "aedbb5691d9d69cfe376168142a2462f7f592ce88eebab642e6f7c5660096311",
+        "epoch_metrics.csv": "a245154f568ca39053b1aa07ad835f6e90190c07137e77c71c08b43170598fde",
+        "run_report.json": "877f4b0399b963bee06b35f803b596eafed9390d54f50b6ef34ff3e4cca836c3",
+        "selected_metrics.csv": "c6a351b527837022cdae5ae3eb9e5dc1bad7331190f5db0c61b98741603f9845"
+      },
+      "all_copied_files_byte_identical_to_original_upload": true
+    },
+    "direct": {
+      "archive_filename": "feedback_bundle(20261023-125617).zip",
+      "archive_sha256": "d8ad773e4b2298ac6c0885d6fdc4f04cc3c141f864196340ef83a97c4814ecfc",
+      "archive_bytes": 48535,
+      "copied_directory": "direct_reference_raw",
+      "copied_files_sha256": {
+        "checkpoint_selection.json": "35a04feeeec4135a15e196df0def13584e40f0d87bf38eef73d7ce74ef3e7d81",
+        "epoch_metrics.csv": "eaae7eb3fb73ff075439a42777f8d0e074748033584e3d8425d0806553515f45",
+        "run_report.json": "48a80721805ba0eaf67420a1a202e9a4ff936def12a2df916655cbd1f6c9be83",
+        "selected_metrics.csv": "932fef94fa09426dfc02669b3883374280d6c11d4f86f98d0e6f73d3efd98a00"
+      },
+      "all_copied_files_byte_identical_to_original_upload": true
+    }
+  },
+  "real_run": {
+    "status": "PASS",
+    "synthetic_fixture_only": false,
+    "completed_epoch": 5,
+    "optimizer_steps": 2865,
+    "training_forward_passes": 8595,
+    "full_100_epoch_training_completed": false,
+    "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f"
+  },
+  "checks": {
+    "all18_copied_files_match_original_uploads": true,
+    "all50_reported_package_hashes_match_actual_pilot_package": true,
+    "complete_train_and_test_coverage_reported_all5": true,
+    "three_passes_one_update_and_detached_teachers_all5": true,
+    "finite_gradients_and_FP32_Adam_reported_all5": true,
+    "three_BN_bank_counters_reported_correct_all5": true,
+    "one_E4_source_per_layer_per_minibatch_reported_all5": true,
+    "source_plus6_and_mantissa_scale_copy_totals_consistent_all5": true,
+    "no_direct_lower_encoder_reported_all5": true,
+    "no_test_optimizer_updates_all5": true,
+    "all_six_MX_masters_changed_reported_each_epoch": true,
+    "all10_classes_predicted_every_mode_every_epoch": true,
+    "best_equals_epoch5_and_last_all3_runs": true,
+    "saved_source_and_both_derived_export_metadata_consistent": true,
+    "live_export_weights_exactness_reported_not_recomputed_here": true,
+    "dataset_and_source_unchanged_reported": true,
+    "same_initialization_data_transforms_environment_and_common_settings_all3": true,
+    "metrics_match_integer_correct_counts_within1e_minus4_pp": true
+  },
+  "source_audit_totals": {
+    "train": {
+      "source_triplets": 2865,
+      "high_encodings": 17190,
+      "exponent_derivations": 17190,
+      "mantissa_derivations": 17190,
+      "scale_offsets_plus6": 34380,
+      "mantissa_scale_copies_unchanged": 17190
+    },
+    "test": {
+      "source_triplets": 1020,
+      "high_encodings": 6120,
+      "exponent_derivations": 6120,
+      "mantissa_derivations": 6120,
+      "scale_offsets_plus6": 12240,
+      "mantissa_scale_copies_unchanged": 6120
+    }
+  },
+  "warnings": {
+    "count": 2,
+    "categories": [
+      "DeprecationWarning",
+      "DeprecationWarning"
+    ],
+    "interpretation": "Only existing PyTorch pin-memory device-argument deprecations; no recorded technical failure."
+  },
+  "timing": {
+    "session_wall_seconds": 296.89558619994204,
+    "measured_epoch_seconds": 289.7393125001108,
+    "projected_fresh_100_epoch_seconds": 5756.392227857257,
+    "observed_projection_range_seconds": [
+      5324.779329101788,
+      6282.449681192869
+    ],
+    "range_is_confidence_interval": false,
+    "projection_is_not_measured_100_epoch_time": true
+  },
+  "limitations": [
+    "One seed and only five epochs; no final-convergence or general-superiority claim.",
+    "Official test used for E4-best selection; not an independent held-out model-selection estimate.",
+    "Factor64 does not recover the discarded exponent bits.",
+    "Native MX throughput or energy was not measured.",
+    "Only consistency of uploaded audit metadata and numerical metrics is independently checked here; reported live tensor checks cannot be rerun from this feedback bundle."
+  ]
+}

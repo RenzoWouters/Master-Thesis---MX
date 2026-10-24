@@ -1,0 +1,81 @@
+{
+  "schema": "mx-triple-scale64-reference100-final-assembly-v1",
+  "status": "PASS",
+  "frozen_runtime_and_document_files_verified": 42,
+  "all_runtime_hashes_equal_validated_versions": true,
+  "unchanged_pilot_core_validation_sha256": "0c2db49d4c8d7a6d53a89c55689b0962fdd0fe7f7174d1e34870c67f291a2f8d",
+  "actual_pilot_audit_sha256": "7f86f2dc4be4ab4c4457d566e472fedf373ac9fb0942168d351bda88324e956c",
+  "actual_pilot_analysis_distinct_from_synthetic_software_tests": true,
+  "validation_reports": {
+    "check_entry_validation_report.json": {
+      "status": "PASS",
+      "sha256": "bed4d28529ce021c3007b6b2cd377aec30960dcae16b0351ae3e28d0987330b3"
+    },
+    "training_integration_report.json": {
+      "status": "PASS",
+      "sha256": "9b8ecb4aef3f0281fac5699d118c8e2843e071e5398266056a417ad8c29d92f0"
+    },
+    "notebook_validation_report.json": {
+      "status": "PASS",
+      "sha256": "91d96fbff71d0013b9970d53650223820dc74bd62d5ad47340be83041b2f3103"
+    },
+    "runner_notebook_integration.json": {
+      "status": "PASS",
+      "sha256": "1de2273d453784ee3bbb1ec4ddfbff8eece50d0bcbca3b7e7dceb05c44b94b98"
+    },
+    "independent_runner_review.json": {
+      "status": "PASS",
+      "sha256": "049d1193de0aa1faf56e033459b3796867ba7c0e808c4ef33928a2c91865af01"
+    },
+    "prior_packages_unchanged.json": {
+      "status": "PASS",
+      "sha256": "3000df5a03d96fa63c4d3ae3fa58a336350a2e6474820a2a5355dbf197dcefaf"
+    }
+  },
+  "independent_review_blockers": [],
+  "reused_files_identical_to_previous_pilot": 18,
+  "previous_packages_still_match_their_manifests": {
+    "mx_triple_scale64_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 50
+    },
+    "mx_triple_truncation_aware_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 52
+    },
+    "mx_triple_truncation_aware_reference100_v1": {
+      "unchanged": true,
+      "files_checked": 58
+    },
+    "mx_weights_triple_direct_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 45
+    },
+    "mx_weights_triple_direct_reference100_v1": {
+      "unchanged": true,
+      "files_checked": 50
+    },
+    "mx_triple_scale64_posthoc_eval_v1": {
+      "unchanged": true,
+      "files_checked": 48
+    },
+    "mx_triple_scale64_notebook_fix_v1": {
+      "unchanged": true,
+      "files_checked": 6
+    }
+  },
+  "all_python_files_parse": 27,
+  "notebooks": {
+    "count": 1,
+    "code_cells": 10,
+    "all_outputs_empty": true,
+    "default_save_figures": false
+  },
+  "no_dataset_or_checkpoint_or_synthetic_figure_deliverables": true,
+  "root_visual_inspection": {
+    "accuracy_curves": "PASS",
+    "checkpoint_accuracy": "PASS",
+    "basis": "Synthetic labelled preview only; no research measurements."
+  },
+  "real_SVHN_training_or_CUDA_validation_performed_here": false
+}

@@ -1,0 +1,139 @@
+--- mx_triple_scale64_pilot5_v1/notebook_support.py
++++ mx_triple_scale64_reference100_v1/notebook_support.py
+@@ -1,4 +1,4 @@
+-"""Read-only analysis of saved route-B scale64 MX/A32 pilot results.
++"""Read-only analysis of saved route-B scale64 MX/A32 reference100 results.
+ 
+ Reuses the established triple-direct report reader; reports the E4 source chain.
+ 
+@@ -86,17 +86,15 @@
+ 
+     @property
+     def reference_complete(self):
+-        # This notebook belongs to a runner bounded at epoch5. Never turn an
+-        # incorrectly edited summary into a claimed epoch100 measurement.
+-        return False
+-
+-    @property
+-    def pilot_complete(self):
+-        return (self.report.get("status") == "PASS" and self.summary.get("pilot_completed") is True
+-                and self.last_epoch == 5 and self.metrics_safe and self.selection_safe
+-                and not any(x['Niveau'] in ('FOUT', 'RUNFOUT') for x in self.issues)
++        return (self.report.get("status") == "PASS"
++                and self.summary.get("full_training_completed") is True
++                and self.summary.get("full_100_epoch_training_completed") is True
++                and self.config.get("reference_end_epoch") == 100
++                and self.metrics_safe and self.selection_safe and self.prediction_safe
++                and not any(item["Niveau"] in ("FOUT", "RUNFOUT") for item in self.issues)
++                and self.last_epoch == 100
+                 and all(self.test.loc[self.test["weight_format"] == fmt, "epoch"].astype(int).tolist()
+-                        == list(range(1, 6)) for fmt in FORMATS.values()))
++                        == list(range(1, 101)) for fmt in FORMATS.values()))
+ 
+     def metric(self, epoch, weight_format=SELECTION_FORMAT):
+         if epoch is None or self.test.empty:
+@@ -121,17 +119,17 @@
+     if not run.report:
+         return
+     failures = []
+-    if run.report.get('schema') != 'mx-triple-scale64-pilot5-report-v1':
+-        failures.append('Dit is niet het rapport van de gezamenlijke schaal64-truncatiepilot.')
++    if run.report.get('schema') != 'mx-triple-scale64-reference100-report-v1':
++        failures.append('Dit is niet het rapport van de gezamenlijke schaal64-honderd-epochtraining.')
+     c = run.config
+-    expected = {'schema': 'mx-triple-scale64-pilot5-protocol-v1',
++    expected = {'schema': 'mx-triple-scale64-reference100-protocol-v1',
+                 'activation_bits': 32, 'master_dtype': 'float32', 'mode': 'joint',
+                 'truncation': True, 'exponent_truncation': True, 'mantissa_truncation': True,
+                 'source_weight_bits': 8, 'shared_scale_compensation': True,
+                 'scale_exponent_offset': 6, 'scale_factor': 64,
+                 'direct_lower_quantization': False, 'exponent_bias_compensation': False,
+                 'learned_shared_scale': False, 'distillation': True,
+-                'extra_FP32_teacher_forward': False, 'pilot_stop_epoch': 5,
++                'extra_FP32_teacher_forward': False, 'reference_end_epoch': 100,
+                 'planned_epochs': 100}
+     for key, value in expected.items():
+         if key not in c or c[key] != value:
+@@ -305,10 +303,8 @@
+             run.issue("FOUT", "Laatste epoch verschilt tussen samenvatting en metrics.")
+         if run.summary.get("best_epoch_E4M3_A32", run.observed_best_epoch) != run.observed_best_epoch:
+             run.issue("FOUT", "Beste E4M3-epoch in de samenvatting verschilt van het eerste strikte maximum.")
+-        if run.summary.get("pilot_completed") is True and run.last_epoch < 5:
+-            run.issue("FOUT", "De samenvatting claimt een voltooide pilot vóór epoch5.")
+         if run.summary.get("full_100_epoch_training_completed") is True and not run.reference_complete:
+-            run.issue("FOUT", "Deze vijf-epochpilot kan geen voltooide honderd-epochtraining bevestigen.")
++            run.issue("FOUT", "Volledige honderd-epochtraining geclaimd zonder honderd geldige epochs en consistente controles.")
+         if _number(run.timing.get("measured_100_epoch_seconds")) is not None and not run.reference_complete:
+             run.issue("FOUT", "Gemeten honderd-epochtotaal gerapporteerd zonder volledige referentie.")
+         measured = measured_completed_seconds(run)
+@@ -344,8 +340,8 @@
+     if not np.isfinite(data[list(numeric)].to_numpy(dtype=float)).all():
+         fail("Niet-eindige of ontbrekende essentiële metrics. Metricgrafieken geblokkeerd.")
+         return
+-    if not ((data["epoch"] >= 1) & (data["epoch"] <= 5) & (data["epoch"] % 1 == 0)).all():
+-        fail("Ongeldige epochnummers: deze pilot bevat uitsluitend epochs 1 t/m 5.")
++    if not ((data["epoch"] >= 1) & (data["epoch"] <= 100) & (data["epoch"] % 1 == 0)).all():
++        fail("Ongeldige epochnummers: deze proef bevat uitsluitend epochs 1 t/m 100.")
+     if data.duplicated(["epoch", "phase", "weight_format"]).any():
+         fail("Dubbele metrics voor dezelfde epoch/fase/gewichtsmodus.")
+     if not data["phase"].isin(["train", "test"]).all() or not data["weight_bits"].isin(FORMATS).all():
+@@ -500,7 +496,8 @@
+     if steps is not None and expected is not None and run.last_epoch is not None and steps != expected * run.last_epoch:
+         run.issue("FOUT", "Aantal optimizerupdates strookt niet met de volledige trainset en afgeronde epochs.")
+     if run.summary:
+-        expected_summary = {'schema': 'mx-triple-scale64-pilot5-completion-v1',
++        expected_summary = {'schema': 'mx-triple-scale64-reference100-completion-v1',
++                            'reference_end_epoch': 100,
+                             'shared_scale_compensation': True, 'learned_shared_scale': False,
+                             'scale_exponent_offset': 6, 'scale_factor': 64,
+                             'all_lower_scale_bytes_equal_current_E4_source': False,
+@@ -529,8 +526,6 @@
+         endpoint = "**Epoch100 niet gemeten als bevestigd eindresultaat.** De laatste beschikbare epoch en het door E4M3 gekozen beste checkpoint blijven zichtbaar. Er wordt geen ontbrekende accuracy voorspeld."
+     if run.synthetic:
+         endpoint += " **Alle getoonde fixturecijfers zijn uitsluitend synthetische softwarecontroles.**"
+-    if run.pilot_complete:
+-        endpoint += " De vijf-epochpilot is volgens het runrapport voltooid."
+     if status == "STOPPED_AT_EPOCH_BOUNDARY":
+         endpoint += " **Gecontroleerd gestopt op een epochgrens; alleen afgeronde epochs zijn beschikbaar.**"
+     elif status not in ("PASS", "NIET BESCHIKBAAR"):
+@@ -562,7 +557,7 @@
+              ("Train / test", f"{c.get('train_examples', '?')} / {c.get('test_examples', '?')}"),
+              ("Groepsgrootte / schaal", f"{c.get('mx_block_size', '?')} / {c.get('mx_scale_format', '?')}"),
+              ("Batch / seed", f"{c.get('batch_size', '?')} / {c.get('seed', '?')}"),
+-             ("Pilot / gepland LR-schema", f"{c.get('pilot_stop_epoch', '?')} / {c.get('planned_epochs', '?')} epochs"),
++             ("Vast eindpunt / gepland LR-schema", f"{c.get('reference_end_epoch', '?')} / {c.get('planned_epochs', '?')} epochs"),
+              ("Afgeronde epochs", run.last_epoch if run.last_epoch is not None else "geen"),
+              ("Beste checkpoint", run.selection.get("policy", "selectiebestand ontbreekt"))]
+     return pd.DataFrame(items, columns=["Onderdeel", "Opgeslagen configuratie"])
+@@ -702,7 +697,8 @@
+         axes[1].set(title='Aandeel van het meest voorspelde cijfer',
+                     xlabel='Afgeronde epoch', ylabel='Aandeel testbeelden [%]', ylim=(0, 105))
+         for ax in axes:
+-            ax.set_xticks(range(1, run.last_epoch + 1))
++            if run.last_epoch <= 10:
++                ax.set_xticks(range(1, run.last_epoch + 1))
+             ax.legend(frameon=False)
+         fig.supxlabel('Eén voorspelde klasse en 100% concentratie: constante voorspelling. Lage accuracy blijft een geldige meetuitkomst.',
+                       fontsize=9, color='#525D65')
+@@ -774,8 +770,10 @@
+         fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.9), constrained_layout=True)
+         fig.suptitle(_title(run, "Route B met schaal ×64 — hetzelfde checkpoint per groep"), fontsize=14, fontweight="bold")
+         table = checkpoint_table(run)
+-        for ax, role, title in zip(axes, ("last_epoch", "best_E4M3_test"),
+-                                   ("Laatste beschikbare epoch", "Beste checkpoint gekozen door E4M3")):
++        endpoint_role = "epoch100" if run.reference_complete else "last_epoch"
++        endpoint_title = "Vast eindpunt" if run.reference_complete else "Laatste beschikbare epoch"
++        for ax, role, title in zip(axes, (endpoint_role, "best_E4M3_test"),
++                                   (endpoint_title, "Beste checkpoint gekozen door E4M3")):
+             rows = table.loc[table["Rol"] == role]
+             epoch = rows.iloc[0]["Epoch"] if not rows.empty else None
+             if run.test.empty:
+@@ -887,7 +885,7 @@
+     return (prefix + measured + f"Warme epochs volgens het tijdsrapport: **{t.get('steady_epochs', [])}**; mediaan: **{warm}**. "
+             "De afzonderlijke projectie geldt voor een **nieuwe volledige run van honderd epochs vanaf initialisatie**. Zij is geen gemeten eindtijd en geen resterende hervattijd. "
+             "Het waargenomen minimum/maximum van de warme epochs levert een scenario-bereik, geen betrouwbaarheidsinterval. "
+-            "Vijf epochs meten de LR-overgangen op 50/75/90 en langdurige thermische omstandigheden nog niet. "
++            "Een onvolledige run meet nog niet alle latere LR-overgangen en langdurige thermische omstandigheden. "
+             "Download, installatie, data-inladen en eindrapportage zijn niet inbegrepen. **Geen accuracy voor epoch100 wordt voorspeld.**")
+ 
+ 

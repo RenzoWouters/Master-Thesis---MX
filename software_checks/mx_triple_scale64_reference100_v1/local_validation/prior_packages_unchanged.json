@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "packages": {
+    "mx_triple_scale64_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 50
+    },
+    "mx_triple_truncation_aware_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 52
+    },
+    "mx_triple_truncation_aware_reference100_v1": {
+      "unchanged": true,
+      "files_checked": 58
+    },
+    "mx_weights_triple_direct_pilot5_v1": {
+      "unchanged": true,
+      "files_checked": 45
+    },
+    "mx_weights_triple_direct_reference100_v1": {
+      "unchanged": true,
+      "files_checked": 50
+    },
+    "mx_triple_scale64_posthoc_eval_v1": {
+      "unchanged": true,
+      "files_checked": 48
+    },
+    "mx_triple_scale64_notebook_fix_v1": {
+      "unchanged": true,
+      "files_checked": 6
+    }
+  }
+}

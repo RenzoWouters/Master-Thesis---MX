@@ -1,0 +1,260 @@
+{
+  "schema": "mx-scale64-actual-pilot5-comparison-v1",
+  "status": "PASS",
+  "scope": "Actual user SVHN/CUDA runs; three five-epoch single-seed pilots; no new training executed by this analysis",
+  "metric_policy": "Reported top1 retained alongside exact integer-correct/n percentages; deltas are percentage points, not relative percent.",
+  "checkpoint_policy": "For all three runs epoch5 is also first strict E4M3-test maximum; all three modes use the same checkpoint within each run.",
+  "maximum_selected_reported_vs_integer_count_error_pp": 9.378481991006993e-09,
+  "rows": [
+    {
+      "format": "E4M3",
+      "weight_bits": 8,
+      "epoch": 5,
+      "selection": "epoch5_and_common_E4_best",
+      "direct_correct1": 24238,
+      "direct_n": 26032,
+      "direct_reported_top1_percent": 93.1084818590911,
+      "direct_count_top1_percent": 93.10848186846958,
+      "direct_count_top1_exact_fraction": "302975/3254",
+      "direct_test_hard_CE": 0.2388077919092659,
+      "naive_correct1": 21366,
+      "naive_n": 26032,
+      "naive_reported_top1_percent": 82.07590657183196,
+      "naive_count_top1_percent": 82.0759065765212,
+      "naive_count_top1_exact_fraction": "267075/3254",
+      "naive_test_hard_CE": 0.5875749144549742,
+      "scale64_correct1": 24172,
+      "scale64_n": 26032,
+      "scale64_reported_top1_percent": 92.85494774722878,
+      "scale64_count_top1_percent": 92.85494775660726,
+      "scale64_count_top1_exact_fraction": "151075/1627",
+      "scale64_test_hard_CE": 0.24666550816863902,
+      "scale64_minus_naive_reported_pp": 10.779041175396813,
+      "scale64_minus_naive_count_pp": 10.779041180086049,
+      "scale64_minus_naive_count_exact_fraction": "35075/3254",
+      "scale64_minus_direct_reported_pp": -0.2535341118623222,
+      "scale64_minus_direct_count_pp": -0.2535341118623233,
+      "scale64_minus_direct_count_exact_fraction": "-825/3254"
+    },
+    {
+      "format": "E2M3",
+      "weight_bits": 6,
+      "epoch": 5,
+      "selection": "epoch5_and_common_E4_best",
+      "direct_correct1": 24227,
+      "direct_n": 26032,
+      "direct_reported_top1_percent": 93.0662261737807,
+      "direct_count_top1_percent": 93.06622618315919,
+      "direct_count_top1_exact_fraction": "605675/6508",
+      "direct_test_hard_CE": 0.23837275590607926,
+      "naive_correct1": 21216,
+      "naive_n": 26032,
+      "naive_reported_top1_percent": 81.49969268592501,
+      "naive_count_top1_percent": 81.49969268592501,
+      "naive_count_top1_exact_fraction": "132600/1627",
+      "naive_test_hard_CE": 0.6076418153149407,
+      "scale64_correct1": 23912,
+      "scale64_n": 26032,
+      "scale64_reported_top1_percent": 91.85617700352871,
+      "scale64_count_top1_percent": 91.8561770129072,
+      "scale64_count_top1_exact_fraction": "149450/1627",
+      "scale64_test_hard_CE": 0.28366961745521224,
+      "scale64_minus_naive_reported_pp": 10.356484317603702,
+      "scale64_minus_naive_count_pp": 10.356484326982176,
+      "scale64_minus_naive_count_exact_fraction": "16850/1627",
+      "scale64_minus_direct_reported_pp": -1.2100491702519918,
+      "scale64_minus_direct_count_pp": -1.2100491702519975,
+      "scale64_minus_direct_count_exact_fraction": "-7875/6508"
+    },
+    {
+      "format": "E2M1",
+      "weight_bits": 4,
+      "epoch": 5,
+      "selection": "epoch5_and_common_E4_best",
+      "direct_correct1": 24157,
+      "direct_n": 26032,
+      "direct_reported_top1_percent": 92.79732635816916,
+      "direct_count_top1_percent": 92.79732636754764,
+      "direct_count_top1_exact_fraction": "603925/6508",
+      "direct_test_hard_CE": 0.2456937488065443,
+      "naive_correct1": 21310,
+      "naive_n": 26032,
+      "naive_reported_top1_percent": 81.86078671465349,
+      "naive_count_top1_percent": 81.86078672403197,
+      "naive_count_top1_exact_fraction": "266375/3254",
+      "naive_test_hard_CE": 0.6025867106252165,
+      "scale64_correct1": 23862,
+      "scale64_n": 26032,
+      "scale64_reported_top1_percent": 91.6641057066633,
+      "scale64_count_top1_percent": 91.66410571604179,
+      "scale64_count_top1_exact_fraction": "298275/3254",
+      "scale64_test_hard_CE": 0.2953739873217745,
+      "scale64_minus_naive_reported_pp": 9.803318992009821,
+      "scale64_minus_naive_count_pp": 9.803318992009833,
+      "scale64_minus_naive_count_exact_fraction": "15950/1627",
+      "scale64_minus_direct_reported_pp": -1.1332206515058516,
+      "scale64_minus_direct_count_pp": -1.133220651505839,
+      "scale64_minus_direct_count_exact_fraction": "-7375/6508"
+    }
+  ],
+  "scale64_test_accuracy_by_epoch": [
+    {
+      "epoch": 1,
+      "E4M3_test_top1_percent": 87.86877688529232,
+      "E2M3_test_top1_percent": 86.43592501067646,
+      "E2M1_test_top1_percent": 86.38982789942877
+    },
+    {
+      "epoch": 2,
+      "E4M3_test_top1_percent": 90.73832206515058,
+      "E2M3_test_top1_percent": 88.78687768430892,
+      "E2M1_test_top1_percent": 88.4910878871362
+    },
+    {
+      "epoch": 3,
+      "E4M3_test_top1_percent": 92.05593116164721,
+      "E2M3_test_top1_percent": 90.3541794714198,
+      "E2M1_test_top1_percent": 90.2158881376767
+    },
+    {
+      "epoch": 4,
+      "E4M3_test_top1_percent": 92.44007374599951,
+      "E2M3_test_top1_percent": 91.52197294698291,
+      "E2M1_test_top1_percent": 91.37215733542791
+    },
+    {
+      "epoch": 5,
+      "E4M3_test_top1_percent": 92.85494774722878,
+      "E2M3_test_top1_percent": 91.85617700352871,
+      "E2M1_test_top1_percent": 91.6641057066633
+    }
+  ],
+  "comparability": {
+    "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "all_initial_states_equal": true,
+    "data_files_equal": true,
+    "dataset_selection_equal": true,
+    "transforms_equal": true,
+    "environment_equal": true,
+    "execution_settings_equal": true,
+    "upstream_source_equal": true,
+    "common_config_keys_equal": [
+      "weight_bits",
+      "activation_bits",
+      "master_dtype",
+      "gradient_dtype",
+      "adam_moments_dtype",
+      "mx_block_size",
+      "mx_scale_format",
+      "mx_group_axis",
+      "model",
+      "expand",
+      "parameters",
+      "planned_epochs",
+      "pilot_stop_epoch",
+      "batch_size",
+      "optimizer",
+      "lr",
+      "weight_decay",
+      "scheduler_milestones",
+      "scheduler_gamma",
+      "workers",
+      "pin_memory",
+      "drop_last",
+      "train_shuffle",
+      "test_shuffle",
+      "seed",
+      "training_mode_order",
+      "test_mode_order",
+      "bn_bank_mapping",
+      "distillation",
+      "loss",
+      "passes_per_training_batch",
+      "optimizer_steps_per_training_batch",
+      "train_examples",
+      "test_examples",
+      "extra_used"
+    ],
+    "same_CUDA_runtime_does_not_guarantee_bitexact_repeats": true
+  },
+  "timing": {
+    "session_wall_seconds": 296.89558619994204,
+    "measured_epoch_seconds": 289.7393125001108,
+    "projected_fresh_100_epoch_seconds": 5756.392227857257,
+    "observed_projection_range_seconds": [
+      5324.779329101788,
+      6282.449681192869
+    ],
+    "range_is_confidence_interval": false,
+    "projection_is_not_measured_100_epoch_time": true
+  },
+  "E2M1_test_CE_epoch4_to5": {
+    "epoch4": 0.2928491404123224,
+    "epoch5": 0.2953739873217745,
+    "difference": 0.0025248469094520942,
+    "accuracy_increased_despite_small_CE_rise": true
+  },
+  "interpretation": {
+    "next_step": "Fresh100epoch experiment with unchanged scale64 route and original settings is justified as next measurement; result not yet available.",
+    "supports": "Scale64 jointly trained route learns all three modes and substantially improves on the naive same-scale five-epoch pilot.",
+    "does_not_isolate": [
+      "FP32-master adaptation",
+      "BN parameter/running-statistic adaptation",
+      "recursive distillation contribution"
+    ],
+    "E4M3_improvement": "Consistent with shared optimization changing when the lower routes change, even though the E4M3 quantizer itself is unchanged; not isolated causal evidence.",
+    "limitations": [
+      "One seed and only five epochs; no final-convergence or general-superiority claim.",
+      "Official test used for E4-best selection; not an independent held-out model-selection estimate.",
+      "Factor64 does not recover the discarded exponent bits.",
+      "Native MX throughput or energy was not measured."
+    ]
+  },
+  "provenance": {
+    "scale64": {
+      "archive_filename": "feedback_bundle(20261024-125844).zip",
+      "archive_sha256": "7c01d802617b584579416165bccb01cd3fd10a907093bd903de4758c08ed5310",
+      "archive_bytes": 57059,
+      "copied_directory": "raw",
+      "copied_files_sha256": {
+        "checkpoint_selection.json": "0e3a80c749e3ad65cfa0e46886c313cf0a7426329ed13949f0e7e3687b082df2",
+        "epoch_metrics.csv": "6400b0a49b357e9c31357086ddf96546c8290b51cf4dd349670fa86a87e22d4b",
+        "epoch_times.csv": "5dc805b9c920f317cfe4242a890d2b7af2cd14def277dfbb14bcb9549eaa82e4",
+        "history.json": "dcfe8fc3b3d6a7be0f788a289f77b615681fffc732b3fa6246545fe777845282",
+        "run_report.json": "699d200891596a3b4869dfe172cca0b6780c4248c0257fdf30768bb0d6f943c0",
+        "selected_metrics.csv": "2798864d2212676dde7ee6efcb7274d8500d1494bcfc622aec10bbb02f072bd2",
+        "test_prediction_counts.csv": "22c0e3476f42479f9fa0fc4068ee732b50c433c9656ceabd33cbce61b7687d99",
+        "timing_estimate.json": "0a475a71ebdac3c4e2098f3afd4ec70657255e10d16098cafbeaf64409d01987",
+        "training_summary.json": "c1fb51922af901d9578c0db5f64a1cd6a783480c9f60b77d2db097d157a2d4fd",
+        "weight_updates.csv": "da0a54c0589eae7bd08da91e891f3f1642357f3a19ed9b37704b0cbe229de2f5"
+      },
+      "all_copied_files_byte_identical_to_original_upload": true
+    },
+    "naive": {
+      "archive_filename": "feedback_bundle(20261023-162654).zip",
+      "archive_sha256": "73df4f1adaa0ff6efcb15da0b1dcbd80413d122175369d8e112c27729dacb7b7",
+      "archive_bytes": 55563,
+      "copied_directory": "naive_reference_raw",
+      "copied_files_sha256": {
+        "checkpoint_selection.json": "aedbb5691d9d69cfe376168142a2462f7f592ce88eebab642e6f7c5660096311",
+        "epoch_metrics.csv": "a245154f568ca39053b1aa07ad835f6e90190c07137e77c71c08b43170598fde",
+        "run_report.json": "877f4b0399b963bee06b35f803b596eafed9390d54f50b6ef34ff3e4cca836c3",
+        "selected_metrics.csv": "c6a351b527837022cdae5ae3eb9e5dc1bad7331190f5db0c61b98741603f9845"
+      },
+      "all_copied_files_byte_identical_to_original_upload": true
+    },
+    "direct": {
+      "archive_filename": "feedback_bundle(20261023-125617).zip",
+      "archive_sha256": "d8ad773e4b2298ac6c0885d6fdc4f04cc3c141f864196340ef83a97c4814ecfc",
+      "archive_bytes": 48535,
+      "copied_directory": "direct_reference_raw",
+      "copied_files_sha256": {
+        "checkpoint_selection.json": "35a04feeeec4135a15e196df0def13584e40f0d87bf38eef73d7ce74ef3e7d81",
+        "epoch_metrics.csv": "eaae7eb3fb73ff075439a42777f8d0e074748033584e3d8425d0806553515f45",
+        "run_report.json": "48a80721805ba0eaf67420a1a202e9a4ff936def12a2df916655cbd1f6c9be83",
+        "selected_metrics.csv": "932fef94fa09426dfc02669b3883374280d6c11d4f86f98d0e6f73d3efd98a00"
+      },
+      "all_copied_files_byte_identical_to_original_upload": true
+    }
+  }
+}

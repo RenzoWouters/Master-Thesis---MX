@@ -1,0 +1,255 @@
+{
+  "schema": "mx-triple-scale64-reference100-independent-runner-review-v1",
+  "status": "PASS",
+  "reviewer": "Independent runner-validation agent; runtime ownership remained with other agents",
+  "review_completed_utc": "2026-10-24T13:04:58.665904+00:00",
+  "scope": "Frozen full100 route-B package; source review, real check/run/resume/exports on tiny synthetic CPU fixtures, and separate notebook integration evidence",
+  "blocking_findings": [],
+  "runtime_modified_by_reviewer": false,
+  "real_SVHN_training_started_here": false,
+  "all_frozen_production_files_still_match": true,
+  "reviewed_frozen_file_count": 42,
+  "reviewed_frozen_file_sha256": {
+    "CODEWIJZIGINGEN.md": "f30bd2757bf1c2a046d1585688d87d43cbf2cb13c63dca23cde7286ea1cedda3",
+    "MX_triple_scale64_reference100_resultaten.ipynb": "626ecda76a4ea1387d7ee33e4bbb4cdc2e775ba316d5d7c2b3f42601f3d20e2d",
+    "PROTOCOL.md": "a29c7a5b80fdb2a98f992b0e9ba454541a7e01da23beff3605e609b5ee3eca64",
+    "README.md": "3eaa9226246341e947b47bd699d3a67dc6a44fbfa8fa07e3ba9659a583f310f9",
+    "REUSE_MANIFEST.json": "ed09f2f10cf673182a2f3f4166312a6b35fbb3d3d49529e2dd176ea33f2dc4b1",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "56f3f2de9c75185aba549863882769a65f2d83c975c5149341ab49e0133210a2",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "777aec7903bd3ff502fc68e009ff7e7b27b3dddfd41bdf0aa5479e65bff2eb19",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "provenance/naive_reference100_PACKAGE_SHA256.json": "61c6f5a7cb5c330fce69d2311fb11e0b6e281eacbb4d2514c95af7838926c140",
+    "provenance/naive_reference100_PROTOCOL.md": "4240426ef6eaa84ec796be743d7bb39d2418c4e0d2cec54bc96fb877c80d18d4",
+    "provenance/naive_reference100_TRAINING_CHANGE_MANIFEST.json": "fa1360fa51daf316cf504f69119b4dd1c7da6923922d9b1ed1fd812f3afa158a",
+    "provenance/naive_reference100_notebook_support.py": "fa6c020a079a1a2e53f57f8dcefe777304b521a484c88537339441b14ef2c4d3",
+    "provenance/naive_reference100_run_train.py": "131ea51fb5564eccce18ffb75fa8238630245e7288a3057d6c530c0943535ca2",
+    "provenance/pilot5_to_reference100_notebook.patch": "1df8c342e27c878fe90198265260076777dd42f60940547f7458b38b1f3a1afa",
+    "provenance/pilot5_to_reference100_notebook_support.patch": "e7b99ed4c6b4c96fec47d0eb7d41f416f1eb43e7bcc3bb8c97f4094227588d83",
+    "provenance/pilot5_to_reference100_run_train.patch": "163e24787e94d7aaf27063809b35d1ada8be9a78ba03e55d53bd58ac2ee177b9",
+    "provenance/posthoc_scale64.py": "b3199677d527256ef06bf51d8058261c73d9211f94a06a58d84af1a932cea179",
+    "provenance/scale64_pilot5_PACKAGE_SHA256.json": "3873015c1d5381384c5a719ac60ba945920970fcf97a292a468f3d3db67a042c",
+    "provenance/scale64_pilot5_PROTOCOL.md": "d8d783ffdf797a923d453373e182c3360c62e9b13669f020d273669ae2ac9f30",
+    "provenance/scale64_pilot5_TRAINING_CHANGE_MANIFEST.json": "2f4ce6953a8da235f0bcac9515fbac6c968bb399bde67f2a4a01c4d3d58da01d",
+    "provenance/scale64_pilot5_core_training_validation.json": "0c2db49d4c8d7a6d53a89c55689b0962fdd0fe7f7174d1e34870c67f291a2f8d",
+    "provenance/scale64_pilot5_notebook_support.py": "89018af70ab3cf180180335591fdd639dbcb4204c9dce45d1f9e850524bc45de",
+    "provenance/scale64_pilot5_run_train.py": "3d971c1fffb9df44d9357758169100b00f6e94c5033e7a2fe85f731586e091b1",
+    "provenance/scale64_pilot5_test_core.py": "14f7c82d532c913c1f129d6ede1720a6a719024b4088fdd7e6f94470c4ccf943",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "28eb7ad75a49841e6d19d1bcb2d136a734f2b6933ab5f4a3e4cc385a8f5eb7ab",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_trunc_training.py": "36eaf80ee900aafdd07f3fe0d6c01d2d916aa9280d3989321d7cf27642da2385",
+    "trunc_adapter.py": "3fe6f0b07c4cc9dd02a8da4b228f27e054ff4db0d76c3548dc6cb885b7122b6c",
+    "trunc_support.py": "02272898901ea11e13f5a2a44f252a4d1121a077c09f8ddb590d4a3e435ab735",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "runner_AST_unchanged_functions_vs_naive_reference100": [
+    "dependencies",
+    "restore_timing_sidecar",
+    "run_epochs",
+    "verify_unchanged"
+  ],
+  "create_context_AST_identical_to_scale64_pilot": true,
+  "findings": [
+    {
+      "area": "Scope and unchanged numerical route",
+      "status": "PASS",
+      "finding": "All 18 reused files match the validated route-B pilot hashes. Its exhaustive core validation remains applicable to these identical files, including all 254 finite E4 codes, scale overflow guards, independent manual updates and source-only exports. Production changes are only reference100 identity, completion and reporting.",
+      "evidence": [
+        "REUSE_MANIFEST.json",
+        "training_integration_report.json: comparison_to_scale64_pilot/unchanged_core_validation",
+        "provenance/scale64_pilot5_core_training_validation.json"
+      ]
+    },
+    {
+      "area": "Forward, backward and source",
+      "status": "PASS",
+      "finding": "Independent unpacked bit fields and source E8M0+6 agree with the actual route. E2M1 uses code>>2 and the same scale as E2M3. All mode gradients use identity STE without extra64 while retaining G(W) derivatives. Direct lower tensor and element encoders were forbidden during actual run/resume.",
+      "evidence": [
+        "training_integration_report.json: tests.independent_forward_and_identity_STE_no_extra64_gradient/tests.all_lower_tensor_and_element_encoders_forbidden_during_real_run_and_resume"
+      ]
+    },
+    {
+      "area": "Full runner and completion",
+      "status": "PASS",
+      "finding": "The actual main/model/loop completed 100 synthetic epochs with 200 updates and 600 forwards. It wrote all100 checkpoints,600 metric rows and correct shared-best/epoch100 exports. Completion and measured100 time become true only at100. The real unchanged loop is AST-identical to the prior full100 runner; fresh initialization equals the unchanged direct builder in the same CPU runtime.",
+      "evidence": [
+        "training_integration_report.json: cases.continuous100/tests/initialization_reference",
+        "run_train.py: run_epochs"
+      ]
+    },
+    {
+      "area": "Actual LR schedule and resume boundaries",
+      "status": "PASS",
+      "finding": "The fixture retains production LR milestones50/75/90. All four LR phases are checked. Own checkpoints at49/74/89 resume for one epoch through each scheduler transition with exact model/optimizer/scheduler/RNG agreement, then stop cleanly. Resume99-to100 also agrees exactly.",
+      "evidence": [
+        "training_integration_report.json: actual_LR_boundaries/actual_LR_boundary_resume_checks/tests"
+      ]
+    },
+    {
+      "area": "Training accounting and exports",
+      "status": "PASS",
+      "finding": "Three ordered trainpasses and recursive detached teachers feed one update. Audits verify A32, FP32 masters/Adam, three BN banks, short final batches, source+6 and mantissa scale relations, empty caches, prediction histograms and common E4-selected checkpoint rows. All exported modes reconstruct from saved E4 codes without encoders or G(W), yielding exact own-export logits.",
+      "evidence": [
+        "training_integration_report.json: tests"
+      ]
+    },
+    {
+      "area": "Interruptions, contracts and preservation",
+      "status": "PASS",
+      "finding": "A STOP marker stops after a complete epoch, preserves resumable state and never claims100 completion. Pilot and naive full100 contracts are refused before state restoration or updates, as is an already completed100 checkpoint. Invalid CLI options create no output. Input checkpoints, source files, fixture tensors and all frozen package files stay unchanged.",
+      "evidence": [
+        "training_integration_report.json: cases/tests"
+      ]
+    },
+    {
+      "area": "Actual check entry",
+      "status": "PASS",
+      "finding": "The real main/check and create_context/dependency/codeccheck/trainingcheck path completes with PASS, adapting only CUDA routing to CPU. No real dataset is loaded or downloaded.",
+      "evidence": [
+        "check_entry_validation_report.json"
+      ]
+    },
+    {
+      "area": "Notebook and presentation",
+      "status": "PASS",
+      "finding": "All ten cells and six figures execute on actual continuous100, early-stop and resumed runner products. Epoch100 and common E4-best are handled separately, and incomplete runs cannot claim epoch100. CSV round-trip parsing and scale64 audits remain. Template stays blank with SAVE_FIGURES=False; all input run files stay byte-identical and no model/checkpoint/training import occurs.",
+      "evidence": [
+        "notebook_validation_report.json",
+        "runner_notebook_integration.json"
+      ]
+    }
+  ],
+  "test_adaptations": {
+    "runtime": "Isolated Python3.12/torch2.10 CPU environment; Linux only",
+    "legacy_cuda_calls": "Test-only Tensor.cuda identity redirection on CPU tensors",
+    "check_entry": "Actual main/create_context retained; only runtime device overridden",
+    "run_context": "Test-only create_context supplies3 synthetic images/labels, batch2, no SVHN filesystem inputs",
+    "scheduler": "Unchanged production milestones50/75/90 in the full100 synthetic fixture",
+    "actual_loop_checkpoint_export_main": "Not replaced",
+    "definitive_integration_optimizer_updates": 210,
+    "integration_update_breakdown": {
+      "continuous100": 200,
+      "resume99_to100": 2,
+      "resume49_to50_stop": 2,
+      "resume74_to75_stop": 2,
+      "resume89_to90_stop": 2,
+      "early_stop": 2,
+      "reject_old_pilot": 0,
+      "reject_naive_reference100": 0,
+      "reject_completed100": 0
+    },
+    "earlier_test_harness_correction": "A first synthetic100 fixture completed with PASS; the harness then expected an old notebook filename. The test-only constant was corrected and the definitive entire integration rerun. No production file changed.",
+    "separate_check_synthetic_training_steps": "Small bounded selfchecks additional to integration update count"
+  },
+  "limitations": [
+    "No genuine SVHN full100 accuracy, CUDA training or GPU timing was measured here.",
+    "Windows PowerShell/CUDA still require the user local check; exact resume is demonstrated on CPU only.",
+    "Original cudnn.benchmark policy remains; no bitexact CUDA repeat/resume guarantee.",
+    "Numerical MX emulation uses FP32 convolutions; no native low-bit throughput claim.",
+    "Synthetic software tests do not predict full100 research accuracy or establish superiority."
+  ],
+  "evidence_report_sha256": {
+    "training_integration_report.json": "9b8ecb4aef3f0281fac5699d118c8e2843e071e5398266056a417ad8c29d92f0",
+    "check_entry_validation_report.json": "bed4d28529ce021c3007b6b2cd377aec30960dcae16b0351ae3e28d0987330b3",
+    "notebook_validation_report.json": "91d96fbff71d0013b9970d53650223820dc74bd62d5ad47340be83041b2f3103",
+    "runner_notebook_integration.json": "1de2273d453784ee3bbb1ec4ddfbff8eece50d0bcbca3b7e7dceb05c44b94b98"
+  },
+  "reused_pilot_core_report_sha256": "0c2db49d4c8d7a6d53a89c55689b0962fdd0fe7f7174d1e34870c67f291a2f8d",
+  "validation_test_file_sha256": {
+    "test_notebook.py": "359d91ed23731b9b03090333bc8e0400524ccb09c1418d2d91b9976e8cae3b25",
+    "test_runner_notebook.py": "328aec4c3129849141d85f0272e2a992ce677aa8f3216c065e94943724239e69",
+    "test_training_integration.py": "68c876ea762909bad2abf21c30dac250163dddb062482af6aa1bcd69435ca5ed"
+  },
+  "actual_runner_check_entry_status": "PASS",
+  "actual_runner_check_entry_directory": "/workspace/scratch/4619498905be/work/scale64_full100_checkentry_20261024_r2/output/20261024_150347_354617_joint_check",
+  "actual_runner_cases": {
+    "continuous100": {
+      "optimizer_updates_in_process": 200,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/continuous100/20261024_150348_065794_joint_run"
+    },
+    "resume99_to100": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/resume99_to100/20261024_150411_376018_joint_resume"
+    },
+    "resume49_to50_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/resume49_to50_stop/20261024_150412_457867_joint_resume"
+    },
+    "resume74_to75_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/resume74_to75_stop/20261024_150413_248694_joint_resume"
+    },
+    "resume89_to90_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/resume89_to90_stop/20261024_150414_233850_joint_resume"
+    },
+    "early_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/early_stop/20261024_150415_227797_joint_run"
+    },
+    "reject_old_pilot": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/reject_old_pilot/20261024_150415_972065_joint_resume"
+    },
+    "reject_naive_reference100": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/reject_naive_reference100/20261024_150416_044871_joint_resume"
+    },
+    "reject_completed100": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale64_full100_integration_20261024_r2/reject_completed100/20261024_150416_088812_joint_resume"
+    }
+  },
+  "notebook_run_file_preservation_counts": [
+    836,
+    45,
+    44
+  ]
+}
