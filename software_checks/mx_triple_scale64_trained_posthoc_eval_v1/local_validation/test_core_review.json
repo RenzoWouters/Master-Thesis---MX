@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "real_SVHN_or_CUDA_evaluated": false,
+  "A_B_C_numeric_function_AST_unchanged_from_previous": {
+    "shifted_scale_codes": true,
+    "transform_codes": true
+  },
+  "only_accepted_training_kind": [
+    "scale64"
+  ],
+  "accepted_source_schema": "mx-triple-scale64-training-source-v1",
+  "accepted_trained_derived_schema": "mx-triple-scale64-training-derived-v1",
+  "posthoc_derived_schema": "mx-triple-scale64-trained-posthoc-derived-v1",
+  "B_reconstruction_guards": [
+    "saved6/4_codes_exact_from_source8",
+    "saved6/4_scales_exact_source8_plus6",
+    "same_auxiliary_FP32_and_BN_state",
+    "same_frozen_state_digest",
+    "same_run_logits_allclose_rtol1e-4_atol1e-5"
+  ],
+  "historical_CUDA_bitexactness_not_assumed": true,
+  "core_runtime_report": "test_core_validation_report.json",
+  "negative_control_count": 46,
+  "model_comparison_count": 9,
+  "all_model_comparisons_exact_on_CPU": true,
+  "synthetic_paired_B_reproduction": {
+    "6": {
+      "logits_exact": true,
+      "logits_allclose": true,
+      "logit_rtol": 0.0001,
+      "logit_atol": 1e-05,
+      "predictions_equal": true,
+      "prediction_changes": 0,
+      "correct1_difference": 0,
+      "max_abs_logit_difference": 0.0,
+      "ce_exact": true,
+      "max_abs_ce_difference": 0.0
+    },
+    "4": {
+      "logits_exact": true,
+      "logits_allclose": true,
+      "logit_rtol": 0.0001,
+      "logit_atol": 1e-05,
+      "predictions_equal": true,
+      "prediction_changes": 0,
+      "correct1_difference": 0,
+      "max_abs_logit_difference": 0.0,
+      "ce_exact": true,
+      "max_abs_ce_difference": 0.0
+    }
+  },
+  "tested_file_sha256": {
+    "scale64.py": "394409338427b4650c1f0c0c249d90ecb224dc8c4dace633cf28f0de65cd3cb5",
+    "evaluation.py": "030df91d6a9da057cde8db003fb20fd1ef239437536a3e32b5306dfce744a5bb",
+    "test_scale64.py": "4e7674fac31605ccd7fa4da1a7bb4bfb647116bd883906524a6233b2d3d57d69"
+  },
+  "all_route_source_metadata_relative_to_E4_stored_lower_offset6": true,
+  "stored_lower_self_baseline_offset_zero": true
+}

@@ -1,0 +1,197 @@
+{
+  "schema": "mx-triple-scale64-prior-posthoc-reference-v1",
+  "source_bundle_name": "feedback_bundle(20261024-121818).zip",
+  "source_bundle_sha256": "fcced73f4869b723b8969df84129cfddb2339d11165ee786656712ad86487915",
+  "files_sha256": {
+    "metrics.csv": "e27ac9a5364bc57aaa457525e1db972a58942c85f45b32103920d5d344b3d724",
+    "paired_metrics.csv": "7810b0f07f4abc4f2c0b8e9ab0127056bd419d516c94094c03b1f2f8a4ea18bb",
+    "run_report.json": "c869360b0ba0242fc47e1937f82ed57e836740188068f2d4c85304ebc56ea541"
+  },
+  "synthetic_fixture_only": false,
+  "reference_training_metadata": {
+    "direct": {
+      "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+      "dataset_files": {
+        "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+        "files": {
+          "train_32x32.mat": {
+            "split": "train",
+            "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+            "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+            "bytes": 182040794
+          },
+          "test_32x32.mat": {
+            "split": "test",
+            "md5": "eb5a983be6a315427106f1b164d9cef3",
+            "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+            "bytes": 64275384
+          }
+        },
+        "download_events": []
+      },
+      "dataset_selection": {
+        "train": {
+          "n": 73257,
+          "labels_histogram": [
+            4948,
+            13861,
+            10585,
+            8497,
+            7458,
+            6882,
+            5727,
+            5595,
+            5045,
+            4659
+          ],
+          "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+        },
+        "test": {
+          "n": 26032,
+          "labels_histogram": [
+            1744,
+            5099,
+            4149,
+            2882,
+            2523,
+            2384,
+            1977,
+            2019,
+            1660,
+            1595
+          ],
+          "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+        },
+        "train_split_order": [
+          "train"
+        ],
+        "extra_used": false,
+        "held_out_validation_examples": 0
+      },
+      "transforms": {
+        "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+        "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+      },
+      "environment": {
+        "python": "3.13.14",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "torch": "2.10.0+cu128",
+        "torchvision": "0.25.0+cu128",
+        "numpy": "2.5.2",
+        "scipy": "1.17.0",
+        "pillow": "12.3.0",
+        "cuda_build": "12.8",
+        "cudnn": 91002,
+        "device": "cuda:0",
+        "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+      },
+      "execution_settings": {
+        "seed": 20261009,
+        "seed_source": "explicit local seed, not reported by authors",
+        "cudnn_benchmark": true,
+        "cudnn_deterministic": false,
+        "deterministic_algorithms": false,
+        "torch_num_threads": 16,
+        "matmul_fp32_precision": "none",
+        "cudnn_conv_fp32_precision": "tf32",
+        "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+        "AMP": false,
+        "torch_compile": false,
+        "CUBLAS_WORKSPACE_CONFIG": null,
+        "exact_cuda_resume_guaranteed": false
+      }
+    },
+    "truncation": {
+      "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+      "dataset_files": {
+        "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+        "files": {
+          "train_32x32.mat": {
+            "split": "train",
+            "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+            "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+            "bytes": 182040794
+          },
+          "test_32x32.mat": {
+            "split": "test",
+            "md5": "eb5a983be6a315427106f1b164d9cef3",
+            "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+            "bytes": 64275384
+          }
+        },
+        "download_events": []
+      },
+      "dataset_selection": {
+        "train": {
+          "n": 73257,
+          "labels_histogram": [
+            4948,
+            13861,
+            10585,
+            8497,
+            7458,
+            6882,
+            5727,
+            5595,
+            5045,
+            4659
+          ],
+          "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+        },
+        "test": {
+          "n": 26032,
+          "labels_histogram": [
+            1744,
+            5099,
+            4149,
+            2882,
+            2523,
+            2384,
+            1977,
+            2019,
+            1660,
+            1595
+          ],
+          "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+        },
+        "train_split_order": [
+          "train"
+        ],
+        "extra_used": false,
+        "held_out_validation_examples": 0
+      },
+      "transforms": {
+        "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+        "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+      },
+      "environment": {
+        "python": "3.13.14",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "torch": "2.10.0+cu128",
+        "torchvision": "0.25.0+cu128",
+        "numpy": "2.5.2",
+        "scipy": "1.17.0",
+        "pillow": "12.3.0",
+        "cuda_build": "12.8",
+        "cudnn": 91002,
+        "device": "cuda:0",
+        "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+      },
+      "execution_settings": {
+        "seed": 20261009,
+        "seed_source": "explicit local seed, not reported by authors",
+        "cudnn_benchmark": true,
+        "cudnn_deterministic": false,
+        "deterministic_algorithms": false,
+        "torch_num_threads": 16,
+        "matmul_fp32_precision": "none",
+        "cudnn_conv_fp32_precision": "tf32",
+        "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+        "AMP": false,
+        "torch_compile": false,
+        "CUBLAS_WORKSPACE_CONFIG": null,
+        "exact_cuda_resume_guaranteed": false
+      }
+    }
+  }
+}

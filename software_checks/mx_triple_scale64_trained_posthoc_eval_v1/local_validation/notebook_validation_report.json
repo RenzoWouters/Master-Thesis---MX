@@ -1,0 +1,398 @@
+{
+  "schema": "mx-triple-scale64-trained-notebook-validation-v1",
+  "status": "PASS",
+  "synthetic_checks_only": true,
+  "scope": "Generated reports and arrays; no SVHN data, model, PyTorch, training or real checkpoint accuracy.",
+  "helper_sha256": "aeead2211de408f7356ecb6801dc949bb95a7c7f5015558acdc3b8ffd0fe32bb",
+  "notebook_sha256": "3ce4cab0dfea13a722274165e6f9e4b417ff3bfa6e06a43c26ce7649de18f8d7",
+  "blank_notebook": true,
+  "code_cells_executed_in_memory": 11,
+  "figures": [
+    "accuracy_deltas",
+    "accuracy_scale64",
+    "paired_changes",
+    "prediction_diversity",
+    "training_comparison_E2M1",
+    "training_comparison_E2M3",
+    "weight_differences",
+    "weight_magnitudes"
+  ],
+  "groups": 2,
+  "metrics": 18,
+  "paired_metrics": 24,
+  "historical_reproduction": 6,
+  "layer_rows": 108,
+  "weight_pair_rows": 216,
+  "per_image_checks": 2,
+  "constant_class_outcome_preserved": true,
+  "non_argmax_tie_supported": true,
+  "two_current_checkpoints_and_three_historical_training_cohorts_preserved": true,
+  "raw_inputs_unchanged": true,
+  "failure_partial_check_only_and_missing_handled": true,
+  "historical_drift_reported_without_overwriting": true,
+  "model_imports_blocked": [
+    "evaluation",
+    "joint_adapter",
+    "joint_support",
+    "mx_adapter",
+    "mx_e2m1",
+    "mx_e4m3",
+    "mx_format",
+    "posthoc_truncation",
+    "resume_core",
+    "run_eval",
+    "scale64",
+    "svhn_support",
+    "torch",
+    "torchvision",
+    "trunc_adapter",
+    "trunc_support"
+  ],
+  "executed_notebook_saved": false,
+  "figure_save_png_count": 8,
+  "figure_save_pdf_count": 8,
+  "preview_directory": "/workspace/scratch/4619498905be/work/b_posthoc_notebook_validation_v2/synthetic_complete/analysis_20261024_153129_308536",
+  "expected_negative_rejections": {
+    "missing_route": {
+      "expected_rejection": true,
+      "messages": [
+        "Verwacht 18 unieke routes: één schaal×64-training × twee checkpoints × negen routes."
+      ]
+    },
+    "mixed_epoch": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch: gemengde checkpoint- of testsetidentiteit.",
+        "scale64: vast eindpunt is niet epoch 100."
+      ]
+    },
+    "mixed_training_population": {
+      "expected_rejection": true,
+      "messages": [
+        "Verwacht 18 unieke routes: één schaal×64-training × twee checkpoints × negen routes."
+      ]
+    },
+    "wrong_target_BN": {
+      "expected_rejection": true,
+      "messages": [
+        "B6: verkeerde doelprecisie of BN-bank.",
+        "Rapport en CSV bevatten verschillende metrieken."
+      ]
+    },
+    "incorrect_top1_count": {
+      "expected_rejection": true,
+      "messages": [
+        "top1_percent: percentage strookt niet met correcte aantallen.",
+        "Rapport en CSV bevatten verschillende metrieken.",
+        "Historische herhalingscontrole is intern inconsistent.",
+        "scale64/last_epoch: source8: incorrecte aantallen."
+      ]
+    },
+    "wrong_B_scale_offset": {
+      "expected_rejection": true,
+      "messages": [
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S."
+      ]
+    },
+    "wrong_B_scale_equality": {
+      "expected_rejection": true,
+      "messages": [
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S.",
+        "B6: schaalbeleid is niet bron/A=S en getrainde lagere modi/B/C=64S."
+      ]
+    },
+    "wrong_B_weight_ratio": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch/layers.3: B is numeriek niet precies 64×A.",
+        "scale64/last_epoch/layers.6: B is numeriek niet precies 64×A.",
+        "scale64/last_epoch/layers.10: B is numeriek niet precies 64×A.",
+        "scale64/last_epoch/layers.13: B is numeriek niet precies 64×A.",
+        "scale64/last_epoch/layers.16: B is numeriek niet precies 64×A.",
+        "scale64/last_epoch/layers.20: B is numeriek niet precies 64×A.",
+        "scale64/best_E4M3_test/layers.3: B is numeriek niet precies 64×A.",
+        "scale64/best_E4M3_test/layers.6: B is numeriek niet precies 64×A.",
+        "scale64/best_E4M3_test/layers.10: B is numeriek niet precies 64×A.",
+        "scale64/best_E4M3_test/layers.13: B is numeriek niet precies 64×A.",
+        "scale64/best_E4M3_test/layers.16: B is numeriek niet precies 64×A.",
+        "scale64/best_E4M3_test/layers.20: B is numeriek niet precies 64×A."
+      ]
+    },
+    "wrong_block_scale_counts": {
+      "expected_rejection": true,
+      "messages": [
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets.",
+        "C6: onjuiste getelde schaaloffsets."
+      ]
+    },
+    "missing_weight_pair": {
+      "expected_rejection": true,
+      "messages": [
+        "Verwacht 216 gewichtsvergelijkingen: achttien paren × zes lagen × twee groepen."
+      ]
+    },
+    "cross_format_codes_falsely_compared": {
+      "expected_rejection": true,
+      "messages": [
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld.",
+        "Cross-formaatcodebytes zijn ten onrechte als vergelijkbaar geteld."
+      ]
+    },
+    "pair_counts_not_matching_predictions": {
+      "expected_rejection": true,
+      "messages": [
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "Gepaarde categorieën dekken de testset niet.",
+        "scale64/last_epoch: Gepaarde tellingen wijken af van voorspellingen.",
+        "scale64/best_E4M3_test: Gepaarde tellingen wijken af van voorspellingen."
+      ]
+    },
+    "bad_historical_delta": {
+      "expected_rejection": true,
+      "messages": [
+        "Historische herhalingscontrole is intern inconsistent.",
+        "Historische herhalingscontrole is intern inconsistent.",
+        "Historische herhalingscontrole is intern inconsistent.",
+        "Historische herhalingscontrole is intern inconsistent.",
+        "Historische herhalingscontrole is intern inconsistent.",
+        "Historische herhalingscontrole is intern inconsistent."
+      ]
+    },
+    "NPZ_checksum_mismatch": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch: Per-beeldchecksum wijkt af."
+      ]
+    },
+    "unsafe_relative_NPZ_path": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch: Bestandspad verlaat de resultaatmap."
+      ]
+    },
+    "changed_original_checkpoint": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/best_E4M3_test: oorspronkelijke checkpointselectie gewijzigd."
+      ]
+    },
+    "missing_provenance": {
+      "expected_rejection": true,
+      "messages": [
+        "Herkomst ontbreekt; geen echte SVHN-proef bevestigen.",
+        "De echte evaluatie moet alle 26.032 testbeelden bevatten."
+      ]
+    },
+    "unknown_schema": {
+      "expected_rejection": true,
+      "messages": [
+        "Dit rapport hoort niet bij de vastgelegde schaal×64-proef."
+      ]
+    },
+    "FP32_master_access": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64: broncontrole of afwezigheid van mastertoegang ontbreekt."
+      ]
+    },
+    "BN_recalibrated": {
+      "expected_rejection": true,
+      "messages": [
+        "Afwijkend of ontbrekend protocolveld: batchnorm_recalibration."
+      ]
+    },
+    "learned_scale": {
+      "expected_rejection": true,
+      "messages": [
+        "Afwijkend of ontbrekend protocolveld: learned_shared_scale."
+      ]
+    },
+    "report_metrics_disagree": {
+      "expected_rejection": true,
+      "messages": [
+        "Rapport en CSV bevatten verschillende metrieken."
+      ]
+    },
+    "B_code_identity_unconfirmed": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch: B-herconstructie niet bevestigd: trained_lower_codes_exact_B_routes."
+      ]
+    },
+    "B_reproduction_report_wrong": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch: B-herhalingscontrole strookt niet met per-beeldarrays: prediction_changes"
+      ]
+    },
+    "real_run_wrong_test_count": {
+      "expected_rejection": true,
+      "messages": [
+        "De echte evaluatie moet alle 26.032 testbeelden bevatten."
+      ]
+    },
+    "NPZ_internal_prediction_inconsistent": {
+      "expected_rejection": true,
+      "messages": [
+        "scale64/last_epoch: source8: voorspelling is geen logitmaximum."
+      ]
+    },
+    "prior_metrics_changed": {
+      "expected_rejection": true,
+      "messages": [
+        "Eerdere A/B/C-resultaten niet bevestigd: Historische checksum wijkt af: metrics.csv"
+      ]
+    },
+    "prior_reference_wrong_schema": {
+      "expected_rejection": true,
+      "messages": [
+        "Eerdere A/B/C-resultaten niet bevestigd: Onbekende of synthetische historische referentie."
+      ]
+    }
+  },
+  "negative_case_count": 28,
+  "visual_qa": "PASS",
+  "prior_summary_sha256_validated": true,
+  "no_prior_NPZ_rerun_or_model_execution": true,
+  "visual_qa_notes": "All eight layouts inspected after initial build; metadata-only update retains identical plot layouts. Current figures continue to label synthetic values and distinguish the two checkpoint roles and historical cohorts.",
+  "all_source_references_E4M3": true,
+  "final_runner_api_contract_check": {
+    "status": "PASS",
+    "synthetic_fixture_only": true,
+    "scope": "Read-only notebook API on final real CLI control-flow fixture, using 3 synthetic images and the actual upstream model; no SVHN training or accuracy measurement.",
+    "fixture": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/evaluate/20261024_163216_906688_evaluate",
+    "helper_sha256": "aeead2211de408f7356ecb6801dc949bb95a7c7f5015558acdc3b8ffd0fe32bb",
+    "metrics": 18,
+    "per_image_groups": 2,
+    "prior_metrics": 36,
+    "combined_descriptive_rows": 54,
+    "same_run_B_reproduction_checked_against_NPZ": true,
+    "all_source_offsets_E4_relative": true,
+    "model_imports_blocked": true,
+    "raw_files_unchanged": 69,
+    "diagnostics": []
+  }
+}

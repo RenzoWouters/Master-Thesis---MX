@@ -1,0 +1,54 @@
+{
+  "schema": "mx-triple-scale64-trained-posthoc-reuse-v1",
+  "training_package": "mx_triple_scale64_reference100_v1",
+  "files": {
+    "mx_format.py": {
+      "sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "matches_training_package": true
+    },
+    "mx_e2m1.py": {
+      "sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "matches_training_package": true
+    },
+    "mx_e4m3.py": {
+      "sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "matches_training_package": true
+    },
+    "mx_adapter.py": {
+      "sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "matches_training_package": true
+    },
+    "joint_adapter.py": {
+      "sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "matches_training_package": true
+    },
+    "joint_support.py": {
+      "sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "matches_training_package": true
+    },
+    "svhn_support.py": {
+      "sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "matches_training_package": true
+    },
+    "smoke_support.py": {
+      "sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "matches_training_package": true
+    },
+    "resume_core.py": {
+      "sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "matches_training_package": true
+    },
+    "trunc_adapter.py": {
+      "sha256": "3fe6f0b07c4cc9dd02a8da4b228f27e054ff4db0d76c3548dc6cb885b7122b6c",
+      "matches_training_package": true
+    },
+    "trunc_support.py": {
+      "sha256": "02272898901ea11e13f5a2a44f252a4d1121a077c09f8ddb590d4a3e435ab735",
+      "matches_training_package": true
+    },
+    "posthoc_truncation.py": {
+      "sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "matches_training_package": true
+    }
+  }
+}

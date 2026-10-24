@@ -1,0 +1,196 @@
+{
+  "schema": "mx-triple-scale64-trained-posthoc-runner-validation-v1",
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "production_CUDA_or_SVHN_tested": false,
+  "scope": "Real check/evaluate main; two random B-trained export fixtures; three images in batches2+1",
+  "no_real_checkpoint_or_SVHN_loaded": true,
+  "no_training_or_BN_recalibration": true,
+  "production_bypass_added": false,
+  "production_pin_matches_actual_feedback_metadata": true,
+  "fixture_only_adaptations": [
+    "Isolated CPU runtime; Tensor.cuda initialization alias only inside harness.",
+    "Private pin/package mirror for strict-inspector positive fixtures; original pin rejects fixture.",
+    "Dataset, dependency commands and already separately tested inspector substituted for three-image CLI run.",
+    "Historical attachment tested with original metadata; fixture wrapper supplies that metadata to real attachment function.",
+    "At-rest and derived payloads remain synthetic=True; transient read/assemble provenance substitution only inside harness.",
+    "Training mode, optimizer, backward, G(W), tensor quantizers and unrelated element quantizers forbidden during evaluate.",
+    "No production source modified; reports explicitly synthetic on PASS and expected FAIL."
+  ],
+  "runtime_environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "cases": {
+    "check": {
+      "status": "PASS",
+      "expected_status": "PASS",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/check/20261024_163214_856143_check",
+      "error": null
+    },
+    "evaluate": {
+      "status": "PASS",
+      "expected_status": "PASS",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/evaluate/20261024_163216_906688_evaluate",
+      "error": null
+    },
+    "reject_checkpoint_provenance": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/reject_checkpoint_provenance/20261024_163218_373714_evaluate",
+      "error": "RuntimeError('Bronexport heeft afwijkende checkpointprovenance.')"
+    },
+    "reject_hidden_master": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/reject_hidden_master/20261024_163218_436628_evaluate",
+      "error": "ValueError('Verborgen MX-master in export.')"
+    },
+    "reject_B_source_hash": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/reject_B_source_hash/20261024_163218_501025_evaluate",
+      "error": "ValueError('Afgeleide trainingsmodus verwijst naar andere E4-bronhash.')"
+    },
+    "reject_B_lower_codes": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/reject_B_lower_codes/20261024_163218_571637_evaluate",
+      "error": "ValueError('Opgeslagen getrainde modus is geen exacte B-afleiding van haar E4-bron.')"
+    },
+    "reject_B_lower_scale": {
+      "status": "FAIL",
+      "expected_status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/reject_B_lower_scale/20261024_163218_646292_evaluate",
+      "error": "ValueError('Opgeslagen getrainde modus is geen exacte B-afleiding van haar E4-bron.')"
+    }
+  },
+  "reference_guard_tests": {
+    "production_pin_rejects_private_exports": "Dit pakket verwacht de afgesproken scale64-run met E4M3-best42 en epoch100; bronrapport of exports verschillen.",
+    "strict_inspector_accepts_private_pinned_export_fixture": true,
+    "report_identity_changed_without_repin": "Dit pakket verwacht de afgesproken scale64-run met E4M3-best42 en epoch100; bronrapport of exports verschillen.",
+    "wrong_training_schema": "Verkeerde of onvoltooide brontraining: scale64",
+    "unfinished_reference": "Verwacht een echte volledige honderd-epochtraining met drie MX-modi.",
+    "synthetic_reference": "Verwacht een echte volledige honderd-epochtraining met drie MX-modi.",
+    "A16_protocol": "Bronprotocol wijkt af: /activation_bits",
+    "unsafe_export_path": "Onveilig bestandsveld in referentierapport.",
+    "wrong_lower_source_hash": "Opgeslagen scale64-export is niet via de verwachte B-route uit de opgeslagen E4-bron afgeleid.",
+    "wrong_scale_offset": "Opgeslagen scale64-export is niet via de verwachte B-route uit de opgeslagen E4-bron afgeleid.",
+    "resigned_wrong_best": "Vaste E4M3-best/epoch100-selectie wijkt af.",
+    "resigned_wrong_last": "Vaste E4M3-best/epoch100-selectie wijkt af.",
+    "invalid_history_correct1": "Onjuiste referentiemodus of dekking.",
+    "invalid_history_lr": "Onjuiste referentiescore of LR.",
+    "prior_mismatch_initial_model_sha256": "Historische en nieuwe training verschillen bij direct/initial_model_sha256",
+    "prior_mismatch_transforms": "Historische en nieuwe training verschillen bij direct/transforms"
+  },
+  "CLI_guards": [
+    {
+      "arguments": [
+        "run"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--download"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "evaluate"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--scale64-run",
+        "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/SYNTHETIC_evaluation_reference"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "evaluate",
+        "--direct-run",
+        "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/SYNTHETIC_evaluation_reference"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "evaluate",
+        "--scale64-run",
+        "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/SYNTHETIC_evaluation_reference",
+        "--output-root",
+        "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/SYNTHETIC_evaluation_reference/inside"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--synthetic"
+      ],
+      "exit_code": 2
+    },
+    {
+      "arguments": [
+        "check",
+        "--epochs",
+        "5"
+      ],
+      "exit_code": 2
+    }
+  ],
+  "metric_rows": 18,
+  "paired_rows": 24,
+  "weight_rows": 216,
+  "code_rows": 108,
+  "reproduction_rows": 6,
+  "per_image_files": 2,
+  "B_logits_exactly_equal_stored_mode": true,
+  "all_source_feedback_dataset_and_package_files_unchanged": true,
+  "notebook_blank_only": true,
+  "feedback_sha256": "811b18d3878d7699a01fb7e9a449e9591bcbe07d56aee56bb76bd36a32d47887",
+  "test_harness_sha256": "e8b84eafb9bd44246d9efc92c18cc7e384691dfa123940ea95888ae85dd1ffe0",
+  "successful_evaluation_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/evaluate/20261024_163216_906688_evaluate",
+  "check_directory": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/check/20261024_163214_856143_check",
+  "seconds": 6.07460279299994,
+  "tested_file_sha256": {
+    "run_eval.py": "b8ad170f80c06f0daa8b4a22feb9f22e912cd01d7ffb33a78b65391650c6fb4c",
+    "evaluation.py": "030df91d6a9da057cde8db003fb20fd1ef239437536a3e32b5306dfce744a5bb",
+    "scale64.py": "394409338427b4650c1f0c0c249d90ecb224dc8c4dace633cf28f0de65cd3cb5",
+    "test_scale64.py": "4e7674fac31605ccd7fa4da1a7bb4bfb647116bd883906524a6233b2d3d57d69",
+    "trunc_adapter.py": "3fe6f0b07c4cc9dd02a8da4b228f27e054ff4db0d76c3548dc6cb885b7122b6c",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "notebook_support.py": "aeead2211de408f7356ecb6801dc949bb95a7c7f5015558acdc3b8ffd0fe32bb",
+    "MX_triple_scale64_trained_posthoc_resultaten.ipynb": "3ce4cab0dfea13a722274165e6f9e4b417ff3bfa6e06a43c26ce7649de18f8d7",
+    "local_validation/test_runner_integration.py": "e8b84eafb9bd44246d9efc92c18cc7e384691dfa123940ea95888ae85dd1ffe0"
+  },
+  "live_package_differences_after_test": [],
+  "final_runtime_code_validation": true
+}

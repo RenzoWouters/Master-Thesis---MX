@@ -1,0 +1,38 @@
+{
+  "schema": "mx-triple-scale64-trained-posthoc-assembly-v1",
+  "status": "PASS",
+  "current_training_accuracy_measurements_performed": false,
+  "SVHN_training_or_evaluation_performed": false,
+  "validation_scope": "CPU synthetic CNN8, archived metadata and read-only notebook fixtures",
+  "core_runner_and_notebook_reports_PASS": true,
+  "all_tested_runtime_hashes_match_delivered_files": true,
+  "notebook_code_cells": 11,
+  "blank_notebook_only": true,
+  "notebook_final_runner_API_check": {
+    "status": "PASS",
+    "synthetic_fixture_only": true,
+    "scope": "Read-only notebook API on final real CLI control-flow fixture, using 3 synthetic images and the actual upstream model; no SVHN training or accuracy measurement.",
+    "fixture": "/workspace/scratch/4619498905be/work/b_posthoc_runner_integration_20261024_final/evaluate/20261024_163216_906688_evaluate",
+    "helper_sha256": "aeead2211de408f7356ecb6801dc949bb95a7c7f5015558acdc3b8ffd0fe32bb",
+    "metrics": 18,
+    "per_image_groups": 2,
+    "prior_metrics": 36,
+    "combined_descriptive_rows": 54,
+    "same_run_B_reproduction_checked_against_NPZ": true,
+    "all_source_offsets_E4_relative": true,
+    "model_imports_blocked": true,
+    "raw_files_unchanged": 69,
+    "diagnostics": []
+  },
+  "original_posthoc_package_verified_unchanged_files": 48,
+  "original_training_zip_sha256": "0cb0472de825aa8b4087488ef82ce87a90ed24f89ce8e58f9e1ec3c3f8076a76",
+  "prior_evaluation_bundle_sha256": "fcced73f4869b723b8969df84129cfddb2339d11165ee786656712ad86487915",
+  "prior_metric_files_verified_exact": true,
+  "new_runtime_modules_syntax_verified": true,
+  "new_output_schema": "mx-triple-scale64-trained-posthoc-report-v1",
+  "requested_current_epochs": [
+    42,
+    100
+  ],
+  "numerical_A_B_C_functions_unchanged": true
+}

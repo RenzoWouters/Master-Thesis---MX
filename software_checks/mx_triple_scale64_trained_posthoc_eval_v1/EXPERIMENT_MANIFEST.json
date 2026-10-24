@@ -1,0 +1,51 @@
+{
+  "schema": "mx-triple-scale64-trained-posthoc-experiment-v1",
+  "training_kinds": [
+    "scale64"
+  ],
+  "current_evaluation_roles": {
+    "best_E4M3_test": 42,
+    "last_epoch": 100
+  },
+  "activation_bits": 32,
+  "optimizer_steps": 0,
+  "BN_recalibration": false,
+  "new_training": false,
+  "FP32_master_checkpoint_opened": false,
+  "source": "saved E4M3 export codes and auxiliary state",
+  "routes": [
+    "source8",
+    "trained6",
+    "trained4",
+    "A6",
+    "A4",
+    "B6",
+    "B4",
+    "C6",
+    "C4"
+  ],
+  "A": {
+    "element": "exponent_MSB2",
+    "scale_factor": 1
+  },
+  "B": {
+    "element": "exponent_MSB2",
+    "scale_factor": 64
+  },
+  "C": {
+    "element": "nearest_ties_even_E2M3(local_E4/64)",
+    "scale_factor": 64
+  },
+  "E2M1": "corresponding E2M3 code >>2; preserve its scale",
+  "historical_training_kinds": [
+    "direct",
+    "truncation"
+  ],
+  "historical_metrics_reused_without_reevaluation": true,
+  "new_checkpoint_groups": 2,
+  "new_metric_rows": 18,
+  "new_paired_rows": 24,
+  "new_weight_pair_rows": 216,
+  "new_layer_code_rows": 108,
+  "no_new_accuracy_results_in_package": true
+}

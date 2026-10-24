@@ -1,0 +1,46 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_scale64_trained_posthoc_eval\20261024_173906_290709_evaluate
+POST-HOC A/B/C: scale64-training, E4M3-best42 en epoch100; A32; bevroren BN; geen training.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+DATA PASS: uitsluitend test=26032; 204 batches; train en extra niet ingelezen.
+EVALUATIE: scale64/best_E4M3_test, epoch 42; bronmodi en A/B/C; opgeslagen doel-BN bevroren.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+best_E4M3_test: batch 1/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 50/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 100/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 150/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 200/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 204/204; negen paden; uitsluitend evaluatie.
+  source8: 95.0868%; correct=24753/26032; CE=0.193875
+  trained6: 93.8422%; correct=24429/26032; CE=0.221278
+  trained4: 93.9267%; correct=24451/26032; CE=0.221426
+  A6: 11.0710%; correct=2882/26032; CE=2.280183
+  A4: 11.0710%; correct=2882/26032; CE=2.280322
+  B6: 93.8422%; correct=24429/26032; CE=0.221278
+  B4: 93.9267%; correct=24451/26032; CE=0.221426
+  C6: 55.4663%; correct=14439/26032; CE=1.668160
+  C4: 56.2346%; correct=14639/26032; CE=1.712409
+WAARSCHUWING: scale64/best_E4M3_test/trained4: +1 correcte voorspellingen tegenover het trainingsrapport. Gebruik de hier opnieuw gemeten bronmodus; de oorspronkelijke CUDA-backend is niet bitexact.
+EVALUATIE: scale64/last_epoch, epoch 100; bronmodi en A/B/C; opgeslagen doel-BN bevroren.
+last_epoch: batch 1/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 50/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 100/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 150/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 200/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 204/204; negen paden; uitsluitend evaluatie.
+  source8: 94.9255%; correct=24711/26032; CE=0.209864
+  trained6: 94.8947%; correct=24703/26032; CE=0.189966
+  trained4: 94.7872%; correct=24675/26032; CE=0.193794
+  A6: 11.0710%; correct=2882/26032; CE=2.276989
+  A4: 11.0710%; correct=2882/26032; CE=2.277239
+  B6: 94.8947%; correct=24703/26032; CE=0.189966
+  B4: 94.7872%; correct=24675/26032; CE=0.193794
+  C6: 71.5504%; correct=18626/26032; CE=1.214685
+  C4: 72.0728%; correct=18762/26032; CE=1.333761
+WAARSCHUWING: scale64/last_epoch/source8: -1 correcte voorspellingen tegenover het trainingsrapport. Gebruik de hier opnieuw gemeten bronmodus; de oorspronkelijke CUDA-backend is niet bitexact.
+WAARSCHUWING: scale64/last_epoch/trained6: -1 correcte voorspellingen tegenover het trainingsrapport. Gebruik de hier opnieuw gemeten bronmodus; de oorspronkelijke CUDA-backend is niet bitexact.
+WAARSCHUWING: scale64/last_epoch/trained4: -1 correcte voorspellingen tegenover het trainingsrapport. Gebruik de hier opnieuw gemeten bronmodus; de oorspronkelijke CUDA-backend is niet bitexact.
+EVALUATIE VOLTOOID: scale64-training, E4M3-best42 en epoch100, A/B/C en opgeslagen modi; geen updates.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_scale64_trained_posthoc_eval\20261024_173906_290709_evaluate\run_report.json
