@@ -1,0 +1,86 @@
+{
+  "schema": "mx-triple-scale64-runner-notebook-integration-v1",
+  "status": "PASS",
+  "synthetic_checks_only": true,
+  "scope": "Actual final runner JSON/CSV/NPZ outputs from test-only CPU fixture adaptations; no real SVHN or trained-checkpoint accuracies.",
+  "source_evaluation_directory": "/workspace/scratch/4619498905be/work/scale64_integration_20261024_r2/evaluate/20261024_140236_981435_evaluate",
+  "source_report_sha256": "f778178c2db5b33e46f1e87ed12381dba309f7b35d1dcd254f70f3f510079003",
+  "source_report_status": "PASS",
+  "source_report_synthetic_fixture_only": true,
+  "runner_sha256": "2ad2aa85c4bde4dac477aecc9e5aef7d77ad5c3f8015f93553a6a6968e9628c1",
+  "helper_sha256": "7c303f8b894bb4dac732d40875d5ab3bee5e838ccbf6668d05697aa90dd297f2",
+  "notebook_sha256": "57dd3809d765e60439b375b0883ed8167f445ccdfe4935b523d3d75aea9c5948",
+  "copied_helper_matches_frozen_package": true,
+  "copied_notebook_matches_except_run_parameters": true,
+  "personalized_parameters": [
+    {
+      "cell": 2,
+      "source": "from pathlib import Path\nRUN_DIR = Path('/workspace/scratch/4619498905be/work/scale64_integration_20261024_r2/evaluate/20261024_140236_981435_evaluate')\nSAVE_FIGURES = False  # Zet op True om PNG/PDF in een nieuwe analysemap te bewaren.\n"
+    }
+  ],
+  "copied_notebook_SAVE_FIGURES_default": false,
+  "SAVE_FIGURES_for_this_read_only_test": false,
+  "blank_notebook": true,
+  "code_cells_executed_in_memory": 10,
+  "figures": [
+    "accuracy_deltas",
+    "accuracy_direct",
+    "accuracy_truncation",
+    "paired_changes",
+    "prediction_diversity",
+    "weight_differences",
+    "weight_magnitudes"
+  ],
+  "metrics": 36,
+  "paired_metrics": 48,
+  "historical_reproduction": 12,
+  "weight_pair_metrics": 432,
+  "layer_code_metrics": 216,
+  "groups": 4,
+  "test_images_per_group": 3,
+  "per_image_checks": [
+    {
+      "Training": "Direct getraind",
+      "Rol": "last_epoch",
+      "Epoch": 100,
+      "Testbeelden": 3,
+      "Checksum": "PASS",
+      "Negen routes": "PASS",
+      "Gepaarde tellingen": "PASS"
+    },
+    {
+      "Training": "Direct getraind",
+      "Rol": "best_E4M3_test",
+      "Epoch": 54,
+      "Testbeelden": 3,
+      "Checksum": "PASS",
+      "Negen routes": "PASS",
+      "Gepaarde tellingen": "PASS"
+    },
+    {
+      "Training": "Met naïeve truncatie getraind",
+      "Rol": "last_epoch",
+      "Epoch": 100,
+      "Testbeelden": 3,
+      "Checksum": "PASS",
+      "Negen routes": "PASS",
+      "Gepaarde tellingen": "PASS"
+    },
+    {
+      "Training": "Met naïeve truncatie getraind",
+      "Rol": "best_E4M3_test",
+      "Epoch": 54,
+      "Testbeelden": 3,
+      "Checksum": "PASS",
+      "Negen routes": "PASS",
+      "Gepaarde tellingen": "PASS"
+    }
+  ],
+  "prediction_diagnostic_rows": 36,
+  "issues": [],
+  "raw_inputs_unchanged": true,
+  "all_run_files_hashed_before_and_after": 96,
+  "figures_saved": false,
+  "executed_notebook_saved": false,
+  "model_or_training_imports": false
+}

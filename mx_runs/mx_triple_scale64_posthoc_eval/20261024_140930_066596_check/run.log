@@ -1,0 +1,8 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_scale64_posthoc_eval\20261024_140930_066596_check
+POST-HOC A/B/C: beide trainingen, E4M3-best en epoch100; A32; bevroren BN; schaal1 of64; geen training.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Schaal64-zelftest PASS: twee bronschemas; A/B/C; exacte schaaloffset; bevroren reconstructie.
+CHECK PASS: bitbewerkingen, vaste schaaloffset, afrondingscontrole, beide bronformaten en bevroren modellen.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_scale64_posthoc_eval\20261024_140930_066596_check\run_report.json

@@ -1,0 +1,170 @@
+{
+  "synthetic_fixture_only": true,
+  "SVHN_used": false,
+  "optimizer_steps": 0,
+  "batchnorm_recalibration": false,
+  "device": "cuda:0",
+  "all_254_finite_codes_independent_bitstrings_and_fraction_RNE_oracle": true,
+  "A_B_same_codes_B_exact64_numeric_scaling_and_C_mantissa_after_RNE": true,
+  "signed_zero_padding_packed_roundtrip_and_source_nonmutation": true,
+  "reachable_E4_div64_RNE_ties_checked": 16,
+  "shared_example_32_64_128_240_256_and_nonuniform_information_loss": true,
+  "all255_A_scale_codes_and_all249_exact_shiftable_BC_scales_checked": true,
+  "scale_overflow_NaN_type_padding_and_path_guards": true,
+  "multirow_convolution_padding_and_zero_blocks": true,
+  "source_sets": {
+    "direct": {
+      "same_checkpoint_provenance": true,
+      "same_auxiliary_state": true,
+      "all_E2_source_scales_equal": true,
+      "E4_scale_equality_not_required": true,
+      "blocks": 4080,
+      "E4_minus_E2_scale_exponent_counts": {
+        "-6": 4080
+      },
+      "training_kind": "direct",
+      "source_hashes_checked": true,
+      "E4_minus_trained_E2_scale_exponent_counts": {
+        "-6": 4080
+      },
+      "trained_lower_codes_exact_A_routes": false
+    },
+    "truncation": {
+      "same_checkpoint_provenance": true,
+      "same_auxiliary_state": true,
+      "training_kind": "truncation",
+      "blocks": 4080,
+      "source_hashes_checked": true,
+      "E4_minus_trained_E2_scale_exponent_counts": {
+        "0": 4080
+      },
+      "trained_lower_codes_exact_A_routes": true
+    }
+  },
+  "model_comparisons": [
+    {
+      "case": "direct_live_vs_saved8",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct_live_vs_saved6",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct_live_vs_saved4",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/A6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/A4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/B6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/B4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/C6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/C4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/A6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/A4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/B6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/B4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/C6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/C4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    }
+  ],
+  "both_training_schemas_save_reload_source_only_independent_model_checks": true,
+  "BN_banks_frozen_and_unchanged_all_paths_A32_no_masters_or_training": true,
+  "A_B_no_element_encoder_C_only_E2_element_encoder_no_tensor_scale_reselection": true,
+  "all_reconstructions_and_inference_no_encoder_no_G_no_optimizer_no_backward": true,
+  "negative_controls": [
+    "scale249_B6_reject_no_clamp",
+    "scale249_B4_reject_no_clamp",
+    "scale249_C6_reject_no_clamp",
+    "scale249_C4_reject_no_clamp",
+    "scale250_B6_reject_no_clamp",
+    "scale250_B4_reject_no_clamp",
+    "scale250_C6_reject_no_clamp",
+    "scale250_C4_reject_no_clamp",
+    "scale251_B6_reject_no_clamp",
+    "scale251_B4_reject_no_clamp",
+    "scale251_C6_reject_no_clamp",
+    "scale251_C4_reject_no_clamp",
+    "scale252_B6_reject_no_clamp",
+    "scale252_B4_reject_no_clamp",
+    "scale252_C6_reject_no_clamp",
+    "scale252_C4_reject_no_clamp",
+    "scale253_B6_reject_no_clamp",
+    "scale253_B4_reject_no_clamp",
+    "scale253_C6_reject_no_clamp",
+    "scale253_C4_reject_no_clamp",
+    "scale254_B6_reject_no_clamp",
+    "scale254_B4_reject_no_clamp",
+    "scale254_C6_reject_no_clamp",
+    "scale254_C4_reject_no_clamp",
+    "E4NaN127",
+    "E4NaN255",
+    "scaleNaN",
+    "nonzero_padding",
+    "wrong_dtype",
+    "wrong_source_format",
+    "unknown_path",
+    "direct_as_truncation",
+    "truncation_as_direct",
+    "wrong_source_hash",
+    "mutated_trained_derived_codes",
+    "different_auxiliary_state",
+    "mutated_scale_policy",
+    "wrong_target_BN",
+    "hidden_MX_master",
+    "hidden_provenance_tensor",
+    "finite_E8_scale_but_FP32_overflow_rejected"
+  ],
+  "status": "PASS",
+  "RNG_and_thread_count_restored": true
+}

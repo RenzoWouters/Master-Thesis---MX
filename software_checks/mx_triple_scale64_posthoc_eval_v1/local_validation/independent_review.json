@@ -1,0 +1,156 @@
+{
+  "schema": "mx-triple-scale64-independent-review-v1",
+  "status": "PASS",
+  "reviewer_role": "Independent integration/review agent; production files authored by other agents",
+  "scope": "Read-only review of production runner, source-only transforms, frozen model reconstruction, protocols, and independent execution of real CLI main with bounded synthetic CPU fixtures",
+  "reviewed_file_sha256": {
+    "run_eval.py": "2ad2aa85c4bde4dac477aecc9e5aef7d77ad5c3f8015f93553a6a6968e9628c1",
+    "scale64.py": "b3199677d527256ef06bf51d8058261c73d9211f94a06a58d84af1a932cea179",
+    "evaluation.py": "b1716ed8ec2f8d4f9c243f41da8276aa43ea999163bab41aba20ba4a564deae8",
+    "test_scale64.py": "d78e4d6ee4f8cb9a60d25c0b33b3779fb042a8f7f111dbc3eee070391a380916",
+    "notebook_support.py": "7c303f8b894bb4dac732d40875d5ab3bee5e838ccbf6668d05697aa90dd297f2",
+    "MX_triple_scale64_posthoc_resultaten.ipynb": "57dd3809d765e60439b375b0883ed8167f445ccdfe4935b523d3d75aea9c5948",
+    "README.md": "073bddcde0f6e2c0ad1211623a85a42726a864543780c8345c2dcb592fde61d6",
+    "PROTOCOL.md": "829ef5b8c1ad6f857d3f0b19a70b6eeeeeb0d4489b4c37a5e37b447402a4529c",
+    "CODEWIJZIGINGEN.md": "0a0a7fa4ae3c16e9b207cea0cb1cd1acb55b64cb4a0d826d96d1bad2544ff326",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "trunc_adapter.py": "2d49ef58e2a170f75ff1f9760c9b972b08dd3eb75ecacc0c4495b30b97dcd1dc",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b"
+  },
+  "blocking_findings": [],
+  "findings": [
+    {
+      "topic": "Authorized experiment only",
+      "conclusion": "PASS",
+      "evidence": [
+        "run_eval.py: argparse permits check/evaluate and CUDA only, requires two distinct source run directories and rejects output under either input",
+        "README.md and PROTOCOL.md explicitly preserve A32 and existing masters, use stored E4-best and epoch100, and exclude training, learned scales and BN recalibration",
+        "Integration: ten inappropriate CLI forms are rejected with exit code2"
+      ]
+    },
+    {
+      "topic": "Exact A/B/C bit and scale policies",
+      "conclusion": "PASS",
+      "evidence": [
+        "scale64.transform_codes A delegates to unchanged exponent truncation; every 4-bit result delegates to unchanged mantissa shift",
+        "B copies A element codes and promotes scale bytes to int32 before adding6; every value above254 fails before uint8 conversion",
+        "C calls only middle.encode_elements(high.decode_elements(codes)/64), then uses the same explicit +6 scale offset",
+        "All six paths are checked against a separate scalar lookup/bit oracle for24 real synthetic source-layer groups; B decoded fixture weights equal64*A",
+        "Core check covers254 finite E4 codes, signed zero, positive zero padding, packed roundtrips, reachable tie-even boundaries, and all249 shiftable finite scale codes"
+      ]
+    },
+    {
+      "topic": "Read stored E4 source; do not requantize original masters",
+      "conclusion": "PASS",
+      "evidence": [
+        "evaluate loads only the six mx_exports per training via SHA256/sidecar-checked weights_only torch.load; archived checkpoint files are never opened",
+        "derive_payload depends only on source8 codes, source8 scales, copied auxiliary state and provenance; all routes preserve the source digest",
+        "Integration traps G(W), all three tensor encoders, high/low element encoders, optimizer creation, backward and training-mode entry during real evaluate main",
+        "C6 is the sole approved E2M3 element encoder use; no scale reselection exists in new transforms"
+      ]
+    },
+    {
+      "topic": "Both archived training schemas and checkpoint roles",
+      "conclusion": "PASS",
+      "evidence": [
+        "inspect_reference validates known package manifests, exact protocol, environment/backend,600 epoch/phase/precision rows, correct counts and LR, strict historical E4-best selection, epoch100 and identical selected rows",
+        "Naive training exports6/4 must match A routes code- and scale-exactly and reference the exact stored E4 source hash",
+        "Real strict inspector accepted both full archived metadata contracts;21 meaningful corrupted metadata/history variants were rejected",
+        "Six corrupted payload variants including checkpoint provenance, hidden master, wrong format/source hash/codes and scale overflow failed explicitly after file hashes were resigned",
+        "Cross-training initial model and transforms mismatches failed before deriving models"
+      ]
+    },
+    {
+      "topic": "Target BN and auxiliary state frozen",
+      "conclusion": "PASS",
+      "evidence": [
+        "New loaders reconstruct only the stored target mode and expected BN bank8/32/4, remove six quantized FP32 master parameters, set eval and requires_gradFalse",
+        "Evaluator hashes all model/BN state before and after, checks all gradients absent and A32 attributes unchanged",
+        "Integration uses distinct BN banks to avoid vacuous equal-default comparisons and confirms12 baseline logits exactly match the existing archived loaders",
+        "Naive trained6/4 logits exactly equal A6/A4 in both selected checkpoint fixtures"
+      ]
+    },
+    {
+      "topic": "Output integrity and preservation",
+      "conclusion": "PASS",
+      "evidence": [
+        "Four groups produce36 metric rows,48 paired rows,432 weight comparisons,216 layer-code rows,12 historical reproduction rows and4 complete indexed NPZ files",
+        "All24 derived models are saved, hashed, reloaded and validated before inference; auxiliary state remains exactly equal to its source",
+        "Independent recomputation verifies per-image correct counts, CE, prediction transitions and logit differences",
+        "Each command writes only a fresh timestamped output directory; aggregate CSVs use exclusive creation exactly once",
+        "Input fixture trees, original feedback ZIPs, three-image data file and37 frozen package files remain byte-identical after success and expected failures"
+      ]
+    },
+    {
+      "topic": "Notebook delivery and interpretation",
+      "conclusion": "PASS",
+      "evidence": [
+        "Runner writes exactly one unexecuted notebook with resolved result path and copies the analysis helper",
+        "Feedback contains four NPZ files and both references metadata for reproducible read-only analysis",
+        "README/PROTOCOL distinguish A-to-B scale intervention from B-to-C code mapping, preserve mantissa truncation and describe frozen-BN/one-seed/test-selection limitations",
+        "Notebook-specific graphics/runtime checks are independently owned and reported by the notebook agent; not substituted by this review",
+        "Notebook agent executed all10 code cells read-only against the unchanged actual integration-run output:7 figures,4 verified NPZs, zero issues, all96 files unchanged; no executed notebook saved."
+      ]
+    }
+  ],
+  "integration_summary": {
+    "status": "PASS",
+    "seconds": 11.296645328999148,
+    "positive_real_main_cases": [
+      "check",
+      "evaluate"
+    ],
+    "negative_evaluate_cases": 8,
+    "positive_archived_contracts": 2,
+    "negative_archived_contract_cases": 21,
+    "negative_CLI_cases": 10,
+    "metric_rows": 36,
+    "paired_rows": 48,
+    "weight_rows": 432,
+    "code_rows": 216,
+    "historical_rows": 12,
+    "NPZ_files": 4,
+    "saved_reloaded_derived_models": 24,
+    "independent_oracle_layer_groups": 24,
+    "exact_archived_loader_baselines": 12,
+    "core_model_comparisons": 15,
+    "core_all_model_comparisons_exact": true,
+    "core_negative_controls": 41,
+    "successful_evaluation_directory": "/workspace/scratch/4619498905be/work/scale64_integration_20261024_r2/evaluate/20261024_140236_981435_evaluate"
+  },
+  "fixture_transparency": [
+    "Temporary isolated torch 2.10.0+cpu / torchvision 0.25.0+cpu venv; primary and laptop environments untouched.",
+    "runtime CUDA request redirected to CPU; archived upstream Tensor.cuda initializer aliased to identity inside harness.",
+    "Dependency subprocess writes fixture notices; CPU package imports checked separately.",
+    "prepare_test_only supplies three artificial 40x40 images in batches 2+1; no SVHN data opened.",
+    "inspect_reference uses truthful three-image fixture for evaluate; actual strict inspector tested separately against both full archived JSON/CSV contracts.",
+    "At-rest source exports are synthetic=True; read_export transiently presents False solely to production real-run provenance gate, assemble restores True before all core checks, derivation, and inference.",
+    "Output report explicitly synthetic=True and contains a synthetic limitation on success and expected failure.",
+    "Fresh upstream module isolation reproduces a new production CLI process for each real main invocation.",
+    "No production source edited or CLI bypass flag added."
+  ],
+  "limitations": [
+    "This validates software behavior on synthetic CPU fixtures, not scientific accuracy on SVHN or the user GPU.",
+    "Production environment, actual compact exports and official test data remain on the laptop; the provided CUDA check/evaluate commands must still run there.",
+    "Random exports use copied archived metadata only to exercise guards; all actual inference output and saved evaluation fixtures are explicitly synthetic.",
+    "The test-only provenance adaptation preserves checkpoint epoch/hash checks and restores synthetic=True before all source validation, derivation and model inference; no production bypass is added.",
+    "No training, original user checkpoint tensor, real SVHN tensor, learned scale, or BN update was executed.",
+    "Exact factor64 numeric equality is checked for representable synthetic fixtures; extreme finite E8M0 combinations can still overflow or underflow FP32. Overflow is rejected, and protocol states FP32 emulation limits."
+  ],
+  "no_production_files_modified_by_reviewer": true,
+  "evidence_reports": {
+    "integration_report.json": "a632ee5265f1049365a8f630f6d64db8a621c97ab099edf68db74a058c051df9",
+    "check_entry_validation_report.json": "f616d0f46c71b6a24cd80970fd42aabf876ba969f27be861a72de19bac86ecde",
+    "core_validation_report.json": "04dc998059f8703f0592e40b613b367183241bf23af0478743a4e34f5bcdac45",
+    "runner_notebook_integration.json": "fe84917463d6f400fb0cf26497ee23c2b0419d6a9b60b93649a4f3f4b0f941c6"
+  },
+  "final_runtime_rerun": {
+    "status": "PASS",
+    "reason": "Runner parameter cell now SAVE_FIGURES=False, matching template and documented opt-in figure saving; no numeric change. Existing harness rerun unchanged against final runtime.",
+    "run_eval_sha256": "2ad2aa85c4bde4dac477aecc9e5aef7d77ad5c3f8015f93553a6a6968e9628c1",
+    "notebook_runner_parameters_SAVE_FIGURES": false
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "synthetic_fixture_only": true,
+  "SVHN_used": false,
+  "optimizer_steps": 0,
+  "batchnorm_recalibration": false,
+  "device": "cpu",
+  "all_254_finite_codes_independent_bitstrings_and_fraction_RNE_oracle": true,
+  "A_B_same_codes_B_exact64_numeric_scaling_and_C_mantissa_after_RNE": true,
+  "signed_zero_padding_packed_roundtrip_and_source_nonmutation": true,
+  "reachable_E4_div64_RNE_ties_checked": 16,
+  "shared_example_32_64_128_240_256_and_nonuniform_information_loss": true,
+  "all255_A_scale_codes_and_all249_exact_shiftable_BC_scales_checked": true,
+  "scale_overflow_NaN_type_padding_and_path_guards": true,
+  "multirow_convolution_padding_and_zero_blocks": true,
+  "source_sets": {
+    "direct": {
+      "same_checkpoint_provenance": true,
+      "same_auxiliary_state": true,
+      "all_E2_source_scales_equal": true,
+      "E4_scale_equality_not_required": true,
+      "blocks": 4080,
+      "E4_minus_E2_scale_exponent_counts": {
+        "-6": 4080
+      },
+      "training_kind": "direct",
+      "source_hashes_checked": true,
+      "E4_minus_trained_E2_scale_exponent_counts": {
+        "-6": 4080
+      },
+      "trained_lower_codes_exact_A_routes": false
+    },
+    "truncation": {
+      "same_checkpoint_provenance": true,
+      "same_auxiliary_state": true,
+      "training_kind": "truncation",
+      "blocks": 4080,
+      "source_hashes_checked": true,
+      "E4_minus_trained_E2_scale_exponent_counts": {
+        "0": 4080
+      },
+      "trained_lower_codes_exact_A_routes": true
+    }
+  },
+  "model_comparisons": [
+    {
+      "case": "direct_live_vs_saved8",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct_live_vs_saved6",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct_live_vs_saved4",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/A6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/A4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/B6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/B4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/C6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "direct/C4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/A6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/A4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/B6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/B4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/C6_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "case": "truncation/C4_independent_lookup_model",
+      "exact": true,
+      "max_abs_difference": 0.0
+    }
+  ],
+  "both_training_schemas_save_reload_source_only_independent_model_checks": true,
+  "BN_banks_frozen_and_unchanged_all_paths_A32_no_masters_or_training": true,
+  "A_B_no_element_encoder_C_only_E2_element_encoder_no_tensor_scale_reselection": true,
+  "all_reconstructions_and_inference_no_encoder_no_G_no_optimizer_no_backward": true,
+  "negative_controls": [
+    "scale249_B6_reject_no_clamp",
+    "scale249_B4_reject_no_clamp",
+    "scale249_C6_reject_no_clamp",
+    "scale249_C4_reject_no_clamp",
+    "scale250_B6_reject_no_clamp",
+    "scale250_B4_reject_no_clamp",
+    "scale250_C6_reject_no_clamp",
+    "scale250_C4_reject_no_clamp",
+    "scale251_B6_reject_no_clamp",
+    "scale251_B4_reject_no_clamp",
+    "scale251_C6_reject_no_clamp",
+    "scale251_C4_reject_no_clamp",
+    "scale252_B6_reject_no_clamp",
+    "scale252_B4_reject_no_clamp",
+    "scale252_C6_reject_no_clamp",
+    "scale252_C4_reject_no_clamp",
+    "scale253_B6_reject_no_clamp",
+    "scale253_B4_reject_no_clamp",
+    "scale253_C6_reject_no_clamp",
+    "scale253_C4_reject_no_clamp",
+    "scale254_B6_reject_no_clamp",
+    "scale254_B4_reject_no_clamp",
+    "scale254_C6_reject_no_clamp",
+    "scale254_C4_reject_no_clamp",
+    "E4NaN127",
+    "E4NaN255",
+    "scaleNaN",
+    "nonzero_padding",
+    "wrong_dtype",
+    "wrong_source_format",
+    "unknown_path",
+    "direct_as_truncation",
+    "truncation_as_direct",
+    "wrong_source_hash",
+    "mutated_trained_derived_codes",
+    "different_auxiliary_state",
+    "mutated_scale_policy",
+    "wrong_target_BN",
+    "hidden_MX_master",
+    "hidden_provenance_tensor",
+    "finite_E8_scale_but_FP32_overflow_rejected"
+  ],
+  "status": "PASS",
+  "RNG_and_thread_count_restored": true,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "seconds": 2.746181483998953,
+  "production_CUDA_or_SVHN_tested": false,
+  "tested_file_sha256": {
+    "scale64.py": "b3199677d527256ef06bf51d8058261c73d9211f94a06a58d84af1a932cea179",
+    "evaluation.py": "b1716ed8ec2f8d4f9c243f41da8276aa43ea999163bab41aba20ba4a564deae8",
+    "test_scale64.py": "d78e4d6ee4f8cb9a60d25c0b33b3779fb042a8f7f111dbc3eee070391a380916",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "trunc_adapter.py": "2d49ef58e2a170f75ff1f9760c9b972b08dd3eb75ecacc0c4495b30b97dcd1dc",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b"
+  }
+}

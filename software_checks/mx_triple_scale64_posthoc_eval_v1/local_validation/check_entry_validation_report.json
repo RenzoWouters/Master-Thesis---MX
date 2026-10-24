@@ -1,0 +1,240 @@
+{
+  "status": "PASS",
+  "schema": "mx-triple-scale64-check-entry-validation-v1",
+  "synthetic_fixture_only": true,
+  "actual_cli_main_invoked": true,
+  "runtime_environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "production_CUDA_or_SVHN_tested": false,
+  "fixture_only_adaptations": [
+    "Temporary isolated torch 2.10.0+cpu / torchvision 0.25.0+cpu venv; primary and laptop environments untouched.",
+    "runtime CUDA request redirected to CPU; archived upstream Tensor.cuda initializer aliased to identity inside harness.",
+    "Dependency subprocess writes fixture notices; CPU package imports checked separately.",
+    "Fresh upstream module isolation reproduces a new production CLI process for each real main invocation.",
+    "No production source edited or CLI bypass flag added."
+  ],
+  "package_sha256": {
+    "CODEWIJZIGINGEN.md": "0a0a7fa4ae3c16e9b207cea0cb1cd1acb55b64cb4a0d826d96d1bad2544ff326",
+    "DIRECT_REFERENCE_PROTOCOL.json": "463243188cb62f8886f8681682a0caa65320a89d8eafb1b8b778d740bdf3e0e1",
+    "EXPERIMENT_MANIFEST.json": "7188731408375ab387b3d03a484b1fa77d9e363cc2713d78dee0844c68f2092c",
+    "MX_triple_scale64_posthoc_resultaten.ipynb": "57dd3809d765e60439b375b0883ed8167f445ccdfe4935b523d3d75aea9c5948",
+    "PROTOCOL.md": "829ef5b8c1ad6f857d3f0b19a70b6eeeeeb0d4489b4c37a5e37b447402a4529c",
+    "README.md": "073bddcde0f6e2c0ad1211623a85a42726a864543780c8345c2dcb592fde61d6",
+    "REUSE_MANIFEST.json": "190fe68adb151af38e68ba8345ef10ba24de24356be43fdf9284016e8cfcbc82",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRUNCATION_REFERENCE_PROTOCOL.json": "c80eb1ee01fbd98f333a9af31aecf14283eded5ec24215d709f2f872a82f7619",
+    "evaluation.py": "b1716ed8ec2f8d4f9c243f41da8276aa43ea999163bab41aba20ba4a564deae8",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "7c303f8b894bb4dac732d40875d5ab3bee5e838ccbf6668d05697aa90dd297f2",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "provenance/direct_reference100_PACKAGE_SHA256.json": "145493e9c6b2e27ee30f405cfcc35a2b8ea8b39105c9d1fb32cd7d1d3123e8b8",
+    "provenance/previous_posthoc_PACKAGE_SHA256.json": "e4c50b4920ac40970b12cbed9632862839c27472ce5465ef0d8802f12d711c52",
+    "provenance/previous_posthoc_PROTOCOL.md": "0a1fcb4bb991ba631fa81a1946fd14690dfe6e6f8197ed608de39078f9177600",
+    "provenance/previous_posthoc_evaluation.py": "2c5f7e427de63934714ad35d70a17998535b292b54f25bc085dd7eea932d309e",
+    "provenance/previous_posthoc_run_eval.py": "92ba5da7502b2e3a50094ba9e3fef735abd86e88337396212979a2e79778705f",
+    "provenance/previous_posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "provenance/truncation_reference100_PACKAGE_SHA256.json": "61c6f5a7cb5c330fce69d2311fb11e0b6e281eacbb4d2514c95af7838926c140",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_eval.py": "2ad2aa85c4bde4dac477aecc9e5aef7d77ad5c3f8015f93553a6a6968e9628c1",
+    "scale64.py": "b3199677d527256ef06bf51d8058261c73d9211f94a06a58d84af1a932cea179",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_scale64.py": "d78e4d6ee4f8cb9a60d25c0b33b3779fb042a8f7f111dbc3eee070391a380916",
+    "trunc_adapter.py": "2d49ef58e2a170f75ff1f9760c9b972b08dd3eb75ecacc0c4495b30b97dcd1dc",
+    "trunc_support.py": "68a674909337cc9da717ebb0ae3382b64ba3239a296dff52f1e5a9f65f4b9798",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "test_harness_sha256": "48fd5c62665f48bc4a38ebdf1f6929d6eba9e8279d85fb9ad67700c16d2d74e1",
+  "check_output_directory": "/workspace/scratch/4619498905be/work/scale64_integration_20261024_r2/check/20261024_140234_847638_check",
+  "check_tests": {
+    "synthetic_fixture_only": true,
+    "SVHN_used": false,
+    "optimizer_steps": 0,
+    "batchnorm_recalibration": false,
+    "device": "cpu",
+    "all_254_finite_codes_independent_bitstrings_and_fraction_RNE_oracle": true,
+    "A_B_same_codes_B_exact64_numeric_scaling_and_C_mantissa_after_RNE": true,
+    "signed_zero_padding_packed_roundtrip_and_source_nonmutation": true,
+    "reachable_E4_div64_RNE_ties_checked": 16,
+    "shared_example_32_64_128_240_256_and_nonuniform_information_loss": true,
+    "all255_A_scale_codes_and_all249_exact_shiftable_BC_scales_checked": true,
+    "scale_overflow_NaN_type_padding_and_path_guards": true,
+    "multirow_convolution_padding_and_zero_blocks": true,
+    "source_sets": {
+      "direct": {
+        "same_checkpoint_provenance": true,
+        "same_auxiliary_state": true,
+        "all_E2_source_scales_equal": true,
+        "E4_scale_equality_not_required": true,
+        "blocks": 4080,
+        "E4_minus_E2_scale_exponent_counts": {
+          "-6": 4080
+        },
+        "training_kind": "direct",
+        "source_hashes_checked": true,
+        "E4_minus_trained_E2_scale_exponent_counts": {
+          "-6": 4080
+        },
+        "trained_lower_codes_exact_A_routes": false
+      },
+      "truncation": {
+        "same_checkpoint_provenance": true,
+        "same_auxiliary_state": true,
+        "training_kind": "truncation",
+        "blocks": 4080,
+        "source_hashes_checked": true,
+        "E4_minus_trained_E2_scale_exponent_counts": {
+          "0": 4080
+        },
+        "trained_lower_codes_exact_A_routes": true
+      }
+    },
+    "model_comparisons": [
+      {
+        "case": "direct_live_vs_saved8",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct_live_vs_saved6",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct_live_vs_saved4",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct/A6_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct/A4_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct/B6_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct/B4_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct/C6_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "direct/C4_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "truncation/A6_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "truncation/A4_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "truncation/B6_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "truncation/B4_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "truncation/C6_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "case": "truncation/C4_independent_lookup_model",
+        "exact": true,
+        "max_abs_difference": 0.0
+      }
+    ],
+    "both_training_schemas_save_reload_source_only_independent_model_checks": true,
+    "BN_banks_frozen_and_unchanged_all_paths_A32_no_masters_or_training": true,
+    "A_B_no_element_encoder_C_only_E2_element_encoder_no_tensor_scale_reselection": true,
+    "all_reconstructions_and_inference_no_encoder_no_G_no_optimizer_no_backward": true,
+    "negative_controls": [
+      "scale249_B6_reject_no_clamp",
+      "scale249_B4_reject_no_clamp",
+      "scale249_C6_reject_no_clamp",
+      "scale249_C4_reject_no_clamp",
+      "scale250_B6_reject_no_clamp",
+      "scale250_B4_reject_no_clamp",
+      "scale250_C6_reject_no_clamp",
+      "scale250_C4_reject_no_clamp",
+      "scale251_B6_reject_no_clamp",
+      "scale251_B4_reject_no_clamp",
+      "scale251_C6_reject_no_clamp",
+      "scale251_C4_reject_no_clamp",
+      "scale252_B6_reject_no_clamp",
+      "scale252_B4_reject_no_clamp",
+      "scale252_C6_reject_no_clamp",
+      "scale252_C4_reject_no_clamp",
+      "scale253_B6_reject_no_clamp",
+      "scale253_B4_reject_no_clamp",
+      "scale253_C6_reject_no_clamp",
+      "scale253_C4_reject_no_clamp",
+      "scale254_B6_reject_no_clamp",
+      "scale254_B4_reject_no_clamp",
+      "scale254_C6_reject_no_clamp",
+      "scale254_C4_reject_no_clamp",
+      "E4NaN127",
+      "E4NaN255",
+      "scaleNaN",
+      "nonzero_padding",
+      "wrong_dtype",
+      "wrong_source_format",
+      "unknown_path",
+      "direct_as_truncation",
+      "truncation_as_direct",
+      "wrong_source_hash",
+      "mutated_trained_derived_codes",
+      "different_auxiliary_state",
+      "mutated_scale_policy",
+      "wrong_target_BN",
+      "hidden_MX_master",
+      "hidden_provenance_tensor",
+      "finite_E8_scale_but_FP32_overflow_rejected"
+    ],
+    "status": "PASS",
+    "RNG_and_thread_count_restored": true
+  },
+  "source_unchanged": true,
+  "zero_optimizer_steps": true
+}

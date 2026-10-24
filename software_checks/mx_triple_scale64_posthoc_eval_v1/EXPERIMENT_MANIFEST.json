@@ -1,0 +1,64 @@
+{
+  "schema": "mx-triple-scale64-posthoc-experiment-v1",
+  "training_kinds": [
+    "direct",
+    "truncation"
+  ],
+  "checkpoint_roles": [
+    "best_E4M3_test",
+    "last_epoch"
+  ],
+  "fixed_reference_epochs": {
+    "direct": {
+      "best_E4M3_test": 54,
+      "last_epoch": 100
+    },
+    "truncation": {
+      "best_E4M3_test": 54,
+      "last_epoch": 100
+    }
+  },
+  "source_mode": "stored_E4M3",
+  "routes": [
+    "source8",
+    "trained6",
+    "trained4",
+    "A6",
+    "A4",
+    "B6",
+    "B4",
+    "C6",
+    "C4"
+  ],
+  "A": {
+    "element_mapping": "highest_two_E4_exponent_bits_retained",
+    "scale_exponent_offset": 0
+  },
+  "B": {
+    "element_mapping": "same_codes_as_A",
+    "scale_exponent_offset": 6
+  },
+  "C": {
+    "element_mapping": "E2M3_nearest_even_of_decoded_normalized_E4_div64",
+    "scale_exponent_offset": 6
+  },
+  "E2M1_all_families": "corresponding_E2M3_code_logical_shift_right2",
+  "scale_overflow": "reject_without_clipping_or_wrap",
+  "activation_bits": 32,
+  "optimizer_steps": 0,
+  "batchnorm_recalibration": false,
+  "learned_scales": false,
+  "new_checkpoint_selection": false,
+  "FP32_MX_masters_read": false,
+  "source_auxiliary_FP32_and_BN_state_preserved": true,
+  "data": "existing_official_SVHN_test_only",
+  "test_examples": 26032,
+  "batch_size": 128,
+  "expected_metric_rows": 36,
+  "expected_paired_rows": 48,
+  "expected_weight_pair_rows": 432,
+  "expected_layer_code_rows": 216,
+  "expected_history_rows": 12,
+  "expected_per_image_NPZ_files": 4,
+  "no_scientific_accuracy_gate": true
+}

@@ -1,0 +1,74 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_scale64_posthoc_eval\20261024_141007_760930_evaluate
+POST-HOC A/B/C: beide trainingen, E4M3-best en epoch100; A32; bevroren BN; schaal1 of64; geen training.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+DATA PASS: uitsluitend test=26032; 204 batches; train en extra niet ingelezen.
+EVALUATIE: direct/best_E4M3_test, epoch 54; bronmodi en A/B/C; opgeslagen doel-BN bevroren.
+WAARSCHUWING: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+best_E4M3_test: batch 1/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 50/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 100/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 150/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 200/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 204/204; negen paden; uitsluitend evaluatie.
+  source8: 95.0369%; correct=24740/26032; CE=0.214139
+  trained6: 95.1137%; correct=24760/26032; CE=0.189812
+  trained4: 95.1368%; correct=24766/26032; CE=0.182220
+  A6: 15.9381%; correct=4149/26032; CE=2.273138
+  A4: 15.9381%; correct=4149/26032; CE=2.274157
+  B6: 22.1381%; correct=5763/26032; CE=337.063264
+  B4: 26.0871%; correct=6791/26032; CE=131.134067
+  C6: 95.1252%; correct=24763/26032; CE=0.190197
+  C4: 94.2379%; correct=24532/26032; CE=0.210632
+EVALUATIE: direct/last_epoch, epoch 100; bronmodi en A/B/C; opgeslagen doel-BN bevroren.
+last_epoch: batch 1/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 50/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 100/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 150/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 200/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 204/204; negen paden; uitsluitend evaluatie.
+  source8: 94.8602%; correct=24694/26032; CE=0.236220
+  trained6: 95.0061%; correct=24732/26032; CE=0.200403
+  trained4: 95.0715%; correct=24749/26032; CE=0.186247
+  A6: 15.9381%; correct=4149/26032; CE=2.274756
+  A4: 15.9381%; correct=4149/26032; CE=2.274692
+  B6: 20.4325%; correct=5319/26032; CE=510.530811
+  B4: 22.2611%; correct=5795/26032; CE=196.813475
+  C6: 94.9908%; correct=24728/26032; CE=0.200368
+  C4: 94.3185%; correct=24553/26032; CE=0.212359
+EVALUATIE: truncation/best_E4M3_test, epoch 54; bronmodi en A/B/C; opgeslagen doel-BN bevroren.
+best_E4M3_test: batch 1/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 50/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 100/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 150/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 200/204; negen paden; uitsluitend evaluatie.
+best_E4M3_test: batch 204/204; negen paden; uitsluitend evaluatie.
+  source8: 86.7932%; correct=22594/26032; CE=0.430299
+  trained6: 87.5307%; correct=22786/26032; CE=0.415061
+  trained4: 87.5653%; correct=22795/26032; CE=0.420402
+  A6: 87.5307%; correct=22786/26032; CE=0.415061
+  A4: 87.5653%; correct=22795/26032; CE=0.420402
+  B6: 31.0234%; correct=8076/26032; CE=11069291762.871542
+  B4: 27.4239%; correct=7139/26032; CE=13425581806.151199
+  C6: 23.6901%; correct=6167/26032; CE=2863127078.006146
+  C4: 25.5071%; correct=6640/26032; CE=2400822220.002459
+EVALUATIE: truncation/last_epoch, epoch 100; bronmodi en A/B/C; opgeslagen doel-BN bevroren.
+last_epoch: batch 1/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 50/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 100/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 150/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 200/204; negen paden; uitsluitend evaluatie.
+last_epoch: batch 204/204; negen paden; uitsluitend evaluatie.
+  source8: 86.3975%; correct=22491/26032; CE=0.436818
+  trained6: 87.0621%; correct=22664/26032; CE=0.420150
+  trained4: 87.1389%; correct=22684/26032; CE=0.421968
+  A6: 87.0621%; correct=22664/26032; CE=0.420150
+  A4: 87.1389%; correct=22684/26032; CE=0.421968
+  B6: 25.4341%; correct=6621/26032; CE=17918008652.479408
+  B4: 25.7529%; correct=6704/26032; CE=16073888499.481255
+  C6: 20.6054%; correct=5364/26032; CE=4495618130.422864
+  C4: 22.2150%; correct=5783/26032; CE=3239253538.309772
+EVALUATIE VOLTOOID: twee trainingen, twee vaste checkpoints, A/B/C en oorspronkelijke modi; geen updates.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_scale64_posthoc_eval\20261024_141007_760930_evaluate\run_report.json
