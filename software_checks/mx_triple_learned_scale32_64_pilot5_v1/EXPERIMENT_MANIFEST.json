@@ -1,0 +1,22 @@
+{
+  "schema": "mx-learned-scale32-64-pilot5-experiment-v1",
+  "package": "mx_triple_learned_scale32_64_pilot5_v1",
+  "parent": "mx_triple_scale32_pilot5_v1",
+  "protocol": "PROTOCOL.json",
+  "study_stage": "pilot5",
+  "notebook": "MX_triple_learned_scale32_64_pilot5_resultaten.ipynb",
+  "fixed_references": [
+    "fixed_references/scale32/REFERENCE.json",
+    "fixed_references/scale64/REFERENCE.json"
+  ],
+  "new_full_SVHN_training_executed_here": false,
+  "only_synthetic_local_validation": true,
+  "learned_scale_parameters": 4080,
+  "scale_proxy_init": 6.0,
+  "scale_lr": 0.001,
+  "source_scale_learned": false,
+  "bit_choices": [
+    5,
+    6
+  ]
+}

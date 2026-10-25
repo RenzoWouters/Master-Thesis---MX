@@ -1,0 +1,18 @@
+{
+  "schema": "mx-learned-scale32-64-fixed-reference-v1",
+  "factor": 64,
+  "source_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_scale64_reference100\\20261024_151210_665535_joint_run",
+  "source_report_schema": "mx-triple-scale64-reference100-report-v1",
+  "completed_epochs": 100,
+  "pilot_comparison_endpoint": 5,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "synthetic_fixture_only": false,
+  "files_sha256": {
+    "run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe"
+  }
+}
