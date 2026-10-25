@@ -1,0 +1,151 @@
+{
+  "schema": "mx-scale32-pilot-actual-independent-audit-v1",
+  "status": "PASS",
+  "attachment_sha256": "2596b9222da600d814caf797b7b74ce9d3fbc74e14a8197fcbdee831e97d1d8b",
+  "run_report_sha256": "f76e174e842a013bbb806f0d3fc4de6776eb47193a60fb71f5996f164cf9dbd5",
+  "actual_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_scale32_pilot5\\20261024_192400_420212_joint_run",
+  "research_run_confirmed_not_synthetic": true,
+  "completed_epochs": 5,
+  "optimizer_steps": 2865,
+  "training_forwards": 8595,
+  "package_manifest_entries_verified": 66,
+  "delivered_package_identical_to_report": true,
+  "fixed_scale_exponent_offset": 5,
+  "fixed_scale_factor": 32,
+  "activation_bits": 32,
+  "FP32_master_gradients_Adam_verified_from_recorded_audits": true,
+  "all_train_test_coverage_and_source_cache_audits_consistent": true,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "same_initial_model_as_scale64": true,
+  "same_environment_backend_dataset_transforms_and_upstream_source_as_scale64": true,
+  "configuration_differences": {
+    "export_policy": {
+      "scale64": "one E4M3 source with all BN auxiliary state per selected checkpoint; lower exports derived only from saved/reloaded source codes and source scale code+6; separate FP32 resume checkpoint",
+      "scale32": "one E4M3 source with all BN auxiliary state per selected checkpoint; lower exports derived only from saved/reloaded source codes and source scale code+5; separate FP32 resume checkpoint"
+    },
+    "mantissa_mapping": {
+      "scale64": "derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times64",
+      "scale32": "derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times32"
+    },
+    "mx_scale_policy": {
+      "scale64": "encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+6; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps",
+      "scale32": "encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+5; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps"
+    },
+    "pilot_stop_epoch": {
+      "scale64": null,
+      "scale32": 5
+    },
+    "purpose": {
+      "scale64": "100 complete train-only epochs: route B, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+      "scale32": "five complete train-only epochs: fixed scale32 route, E4M3 source, naive exponent truncation plus fixed scale32 to E2M3, then mantissa truncation to E2M1"
+    },
+    "reference_end_epoch": {
+      "scale64": 100,
+      "scale32": null
+    },
+    "reporting_policy": {
+      "scale64": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch",
+      "scale32": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch"
+    },
+    "scale_exponent_offset": {
+      "scale64": 6,
+      "scale32": 5
+    },
+    "scale_factor": {
+      "scale64": 64,
+      "scale32": 32
+    },
+    "schema": {
+      "scale64": "mx-triple-scale64-reference100-protocol-v1",
+      "scale32": "mx-triple-scale32-pilot5-protocol-v1"
+    },
+    "ste_policy": {
+      "scale64": "identity wrt G(W) for E4M3 and complete scale64 E4-to-E2 code path; no extra factor64 in backward; retain original G(W) derivatives; no gradient through codes or scales",
+      "scale32": "identity wrt G(W) for E4M3 and complete scale32 E4-to-E2 code path; no extra factor32 in backward; retain original G(W) derivatives; no gradient through codes or scales"
+    }
+  },
+  "epoch_metric_rows": 30,
+  "selected_metric_rows": 6,
+  "prediction_rows": 15,
+  "weight_update_rows": 90,
+  "best_common_E4_checkpoint_epoch": 5,
+  "last_epoch": 5,
+  "best_last_same_checkpoint_and_export_hashes": true,
+  "baseline_E4_best_within_first5": 5,
+  "global_baseline_best42_excluded": true,
+  "all15_test_mode_epochs_predict_all10_classes": true,
+  "last_epoch_dominant_prediction_percent": {
+    "8": 19.998463429625076,
+    "6": 20.62461585740627,
+    "4": 20.309618930547018
+  },
+  "export_audit_scope": "recorded CUDA exact-weight validation and CSV/metadata consistency; PT exports/checkpoints are not attached, no independent tensor replay performed",
+  "export_report_checks_consistent": true,
+  "all_layers_report_lower_exponent_range_source_plus5": true,
+  "session_wall_seconds": 321.05787130002864,
+  "measured_epoch_seconds": 315.5857617998263,
+  "projected100_seconds": 6317.05792984576,
+  "projection_observed_range_seconds": [
+    6263.14597999095,
+    6724.687296505785
+  ],
+  "range_is_confidence_interval": false,
+  "projection_not_measurement": true,
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "input_files_unchanged": true,
+  "raw_input_sha256": {
+    "pip_freeze.txt": "c8bfb152b6e1269aa2ed6b8ee7f5601273f4d9f73db2643c7c211501d2f314b4",
+    "history.json": "ae152860495415ff75cc7b2d8afcae2a622c446b00793a34e2b1031f67667fda",
+    "mx_export_layers_4_last.csv": "c4ab3af151816f255aaaf266a45f11bc8642e7e3825d8b20e7e4e02c7bfbdcce",
+    "run_report.json": "f76e174e842a013bbb806f0d3fc4de6776eb47193a60fb71f5996f164cf9dbd5",
+    "epoch_metrics.csv": "add7651544565d4df7d990806dcffa106be7a93ae47ccafc6787fdbbcdaacc02",
+    "timing_estimate.json": "91e0a862fd6e088d972a23c5dd087bf03ed24b9334cbde1922212f5cd27180b2",
+    "dataset_manifest.json": "5563e05a2aac2a4f688ccb154f2cc17641d130574d9b16cad2966654629bccf0",
+    "warnings.log": "ddf2cbfa58bca04dbb34c9a7cb4763c372fa8533aa88aefe522da731f811c37a",
+    "compatibility.patch": "cf87916df48da6559ecf4c44e619f885c1a056dd774dc7df9138490cbae973d5",
+    "checkpoint_selection.json": "0da2a55323056b58ddbc4931ad412a317e8f51894620064cb81382990e7a62e4",
+    "pip_check.txt": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "mx_export_layers_8_last.csv": "d28282091b303cc05e880244de3c3034da58d581f65a5abce5993b468504e3db",
+    "epoch_times.csv": "772e6e3af06cf342da86e99db6621986895fe2cd4f6f13ad7ca9e93689135ade",
+    "mx_export_layers_6_best.csv": "3caa4db0c2c2fd81a76e6792a03a1472ace74fe29c607f9ace040f32fa3f3a58",
+    "mx_export_layers_4_best.csv": "c4ab3af151816f255aaaf266a45f11bc8642e7e3825d8b20e7e4e02c7bfbdcce",
+    "source_manifest.json": "110b8e9f5e9cc565e38340996a1479fb2938e8b95fbfa51510bb6b39d1e04cde",
+    "weight_updates.csv": "6f67463f9011b1aa904db7c05c76b624ad5dce7ffdb423f8e17ba9fc0eb77f42",
+    "notebook_support.py": "03a5aab2aa2e2eadf68cb115c3991999a48e28397f43c1954a8b135cd42d3f78",
+    "selected_metrics.csv": "dc360a22992406757432c078a214a5cf93ed83cba738e704f8a848550df9eacd",
+    "MX_triple_scale32_pilot5_resultaten.ipynb": "d801cd3f57470f1b872599ad8fce0645256aad7fc129836739585eaf8507f81f",
+    "mx_export_layers_6_last.csv": "3caa4db0c2c2fd81a76e6792a03a1472ace74fe29c607f9ace040f32fa3f3a58",
+    "test_prediction_counts.csv": "cdc023964741d1da6c57050b62f15c65dd38901d4413d0d30ee58f18def6004d",
+    "mx_export_layers_8_best.csv": "d28282091b303cc05e880244de3c3034da58d581f65a5abce5993b468504e3db",
+    "run.log": "e2887af03fb92ef5f98ba21300621668602729ebb921a2a0b931aa58be0c2bf4",
+    "training_summary.json": "0683a2edcbf7b800e2cf1e55bd794208f6cf460a254d52ae6c189466858c94b8",
+    "training_change_manifest.json": "f3b7ae54ab90292e733a752571a2438aa694d77c4a370666f43cd485d33d5c8b",
+    "scale64_reference/REFERENCE.json": "7c40df4e4be48379ca04212cbc7ca70b3a3f1551a98a763aa83bce4358a63338",
+    "scale64_reference/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "scale64_reference/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "scale64_reference/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "scale64_reference/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "scale64_reference/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "scale64_reference/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe"
+  },
+  "limitations": [
+    "Five epochs and one seed do not establish final100 superiority or optimal factor.",
+    "Original CUDA backend is nondeterministic; equal seed does not prove bitexact runs.",
+    "Official testset also selects E4-best checkpoint; selected scores are not independent held-out estimates.",
+    "Per-image logits/predictions not included; count differences are net totals, not paired flips.",
+    "Only recorded metadata and CSV audits can be independently inspected for tensor exports; raw exports not attached."
+  ]
+}

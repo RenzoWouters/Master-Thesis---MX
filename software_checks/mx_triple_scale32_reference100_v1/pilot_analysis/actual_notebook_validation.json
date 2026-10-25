@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "scope": "actual user scale32 pilot feedback, existing notebook only, read-only execution",
+  "all_11_code_cells_executed": true,
+  "eight_figures_created": true,
+  "synthetic_fixture_only": false,
+  "pilot_complete": true,
+  "current_best_E4_epoch": 5,
+  "current_last_epoch": 5,
+  "reference_best_E4_within_first5": 5,
+  "real_reference_safe": true,
+  "real_reference_comparison_active": true,
+  "analysis_errors": [],
+  "raw_files_unchanged": 33,
+  "executed_notebook_written": false,
+  "comparison": [
+    {
+      "Controlepunt": "Epoch 5",
+      "Gewichtsformaat": "MXFP8_E4M3",
+      "Epoch \u00d732": 5,
+      "Epoch \u00d764": 5,
+      "\u00d732 accuracy [%]": 92.11355255070683,
+      "\u00d764 accuracy [%]": 93.00860479409957,
+      "Verschil \u00d732 \u2212 \u00d764 [pp]": -0.8950522433927404,
+      "\u00d732 harde CE": 0.26579095520303525,
+      "\u00d764 harde CE": 0.24308195013207165
+    },
+    {
+      "Controlepunt": "Epoch 5",
+      "Gewichtsformaat": "MXFP6_E2M3",
+      "Epoch \u00d732": 5,
+      "Epoch \u00d764": 5,
+      "\u00d732 accuracy [%]": 89.76259986769588,
+      "\u00d764 accuracy [%]": 91.29917025199754,
+      "Verschil \u00d732 \u2212 \u00d764 [pp]": -1.5365703843016547,
+      "\u00d732 harde CE": 0.33578515078439697,
+      "\u00d764 harde CE": 0.2989847544757002
+    },
+    {
+      "Controlepunt": "Epoch 5",
+      "Gewichtsformaat": "MXFP4_E2M1",
+      "Epoch \u00d732": 5,
+      "Epoch \u00d764": 5,
+      "\u00d732 accuracy [%]": 90.14290103548937,
+      "\u00d764 accuracy [%]": 90.8919791026429,
+      "Verschil \u00d732 \u2212 \u00d764 [pp]": -0.7490780671535333,
+      "\u00d732 harde CE": 0.328520101202582,
+      "\u00d764 harde CE": 0.3105133664831473
+    },
+    {
+      "Controlepunt": "Beste E4M3 binnen epochs 1\u20135",
+      "Gewichtsformaat": "MXFP8_E4M3",
+      "Epoch \u00d732": 5,
+      "Epoch \u00d764": 5,
+      "\u00d732 accuracy [%]": 92.11355255070683,
+      "\u00d764 accuracy [%]": 93.00860479409957,
+      "Verschil \u00d732 \u2212 \u00d764 [pp]": -0.8950522433927404,
+      "\u00d732 harde CE": 0.26579095520303525,
+      "\u00d764 harde CE": 0.24308195013207165
+    },
+    {
+      "Controlepunt": "Beste E4M3 binnen epochs 1\u20135",
+      "Gewichtsformaat": "MXFP6_E2M3",
+      "Epoch \u00d732": 5,
+      "Epoch \u00d764": 5,
+      "\u00d732 accuracy [%]": 89.76259986769588,
+      "\u00d764 accuracy [%]": 91.29917025199754,
+      "Verschil \u00d732 \u2212 \u00d764 [pp]": -1.5365703843016547,
+      "\u00d732 harde CE": 0.33578515078439697,
+      "\u00d764 harde CE": 0.2989847544757002
+    },
+    {
+      "Controlepunt": "Beste E4M3 binnen epochs 1\u20135",
+      "Gewichtsformaat": "MXFP4_E2M1",
+      "Epoch \u00d732": 5,
+      "Epoch \u00d764": 5,
+      "\u00d732 accuracy [%]": 90.14290103548937,
+      "\u00d764 accuracy [%]": 90.8919791026429,
+      "Verschil \u00d732 \u2212 \u00d764 [pp]": -0.7490780671535333,
+      "\u00d732 harde CE": 0.328520101202582,
+      "\u00d764 harde CE": 0.3105133664831473
+    }
+  ]
+}

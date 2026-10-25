@@ -1,0 +1,20 @@
+{
+  "schema": "mx-scale32-reference100-pilot-evidence-v1",
+  "status": "PASS independently audited",
+  "source_attachment": "feedback_bundle(20261024-173425).zip",
+  "source_attachment_sha256": "2596b9222da600d814caf797b7b74ce9d3fbc74e14a8197fcbdee831e97d1d8b",
+  "source_run": "20261024_192400_420212_joint_run",
+  "files_sha256": {
+    "history.json": "ae152860495415ff75cc7b2d8afcae2a622c446b00793a34e2b1031f67667fda",
+    "run_report.json": "f76e174e842a013bbb806f0d3fc4de6776eb47193a60fb71f5996f164cf9dbd5",
+    "epoch_metrics.csv": "add7651544565d4df7d990806dcffa106be7a93ae47ccafc6787fdbbcdaacc02",
+    "timing_estimate.json": "91e0a862fd6e088d972a23c5dd087bf03ed24b9334cbde1922212f5cd27180b2",
+    "checkpoint_selection.json": "0da2a55323056b58ddbc4931ad412a317e8f51894620064cb81382990e7a62e4",
+    "epoch_times.csv": "772e6e3af06cf342da86e99db6621986895fe2cd4f6f13ad7ca9e93689135ade",
+    "weight_updates.csv": "6f67463f9011b1aa904db7c05c76b624ad5dce7ffdb423f8e17ba9fc0eb77f42",
+    "selected_metrics.csv": "dc360a22992406757432c078a214a5cf93ed83cba738e704f8a848550df9eacd",
+    "test_prediction_counts.csv": "cdc023964741d1da6c57050b62f15c65dd38901d4413d0d30ee58f18def6004d",
+    "training_summary.json": "0683a2edcbf7b800e2cf1e55bd794208f6cf460a254d52ae6c189466858c94b8"
+  },
+  "independent_audit": "independent_audit.json"
+}

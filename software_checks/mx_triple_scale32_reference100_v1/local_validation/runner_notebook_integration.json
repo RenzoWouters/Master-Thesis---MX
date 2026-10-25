@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_RUNNER_SYNTHETIC_CPU_OUTPUTS_READ_ONLY_NOTEBOOK_INTEGRATION",
+  "no_executed_notebook_created": true,
+  "no_model_checkpoint_or_training_imports": true,
+  "no_real_SVHN_training_started": true,
+  "cases": {
+    "continuous100": {
+      "status": "PASS",
+      "fixture_origin": "actual run_train.main with three synthetic CPU images; not SVHN training",
+      "synthetic_fixture_only": true,
+      "last_epoch": 100,
+      "selected_E4M3_epoch": 13,
+      "full100_complete": true,
+      "all_11_code_cells_executed": true,
+      "all_eight_figures_created": true,
+      "analysis_errors": [],
+      "historical_comparison_blocked_for_synthetic_fixture": true,
+      "copied_input_hashes_unchanged": true,
+      "original_input_hashes_unchanged": true,
+      "source_input_sha256": {
+        "run_report.json": "a8157943c1fbccb41d6a5c9a6a25cf4032e98ba7a280281ea6e7b3f9308fa5b1",
+        "history.json": "d13ea819a736ab65cd28a76573986ac14dd81f542c21acf3b5c72683c009b4aa",
+        "training_summary.json": "350da5f75786fa9c37d5b997bac228ea11db28d3c3770cfa864175547f21e84c",
+        "checkpoint_selection.json": "1695f5e9761c78512afed8e2f18292553905b61265a2c96bdc0394adb779e6d2",
+        "timing_estimate.json": "70ec2ccee4dd734c2ad7b4b07c0cb860d08ddfc0d5a3d256c2ac037778fa4f0b",
+        "epoch_metrics.csv": "26f1c24e1099483d5908eebcfa4d7fd6aec4e2d7efb4fd3fc8525f8b09f2cb26",
+        "selected_metrics.csv": "578ea8f01f3b13a72b96a5720cd71c9af45b27da8acf393c709d116f0774077a",
+        "epoch_times.csv": "a4d3d48883500c3f49dd6075194b859fff74096958311ebfd652b77c6c0779f8",
+        "weight_updates.csv": "f6a198435813988ecb16fd1659747d89405c7547942f197d2fb97358aa88f59a",
+        "test_prediction_counts.csv": "9d8bdffc5f0c10035f52792a4dd9cb0f40a3765f1919c3343d32dd5122694336",
+        "scale64_reference/REFERENCE.json": "2c0c8a7718952c3822a8bbd235c30666ea171a41a97e061cbe0e2e1337fdac53",
+        "scale64_reference/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+        "scale64_reference/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+        "scale64_reference/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+        "scale64_reference/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+        "scale64_reference/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+        "scale64_reference/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe"
+      }
+    },
+    "early_stop": {
+      "status": "PASS",
+      "fixture_origin": "actual run_train.main with three synthetic CPU images; not SVHN training",
+      "synthetic_fixture_only": true,
+      "last_epoch": 1,
+      "selected_E4M3_epoch": 1,
+      "full100_complete": false,
+      "all_11_code_cells_executed": true,
+      "all_eight_figures_created": true,
+      "analysis_errors": [],
+      "historical_comparison_blocked_for_synthetic_fixture": true,
+      "copied_input_hashes_unchanged": true,
+      "original_input_hashes_unchanged": true,
+      "source_input_sha256": {
+        "run_report.json": "22b38422d7d34901e7e4d14bf4a19ea9c38d0ce4266fcd461e5ac429364feafb",
+        "history.json": "0bfeef3dfd6526b16ea12fa79c985257de3341d0220691f461d42ff2ab1bb9f4",
+        "training_summary.json": "beff7ed665e5c0079e17c773448f51fcc1d79980eb38e95b42da437e2a5e9791",
+        "checkpoint_selection.json": "c0748636a9052f0c6f0c6524261007a72c7f3d2e1eeb0098ccb9991159960ed5",
+        "timing_estimate.json": "eb3dee009c82df3b18c2ff24196ba97a165f8db4180493c34a5d4dd15fbcc6d2",
+        "epoch_metrics.csv": "6cdfcbc07e7dde28f1631bdc9fc309f6ea6957322cc488a5d47b79a27aefd874",
+        "selected_metrics.csv": "f19f97a153beac2b02903232a2eb6820d9a5fba0e277664038ba3d73fca8fee4",
+        "epoch_times.csv": "9d8f2d289678d6f765dac94e7273a9bb09c160e81afb5f160827b57892507d1e",
+        "weight_updates.csv": "e35735f387c8cc53ed53cb05cb8906edd5d93d40381959c49baecf14efaa5c0a",
+        "test_prediction_counts.csv": "d891efc6debd386d0c174d5fd97cf53a7ecbf5973fe473e3f28a8bc7d740a4ce",
+        "scale64_reference/REFERENCE.json": "2c0c8a7718952c3822a8bbd235c30666ea171a41a97e061cbe0e2e1337fdac53",
+        "scale64_reference/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+        "scale64_reference/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+        "scale64_reference/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+        "scale64_reference/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+        "scale64_reference/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+        "scale64_reference/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe"
+      }
+    }
+  },
+  "tested_file_sha256": {
+    "notebook_support.py": "f7273276332920a3352cf86a25740dbe9895af205283b6672d2e1b667418658b",
+    "MX_triple_scale32_reference100_resultaten.ipynb": "f0bae9837c329838480d9756e44eb306e9858a8cadff16e95c2d381ea5b9048a",
+    "local_validation/test_notebook.py": "e42fd284423e8f603c65c8b80965d54293d910240f3776a41c6a87e30a649efb"
+  }
+}
