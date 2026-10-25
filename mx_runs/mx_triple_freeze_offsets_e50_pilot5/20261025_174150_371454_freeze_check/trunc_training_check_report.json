@@ -1,0 +1,21 @@
+{
+  "all254_finite_codes_both_offsets_and_mixed_choices_match_independent_bitstrings": true,
+  "signed_zero_preserved_source_unchanged_and_mantissa_scale_shared": true,
+  "all_valid_E8M0_source_scales_checked_and_overflow_rejected_even_zero_blocks": true,
+  "NaNs_invalid_offsets_and_finite_E8M0_but_overflowing_FP32_decode_rejected": true,
+  "threshold_tie_to6_and_exact_little_endian_one_bit_choices_with_padding_guards": true,
+  "hard_forward_exact_weight_gradient_identity_scale_gradient_independent_real_element_oracle": true,
+  "E4_direct_theta_gradient_None_lower_gradients_add_zero_and_tail_blocks_correct": true,
+  "original_G_derivatives_retained_no_scale_factor_in_master_gradient": true,
+  "real_Adam_proxy_update_can_cross_hard_threshold_without_extra_forward_choice_search": true,
+  "4080_FP32_parameters_added_without_random_draw_or_original_state_change": true,
+  "post_optimizer_projection_has_exact_counts_and_restores_valid_range": true,
+  "three_real_model_passes_one_Adam_update_theta_learns_detached_teachers_cache_survives_backward": true,
+  "eval_shared_triplet_preserves_theta_weights_and_BN": true,
+  "wrong_order_incomplete_cycle_theta_or_code_mutation_rejected_and_cache_cleaned": true,
+  "510_packed_choice_bytes_no_master_or_theta_leakage_and_source_only_reconstruction": true,
+  "source_and_derived_all_modes_reconstruct_live_logits_without_encoders_or_G": true,
+  "malformed_choice_export_old_schema_and_hidden_training_state_rejected": true,
+  "status": "PASS",
+  "RNG_and_backend_restored": true
+}

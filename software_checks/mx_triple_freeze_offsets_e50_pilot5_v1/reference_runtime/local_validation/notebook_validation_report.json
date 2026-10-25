@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "no_SVHN_training_or_accuracy_claim": true,
+  "no_checkpoint_or_training_imports": true,
+  "unexecuted_template_preserved": true,
+  "tests": {
+    "synthetic_complete100": {
+      "status": "PASS",
+      "completed_epochs": 100,
+      "selected_common_E4_epoch": 42,
+      "all_15_code_cells_executed": true,
+      "all_12_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked": true
+    },
+    "synthetic_stopped52": {
+      "status": "PASS",
+      "completed_epochs": 52,
+      "selected_common_E4_epoch": 42,
+      "all_15_code_cells_executed": true,
+      "all_12_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked": true
+    },
+    "synthetic_stationary5": {
+      "status": "PASS",
+      "completed_epochs": 5,
+      "selected_common_E4_epoch": 5,
+      "all_15_code_cells_executed": true,
+      "all_12_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked": true
+    },
+    "check_only": {
+      "status": "PASS",
+      "no_metrics_invented": true
+    },
+    "synthetic_comparison": {
+      "status": "PASS",
+      "common_observed_range_enforced": true,
+      "no_future_best_leakage": true,
+      "separate_E4_selected_epochs": {
+        "learned": 42,
+        "fixed32": 55,
+        "fixed64": 90
+      },
+      "partial52_reference_bests_recomputed": 52
+    }
+  },
+  "negative_checks": {
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Een geclaimde volledige honderd-epochtraining wordt niet door de resultaten bevestigd."
+      ]
+    },
+    "wrong_scale_lr_after50": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: layers.3/epoch51: schaal-leersnelheid verschilt van de LR-fase.",
+        "Schaaldiagnostiek: layers.3/epoch51: schaalstatistiek-CSV verschilt van history.json.",
+        "Schaaldiagnostiek: layers.6/epoch51: schaal-leersnelheid verschilt van de LR-fase.",
+        "Schaaldiagnostiek: layers.6/epoch51: schaalstatistiek-CSV verschilt van history.json.",
+        "Schaaldiagnostiek: layers.10/epoch51: schaal-leersnelheid verschilt van de LR-fase.",
+        "Schaaldiagnostiek: layers.10/epoch51: schaalstatistiek-CSV verschilt van history.json.",
+        "Schaaldiagnostiek: layers.13/epoch51: schaal-leersnelheid verschilt van de LR-fase.",
+        "Schaaldiagnostiek: layers.13/epoch51: schaalstatistiek-CSV verschilt van history.json.",
+        "Schaaldiagnostiek: layers.16/epoch51: schaal-leersnelheid verschilt van de LR-fase.",
+        "Schaaldiagnostiek: layers.16/epoch51: schaalstatistiek-CSV verschilt van history.json.",
+        "Schaaldiagnostiek: layers.20/epoch51: schaal-leersnelheid verschilt van de LR-fase.",
+        "Schaaldiagnostiek: layers.20/epoch51: schaalstatistiek-CSV verschilt van history.json.",
+        "Een PASS voor deze training vereist honderd complete, consistente epochs.",
+        "Een geclaimde volledige honderd-epochtraining wordt niet door de resultaten bevestigd.",
+        "Gemeten honderd-epochtotaal gerapporteerd zonder volledige referentie."
+      ]
+    },
+    "wrong_weight_lr_after75": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 76: lr_used wijkt af van de gezamenlijke LR-fasen 50/75/90.",
+        "Een PASS voor deze training vereist honderd complete, consistente epochs.",
+        "Een geclaimde volledige honderd-epochtraining wordt niet door de resultaten bevestigd.",
+        "Gemeten honderd-epochtotaal gerapporteerd zonder volledige referentie."
+      ]
+    },
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs.",
+        "Een PASS voor deze training vereist honderd complete, consistente epochs.",
+        "Een geclaimde volledige honderd-epochtraining wordt niet door de resultaten bevestigd.",
+        "Gemeten honderd-epochtotaal gerapporteerd zonder volledige referentie."
+      ]
+    },
+    "missing_scale_epoch": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: laagstatistieken bevatten niet iedere afgeronde epoch.",
+        "Een PASS voor deze training vereist honderd complete, consistente epochs.",
+        "Een geclaimde volledige honderd-epochtraining wordt niet door de resultaten bevestigd.",
+        "Gemeten honderd-epochtotaal gerapporteerd zonder volledige referentie."
+      ]
+    },
+    "pilot_contract": {
+      "expected_rejection": true,
+      "messages": [
+        "Dit is niet het rapport van de geleerde schaal32/64-honderd-epochtraining."
+      ]
+    }
+  },
+  "template_sha256": "8f3ee4c855ca43feef67e6ad6828f1ea3f1cffd6abfc5885f86e41c378565f99",
+  "helper_sha256": "0fc9e1f546448abf205dbc99f5a3de9614d5813391118d88586cf54caa142589",
+  "visual_review": {
+    "status": "PASS",
+    "checked": [
+      "checkpoint_accuracy",
+      "full100_comparison_checkpoints",
+      "full100_comparison_curves",
+      "scale_gradients",
+      "actual_runner_scale_choices",
+      "actual_runner_scale_switches"
+    ],
+    "no_clipped_labels_or_overlapping_key_values": true,
+    "full100_epoch_axes_use_readable_ticks": true
+  }
+}

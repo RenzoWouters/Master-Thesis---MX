@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "not_research_training_or_accuracy": true,
+  "real_data_loaded_or_downloaded": false,
+  "CUDA_tested": false,
+  "scope": "Actual default100 main, resume49-to100 crossing all LR milestones for both Adam groups, partial stops and strict contract refusals on synthetic CPU fixtures.",
+  "runtime_files": {
+    "run_train.py": {
+      "actual_main_snapshot_sha256": "a7f006a9050952cce23d5d6650925737f7a3872e5172b8ef708c11625754abc6",
+      "current_sha256": "a7f006a9050952cce23d5d6650925737f7a3872e5172b8ef708c11625754abc6",
+      "identical": true
+    },
+    "trunc_support.py": {
+      "actual_main_snapshot_sha256": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+      "current_sha256": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+      "identical": true
+    },
+    "trunc_adapter.py": {
+      "actual_main_snapshot_sha256": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+      "current_sha256": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+      "identical": true
+    },
+    "joint_support.py": {
+      "actual_main_snapshot_sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "current_sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "identical": true
+    },
+    "joint_adapter.py": {
+      "actual_main_snapshot_sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "current_sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "identical": true
+    },
+    "mx_adapter.py": {
+      "actual_main_snapshot_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "current_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "identical": true
+    },
+    "mx_format.py": {
+      "actual_main_snapshot_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "current_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "identical": true
+    },
+    "mx_e4m3.py": {
+      "actual_main_snapshot_sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "current_sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "identical": true
+    },
+    "mx_e2m1.py": {
+      "actual_main_snapshot_sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "current_sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "identical": true
+    },
+    "posthoc_truncation.py": {
+      "actual_main_snapshot_sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "current_sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "identical": true
+    },
+    "resume_core.py": {
+      "actual_main_snapshot_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "current_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "identical": true
+    },
+    "svhn_support.py": {
+      "actual_main_snapshot_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "current_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "identical": true
+    },
+    "smoke_support.py": {
+      "actual_main_snapshot_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "current_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "identical": true
+    },
+    "test_learned_scale.py": {
+      "actual_main_snapshot_sha256": "a0111e8d47b62d2b4339f7b43835530b0b42e4c03d910d4e5adaaaca192da8fe",
+      "current_sha256": "a0111e8d47b62d2b4339f7b43835530b0b42e4c03d910d4e5adaaaca192da8fe",
+      "identical": true
+    }
+  },
+  "integration_test_sha256": "ae4166c3a8ce29620424d1b36b1f7b9ab0dc5deccbfdcf5454ee8a1ad4f00a8a",
+  "validation_reports": {
+    "training_integration_report.json": "3da9f38976dc733102575df388aea50253a3d787e4206809cad82b71ff20c5f3",
+    "runner_change_review.json": "5da2b8a0922a35dcc8f69095c4b9df9a1948f5cdea8828ed28a178f9a169da73"
+  },
+  "post_snapshot_numerical_changes": false,
+  "reference_wrapper_or_added_audit_changes_after_snapshot": [
+    {
+      "file": "fixed_references/scale32/REFERENCE.json",
+      "snapshot_sha256": "9ba9c74cdd40530e48ac9d50333e82808c5d1b3466845dd64bd725f26fce0cf5",
+      "current_sha256": "d150fa58caaf26173f8fcc1f4a0fdd2ab22a4c7f369563013112227ea395cdec"
+    },
+    {
+      "file": "fixed_references/scale64/REFERENCE.json",
+      "snapshot_sha256": "a323762894db83b15af10e79a8aff0128c50f7946805a04517e17a9f627377db",
+      "current_sha256": "997e808387fb94fa9cf0688946522fb1f7583e3181ee622a8db0d0ca2d00cb41"
+    },
+    {
+      "file": "pilot_reference/AUDIT.json",
+      "snapshot_sha256": null,
+      "current_sha256": "c82c5c8cb3473af4aa40575ef97e0ce2379a5258f2b31a2ed101ae6faa72b3dc"
+    }
+  ],
+  "reference_changes_explanation": "Root maintains metadata wrappers and adds independent actual-pilot audit after test snapshot; raw research reference files are preserved. Recursive reference copy/feedback code was exercised unchanged. Final reference hashes and notebook validated in separate package assembly.",
+  "notebook_validation": "Final helper/template validated separately; actual runner correctly copied and repointed the blank snapshot template."
+}

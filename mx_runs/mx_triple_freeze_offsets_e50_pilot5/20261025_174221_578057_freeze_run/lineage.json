@@ -1,0 +1,35 @@
+{
+  "parent_verification": {
+    "parent_epoch": 50,
+    "parent_model_sha256": "14035d75b62ba2f6dee356cf30ef03cd14b65a715ae0aa11923b29b301fd9008",
+    "parent_contract_sha256": "fc9d8c652e8977052cd89ed10905c9e5a77155b34c14a4412b1d47b0b9a92cc6",
+    "parent_checkpoint_trace_sha256": "68bbdafd51c770c8fca0faf434627acb12a543c41b6a6f0d034659d93add5eed",
+    "parent_checkpoint_verified": true,
+    "parent_model_matches_reference": true,
+    "parent_contract_matches_reference": true,
+    "parent_trace_matches_reference": true,
+    "parent_checkpoint_sha256": "24d3be4add873dba0870a04e48a1ca7b58d00004b0336df8d46cc85867f03192",
+    "strict_restore_checks": {
+      "model_restored": true,
+      "optimizer_restored": true,
+      "scheduler_restored": true,
+      "rng_restored": true,
+      "lr_matches_scheduler": true
+    }
+  },
+  "intervention": {
+    "theta_lr_before": 0.0001,
+    "theta_lr_after": 0.0,
+    "weights_and_bn_unchanged_at_fork": true,
+    "adam_moments_unchanged_at_fork": true,
+    "weight_learning_rate_unchanged": true,
+    "scheduler_epoch_unchanged": true,
+    "theta_gradients_computed": true,
+    "theta_adam_moments_updated": true
+  },
+  "branch_contract_sha256": "f01fba81fd9de1378cb3b19f9dc2d27e0875d81eebc4bba149ed3a41d0b12cfe",
+  "historical_reference_sha256": "00d89e52af02359ac5d4abc91c3c19c659f45714b7f229bce0bb54af6f77b246",
+  "parent_reference": "parent_reference/REFERENCE.json",
+  "original_training_preserved": true,
+  "historical_control_retrained": false
+}

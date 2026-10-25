@@ -1,0 +1,21 @@
+{
+  "schema": "mx-triple-freeze-offsets-e50-pilot5-training-changes-v1",
+  "parent": "mx_triple_learned_scale32_64_reference100_v1",
+  "intervention": "strictly restore actual epoch50, then set theta group learning rate and matching scheduler metadata to0",
+  "weight_update": "unchanged original t.phase, three forwards/backwards and one Adam update per batch",
+  "theta_and_choices": "assert exact equality to parent50 after every optimizer step; theta gradients and Adam moments still computed",
+  "source_scale": "E4M3 source scale/codes recalculated from current weights for every minibatch as before",
+  "data": "same SVHN train-only/test full splits; compare every new epoch sample-order checksum with historical51-55",
+  "epochs": [
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "historical_dynamic_control_retrained": false,
+  "checkpoint_selection": "endpoint55 primary, first strict E4M3 maximum in newepochs51-55 secondary; all three precisions at the same selected epoch",
+  "parent_runtime_modified": false,
+  "initialization": "same epoch50 weights, BN, both Adam groups/moments, scheduler, RNG; no reinitialization or reset of time schedule",
+  "artifacts": "new timestamped directory, immutable checkpoints and feedback bundle; no original results overwritten"
+}

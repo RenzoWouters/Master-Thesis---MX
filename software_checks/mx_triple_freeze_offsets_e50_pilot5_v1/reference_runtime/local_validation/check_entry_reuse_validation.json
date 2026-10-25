@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Static reuse check; no redundant CPU codec rerun for endpoint-only change.",
+  "new_check_entry_executed_here": false,
+  "create_context_function_AST_identical_to_validated_pilot": true,
+  "unchanged_test_and_runtime_sha256": {
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_learned_scale.py": "a0111e8d47b62d2b4339f7b43835530b0b42e4c03d910d4e5adaaaca192da8fe",
+    "trunc_adapter.py": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+    "trunc_support.py": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8"
+  },
+  "prior_actual_check_report_sha256": "602539650d706b73d208596f89b7bc555dfbc22340c38c1026b464a1fd9cfd5d",
+  "prior_report_in_package": "provenance/learned_scale_pilot5_validation/check_entry_validation_report.json",
+  "new_CUDA_check_required_on_training_machine": true,
+  "new_full100_runner_validated_separately": "training_integration_report.json"
+}

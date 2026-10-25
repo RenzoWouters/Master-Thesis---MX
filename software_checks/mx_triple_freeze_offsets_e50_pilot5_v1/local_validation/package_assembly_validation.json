@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "assembled deliverable integrity, not a real CUDA/SVHN experiment",
+  "original_feedback_all_files_unchanged": 54,
+  "original_runtime_manifest_files_unchanged": 93,
+  "protocol_equals_actual_runner_config": true,
+  "parent_reference_pinned_and_all_hashes_verified": true,
+  "parent_epoch": 50,
+  "new_epochs": [
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "default_run_end_epoch": 55,
+  "dynamic_control_retrained": false,
+  "notebook_unexecuted_code_cells": 10,
+  "notebook_parameter_cell": true,
+  "validation_reports_bound_to_current_code": true,
+  "all_python_syntax_valid": true,
+  "real_SVHN_training_executed": false,
+  "CUDA_execution_tested_here": false
+}
