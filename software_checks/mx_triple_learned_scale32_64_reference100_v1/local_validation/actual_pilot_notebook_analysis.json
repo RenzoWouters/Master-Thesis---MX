@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "actual_pilot_feedback": "learned_scale_pilot5_actual_20261025_134757",
+  "no_new_training": true,
+  "no_executed_notebook_deliverable": true,
+  "metrics_and_scale_audits_valid": true,
+  "both_fixed_references_compatible": true,
+  "source_files_unchanged": true,
+  "notebook_helper_sha256": "c280a7414454019237f8256af2ff9285955a2fd4e912bea1de8ab7ba93b411f8"
+}

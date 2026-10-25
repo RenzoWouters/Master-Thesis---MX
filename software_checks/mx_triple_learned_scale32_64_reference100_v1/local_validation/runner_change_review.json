@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "unchanged_numerical_runtime_and_tests_sha256": {
+    "trunc_adapter.py": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+    "trunc_support.py": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_learned_scale.py": "a0111e8d47b62d2b4339f7b43835530b0b42e4c03d910d4e5adaaaca192da8fe"
+  },
+  "byte_identical_functions": [
+    "dependencies",
+    "create_context",
+    "restore_timing_sidecar",
+    "verify_unchanged"
+  ],
+  "changed_functions": [
+    "config",
+    "run_epochs",
+    "write_scale_results",
+    "export_results",
+    "feedback_bundle",
+    "main"
+  ],
+  "scope": "Only experiment identity, endpoint, partial/completion/timing reporting and reference archiving changed; all scale numerical code and optimizer support reused byte-identically.",
+  "run_train_sha256": "a7f006a9050952cce23d5d6650925737f7a3872e5172b8ef708c11625754abc6",
+  "training_loop_identical_except_resume_message": true,
+  "scale_diagnostics_identical_except_report_schema_and_initialization_message": true,
+  "compact_export_loop_byte_identical": true
+}

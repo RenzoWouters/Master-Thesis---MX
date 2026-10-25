@@ -1,0 +1,36 @@
+{
+  "schema": "mx-triple-learned-scale32-64-reference100-scale-learning-v1",
+  "learned_scale_parameters": 4080,
+  "initial_theta": 6.0,
+  "threshold": 5.5,
+  "tie_offset": 6,
+  "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+  "gradient_normalization": "none",
+  "scale_lr": 0.001,
+  "projection_after_every_Adam_update": true,
+  "completed_optimizer_updates": 57300,
+  "theta_changed_in_any_epoch": true,
+  "nonzero_scale_gradient_observed": true,
+  "total_choice_flips_including_repeat_flips": 351037,
+  "total_projected_values_including_repeats": 4333272,
+  "hard_switch_required_for_technical_PASS": false,
+  "zero_finite_scale_gradients_are_valid_diagnostics": true,
+  "packed_scale_choice_bytes": 510,
+  "analytical_FP32_theta_gradient_Adam_bytes": 65280,
+  "analytical_bytes_exclude_framework_and_temporaries": true,
+  "selected": {
+    "best_E4M3_test": {
+      "epoch": 34,
+      "blocks": 4080,
+      "count_x32": 1204,
+      "count_x64": 2876
+    },
+    "last_epoch": {
+      "epoch": 100,
+      "blocks": 4080,
+      "count_x32": 1647,
+      "count_x64": 2433
+    }
+  },
+  "synthetic_fixture_only": false
+}

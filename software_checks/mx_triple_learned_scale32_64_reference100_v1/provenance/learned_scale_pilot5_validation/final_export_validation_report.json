@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "Only final stricter export metadata validation changed since actual-main integration; all six saved compact exports validated and all three logits from source-only and own derived exports equal",
+  "production_adapter_sha256": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+  "production_runner_sha256": "e5bd1a470bdb864638b9884d042624309c015dfe09d72addb00161f446ded69c",
+  "production_support_sha256": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+  "test_file_sha256": "9e52cf29b0f3a9dd1d0c73015dacd8d3494d1e90e94f7b352cbc0c88b748a8c3",
+  "actual_main_integration_report_sha256": "8915db0928a1f23e7179d28a414d49acaa0d06ecd1a8547e8318f6e3a772ad18",
+  "synthetic_fixture_only": true,
+  "no_new_optimizer_update": true
+}

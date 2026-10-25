@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "source_run": "/workspace/scratch/4619498905be/work/learned_scale_integration_runs_v1/continuous5/20261025_142603_697350_joint_run",
+  "all_15_code_cells_executed": true,
+  "all_12_figures_rendered": true,
+  "raw_source_inputs_unchanged": true,
+  "analysis_inputs_unchanged": true,
+  "no_checkpoint_or_training_imports": true,
+  "actual_runner_completed_epochs": 5,
+  "scale_block_rows": 24480,
+  "scale_epoch_rows": 30,
+  "mixed_initial_theta_clearly_labelled": true,
+  "initial_choice_plot_from_actual_saved_state": true,
+  "real_reference_comparison_blocked": true,
+  "total_choice_flips": 1711,
+  "total_projected_values": 7010,
+  "technical_issues": [],
+  "helper_sha256": "c280a7414454019237f8256af2ff9285955a2fd4e912bea1de8ab7ba93b411f8",
+  "notebook_sha256": "7d26b37cbf76d88530a43fadb558c148a78b3cb3e0a04889749b21dd5627f717"
+}

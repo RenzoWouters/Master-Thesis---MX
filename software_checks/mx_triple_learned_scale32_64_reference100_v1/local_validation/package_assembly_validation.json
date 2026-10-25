@@ -1,0 +1,103 @@
+{
+  "schema": "mx-learned-scale32-64-reference100-assembly-v1",
+  "status": "PASS",
+  "new_SVHN_reference100_training_executed_here": false,
+  "CUDA_not_tested_here_for_new_package": true,
+  "actual_user_pilot5_audited": true,
+  "protocol_matches_executable": true,
+  "default_reference_endpoint": 100,
+  "all_final_runtime_hashes_match_tested_snapshot": true,
+  "final_notebook_matches_both_validation_reports": true,
+  "unexecuted_notebook_code_cells": 15,
+  "one_correct_template_only": true,
+  "core_report_reused_from_identical_pilot_math": true,
+  "python_sources_compile": [
+    "joint_adapter.py",
+    "joint_support.py",
+    "local_validation/test_notebook.py",
+    "local_validation/test_training_integration.py",
+    "mx_adapter.py",
+    "mx_e2m1.py",
+    "mx_e4m3.py",
+    "mx_format.py",
+    "notebook_support.py",
+    "posthoc_truncation.py",
+    "provenance/learned_scale_pilot5_notebook_support.py",
+    "provenance/learned_scale_pilot5_run_train.py",
+    "provenance/learned_scale_pilot5_validation/test_notebook.py",
+    "provenance/learned_scale_pilot5_validation/test_training_integration.py",
+    "provenance/scale32_pilot5_run_train.py",
+    "provenance/scale32_pilot5_test_trunc_training.py",
+    "provenance/scale32_pilot5_trunc_adapter.py",
+    "provenance/scale32_pilot5_trunc_support.py",
+    "resume_core.py",
+    "run_train.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "test_e4m3.py",
+    "test_joint.py",
+    "test_learned_scale.py",
+    "test_mx.py",
+    "trunc_adapter.py",
+    "trunc_support.py"
+  ],
+  "byte_identical_runtime_files": 18,
+  "old_packages_preserved": {
+    "mx_triple_scale32_pilot5_v1": {
+      "manifest_files_verified": 66,
+      "zip_sha256": "1332abc8b34a757f7ee6b693df66f500e9027e264ac18dfc2cb46bbaa9680552",
+      "all_unchanged": true
+    },
+    "mx_triple_scale32_reference100_v1": {
+      "manifest_files_verified": 81,
+      "zip_sha256": "0b506b359c64e61766427ae92c5b3aaf0d87f43a1872f6c58806761e9150ea19",
+      "all_unchanged": true
+    },
+    "mx_triple_learned_scale32_64_pilot5_v1": {
+      "manifest_files_verified": 62,
+      "zip_sha256": "8950a35cc20e3a3bb5c3fea6c4659716bf821e604d8d4c6704679196b5154e83",
+      "all_unchanged": true
+    }
+  },
+  "feedback_inputs_preserved": {
+    "feedback_bundle(20261025-124719).zip": {
+      "sha256": "f4ec1fa26336e2ad6552f0ae39a5a9c5e1f14dcbcc255818edb8c9bf7ba56e00",
+      "extracted_files_unchanged": 33
+    },
+    "feedback_bundle(20261025-134757).zip": {
+      "sha256": "d911f57c76220211ab76cbac0144cc78f026ee532de45ec7d53eea0a6c83ae8d",
+      "extracted_files_unchanged": 43
+    }
+  },
+  "fixed_references": {
+    "32": {
+      "raw_files_verified": 6,
+      "raw_data_unchanged": true,
+      "comparison_endpoint": 100
+    },
+    "64": {
+      "raw_files_verified": 6,
+      "raw_data_unchanged": true,
+      "comparison_endpoint": 100
+    }
+  },
+  "actual_pilot_reference_raw_files_verified": 9,
+  "runtime_sha256": {
+    "run_train.py": "a7f006a9050952cce23d5d6650925737f7a3872e5172b8ef708c11625754abc6",
+    "trunc_support.py": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+    "trunc_adapter.py": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "test_learned_scale.py": "a0111e8d47b62d2b4339f7b43835530b0b42e4c03d910d4e5adaaaca192da8fe"
+  },
+  "notebook_sha256": "8f3ee4c855ca43feef67e6ad6828f1ea3f1cffd6abfc5885f86e41c378565f99",
+  "notebook_helper_sha256": "0fc9e1f546448abf205dbc99f5a3de9614d5813391118d88586cf54caa142589"
+}

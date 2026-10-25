@@ -1,0 +1,63 @@
+{
+  "schema": "mx-triple-learned-scale32-64-reference100-change-v1",
+  "package": "mx_triple_learned_scale32_64_reference100_v1",
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "source_weight_bits": 8,
+  "mantissa_truncation": true,
+  "exponent_truncation": true,
+  "shared_scale_compensation": true,
+  "learned_shared_scale": true,
+  "source_scale_learned": false,
+  "scale_exponent_offset_choices": [
+    5,
+    6
+  ],
+  "scale_factor_choices": [
+    32,
+    64
+  ],
+  "scale_proxy_dtype": "float32",
+  "scale_proxy_init": 6.0,
+  "scale_proxy_bounds": [
+    5.0,
+    6.0
+  ],
+  "scale_threshold": 5.5,
+  "scale_tie_break": "offset6",
+  "learned_scale_parameters": 4080,
+  "base_parameters": 132954,
+  "parameters": 137034,
+  "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+  "scale_gradient_normalization": "none",
+  "master_ste": "identity_to_G(W)_no_extra_scale_factor",
+  "scale_lr": 0.001,
+  "weight_lr": 0.001,
+  "optimizer": "original_Adam_defaults_two_param_groups_one_step",
+  "projection": "theta_clamp5to6_after_every_Adam_step",
+  "source_cache": "one_E4_source_and_hard_choices_per_layer_minibatch_detached",
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "planned_epochs": 100,
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "seed": 20261009,
+  "selection": "first_strict_maximum_E4M3_official_test",
+  "packed_choice_bits_per_block": 1,
+  "packed_choice_bytes": 510,
+  "compact_exports_contain_theta": false,
+  "old_results_modified": false,
+  "new_SVHN_training_executed_here": false,
+  "expected_initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "parent": "mx_triple_learned_scale32_64_pilot5_v1",
+  "reference_end_epoch": 100,
+  "expected_optimizer_updates_at100": 57300,
+  "expected_training_forwards_at100": 171900,
+  "numerical_policy_byte_identical_to_pilot": true,
+  "previous_pilot_warmstart": false
+}

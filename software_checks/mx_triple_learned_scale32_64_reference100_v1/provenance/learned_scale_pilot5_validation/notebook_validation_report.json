@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "no_SVHN_training_or_accuracy_claim": true,
+  "no_checkpoint_or_training_imports": true,
+  "unexecuted_template_preserved": true,
+  "tests": {
+    "synthetic_complete5": {
+      "status": "PASS",
+      "completed_epochs": 5,
+      "selected_common_E4_epoch": 2,
+      "all_15_code_cells_executed": true,
+      "all_12_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked": true
+    },
+    "synthetic_stopped2": {
+      "status": "PASS",
+      "completed_epochs": 2,
+      "selected_common_E4_epoch": 2,
+      "all_15_code_cells_executed": true,
+      "all_12_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked": true
+    },
+    "synthetic_constant_class5": {
+      "status": "PASS",
+      "completed_epochs": 5,
+      "selected_common_E4_epoch": 2,
+      "all_15_code_cells_executed": true,
+      "all_12_figures_rendered": true,
+      "raw_inputs_unchanged": true,
+      "real_reference_comparison_blocked": true
+    },
+    "check_only": {
+      "status": "PASS",
+      "no_metrics_invented": true
+    },
+    "synthetic_comparison": {
+      "status": "PASS",
+      "common_early_range_enforced": true,
+      "no_future_best_leakage": true,
+      "separate_E4_selected_epochs": {
+        "learned": 2,
+        "fixed32": 4,
+        "fixed64": 2
+      }
+    },
+    "reference_pin_mutation": {
+      "status": "PASS",
+      "rehashed_mutation_rejected": true
+    },
+    "optional_save": {
+      "status": "PASS",
+      "fresh_analysis_directory_only": true
+    }
+  },
+  "negative_checks": {
+    "mixed_mode_best": {
+      "expected_rejection": true,
+      "messages": [
+        "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+      ]
+    },
+    "wrong_scale_gradient": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: layers.3/epoch1: ongeldige gradientnormgrenzen.",
+        "Schaaldiagnostiek: layers.3/epoch1: schaalstatistiek-CSV verschilt van history.json."
+      ]
+    },
+    "wrong_scale_choice": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: harde offset volgt niet θ<5,5→5, anders6 (tie naar6)."
+      ]
+    },
+    "wrong_scale_summary": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: layers.3/epoch1: count_x32 strookt niet met de opgeslagen blokstaten.",
+        "Schaaldiagnostiek: layers.3/epoch1: schaalstatistiek-CSV verschilt van history.json."
+      ]
+    },
+    "wrong_initial_theta": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: beginstaat van de schaalproxies is niet exact6."
+      ]
+    },
+    "missing_scale_epoch": {
+      "expected_rejection": true,
+      "messages": [
+        "Schaaldiagnostiek: laagstatistieken bevatten niet iedere afgeronde epoch."
+      ]
+    },
+    "wrong_source_audit": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/train: één bron, geleerde lagere schaal, mantissaschaalbehoud of cachecontrole niet bevestigd."
+      ]
+    },
+    "proxy_in_export": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/6: exportcontract wijkt af: fp32_scale_proxies_absent"
+      ]
+    },
+    "learned_E4_source": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/8: exportcontract wijkt af: learned_shared_scale"
+      ]
+    },
+    "wrong_packed_bytes": {
+      "expected_rejection": true,
+      "messages": [
+        "last_epoch/6: exportcontract wijkt af: packed_scale_choices_bytes"
+      ]
+    },
+    "false_epoch100_claim": {
+      "expected_rejection": true,
+      "messages": [
+        "Deze vijf-epochpilot kan geen voltooide honderd-epochtraining bevestigen."
+      ]
+    },
+    "false_constant_accuracy": {
+      "expected_rejection": true,
+      "messages": [
+        "Epoch 1/E2M3: correct-aantal is onmogelijk bij de label-/voorspellingstellingen.",
+        "Epoch 1/E2M3: constante voorspelling strookt niet met de accuracy."
+      ]
+    }
+  },
+  "template_sha256": "7d26b37cbf76d88530a43fadb558c148a78b3cb3e0a04889749b21dd5627f717",
+  "helper_sha256": "c280a7414454019237f8256af2ff9285955a2fd4e912bea1de8ab7ba93b411f8",
+  "visual_review": {
+    "status": "PASS",
+    "checked": [
+      "checkpoint_accuracy",
+      "scale_comparison_checkpoints",
+      "theta_distributions",
+      "scale_choices",
+      "scale_gradients"
+    ],
+    "no_clipped_labels_or_overlapping_key_values": true
+  }
+}
