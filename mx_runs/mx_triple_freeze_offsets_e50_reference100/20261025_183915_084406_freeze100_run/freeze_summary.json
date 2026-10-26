@@ -1,0 +1,20 @@
+{
+  "schema": "mx-triple-freeze-offsets-e50-reference100-freeze-v1",
+  "parent_epoch": 50,
+  "all_theta_unchanged": true,
+  "all_hard_offsets_unchanged": true,
+  "per_update_checks": 28650,
+  "theta_lr": 0.0,
+  "theta_gradients_computed": true,
+  "theta_adam_moments_updated": true,
+  "total_choice_flips": 0,
+  "total_theta_changed_blocks": 0,
+  "blocks": 4080,
+  "count_x32": 1654,
+  "count_x64": 2426,
+  "source_scale_dynamic": true,
+  "offset_updates_enabled": false,
+  "packed_choice_bytes": 510,
+  "legacy_scale_audit_names": "learned_shared_scale and scale_offsets_learned identify the inherited route; the offset parameters are fixed in this continuation",
+  "cost_interpretation": "diagnostic freeze; scale gradients/moments still computed; no optimized cost claim"
+}

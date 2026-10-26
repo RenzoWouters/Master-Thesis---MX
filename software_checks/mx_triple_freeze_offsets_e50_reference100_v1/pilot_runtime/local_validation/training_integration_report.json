@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_SVHN_accuracy_or_GPU_timing_result": true,
+  "fixture_changes": {
+    "train_examples": 3,
+    "test_examples": 3,
+    "batch_size": 2,
+    "parent_epochs_actually_executed": 55,
+    "mixed_initial_theta": true
+  },
+  "parent_checkpoint_sha256": "d63893772d2222fde56c98c17a5d0e316e8928e02b9802dede07d0e4b31286ec",
+  "parent_state_contract_sha256": "0d332bcc0f47a12e2b6dc5355871d731268bb43095e1bd41d92cd56530598bb1",
+  "runner_sha256": "0a735fe292f0ce49e86e6ad635f60ebfe09be57b9cffa15f31a76f7891d24ca8",
+  "code_binding": {
+    "run_train.py": "0a735fe292f0ce49e86e6ad635f60ebfe09be57b9cffa15f31a76f7891d24ca8",
+    "freeze_core.py": "67bf26495e334232266ce59541ef9b55c0e4e52b3b9d84a1d6893e6ce03dd9e2",
+    "runtime_bridge.py": "6e7046941892a5b7714b392731a0dc90b6d7a3fd9716950ce0a6f82f1b8f426c",
+    "test_freeze.py": "3d5e658c8a9ff78785e6857c1a8a0fea003238d2cd070819dd286cea51afdc5f"
+  },
+  "test_file_sha256": "fba9aa51924503ac776e8f69749b6d75008d8f88956dd83ba7136a4dd560564a",
+  "duration_seconds": 29.391657911000948,
+  "cases": {
+    "frozen51_to55": {
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze50_validation_build/integration_final/frozen51_to55",
+      "completed_epoch": 55,
+      "cumulative_new_optimizer_updates_since50": 10,
+      "optimizer_updates_in_process": 10,
+      "status": "PASS"
+    },
+    "stop_after52": {
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze50_validation_build/integration_final/stop_after52",
+      "completed_epoch": 52,
+      "cumulative_new_optimizer_updates_since50": 4,
+      "optimizer_updates_in_process": 4,
+      "status": "STOPPED_AT_EPOCH_BOUNDARY"
+    },
+    "resume52_to55": {
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze50_validation_build/integration_final/resume52_to55",
+      "completed_epoch": 55,
+      "cumulative_new_optimizer_updates_since50": 10,
+      "optimizer_updates_in_process": 6,
+      "status": "PASS"
+    },
+    "softstop51": {
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze50_validation_build/integration_final/softstop51",
+      "completed_epoch": 51,
+      "cumulative_new_optimizer_updates_since50": 2,
+      "optimizer_updates_in_process": 2,
+      "status": "STOPPED_AT_EPOCH_BOUNDARY"
+    }
+  },
+  "main_cases": {
+    "main_default55": {
+      "status": "PASS",
+      "exit_code": 0,
+      "completed_epoch": 55,
+      "feedback_bundle_verified": true
+    },
+    "main_partial51": {
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "completed_epoch": 51,
+      "feedback_bundle_verified": true
+    }
+  },
+  "tests": {
+    "original_parent_restored_before_freeze": true,
+    "new_epochs51_55_only": true,
+    "all_theta_and_hardbits_exact_every_update": true,
+    "three_precisions_A32_FP32_recursive_losses_and_BN_preserved": true,
+    "weight_Adam_and_BN_counters_continue50_to55": true,
+    "theta_lr_zero_and_finite_gradients_and_moments_continue": true,
+    "matched_historical_minibatch_order_all5epochs": true,
+    "CPU_resume52_exact_model_optimizer_scheduler_RNG": true,
+    "partial_and_softstop_remain_incomplete": true,
+    "best_checkpoint_selected_only51_55": true,
+    "independent_packed_choices_and_source_only_export_reconstruction": true,
+    "negative_parent_validation_before_model_mutation": {
+      "altered_historical_reference": {
+        "rejected": true,
+        "message": "Historisch referentiebestand gewijzigd: epoch_metrics.csv"
+      },
+      "wrong_parent_epoch": {
+        "rejected": true,
+        "message": "Verwacht exact het checkpoint na epoch50."
+      },
+      "wrong_parent_contract": {
+        "rejected": true,
+        "message": "Checkpoint heeft een ander oudercontract."
+      },
+      "wrong_parent_model": {
+        "rejected": true,
+        "message": "Verkeerd model bij epoch50."
+      },
+      "wrong_parent_trace": {
+        "rejected": true,
+        "message": "Oudergeschiedenis wijkt af van de feedbackbundel."
+      },
+      "wrong_parent_optimizer_steps": {
+        "rejected": true,
+        "message": "Onjuiste Adamstapteller in oudercheckpoint."
+      },
+      "wrong_parent_scheduler_epoch": {
+        "rejected": true,
+        "message": "Verwacht exact het checkpoint na epoch50."
+      },
+      "wrong_file_checksum": {
+        "rejected": true,
+        "message": "Checkpointchecksum wijkt af; bestand wordt niet geladen."
+      },
+      "within_bin_theta_drift": {
+        "rejected": true,
+        "message": "Een bevroren theta is gewijzigd; proef gestopt."
+      },
+      "nonzero_frozen_lr": {
+        "rejected": true,
+        "message": "Offset-LR is niet nul."
+      }
+    },
+    "protected_output_directories_refused": {
+      "package": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/output/mx_triple_freeze_offsets_e50_pilot5_v1"
+      },
+      "parent_run": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze50_validation_build/parent_fixture"
+      },
+      "resume_run": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze50_validation_build/integration_final/stop_after52"
+      },
+      "dataset": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze50_validation_build/integration_final/synthetic_dataset"
+      }
+    },
+    "CLI_rejections_before_outputs": {
+      "run --stop-after-epoch 0": {
+        "exit_code": 2,
+        "message": "run_train.py: error: --stop-after-epoch moet 51 tot en met 55 zijn; standaard55."
+      },
+      "run --stop-after-epoch 50": {
+        "exit_code": 2,
+        "message": "run_train.py: error: --stop-after-epoch moet 51 tot en met 55 zijn; standaard55."
+      },
+      "run --stop-after-epoch 56": {
+        "exit_code": 2,
+        "message": "run_train.py: error: --stop-after-epoch moet 51 tot en met 55 zijn; standaard55."
+      },
+      "run --stop-after-epoch 55.0": {
+        "exit_code": 2,
+        "message": "run_train.py: error: argument --stop-after-epoch: invalid int value: '55.0'"
+      },
+      "run --device cpu": {
+        "exit_code": 2,
+        "message": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+      },
+      "run --synthetic": {
+        "exit_code": 2,
+        "message": "run_train.py: error: unrecognized arguments: --synthetic"
+      },
+      "run --mode control": {
+        "exit_code": 2,
+        "message": "run_train.py: error: unrecognized arguments: --mode control"
+      },
+      "resume": {
+        "exit_code": 2,
+        "message": "run_train.py: error: Alleen resume vereist --checkpoint; run vertrekt altijd van het oudercheckpoint50."
+      },
+      "run --checkpoint /workspace/scratch/4619498905be/work/freeze50_validation_build/parent_fixture/checkpoints/epoch_00050.pt": {
+        "exit_code": 2,
+        "message": "run_train.py: error: Alleen resume vereist --checkpoint; run vertrekt altijd van het oudercheckpoint50."
+      },
+      "run --download": {
+        "exit_code": 2,
+        "message": "run_train.py: error: unrecognized arguments: --download"
+      }
+    },
+    "real_main_default55_and_partial51_status_and_feedback": true,
+    "parent_checkpoint_and_original_runtime_unchanged": true
+  }
+}

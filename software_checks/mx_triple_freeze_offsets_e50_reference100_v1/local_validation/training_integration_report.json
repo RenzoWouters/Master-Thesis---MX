@@ -1,0 +1,235 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_research_accuracy_or_GPU_timing_result": true,
+  "fixture": {
+    "dynamic_epochs": 100,
+    "frozen_pilot_epochs": 5,
+    "train_examples": 3,
+    "test_examples": 3,
+    "batch_size": 2
+  },
+  "code_binding": {
+    "run_train.py": "2a1ea814877821ccc75064db93e92ff7d5e8d2c5f3d125e1da48c0bd57d8afb3",
+    "continuation_core.py": "eb56f98ca0f7690b601e560fbab2288630f2335ac70c7124c67e98309b7fcc5d",
+    "continuation_bridge.py": "7c64bb1939dce701b4573f0fd0a61a84e441d7b7b6c75f2c1f5481b87eb00952"
+  },
+  "test_file_sha256": "9f168821c5349eea79ba36c762f3022390f8bb12f62afc76d85b8c9b8433da17",
+  "parent55_checkpoint_sha256": "1430dc5a9623d5cd3dc58cb31e79917ed0f7d9aff9b8815c5d741e643d405301",
+  "duration_seconds": 63.42404382300083,
+  "cases": {
+    "frozen56_to100": {
+      "status": "PASS",
+      "completed_epoch": 100,
+      "inherited_frozen_epochs": 5,
+      "new_optimizer_updates_in_process": 90,
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100"
+    },
+    "stop74": {
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "completed_epoch": 74,
+      "inherited_frozen_epochs": 5,
+      "new_optimizer_updates_in_process": 38,
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/stop74"
+    },
+    "resume74_to100": {
+      "status": "PASS",
+      "completed_epoch": 100,
+      "inherited_frozen_epochs": 5,
+      "new_optimizer_updates_in_process": 52,
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/resume74_to100"
+    },
+    "resume89_to100": {
+      "status": "PASS",
+      "completed_epoch": 100,
+      "inherited_frozen_epochs": 5,
+      "new_optimizer_updates_in_process": 22,
+      "output_directory": "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/resume89_to100"
+    }
+  },
+  "main_cases": {
+    "default100_softstop56": {
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "completed_epoch": 56,
+      "planned_end_epoch": 100,
+      "feedback_bundle_verified": true
+    }
+  },
+  "lr_boundaries": {
+    "55": {
+      "used": 0.0001,
+      "next": 0.0001,
+      "theta": 0.0
+    },
+    "56": {
+      "used": 0.0001,
+      "next": 0.0001,
+      "theta": 0.0
+    },
+    "74": {
+      "used": 0.0001,
+      "next": 0.0001,
+      "theta": 0.0
+    },
+    "75": {
+      "used": 0.0001,
+      "next": 1e-05,
+      "theta": 0.0
+    },
+    "76": {
+      "used": 1e-05,
+      "next": 1e-05,
+      "theta": 0.0
+    },
+    "89": {
+      "used": 1e-05,
+      "next": 1e-05,
+      "theta": 0.0
+    },
+    "90": {
+      "used": 1e-05,
+      "next": 1.0000000000000002e-06,
+      "theta": 0.0
+    },
+    "91": {
+      "used": 1.0000000000000002e-06,
+      "next": 1.0000000000000002e-06,
+      "theta": 0.0
+    },
+    "100": {
+      "used": 1.0000000000000002e-06,
+      "next": 1.0000000000000002e-06,
+      "theta": 0.0
+    }
+  },
+  "selected_epochs": {
+    "last_epoch": 100,
+    "best_E4M3_postfreeze": 51,
+    "best_E4M3_global": 16
+  },
+  "checks": {
+    "strict_parent55_model_optimizer_scheduler_rng_restored_without_intervention": true,
+    "only_epochs56_100_new_and_exact_pilot_prefix_preserved": true,
+    "all4080_theta_values_and_choices_fixed_after_every_update": true,
+    "three_precisions_A32_FP32_original_recursive_losses_preserved": true,
+    "original_absolute_Adam_BN_scheduler_positions_preserved": true,
+    "LR_transitions_after75_and90_correct": true,
+    "same_historical_data_orders_all50_frozen_epochs": true,
+    "CPU_resume74_exact_model_optimizer_scheduler_rng": true,
+    "CPU_resume89_exact_model_optimizer_scheduler_rng": true,
+    "global_pre16_and_inherited_post51_and_new_last100_exports_valid": true,
+    "historical_postfreeze_metrics_excluded_from_new_global_selection": true,
+    "independent_packed_choices_and_source_only_export_reconstruction": true,
+    "negative_inputs": {
+      "wrong_parent_epoch": {
+        "rejected": true,
+        "message": "Verwacht exact het bevroren checkpoint na epoch55."
+      },
+      "wrong_parent_contract": {
+        "rejected": true,
+        "message": "Verkeerd pilot55-contract."
+      },
+      "wrong_parent_model": {
+        "rejected": true,
+        "message": "Onjuist bevroren model na epoch55."
+      },
+      "wrong_parent_trace": {
+        "rejected": true,
+        "message": "Pilot55-checkpointgeschiedenis wijkt af."
+      },
+      "wrong_parent_optimizer_steps": {
+        "rejected": true,
+        "message": "Verkeerd aantal ge\u00ebrfde Adamupdates."
+      },
+      "wrong_parent_scheduler_epoch": {
+        "rejected": true,
+        "message": "Verwacht exact het bevroren checkpoint na epoch55."
+      },
+      "nonzero_parent_theta_lr": {
+        "rejected": true,
+        "message": "Pilot55 is niet exact bevroren met het oorspronkelijke LR-schema."
+      },
+      "wrong_file_checksum": {
+        "rejected": true,
+        "message": "Checkpointchecksum wijkt af; bestand wordt niet geladen."
+      },
+      "changed_historical_reference": {
+        "rejected": true,
+        "message": "Referentiebestand ontbreekt of is gewijzigd: epoch_metrics.csv"
+      },
+      "changed_external_history": {
+        "rejected": true,
+        "message": "Oorspronkelijke 100-epochgeschiedenis wijkt af van de vastgelegde feedback."
+      },
+      "resume_changed_contract": {
+        "rejected": true,
+        "message": "Hervatprotocol/omgeving/bron verschilt: /config/scale_lr"
+      }
+    },
+    "protected_output_directories": {
+      "package": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/output/mx_triple_freeze_offsets_e50_reference100_v1"
+      },
+      "parent_pilot": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze100_validation_build/fixtures_01/frozen_pilot55"
+      },
+      "dynamic_reference": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze100_validation_build/fixtures_01/dynamic100"
+      },
+      "resume_run": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/stop74"
+      },
+      "dataset": {
+        "rejected": true,
+        "message": "Resultaten mogen niet in een bestaande invoer-/pakketmap: /workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/dataset"
+      }
+    },
+    "default_main100_and_controlled_softstop56": true,
+    "invalid_cli": {
+      "run --stop-after-epoch 0": {
+        "exit_code": 2,
+        "message": "run_train.py: error: --stop-after-epoch moet 56 tot en met 100 zijn; standaard100."
+      },
+      "run --stop-after-epoch 55": {
+        "exit_code": 2,
+        "message": "run_train.py: error: --stop-after-epoch moet 56 tot en met 100 zijn; standaard100."
+      },
+      "run --stop-after-epoch 101": {
+        "exit_code": 2,
+        "message": "run_train.py: error: --stop-after-epoch moet 56 tot en met 100 zijn; standaard100."
+      },
+      "run --stop-after-epoch 100.0": {
+        "exit_code": 2,
+        "message": "run_train.py: error: argument --stop-after-epoch: invalid int value: '100.0'"
+      },
+      "run --device cpu": {
+        "exit_code": 2,
+        "message": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+      },
+      "run --synthetic": {
+        "exit_code": 2,
+        "message": "run_train.py: error: unrecognized arguments: --synthetic"
+      },
+      "resume": {
+        "exit_code": 2,
+        "message": "run_train.py: error: Alleen resume vereist --checkpoint; run vertrekt van de vastgelegde bevroren epoch55."
+      },
+      "run --checkpoint /workspace/scratch/4619498905be/work/freeze100_validation_build/fixtures_01/frozen_pilot55/checkpoints/epoch_00055.pt": {
+        "exit_code": 2,
+        "message": "run_train.py: error: Alleen resume vereist --checkpoint; run vertrekt van de vastgelegde bevroren epoch55."
+      },
+      "run --download": {
+        "exit_code": 2,
+        "message": "run_train.py: error: unrecognized arguments: --download"
+      }
+    },
+    "parent_pilot_dynamic_history_and_inherited_runtime_unchanged": true
+  }
+}

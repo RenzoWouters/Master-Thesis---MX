@@ -1,0 +1,10 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_freeze_offsets_e50_reference100\20261025_183858_863957_freeze100_check
+BEVROREN VOORTZETTING: herstel55; nieuwe epochs56-100; offsets vast op50; A32; FP32-master; drie oorspronkelijke precisies.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+LEARNED SCALE CHECK PASS: harde x32/x64-forward, identity-mastergradient, expliciete blokgradient, cache, Adam en compacte bronexports.
+CHECK PASS: geleerde blokkeuze32/64; exacte forward, identity-mastergradient, log-exponent-schaalgradient, projectie en compacte exports. Geen SVHN-training.
+CHECK PASS: codecs/gradients, echte bevroren epoch55, geselecteerde eerdere checkpoints en oorspronkelijke historie gecontroleerd. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_freeze_offsets_e50_reference100\20261025_183858_863957_freeze100_check\run_report.json

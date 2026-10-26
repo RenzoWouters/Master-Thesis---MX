@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scope": "independent read-only code review; no runtime execution claimed",
+  "files_sha256": {
+    "runtime_bridge.py": "6e7046941892a5b7714b392731a0dc90b6d7a3fd9716950ce0a6f82f1b8f426c",
+    "freeze_core.py": "67bf26495e334232266ce59541ef9b55c0e4e52b3b9d84a1d6893e6ce03dd9e2",
+    "run_train.py": "0a735fe292f0ce49e86e6ad635f60ebfe09be57b9cffa15f31a76f7891d24ca8"
+  },
+  "confirmed": [
+    "93 parent-runtime files and manifest byte-identical",
+    "parent canonical contract digest matches actual feedback",
+    "baseline50 exact original history record",
+    "comparison51-55 exact original history records",
+    "parent checkpoint trace digest reconstructed independently including omission of three after-save timing fields",
+    "strict parent contract restored before freeze intervention",
+    "freeze changes only theta-group lr and matching scheduler metadata immediately after restore",
+    "all initial model/BN/Adam moments/RNG preserved",
+    "every optimizer update verifies exact theta and hard-choice equality",
+    "current E4 codes and scales recomputed by unchanged parent phase",
+    "branch results select shared E4 best only within new epochs51-55",
+    "historical train/test sample order hashes enforced",
+    "original paths remain read-only"
+  ],
+  "findings": [
+    {
+      "severity": "blocking",
+      "issue": "Inherited create_context already created training_change_manifest.json, then wrapper attempted exclusive second write.",
+      "status": "fixed and inspected: archive_parent_manifest renames own newly created inherited file before branch manifest is written once"
+    },
+    {
+      "severity": "minor",
+      "issue": "validate_output_location assumes resume checkpoint always inside checkpoints/; exported root-level last_checkpoint.pt protects whole experiment root and rejects default sibling output.",
+      "status": "fixed and inspected: run_directory uses parent.parent only for immediate checkpoints/ directory, otherwise the checkpoint parent itself; sibling outputs remain permitted for root-level checkpoint copies"
+    }
+  ],
+  "runtime_validation": "Separate validation work; this artifact records independent code/provenance review only.",
+  "final_metadata_review": "run_check derives report.synthetic_fixture_only from the pinned evidence contract instead of hardcoded False. Actual parent remains False; synthetic fixtures are truthfully marked True. This changes report metadata only, not training or restoration."
+}

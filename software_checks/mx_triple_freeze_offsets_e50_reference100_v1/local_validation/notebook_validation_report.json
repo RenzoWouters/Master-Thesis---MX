@@ -1,0 +1,302 @@
+{
+  "schema": "mx-freeze100-notebook-validation-v1",
+  "status": "PASS",
+  "scope": "Read-only presentation validation on actual CPU integration outputs with tiny synthetic data; not SVHN or CUDA training.",
+  "synthetic_fixture_only": true,
+  "completed_checks": 50,
+  "checks": [
+    {
+      "check": "actual_synthetic_full100_loads_without_errors",
+      "passed": true
+    },
+    {
+      "check": "synthetic_fixture_is_explicitly_labelled",
+      "passed": true
+    },
+    {
+      "check": "inherited5_plus_new45_epochs",
+      "passed": true
+    },
+    {
+      "check": "all_frozen_steps_and_new_steps_distinguished_on_tiny_two_batch_fixture",
+      "passed": true
+    },
+    {
+      "check": "actual_partial74_loads_with_provisional_status",
+      "passed": true
+    },
+    {
+      "check": "partial74_does_not_invent_epoch100_accuracy",
+      "passed": true
+    },
+    {
+      "check": "partial_postfreeze_selection_uses_same_observed_window",
+      "passed": true
+    },
+    {
+      "check": "partial_global_selection_uses_same_observed_window",
+      "passed": true
+    },
+    {
+      "check": "endpoint_three_modes_share_one_selected_epoch_per_variant",
+      "passed": true
+    },
+    {
+      "check": "postfreeze_three_modes_share_one_selected_epoch_per_variant",
+      "passed": true
+    },
+    {
+      "check": "global_three_modes_share_one_selected_epoch_per_variant",
+      "passed": true
+    },
+    {
+      "check": "primary_endpoint_is_exact_epoch100",
+      "passed": true
+    },
+    {
+      "check": "global_best_prefreeze_explicitly_labelled",
+      "passed": true
+    },
+    {
+      "check": "postfreeze_best_excludes_prefreeze_epoch16",
+      "passed": true
+    },
+    {
+      "check": "paired_deltas_cover_all50_frozen_epochs",
+      "passed": true
+    },
+    {
+      "check": "alternative_postfreeze_global_winners_and_first_tie_rule",
+      "passed": true
+    },
+    {
+      "check": "lower_modes_do_not_select_their_own_best_epoch",
+      "passed": true
+    },
+    {
+      "check": "reject_changed_inherited_pilot_metric",
+      "passed": true
+    },
+    {
+      "check": "reject_changed_full_theta_state",
+      "passed": true
+    },
+    {
+      "check": "reject_changed_block_csv_theta",
+      "passed": true
+    },
+    {
+      "check": "reject_scale_learning_rate_reenabled",
+      "passed": true
+    },
+    {
+      "check": "reject_missing_per_update_freeze_check",
+      "passed": true
+    },
+    {
+      "check": "reject_summary_that_omits_inherited5_checks",
+      "passed": true
+    },
+    {
+      "check": "reject_new_steps_that_double_count_pilot",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_parent55_model",
+      "passed": true
+    },
+    {
+      "check": "reject_incomplete_rng_restore",
+      "passed": true
+    },
+    {
+      "check": "reject_different_historical_sample_order",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_lr_epoch76",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_lr_after_epoch90",
+      "passed": true
+    },
+    {
+      "check": "reject_csv_history_loss_mismatch",
+      "passed": true
+    },
+    {
+      "check": "reject_accuracy_not_matching_integer_counts",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_global_selection_stage",
+      "passed": true
+    },
+    {
+      "check": "reject_individual_lower_mode_selection",
+      "passed": true
+    },
+    {
+      "check": "reject_false_frozen_flag_on_prefreeze_export",
+      "passed": true
+    },
+    {
+      "check": "reject_changed_reference_checksum",
+      "passed": true
+    },
+    {
+      "check": "notebook_format4_5",
+      "passed": true
+    },
+    {
+      "check": "all_notebook_cells_have_unique_ids",
+      "passed": true
+    },
+    {
+      "check": "deliverable_notebook_is_blank_11_code_cells",
+      "passed": true
+    },
+    {
+      "check": "all_code_cells_parse",
+      "passed": true
+    },
+    {
+      "check": "analysis_does_not_import_torch",
+      "passed": true
+    },
+    {
+      "check": "all_11_notebook_cells_execute_and_build9_figures",
+      "passed": true
+    },
+    {
+      "check": "notebook_execution_preserves_all_input_bytes",
+      "passed": true
+    },
+    {
+      "check": "notebook_execution_does_not_import_torch",
+      "passed": true
+    },
+    {
+      "check": "partial_endpoint_figure_contains_no_fake_bars",
+      "passed": true
+    },
+    {
+      "check": "partial_curve_anchor50_and_truncation74_44",
+      "passed": true
+    },
+    {
+      "check": "partial_curve_anchor50_and_truncation74_45",
+      "passed": true
+    },
+    {
+      "check": "partial_curve_anchor50_and_truncation74_46",
+      "passed": true
+    },
+    {
+      "check": "partial_curve_anchor50_and_truncation74_47",
+      "passed": true
+    },
+    {
+      "check": "partial_curve_anchor50_and_truncation74_48",
+      "passed": true
+    },
+    {
+      "check": "partial_curve_anchor50_and_truncation74_49",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/run_report.json": "1763a12a7fbf46929d9c00731f008208393193705143e97c801098f73f28fcd3",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/history.json": "5849bbd117cbaa7aeaa3e840304b45b60d39a3ade7ac8ee982f82cc42a448875",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/training_summary.json": "3aaba690fbb8412be6017842b411f91d035e913349a0b89bc2e2f387f4b539b8",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/checkpoint_selection.json": "3a1d57c2f81fadcbeed0afe98e7503b16b279e371ee440870bd14ad0984af595",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/selected_metrics.csv": "ce03af426aab9b61a3a1bb7b5b80e47967b99e43c7a8b297c3c6a715560596c0",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/epoch_metrics.csv": "ee823945b20d8b55c84cc056ec0a6fed65537e09e6dfa54a0b0812b9dde0bc9b",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/epoch_times.csv": "f6d74062e4069a63d5807b1b2baa180b877c8b7e5e453f3ed6eff0c860dd0e4d",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/scale_epoch_metrics.csv": "7723a1ad03f9af0aabec0bca9f935def05e58919253ffc39182e456b2850e4ff",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/scale_block_state.csv": "1f562b3c7ef975cd8574c6cb463c83998949f1545debcc0d190677c9423d63e6",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/run_report.json": "a3eb0509775f38b7b84747f8de5d3b229a390f90e547f5defdeccab906c2364a",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/REFERENCE.json": "6c6649fc10baae4981a8b86f0854f49b13a203f3c90aaf8f855d53459fddfe29",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/history.json": "82debb2bb67634125ce76fc0d12aae10eca56e1bfe103886397726bdc3495665",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/epoch_metrics.csv": "3a5ed2151f0652081b5659d5316d0a65a62b38d2c6c5934272df39971576e1b4",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/epoch_times.csv": "1d1118d23877cbb1d7f238f88ba8fce8abb2282640c42c9d2b99211883e01cbb",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/scale_epoch_metrics.csv": "e09906f615f0fe91990b37b4e68ef59453439bda3da99804c154cd4b61302385",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/run_report.json": "d832adc61080986ac9c9e796c42b17a04a18d66870c334c9e1d1af065302ed02",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/history.json": "0ecca5692ddf4bc03d809a422836e620afca576da5b176fa636476d6c0213b14",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/REFERENCE.json": "df6e08674c8cb868ba64de9bd6ed43845f950f56efad6799674130f50466c292",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/checkpoint_selection.json": "f17ade7e02e4ee894b5f43c5eb0ced55e218d48c752134ab48135796787cc5a3",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/parent_contract.json": "907b172b5ca1656f7a1e0d6b75c2c161653dae0113c2d41ed174ba5ec2f8a676",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/selected_metrics.csv": "d7814c19e8af9b232b29c6f46a65a6dcd354d35d29cf583bc17adc4e2d9bf644",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/dynamic_reference/training_summary.json": "d9bf7f75333b006283ac849eb19d8e292224c4d6a85e593513d29622ecf1a0ac",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/MX_triple_freeze_offsets_e50_pilot5_resultaten.ipynb": "c8e06b4c5ef1fcc3c82cfdfa1e642b2c27ea9a7f962334511b0fd5330b48f903",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/checkpoint_selection.json": "6297227f079aadc853e6d2827952069e157af2dd0aedd75e135449ec3d253d97",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/comparison_with_historical.csv": "d7b3f4b5ed81e88fb466b051b821ed3b39f5d3d78bbba8c5fb259f58aed7c37b",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/epoch_metrics.csv": "f3f8d0e3f68a451f8c100ccfad5bdbc7c8d040b3db0b0525ac88a7da93932c67",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/epoch_times.csv": "9d151054097cd1b3313596eebc75f28691b2af00efe4417e2b08f5a3db2d42d5",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/freeze_summary.json": "036bdd274b7f2e9c600ec22864e019c543dcf4191924dd43ed22744ced6c268f",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/lineage.json": "e05d48a2acaf85c902b27b69eca459a2ae8275b4f4558672896f6ca3684de792",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/mx_export_layers_4_best.csv": "e18d6a5a8c334a32a97d5541eb952c24b1fcd4b31180d677d08ddf06d3a13029",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/mx_export_layers_4_last.csv": "97f443e6374a327cd937532c7eb99e17783f59710a48a969d3ebcaecfb1adbed",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/mx_export_layers_6_best.csv": "f1e059c4785a6ca01adc120f712218cf5c840290ba0458a52a34641d6422be79",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/mx_export_layers_6_last.csv": "42090cdaf2dadde12e3a4349f605009167df02aca68badab652f87f11ad9fdd6",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/mx_export_layers_8_best.csv": "4e754ddbaf11036cb1fa0b7407af3baa8a746bcf1df1cc85065672e36b266813",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/mx_export_layers_8_last.csv": "f67b857a460f9e7a6cf757ee46226bbfd0ccc351bc21b09fe9f3a9bf0e37b0c5",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/notebook_support.py": "d165d651ede7bdaf8f2c83049b3a85920ac1d338e05a20848f66abb1701449d1",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_contract55.json": "756d5e4a3538469e7170a8de772df44dc1e5e1a9495becd86d6ffae5f434c65a",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/REFERENCE.json": "fdbf0413dcfdf1585834a29ca841cc5944b2eef5fa41f2c4190758e5b03bb783",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/baseline_epoch50.json": "a86cbd622afa7e2bc00e06f35c13002bc2938ca7002c14727741f1f0b91bc9f1",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/comparison_epochs51_55.json": "a59b1a0be10d6be12831d826f9e6bd550616675e15b7af8ca96003b95a4d107e",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/epoch_metrics.csv": "3a5ed2151f0652081b5659d5316d0a65a62b38d2c6c5934272df39971576e1b4",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/epoch_times.csv": "1d1118d23877cbb1d7f238f88ba8fce8abb2282640c42c9d2b99211883e01cbb",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/parent_contract.json": "907b172b5ca1656f7a1e0d6b75c2c161653dae0113c2d41ed174ba5ec2f8a676",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/run_report.json": "9ee7c7014c84bb0d4b3d6753a5f14115bbdff95c893e7a081090589d197538c4",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/parent_reference/scale_epoch_metrics.csv": "e09906f615f0fe91990b37b4e68ef59453439bda3da99804c154cd4b61302385",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/run.log": "aaaf4d8698b3780df8708bb15e8803681f73a68035ddfdb5c2d21b1cc58d0d35",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/scale_block_state.csv": "1c7633ed2b435a6dd82c43420ef21f8b50d156775838969a1029cf6ecdad845b",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/scale_epoch_metrics.csv": "24ba2371afa6b2d0b27d4754d7cf1ca1f2809c937a664632d27979e7bce712e4",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/selected_metrics.csv": "a51b3e3572f159941bc12983eb1bbd411e53ab4016d9c21f799b2f13d5dd31a1",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/test_prediction_counts.csv": "0382dae4e0a9f80b1b41d6097dc433a0b24ee01399cd279f982b35bf25542b6e",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/training_summary.json": "486e2a8deb500b1def952d41ccbfdd74901ae4395feec69875839d355ca5b3c4",
+    "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100/pilot_reference/weight_updates.csv": "ffb4215ba952f5255c73d8a220d7722e91a133362c026d969e69a950e3661bfb"
+  },
+  "candidate_sha256": {
+    "notebook_support.py": "481deedf5957d156b04267105d30cb0cfc26186ed2a78a60b810af11b997ecfa",
+    "MX_triple_freeze_offsets_e50_reference100_resultaten.ipynb": "4d3208345894cd37f63ba4f28ee35459babae232029c9db4a2bcd00c898bedd8"
+  },
+  "full_fixture": "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/frozen56_to100",
+  "partial_fixture": "/workspace/scratch/4619498905be/work/freeze100_validation_build/integration_01/stop74",
+  "full_selected_epochs": {
+    "last": 100,
+    "postfreeze": 51,
+    "global": 16
+  },
+  "partial_last_epoch": 74,
+  "code_cells_executed": 11,
+  "figures_rendered": 10,
+  "input_files_unchanged": true,
+  "checkpoint_loaded": false,
+  "torch_imported": false,
+  "training_started_by_notebook_validation": false,
+  "executed_notebook_delivered": false,
+  "visual_review_pending": false,
+  "execution_method": "Python exec of every code cell with RUN_DIR and helper path injected; the deliverable notebook remains blank.",
+  "visual_review": {
+    "status": "PASS",
+    "reviewed_figures": [
+      "accuracy_after_freeze",
+      "accuracy_epoch100",
+      "accuracy_best_E4_global",
+      "partial74_endpoint",
+      "accuracy_full_history",
+      "scale_choices_and_switches",
+      "training_objectives",
+      "epoch_timing"
+    ],
+    "findings": "Legends, stage labels, titles and captions readable. Global prefreeze origin explicit. Whole-history ticks spaced; time-axis label shortened. Figures clearly marked synthetic. No scientific accuracy conclusion drawn from fixture."
+  },
+  "package_copy_sha256": {
+    "notebook_support.py": "481deedf5957d156b04267105d30cb0cfc26186ed2a78a60b810af11b997ecfa",
+    "MX_triple_freeze_offsets_e50_reference100_resultaten.ipynb": "4d3208345894cd37f63ba4f28ee35459babae232029c9db4a2bcd00c898bedd8"
+  }
+}

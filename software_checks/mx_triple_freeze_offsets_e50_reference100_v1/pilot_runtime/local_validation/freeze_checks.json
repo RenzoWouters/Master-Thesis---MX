@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "synthetic_checks_only": true,
+  "SVHN_training_performed": false,
+  "checks": {
+    "freeze_consumes_no_rng": true,
+    "weight_lr_preserved_theta_lr_zero": true,
+    "absolute_scheduler_position50_preserved": true,
+    "all_three_optimizer_updates_guarded": true,
+    "all_theta_exact_at_bounds_and_threshold": true,
+    "weights_still_update": true,
+    "theta_moments_still_diagnostic_updates": true,
+    "absolute_adam_scheduler_steps53": true,
+    "zero_theta_lr_survives_scheduler_steps": true,
+    "E4_source_scale_remains_dynamic": true,
+    "both_lower_scales_follow_current_source_plus_fixed_offset": true,
+    "negative_theta_drift_stays_in_same_hard_bin": true,
+    "one_ulp_theta_drift_rejected_even_without_choice_change": true,
+    "nonzero_theta_lr_rejected": true
+  },
+  "intervention": {
+    "theta_lr_before": 0.0001,
+    "theta_lr_after": 0.0,
+    "weights_and_bn_unchanged_at_fork": true,
+    "adam_moments_unchanged_at_fork": true,
+    "weight_learning_rate_unchanged": true,
+    "scheduler_epoch_unchanged": true,
+    "theta_gradients_computed": true,
+    "theta_adam_moments_updated": true
+  }
+}

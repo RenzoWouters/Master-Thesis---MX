@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_research_accuracy_or_GPU_timing_result": true,
+  "actual_check_main_exit_code": 0,
+  "original_codec_and_gradient_checks_unchanged": true,
+  "strict_parent55_model_optimizer_scheduler_rng_restored": true,
+  "original_pre16_and_pilot51_checkpoints_preflighted": true,
+  "no_new_training_epochs_run": true,
+  "nested_manifests_archived_without_overwrite": true,
+  "feedback_bundle_verified": true,
+  "parent_checkpoint_sha256": "1430dc5a9623d5cd3dc58cb31e79917ed0f7d9aff9b8815c5d741e643d405301",
+  "code_binding": {
+    "run_train.py": "2a1ea814877821ccc75064db93e92ff7d5e8d2c5f3d125e1da48c0bd57d8afb3",
+    "continuation_core.py": "eb56f98ca0f7690b601e560fbab2288630f2335ac70c7124c67e98309b7fcc5d",
+    "continuation_bridge.py": "7c64bb1939dce701b4573f0fd0a61a84e441d7b7b6c75f2c1f5481b87eb00952"
+  },
+  "test_file_sha256": "ffcf651de11a48b0bb437604edc16bff8526341f51bb74ee85269a959f828757",
+  "duration_seconds": 4.874225207999189,
+  "actual_check_report": "/workspace/scratch/4619498905be/work/freeze100_validation_build/check_entry_01/check_results/20261025_183422_939701_freeze100_check/run_report.json",
+  "parent55_verification": {
+    "parent_epoch": 55,
+    "parent_model_sha256": "b8e70f6f241f9dde23f82f5f352156a07f06427a4f680999e96704104324464e",
+    "parent_contract_sha256": "151d642482340b750c2facde7177cd73cf70d208850eed4f5248a7d4496cdf5d",
+    "parent_checkpoint_trace_sha256": "b9208443b77acae2ccf027b22e46d31b01a0d50358f1c6cfe183ddc5b7159caa",
+    "parent_checkpoint_verified": true,
+    "parent_model_matches_reference": true,
+    "parent_contract_matches_reference": true,
+    "parent_trace_matches_reference": true,
+    "parent_checkpoint_sha256": "1430dc5a9623d5cd3dc58cb31e79917ed0f7d9aff9b8815c5d741e643d405301",
+    "strict_restore_checks": {
+      "model_restored": true,
+      "optimizer_restored": true,
+      "scheduler_restored": true,
+      "rng_restored": true,
+      "lr_matches_scheduler": true
+    }
+  },
+  "freeze_tests": {
+    "status": "PASS",
+    "synthetic_checks_only": true,
+    "SVHN_training_performed": false,
+    "checks": {
+      "freeze_consumes_no_rng": true,
+      "weight_lr_preserved_theta_lr_zero": true,
+      "absolute_scheduler_position50_preserved": true,
+      "all_three_optimizer_updates_guarded": true,
+      "all_theta_exact_at_bounds_and_threshold": true,
+      "weights_still_update": true,
+      "theta_moments_still_diagnostic_updates": true,
+      "absolute_adam_scheduler_steps53": true,
+      "zero_theta_lr_survives_scheduler_steps": true,
+      "E4_source_scale_remains_dynamic": true,
+      "both_lower_scales_follow_current_source_plus_fixed_offset": true,
+      "negative_theta_drift_stays_in_same_hard_bin": true,
+      "one_ulp_theta_drift_rejected_even_without_choice_change": true,
+      "nonzero_theta_lr_rejected": true
+    },
+    "intervention": {
+      "theta_lr_before": 0.0001,
+      "theta_lr_after": 0.0,
+      "weights_and_bn_unchanged_at_fork": true,
+      "adam_moments_unchanged_at_fork": true,
+      "weight_learning_rate_unchanged": true,
+      "scheduler_epoch_unchanged": true,
+      "theta_gradients_computed": true,
+      "theta_adam_moments_updated": true
+    }
+  }
+}

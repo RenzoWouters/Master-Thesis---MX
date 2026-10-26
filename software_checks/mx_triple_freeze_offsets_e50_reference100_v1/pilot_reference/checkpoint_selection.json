@@ -1,0 +1,31 @@
+{
+  "policy": "first strict maximum of E4M3 official-test top1 within new epochs51-55 only",
+  "best": {
+    "epoch": 51,
+    "file": "best_checkpoint.pt",
+    "sha256": "a8564f06c5fbd76007849ac1bb3ccb1e6b4937d4f32a0c420e3e2a4f3324164c",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_freeze_offsets_e50_pilot5\\20261025_174221_578057_freeze_run\\checkpoints\\epoch_00051.pt",
+    "selection_score_E4M3": 94.91395205431506
+  },
+  "last": {
+    "epoch": 55,
+    "file": "last_checkpoint.pt",
+    "sha256": "293097deafb2c5b673a44633aca94d08fe4ba619b0a2b34838df45c291290568",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_freeze_offsets_e50_pilot5\\20261025_174221_578057_freeze_run\\checkpoints\\epoch_00055.pt",
+    "selection_score_E4M3": 94.89090349869122
+  },
+  "same_checkpoint": false,
+  "selected_on_official_test": true,
+  "independent_test_estimate": false,
+  "selection_mode": "MXFP8_E4M3/A32",
+  "all_modes_from_same_selected_checkpoint": true,
+  "selection_epoch_range": [
+    51,
+    55
+  ],
+  "planned_selection_epoch_range": [
+    51,
+    55
+  ],
+  "primary_endpoint": 55
+}

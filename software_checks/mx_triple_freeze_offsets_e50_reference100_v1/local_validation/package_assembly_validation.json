@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "kind": "distribution_assembly_not_training",
+  "previous_pilot_files_byte_identical": 128,
+  "actual_feedback_files_byte_identical": 43,
+  "reference_files_verified": {
+    "pilot_reference": 44,
+    "dynamic_reference": 9
+  },
+  "external_dynamic_history_required_at_runtime_and_hash_pinned": true,
+  "reference_identity_pins_match_executable": true,
+  "actual_parent55_contract_digest_verified": true,
+  "protocol_json_matches_executable_config": true,
+  "Python_AST_files_checked": 45,
+  "code_binding": {
+    "run_train.py": "2a1ea814877821ccc75064db93e92ff7d5e8d2c5f3d125e1da48c0bd57d8afb3",
+    "continuation_core.py": "eb56f98ca0f7690b601e560fbab2288630f2335ac70c7124c67e98309b7fcc5d",
+    "continuation_bridge.py": "7c64bb1939dce701b4573f0fd0a61a84e441d7b7b6c75f2c1f5481b87eb00952"
+  },
+  "validation_reports": {
+    "training_integration_report.json": {
+      "status": "PASS",
+      "sha256": "a3880b0ef58c1f6490f46553b3dbe335fb5ce612779e50b0c169b2a32bff2b5b"
+    },
+    "check_entry_validation_report.json": {
+      "status": "PASS",
+      "sha256": "20cd137288f4c730dc044859c116fa96bb31ba9ca1511f49e959013419f82fb0"
+    },
+    "fixture_generation_report.json": {
+      "status": "PASS",
+      "sha256": "517e0aa670c374803fb2c66b5dc9e39010c10b78912b2f714aaa5b0385dfcd3b"
+    },
+    "code_review.json": {
+      "status": "PASS",
+      "sha256": "d6fcdf4b91da4af7948c74b65d37df9200bf3cd1dd9709cf3a275775c02f1853"
+    },
+    "notebook_validation_report.json": {
+      "status": "PASS",
+      "sha256": "b8c11a214ff19eddab8f18e722f63ca5b6cf2ff70bf0ec5588b2ac70c856ba26"
+    }
+  },
+  "blank_notebooks": {
+    "MX_triple_freeze_offsets_e50_reference100_resultaten.ipynb": {
+      "code_cells": 11,
+      "blank": true,
+      "sha256": "4d3208345894cd37f63ba4f28ee35459babae232029c9db4a2bcd00c898bedd8"
+    },
+    "pilot_reference/MX_triple_freeze_offsets_e50_pilot5_resultaten.ipynb": {
+      "code_cells": 10,
+      "blank": true,
+      "sha256": "0210a3c9e5287c9844ec4c72232cf06169780512b8dc2773e321871ae77cceb5"
+    },
+    "pilot_runtime/MX_triple_freeze_offsets_e50_pilot5_resultaten.ipynb": {
+      "code_cells": 10,
+      "blank": true,
+      "sha256": "b40b7e0afc45371be1540854dcdb4a22bc4da99c9efbc02e369b2c89ddd39684"
+    },
+    "pilot_runtime/reference_runtime/MX_triple_learned_scale32_64_reference100_resultaten.ipynb": {
+      "code_cells": 15,
+      "blank": true,
+      "sha256": "8f3ee4c855ca43feef67e6ad6828f1ea3f1cffd6abfc5885f86e41c378565f99"
+    }
+  },
+  "no_training_checkpoints_or_binary_fixtures_in_distribution": true,
+  "CUDA_training_performed_here": false,
+  "SVHN_data_loaded_here": false
+}

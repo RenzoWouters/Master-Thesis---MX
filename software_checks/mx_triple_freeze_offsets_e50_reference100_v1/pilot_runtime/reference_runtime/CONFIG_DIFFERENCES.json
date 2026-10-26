@@ -1,0 +1,27 @@
+{
+  "parent": "mx_triple_learned_scale32_64_pilot5_v1",
+  "package": "mx_triple_learned_scale32_64_reference100_v1",
+  "all_other_config_fields_equal": true,
+  "differences": {
+    "pilot_stop_epoch": {
+      "pilot": 5,
+      "reference100": null
+    },
+    "purpose": {
+      "pilot": "five complete train-only epochs: learned binary per-block lower scale32/64; unchanged E4M3 source and exponent/mantissa bit truncation",
+      "reference100": "one hundred complete train-only epochs: learned binary per-block lower scale32/64; unchanged E4M3 source and exponent/mantissa bit truncation"
+    },
+    "reference_end_epoch": {
+      "pilot": null,
+      "reference100": 100
+    },
+    "reporting_policy": {
+      "pilot": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+      "reference100": "all three modes from same selected E4M3-best checkpoint; also all at last completed epoch (100 when complete)"
+    },
+    "schema": {
+      "pilot": "mx-triple-learned-scale32-64-pilot5-protocol-v1",
+      "reference100": "mx-triple-learned-scale32-64-reference100-protocol-v1"
+    }
+  }
+}

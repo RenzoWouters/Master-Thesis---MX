@@ -1,0 +1,187 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_freeze_offsets_e50_pilot5\20261025_174221_578057_freeze_run
+VASTE OFFSETS NA EPOCH50: nieuwe epochs51-55; drie MX-precisies; A32; FP32-master; bestaande dynamische controle.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+DATA bestaand en correct: train_32x32.mat
+DATA bestaand en correct: test_32x32.mat
+DATA PASS: train=73257, test=26032; extra NIET gebruikt; invoer 40x40; volledige train-split; geen validatiesplit.
+MINIBATCHES per epoch: train=573; test=204; batch=128, drop_last=False.
+VERTREK na epoch 50; offsetkeuzes vast op epoch50; theta-LR=0; gewichts-LR=0.0001.
+EPOCH 51/55; MODE=joint; LR=0.0001; volledig schema=100
+WARNING The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WARNING The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+UPSTREAM epoch 50, iter 0/573, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 50, iter 20/573, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 50, iter 40/573, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 50, iter 60/573, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 50, iter 80/573, bit_width_max loss 0.14, prec1 95.31, prec5 98.44
+UPSTREAM epoch 50, iter 100/573, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 50, iter 120/573, bit_width_max loss 0.13, prec1 94.53, prec5 100.00
+UPSTREAM epoch 50, iter 140/573, bit_width_max loss 0.11, prec1 95.31, prec5 100.00
+UPSTREAM epoch 50, iter 160/573, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 50, iter 180/573, bit_width_max loss 0.13, prec1 96.09, prec5 99.22
+UPSTREAM epoch 50, iter 200/573, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 50, iter 220/573, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 50, iter 240/573, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 50, iter 260/573, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 50, iter 280/573, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 50, iter 300/573, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 50, iter 320/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 50, iter 340/573, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 50, iter 360/573, bit_width_max loss 0.10, prec1 96.88, prec5 99.22
+UPSTREAM epoch 50, iter 380/573, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 50, iter 400/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 50, iter 420/573, bit_width_max loss 0.16, prec1 95.31, prec5 100.00
+UPSTREAM epoch 50, iter 440/573, bit_width_max loss 0.22, prec1 96.09, prec5 99.22
+UPSTREAM epoch 50, iter 460/573, bit_width_max loss 0.05, prec1 99.22, prec5 99.22
+UPSTREAM epoch 50, iter 480/573, bit_width_max loss 0.13, prec1 96.09, prec5 100.00
+UPSTREAM epoch 50, iter 500/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 50, iter 520/573, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 50, iter 540/573, bit_width_max loss 0.08, prec1 97.66, prec5 99.22
+UPSTREAM epoch 50, iter 560/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+KLAAR epoch 51: train=52.2s; test=13.4s; totaal=65.8s; beste epoch=51
+  TEST MXFP4_E2M1/A32: 94.2609% | MXFP6_E2M3/A32: 94.3723% | MXFP8_E4M3/A32: 94.9140%
+  SCHALEN: x32=1654/4080; x64=2426/4080; gewijzigde FP32-hulpwaarden=0; omschakelingen in epoch=0.
+  VOORTZETTING: 1/5 nieuwe epochs voltooid; historische controle is de bestaande training.
+EPOCH 52/55; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 51, iter 0/573, bit_width_max loss 0.11, prec1 94.53, prec5 100.00
+UPSTREAM epoch 51, iter 20/573, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 51, iter 40/573, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 51, iter 60/573, bit_width_max loss 0.20, prec1 96.09, prec5 100.00
+UPSTREAM epoch 51, iter 80/573, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 51, iter 100/573, bit_width_max loss 0.11, prec1 94.53, prec5 99.22
+UPSTREAM epoch 51, iter 120/573, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 140/573, bit_width_max loss 0.13, prec1 95.31, prec5 100.00
+UPSTREAM epoch 51, iter 160/573, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 51, iter 180/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 200/573, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 51, iter 220/573, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 240/573, bit_width_max loss 0.14, prec1 96.09, prec5 99.22
+UPSTREAM epoch 51, iter 260/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 51, iter 280/573, bit_width_max loss 0.15, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 300/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 51, iter 320/573, bit_width_max loss 0.16, prec1 93.75, prec5 99.22
+UPSTREAM epoch 51, iter 340/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 360/573, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 51, iter 380/573, bit_width_max loss 0.10, prec1 96.88, prec5 100.00
+UPSTREAM epoch 51, iter 400/573, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 51, iter 420/573, bit_width_max loss 0.17, prec1 95.31, prec5 99.22
+UPSTREAM epoch 51, iter 440/573, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 460/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 480/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 500/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 520/573, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 540/573, bit_width_max loss 0.11, prec1 97.66, prec5 100.00
+UPSTREAM epoch 51, iter 560/573, bit_width_max loss 0.22, prec1 93.75, prec5 100.00
+KLAAR epoch 52: train=51.0s; test=12.6s; totaal=63.8s; beste epoch=51
+  TEST MXFP4_E2M1/A32: 94.3032% | MXFP6_E2M3/A32: 94.4607% | MXFP8_E4M3/A32: 94.8563%
+  SCHALEN: x32=1654/4080; x64=2426/4080; gewijzigde FP32-hulpwaarden=0; omschakelingen in epoch=0.
+  VOORTZETTING: 2/5 nieuwe epochs voltooid; historische controle is de bestaande training.
+EPOCH 53/55; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 52, iter 0/573, bit_width_max loss 0.14, prec1 95.31, prec5 100.00
+UPSTREAM epoch 52, iter 20/573, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 52, iter 40/573, bit_width_max loss 0.15, prec1 95.31, prec5 100.00
+UPSTREAM epoch 52, iter 60/573, bit_width_max loss 0.08, prec1 98.44, prec5 100.00
+UPSTREAM epoch 52, iter 80/573, bit_width_max loss 0.17, prec1 95.31, prec5 100.00
+UPSTREAM epoch 52, iter 100/573, bit_width_max loss 0.06, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 120/573, bit_width_max loss 0.09, prec1 97.66, prec5 99.22
+UPSTREAM epoch 52, iter 140/573, bit_width_max loss 0.12, prec1 94.53, prec5 100.00
+UPSTREAM epoch 52, iter 160/573, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 180/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 200/573, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 220/573, bit_width_max loss 0.14, prec1 94.53, prec5 100.00
+UPSTREAM epoch 52, iter 240/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 260/573, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 280/573, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 300/573, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 320/573, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 52, iter 340/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 360/573, bit_width_max loss 0.19, prec1 95.31, prec5 100.00
+UPSTREAM epoch 52, iter 380/573, bit_width_max loss 0.14, prec1 96.88, prec5 100.00
+UPSTREAM epoch 52, iter 400/573, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 52, iter 420/573, bit_width_max loss 0.12, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 440/573, bit_width_max loss 0.04, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 460/573, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 52, iter 480/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 52, iter 500/573, bit_width_max loss 0.14, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 520/573, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 52, iter 540/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 52, iter 560/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+KLAAR epoch 53: train=48.1s; test=12.2s; totaal=60.5s; beste epoch=51
+  TEST MXFP4_E2M1/A32: 94.3992% | MXFP6_E2M3/A32: 94.7065% | MXFP8_E4M3/A32: 94.9024%
+  SCHALEN: x32=1654/4080; x64=2426/4080; gewijzigde FP32-hulpwaarden=0; omschakelingen in epoch=0.
+  VOORTZETTING: 3/5 nieuwe epochs voltooid; historische controle is de bestaande training.
+EPOCH 54/55; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 53, iter 0/573, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 53, iter 20/573, bit_width_max loss 0.07, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 40/573, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 53, iter 60/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 80/573, bit_width_max loss 0.09, prec1 96.09, prec5 100.00
+UPSTREAM epoch 53, iter 100/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 120/573, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 140/573, bit_width_max loss 0.07, prec1 96.88, prec5 100.00
+UPSTREAM epoch 53, iter 160/573, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 180/573, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 53, iter 200/573, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 53, iter 220/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 240/573, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 260/573, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 53, iter 280/573, bit_width_max loss 0.06, prec1 99.22, prec5 100.00
+UPSTREAM epoch 53, iter 300/573, bit_width_max loss 0.09, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 320/573, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 53, iter 340/573, bit_width_max loss 0.12, prec1 96.88, prec5 100.00
+UPSTREAM epoch 53, iter 360/573, bit_width_max loss 0.09, prec1 94.53, prec5 100.00
+UPSTREAM epoch 53, iter 380/573, bit_width_max loss 0.09, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 400/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 53, iter 420/573, bit_width_max loss 0.13, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 440/573, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 460/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 480/573, bit_width_max loss 0.07, prec1 97.66, prec5 99.22
+UPSTREAM epoch 53, iter 500/573, bit_width_max loss 0.05, prec1 98.44, prec5 100.00
+UPSTREAM epoch 53, iter 520/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 540/573, bit_width_max loss 0.07, prec1 97.66, prec5 100.00
+UPSTREAM epoch 53, iter 560/573, bit_width_max loss 0.18, prec1 94.53, prec5 100.00
+KLAAR epoch 54: train=47.2s; test=11.9s; totaal=59.2s; beste epoch=51
+  TEST MXFP4_E2M1/A32: 94.4491% | MXFP6_E2M3/A32: 94.6028% | MXFP8_E4M3/A32: 94.8525%
+  SCHALEN: x32=1654/4080; x64=2426/4080; gewijzigde FP32-hulpwaarden=0; omschakelingen in epoch=0.
+  VOORTZETTING: 4/5 nieuwe epochs voltooid; historische controle is de bestaande training.
+EPOCH 55/55; MODE=joint; LR=0.0001; volledig schema=100
+UPSTREAM epoch 54, iter 0/573, bit_width_max loss 0.12, prec1 96.88, prec5 99.22
+UPSTREAM epoch 54, iter 20/573, bit_width_max loss 0.10, prec1 96.09, prec5 100.00
+UPSTREAM epoch 54, iter 40/573, bit_width_max loss 0.05, prec1 97.66, prec5 100.00
+UPSTREAM epoch 54, iter 60/573, bit_width_max loss 0.08, prec1 97.66, prec5 100.00
+UPSTREAM epoch 54, iter 80/573, bit_width_max loss 0.03, prec1 100.00, prec5 100.00
+UPSTREAM epoch 54, iter 100/573, bit_width_max loss 0.04, prec1 98.44, prec5 100.00
+UPSTREAM epoch 54, iter 120/573, bit_width_max loss 0.11, prec1 96.09, prec5 100.00
+UPSTREAM epoch 54, iter 140/573, bit_width_max loss 0.12, prec1 95.31, prec5 100.00
+UPSTREAM epoch 54, iter 160/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 54, iter 180/573, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 54, iter 200/573, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 54, iter 220/573, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 54, iter 240/573, bit_width_max loss 0.05, prec1 99.22, prec5 100.00
+UPSTREAM epoch 54, iter 260/573, bit_width_max loss 0.13, prec1 96.88, prec5 100.00
+UPSTREAM epoch 54, iter 280/573, bit_width_max loss 0.15, prec1 95.31, prec5 99.22
+UPSTREAM epoch 54, iter 300/573, bit_width_max loss 0.14, prec1 96.88, prec5 100.00
+UPSTREAM epoch 54, iter 320/573, bit_width_max loss 0.21, prec1 93.75, prec5 100.00
+UPSTREAM epoch 54, iter 340/573, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 54, iter 360/573, bit_width_max loss 0.09, prec1 96.88, prec5 100.00
+UPSTREAM epoch 54, iter 380/573, bit_width_max loss 0.11, prec1 96.88, prec5 100.00
+UPSTREAM epoch 54, iter 400/573, bit_width_max loss 0.18, prec1 95.31, prec5 100.00
+UPSTREAM epoch 54, iter 420/573, bit_width_max loss 0.19, prec1 97.66, prec5 100.00
+UPSTREAM epoch 54, iter 440/573, bit_width_max loss 0.03, prec1 99.22, prec5 100.00
+UPSTREAM epoch 54, iter 460/573, bit_width_max loss 0.07, prec1 95.31, prec5 100.00
+UPSTREAM epoch 54, iter 480/573, bit_width_max loss 0.04, prec1 99.22, prec5 100.00
+UPSTREAM epoch 54, iter 500/573, bit_width_max loss 0.11, prec1 96.88, prec5 99.22
+UPSTREAM epoch 54, iter 520/573, bit_width_max loss 0.06, prec1 98.44, prec5 100.00
+UPSTREAM epoch 54, iter 540/573, bit_width_max loss 0.03, prec1 98.44, prec5 100.00
+UPSTREAM epoch 54, iter 560/573, bit_width_max loss 0.10, prec1 97.66, prec5 100.00
+KLAAR epoch 55: train=47.0s; test=12.0s; totaal=59.2s; beste epoch=51
+  TEST MXFP4_E2M1/A32: 94.5951% | MXFP6_E2M3/A32: 94.6719% | MXFP8_E4M3/A32: 94.8909%
+  SCHALEN: x32=1654/4080; x64=2426/4080; gewijzigde FP32-hulpwaarden=0; omschakelingen in epoch=0.
+  VOORTZETTING: 5/5 nieuwe epochs voltooid; historische controle is de bestaande training.
+KLAAR: 5 nieuwe epochs; laatste=55; E4M3-beste binnen de nieuwe epochs=51; tijd=5.14 min.
+VERGELIJKING: historische epochs51-55; geen nieuwe controletraining. Bekijk de notebook in deze resultatenmap.
+Eindcontrole: bronbestanden en ruwe datasetbestanden ongewijzigd.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_freeze_offsets_e50_pilot5\20261025_174221_578057_freeze_run\run_report.json

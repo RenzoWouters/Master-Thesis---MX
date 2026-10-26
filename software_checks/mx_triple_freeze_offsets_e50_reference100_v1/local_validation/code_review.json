@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scope": "independent read-only source and provenance review; actual runtime tests separate",
+  "files_sha256": {
+    "continuation_bridge.py": "7c64bb1939dce701b4573f0fd0a61a84e441d7b7b6c75f2c1f5481b87eb00952",
+    "continuation_core.py": "eb56f98ca0f7690b601e560fbab2288630f2335ac70c7124c67e98309b7fcc5d",
+    "run_train.py": "2a1ea814877821ccc75064db93e92ff7d5e8d2c5f3d125e1da48c0bd57d8afb3"
+  },
+  "reference_pins": {
+    "PILOT_REFERENCE_SHA256": "d9578eb271cf6f1e8af5544f5e1bb6c0cd10bd9fc6805a2be23ebf79a47da5d9",
+    "DYNAMIC_REFERENCE_SHA256": "6ddae3d3603a6f31c4dec5ae64b8d0c166646bc4576c599903594786b6e85706"
+  },
+  "unchanged_pilot_manifest_files": 127,
+  "confirmed": [
+    "strict actual55 file,model,contract,trace pin before restoration",
+    "original current environment/data/source contract compared to parent lineage",
+    "strict restore of model,Adam,scheduler and RNG before experiment contract extension",
+    "no parameter or LR intervention at55: theta already frozen",
+    "epoch56-100 only; scheduler milestones75/90 retained in absolute epochs",
+    "every optimizer step guarded against theta and offset drift from50",
+    "inherited51-55 records exactly preserved",
+    "historical full100 history must match known SHA before use; copied verbatim for results",
+    "historical sample order assertions for train and test each new epoch",
+    "source scales remain dynamic through unchanged inherited phase",
+    "last100,postfreeze51-100best,global1-100best kept distinct",
+    "global prefreeze checkpoints use original theta/contract and explicitstage label",
+    "inherited pilotbest51-55 exports use pilotcontract; new>=56 use extensioncontract",
+    "global selected old checkpoints preflighted before longtraining",
+    "summary separates total,frozenphase,andnew56-100 updates and timings",
+    "root,parentpilot,dynamicinput,resumeinput,dataset output descendants protected",
+    "originalmanifest archived before ownmanifestwrite; avoids exclusive-write collision"
+  ],
+  "limitations": [
+    "No actual user checkpoint .pt bytes available locally; provenance pin derived from supplied authentic feedback and enforced at laptop execution.",
+    "CUDA/SVHN execution not part of this source review."
+  ],
+  "findings": []
+}
