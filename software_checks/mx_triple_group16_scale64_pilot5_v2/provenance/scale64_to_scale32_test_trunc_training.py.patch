@@ -1,0 +1,113 @@
+--- scale64/test_trunc_training.py
++++ scale32/test_trunc_training.py
+@@ -1,4 +1,4 @@
+-"""Synthetic route-B code/scale/STE/three-pass and source-only export checks.
++"""Synthetic scale32 code/scale/STE/three-pass and source-only export checks.
+ 
+ No SVHN or research accuracy. CPU Tensor.cuda substitution lives only in the
+ local validation harness; laptop checks use the actual production device.
+@@ -32,13 +32,13 @@
+ def oracle_scale_codes(source, bit):
+     """Independent scalar exponent arithmetic, not the production shift helper."""
+     values = source.scale_codes.detach().cpu().tolist()
+-    shifted = [[int(value) + (0 if bit == 8 else 6) for value in row] for row in values]
++    shifted = [[int(value) + (0 if bit == 8 else 5) for value in row] for row in values]
+     assert all(0 <= value <= 254 for row in shifted for value in row)
+     return torch.tensor(shifted, dtype=torch.uint8, device=source.scale_codes.device)
+ 
+ 
+ def archived_posthoc_transform():
+-    """Load only the two previously validated route functions, without models."""
++    """Unchanged historical x64 oracle; only scale differs from the x32 route."""
+     archive = Path(__file__).resolve().parent / 'provenance/posthoc_scale64.py'
+     nodes = [node for node in ast.parse(archive.read_text(encoding='utf-8')).body
+              if isinstance(node, ast.FunctionDef) and node.name in ('shifted_scale_codes', 'transform_codes')]
+@@ -126,25 +126,27 @@
+         assert torch.equal(chain[bit].codes[:, 0, 0], expected)
+         assert torch.equal(chain[bit].scale_codes, oracle_scale_codes(source_mx, bit))
+         assert torch.equal(chain[bit].codes, old_chain[bit].codes)
+-        assert torch.equal(chain[bit].scale_codes, old_chain[bit].scale_codes)
++        assert torch.equal(chain[bit].scale_codes.to(torch.int32) + 1,
++                           old_chain[bit].scale_codes.to(torch.int32))
++        assert torch.equal(chain[bit].decode(), .5 * old_chain[bit].decode())
+         naive = a.posthoc.exponent_truncate(source_mx)
+         if bit == 4: naive = a.posthoc.mantissa_truncate(naive)
+-        assert torch.equal(chain[bit].decode(), 64 * naive.decode())
++        assert torch.equal(chain[bit].decode(), 32 * naive.decode())
+         assert torch.equal(torch.signbit(chain[bit].decode()), torch.signbit(naive.decode()))
+         assert torch.equal(a.codec(bit).MXTensor.from_payload(chain[bit].payload(), d).codes, chain[bit].codes)
+     assert chain[8] is source_mx and torch.equal(source_mx.codes, original_codes)
+     assert torch.equal(source_mx.scale_codes, original_scales)
+     assert torch.signbit(chain[6].decode()[127, 0]) and torch.signbit(chain[4].decode()[127, 0])
+     checks['all_254_finite_codes_independent_string_oracle_and_signed_zero'] = True
+-    checks['exact_agreement_with_archived_posthoc_B6_B4'] = True
+-    checks['B_exact64_times_A_for_representable_test_values_source_unchanged'] = True
+-    scales = torch.arange(249, dtype=torch.uint8, device=d).reshape(249, 1)
+-    all_scales = high.MXTensor(torch.zeros(249, 1, 32, dtype=torch.uint8, device=d), scales, (249, 32))
++    checks['same_element_codes_and_half_decoded_values_of_archived_scale64_B6_B4'] = True
++    checks['scale32_exact32_times_naive_for_representable_test_values_source_unchanged'] = True
++    scales = torch.arange(250, dtype=torch.uint8, device=d).reshape(250, 1)
++    all_scales = high.MXTensor(torch.zeros(250, 1, 32, dtype=torch.uint8, device=d), scales, (250, 32))
+     with forbidden_lower_encoders():
+         for bit, mx in a.code_chain(all_scales).items():
+             assert torch.equal(mx.scale_codes, oracle_scale_codes(all_scales, bit))
+             assert not bool(mx.decode().any())
+-    for invalid_scale in range(249, 255):
++    for invalid_scale in range(250, 255):
+         zero_source = high.MXTensor(torch.zeros(1, 1, 32, dtype=torch.uint8, device=d),
+                                    torch.full((1, 1), invalid_scale, dtype=torch.uint8, device=d), (1, 32))
+         zero_source.validate()
+@@ -159,10 +161,10 @@
+     assert all(bool((x.codes[:, -1, 1:] == 0).all()) for x in chain.values())
+     assert torch.equal(chain[4].codes, chain[6].codes >> 2)
+     assert torch.equal(chain[4].scale_codes, chain[6].scale_codes)
+-    checks['all249_shiftable_scales_including_zero_blocks_and_padding_NaNs_checked'] = True
+-    checks['all_six_overflowing_finite_source_scales_rejected_without_clip_or_wrap'] = True
++    checks['all250_shiftable_scales_including_zero_blocks_and_padding_NaNs_checked'] = True
++    checks['all_five_overflowing_finite_source_scales_rejected_without_clip_or_wrap'] = True
+     huge_source = high.MXTensor(torch.full((1, 1, 32), 64, dtype=torch.uint8, device=d),
+-                               torch.full((1, 1), 248, dtype=torch.uint8, device=d), (1, 32))
++                               torch.full((1, 1), 249, dtype=torch.uint8, device=d), (1, 32))
+     assert bool(torch.isfinite(huge_source.decode()).all())
+     huge_chain = a.code_chain(huge_source)
+     for bit in (6, 4):
+@@ -190,7 +192,7 @@
+         changed_oracle = a.codec(bit).MXTensor(lookup[changed_source.codes.long()], oracle_scale_codes(changed_source, bit), changed_source.shape)
+         assert torch.equal(q(master), changed_oracle.decode())
+         checks['exact_forward_and_identity_STE_by_mode'][str(bit)] = True
+-    checks['complete_route_identity_STE_no_factor64_in_backward_G_derivatives_retained'] = True
++    checks['complete_route_identity_STE_no_factor32_in_backward_G_derivatives_retained'] = True
+ 
+     original, changed, _ = t.adapt_forward_text(source)
+     class RemoveSelectors(ast.NodeTransformer):
+@@ -230,8 +232,8 @@
+         with a.shared_source_triplets(model) as audit:
+             for bit in (4, 6, 8): a.select_mode(model, bit); model(x)
+     assert count[0] == 6 and audit['source_triplets'] == 1 and audit['source_cache_cleared']
+-    assert audit['scale_offsets_plus6'] == 12 and audit['mantissa_scale_copies_unchanged'] == 6
+-    assert audit['scale_exponent_offset'] == 6 and audit['scale_factor'] == 64
++    assert audit['scale_offsets_plus5'] == 12 and audit['mantissa_scale_copies_unchanged'] == 6
++    assert audit['scale_exponent_offset'] == 5 and audit['scale_factor'] == 32
+     assert s.legacy.state_digest(model.state_dict()) == state
+     checks['eval_triplet_6_high_encodings_same_source_no_state_change'] = audit
+     # Guards exercise real model hooks; every failure must clear its temporary cache.
+@@ -298,8 +300,18 @@
+         rejected(lambda: a.validate_source(invalid))
+         invalid = copy.deepcopy(loaded_source); invalid['training_policy'] = 'joint_E4_RNE_E2_exponent_MSB_then_mantissa_truncation_identity_STE'
+         rejected(lambda: a.validate_source(invalid))
++        invalid = copy.deepcopy(loaded_source); invalid['schema'] = 'mx-triple-scale64-training-source-v1'
++        rejected(lambda: a.validate_source(invalid))
++        invalid = copy.deepcopy(loaded_source); invalid['training_policy'] = 'joint_E4_RNE_E2_exponent_MSB_scale64_then_mantissa_truncation_identity_STE'
++        rejected(lambda: a.validate_source(invalid))
++        invalid = a.derive_payload(loaded_source, 6, digest); invalid['schema'] = 'mx-triple-scale64-training-derived-v1'
++        rejected(lambda: a.validate_derived(invalid))
++        invalid = a.derive_payload(loaded_source, 6, digest); invalid['derivation']['source_scale_exponent_offset'] = 6
++        rejected(lambda: a.validate_derived(invalid))
++        invalid = a.derive_payload(loaded_source, 6, digest); invalid['derivation']['scale_factor'] = 64
++        rejected(lambda: a.validate_derived(invalid))
+     checks['saved_reloaded_E4_source_and_both_derivations_master_free_encoder_free'] = True
+-    checks['old_naive_schema_policy_and_wrong_scale_metadata_rejected'] = True
++    checks['old_naive_and_scale64_schema_policy_and_wrong_scale_metadata_rejected'] = True
+     checks['no_SVHN_or_real_training'] = True
+     checks['status'] = 'PASS'
+     return checks

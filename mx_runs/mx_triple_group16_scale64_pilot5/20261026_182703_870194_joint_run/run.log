@@ -1,0 +1,23 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_group16_scale64_pilot5\20261026_182703_870194_joint_run
+GEZAMENLIJKE GROEP16-SCHAAL64-PILOT: 5 epochs; groepen van16; E4M3 -> E2M3 -> E2M1; lagere schalen exact E4-bronschaal x64; A32; FP32-masters.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+DATA bestaand en correct: train_32x32.mat
+DATA bestaand en correct: test_32x32.mat
+FAIL: Train-only mag alleen train en test laden of controleren.
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_triple_group16_scale64_pilot5_v1\run_train.py", line 703, in main
+    ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_triple_group16_scale64_pilot5_v1\run_train.py", line 179, in create_context
+    s.require(set(info['files']) == {'train_32x64.mat', 'test_32x64.mat'},
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              'Train-only mag alleen train en test laden of controleren.')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\mx_triple_group16_scale64_pilot5_v1\smoke_support.py", line 41, in require
+    raise RuntimeError(message)
+RuntimeError: Train-only mag alleen train en test laden of controleren.
+
+Geen bestaande data of eerdere resultaten gewijzigd. Deel de feedback_bundle.zip uit deze map.
+EINDSTATUS: FAIL
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_group16_scale64_pilot5\20261026_182703_870194_joint_run\run_report.json

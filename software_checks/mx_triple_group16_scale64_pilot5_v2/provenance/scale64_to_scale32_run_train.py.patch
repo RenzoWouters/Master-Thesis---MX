@@ -1,0 +1,207 @@
+--- scale64/run_train.py
++++ scale32/run_train.py
+@@ -1,11 +1,11 @@
+-"""Five train-only epochs: route B, E4M3 source, exponent truncation + scale64, A32.
++"""Five train-only epochs: fixed scale32 route, E4M3 source, exponent truncation + scale32, A32.
+ 
+ E4M3 is encoded once per layer/minibatch from current FP32 G(W).
+ E2M3 keeps the highest exponent bits; E2M1 then keeps the highest mantissa bit.
+-Both lower modes use the current E4M3 source scale exponent plus6 (times64).
++Both lower modes use the current E4M3 source scale exponent plus5 (times32).
+ Upstream recursive distillation: E4M3 hard CE; E2M3 learns from detached E4M3;
+ E2M1 learns from detached E2M3; summed gradients then ONE Adam update.
+-Fixed +6 scale offset, no learned scale or warm-start. Whole-path identity STE through G(W).
++Fixed +5 scale offset, no learned scale or warm-start. Whole-path identity STE through G(W).
+ The unchanged 100-epoch LR schedule is configured, but this pilot stops at 5.
+ """
+ from __future__ import annotations
+@@ -39,8 +39,8 @@
+ def config(mode: str = 'joint') -> dict:
+     s.require(mode == 'joint', 'Deze proef heeft exact drie gezamenlijke MX-modi uit één E4M3-bron.')
+     return {
+-        'schema': 'mx-triple-scale64-pilot5-protocol-v1',
+-        'purpose': 'five complete train-only epochs: route B, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1',
++        'schema': 'mx-triple-scale32-pilot5-protocol-v1',
++        'purpose': 'five complete train-only epochs: fixed scale32 route, E4M3 source, naive exponent truncation plus fixed scale32 to E2M3, then mantissa truncation to E2M1',
+         'mode': mode, 'weight_format': t.weight_format(mode), 'weight_bits': [4, 6, 8],
+         'weight_formats': {'8': 'MXFP8_E4M3', '6': 'MXFP6_E2M3', '4': 'MXFP4_E2M1'},
+         'codec_revision': {'8': 'e4m3-exact-binary-v2', '6': 'unchanged-E2M3-decode', '4': 'unchanged-E2M1-decode'},
+@@ -49,17 +49,17 @@
+         'master_dtype': 'float32', 'gradient_dtype': 'float32', 'adam_moments_dtype': 'float32',
+         'mx_block_size': 32, 'mx_scale_format': 'E8M0',
+         'mx_group_axis': 'flatten Cin*Kh*Kw within each Cout, zero-pad tail',
+-        'mx_scale_policy': 'encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+6; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps',
++        'mx_scale_policy': 'encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+5; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps',
+         'mx_rounding': 'E4M3 source nearest ties-to-even; finite FP32 source, scalar subnormal flush; lower modes exact bit mappings without additional rounding',
+-        'ste_policy': 'identity wrt G(W) for E4M3 and complete scale64 E4-to-E2 code path; no extra factor64 in backward; retain original G(W) derivatives; no gradient through codes or scales',
++        'ste_policy': 'identity wrt G(W) for E4M3 and complete scale32 E4-to-E2 code path; no extra factor32 in backward; retain original G(W) derivatives; no gradient through codes or scales',
+         'numeric_kernel': 'FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels',
+         'truncation': True, 'mantissa_truncation': True, 'exponent_truncation': True,
+         'shared_scale_compensation': True, 'learned_shared_scale': False,
+-        'scale_exponent_offset': 6, 'scale_factor': 64,
++        'scale_exponent_offset': 5, 'scale_factor': 32,
+         'quantization_source': 'one current E4M3 encoding per MX layer and minibatch, shared across all three modes',
+         'source_weight_bits': 8,
+         'exponent_mapping': 's e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation',
+-        'mantissa_mapping': 'derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times64',
++        'mantissa_mapping': 'derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times32',
+         'source_cache_policy': 'detached integer source and derived codes; one triplet per minibatch; cleared before Adam',
+         'direct_lower_quantization': False, 'exponent_bias_compensation': False,
+         'distillation': True,
+@@ -85,7 +85,7 @@
+         'backend_policy': 'github: cudnn.benchmark=True; no deterministic override',
+         'rng_policy': 'global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries',
+         'checkpoint_policy': 'immutable FP32 training state per epoch and selected best/last copies',
+-        'export_policy': 'one E4M3 source with all BN auxiliary state per selected checkpoint; lower exports derived only from saved/reloaded source codes and source scale code+6; separate FP32 resume checkpoint',
++        'export_policy': 'one E4M3 source with all BN auxiliary state per selected checkpoint; lower exports derived only from saved/reloaded source codes and source scale code+5; separate FP32 resume checkpoint',
+         'exact_historical_paper_reproduction_proven': False,
+     }
+ 
+@@ -151,7 +151,7 @@
+                 report['notebook_dependencies'][name] = metadata.version(name)
+             except metadata.PackageNotFoundError:
+                 report['notebook_dependencies'][name] = 'MISSING: notebook only'
+-        log('CHECK PASS: route B; E4M3-bron, exponentbits, vaste schaaloffset+6, mantissatruncatie, identity STE, A32, drie BN-banken en recursieve updates. Geen SVHN-training.')
++        log('CHECK PASS: fixed scale32 route; E4M3-bron, exponentbits, vaste schaaloffset+5, mantissatruncatie, identity STE, A32, drie BN-banken en recursieve updates. Geen SVHN-training.')
+         return None
+ 
+     start_data = time.perf_counter()
+@@ -395,9 +395,9 @@
+             s.require(source_audit['source_triplets'] == batches
+                       and source_audit['high_encodings'] == source_audit['exponent_derivations']
+                       == source_audit['mantissa_derivations'] == batches * len(a.TARGET_LAYERS)
+-                      and source_audit['scale_offsets_plus6'] == 2 * batches * len(a.TARGET_LAYERS)
++                      and source_audit['scale_offsets_plus5'] == 2 * batches * len(a.TARGET_LAYERS)
+                       and source_audit['mantissa_scale_copies_unchanged'] == batches * len(a.TARGET_LAYERS)
+-                      and source_audit['scale_exponent_offset'] == 6 and source_audit['scale_factor'] == 64
++                      and source_audit['scale_exponent_offset'] == 5 and source_audit['scale_factor'] == 32
+                       and source_audit['source_cache_cleared']
+                       and source_audit['no_direct_lower_quantizer']
+                       and source_audit['cache_cleared_before_adam'],
+@@ -443,7 +443,7 @@
+         model.load_state_dict(state['model'], strict=True)
+         exports_for_role = {}
+         provenance = {
+-            'training': 'joint route B: E4M3 source -> exponent-MSB E2M3 with scale64 -> mantissa E2M1; whole-path identity STE; A32',
++            'training': 'joint fixed scale32 route: E4M3 source -> exponent-MSB E2M3 with scale32 -> mantissa E2M1; whole-path identity STE; A32',
+             'source_epoch': record['epoch'], 'checkpoint_sha256': digest,
+             'encoding_device': str(ctx.rt.device),
+             'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']}
+@@ -473,10 +473,10 @@
+                     live = layer.quantize_fn(layer.weight.detach())
+                 s.require(torch.equal(restored, live), 'Export verschilt van dezelfde trainingsroute.')
+                 source_scale = loaded_source['mx_layers'][name]['scale_codes']
+-                expected_scale = source_scale.cpu().to(torch.int32) + (0 if bit == 8 else 6)
++                expected_scale = source_scale.cpu().to(torch.int32) + (0 if bit == 8 else 5)
+                 s.require(bool((expected_scale <= 254).all())
+                           and torch.equal(encoded.scale_codes.cpu().to(torch.int32), expected_scale),
+-                          'Export heeft niet de voorgeschreven E4-bronschaal of exacte offset+6.')
++                          'Export heeft niet de voorgeschreven E4-bronschaal of exacte offset+5.')
+                 s.require(name + '.weight' not in loaded['auxiliary_fp32_state'], 'FP32-master in export.')
+             exports_for_role[str(bit)] = {**mx_details, 'epoch': record['epoch'], 'weight_bits': bit,
+                                          'decoded_weights_exact': True, 'six_fp32_masters_absent': True,
+@@ -485,8 +485,8 @@
+                                          'derived_from_saved_source': bit != 8,
+                                          'source_file_sha256': source_digest,
+                                          'source_scale_bytes_copied': bit == 8,
+-                                         'scale_exponent_offset': 0 if bit == 8 else 6,
+-                                         'scale_factor': 1 if bit == 8 else 64,
++                                         'scale_exponent_offset': 0 if bit == 8 else 5,
++                                         'scale_factor': 1 if bit == 8 else 32,
+                                          'shared_scale_compensation': bit != 8,
+                                          'learned_shared_scale': False,
+                                          'master_weights_read_to_derive': False,
+@@ -522,7 +522,7 @@
+     elapsed = sum(r['total_epoch_seconds'] for r in records)
+     pilot_completed = last['epoch'] == c['pilot_stop_epoch']
+     full_completed = False  # This executable cannot perform the full 100-epoch experiment.
+-    summary = {'schema': 'mx-triple-scale64-pilot5-completion-v1',
++    summary = {'schema': 'mx-triple-scale32-pilot5-completion-v1',
+                'planned_epochs': c['planned_epochs'], 'pilot_stop_epoch': c['pilot_stop_epoch'],
+                'completed_epochs': last['epoch'], 'pilot_completed': pilot_completed,
+                'full_training_completed': full_completed,
+@@ -540,14 +540,14 @@
+                'distillation': True, 'truncation': True, 'source_weight_bits': 8,
+                'exponent_truncation': True, 'mantissa_truncation': True,
+                'shared_scale_compensation': True, 'learned_shared_scale': False,
+-               'scale_exponent_offset': 6, 'scale_factor': 64,
++               'scale_exponent_offset': 5, 'scale_factor': 32,
+                'quantization_source': c['quantization_source'],
+                'initial_model_sha256': trace['initial_model_sha256'],
+                'measured_completed_epoch_seconds': elapsed,
+                'gradient_checks_before_every_update': True, 'fp32_masters_and_moments_verified': True,
+                'one_E4_source_per_layer_per_minibatch_verified': True,
+                'all_lower_scale_bytes_equal_current_E4_source': False,
+-               'all_lower_scale_codes_equal_current_E4_source_plus6': True,
++               'all_lower_scale_codes_equal_current_E4_source_plus5': True,
+                'all_mantissa_scale_bytes_equal_E2M3': True,
+                'source_cache_cleared_before_every_optimizer_update': True,
+                'batchnorm_learned_during_training_eval_frozen': True,
+@@ -575,7 +575,7 @@
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'],
+                       full_training_completed=full_completed, pilot_completed=pilot_completed,
+                       training_forward_passes=last['optimizer_steps'] * 3)
+-    notebook_name = 'MX_triple_scale64_pilot5_resultaten.ipynb'
++    notebook_name = 'MX_triple_scale32_pilot5_resultaten.ipynb'
+     notebook = json.loads((ROOT / notebook_name).read_text(encoding='utf-8'))
+     for cell in notebook['cells']:
+         if 'parameters' in cell.get('metadata', {}).get('tags', []):
+@@ -584,6 +584,8 @@
+     s.write_json(out / notebook_name, notebook)
+     with (ROOT / 'notebook_support.py').open('rb') as src, (out / 'notebook_support.py').open('xb') as dst:
+         shutil.copyfileobj(src, dst)
++    # Archive unchanged real reference data beside the notebook; comparison uses epochs1-5 only.
++    shutil.copytree(ROOT / 'scale64_reference', out / 'scale64_reference')
+     log(f'BEHOUDEN: alle drie modi uit beste E4M3-checkpoint {best["epoch"]}; laatste {last["epoch"]}.')
+     log(f'PILOT: {last["epoch"]}/5 epochs; {last["optimizer_steps"]} updates; '
+         f'{last["optimizer_steps"] * 3} trainingspasses; gemeten epochtijd={elapsed / 60:.2f} min.')
+@@ -608,8 +610,11 @@
+              'training_change_manifest.json', 'training_summary.json',
+              'test_prediction_counts.csv',
+              'codec_report.json', 'trunc_training_check_report.json',
+-             'MX_triple_scale64_pilot5_resultaten.ipynb', 'notebook_support.py']
++             'MX_triple_scale32_pilot5_resultaten.ipynb', 'notebook_support.py']
+     names += [f'mx_export_layers_{bit}_{role}.csv' for bit in a.MODES for role in ('best', 'last')]
++    if (out / 'scale64_reference').is_dir():
++        names += [str(path.relative_to(out)).replace('\\', '/')
++                  for path in sorted((out / 'scale64_reference').iterdir()) if path.is_file()]
+     with ZipFile(out / 'feedback_bundle.zip', 'x', compression=ZIP_DEFLATED) as z:
+         for name in names:
+             path = out / name
+@@ -622,7 +627,7 @@
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.set_defaults(mode='joint')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_scale64_pilot5'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_scale32_pilot5'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+     parser.add_argument('--stop-after-epoch', type=int, default=5)
+@@ -643,14 +648,14 @@
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'mx-triple-scale64-pilot5-report-v1', 'status': 'RUNNING',
+-              'package_revision': 'mx_triple_scale64_pilot5_v1',
++    report = {'schema': 'mx-triple-scale32-pilot5-report-v1', 'status': 'RUNNING',
++              'package_revision': 'mx_triple_scale32_pilot5_v1',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only; shared E4M3 source and two code-derived MX modes; this is not a paper reproduction',
+-                              'FP32 update master/gradients/Adam; A32; exponent MSB and mantissa truncation, lower scales exactly current E4 source scale times64',
++                              'FP32 update master/gradients/Adam; A32; exponent MSB and mantissa truncation, lower scales exactly current E4 source scale times32',
+                               'three forward/backwards: E4M3 hard CE, E2M3/E2M1 recursive detached soft CE, one Adam step',
+-                              'BN banks learn during training; fixed scale exponent offset+6; no element-bias correction or learned scale',
++                              'BN banks learn during training; fixed scale exponent offset+5; no element-bias correction or learned scale',
+                               'five-epoch pilot is not evidence about final100epoch convergence; low accuracy is a valid measured outcome',
+                               'official test used for checkpoint selection, not an independent test estimate',
+                               'numerical weight-only MX emulation; no native MX kernel or energy claim',
+@@ -675,7 +680,7 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log('GEZAMENLIJKE ROUTE-B-PILOT: 5 epochs; E4M3 -> E2M3 -> E2M1; lagere schalen exact E4-bronschaal x64; A32; FP32-masters.')
++            log('GEZAMENLIJKE SCHAAL32-PILOT: 5 epochs; E4M3 -> E2M3 -> E2M1; lagere schalen exact E4-bronschaal x32; A32; FP32-masters.')
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is None:
+                 report['status'] = 'PASS'

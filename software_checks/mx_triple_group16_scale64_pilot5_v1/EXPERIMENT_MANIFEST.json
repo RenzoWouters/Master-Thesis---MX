@@ -1,0 +1,21 @@
+{
+  "schema": "mx-group16-scale64-pilot5-experiment-v1",
+  "package": "mx_triple_group16_scale64_pilot5_v1",
+  "scientific_reference": "mx_triple_scale64_reference100_v1",
+  "protocol": "PROTOCOL.json",
+  "numerical_change": "group size32 ->16; fixed scale64, scalar codecs and training protocol unchanged",
+  "training_location": "user laptop; preparation uses tiny synthetic CPU fixtures only",
+  "study_stage": "pilot5",
+  "notebook": "MX_triple_group16_scale64_pilot5_resultaten.ipynb",
+  "reference": "scale64_reference/REFERENCE.json",
+  "cost_reports": [
+    "group_size_costs.json",
+    "group_size_costs_summary.csv",
+    "group_size_costs_layers.csv"
+  ],
+  "baseline_first5_epoch_seconds": 303.72777709993534,
+  "baseline_timing_scope": "historical measured B32x64 epoch times; new B16 runtime not yet measured",
+  "learned_scale": false,
+  "activation_bits": 32,
+  "mx_block_size": 16
+}
