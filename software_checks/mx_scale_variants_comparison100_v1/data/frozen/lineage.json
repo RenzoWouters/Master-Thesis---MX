@@ -1,0 +1,52 @@
+{
+  "parent_verification": {
+    "parent_epoch": 50,
+    "parent_model_sha256": "14035d75b62ba2f6dee356cf30ef03cd14b65a715ae0aa11923b29b301fd9008",
+    "parent_contract_sha256": "fc9d8c652e8977052cd89ed10905c9e5a77155b34c14a4412b1d47b0b9a92cc6",
+    "parent_checkpoint_trace_sha256": "68bbdafd51c770c8fca0faf434627acb12a543c41b6a6f0d034659d93add5eed",
+    "parent_checkpoint_verified": true,
+    "parent_model_matches_reference": true,
+    "parent_contract_matches_reference": true,
+    "parent_trace_matches_reference": true,
+    "parent_checkpoint_sha256": "24d3be4add873dba0870a04e48a1ca7b58d00004b0336df8d46cc85867f03192",
+    "strict_restore_checks": {
+      "model_restored": true,
+      "optimizer_restored": true,
+      "scheduler_restored": true,
+      "rng_restored": true,
+      "lr_matches_scheduler": true
+    }
+  },
+  "parent55_verification": {
+    "parent_epoch": 55,
+    "parent_model_sha256": "89af4fe6473463abdab2b41a8985b2ac1a9ad927c730f8cb1b03aa4bcd9c10db",
+    "parent_contract_sha256": "f01fba81fd9de1378cb3b19f9dc2d27e0875d81eebc4bba149ed3a41d0b12cfe",
+    "parent_checkpoint_trace_sha256": "53189e5e2ad35d84b40026978c8e8eb378086ad85e3455bc77513661e8350b04",
+    "parent_checkpoint_verified": true,
+    "parent_model_matches_reference": true,
+    "parent_contract_matches_reference": true,
+    "parent_trace_matches_reference": true,
+    "parent_checkpoint_sha256": "293097deafb2c5b673a44633aca94d08fe4ba619b0a2b34838df45c291290568",
+    "strict_restore_checks": {
+      "model_restored": true,
+      "optimizer_restored": true,
+      "scheduler_restored": true,
+      "rng_restored": true,
+      "lr_matches_scheduler": true
+    }
+  },
+  "intervention": {
+    "offset_freeze_already_active": true,
+    "optimizer_and_scheduler_unchanged_at_continuation": true,
+    "theta_lr": 0.0,
+    "source_scale_dynamic": true,
+    "only_horizon_extended_to100": true
+  },
+  "branch_contract_sha256": "3bf93bbf2133975f86ad8313062347b49a7a5f037b5dcc16576a1be1e7478a3c",
+  "pilot_reference_sha256": "d9578eb271cf6f1e8af5544f5e1bb6c0cd10bd9fc6805a2be23ebf79a47da5d9",
+  "dynamic_reference_sha256": "6ddae3d3603a6f31c4dec5ae64b8d0c166646bc4576c599903594786b6e85706",
+  "dynamic_history_sha256": "f82164837a70e9cea1e7a52932d7d2f193371de2f0bd7fda87618cbc29867c5a",
+  "original_training_preserved": true,
+  "inherited_pilot_epochs_preserved": true,
+  "historical_control_retrained": false
+}

@@ -1,0 +1,146 @@
+{
+  "schema": "mx-four-scale-comparison100-sources-v1",
+  "analysis_only": true,
+  "new_training": false,
+  "comparison_epoch100": 100,
+  "primary_selection_ranges": {
+    "last_epoch": [
+      100,
+      100
+    ],
+    "best_E4M3_global": [
+      1,
+      100
+    ]
+  },
+  "additional_selection_range": [
+    51,
+    100
+  ],
+  "variant_order": [
+    "fixed32",
+    "fixed64",
+    "learned",
+    "frozen"
+  ],
+  "variants": {
+    "fixed32": {
+      "label": "Vast ×32",
+      "original_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_scale32_reference100\\20261024_194510_445043_joint_run",
+      "original_report_schema": "mx-triple-scale32-reference100-report-v1",
+      "completed_epoch": 100,
+      "status": "PASS",
+      "synthetic_fixture_only": false,
+      "recorded_epoch_range": [
+        1,
+        100
+      ],
+      "logical_epoch_range": [
+        1,
+        100
+      ],
+      "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f"
+    },
+    "fixed64": {
+      "label": "Vast ×64",
+      "original_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_scale64_reference100\\20261024_151210_665535_joint_run",
+      "original_report_schema": "mx-triple-scale64-reference100-report-v1",
+      "completed_epoch": 100,
+      "status": "PASS",
+      "synthetic_fixture_only": false,
+      "recorded_epoch_range": [
+        1,
+        100
+      ],
+      "logical_epoch_range": [
+        1,
+        100
+      ],
+      "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f"
+    },
+    "learned": {
+      "label": "Geleerd tot epoch 100",
+      "original_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale32_64_reference100\\20261025_150724_515132_joint_run",
+      "original_report_schema": "mx-triple-learned-scale32-64-reference100-report-v1",
+      "completed_epoch": 100,
+      "status": "PASS",
+      "synthetic_fixture_only": false,
+      "recorded_epoch_range": [
+        1,
+        100
+      ],
+      "logical_epoch_range": [
+        1,
+        100
+      ],
+      "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f"
+    },
+    "frozen": {
+      "label": "Geleerd tot epoch 50, daarna vast",
+      "original_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_freeze_offsets_e50_reference100\\20261025_183915_084406_freeze100_run",
+      "original_report_schema": "mx-triple-freeze-offsets-e50-reference100-report-v1",
+      "completed_epoch": 100,
+      "status": "PASS",
+      "synthetic_fixture_only": false,
+      "recorded_epoch_range": [
+        51,
+        100
+      ],
+      "logical_epoch_range": [
+        1,
+        100
+      ],
+      "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f"
+    }
+  },
+  "source_files_sha256": {
+    "data/fixed32/run_report.json": "be771afb34ad1043a07a77e0ceee50f591e3155578fc8a7a04960c60f3dda6a8",
+    "data/fixed32/epoch_metrics.csv": "2269bb98b6e2838ae2bddfb4a674fc2c2b0f5b535bfbea744d2d23ef833f89ac",
+    "data/fixed32/selected_metrics.csv": "bc6f76b40b0f9c27eefe0e8af67fb65f3e57757f6a9c780de1970e15b876537c",
+    "data/fixed32/checkpoint_selection.json": "8daeaafa5a55bc0e50e880c48935ee3e085a5435acbd094311489cef1bd2156b",
+    "data/fixed32/training_summary.json": "757277cb8629df6c28c5942c42473276e597cbde7be822fed37189b63af8ac86",
+    "data/fixed32/epoch_times.csv": "776318b09ecbe849adbef92af60726f8d4c5c8a032473a2d69f79c0ab653e824",
+    "data/fixed32/REFERENCE.json": "d150fa58caaf26173f8fcc1f4a0fdd2ab22a4c7f369563013112227ea395cdec",
+    "data/fixed64/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "data/fixed64/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "data/fixed64/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "data/fixed64/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "data/fixed64/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe",
+    "data/fixed64/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "data/fixed64/REFERENCE.json": "997e808387fb94fa9cf0688946522fb1f7583e3181ee622a8db0d0ca2d00cb41",
+    "data/learned/run_report.json": "b8aa053be06c0c58073666446fddac3993c35dc13398f9efe131c33e6720f438",
+    "data/learned/epoch_metrics.csv": "21bc82c1506d153fbadba7b0fb7372eaa1da7af7bd1076cee55045307ae11bca",
+    "data/learned/selected_metrics.csv": "f5a3130b2e006ef1bde55ae561856110ad5b3b689ba589147a597544e0cf5a5d",
+    "data/learned/checkpoint_selection.json": "298b8d6528ecd29a9aedcc56b7f62c6cf9386e3cbc96729234e802a51d0c73b6",
+    "data/learned/training_summary.json": "a7f17e07266668f6ccd03f74f31722db30c0bcc4d4b67894821684112322e7ed",
+    "data/learned/epoch_times.csv": "9668ba0d35c5443c166baf99c6147a5421cff62c5a87853b57f3d854dfaeb9c9",
+    "data/frozen/run_report.json": "95eae353a7cbd6fd60dba8244df65a40d1c82b2e6f2fef2f1646ed4b1e6c5dd4",
+    "data/frozen/epoch_metrics.csv": "6b19f3ad14ddc825bd8111a80b8949114f7b0600e2ad9849766f6c8ae349a2f7",
+    "data/frozen/selected_metrics.csv": "c23729f0da9ac95064010f1c31a15f8dc4f717cd07ae57b71c0a9eb1576460af",
+    "data/frozen/checkpoint_selection.json": "7ddee628b6a94cc9afac447f6f083223c7eb94c0b704413fa22d3b5b2a0237c3",
+    "data/frozen/training_summary.json": "2f89c6319b21805cd022236195bea39761c998abebfaea79d1d8ea2f1fcb4470",
+    "data/frozen/epoch_times.csv": "3804f92083ca3d77cb47d79c924928a74ca931ad23af42ad49ccbc651d7c5e57",
+    "data/frozen/freeze_summary.json": "239f522ade509e90c2c15474beef6a4a3344c9bf9725e97a0aac1c7ce4432b7c",
+    "data/frozen/lineage.json": "b000a75a1e8d40fec43f1c52fad7e5a39f914eb50a7dcae7dd7da3aafef4bc5b"
+  },
+  "source_archives": {
+    "fixed32_fixed64_archived_raw_references": {
+      "filename": "mx_triple_freeze_offsets_e50_reference100_v1.zip",
+      "sha256": "109ac66a9a6b6534cf8a9c0d8b37f4410ed6325fce7ec76b1c1612f79b83800e"
+    },
+    "learned_frozen_actual_feedback": {
+      "filename": "feedback_bundle(20261026-161454).zip",
+      "sha256": "43355332b6be546f3a73a71d075f73e1668e6c5493644f83239d97c3512d6b4b"
+    }
+  },
+  "frozen_shared_history_policy": "Use learned epochs1–50 verbatim, then frozen recorded epochs51–100; both originate from the same learned checkpoint50. Never append learned51–100 into frozen history.",
+  "limitations": [
+    "One seed and one workload; shared initial base weights and data protocol.",
+    "Original CUDA backend is not bitexact reproducible.",
+    "Global E4M3 selection uses official test; not an independent validation estimate.",
+    "Frozen variant is a branch of the learned run after50, not a new independent training replicate.",
+    "Fixed32 per-example order arrays and full history are not included in the archived reference; no new claim of independently verified order hashes for that run.",
+    "Timing is descriptive; frozen execution still computes theta gradients and Adam moments."
+  ],
+  "initialization_scope": "initial_base_model_sha256 refers to the beginning of the logical1–100 trajectory; frozen inherits learned initialization before their shared1–50 history."
+}

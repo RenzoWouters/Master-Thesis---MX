@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "source_files_verified": 28,
+  "existing_feedback_and_recovered_generated_archive_unchanged": true,
+  "actual_results_only": true,
+  "new_training_or_checkpoint_evaluation_performed": false,
+  "blank_notebook_code_cells": 10,
+  "notebook_sha256": "ed179cb6f5729ebc74b4e4d41f67cd1357e716b22acc40c4a522fadd5a1bcff8",
+  "helper_sha256": "d96877d4f223fc73db8f7ed739cc603b02af5db707a37a4acd2c42564d1ec6be",
+  "source_manifest_sha256": "5554c2db6bab2f4e7a79f3ad9462f92dc306dcf6e9edcb125aaf08ecd81ceb45",
+  "reports": {
+    "comparison_input_audit.json": {
+      "status": "PASS",
+      "sha256": "eca2b761201220d6641969a79dccd9f02db96bb2697f57e8839d63123583752c"
+    },
+    "comparison_metrics.json": {
+      "status": "PASS",
+      "sha256": "502150f500533c0b5e82341accfc90b8e7f12577cb804eb0949611662edb891e"
+    },
+    "notebook_validation_report.json": {
+      "status": "PASS",
+      "sha256": "d90228134846b7172f47e8df3796a1ae722231da8cebb5c5b6e293e7b47c7e8f"
+    },
+    "independent_notebook_review.json": {
+      "status": "PASS",
+      "sha256": "fc0961f727b35c4eb2235ba5eb9562ce3592065e501626f5c8e5990e45892b55"
+    }
+  },
+  "bytecode_excluded_from_distribution": true
+}

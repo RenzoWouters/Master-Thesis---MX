@@ -1,0 +1,47 @@
+{
+  "schema": "mx-four-scale-notebook-validation-v1",
+  "status": "PASS",
+  "scope": "Execution of every delivered code cell in a fresh Jupyter kernel on the four archived actual runs",
+  "actual_research_data_used": true,
+  "new_training_performed": false,
+  "checkpoint_evaluation_performed": false,
+  "notebook_cells": 21,
+  "code_cells_executed": 10,
+  "figures_rendered": 4,
+  "input_files_unchanged": 28,
+  "source_manifest_unchanged": true,
+  "delivered_notebook_is_blank": true,
+  "executed_notebook_delivered": false,
+  "SAVE_FIGURES_false_preserved": true,
+  "duration_seconds": 2.7730843930003175,
+  "execution_method": "nbclient 0.11.0 / ipykernel 7.4.0; local temporary validation dependencies",
+  "code_binding": {
+    "comparison_support.py": "d96877d4f223fc73db8f7ed739cc603b02af5db707a37a4acd2c42564d1ec6be",
+    "MX_schaalvarianten_vergelijking100.ipynb": "ed179cb6f5729ebc74b4e4d41f67cd1357e716b22acc40c4a522fadd5a1bcff8"
+  },
+  "captured_stream_output": [
+    "Resultaten geladen en gecontroleerd uit: /workspace/scratch/4619498905be/output/mx_scale_variants_comparison100_v1\nGeen nieuwe training of checkpoint-evaluatie uitgevoerd.\n",
+    "✓ 28 bronbestanden gecontroleerd op SHA256\n✓ Vast ×64: compleet, echt, correcte A32/FP32-metrics en LR\n✓ Vast ×32: compleet, echt, correcte A32/FP32-metrics en LR\n✓ Geleerd tot 100: compleet, echt, correcte A32/FP32-metrics en LR\n✓ Geleerd; vast na 50: compleet, echt, correcte A32/FP32-metrics en LR\n✓ Gemeenschappelijk protocol en basisinitialisatie gecontroleerd\n✓ Freeze-afstamming, vaste blokkeuzes en dynamische bronschaal gecontroleerd\n✓ Alle drie selecties herberekend; alle opgeslagen geselecteerde scores sluiten aan\n",
+    "Figuren niet naar bestanden geschreven; ze staan hierboven in de notebook.\n"
+  ],
+  "rendered_figure_paths_internal": [
+    "/workspace/scratch/4619498905be/work/four_scale_notebook_build/figure_cell_07.png",
+    "/workspace/scratch/4619498905be/work/four_scale_notebook_build/figure_cell_11.png",
+    "/workspace/scratch/4619498905be/work/four_scale_notebook_build/figure_cell_13.png",
+    "/workspace/scratch/4619498905be/work/four_scale_notebook_build/figure_cell_15.png"
+  ],
+  "visual_review": {
+    "status": "PASS",
+    "figures_checked": 4,
+    "checks": [
+      "Alle 12 balken per selectie hebben de juiste precisiewaarden en checkpointlabels",
+      "Het gedeelde globale checkpoint 34 van geleerd en bevroren is expliciet vermeld",
+      "Hetzelfde selectievenster 51–100 wordt voor alle vier varianten gebruikt",
+      "De volledige curves tonen alle 100 epochs zonder afkappen of gladstrijken; de bevroren tak begint na 50",
+      "Titels, legenda, aslabels en voetnoten zijn leesbaar zonder overlap",
+      "De uitvergrote y-as van de staafdiagrammen is expliciet vermeld"
+    ]
+  },
+  "optional_table_dependency_required": false,
+  "table_formatting": "Pandas presentation copy; no optional Jinja2/Styler dependency"
+}

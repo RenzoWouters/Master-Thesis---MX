@@ -1,0 +1,365 @@
+{
+  "schema": "mx-four-scale-notebook-independent-review-v1",
+  "status": "PASS",
+  "independent_reference": "work/four_scale_comparison_review/comparison_metrics.json",
+  "independent_reference_sha256": "502150f500533c0b5e82341accfc90b8e7f12577cb804eb0949611662edb891e",
+  "reviewed_files_sha256": {
+    "comparison_support.py": "d96877d4f223fc73db8f7ed739cc603b02af5db707a37a4acd2c42564d1ec6be",
+    "MX_schaalvarianten_vergelijking100.ipynb": "ed179cb6f5729ebc74b4e4d41f67cd1357e716b22acc40c4a522fadd5a1bcff8",
+    "SOURCE_MANIFEST.json": "5554c2db6bab2f4e7a79f3ad9462f92dc306dcf6e9edcb125aaf08ecd81ceb45"
+  },
+  "selected_metric_checks": [
+    {
+      "role": "epoch100",
+      "variant": "fixed64",
+      "format": "E4M3",
+      "epoch": 100,
+      "accuracy_percent": 94.9293177580643,
+      "correct1": 24712,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "fixed64",
+      "format": "E2M3",
+      "epoch": 100,
+      "accuracy_percent": 94.8985863458766,
+      "correct1": 24704,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "fixed64",
+      "format": "E2M1",
+      "epoch": 100,
+      "accuracy_percent": 94.79102641963196,
+      "correct1": 24676,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "fixed32",
+      "format": "E4M3",
+      "epoch": 100,
+      "accuracy_percent": 94.70651505370043,
+      "correct1": 24654,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "fixed32",
+      "format": "E2M3",
+      "epoch": 100,
+      "accuracy_percent": 94.85248923931813,
+      "correct1": 24692,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "fixed32",
+      "format": "E2M1",
+      "epoch": 100,
+      "accuracy_percent": 94.91395205431506,
+      "correct1": 24708,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "learned",
+      "format": "E4M3",
+      "epoch": 100,
+      "accuracy_percent": 94.9331591840016,
+      "correct1": 24713,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "learned",
+      "format": "E2M3",
+      "epoch": 100,
+      "accuracy_percent": 94.1763982696627,
+      "correct1": 24516,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "learned",
+      "format": "E2M1",
+      "epoch": 100,
+      "accuracy_percent": 93.94975414405077,
+      "correct1": 24457,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "frozen",
+      "format": "E4M3",
+      "epoch": 100,
+      "accuracy_percent": 94.77566072057198,
+      "correct1": 24672,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "frozen",
+      "format": "E2M3",
+      "epoch": 100,
+      "accuracy_percent": 94.71419790088581,
+      "correct1": 24656,
+      "figure_value_matches": true
+    },
+    {
+      "role": "epoch100",
+      "variant": "frozen",
+      "format": "E2M1",
+      "epoch": 100,
+      "accuracy_percent": 94.52596802995772,
+      "correct1": 24607,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "fixed64",
+      "format": "E4M3",
+      "epoch": 42,
+      "accuracy_percent": 95.08681621680468,
+      "correct1": 24753,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "fixed64",
+      "format": "E2M3",
+      "epoch": 42,
+      "accuracy_percent": 93.84219421311691,
+      "correct1": 24429,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "fixed64",
+      "format": "E2M1",
+      "epoch": 42,
+      "accuracy_percent": 93.92286415780038,
+      "correct1": 24450,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "fixed32",
+      "format": "E4M3",
+      "epoch": 55,
+      "accuracy_percent": 94.84480638744351,
+      "correct1": 24690,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "fixed32",
+      "format": "E2M3",
+      "epoch": 55,
+      "accuracy_percent": 95.00614627681045,
+      "correct1": 24732,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "fixed32",
+      "format": "E2M1",
+      "epoch": 55,
+      "accuracy_percent": 94.77566072057198,
+      "correct1": 24672,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "learned",
+      "format": "E4M3",
+      "epoch": 34,
+      "accuracy_percent": 95.01382912868507,
+      "correct1": 24734,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "learned",
+      "format": "E2M3",
+      "epoch": 34,
+      "accuracy_percent": 93.19299322971187,
+      "correct1": 24260,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "learned",
+      "format": "E2M1",
+      "epoch": 34,
+      "accuracy_percent": 93.5925015271919,
+      "correct1": 24364,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "frozen",
+      "format": "E4M3",
+      "epoch": 34,
+      "accuracy_percent": 95.01382912868507,
+      "correct1": 24734,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "frozen",
+      "format": "E2M3",
+      "epoch": 34,
+      "accuracy_percent": 93.19299322971187,
+      "correct1": 24260,
+      "figure_value_matches": true
+    },
+    {
+      "role": "global_best",
+      "variant": "frozen",
+      "format": "E2M1",
+      "epoch": 34,
+      "accuracy_percent": 93.5925015271919,
+      "correct1": 24364,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "fixed64",
+      "format": "E4M3",
+      "epoch": 61,
+      "accuracy_percent": 95.04456053618352,
+      "correct1": 24742,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "fixed64",
+      "format": "E2M3",
+      "epoch": 61,
+      "accuracy_percent": 94.55669943745619,
+      "correct1": 24615,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "fixed64",
+      "format": "E2M1",
+      "epoch": 61,
+      "accuracy_percent": 94.58358941901734,
+      "correct1": 24622,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "fixed32",
+      "format": "E4M3",
+      "epoch": 55,
+      "accuracy_percent": 94.84480638744351,
+      "correct1": 24690,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "fixed32",
+      "format": "E2M3",
+      "epoch": 55,
+      "accuracy_percent": 95.00614627681045,
+      "correct1": 24732,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "fixed32",
+      "format": "E2M1",
+      "epoch": 55,
+      "accuracy_percent": 94.77566072057198,
+      "correct1": 24672,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "learned",
+      "format": "E4M3",
+      "epoch": 51,
+      "accuracy_percent": 94.95236631368815,
+      "correct1": 24718,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "learned",
+      "format": "E2M3",
+      "epoch": 51,
+      "accuracy_percent": 93.96896126904807,
+      "correct1": 24462,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "learned",
+      "format": "E2M1",
+      "epoch": 51,
+      "accuracy_percent": 93.80762137968114,
+      "correct1": 24420,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "frozen",
+      "format": "E4M3",
+      "epoch": 51,
+      "accuracy_percent": 94.91395205431506,
+      "correct1": 24708,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "frozen",
+      "format": "E2M3",
+      "epoch": 51,
+      "accuracy_percent": 94.37231099715464,
+      "correct1": 24567,
+      "figure_value_matches": true
+    },
+    {
+      "role": "window51_best",
+      "variant": "frozen",
+      "format": "E2M1",
+      "epoch": 51,
+      "accuracy_percent": 94.26090964497271,
+      "correct1": 24538,
+      "figure_value_matches": true
+    }
+  ],
+  "all36_accuracy_epoch_count_values_match_independent_calculation": true,
+  "all36_bar_heights_match": true,
+  "all_curve_data_match_full_actual_trajectories": true,
+  "frozen_curve_starts_at_shared50_then_actual51_100": true,
+  "global34_exact_shared_checkpoint_and_metrics": true,
+  "source_file_hashes_unchanged": true,
+  "source_file_count": 28,
+  "no_Torch_or_training_or_checkpoint_load": true,
+  "cost_interpretation": "Fixed offsets require no per-block choice array; learned/frozen retain 4080 FP32 theta parameters during this implementation and 4080 packed choice bits in compact exports. Source E8M0 scales are additional in all variants; no measured runtime saving is claimed.",
+  "findings": [
+    {
+      "severity": "wording_minor",
+      "location": "notebook final assessment first bullet",
+      "text": "The sentence that freeze improves the fully learned approach should explicitly say the two lower precisions; E4M3 is lower at100.",
+      "status": "resolved",
+      "resolution": "Final notebook explicitly limits the freeze improvement to the two lower precisions."
+    }
+  ],
+  "final_targeted_revision_check": {
+    "status": "PASS",
+    "notebook_accuracy_tradeoff_wording_correct": true,
+    "styled_table_returns_formatted_DataFrame_copy_without_mutating_numeric_input": true,
+    "all36_numeric_table_values_and_epochs_rechecked": true,
+    "all36_display_strings_match_four_decimal_comma_format": true,
+    "notebook_blank": true,
+    "full_notebook_or_figure_render_repeated": false,
+    "reason": "Targeted revision only removes Styler/Jinja2 dependency and clarifies the concluding bullet."
+  }
+}
