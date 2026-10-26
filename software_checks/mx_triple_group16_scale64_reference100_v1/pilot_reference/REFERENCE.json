@@ -1,0 +1,18 @@
+{
+  "schema": "mx-group16-scale64-pilot5-actual-reference-v1",
+  "source_bundle_name": "feedback_bundle(20261026-175140).zip",
+  "source_bundle_sha256": "f61de5d8cdbb3c46e6962c194c7aec07f0d9dacc18ce0e8d9f25d197258229c2",
+  "synthetic": false,
+  "scope": "Actual five-epoch B16 fixed64 pilot; completed before fresh100epoch experiment; not full100accuracy evidence",
+  "files_sha256": {
+    "timing_estimate.json": "fa470ef592deaca8ac8d9d43dc9f9bf966c17b95f94c658d7bc14a09873fad35",
+    "training_summary.json": "f383a453ebf6281e2c6b43b13988bf5ca27f13bc7cab49c2e06d93fad3ed9c15",
+    "group_size_costs_summary.csv": "2476bbf3ce1fefa1bfb471540dbf82b50047eb08b8534b4c8ecd402e50d043ab",
+    "epoch_times.csv": "00df8ee10c3ff52c89f957f0dd6fd37a870b48d8bca45dbbe7e66d34003b84b6",
+    "selected_metrics.csv": "77c7e156df7c4c73a51bcc9014936b74a23803159bcd35192e60ab94b5f1d1ba",
+    "checkpoint_selection.json": "55acd5e35c98b2dbe088db18b4e3e23e0f6c03785fc2da936d38943a19e8c6a1",
+    "group_size_costs.json": "7d323ebcab1e21bcefef2aa31ea47cc8585cbb427d9791206dbe8f8073b484b6",
+    "run_report.json": "5699b1381d4673cd68c76495bb48ec7a96c054f0e0201ee9b6497dfaeb2dcac3",
+    "epoch_metrics.csv": "d82c78e436d30b57e5c16cd6e608024b735a563388eee89143858f95aaadb7d4"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "mx-triple-group16-scale64-reference100-change-v1",
+  "package": "mx_triple_group16_scale64_reference100_v1",
+  "decision_date": "2026-10-26",
+  "source": "Successful group16 fixed64 pilot5v2 numerical core unchanged; duration extends to100 using established full100 lifecycle",
+  "scope": "100 complete train-only SVHN epochs; fresh initialization; three modes from one current E4M3 source",
+  "numerical_change": {
+    "compared_with_group16_pilot5_v2": "none",
+    "mx_block_size": 16,
+    "scale_exponent_offset": 6,
+    "scale_factor": 64,
+    "alternative_reference_group_size": 32
+  },
+  "weight_formats": [
+    "MXFP8_E4M3",
+    "MXFP6_E2M3",
+    "MXFP4_E2M1"
+  ],
+  "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+  "exponent_mapping": "s e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation",
+  "mantissa_mapping": "derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times64",
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "mantissa_truncation": true,
+  "exponent_truncation": true,
+  "shared_scale_compensation": true,
+  "learned_shared_scale": false,
+  "direct_lower_quantization": false,
+  "exponent_bias_compensation": false,
+  "source_weight_bits": 8,
+  "training_order": [
+    8,
+    6,
+    4
+  ],
+  "test_order": [
+    4,
+    6,
+    8
+  ],
+  "bn_mapping": {
+    "8": "8",
+    "6": "32",
+    "4": "4"
+  },
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+  "ste_policy": "identity wrt G(W) for E4M3 and complete scale64 E4-to-E2 code path; no extra factor64 in backward; retain original G(W) derivatives; no gradient through codes or scales",
+  "shared_scale_policy": "encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+6; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps",
+  "source_cache_policy": "detached integer source and derived codes; one triplet per minibatch; cleared before Adam",
+  "configured_full_schedule_epochs": 100,
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "seed": 20261009,
+  "expected_initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "selection": "first strict maximum of E4M3/A32 official-test top1",
+  "reporting": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch",
+  "reference_comparison": "actual B32 fixed64 reference100: epoch100 and first strict E4-selected common checkpoint perrun; partial comparison limited to shared completed range",
+  "new_output_root": "mx_runs/mx_triple_group16_scale64_reference100",
+  "old_results_modified": false,
+  "executed_notebook_delivered": false,
+  "round_trip_CSV_parser": true,
+  "notebook_default_SAVE_FIGURES": false,
+  "research_outcome_policy": "low accuracy, constant predictions or zero finite gradients/updates are diagnostics, not automatic FAIL",
+  "costs_report": "group_size_costs.json",
+  "group_size_comparisons": [
+    16,
+    32,
+    64
+  ],
+  "mx_block_size": 16,
+  "scale_exponent_offset": 6,
+  "scale_factor": 64,
+  "expected_initial_model_sha256_scope": "Historical laptop/runtime expectation; independently verify initialization equality in same runtime. CPU digest may differ.",
+  "reference_epochs": 100,
+  "pilot_completed_and_audited": true,
+  "pilot_feedback_sha256": "f61de5d8cdbb3c46e6962c194c7aec07f0d9dacc18ce0e8d9f25d197258229c2"
+}

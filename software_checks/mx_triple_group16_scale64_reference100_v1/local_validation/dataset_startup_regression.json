@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "outcome": "full100_real_create_context_and_first_loader_batches_pass",
+  "package": "/workspace/scratch/4619498905be/work/group16_full100_validation_snapshot/package",
+  "synthetic_fixture_only": true,
+  "real_create_context_executed": true,
+  "real_ensure_dataset_executed": true,
+  "real_validate_dataset_executed": true,
+  "real_model_optimizer_scheduler_loaders_constructed": true,
+  "SVHN_downloaded_or_used": false,
+  "training_epochs": 0,
+  "optimizer_updates": 0,
+  "raw_fixture_files_unchanged": true,
+  "extra_file_not_hashed_or_loaded": true,
+  "canonical_filenames": [
+    "train_32x32.mat",
+    "test_32x32.mat"
+  ],
+  "calls": {
+    "dataset_splits": [
+      "train",
+      "val"
+    ],
+    "hashed_files": [
+      "train_32x32.mat",
+      "test_32x32.mat"
+    ],
+    "optimizer_updates": 0,
+    "loader_items": 256
+  },
+  "runtime_torch": "2.10.0+cpu",
+  "runner_sha256": "41811d7045992273f12c6df12a16e48df69d19d4355c5bc8857f0072bf1368f8"
+}

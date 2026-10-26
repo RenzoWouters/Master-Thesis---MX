@@ -1,0 +1,7 @@
+weight_bits,weight_format,layer,derivation,scale_exponent_offset,scale_factor,n_weights,blocks,block_size,padded_slots,mae,rmse,max_abs_error,relative_l2,new_zero_count,local_subnormal_count,out_of_element_range_before_round,fp32_subnormal_input_count,scale_range_clamped_blocks,scale_exponent_min,scale_exponent_max,packed_weight_and_scale_bytes,fp32_weight_bytes
+4,MXFP4_E2M1,layers.3,E4_exponent_MSB_scale64_then_mantissa_shift2,6,64,1728,112,16,64,0.059002315577529885,0.07159889068665411,0.1650321576744318,0.6529668256600007,3,2,0,0,0,-5,-5,1008,6912
+4,MXFP4_E2M1,layers.6,E4_exponent_MSB_scale64_then_mantissa_shift2,6,64,2304,144,16,0,0.06075582185600931,0.07318273823131592,0.16503863222897053,0.69944921735825,5,5,0,0,0,-5,-5,1296,9216
+4,MXFP4_E2M1,layers.10,E4_exponent_MSB_scale64_then_mantissa_shift2,6,64,4608,288,16,0,0.06343477782176189,0.07529639131211088,0.16503892466425896,0.7506157878537772,16,27,0,0,0,-5,-5,2592,18432
+4,MXFP4_E2M1,layers.13,E4_exponent_MSB_scale64_then_mantissa_shift2,6,64,9216,576,16,0,0.06719872549069356,0.07877413818007069,0.16503399051725864,0.8467780140190984,29,35,7,0,0,-6,-5,5184,36864
+4,MXFP4_E2M1,layers.16,E4_exponent_MSB_scale64_then_mantissa_shift2,6,64,9216,576,16,0,0.06907343238621788,0.08069767210759175,0.16503849066793919,0.9452569650175275,21,20,19,0,0,-6,-5,5184,36864
+4,MXFP4_E2M1,layers.20,E4_exponent_MSB_scale64_then_mantissa_shift2,6,64,102400,6400,16,0,0.05315534428376323,0.06498633490201798,0.1650383211672306,1.1487123711535845,68,76,3808,0,0,-9,-5,57600,409600

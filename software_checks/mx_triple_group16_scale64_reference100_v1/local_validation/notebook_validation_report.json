@@ -1,0 +1,191 @@
+{
+  "status": "PASS",
+  "synthetic_software_validation_only": true,
+  "research_training_started": false,
+  "executed_notebook_saved": false,
+  "package_files_sha256": {
+    "notebook_support.py": "a6ec613ab5298b6fcf613418d6f7d874d88950a1dc337d8aca301a469ae1f010",
+    "MX_triple_group16_scale64_reference100_resultaten.ipynb": "d8d42ef24166d7c759335685d12e97696a819609b1b5ad86c4a16ae8e46f24b4",
+    "group_costs.py": "ff21f2971a4d66d71f0076b647024454218fa583226daa93766a519b15b9f905"
+  },
+  "checks": {
+    "full100": {
+      "status": "PASS",
+      "input": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/continuous100/20261026_185501_040203_joint_run",
+      "cells_executed": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        19,
+        20,
+        21,
+        23
+      ],
+      "figure_count": 10,
+      "read_only_inputs_unchanged": true,
+      "forbidden_imports": [],
+      "completed_epoch": 100,
+      "reference_complete": true,
+      "shared_best_epoch": 14,
+      "verified_export_tables": 6,
+      "actual_historical_reference_safe": true,
+      "synthetic_vs_real_comparison_blocked": true,
+      "verified_input_hash_manifest": "full100_input_sha256.json",
+      "verified_input_hash_manifest_sha256": "34284f330f54527f9da70487214fba91b46488cd8555a2ba4f8750142fc826a5"
+    },
+    "early_stop": {
+      "status": "PASS",
+      "input": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/early_stop/20261026_185530_827958_joint_run",
+      "cells_executed": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        19,
+        20,
+        21,
+        23
+      ],
+      "figure_count": 10,
+      "read_only_inputs_unchanged": true,
+      "forbidden_imports": [],
+      "completed_epoch": 1,
+      "reference_complete": false,
+      "shared_best_epoch": 1,
+      "verified_export_tables": 6,
+      "actual_historical_reference_safe": true,
+      "synthetic_vs_real_comparison_blocked": true,
+      "verified_input_hash_manifest": "early_stop_input_sha256.json",
+      "verified_input_hash_manifest_sha256": "212bef8aa67d1d9afaeb77bde0c91e6dd4b4c27ee14f46b2e07be5529560e7f2"
+    },
+    "planned_reference_compatibility": {
+      "status": "PASS",
+      "matched_fields": 72,
+      "intended_block_sizes": [
+        16,
+        32
+      ]
+    },
+    "generated_selection_and_comparison": {
+      "status": "PASS",
+      "synthetic_fixture_only": true,
+      "first_E4_maximum": 54,
+      "equal_E4_tie_at": 55,
+      "E2M3_own_best_ignored": 77,
+      "E2M1_own_best_ignored": 83,
+      "reference_first_E4_maximum": 42,
+      "reference_equal_E4_tie_at": 43,
+      "all_three_modes_at_same_checkpoint": true,
+      "comparison_curve_endpoint": 100,
+      "bar_counts_per_comparison_panel": [
+        6,
+        6
+      ],
+      "difference_in_percentage_points": true
+    },
+    "partial_common_range": {
+      "status": "PASS",
+      "observed_endpoint": 3,
+      "epoch100_scores_empty": true,
+      "curve_endpoint": 3,
+      "current_shared_best_epoch": 2,
+      "reference_shared_best_epoch": 3
+    },
+    "mixed_mode_best_rejected": {
+      "status": "PASS",
+      "expected_errors": [
+        {
+          "Niveau": "FOUT",
+          "Melding": "best_E4M3_test: verwacht drie modi van precies één checkpoint; geen mix van modusspecifieke beste epochs."
+        }
+      ]
+    },
+    "changed_cost_report_rejected": {
+      "status": "PASS",
+      "expected_errors": [
+        {
+          "Niveau": "FOUT",
+          "Melding": "Kostenrapport: Saved layout report differs from its recomputed layer geometry or scope."
+        }
+      ]
+    },
+    "cost_semantics": {
+      "status": "PASS",
+      "B64_accuracy_not_measured": true,
+      "costs_include_padding_and_scales": true,
+      "rows": [
+        {
+          "Groepsgrootte": 16,
+          "Reële gewichten": 129472,
+          "Groepen / schalen": 8096,
+          "Paddingposities": 64,
+          "Schaalbytes": 8096,
+          "Schaalbits/gewicht zonder padding": 0.5,
+          "E4M3 bron + schalen [bytes]": 137632,
+          "E2M3 + schalen [bytes]": 105248,
+          "E2M1 + schalen [bytes]": 72864,
+          "E4M3 effectieve bits/reëel gewicht": 8.504201680672269,
+          "E2M3 effectieve bits/reëel gewicht": 6.5032130499258525,
+          "E2M1 effectieve bits/reëel gewicht": 4.502224419179436
+        },
+        {
+          "Groepsgrootte": 32,
+          "Reële gewichten": 129472,
+          "Groepen / schalen": 4080,
+          "Paddingposities": 1088,
+          "Schaalbytes": 4080,
+          "Schaalbits/gewicht zonder padding": 0.25,
+          "E4M3 bron + schalen [bytes]": 134640,
+          "E2M3 + schalen [bytes]": 102000,
+          "E2M1 + schalen [bytes]": 69360,
+          "E4M3 effectieve bits/reëel gewicht": 8.319327731092438,
+          "E2M3 effectieve bits/reëel gewicht": 6.302521008403361,
+          "E2M1 effectieve bits/reëel gewicht": 4.285714285714286
+        },
+        {
+          "Groepsgrootte": 64,
+          "Reële gewichten": 129472,
+          "Groepen / schalen": 2160,
+          "Paddingposities": 8768,
+          "Schaalbytes": 2160,
+          "Schaalbits/gewicht zonder padding": 0.125,
+          "E4M3 bron + schalen [bytes]": 140400,
+          "E2M3 + schalen [bytes]": 105840,
+          "E2M1 + schalen [bytes]": 71280,
+          "E4M3 effectieve bits/reëel gewicht": 8.675234799802274,
+          "E2M3 effectieve bits/reëel gewicht": 6.539792387543253,
+          "E2M1 effectieve bits/reëel gewicht": 4.404349975284231
+        }
+      ]
+    }
+  },
+  "visual_review_pending": false,
+  "visual_qa_directory": "/workspace/scratch/4619498905be/work/group16_full100_notebook_validation_v1/synthetic_visual_qa",
+  "notebook_unexecuted_and_unchanged": true,
+  "visual_review": {
+    "status": "PASS",
+    "figures_reviewed": [
+      "controlled_common_checkpoints",
+      "controlled_group_comparison_checkpoints",
+      "controlled_group_comparison_curves",
+      "calculated_group_size_costs",
+      "controlled_partial_comparison_checkpoints"
+    ],
+    "resolved_issue": "Comparison legends placed in a fixed horizontal row above score labels to avoid overlap.",
+    "synthetic_accuracy_figures_only": true
+  },
+  "validation_script": "work/validate_group16_full100_notebook.py"
+}

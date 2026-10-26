@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "run_metrics_safe": true,
+  "selection_safe": true,
+  "pilot_complete": true,
+  "reference_safe": true,
+  "reference_compatible": true,
+  "analysis_errors": [],
+  "input_files_unchanged": true
+}

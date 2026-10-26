@@ -1,0 +1,514 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "scope": "Real triple-group16-scale64 reference100 main/model/loop/exports on three synthetic CPU images only",
+  "device": "CPU; test-only Tensor.cuda redirection",
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_SVHN_accuracy_or_GPU_timing_result": true,
+  "notebook_executed": false,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": null,
+    "cudnn": null,
+    "device": "cpu",
+    "device_name": "CPU"
+  },
+  "production_config": {
+    "schema": "mx-triple-group16-scale64-reference100-protocol-v1",
+    "purpose": "100 complete train-only epochs: group size16, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+    "mode": "joint",
+    "weight_format": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6,
+      8
+    ],
+    "weight_formats": {
+      "8": "MXFP8_E4M3",
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "codec_revision": {
+      "8": "e4m3-exact-binary-v2",
+      "6": "unchanged-E2M3-decode",
+      "4": "unchanged-E2M1-decode"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in ALL THREE modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 16,
+    "mx_scale_format": "E8M0",
+    "mx_group_size_research_variant": true,
+    "comparison_baseline_block_size": 32,
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "encode current E4M3 source scale floor(log2(amax))-8; clip[-127,127], zero block exponent0; both lower scale codes equal source code+6; integer promoted before addition; overflow above254 rejected without clipping/wrap, including zero blocks; source scales can change after optimizer steps",
+    "mx_rounding": "E4M3 source nearest ties-to-even; finite FP32 source, scalar subnormal flush; lower modes exact bit mappings without additional rounding",
+    "ste_policy": "identity wrt G(W) for E4M3 and complete scale64 E4-to-E2 code path; no extra factor64 in backward; retain original G(W) derivatives; no gradient through codes or scales",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": true,
+    "mantissa_truncation": true,
+    "exponent_truncation": true,
+    "shared_scale_compensation": true,
+    "learned_shared_scale": false,
+    "scale_exponent_offset": 6,
+    "scale_factor": 64,
+    "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+    "source_weight_bits": 8,
+    "exponent_mapping": "s e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation",
+    "mantissa_mapping": "derived E2M3 uint8 codes >> 2; unchanged E2M3 scale equals original E4M3 scale times64",
+    "source_cache_policy": "detached integer source and derived codes; one triplet per minibatch; cleared before Adam",
+    "direct_lower_quantization": false,
+    "exponent_bias_compensation": false,
+    "distillation": true,
+    "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+    "passes_per_training_batch": 3,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      8,
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6,
+      8
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6,
+      8
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "8": "8",
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "normal training updates of three mode banks E4M3=8,E2M3=32,E2M1=4; parameters and running stats learn per mode; eval frozen; keys are storage IDs, all A32; banks1/2 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "planned_epochs": 100,
+    "reference_end_epoch": 100,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "all three modes on complete official test after every epoch; hard CE for each",
+    "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+    "reporting_policy": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "one E4M3 source with all BN auxiliary state per selected checkpoint; lower exports derived only from saved/reloaded source codes and source scale code+6; separate FP32 resume checkpoint",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "comparison_to_group16_scale64_pilot": {
+    "same_numerical_route_training_hyperparameters_and_mechanics": true,
+    "only_duration_identity_and_reporting_changed": true,
+    "differences": {
+      "pilot_stop_epoch": {
+        "previous": 5,
+        "current": null
+      },
+      "purpose": {
+        "previous": "five complete train-only epochs: group size16, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+        "current": "100 complete train-only epochs: group size16, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1"
+      },
+      "reference_end_epoch": {
+        "previous": null,
+        "current": 100
+      },
+      "reporting_policy": {
+        "previous": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+        "current": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch"
+      },
+      "schema": {
+        "previous": "mx-triple-group16-scale64-pilot5-protocol-v1",
+        "current": "mx-triple-group16-scale64-reference100-protocol-v1"
+      }
+    },
+    "archived_runner_sha256": "48db8cfe3559b71c0b3706929e6388deab7fae853ac49bdaf5f6c36a62124f52"
+  },
+  "unchanged_core_validation": {
+    "status": "PASS",
+    "reused_files_verified": 15,
+    "reused_files_sha256": {
+      "group_config.py": "3a8c67f98828a53fdf10fa1485e4b8acf8181ccd6ced2a658daa2be11e4eeff0",
+      "group_costs.py": "ff21f2971a4d66d71f0076b647024454218fa583226daa93766a519b15b9f905",
+      "mx_format.py": "7c49d0a9340f6f8b67c9ed8c97a09f19d95da6f644c106bbfb6f4a2aca320778",
+      "mx_e4m3.py": "ed77249e81faddbc6b1b45ff82f22b932f6ceefaf73faba6fb6035f86b5d1060",
+      "mx_e2m1.py": "8fa498505bebaffcf0f6defe985c0a60b689e8c16eff82f886ae9509d6e218ce",
+      "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+      "trunc_adapter.py": "bfc2ee7b72fae3c625312d14175658bdec53a06ccc0f0097563c9ede02cf9c1a",
+      "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+      "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+    },
+    "successful_pilot_manifest": "provenance/group16_pilot5_v2_PACKAGE_SHA256.json",
+    "all_numerical_files_identical_to_successful_group16_pilot": true,
+    "standalone_exhaustive_codec_suite_repeated": false
+  },
+  "fixture_changes": {
+    "train_examples": 3,
+    "test_examples": 3,
+    "batch_size": 2
+  },
+  "initialization_reference": {
+    "builder": "unchanged joint_support.build_model",
+    "same_runtime_seed_and_CPU_context": true,
+    "initial_model_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148"
+  },
+  "package_sha256": {
+    "CODEWIJZIGINGEN.md": "b036aecccbc53bc8478d320ae469063b234411b21ae9005b9e0df76ce4206ab5",
+    "EXPERIMENT_MANIFEST.json": "88acc2d6dd7baf3e20c677b97ea1dba659ec12b86439d67ae0e2f60851edd09c",
+    "MX_triple_group16_scale64_reference100_resultaten.ipynb": "6498364c85c5297c914198a0ba939857b0f369b69e53be5b2c0bf8c5c6edebd4",
+    "PROTOCOL.json": "e4cb6700751654ebdb4b56a67ec40945f4268192d8995dbd26ca7daf853222f1",
+    "PROTOCOL.md": "f1b2130ee84abe768e9cf907b0ff0a9f9d26260e79c87491c3edc5b737b8a180",
+    "README.md": "2758747be090b5930f0785455f3c7cd66c6b3c8edf4404832c5ab005576fa1f3",
+    "REUSE_MANIFEST.json": "415fe8a1f9766bd21671c3dea5db50cd889f56a061db89a25fd25d603c30d15d",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "234e112700e827c532e875854f1134ae7e3619023b646455b55f6a0ade41aec3",
+    "group_config.py": "3a8c67f98828a53fdf10fa1485e4b8acf8181ccd6ced2a658daa2be11e4eeff0",
+    "group_costs.py": "ff21f2971a4d66d71f0076b647024454218fa583226daa93766a519b15b9f905",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "local_validation/test_dataset_startup.py": "fb556e290e62940f3970f75d99328c7971af521d1fee23d25ad46f6fb23a33d7",
+    "local_validation/test_training_integration.py": "5df6168ad7d992b40992f70ad4cd3a3ef1fbf6ba33f11a659c2c94658227329e",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "8fa498505bebaffcf0f6defe985c0a60b689e8c16eff82f886ae9509d6e218ce",
+    "mx_e4m3.py": "ed77249e81faddbc6b1b45ff82f22b932f6ceefaf73faba6fb6035f86b5d1060",
+    "mx_format.py": "7c49d0a9340f6f8b67c9ed8c97a09f19d95da6f644c106bbfb6f4a2aca320778",
+    "notebook_support.py": "34cb27e73c8b666de50e72218745947147bee866608806a8556b007df06a6aae",
+    "pilot_reference/REFERENCE.json": "19996b261768eeed45430d35da9c457ab9d35d7fe119cc61e2b8e6aa4428d269",
+    "pilot_reference/checkpoint_selection.json": "55acd5e35c98b2dbe088db18b4e3e23e0f6c03785fc2da936d38943a19e8c6a1",
+    "pilot_reference/epoch_metrics.csv": "d82c78e436d30b57e5c16cd6e608024b735a563388eee89143858f95aaadb7d4",
+    "pilot_reference/epoch_times.csv": "00df8ee10c3ff52c89f957f0dd6fd37a870b48d8bca45dbbe7e66d34003b84b6",
+    "pilot_reference/group_size_costs.json": "7d323ebcab1e21bcefef2aa31ea47cc8585cbb427d9791206dbe8f8073b484b6",
+    "pilot_reference/group_size_costs_summary.csv": "2476bbf3ce1fefa1bfb471540dbf82b50047eb08b8534b4c8ecd402e50d043ab",
+    "pilot_reference/run_report.json": "5699b1381d4673cd68c76495bb48ec7a96c054f0e0201ee9b6497dfaeb2dcac3",
+    "pilot_reference/selected_metrics.csv": "77c7e156df7c4c73a51bcc9014936b74a23803159bcd35192e60ab94b5f1d1ba",
+    "pilot_reference/timing_estimate.json": "fa470ef592deaca8ac8d9d43dc9f9bf966c17b95f94c658d7bc14a09873fad35",
+    "pilot_reference/training_summary.json": "f383a453ebf6281e2c6b43b13988bf5ca27f13bc7cab49c2e06d93fad3ed9c15",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "provenance/group16_pilot5_v1_PACKAGE_SHA256.json": "d60477d2f58fe03ec5d26a06f068adb595b2b3ff779b488b15235f19696977a0",
+    "provenance/group16_pilot5_v2_EXPERIMENT_MANIFEST.json": "88acc2d6dd7baf3e20c677b97ea1dba659ec12b86439d67ae0e2f60851edd09c",
+    "provenance/group16_pilot5_v2_PACKAGE_SHA256.json": "e8ee62cbbab88c72ab720829494a18a603693afc9d3166f68e059e7890796aed",
+    "provenance/group16_pilot5_v2_PROTOCOL.json": "e4cb6700751654ebdb4b56a67ec40945f4268192d8995dbd26ca7daf853222f1",
+    "provenance/group16_pilot5_v2_TRAINING_CHANGE_MANIFEST.json": "234e112700e827c532e875854f1134ae7e3619023b646455b55f6a0ade41aec3",
+    "provenance/group16_pilot5_v2_notebook_support.py": "af80568a1dd7fe098639ed804260f2e8c317f352f4be58a1266768d5d1f3dded",
+    "provenance/group16_pilot5_v2_run_train.py": "48db8cfe3559b71c0b3706929e6388deab7fae853ac49bdaf5f6c36a62124f52",
+    "provenance/group32_scale32_parent_PACKAGE_SHA256.json": "c907b3db126475a1a2135729826d80f5809666ae715b9314991bcd0f86307f0d",
+    "provenance/group32_scale32_parent_PROTOCOL.json": "64ac160c5dfb7a9523e449753744bb2d707e9b908f77e863ac0364e5ec76c931",
+    "provenance/group32_scale64_reference_pilot_manifest.json": "7c40df4e4be48379ca04212cbc7ca70b3a3f1551a98a763aa83bce4358a63338",
+    "provenance/posthoc_scale64.py": "b3199677d527256ef06bf51d8058261c73d9211f94a06a58d84af1a932cea179",
+    "provenance/scale64_pilot5_PACKAGE_SHA256.json": "3873015c1d5381384c5a719ac60ba945920970fcf97a292a468f3d3db67a042c",
+    "provenance/scale64_pilot5_PROTOCOL.md": "d8d783ffdf797a923d453373e182c3360c62e9b13669f020d273669ae2ac9f30",
+    "provenance/scale64_pilot5_TRAINING_CHANGE_MANIFEST.json": "2f4ce6953a8da235f0bcac9515fbac6c968bb399bde67f2a4a01c4d3d58da01d",
+    "provenance/scale64_pilot5_notebook_support.py": "89018af70ab3cf180180335591fdd639dbcb4204c9dce45d1f9e850524bc45de",
+    "provenance/scale64_pilot5_run_train.py": "3d971c1fffb9df44d9357758169100b00f6e94c5033e7a2fe85f731586e091b1",
+    "provenance/scale64_reference100_PACKAGE_SHA256.json": "d951a2ffa0c50393e2e798a4caa16187a64d1e6b9eb1f8c5e7b38cdc1c3aa3da",
+    "provenance/scale64_reference100_PROTOCOL.md": "a29c7a5b80fdb2a98f992b0e9ba454541a7e01da23beff3605e609b5ee3eca64",
+    "provenance/scale64_reference100_TRAINING_CHANGE_MANIFEST.json": "56f3f2de9c75185aba549863882769a65f2d83c975c5149341ab49e0133210a2",
+    "provenance/scale64_reference100_notebook_support.py": "777aec7903bd3ff502fc68e009ff7e7b27b3dddfd41bdf0aa5479e65bff2eb19",
+    "provenance/scale64_reference100_run_train.py": "28eb7ad75a49841e6d19d1bcb2d136a734f2b6933ab5f4a3e4cc385a8f5eb7ab",
+    "provenance/scale64_reference100_test_trunc_training.py": "36eaf80ee900aafdd07f3fe0d6c01d2d916aa9280d3989321d7cf27642da2385",
+    "provenance/scale64_reference100_trunc_adapter.py": "3fe6f0b07c4cc9dd02a8da4b228f27e054ff4db0d76c3548dc6cb885b7122b6c",
+    "provenance/scale64_reference100_trunc_support.py": "02272898901ea11e13f5a2a44f252a4d1121a077c09f8ddb590d4a3e435ab735",
+    "provenance/scale64_to_scale32_run_train.py.patch": "c78a97b94aeccc656cbce38745e697dd4031e5fe129c5841b70eadb0e7317969",
+    "provenance/scale64_to_scale32_test_trunc_training.py.patch": "75538258dc7c2065fc78bb780dec5d1ef74763ae5cd260da9cb390ba826a34d3",
+    "provenance/scale64_to_scale32_trunc_adapter.py.patch": "66a657fc0d740b500f179686021284fd77ea8ff8af0fdc6c779fb3c1c29ed267",
+    "provenance/scale64_to_scale32_trunc_support.py.patch": "e7a36b179e26f7c0019ec503607c56aa8db6f2760cb0248ef1f7625fc6892d0c",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "41811d7045992273f12c6df12a16e48df69d19d4355c5bc8857f0072bf1368f8",
+    "scale64_reference/REFERENCE.json": "2c0c8a7718952c3822a8bbd235c30666ea171a41a97e061cbe0e2e1337fdac53",
+    "scale64_reference/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "scale64_reference/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "scale64_reference/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "scale64_reference/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "scale64_reference/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "scale64_reference/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2d154679d893237f4990d9c0b7020997c3408642fab57c432307e3461658d754",
+    "test_group_size.py": "789487553788a84006079ab223e10b4da3346fea5fcc184ec5d17bcd6ac1d0c4",
+    "test_joint.py": "65b549606e065a410f7fc42bbb692419a5d16505304f73122d69f937709f6fbf",
+    "test_mx.py": "072932cdfd475f77e5f1afed428c2ae346696bb8ac2d4cebdcc7d4d40eb2f6cf",
+    "test_trunc_training.py": "64480786025f3d7560f4565638b1641e5e4ab2e02e41bd312ad16e267003cd41",
+    "trunc_adapter.py": "bfc2ee7b72fae3c625312d14175658bdec53a06ccc0f0097563c9ede02cf9c1a",
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "source_sha256": {
+    ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+    "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+    "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+    "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+    "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+    "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+    "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+    "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+    "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+    "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+    "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+    "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+    "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+    "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+    "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+    "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+    "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+    "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+  },
+  "test_file_sha256": "5df6168ad7d992b40992f70ad4cd3a3ef1fbf6ba33f11a659c2c94658227329e",
+  "test_duration_seconds": 41.86944444099936,
+  "total_synthetic_optimizer_updates": 210,
+  "cases": {
+    "continuous100": {
+      "optimizer_updates_in_process": 200,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/continuous100/20261026_185501_040203_joint_run"
+    },
+    "resume99_to100": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/resume99_to100/20261026_185526_561729_joint_resume"
+    },
+    "resume49_to50_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/resume49_to50_stop/20261026_185527_622602_joint_resume"
+    },
+    "resume74_to75_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/resume74_to75_stop/20261026_185528_550027_joint_resume"
+    },
+    "resume89_to90_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/resume89_to90_stop/20261026_185529_556053_joint_resume"
+    },
+    "early_stop": {
+      "optimizer_updates_in_process": 2,
+      "stop_marker": true,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "exit_code": 0,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/early_stop/20261026_185530_827958_joint_run"
+    },
+    "reject_old_pilot": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/reject_old_pilot/20261026_185531_490508_joint_resume"
+    },
+    "reject_group32_reference100": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/reject_group32_reference100/20261026_185531_574880_joint_resume"
+    },
+    "reject_completed100": {
+      "optimizer_updates_in_process": 0,
+      "stop_marker": false,
+      "fresh_model_sha256_before_optional_restore": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "status": "FAIL",
+      "exit_code": 1,
+      "output_directory": "/workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/reject_completed100/20261026_185531_623592_joint_resume"
+    }
+  },
+  "actual_LR_boundaries": {
+    "1": {
+      "lr_used": 0.001,
+      "lr_next": 0.001
+    },
+    "50": {
+      "lr_used": 0.001,
+      "lr_next": 0.0001
+    },
+    "51": {
+      "lr_used": 0.0001,
+      "lr_next": 0.0001
+    },
+    "75": {
+      "lr_used": 0.0001,
+      "lr_next": 1e-05
+    },
+    "76": {
+      "lr_used": 1e-05,
+      "lr_next": 1e-05
+    },
+    "90": {
+      "lr_used": 1e-05,
+      "lr_next": 1.0000000000000002e-06
+    },
+    "91": {
+      "lr_used": 1.0000000000000002e-06,
+      "lr_next": 1.0000000000000002e-06
+    },
+    "99": {
+      "lr_used": 1.0000000000000002e-06,
+      "lr_next": 1.0000000000000002e-06
+    },
+    "100": {
+      "lr_used": 1.0000000000000002e-06,
+      "lr_next": 1.0000000000000002e-06
+    }
+  },
+  "actual_LR_boundary_resume_checks": {
+    "50": {
+      "restored_epoch": 49,
+      "stopped_at_epoch": 50,
+      "optimizer_updates_in_process": 2,
+      "model_optimizer_scheduler_rng_exact": true,
+      "lr_used": 0.001,
+      "lr_next": 0.0001,
+      "input_checkpoint_unchanged": true
+    },
+    "75": {
+      "restored_epoch": 74,
+      "stopped_at_epoch": 75,
+      "optimizer_updates_in_process": 2,
+      "model_optimizer_scheduler_rng_exact": true,
+      "lr_used": 0.0001,
+      "lr_next": 1e-05,
+      "input_checkpoint_unchanged": true
+    },
+    "90": {
+      "restored_epoch": 89,
+      "stopped_at_epoch": 90,
+      "optimizer_updates_in_process": 2,
+      "model_optimizer_scheduler_rng_exact": true,
+      "lr_used": 1e-05,
+      "lr_next": 1.0000000000000002e-06,
+      "input_checkpoint_unchanged": true
+    }
+  },
+  "tests": {
+    "real_main_default100_and_PASS_only_at100": true,
+    "100_synthetic_epochs_200_updates_600_forwards_600_metrics": true,
+    "short_final_batch_included_in_every_mode": true,
+    "three_forwards_two_teacher_checks_one_update_per_batch": true,
+    "one_E4_source_per_MX_layer_per_batch_no_E2_encoder": true,
+    "lower_scale_codes_exact_source_plus6_then_mantissa_scale_copied": true,
+    "all_lower_tensor_and_element_encoders_forbidden_during_real_run_and_resume": true,
+    "independent_forward_and_identity_STE_no_extra64_gradient": {
+      "independent_bit_and_plus6_scale_forward": true,
+      "identity_backward_all_three_modes_exact": true,
+      "no_factor64_in_backward": true,
+      "original_G_derivatives_preserved": true
+    },
+    "source_caches_empty_before_Adam_and_after_every_phase": true,
+    "test_prediction_histograms_all_modes_and_labels_complete": true,
+    "A32_FP32_master_Adam_and_three_BN_audits": true,
+    "train_recursive_teacher_labels_test_all_hard_CE": true,
+    "highest_E4M3_first_strict_maximum_not_lower_mode_peak": true,
+    "six_selected_metric_rows_from_common_best_or_epoch100_checkpoint": true,
+    "two_high_sources_and_four_bit_derived_exports_without_masters": true,
+    "all_export_modes_reconstruct_from_E4_source_with_encoders_and_G_forbidden": true,
+    "feedback_and_unexecuted_notebook_with_unchanged_scale64_reference_copied": true,
+    "resume99_to100_model_optimizer_scheduler_rng_exact_CPU": true,
+    "unchanged_50_75_90_LR_schedule_all_four_phases": true,
+    "resume49_to50_74_to75_89_to90_cross_actual_LR_boundaries_exact_CPU": true,
+    "early_stop_complete_epoch_without_false_PASS_or100_result": true,
+    "old_pilot_contract_rejected_before_restore_and_updates": true,
+    "group32_reference100_contract_rejected_before_restore_and_updates": true,
+    "completed100_resume_rejected_before_updates": true,
+    "fresh_seed_state_identical_before_every_optional_restore": true,
+    "initial_state_matches_unchanged_direct_builder_same_CPU_runtime": true,
+    "production_config_package_source_and_fixture_data_unchanged": true,
+    "production_CLI_refusals": {
+      "run --stop-after-epoch 5": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Dit referentiepakket eindigt vast na honderd epochs. Gebruik Ctrl+C of STOP_AFTER_EPOCH voor een eerdere hervatbare stop."
+      },
+      "run --device cpu": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+      },
+      "run --synthetic": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: unrecognized arguments: --synthetic"
+      },
+      "run --mode control": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: unrecognized arguments: --mode control"
+      },
+      "resume": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+      },
+      "run --checkpoint /workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/continuous100/20261026_185501_040203_joint_run/checkpoints/epoch_00099.pt": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie."
+      },
+      "run --warmstart /workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/continuous100/20261026_185501_040203_joint_run/checkpoints/epoch_00099.pt": {
+        "exit_code": 2,
+        "reason": "run_train.py: error: unrecognized arguments: --warmstart /workspace/scratch/4619498905be/work/group16_full100_runner_integration_v1/continuous100/20261026_185501_040203_joint_run/checkpoints/epoch_00099.pt"
+      }
+    },
+    "rejected_CLI_created_no_production_output": true
+  }
+}

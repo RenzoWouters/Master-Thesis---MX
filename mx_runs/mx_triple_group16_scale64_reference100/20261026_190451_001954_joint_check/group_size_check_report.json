@@ -1,0 +1,25 @@
+{
+  "group_size": 16,
+  "packed_bytes_per_group": {
+    "8": 17,
+    "6": 13,
+    "4": 9
+  },
+  "all_E2_codes_pack_match_independent_bitstream": true,
+  "B32_packed_shapes_rejected": true,
+  "independent_adjacent_groups_rows_partial_padding_signed_zero": true,
+  "payload_roundtrips_and_incompatible_group_metadata_rejected": true,
+  "fixed64_scale_and_mantissa_scale_inheritance": true,
+  "actual_six_layer_payloads_match_independent_geometry": {
+    "weights": 129472,
+    "groups": 8096,
+    "padding_slots": 64,
+    "bytes_by_mode": {
+      "8": 137632,
+      "6": 105248,
+      "4": 72864
+    }
+  },
+  "status": "PASS",
+  "no_dataset_or_training": true
+}

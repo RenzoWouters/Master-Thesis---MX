@@ -1,0 +1,19 @@
+{
+  "schema": "mx-scale32-reference100-scale64-reference-v1",
+  "source": "actual completed scale64 reference100 training; common endpoint100 and common E4-selected checkpoint per training",
+  "source_run": "20261024_151210_665535_joint_run",
+  "reference_completed_epochs": 100,
+  "source_best_checkpoint_epoch": 42,
+  "comparison_endpoint": 100,
+  "selection_for_comparison": "first strict E4M3 top1 maximum within completed reference100; all modes from that same checkpoint",
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "synthetic_fixture_only": false,
+  "files_sha256": {
+    "run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe"
+  }
+}
