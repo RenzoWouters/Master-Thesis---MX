@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "production_files_unchanged_since_check_and_integration": true,
+  "prior_package_files_unchanged": true,
+  "notebook_cells": 24,
+  "notebook_code_cells": 14,
+  "all_notebook_outputs_empty": true,
+  "real_SVHN_training_started": false,
+  "active_group_size": 16,
+  "scale_factor": 64,
+  "validated_production_sha256": {
+    "run_train.py": "274cf12985dc8711155908f3da197b24fc127223e2b00f49ed35e741df22072a",
+    "trunc_adapter.py": "bfc2ee7b72fae3c625312d14175658bdec53a06ccc0f0097563c9ede02cf9c1a",
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "mx_e4m3.py": "ed77249e81faddbc6b1b45ff82f22b932f6ceefaf73faba6fb6035f86b5d1060",
+    "mx_format.py": "7c49d0a9340f6f8b67c9ed8c97a09f19d95da6f644c106bbfb6f4a2aca320778",
+    "mx_e2m1.py": "8fa498505bebaffcf0f6defe985c0a60b689e8c16eff82f886ae9509d6e218ce",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "group_config.py": "3a8c67f98828a53fdf10fa1485e4b8acf8181ccd6ced2a658daa2be11e4eeff0",
+    "group_costs.py": "ff21f2971a4d66d71f0076b647024454218fa583226daa93766a519b15b9f905",
+    "notebook_support.py": "af80568a1dd7fe098639ed804260f2e8c317f352f4be58a1266768d5d1f3dded",
+    "MX_triple_group16_scale64_pilot5_resultaten.ipynb": "35929f22d61f79543843f19251c3027584bbaebc5d9d8c0e211c032a11ab9a31"
+  },
+  "syntax_checked_python_files": 32,
+  "validation_scope": "CPU codecs + independent oracle + actual runner/check/stop-resume/export synthetic fixtures + notebook; local CUDA check remains to execute"
+}

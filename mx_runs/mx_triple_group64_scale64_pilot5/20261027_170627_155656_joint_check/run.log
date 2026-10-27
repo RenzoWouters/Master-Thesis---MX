@@ -1,0 +1,12 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_group64_scale64_pilot5\20261027_170627_155656_joint_check
+GEZAMENLIJKE GROEP64-SCHAAL64-PILOT: 5 epochs; groepen van64; E4M3 -> E2M3 -> E2M1; lagere schalen exact E4-bronschaal x64; A32; FP32-masters.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.30, prec1 33.33, prec5 66.67
+ZELFTEST productiebeleid: 0 tensors buiten tolerantie; RNG exact=True
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.30, prec1 33.33, prec5 66.67
+ZELFTEST deterministisch: 0 tensors buiten tolerantie; RNG exact=True
+CHECK PASS: fixed scale64 route; E4M3-bron, exponentbits, vaste schaaloffset+6, mantissatruncatie, identity STE, A32, drie BN-banken en recursieve updates. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_group64_scale64_pilot5\20261027_170627_155656_joint_check\run_report.json

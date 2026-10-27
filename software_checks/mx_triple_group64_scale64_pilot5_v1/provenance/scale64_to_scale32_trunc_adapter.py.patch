@@ -1,0 +1,105 @@
+--- scale64/trunc_adapter.py
++++ scale32/trunc_adapter.py
+@@ -1,8 +1,8 @@
+-"""One E4M3 source; exponent-MSB truncation with scale x64, then mantissa.
+-
+-E4 scale bytes remain unchanged; each lower scale is source exponent plus6.
++"""One E4M3 source; exponent-MSB truncation with scale x32, then mantissa.
++
++E4 scale bytes remain unchanged; each lower scale is source exponent plus5.
+ Each precision pass builds its own G(W) graph; the shared cache contains
+-detached integer codes. Backward is identity to G(W), with no factor64.
++detached integer codes. Backward is identity to G(W), with no factor32.
+ """
+ from __future__ import annotations
+ import copy
+@@ -23,11 +23,11 @@
+ WeightModeBatchNorm = base.WeightModeBatchNorm
+ exponent_truncate = posthoc.exponent_truncate
+ mantissa_truncate = posthoc.mantissa_truncate
+-SOURCE_SCHEMA = 'mx-triple-scale64-training-source-v1'
+-DERIVED_SCHEMA = 'mx-triple-scale64-training-derived-v1'
+-TRAINING_POLICY = 'joint_E4_RNE_E2_exponent_MSB_scale64_then_mantissa_truncation_identity_STE'
+-SCALE_EXPONENT_OFFSET = 6
+-SCALE_FACTOR = 64
++SOURCE_SCHEMA = 'mx-triple-scale32-training-source-v1'
++DERIVED_SCHEMA = 'mx-triple-scale32-training-derived-v1'
++TRAINING_POLICY = 'joint_E4_RNE_E2_exponent_MSB_scale32_then_mantissa_truncation_identity_STE'
++SCALE_EXPONENT_OFFSET = 5
++SCALE_FACTOR = 32
+ SOURCE_KEYS = {'schema', 'model', 'expand', 'activation_bits', 'weight_bits', 'weight_format',
+                'bn_bank_key', 'supported_weight_modes', 'bank_mapping', 'weight_preprocess',
+                'training_policy', 'mx_layers', 'auxiliary_fp32_state', 'provenance'}
+@@ -41,23 +41,23 @@
+ 
+ 
+ def shifted_scale_codes(source: high.MXTensor) -> Tensor:
+-    """Exact source E8M0 exponent +6; includes zero blocks, never clip/wrap."""
++    """Exact source E8M0 exponent +5; includes zero blocks, never clip/wrap."""
+     require(isinstance(source, high.MXTensor), 'E4M3-bron vereist voor schaaloffset.')
+     source.validate()
+     shifted = source.scale_codes.to(torch.int32) + SCALE_EXPONENT_OFFSET
+     require(bool((shifted <= 254).all()),
+-            'Schaal x64 valt buiten eindig E8M0-bereik; geen clipping of uint8-wrap toegestaan.')
++            'Schaal x32 valt buiten eindig E8M0-bereik; geen clipping of uint8-wrap toegestaan.')
+     return shifted.to(torch.uint8)
+ 
+ 
+ def code_chain(source: high.MXTensor) -> dict:
+-    """Exact post-hoc B6/B4: old bitmapping, lower scales source+6."""
++    """Existing exponent/mantissa bitmapping; lower scales source+5."""
+     naive = exponent_truncate(source)
+     shifted = shifted_scale_codes(source)
+     middle = codec(6).MXTensor(naive.codes, shifted, source.shape)
+     low = mantissa_truncate(middle)
+-    require(torch.equal(middle.scale_codes.to(torch.int32), source.scale_codes.to(torch.int32) + 6)
+-            and torch.equal(middle.scale_codes, low.scale_codes), 'Vaste schaaloffset +6 of mantissaschaal gewijzigd.')
++    require(torch.equal(middle.scale_codes.to(torch.int32), source.scale_codes.to(torch.int32) + 5)
++            and torch.equal(middle.scale_codes, low.scale_codes), 'Vaste schaaloffset +5 of mantissaschaal gewijzigd.')
+     return {8: source, 6: middle, 4: low}
+ 
+ 
+@@ -150,7 +150,7 @@
+     training = model.training
+     order = (8, 6, 4) if training else (4, 6, 8)
+     audit = {'source_triplets': 0, 'high_encodings': 0, 'exponent_derivations': 0,
+-             'mantissa_derivations': 0, 'scale_offsets_plus6': 0,
++             'mantissa_derivations': 0, 'scale_offsets_plus5': 0,
+              'mantissa_scale_copies_unchanged': 0,
+              'scale_exponent_offset': SCALE_EXPONENT_OFFSET, 'scale_factor': SCALE_FACTOR,
+              'source_cache_cleared': False, 'no_direct_lower_quantizer': True,
+@@ -176,7 +176,7 @@
+             audit['high_encodings'] += len(TARGET_LAYERS)
+             audit['exponent_derivations'] += len(TARGET_LAYERS)
+             audit['mantissa_derivations'] += len(TARGET_LAYERS)
+-            audit['scale_offsets_plus6'] += 2 * len(TARGET_LAYERS)
++            audit['scale_offsets_plus5'] += 2 * len(TARGET_LAYERS)
+             audit['mantissa_scale_copies_unchanged'] += len(TARGET_LAYERS)
+     handles = [model.register_forward_pre_hook(pre), model.register_forward_hook(post)]
+     try:
+@@ -198,8 +198,8 @@
+         encoded[name] = chain[8].payload()
+         for bit in (8, 6, 4):
+             rows.append({'weight_bits': bit, 'weight_format': FORMATS[bit], 'layer': name,
+-                         'derivation': {8: 'E4_RNE_source', 6: 'E4_exponent_MSB_keep_scale64',
+-                                        4: 'E4_exponent_MSB_scale64_then_mantissa_shift2'}[bit],
++                         'derivation': {8: 'E4_RNE_source', 6: 'E4_exponent_MSB_keep_scale32',
++                                        4: 'E4_exponent_MSB_scale32_then_mantissa_shift2'}[bit],
+                          'scale_exponent_offset': 0 if bit == 8 else SCALE_EXPONENT_OFFSET,
+                          'scale_factor': 1 if bit == 8 else SCALE_FACTOR,
+                          **codec(bit).distortion(effective, chain[bit])})
+@@ -246,12 +246,12 @@
+     require(type(bit) is int and bit in (6, 4), 'Verwacht afgeleide modus6 of4.')
+     require(type(source_sha256) is str and len(source_sha256) == 64
+             and set(source_sha256) <= set('0123456789abcdef'), 'Ongeldige bron-SHA256.')
+-    return {'method': 'E4_exponent_MSB_keep_scale64' if bit == 6 else 'E4_exponent_MSB_scale64_then_mantissa_shift2',
++    return {'method': 'E4_exponent_MSB_keep_scale32' if bit == 6 else 'E4_exponent_MSB_scale32_then_mantissa_shift2',
+             'source_weight_bits': 8, 'target_weight_bits': bit, 'source_sha256': source_sha256,
+             'dropped_exponent_bits': 2, 'dropped_mantissa_bits': 0 if bit == 6 else 2,
+             'scales_unchanged': False, 'source_scale_exponent_offset': SCALE_EXPONENT_OFFSET,
+             'scale_factor': SCALE_FACTOR,
+-            'scale_policy': 'source_E8M0_exponent_plus6_no_clip_no_wrap',
++            'scale_policy': 'source_E8M0_exponent_plus5_no_clip_no_wrap',
+             'shared_scale_compensation': True, 'learned_shared_scale': False,
+             'bias_compensation': False, 'masters_required': False}
+ 

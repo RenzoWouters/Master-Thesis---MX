@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "scope": "Final B64 production delta and executed CPU-only validation; no actual SVHN training",
+  "codec_executable_AST_unchanged_vs_B16": [
+    "mx_e4m3.py",
+    "mx_format.py",
+    "mx_e2m1.py"
+  ],
+  "byte_identical_runtime_modules_vs_B16": [
+    "trunc_support.py",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "posthoc_truncation.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py"
+  ],
+  "group_size_constant": 64,
+  "scale_factor": 64,
+  "scale_exponent_offset": 6,
+  "activation_bits": 32,
+  "master_dtype": "float32",
+  "production_files_identical_to_validated_snapshot": [
+    "run_train.py",
+    "group_config.py",
+    "group_costs.py",
+    "trunc_adapter.py",
+    "mx_e4m3.py",
+    "mx_format.py",
+    "mx_e2m1.py",
+    "trunc_support.py",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "posthoc_truncation.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py"
+  ],
+  "production_sha256": {
+    "run_train.py": "b0dfcc755ebfa4a90137f33a2465bf7715ac0dbbaba9ce8c0d56c5ba0699ce3e",
+    "group_config.py": "bd152245fc60d6cdc3050fe95f033da0c924b0a0cfc4567599a7117b93f3b30f",
+    "group_costs.py": "79c6d8dbc5837e995f94c16a19cc013737755a068b334f59fa83369c66b567ef",
+    "trunc_adapter.py": "5890961377c2866613dca3a2c51299e59c38a5d4e393e06718498f94816f1815",
+    "mx_e4m3.py": "1358cca59c285f9d8fb33a713af6a2d43f8be3a0d2856e9fe4b735b16bf257a4",
+    "mx_format.py": "67971765aa88aaf622a758deb44a2d2206df0309d962e0b2fd8281637415dd50",
+    "mx_e2m1.py": "9741fdc411d1bcabbda32c3bda88bfa8eae85885b231d0120f7177e7abadfbda",
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395"
+  },
+  "canonical_dataset_names_preserved": true,
+  "new_result_root": "mx_runs/mx_triple_group64_scale64_pilot5",
+  "both_reference_directories_copied_and_preserved": [
+    "scale64_reference",
+    "group16_reference"
+  ],
+  "check_entry": "check_entry_validation_report.json",
+  "actual_startup": "startup_regression_report.json",
+  "synthetic_training": "training_integration_report.json",
+  "no_actual_training": true,
+  "CUDA_validation_performed_here": false,
+  "notes": [
+    "The startup test executes real create_context(check_only=False), real ensure_dataset and real validate_dataset with virtual full-size fixtures and zero optimizer steps.",
+    "The main-loop test executes five tiny CPU epochs on three synthetic images and tests stop/resume/contract rejection/export reconstruction.",
+    "Check fixtures formerly tied to B16 were adapted explicitly to B64; element quantizer logic and rounding are unchanged.",
+    "The final notebook contents are validated separately; runner validation verifies blank notebook copying and parameter injection.",
+    "Inherited B16 validation reports are retained only under provenance/inherited_group16_validation and do not establish a B64 PASS."
+  ]
+}

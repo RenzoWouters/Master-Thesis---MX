@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "outcome": "v1_exact_user_failure_reproduced",
+  "package": "/workspace/scratch/4619498905be/output/mx_triple_group16_scale64_pilot5_v1",
+  "synthetic_fixture_only": true,
+  "real_create_context_executed": true,
+  "real_ensure_dataset_executed": true,
+  "real_validate_dataset_executed": false,
+  "real_model_optimizer_scheduler_loaders_constructed": false,
+  "SVHN_downloaded_or_used": false,
+  "training_epochs": 0,
+  "optimizer_updates": 0,
+  "raw_fixture_files_unchanged": true,
+  "extra_file_not_hashed_or_loaded": true,
+  "canonical_filenames": [
+    "train_32x32.mat",
+    "test_32x32.mat"
+  ],
+  "calls": {
+    "dataset_splits": [
+      "train",
+      "val"
+    ],
+    "hashed_files": [
+      "train_32x32.mat",
+      "test_32x32.mat"
+    ],
+    "optimizer_updates": 0,
+    "loader_items": 0
+  },
+  "runtime_torch": "2.10.0+cpu",
+  "runner_sha256": "274cf12985dc8711155908f3da197b24fc127223e2b00f49ed35e741df22072a"
+}

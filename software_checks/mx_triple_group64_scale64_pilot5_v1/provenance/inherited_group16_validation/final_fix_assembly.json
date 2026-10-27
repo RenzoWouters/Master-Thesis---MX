@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "fixed_expected_dataset_files": [
+    "train_32x32.mat",
+    "test_32x32.mat"
+  ],
+  "v1_failure_reproduced": true,
+  "v2_actual_startup_passed": true,
+  "training_epochs": 0,
+  "optimizer_updates": 0,
+  "scientific_protocol_identical_to_v1": true,
+  "other_production_modules_byte_identical": {
+    "test_group_size.py": "789487553788a84006079ab223e10b4da3346fea5fcc184ec5d17bcd6ac1d0c4",
+    "test_joint.py": "65b549606e065a410f7fc42bbb692419a5d16505304f73122d69f937709f6fbf",
+    "test_trunc_training.py": "64480786025f3d7560f4565638b1641e5e4ab2e02e41bd312ad16e267003cd41",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e4m3.py": "ed77249e81faddbc6b1b45ff82f22b932f6ceefaf73faba6fb6035f86b5d1060",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "test_mx.py": "072932cdfd475f77e5f1afed428c2ae346696bb8ac2d4cebdcc7d4d40eb2f6cf",
+    "test_e4m3.py": "2d154679d893237f4990d9c0b7020997c3408642fab57c432307e3461658d754",
+    "mx_format.py": "7c49d0a9340f6f8b67c9ed8c97a09f19d95da6f644c106bbfb6f4a2aca320778",
+    "group_config.py": "3a8c67f98828a53fdf10fa1485e4b8acf8181ccd6ced2a658daa2be11e4eeff0",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "group_costs.py": "ff21f2971a4d66d71f0076b647024454218fa583226daa93766a519b15b9f905",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "notebook_support.py": "af80568a1dd7fe098639ed804260f2e8c317f352f4be58a1266768d5d1f3dded",
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_e2m1.py": "8fa498505bebaffcf0f6defe985c0a60b689e8c16eff82f886ae9509d6e218ce",
+    "trunc_adapter.py": "bfc2ee7b72fae3c625312d14175658bdec53a06ccc0f0097563c9ede02cf9c1a"
+  },
+  "notebook_unexecuted": true,
+  "old_package_unchanged": true
+}

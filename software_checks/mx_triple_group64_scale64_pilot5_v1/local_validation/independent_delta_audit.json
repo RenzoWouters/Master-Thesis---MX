@@ -1,0 +1,235 @@
+{
+  "status": "PASS",
+  "scope": "Independent static delta review only; no broad tests, SVHN training or model evaluation. Package-root manifests/documentation await root final assembly; they are outside this code review snapshot.",
+  "base": "/workspace/scratch/4619498905be/work/group64_preparation_sources/mx_triple_group16_scale64_pilot5_v2",
+  "package": "/workspace/scratch/4619498905be/output/mx_triple_group64_scale64_pilot5_v1",
+  "checks": [
+    {
+      "name": "unchanged executable AST mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST mx_format.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST mx_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST joint_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST joint_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST trunc_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST resume_core.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST smoke_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged executable AST svhn_support.py",
+      "passed": true
+    },
+    {
+      "name": "all trunc_adapter function/class ASTs unchanged",
+      "passed": true
+    },
+    {
+      "name": "adapter changes only schema and policy identity",
+      "passed": true
+    },
+    {
+      "name": "fixed scale64/offset6",
+      "passed": true
+    },
+    {
+      "name": "group size64",
+      "passed": true
+    },
+    {
+      "name": "row axis unchanged",
+      "passed": true
+    },
+    {
+      "name": "runner unchanged run_epochs",
+      "passed": true
+    },
+    {
+      "name": "runner unchanged dependencies",
+      "passed": true
+    },
+    {
+      "name": "runner unchanged restore_timing_sidecar",
+      "passed": true
+    },
+    {
+      "name": "runner unchanged verify_unchanged",
+      "passed": true
+    },
+    {
+      "name": "dataset filenames32x32 intact",
+      "passed": true
+    },
+    {
+      "name": "isolated B64 pilot path and default5",
+      "passed": true
+    },
+    {
+      "name": "cost formula unchanged _require",
+      "passed": true
+    },
+    {
+      "name": "cost formula unchanged _integer",
+      "passed": true
+    },
+    {
+      "name": "cost formula unchanged _shapes",
+      "passed": true
+    },
+    {
+      "name": "cost formula unchanged layer_cost",
+      "passed": true
+    },
+    {
+      "name": "six layer shapes unchanged",
+      "passed": true
+    },
+    {
+      "name": "independent B64 geometry",
+      "passed": true
+    },
+    {
+      "name": "group16_reference raw hashes",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference raw hashes",
+      "passed": true
+    },
+    {
+      "name": "notebook B64 identity",
+      "passed": true
+    },
+    {
+      "name": "notebook outputs empty",
+      "passed": true
+    },
+    {
+      "name": "cost label corrected",
+      "passed": true
+    },
+    {
+      "name": "reference metrics first1-5 filter",
+      "passed": true
+    },
+    {
+      "name": "reference best within joint early range",
+      "passed": true
+    },
+    {
+      "name": "comparison capped at current/pilot range",
+      "passed": true
+    },
+    {
+      "name": "all modes share E4-selected reference epoch",
+      "passed": true
+    }
+  ],
+  "executably_unchanged_modules": [
+    "mx_e4m3.py",
+    "mx_e2m1.py",
+    "mx_format.py",
+    "mx_adapter.py",
+    "joint_adapter.py",
+    "joint_support.py",
+    "trunc_support.py",
+    "posthoc_truncation.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py"
+  ],
+  "adapter_identity_differences": [
+    "TRAINING_POLICY",
+    "DERIVED_SCHEMA",
+    "SOURCE_SCHEMA"
+  ],
+  "group_geometries": {
+    "16": {
+      "groups": 8096,
+      "padding": 64,
+      "weights": 129472,
+      "payload_bytes": {
+        "8": 137632,
+        "6": 105248,
+        "4": 72864
+      }
+    },
+    "32": {
+      "groups": 4080,
+      "padding": 1088,
+      "weights": 129472,
+      "payload_bytes": {
+        "8": 134640,
+        "6": 102000,
+        "4": 69360
+      }
+    },
+    "64": {
+      "groups": 2160,
+      "padding": 8768,
+      "weights": 129472,
+      "payload_bytes": {
+        "8": 140400,
+        "6": 105840,
+        "4": 71280
+      }
+    }
+  },
+  "reviewed_code_sha256": {
+    "mx_e4m3.py": "1358cca59c285f9d8fb33a713af6a2d43f8be3a0d2856e9fe4b735b16bf257a4",
+    "test_joint.py": "ae22dda2624336829dec56ff38043274c051baaa87b15b119d602123cc6d1f26",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "test_e4m3.py": "1b9af507820642dd6d002747a7d611af9beab960e2289853a135eb53325ada4b",
+    "run_train.py": "b0dfcc755ebfa4a90137f33a2465bf7715ac0dbbaba9ce8c0d56c5ba0699ce3e",
+    "trunc_adapter.py": "5890961377c2866613dca3a2c51299e59c38a5d4e393e06718498f94816f1815",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_e2m1.py": "9741fdc411d1bcabbda32c3bda88bfa8eae85885b231d0120f7177e7abadfbda",
+    "mx_format.py": "67971765aa88aaf622a758deb44a2d2206df0309d962e0b2fd8281637415dd50",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "group_config.py": "bd152245fc60d6cdc3050fe95f033da0c924b0a0cfc4567599a7117b93f3b30f",
+    "group_costs.py": "79c6d8dbc5837e995f94c16a19cc013737755a068b334f59fa83369c66b567ef",
+    "test_group_size.py": "7d26e9ac34378b4b794f5767d85eca40d44d2b3cce8495efccc2c160506888ff",
+    "test_trunc_training.py": "b92d05ae5bb48ca837e347e278620a87d66e3963bde77223aad9a77f8b7cb4b5",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "test_mx.py": "3ad7ef16524da56974d3276323d6d96ac380125ef31decc6137dbc17c41e7428",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "notebook_support.py": "d042a44274af21c940532ece795375fa08304309270e48d32df01f3269a579dc",
+    "MX_triple_group64_scale64_pilot5_resultaten.ipynb": "95c053109b682391afea862052b3a5b80c264510d14758d6177942dcd40873d0"
+  },
+  "resolved_findings": [
+    "Notebook B16 metadata corrected to B64 identity.",
+    "Notebook cost label B64/B32/B64 corrected to B16/B32/B64."
+  ],
+  "assembly_note": "Inherited root HERSTEL.md must be relocated/labeled as B16 historical provenance; root informed."
+}
