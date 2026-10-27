@@ -1,0 +1,18 @@
+{
+  "schema": "mx-group64-scale64-pilot5-actual-reference-v1",
+  "source_bundle_name": "feedback_bundle(20261027-161453).zip",
+  "source_bundle_sha256": "2e47f6ea1c26d894eaa91b82b277c38f9297fe8c5a7773f48b4040643b4bbda8",
+  "synthetic": false,
+  "scope": "Completed real B64 fixed64 pilot5 before fresh full100 experiment. Pilot metrics and timing only; not full100 evidence.",
+  "files_sha256": {
+    "run_report.json": "aa283609de709d3b68548a9ecf981235642ec68cc74fa07503a17ef26f32b4a3",
+    "training_summary.json": "535d3cca19bc49f5ec75fa70a05406af92ca7562636d1e978b66e32b1d9e018c",
+    "checkpoint_selection.json": "9b80c9c37a7947c775a6a7b931d426bd4bd384425867b2efad31b844e0301c48",
+    "epoch_metrics.csv": "9b01d68260f49156dcff4d266c9a3f576a074b052150cb5accb10d64f88b8a0c",
+    "selected_metrics.csv": "70e2a670092c325b6cb4493a5af597294feb44ba885e8bbe0d542cf4fc9fe0d6",
+    "epoch_times.csv": "900f8a3a2357965db8665d6eff3883674bcd8f36cf343d45d9f33a9e9fe9cf6a",
+    "timing_estimate.json": "6160564ab3fd07c011918db5c6b7a60d46fcfb9af4d801c32b6cfbae504bafb5",
+    "group_size_costs.json": "d89d1efd2d680526dc96178cca32e18f6eed71389cf8f623084eebcb73eb7aea",
+    "group_size_costs_summary.csv": "9f3cd8c48fb8b991b2f04548046462252c4d8eefd69b328e657041cc8e13ea91"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "mx-group64-pilot5-group16-reference-v1",
+  "comparison_endpoint": 5,
+  "synthetic": false,
+  "mx_block_size": 16,
+  "scale_factor": 64,
+  "source_bundle_name": "feedback_bundle(20261026-195319).zip",
+  "source_bundle_sha256": "c8d3f0ff1d4f74eccda551a0c2c8cb3710cdcac8dddcc9c7fd22288fc4587271",
+  "source_run": "20261026_190508_857016_joint_run",
+  "full_training_epochs": 100,
+  "global_E4_best_epoch": 53,
+  "scope": "Unchanged real B16 fixed64 full100 results; pilot comparisons restrict metrics and E4 selection to shared first five epochs. Global best53 and epoch100 are historical context, not pilot comparison values.",
+  "files_sha256": {
+    "run_report.json": "91a2b18d569d2097b72181cf278d7a087e3bd52afd9b753d60bcdaed09843a48",
+    "training_summary.json": "a740569cca8ed32b451fea169b0715f196d0ee5c327f2ffb31cbb2daad301741",
+    "checkpoint_selection.json": "137427b39cd082474380be527672ff337c07f4fdc9d180f234c553659eeda24c",
+    "epoch_metrics.csv": "5c9669b12473e3f7d9cb07b25a228805248ffa7fb2b1372e50f825578bed2530",
+    "selected_metrics.csv": "3c367e6e6d2927357af185b0f17ed6eeb0eef762a581bdcdd141c82951da67a3",
+    "epoch_times.csv": "5006e32a3070d5746228800f90d22da631eafc130361fca7da16325abf96fe24"
+  }
+}

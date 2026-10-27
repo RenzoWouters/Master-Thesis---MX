@@ -1,0 +1,1989 @@
+{
+  "status": "PASS",
+  "source_bundle": "feedback_bundle(20261027-161453).zip",
+  "source_sha256": "2e47f6ea1c26d894eaa91b82b277c38f9297fe8c5a7773f48b4040643b4bbda8",
+  "source_run": "20261027_170656_785350_joint_run",
+  "synthetic_fixture_only": false,
+  "checks_count": 397,
+  "failed_checks": [],
+  "best_E4_epochs_within_first5": {
+    "64": 5,
+    "32": 5,
+    "16": 5
+  },
+  "comparison": [
+    {
+      "role": "epoch5",
+      "weight_bits": 8,
+      "weight_format": "MXFP8_E4M3",
+      "test_n": 26032,
+      "epoch_B64": 5,
+      "B64_top1_percent": 92.88952058066454,
+      "B64_correct1": 24181,
+      "B64_hard_CE": 0.24467161698490106,
+      "epoch_B16": 5,
+      "B16_top1_percent": 93.05470190534726,
+      "B16_correct1": 24224,
+      "B16_hard_CE": 0.24274992767879403,
+      "epoch_B32": 5,
+      "B32_top1_percent": 93.00860479409957,
+      "B32_correct1": 24212,
+      "B32_hard_CE": 0.24308195013207165,
+      "B64_minus_B16_pp": -0.1651813246827203,
+      "B64_minus_B16_correct": -43,
+      "B64_minus_B32_pp": -0.1190842134350305,
+      "B64_minus_B32_correct": -31
+    },
+    {
+      "role": "epoch5",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "test_n": 26032,
+      "epoch_B64": 5,
+      "B64_top1_percent": 92.14812538414259,
+      "B64_correct1": 23988,
+      "B64_hard_CE": 0.27132215807426174,
+      "epoch_B16": 5,
+      "B16_top1_percent": 91.45282728948986,
+      "B16_correct1": 23807,
+      "B16_hard_CE": 0.2928233223691922,
+      "epoch_B32": 5,
+      "B32_top1_percent": 91.29917025199754,
+      "B32_correct1": 23767,
+      "B32_hard_CE": 0.2989847544757002,
+      "B64_minus_B16_pp": 0.6952980946527276,
+      "B64_minus_B16_correct": 181,
+      "B64_minus_B32_pp": 0.8489551321450506,
+      "B64_minus_B32_correct": 221
+    },
+    {
+      "role": "epoch5",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "test_n": 26032,
+      "epoch_B64": 5,
+      "B64_top1_percent": 91.90227412415489,
+      "B64_correct1": 23924,
+      "B64_hard_CE": 0.2786965004563991,
+      "epoch_B16": 5,
+      "B16_top1_percent": 91.56038721573448,
+      "B16_correct1": 23835,
+      "B16_hard_CE": 0.28639941981729733,
+      "epoch_B32": 5,
+      "B32_top1_percent": 90.8919791026429,
+      "B32_correct1": 23661,
+      "B32_hard_CE": 0.3105133664831473,
+      "B64_minus_B16_pp": 0.34188690842040614,
+      "B64_minus_B16_correct": 89,
+      "B64_minus_B32_pp": 1.010295021511979,
+      "B64_minus_B32_correct": 263
+    },
+    {
+      "role": "best_E4M3_within_first5",
+      "weight_bits": 8,
+      "weight_format": "MXFP8_E4M3",
+      "test_n": 26032,
+      "epoch_B64": 5,
+      "B64_top1_percent": 92.88952058066454,
+      "B64_correct1": 24181,
+      "B64_hard_CE": 0.24467161698490106,
+      "epoch_B16": 5,
+      "B16_top1_percent": 93.05470190534726,
+      "B16_correct1": 24224,
+      "B16_hard_CE": 0.24274992767879403,
+      "epoch_B32": 5,
+      "B32_top1_percent": 93.00860479409957,
+      "B32_correct1": 24212,
+      "B32_hard_CE": 0.24308195013207165,
+      "B64_minus_B16_pp": -0.1651813246827203,
+      "B64_minus_B16_correct": -43,
+      "B64_minus_B32_pp": -0.1190842134350305,
+      "B64_minus_B32_correct": -31
+    },
+    {
+      "role": "best_E4M3_within_first5",
+      "weight_bits": 6,
+      "weight_format": "MXFP6_E2M3",
+      "test_n": 26032,
+      "epoch_B64": 5,
+      "B64_top1_percent": 92.14812538414259,
+      "B64_correct1": 23988,
+      "B64_hard_CE": 0.27132215807426174,
+      "epoch_B16": 5,
+      "B16_top1_percent": 91.45282728948986,
+      "B16_correct1": 23807,
+      "B16_hard_CE": 0.2928233223691922,
+      "epoch_B32": 5,
+      "B32_top1_percent": 91.29917025199754,
+      "B32_correct1": 23767,
+      "B32_hard_CE": 0.2989847544757002,
+      "B64_minus_B16_pp": 0.6952980946527276,
+      "B64_minus_B16_correct": 181,
+      "B64_minus_B32_pp": 0.8489551321450506,
+      "B64_minus_B32_correct": 221
+    },
+    {
+      "role": "best_E4M3_within_first5",
+      "weight_bits": 4,
+      "weight_format": "MXFP4_E2M1",
+      "test_n": 26032,
+      "epoch_B64": 5,
+      "B64_top1_percent": 91.90227412415489,
+      "B64_correct1": 23924,
+      "B64_hard_CE": 0.2786965004563991,
+      "epoch_B16": 5,
+      "B16_top1_percent": 91.56038721573448,
+      "B16_correct1": 23835,
+      "B16_hard_CE": 0.28639941981729733,
+      "epoch_B32": 5,
+      "B32_top1_percent": 90.8919791026429,
+      "B32_correct1": 23661,
+      "B32_hard_CE": 0.3105133664831473,
+      "B64_minus_B16_pp": 0.34188690842040614,
+      "B64_minus_B16_correct": 89,
+      "B64_minus_B32_pp": 1.010295021511979,
+      "B64_minus_B32_correct": 263
+    }
+  ],
+  "trajectory_summary": [
+    {
+      "weight_bits": 8,
+      "reference_group_size": 16,
+      "B64_higher_epochs": 1,
+      "B64_lower_epochs": 4,
+      "mean_delta_first5_pp": -0.22357099424055776
+    },
+    {
+      "weight_bits": 8,
+      "reference_group_size": 32,
+      "B64_higher_epochs": 1,
+      "B64_lower_epochs": 4,
+      "mean_delta_first5_pp": -0.3257529241729486
+    },
+    {
+      "weight_bits": 6,
+      "reference_group_size": 16,
+      "B64_higher_epochs": 2,
+      "B64_lower_epochs": 3,
+      "mean_delta_first5_pp": 0.07529194649554256
+    },
+    {
+      "weight_bits": 6,
+      "reference_group_size": 32,
+      "B64_higher_epochs": 1,
+      "B64_lower_epochs": 4,
+      "mean_delta_first5_pp": -0.2834972379247148
+    },
+    {
+      "weight_bits": 4,
+      "reference_group_size": 16,
+      "B64_higher_epochs": 2,
+      "B64_lower_epochs": 3,
+      "mean_delta_first5_pp": -0.15365703561662086
+    },
+    {
+      "weight_bits": 4,
+      "reference_group_size": 32,
+      "B64_higher_epochs": 1,
+      "B64_lower_epochs": 4,
+      "mean_delta_first5_pp": -0.5032267977873403
+    }
+  ],
+  "timing": {
+    "64": {
+      "epochs": 5,
+      "epoch_sum_seconds": 315.9534123999765,
+      "median_nonfirst_epoch_seconds": 63.417249499994796,
+      "first_epoch_seconds": 65.5885227000108,
+      "session_wall_seconds": 324.34799610008486,
+      "estimated_100_epoch_seconds": 6343.896223199496,
+      "epoch_sum_delta_vs_B16_seconds": 26.70190470002126,
+      "epoch_sum_delta_vs_B16_percent": 9.2313796088211,
+      "epoch_sum_delta_vs_B32_seconds": 12.225635300041176,
+      "epoch_sum_delta_vs_B32_percent": 4.025195000857162
+    },
+    "32": {
+      "epochs": 5,
+      "epoch_sum_seconds": 303.72777709993534,
+      "median_nonfirst_epoch_seconds": 61.336501349986065,
+      "first_epoch_seconds": 58.89406099996995
+    },
+    "16": {
+      "epochs": 5,
+      "epoch_sum_seconds": 289.25150769995525,
+      "median_nonfirst_epoch_seconds": 59.24192835006397,
+      "first_epoch_seconds": 52.120699299965054
+    }
+  },
+  "geometries": {
+    "16": {
+      "group_size": 16,
+      "n_weights": 129472,
+      "blocks": 8096,
+      "padded_slots": 64,
+      "stored_weight_slots": 129536,
+      "scale_bytes": 8096,
+      "packed_e4m3_bytes": 137632,
+      "packed_e2m3_bytes": 105248,
+      "packed_e2m1_bytes": 72864
+    },
+    "32": {
+      "group_size": 32,
+      "n_weights": 129472,
+      "blocks": 4080,
+      "padded_slots": 1088,
+      "stored_weight_slots": 130560,
+      "scale_bytes": 4080,
+      "packed_e4m3_bytes": 134640,
+      "packed_e2m3_bytes": 102000,
+      "packed_e2m1_bytes": 69360
+    },
+    "64": {
+      "group_size": 64,
+      "n_weights": 129472,
+      "blocks": 2160,
+      "padded_slots": 8768,
+      "stored_weight_slots": 138240,
+      "scale_bytes": 2160,
+      "packed_e4m3_bytes": 140400,
+      "packed_e2m3_bytes": 105840,
+      "packed_e2m1_bytes": 71280
+    }
+  },
+  "config_differences": {
+    "32": {
+      "reporting_policy": {
+        "B64": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+        "reference": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch"
+      },
+      "comparison_baseline_block_size": {
+        "B64": 32,
+        "reference": null
+      },
+      "mx_group_size_research_variant": {
+        "B64": true,
+        "reference": null
+      },
+      "pilot_stop_epoch": {
+        "B64": 5,
+        "reference": null
+      },
+      "mx_block_size": {
+        "B64": 64,
+        "reference": 32
+      },
+      "purpose": {
+        "B64": "five complete train-only epochs: group size64, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+        "reference": "100 complete train-only epochs: route B, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1"
+      },
+      "reference_end_epoch": {
+        "B64": null,
+        "reference": 100
+      },
+      "schema": {
+        "B64": "mx-triple-group64-scale64-pilot5-protocol-v1",
+        "reference": "mx-triple-scale64-reference100-protocol-v1"
+      }
+    },
+    "16": {
+      "reporting_policy": {
+        "B64": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+        "reference": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch"
+      },
+      "pilot_stop_epoch": {
+        "B64": 5,
+        "reference": null
+      },
+      "mx_block_size": {
+        "B64": 64,
+        "reference": 16
+      },
+      "purpose": {
+        "B64": "five complete train-only epochs: group size64, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+        "reference": "100 complete train-only epochs: group size16, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1"
+      },
+      "reference_end_epoch": {
+        "B64": null,
+        "reference": 100
+      },
+      "schema": {
+        "B64": "mx-triple-group64-scale64-pilot5-protocol-v1",
+        "reference": "mx-triple-group16-scale64-reference100-protocol-v1"
+      }
+    }
+  },
+  "notebook_loader": {
+    "metrics_safe": true,
+    "selection_safe": true,
+    "prediction_safe": true,
+    "cost_report_verified": true,
+    "pilot_complete": true,
+    "issues": [
+      {
+        "Niveau": "RUNWAARSCHUWING",
+        "Melding": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)"
+      },
+      {
+        "Niveau": "RUNWAARSCHUWING",
+        "Melding": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)"
+      }
+    ],
+    "references": [
+      {
+        "group_size": 32,
+        "safe": true,
+        "compatible": true,
+        "issues": []
+      },
+      {
+        "group_size": 16,
+        "safe": true,
+        "compatible": true,
+        "issues": []
+      }
+    ]
+  },
+  "input_sha256": {
+    "notebook_support.py": "d042a44274af21c940532ece795375fa08304309270e48d32df01f3269a579dc",
+    "compatibility.patch": "cf87916df48da6559ecf4c44e619f885c1a056dd774dc7df9138490cbae973d5",
+    "pip_freeze.txt": "c8bfb152b6e1269aa2ed6b8ee7f5601273f4d9f73db2643c7c211501d2f314b4",
+    "mx_export_layers_8_best.csv": "68111891ac357cab32b060f7728468fd2a0c6023243bb8bd0518ea9e89d88b04",
+    "run.log": "c996b9b804a70ea16f17209fa67ddf0eee1410f4bdfc6ad4d758177fd2161d93",
+    "mx_export_layers_8_last.csv": "68111891ac357cab32b060f7728468fd2a0c6023243bb8bd0518ea9e89d88b04",
+    "group_size_costs_summary.csv": "9f3cd8c48fb8b991b2f04548046462252c4d8eefd69b328e657041cc8e13ea91",
+    "mx_export_layers_4_best.csv": "d92b9be474eddd4fc7d4abfa81ae01db55fc0037f06d93c28ac68cdd92911bab",
+    "mx_export_layers_6_last.csv": "d30825dc2f6df49038bf51d40420e27686009a4d8c93fa0464259203e6270063",
+    "test_prediction_counts.csv": "23472bdb1ac030f1d803973535b42b8e58d5804ff2a66a4a2d1df9bd6f563f07",
+    "pip_check.txt": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "history.json": "1de4730663e281e73d4c5fc058a079978527666be9e85e85b411a9950ca88607",
+    "selected_metrics.csv": "70e2a670092c325b6cb4493a5af597294feb44ba885e8bbe0d542cf4fc9fe0d6",
+    "MX_triple_group64_scale64_pilot5_resultaten.ipynb": "814e3b1d6830f2a77b4d7d367b247beb8771c72263c84dc53aaa8729d0f5b9ba",
+    "source_manifest.json": "110b8e9f5e9cc565e38340996a1479fb2938e8b95fbfa51510bb6b39d1e04cde",
+    "dataset_manifest.json": "5563e05a2aac2a4f688ccb154f2cc17641d130574d9b16cad2966654629bccf0",
+    "warnings.log": "ddf2cbfa58bca04dbb34c9a7cb4763c372fa8533aa88aefe522da731f811c37a",
+    "epoch_metrics.csv": "9b01d68260f49156dcff4d266c9a3f576a074b052150cb5accb10d64f88b8a0c",
+    "group_size_costs.json": "d89d1efd2d680526dc96178cca32e18f6eed71389cf8f623084eebcb73eb7aea",
+    "mx_export_layers_4_last.csv": "d92b9be474eddd4fc7d4abfa81ae01db55fc0037f06d93c28ac68cdd92911bab",
+    "checkpoint_selection.json": "9b80c9c37a7947c775a6a7b931d426bd4bd384425867b2efad31b844e0301c48",
+    "run_report.json": "aa283609de709d3b68548a9ecf981235642ec68cc74fa07503a17ef26f32b4a3",
+    "mx_export_layers_6_best.csv": "d30825dc2f6df49038bf51d40420e27686009a4d8c93fa0464259203e6270063",
+    "group_size_costs_layers.csv": "b804773d499e7e25f975455b491debd630cbfe606df8f805bcee379bac0ee5c8",
+    "training_change_manifest.json": "3017c0749bcfa1bf584fedae44c04c87176ccd3a3262ee86379df99a7d521de2",
+    "training_summary.json": "535d3cca19bc49f5ec75fa70a05406af92ca7562636d1e978b66e32b1d9e018c",
+    "group_costs.py": "79c6d8dbc5837e995f94c16a19cc013737755a068b334f59fa83369c66b567ef",
+    "epoch_times.csv": "900f8a3a2357965db8665d6eff3883674bcd8f36cf343d45d9f33a9e9fe9cf6a",
+    "timing_estimate.json": "6160564ab3fd07c011918db5c6b7a60d46fcfb9af4d801c32b6cfbae504bafb5",
+    "weight_updates.csv": "f64d64d7d7ab5307ca6cbae190fe0146d91709461718488d400f96cd92142d59",
+    "scale64_reference/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "scale64_reference/REFERENCE.json": "7c40df4e4be48379ca04212cbc7ca70b3a3f1551a98a763aa83bce4358a63338",
+    "scale64_reference/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "scale64_reference/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "scale64_reference/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "scale64_reference/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe",
+    "scale64_reference/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "group16_reference/selected_metrics.csv": "3c367e6e6d2927357af185b0f17ed6eeb0eef762a581bdcdd141c82951da67a3",
+    "group16_reference/REFERENCE.json": "4f7ba609c9f4d7383d78be10b00300f9aa3b75109067f81743cb5ed45405ed8f",
+    "group16_reference/epoch_metrics.csv": "5c9669b12473e3f7d9cb07b25a228805248ffa7fb2b1372e50f825578bed2530",
+    "group16_reference/checkpoint_selection.json": "137427b39cd082474380be527672ff337c07f4fdc9d180f234c553659eeda24c",
+    "group16_reference/run_report.json": "91a2b18d569d2097b72181cf278d7a087e3bd52afd9b753d60bcdaed09843a48",
+    "group16_reference/training_summary.json": "a740569cca8ed32b451fea169b0715f196d0ee5c327f2ffb31cbb2daad301741",
+    "group16_reference/epoch_times.csv": "5006e32a3070d5746228800f90d22da631eafc130361fca7da16325abf96fe24"
+  },
+  "limitations": [
+    "One fixed seed and nondeterministic CUDA; five epochs are a pilot, not final100 evidence.",
+    "Reference rows come from first5 of each full100 run, not their global E4-best checkpoints.",
+    "Actual checkpoints, sample-order arrays and packed exports are omitted. No model or binary export reevaluation; exact CUDA checks are recorded by the run.",
+    "Timing comparisons are descriptive across separate laptop runs, not controlled native-hardware claims.",
+    "Group-cost counts cover six-layer packed payload including row padding, excluding FP32 auxiliary state and container overhead."
+  ],
+  "checks": [
+    {
+      "name": "B64: all epoch/mode metrics once",
+      "passed": true
+    },
+    {
+      "name": "B64: sample counts",
+      "passed": true
+    },
+    {
+      "name": "B64: A32",
+      "passed": true
+    },
+    {
+      "name": "B64: BN banks",
+      "passed": true
+    },
+    {
+      "name": "B64: finite metrics",
+      "passed": true
+    },
+    {
+      "name": "B64: integer correct bounds",
+      "passed": true
+    },
+    {
+      "name": "B64: top1 integer reconciliation",
+      "passed": true
+    },
+    {
+      "name": "B64: exact count percentages",
+      "passed": true
+    },
+    {
+      "name": "B64: LR schedule",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: all epoch/mode metrics once",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: sample counts",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: A32",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: BN banks",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: finite metrics",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: integer correct bounds",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: top1 integer reconciliation",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: exact count percentages",
+      "passed": true
+    },
+    {
+      "name": "B32 full100 reference: LR schedule",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: all epoch/mode metrics once",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: sample counts",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: A32",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: BN banks",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: finite metrics",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: integer correct bounds",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: top1 integer reconciliation",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: exact count percentages",
+      "passed": true
+    },
+    {
+      "name": "B16 full100 reference: LR schedule",
+      "passed": true
+    },
+    {
+      "name": "real completed run PASS",
+      "passed": true
+    },
+    {
+      "name": "not synthetic",
+      "passed": true
+    },
+    {
+      "name": "five complete epochs",
+      "passed": true
+    },
+    {
+      "name": "pilot completion flags",
+      "passed": true
+    },
+    {
+      "name": "no full100 claim",
+      "passed": true
+    },
+    {
+      "name": "2865 optimizer steps",
+      "passed": true
+    },
+    {
+      "name": "8595 training passes",
+      "passed": true
+    },
+    {
+      "name": "fresh initialization",
+      "passed": true
+    },
+    {
+      "name": "duplicated summary and selection match",
+      "passed": true
+    },
+    {
+      "name": "source manifest matches",
+      "passed": true
+    },
+    {
+      "name": "dataset manifest matches",
+      "passed": true
+    },
+    {
+      "name": "canonical dataset names only",
+      "passed": true
+    },
+    {
+      "name": "train-only no extra or validation",
+      "passed": true
+    },
+    {
+      "name": "recorded immutable source and data",
+      "passed": true
+    },
+    {
+      "name": "history contiguous",
+      "passed": true
+    },
+    {
+      "name": "same recorded initial model",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 identical execution_settings",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 identical environment",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 identical source",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 identical transforms",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 identical dataset_selection",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 dataset hashes equal",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 same initial model",
+      "passed": true
+    },
+    {
+      "name": "B64/B32 only group size and stage protocol differences",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 identical execution_settings",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 identical environment",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 identical source",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 identical transforms",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 identical dataset_selection",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 dataset hashes equal",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 same initial model",
+      "passed": true
+    },
+    {
+      "name": "B64/B16 only group size and stage protocol differences",
+      "passed": true
+    },
+    {
+      "name": "B64 fixed64 contract",
+      "passed": true
+    },
+    {
+      "name": "FP32 master gradient Adam contract",
+      "passed": true
+    },
+    {
+      "name": "recorded gradient_checks_before_every_update",
+      "passed": true
+    },
+    {
+      "name": "recorded fp32_masters_and_moments_verified",
+      "passed": true
+    },
+    {
+      "name": "recorded one_E4_source_per_layer_per_minibatch_verified",
+      "passed": true
+    },
+    {
+      "name": "recorded all_lower_scale_codes_equal_current_E4_source_plus6",
+      "passed": true
+    },
+    {
+      "name": "recorded all_mantissa_scale_bytes_equal_E2M3",
+      "passed": true
+    },
+    {
+      "name": "recorded source_cache_cleared_before_every_optimizer_update",
+      "passed": true
+    },
+    {
+      "name": "recorded batchnorm_learned_during_training_eval_frozen",
+      "passed": true
+    },
+    {
+      "name": "15 prediction diagnostics",
+      "passed": true
+    },
+    {
+      "name": "90 weight-update diagnostics",
+      "passed": true
+    },
+    {
+      "name": "five time rows",
+      "passed": true
+    },
+    {
+      "name": "e1: history metrics exact CSV",
+      "passed": true
+    },
+    {
+      "name": "e1: recorded complete coverage",
+      "passed": true
+    },
+    {
+      "name": "e1: step counts",
+      "passed": true
+    },
+    {
+      "name": "e1: unchanged pilot LR",
+      "passed": true
+    },
+    {
+      "name": "e1: gradient teacher forward checks",
+      "passed": true
+    },
+    {
+      "name": "e1: train shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e1: test shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e1: Adam and BN checks",
+      "passed": true
+    },
+    {
+      "name": "e1: predictions b4",
+      "passed": true
+    },
+    {
+      "name": "e1: predictions b6",
+      "passed": true
+    },
+    {
+      "name": "e1: predictions b8",
+      "passed": true
+    },
+    {
+      "name": "e1: weight updates CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e1: timing CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e1: strict first maximum bookkeeping",
+      "passed": true
+    },
+    {
+      "name": "e2: history metrics exact CSV",
+      "passed": true
+    },
+    {
+      "name": "e2: recorded complete coverage",
+      "passed": true
+    },
+    {
+      "name": "e2: step counts",
+      "passed": true
+    },
+    {
+      "name": "e2: unchanged pilot LR",
+      "passed": true
+    },
+    {
+      "name": "e2: gradient teacher forward checks",
+      "passed": true
+    },
+    {
+      "name": "e2: train shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e2: test shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e2: Adam and BN checks",
+      "passed": true
+    },
+    {
+      "name": "e2: predictions b4",
+      "passed": true
+    },
+    {
+      "name": "e2: predictions b6",
+      "passed": true
+    },
+    {
+      "name": "e2: predictions b8",
+      "passed": true
+    },
+    {
+      "name": "e2: weight updates CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e2: timing CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e2: strict first maximum bookkeeping",
+      "passed": true
+    },
+    {
+      "name": "e3: history metrics exact CSV",
+      "passed": true
+    },
+    {
+      "name": "e3: recorded complete coverage",
+      "passed": true
+    },
+    {
+      "name": "e3: step counts",
+      "passed": true
+    },
+    {
+      "name": "e3: unchanged pilot LR",
+      "passed": true
+    },
+    {
+      "name": "e3: gradient teacher forward checks",
+      "passed": true
+    },
+    {
+      "name": "e3: train shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e3: test shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e3: Adam and BN checks",
+      "passed": true
+    },
+    {
+      "name": "e3: predictions b4",
+      "passed": true
+    },
+    {
+      "name": "e3: predictions b6",
+      "passed": true
+    },
+    {
+      "name": "e3: predictions b8",
+      "passed": true
+    },
+    {
+      "name": "e3: weight updates CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e3: timing CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e3: strict first maximum bookkeeping",
+      "passed": true
+    },
+    {
+      "name": "e4: history metrics exact CSV",
+      "passed": true
+    },
+    {
+      "name": "e4: recorded complete coverage",
+      "passed": true
+    },
+    {
+      "name": "e4: step counts",
+      "passed": true
+    },
+    {
+      "name": "e4: unchanged pilot LR",
+      "passed": true
+    },
+    {
+      "name": "e4: gradient teacher forward checks",
+      "passed": true
+    },
+    {
+      "name": "e4: train shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e4: test shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e4: Adam and BN checks",
+      "passed": true
+    },
+    {
+      "name": "e4: predictions b4",
+      "passed": true
+    },
+    {
+      "name": "e4: predictions b6",
+      "passed": true
+    },
+    {
+      "name": "e4: predictions b8",
+      "passed": true
+    },
+    {
+      "name": "e4: weight updates CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e4: timing CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e4: strict first maximum bookkeeping",
+      "passed": true
+    },
+    {
+      "name": "e5: history metrics exact CSV",
+      "passed": true
+    },
+    {
+      "name": "e5: recorded complete coverage",
+      "passed": true
+    },
+    {
+      "name": "e5: step counts",
+      "passed": true
+    },
+    {
+      "name": "e5: unchanged pilot LR",
+      "passed": true
+    },
+    {
+      "name": "e5: gradient teacher forward checks",
+      "passed": true
+    },
+    {
+      "name": "e5: train shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e5: test shared-source counters",
+      "passed": true
+    },
+    {
+      "name": "e5: Adam and BN checks",
+      "passed": true
+    },
+    {
+      "name": "e5: predictions b4",
+      "passed": true
+    },
+    {
+      "name": "e5: predictions b6",
+      "passed": true
+    },
+    {
+      "name": "e5: predictions b8",
+      "passed": true
+    },
+    {
+      "name": "e5: weight updates CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e5: timing CSV exact",
+      "passed": true
+    },
+    {
+      "name": "e5: strict first maximum bookkeeping",
+      "passed": true
+    },
+    {
+      "name": "selected E4 best5",
+      "passed": true
+    },
+    {
+      "name": "last5",
+      "passed": true
+    },
+    {
+      "name": "best and last same checkpoint",
+      "passed": true
+    },
+    {
+      "name": "selected metrics exact source rows",
+      "passed": true
+    },
+    {
+      "name": "all selected modes from epoch5",
+      "passed": true
+    },
+    {
+      "name": "selection limitation recorded",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference: SHA run_report.json",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference: SHA epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference: SHA checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference: SHA epoch_times.csv",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference: SHA selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference: SHA training_summary.json",
+      "passed": true
+    },
+    {
+      "name": "group16_reference: SHA run_report.json",
+      "passed": true
+    },
+    {
+      "name": "group16_reference: SHA training_summary.json",
+      "passed": true
+    },
+    {
+      "name": "group16_reference: SHA checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "name": "group16_reference: SHA epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "group16_reference: SHA selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "group16_reference: SHA epoch_times.csv",
+      "passed": true
+    },
+    {
+      "name": "actual run package manifest equals delivered pilot package",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA CODEWIJZIGINGEN.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA EXPERIMENT_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA MX_triple_group64_scale64_pilot5_resultaten.ipynb",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA README.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA REUSE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group16_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group16_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group_config.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA group_costs.py",
+      "passed": true
+    },
+    {
+      "name": "included package SHA group_costs.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA joint_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA joint_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/check_entry_validation_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/codec_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/final_assembly_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/group_size_check_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/independent_delta_audit.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/notebook_actual_group16_reader.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/notebook_runner_integration_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/notebook_validation_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/run_codec_runtime_validation.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/runner_implementation_audit.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/startup_regression_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/test_core.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/test_dataset_startup.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/test_training_integration.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/training_integration_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA local_validation/trunc_training_check_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA mx_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA mx_format.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA notebook_support.py",
+      "passed": true
+    },
+    {
+      "name": "included package SHA notebook_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/RESULTATEN_B16_100.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/audit_group16_full100_feedback.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/audit_summary.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/checkpoint_comparison.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/feedback_B16_full100_original.zip",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/group_costs_independent.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/notebook_loader_actual.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/phase_comparison.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/pilot_comparison.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/same_epoch_selected_diagnostic.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA previous_results/trajectory_comparison.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v1_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_EXPERIMENT_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_HERSTEL.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_REUSE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group16_pilot5_v2_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group32_scale32_parent_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/group32_scale32_parent_PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/dataset_startup_v1_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/dataset_startup_v2_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/final_fix_assembly.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/independent_collateral_audit.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/check_entry_validation_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/codec_runtime_checks.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/final_assembly_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/notebook_validation_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/paired_initialization.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/runner_notebook_integration.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/static_delta_audit.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/inherited_group16_validation/inherited_v1/training_integration_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/posthoc_scale64.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_pilot5_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_pilot5_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_pilot5_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_pilot5_notebook_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_pilot5_run_train.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_notebook_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_run_train.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_test_trunc_training.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_reference100_trunc_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_to_scale32_run_train.py.patch",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_to_scale32_test_trunc_training.py.patch",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_to_scale32_trunc_adapter.py.patch",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA provenance/scale64_to_scale32_trunc_support.py.patch",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA resume_core.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA run_train.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA scale64_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "name": "included package SHA scale64_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA smoke_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA svhn_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA test_e4m3.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA test_group_size.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA test_joint.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA test_mx.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA test_trunc_training.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA trunc_support.py",
+      "passed": true
+    },
+    {
+      "name": "delivered package SHA upstream/Any-Precision-DNNs-master.zip",
+      "passed": true
+    },
+    {
+      "name": "actual config equals delivered protocol",
+      "passed": true
+    },
+    {
+      "name": "feedback notebook only parameter cell substitution",
+      "passed": true
+    },
+    {
+      "name": "feedback notebook unexecuted",
+      "passed": true
+    },
+    {
+      "name": "cost report duplicated exact",
+      "passed": true
+    },
+    {
+      "name": "independent B16 geometry",
+      "passed": true
+    },
+    {
+      "name": "independent B32 geometry",
+      "passed": true
+    },
+    {
+      "name": "independent B64 geometry",
+      "passed": true
+    },
+    {
+      "name": "best b8: recorded exact exports",
+      "passed": true
+    },
+    {
+      "name": "best b8: source provenance",
+      "passed": true
+    },
+    {
+      "name": "best b8: six-layer export",
+      "passed": true
+    },
+    {
+      "name": "best b8: geometry layers.3",
+      "passed": true
+    },
+    {
+      "name": "best b8: finite errors layers.3",
+      "passed": true
+    },
+    {
+      "name": "best b8: geometry layers.6",
+      "passed": true
+    },
+    {
+      "name": "best b8: finite errors layers.6",
+      "passed": true
+    },
+    {
+      "name": "best b8: geometry layers.10",
+      "passed": true
+    },
+    {
+      "name": "best b8: finite errors layers.10",
+      "passed": true
+    },
+    {
+      "name": "best b8: geometry layers.13",
+      "passed": true
+    },
+    {
+      "name": "best b8: finite errors layers.13",
+      "passed": true
+    },
+    {
+      "name": "best b8: geometry layers.16",
+      "passed": true
+    },
+    {
+      "name": "best b8: finite errors layers.16",
+      "passed": true
+    },
+    {
+      "name": "best b8: geometry layers.20",
+      "passed": true
+    },
+    {
+      "name": "best b8: finite errors layers.20",
+      "passed": true
+    },
+    {
+      "name": "best b6: recorded exact exports",
+      "passed": true
+    },
+    {
+      "name": "best b6: source provenance",
+      "passed": true
+    },
+    {
+      "name": "best b6: six-layer export",
+      "passed": true
+    },
+    {
+      "name": "best b6: geometry layers.3",
+      "passed": true
+    },
+    {
+      "name": "best b6: finite errors layers.3",
+      "passed": true
+    },
+    {
+      "name": "best b6: geometry layers.6",
+      "passed": true
+    },
+    {
+      "name": "best b6: finite errors layers.6",
+      "passed": true
+    },
+    {
+      "name": "best b6: geometry layers.10",
+      "passed": true
+    },
+    {
+      "name": "best b6: finite errors layers.10",
+      "passed": true
+    },
+    {
+      "name": "best b6: geometry layers.13",
+      "passed": true
+    },
+    {
+      "name": "best b6: finite errors layers.13",
+      "passed": true
+    },
+    {
+      "name": "best b6: geometry layers.16",
+      "passed": true
+    },
+    {
+      "name": "best b6: finite errors layers.16",
+      "passed": true
+    },
+    {
+      "name": "best b6: geometry layers.20",
+      "passed": true
+    },
+    {
+      "name": "best b6: finite errors layers.20",
+      "passed": true
+    },
+    {
+      "name": "best b4: recorded exact exports",
+      "passed": true
+    },
+    {
+      "name": "best b4: source provenance",
+      "passed": true
+    },
+    {
+      "name": "best b4: six-layer export",
+      "passed": true
+    },
+    {
+      "name": "best b4: geometry layers.3",
+      "passed": true
+    },
+    {
+      "name": "best b4: finite errors layers.3",
+      "passed": true
+    },
+    {
+      "name": "best b4: geometry layers.6",
+      "passed": true
+    },
+    {
+      "name": "best b4: finite errors layers.6",
+      "passed": true
+    },
+    {
+      "name": "best b4: geometry layers.10",
+      "passed": true
+    },
+    {
+      "name": "best b4: finite errors layers.10",
+      "passed": true
+    },
+    {
+      "name": "best b4: geometry layers.13",
+      "passed": true
+    },
+    {
+      "name": "best b4: finite errors layers.13",
+      "passed": true
+    },
+    {
+      "name": "best b4: geometry layers.16",
+      "passed": true
+    },
+    {
+      "name": "best b4: finite errors layers.16",
+      "passed": true
+    },
+    {
+      "name": "best b4: geometry layers.20",
+      "passed": true
+    },
+    {
+      "name": "best b4: finite errors layers.20",
+      "passed": true
+    },
+    {
+      "name": "last b8: recorded exact exports",
+      "passed": true
+    },
+    {
+      "name": "last b8: source provenance",
+      "passed": true
+    },
+    {
+      "name": "last b8: six-layer export",
+      "passed": true
+    },
+    {
+      "name": "last b8: geometry layers.3",
+      "passed": true
+    },
+    {
+      "name": "last b8: finite errors layers.3",
+      "passed": true
+    },
+    {
+      "name": "last b8: geometry layers.6",
+      "passed": true
+    },
+    {
+      "name": "last b8: finite errors layers.6",
+      "passed": true
+    },
+    {
+      "name": "last b8: geometry layers.10",
+      "passed": true
+    },
+    {
+      "name": "last b8: finite errors layers.10",
+      "passed": true
+    },
+    {
+      "name": "last b8: geometry layers.13",
+      "passed": true
+    },
+    {
+      "name": "last b8: finite errors layers.13",
+      "passed": true
+    },
+    {
+      "name": "last b8: geometry layers.16",
+      "passed": true
+    },
+    {
+      "name": "last b8: finite errors layers.16",
+      "passed": true
+    },
+    {
+      "name": "last b8: geometry layers.20",
+      "passed": true
+    },
+    {
+      "name": "last b8: finite errors layers.20",
+      "passed": true
+    },
+    {
+      "name": "last b6: recorded exact exports",
+      "passed": true
+    },
+    {
+      "name": "last b6: source provenance",
+      "passed": true
+    },
+    {
+      "name": "last b6: six-layer export",
+      "passed": true
+    },
+    {
+      "name": "last b6: geometry layers.3",
+      "passed": true
+    },
+    {
+      "name": "last b6: finite errors layers.3",
+      "passed": true
+    },
+    {
+      "name": "last b6: geometry layers.6",
+      "passed": true
+    },
+    {
+      "name": "last b6: finite errors layers.6",
+      "passed": true
+    },
+    {
+      "name": "last b6: geometry layers.10",
+      "passed": true
+    },
+    {
+      "name": "last b6: finite errors layers.10",
+      "passed": true
+    },
+    {
+      "name": "last b6: geometry layers.13",
+      "passed": true
+    },
+    {
+      "name": "last b6: finite errors layers.13",
+      "passed": true
+    },
+    {
+      "name": "last b6: geometry layers.16",
+      "passed": true
+    },
+    {
+      "name": "last b6: finite errors layers.16",
+      "passed": true
+    },
+    {
+      "name": "last b6: geometry layers.20",
+      "passed": true
+    },
+    {
+      "name": "last b6: finite errors layers.20",
+      "passed": true
+    },
+    {
+      "name": "last b4: recorded exact exports",
+      "passed": true
+    },
+    {
+      "name": "last b4: source provenance",
+      "passed": true
+    },
+    {
+      "name": "last b4: six-layer export",
+      "passed": true
+    },
+    {
+      "name": "last b4: geometry layers.3",
+      "passed": true
+    },
+    {
+      "name": "last b4: finite errors layers.3",
+      "passed": true
+    },
+    {
+      "name": "last b4: geometry layers.6",
+      "passed": true
+    },
+    {
+      "name": "last b4: finite errors layers.6",
+      "passed": true
+    },
+    {
+      "name": "last b4: geometry layers.10",
+      "passed": true
+    },
+    {
+      "name": "last b4: finite errors layers.10",
+      "passed": true
+    },
+    {
+      "name": "last b4: geometry layers.13",
+      "passed": true
+    },
+    {
+      "name": "last b4: finite errors layers.13",
+      "passed": true
+    },
+    {
+      "name": "last b4: geometry layers.16",
+      "passed": true
+    },
+    {
+      "name": "last b4: finite errors layers.16",
+      "passed": true
+    },
+    {
+      "name": "last b4: geometry layers.20",
+      "passed": true
+    },
+    {
+      "name": "last b4: finite errors layers.20",
+      "passed": true
+    },
+    {
+      "name": "bundle omits binary checkpoints and exports; report audit only",
+      "passed": true
+    },
+    {
+      "name": "timing sum matches summary",
+      "passed": true
+    },
+    {
+      "name": "fresh100 projection recomputed",
+      "passed": true
+    },
+    {
+      "name": "projected100 not measured100",
+      "passed": true
+    },
+    {
+      "name": "existing notebook loader accepts completed actual pilot",
+      "passed": true
+    },
+    {
+      "name": "both notebook references compatible",
+      "passed": true
+    },
+    {
+      "name": "no notebook analysis errors",
+      "passed": true
+    },
+    {
+      "name": "all extracted input bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "original uploaded ZIP unchanged",
+      "passed": true
+    }
+  ]
+}

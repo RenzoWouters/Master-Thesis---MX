@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "scope": "B64 full100 stage-only runner change and bounded CPU validation; no actual SVHN training",
+  "successful_pilot_package": "mx_triple_group64_scale64_pilot5_v1",
+  "numerical_runtime_and_test_files_byte_identical_to_successful_pilot": [
+    "group_config.py",
+    "group_costs.py",
+    "mx_format.py",
+    "mx_e4m3.py",
+    "mx_e2m1.py",
+    "posthoc_truncation.py",
+    "trunc_adapter.py",
+    "trunc_support.py",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "test_mx.py",
+    "test_e4m3.py",
+    "test_group_size.py",
+    "test_joint.py",
+    "test_trunc_training.py"
+  ],
+  "numerical_runtime_and_test_files_count": 19,
+  "production_files_identical_to_tested_snapshot": [
+    "run_train.py",
+    "group_config.py",
+    "group_costs.py",
+    "mx_format.py",
+    "mx_e4m3.py",
+    "mx_e2m1.py",
+    "posthoc_truncation.py",
+    "trunc_adapter.py",
+    "trunc_support.py",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "test_mx.py",
+    "test_e4m3.py",
+    "test_group_size.py",
+    "test_joint.py",
+    "test_trunc_training.py"
+  ],
+  "production_sha256": {
+    "run_train.py": "1d5a44ff731435818e3634a37e8f3a7a730c2a9ce7351d3988c564c1e1f9b4c8",
+    "group_config.py": "bd152245fc60d6cdc3050fe95f033da0c924b0a0cfc4567599a7117b93f3b30f",
+    "group_costs.py": "79c6d8dbc5837e995f94c16a19cc013737755a068b334f59fa83369c66b567ef",
+    "mx_format.py": "67971765aa88aaf622a758deb44a2d2206df0309d962e0b2fd8281637415dd50",
+    "mx_e4m3.py": "1358cca59c285f9d8fb33a713af6a2d43f8be3a0d2856e9fe4b735b16bf257a4",
+    "mx_e2m1.py": "9741fdc411d1bcabbda32c3bda88bfa8eae85885b231d0120f7177e7abadfbda",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "trunc_adapter.py": "5890961377c2866613dca3a2c51299e59c38a5d4e393e06718498f94816f1815",
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_mx.py": "3ad7ef16524da56974d3276323d6d96ac380125ef31decc6137dbc17c41e7428",
+    "test_e4m3.py": "1b9af507820642dd6d002747a7d611af9beab960e2289853a135eb53325ada4b",
+    "test_group_size.py": "7d26e9ac34378b4b794f5767d85eca40d44d2b3cce8495efccc2c160506888ff",
+    "test_joint.py": "ae22dda2624336829dec56ff38043274c051baaa87b15b119d602123cc6d1f26",
+    "test_trunc_training.py": "b92d05ae5bb48ca837e347e278620a87d66e3963bde77223aad9a77f8b7cb4b5"
+  },
+  "protocol_comparison": {
+    "same_numerical_route_training_hyperparameters_and_mechanics": true,
+    "only_duration_identity_and_reporting_changed": true,
+    "differences": {
+      "pilot_stop_epoch": {
+        "previous": 5,
+        "current": null
+      },
+      "purpose": {
+        "previous": "five complete train-only epochs: group size64, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+        "current": "100 complete train-only epochs: group size64, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1"
+      },
+      "reference_end_epoch": {
+        "previous": null,
+        "current": 100
+      },
+      "reporting_policy": {
+        "previous": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+        "current": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch"
+      },
+      "schema": {
+        "previous": "mx-triple-group64-scale64-pilot5-protocol-v1",
+        "current": "mx-triple-group64-scale64-reference100-protocol-v1"
+      }
+    },
+    "archived_runner_sha256": "b0dfcc755ebfa4a90137f33a2465bf7715ac0dbbaba9ce8c0d56c5ba0699ce3e"
+  },
+  "canonical_dataset_names_preserved": true,
+  "new_result_root": "mx_runs/mx_triple_group64_scale64_reference100",
+  "copied_reference_directories": [
+    "scale64_reference",
+    "group16_reference",
+    "pilot_reference"
+  ],
+  "actual_startup": "startup_regression_report.json",
+  "synthetic_training": "training_integration_report.json",
+  "standalone_exhaustive_codecs_rerun": false,
+  "reuse_evidence": "Actual B64 pilot passed with byte-identical numerical modules and production tests; full100 tests independently checked bit/scales/STE/source-only exports.",
+  "no_actual_training": true,
+  "CUDA_validation_performed_here": false,
+  "synthetic_updates": 210,
+  "notes": [
+    "100 tiny CPU epochs exercise the real main/loop/export path, all four LR phases, and 99\u2192100 resume.",
+    "Three one-epoch resumes cross LR boundaries at50,75,90 exactly in CPU.",
+    "Startup test keeps actual ensure_dataset and validate_dataset with virtual full-size datasets, canonical32x32filenames, first train/test batches and zero updates.",
+    "Source-only export reconstruction forbids weight quantizers and G(W).",
+    "A successful CPU initialization comparison is within its own runtime, not a claim of reproducing historical CUDA model hash.",
+    "The user runs check in the Windows/CUDA environment; no GPU validation performed here."
+  ],
+  "final_training_validation_revision": "v2",
+  "synthetic_test_duration_seconds": 42.97864225900048,
+  "training_test_fixture_sha256": "9b3285dcd7baf7f4206a0547cefa42bcdf4190d495e258191be201a5a4701f0e",
+  "all_saved_cost_reports_match_config64_and_actual_geometry": [
+    "continuous100",
+    "resume99_to100",
+    "resume49_to50_stop",
+    "resume74_to75_stop",
+    "resume89_to90_stop",
+    "early_stop",
+    "reject_old_pilot",
+    "reject_group16_reference100",
+    "reject_group32_reference100",
+    "reject_completed100"
+  ],
+  "fixture_regression": {
+    "previous_v1_problem": "Synthetic create_context used inherited active_group_size16 while actual model/config were64. This was a fixture metadata bug, not a production code issue.",
+    "fix": "Use actual config block size and actual model layer shapes; assert written and in-memory report match config64; independently compute groups/padding/bytes.",
+    "all_outputs_regenerated_through_actual_runner": true,
+    "v1_inputs_preserved_in_work": true,
+    "production_code_and_19_modules_changed": false
+  }
+}

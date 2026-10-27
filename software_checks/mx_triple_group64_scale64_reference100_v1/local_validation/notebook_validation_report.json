@@ -1,0 +1,181 @@
+{
+  "actual_group64_pilot_notebook": {
+    "code_cells_executed": 14,
+    "figures_created": 10,
+    "inputs_unchanged": true,
+    "run_last": 5,
+    "run_best": 5,
+    "issues": [
+      {
+        "Niveau": "RUNWAARSCHUWING",
+        "Melding": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)"
+      },
+      {
+        "Niveau": "RUNWAARSCHUWING",
+        "Melding": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)"
+      }
+    ]
+  },
+  "references": {
+    "32": {
+      "safe": true,
+      "global_best_epoch": 42,
+      "rows": 600,
+      "epoch100_retained": true
+    },
+    "16": {
+      "safe": true,
+      "global_best_epoch": 53,
+      "rows": 600,
+      "epoch100_retained": true
+    }
+  },
+  "empty_run": {
+    "no_accuracy_invented": true,
+    "no_full100_claim": true,
+    "references_not_compared": true
+  },
+  "selection_fixture": {
+    "synthetic_only": true,
+    "current_e4_first_tie_epoch": 54,
+    "reference32_epoch": 42,
+    "reference16_epoch": 53,
+    "lower_mode_own_maxima": {
+      "6": 77,
+      "4": 83
+    },
+    "lower_mode_maxima_not_mixed": true,
+    "all_modes_one_epoch_each_run": true,
+    "epoch100_all_same_endpoint": true
+  },
+  "partial_fixture": {
+    "synthetic_only": true,
+    "epoch100_unavailable": true,
+    "reference_selection_bounded_by_current_epoch": true,
+    "no_epoch100_claim": true
+  },
+  "synthetic_real_comparison_blocked": true,
+  "costs": {
+    "active_group_size": 64,
+    "counts": [
+      {
+        "n_weights": 129472,
+        "blocks": 8096,
+        "stored_weight_slots": 129536,
+        "padded_slots": 64,
+        "scale_bytes": 8096,
+        "fp32_weight_bytes": 517888,
+        "group_size": 16,
+        "active_group_size": false,
+        "accuracy_evidence": "not asserted by this analytical layout report",
+        "ideal_scale_bits_per_weight_without_padding": 0.5,
+        "packed_e4m3_bytes": 137632,
+        "effective_bits_e4m3": 8.504201680672269,
+        "packed_e2m3_bytes": 105248,
+        "effective_bits_e2m3": 6.5032130499258525,
+        "packed_e2m1_bytes": 72864,
+        "effective_bits_e2m1": 4.502224419179436
+      },
+      {
+        "n_weights": 129472,
+        "blocks": 4080,
+        "stored_weight_slots": 130560,
+        "padded_slots": 1088,
+        "scale_bytes": 4080,
+        "fp32_weight_bytes": 517888,
+        "group_size": 32,
+        "active_group_size": false,
+        "accuracy_evidence": "not asserted by this analytical layout report",
+        "ideal_scale_bits_per_weight_without_padding": 0.25,
+        "packed_e4m3_bytes": 134640,
+        "effective_bits_e4m3": 8.319327731092438,
+        "packed_e2m3_bytes": 102000,
+        "effective_bits_e2m3": 6.302521008403361,
+        "packed_e2m1_bytes": 69360,
+        "effective_bits_e2m1": 4.285714285714286
+      },
+      {
+        "n_weights": 129472,
+        "blocks": 2160,
+        "stored_weight_slots": 138240,
+        "padded_slots": 8768,
+        "scale_bytes": 2160,
+        "fp32_weight_bytes": 517888,
+        "group_size": 64,
+        "active_group_size": true,
+        "accuracy_evidence": "not asserted by this analytical layout report",
+        "ideal_scale_bits_per_weight_without_padding": 0.125,
+        "packed_e4m3_bytes": 140400,
+        "effective_bits_e4m3": 8.675234799802274,
+        "packed_e2m3_bytes": 105840,
+        "effective_bits_e2m3": 6.539792387543253,
+        "packed_e2m1_bytes": 71280,
+        "effective_bits_e2m1": 4.404349975284231
+      }
+    ]
+  },
+  "empty_notebook": {
+    "code_cells_executed": 14,
+    "figures_created": 10,
+    "inputs_unchanged": true,
+    "run_last": null,
+    "run_best": null,
+    "issues": [
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "run_report.json"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "history.json"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "training_summary.json"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "checkpoint_selection.json"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "timing_estimate.json"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "epoch_metrics.csv"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "selected_metrics.csv"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "epoch_times.csv"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "weight_updates.csv"
+      },
+      {
+        "Niveau": "ONTBREEKT",
+        "Melding": "group_size_costs.json; kostentabellen tonen uitsluitend de berekende zeslaaggeometrie."
+      },
+      {
+        "Niveau": "INFO",
+        "Melding": "Geen bruikbare afgeronde trainingsresultaten met alle drie modi ingelezen."
+      }
+    ]
+  },
+  "status": "PASS",
+  "final_source_sha256": {
+    "notebook_support.py": "f652668b838691e3c7c7854b4f5c47d6c0e45330803dc4b4a09a6f1aa5362eff",
+    "MX_triple_group64_scale64_reference100_resultaten.ipynb": "fa519e0d54643b075064fc995ad8ec19fef26d3e677b7e88a83dc8d9bec87247"
+  },
+  "unexecuted_deliverable": true,
+  "visual_qa": {
+    "comparison_checkpoints": "PASS: epoch100 plus independent global E4 selections, three variants, readable labels and legends",
+    "comparison_curves": "PASS: full100 shared range, appropriate ticks, clearly labelled zoomed y axis",
+    "synthetic_figures_delivered": false
+  }
+}

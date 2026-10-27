@@ -1,0 +1,17 @@
+{
+  "code_cells_executed": 14,
+  "figures_created": 10,
+  "inputs_unchanged": true,
+  "run_last": 5,
+  "run_best": 5,
+  "issues": [
+    {
+      "Niveau": "RUNWAARSCHUWING",
+      "Melding": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)"
+    },
+    {
+      "Niveau": "RUNWAARSCHUWING",
+      "Melding": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)"
+    }
+  ]
+}

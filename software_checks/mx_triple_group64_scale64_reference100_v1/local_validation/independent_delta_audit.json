@@ -1,0 +1,331 @@
+{
+  "status": "PASS",
+  "scope": "Independent static review only; no model, training, notebook or dataset execution.",
+  "checks_count": 60,
+  "failed_checks": [],
+  "checks": [
+    {
+      "name": "unchanged_successful_pilot_core_trunc_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_mx_format.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_joint_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_joint_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_mx_adapter.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_resume_core.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_smoke_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_svhn_support.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_group_config.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_group_costs.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_test_mx.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_test_e4m3.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_test_group_size.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_test_joint.py",
+      "passed": true
+    },
+    {
+      "name": "unchanged_successful_pilot_core_test_trunc_training.py",
+      "passed": true
+    },
+    {
+      "name": "main_training_loop_AST_identical_to_proven_B16_full100",
+      "passed": true
+    },
+    {
+      "name": "immutability_checks_AST_identical_to_B16_full100",
+      "passed": true
+    },
+    {
+      "name": "whole_runner_AST_matches_B16_full100_after_only_documented_differences",
+      "passed": true,
+      "detail": "Normalized B64 experiment text, BLOCK_SIZE guard 64\u219216, and extra group16_reference list entry; no scale/bit operations normalized."
+    },
+    {
+      "name": "protocol_changes_only_stage_and_reporting",
+      "passed": true
+    },
+    {
+      "name": "full100_config_endpoint",
+      "passed": true
+    },
+    {
+      "name": "original_LR_schedule",
+      "passed": true
+    },
+    {
+      "name": "fresh_initialization_unchanged",
+      "passed": true
+    },
+    {
+      "name": "A32_FP32_and_fixed64",
+      "passed": true
+    },
+    {
+      "name": "canonical_dataset_names_retained",
+      "passed": true
+    },
+    {
+      "name": "only_resume_takes_checkpoint",
+      "passed": true
+    },
+    {
+      "name": "restore_requires_current_full_contract",
+      "passed": true
+    },
+    {
+      "name": "completed100_checkpoint_rejected",
+      "passed": true
+    },
+    {
+      "name": "default_and_guard_stop100",
+      "passed": true
+    },
+    {
+      "name": "own_full100_report_identity",
+      "passed": true
+    },
+    {
+      "name": "own_full100_completion_identity",
+      "passed": true
+    },
+    {
+      "name": "own_full100_result_root",
+      "passed": true
+    },
+    {
+      "name": "full_completion_only_at100",
+      "passed": true
+    },
+    {
+      "name": "measured100_only_when_completed",
+      "passed": true
+    },
+    {
+      "name": "B64_geometry_retained",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference_hashes_match",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference_full100_comparison",
+      "passed": true
+    },
+    {
+      "name": "scale64_reference_historical_raw_data_unchanged",
+      "passed": true
+    },
+    {
+      "name": "group16_reference_hashes_match",
+      "passed": true
+    },
+    {
+      "name": "group16_reference_full100_comparison",
+      "passed": true
+    },
+    {
+      "name": "group16_reference_historical_raw_data_unchanged",
+      "passed": true
+    },
+    {
+      "name": "pilot_reference_hashes_match",
+      "passed": true
+    },
+    {
+      "name": "actual_pilot_reference_unchanged",
+      "passed": true
+    },
+    {
+      "name": "actual_pilot_reference_correct_input_sha",
+      "passed": true
+    },
+    {
+      "name": "notebook_unexecuted",
+      "passed": true
+    },
+    {
+      "name": "notebook_correct_full100_metadata",
+      "passed": true
+    },
+    {
+      "name": "notebook_selection_validation_unchanged",
+      "passed": true
+    },
+    {
+      "name": "notebook_current_complete_requires_all100",
+      "passed": true
+    },
+    {
+      "name": "notebook_reference_requires_full_history",
+      "passed": true
+    },
+    {
+      "name": "notebook_reference_global_best_verified",
+      "passed": true
+    },
+    {
+      "name": "notebook_full_endpoint_guard",
+      "passed": true
+    },
+    {
+      "name": "notebook_partial_common_range",
+      "passed": true
+    },
+    {
+      "name": "notebook_all_modes_from_selected_epoch",
+      "passed": true
+    },
+    {
+      "name": "notebook_no_first5_filter",
+      "passed": true
+    },
+    {
+      "name": "notebook_no_torch_or_training_import",
+      "passed": true
+    },
+    {
+      "name": "notebook_costs_still_B64",
+      "passed": true
+    },
+    {
+      "name": "notebook_code_cells_parse",
+      "passed": true
+    }
+  ],
+  "protocol_differences_vs_successful_B64_pilot": {
+    "pilot_stop_epoch": {
+      "pilot": "5",
+      "full100": null
+    },
+    "purpose": {
+      "pilot": "'five complete train-only epochs: group size64, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1'",
+      "full100": "'100 complete train-only epochs: group size64, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1'"
+    },
+    "reference_end_epoch": {
+      "pilot": null,
+      "full100": "100"
+    },
+    "reporting_policy": {
+      "pilot": "'all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch'",
+      "full100": "'all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch'"
+    },
+    "schema": {
+      "pilot": "'mx-triple-group64-scale64-pilot5-protocol-v1'",
+      "full100": "'mx-triple-group64-scale64-reference100-protocol-v1'"
+    }
+  },
+  "unchanged_core_files": [
+    "trunc_support.py",
+    "trunc_adapter.py",
+    "mx_e4m3.py",
+    "mx_format.py",
+    "mx_e2m1.py",
+    "joint_adapter.py",
+    "joint_support.py",
+    "mx_adapter.py",
+    "posthoc_truncation.py",
+    "resume_core.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "group_config.py",
+    "group_costs.py",
+    "test_mx.py",
+    "test_e4m3.py",
+    "test_group_size.py",
+    "test_joint.py",
+    "test_trunc_training.py"
+  ],
+  "B64_geometry": {
+    "real_weights": 129472,
+    "blocks": 2160,
+    "padded_slots": 8768,
+    "payload_bytes": {
+      "8": 140400,
+      "6": 105840,
+      "4": 71280
+    }
+  },
+  "production_sha256": {
+    "trunc_support.py": "8355748c35f9cbbd1ea1abd575a6f3c7974849946dc5bca1b9fdf77f0be21c04",
+    "trunc_adapter.py": "5890961377c2866613dca3a2c51299e59c38a5d4e393e06718498f94816f1815",
+    "mx_e4m3.py": "1358cca59c285f9d8fb33a713af6a2d43f8be3a0d2856e9fe4b735b16bf257a4",
+    "mx_format.py": "67971765aa88aaf622a758deb44a2d2206df0309d962e0b2fd8281637415dd50",
+    "mx_e2m1.py": "9741fdc411d1bcabbda32c3bda88bfa8eae85885b231d0120f7177e7abadfbda",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "posthoc_truncation.py": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "group_config.py": "bd152245fc60d6cdc3050fe95f033da0c924b0a0cfc4567599a7117b93f3b30f",
+    "group_costs.py": "79c6d8dbc5837e995f94c16a19cc013737755a068b334f59fa83369c66b567ef",
+    "test_mx.py": "3ad7ef16524da56974d3276323d6d96ac380125ef31decc6137dbc17c41e7428",
+    "test_e4m3.py": "1b9af507820642dd6d002747a7d611af9beab960e2289853a135eb53325ada4b",
+    "test_group_size.py": "7d26e9ac34378b4b794f5767d85eca40d44d2b3cce8495efccc2c160506888ff",
+    "test_joint.py": "ae22dda2624336829dec56ff38043274c051baaa87b15b119d602123cc6d1f26",
+    "test_trunc_training.py": "b92d05ae5bb48ca837e347e278620a87d66e3963bde77223aad9a77f8b7cb4b5",
+    "run_train.py": "1d5a44ff731435818e3634a37e8f3a7a730c2a9ce7351d3988c564c1e1f9b4c8",
+    "notebook_support.py": "f652668b838691e3c7c7854b4f5c47d6c0e45330803dc4b4a09a6f1aa5362eff",
+    "MX_triple_group64_scale64_reference100_resultaten.ipynb": "fa519e0d54643b075064fc995ad8ec19fef26d3e677b7e88a83dc8d9bec87247"
+  },
+  "known_limits": [
+    "Root documentation and package manifests are assembled separately.",
+    "Runtime checks belong to the runner agent; this review adds no new training.",
+    "The conditional per-mode selection statements are statically reviewed; execution fixtures belong to the notebook validation."
+  ]
+}
