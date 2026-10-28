@@ -1,0 +1,43 @@
+test_batch_and_nonlinear_rounding (test_activation_model.ActivationTrafficTests.test_batch_and_nonlinear_rounding) ... ok
+test_full_line_rounding (test_activation_model.ActivationTrafficTests.test_full_line_rounding) ... ok
+test_independent_logical_totals (test_activation_model.ActivationTrafficTests.test_independent_logical_totals) ... ok
+test_invalid_inputs (test_activation_model.ActivationTrafficTests.test_invalid_inputs) ... ok
+test_real_input_and_unquantized_last_boundary (test_activation_model.ActivationTrafficTests.test_real_input_and_unquantized_last_boundary) ... ok
+test_accuracy_is_historical_context_not_new_measurement (test_experiment.ExperimentTests.test_accuracy_is_historical_context_not_new_measurement) ... ok
+test_activation_stream_independent_of_weight_cache_and_preload (test_experiment.ExperimentTests.test_activation_stream_independent_of_weight_cache_and_preload) ... ok
+test_cumulative_final_equals_total_including_prefetch (test_experiment.ExperimentTests.test_cumulative_final_equals_total_including_prefetch) ... ok
+test_fit_cache_prefetch_reads_once_then_zero_inference_reads (test_experiment.ExperimentTests.test_fit_cache_prefetch_reads_once_then_zero_inference_reads) ... ok
+test_initial_continuation_and_category_accounting (test_experiment.ExperimentTests.test_initial_continuation_and_category_accounting) ... ok
+test_no_cache_is_sum_of_independent_cold_mode_loads (test_experiment.ExperimentTests.test_no_cache_is_sum_of_independent_cold_mode_loads) ... ok
+test_six_models_nine_layouts_eighteen_primary_mode_views (test_experiment.ExperimentTests.test_six_models_nine_layouts_eighteen_primary_mode_views) ... ok
+test_source_loading_and_selected_payload_are_not_conflated (test_experiment.ExperimentTests.test_source_loading_and_selected_payload_are_not_conflated) ... ok
+test_all_mode_payload_bn_and_static_layers (test_model_layouts.LayoutTests.test_all_mode_payload_bn_and_static_layers) ... ok
+test_full_source_has_no_selective_read_saving (test_model_layouts.LayoutTests.test_full_source_has_no_selective_read_saving) ... ok
+test_github_shared_scale_and_bn (test_model_layouts.LayoutTests.test_github_shared_scale_and_bn) ... ok
+test_known_padding_and_counts (test_model_layouts.LayoutTests.test_known_padding_and_counts) ... ok
+test_same_cold_low_payload_not_automatic_truncation_gain (test_model_layouts.LayoutTests.test_same_cold_low_payload_not_automatic_truncation_gain) ... ok
+test_universal_code_mapping_and_byte_packing (test_model_layouts.LayoutTests.test_universal_code_mapping_and_byte_packing) ... ok
+test_changed_export_is_rejected (test_source_catalog.SourceCatalogTests.test_changed_export_is_rejected) ... ok
+test_epoch100_original_checkpoint_fallback (test_source_catalog.SourceCatalogTests.test_epoch100_original_checkpoint_fallback) ... ok
+test_metadata_only_is_labelled (test_source_catalog.SourceCatalogTests.test_metadata_only_is_labelled) ... ok
+test_missing_export_is_rejected (test_source_catalog.SourceCatalogTests.test_missing_export_is_rejected) ... ok
+test_pilot_is_rejected (test_source_catalog.SourceCatalogTests.test_pilot_is_rejected) ... ok
+test_relocated_run_override (test_source_catalog.SourceCatalogTests.test_relocated_run_override) ... ok
+test_synthetic_report_is_rejected (test_source_catalog.SourceCatalogTests.test_synthetic_report_is_rejected) ... ok
+test_unknown_override_key_is_rejected (test_source_catalog.SourceCatalogTests.test_unknown_override_key_is_rejected) ... ok
+test_valid_exact_sources (test_source_catalog.SourceCatalogTests.test_valid_exact_sources) ... ok
+test_wrong_group_size_is_rejected (test_source_catalog.SourceCatalogTests.test_wrong_group_size_is_rejected) ... ok
+test_large_cache_reuses_shared_source (test_traffic_model.TrafficModelTests.test_large_cache_reuses_shared_source) ... ok
+test_line_crossing_and_separate_requests (test_traffic_model.TrafficModelTests.test_line_crossing_and_separate_requests) ... ok
+test_preload_separate_accounting_and_finite_capacity (test_traffic_model.TrafficModelTests.test_preload_separate_accounting_and_finite_capacity) ... ok
+test_reject_overlapping_regions_and_out_of_range_read (test_traffic_model.TrafficModelTests.test_reject_overlapping_regions_and_out_of_range_read) ... ok
+test_scenarios_and_categories (test_traffic_model.TrafficModelTests.test_scenarios_and_categories) ... ok
+test_selective_sharing_against_separate_modes (test_traffic_model.TrafficModelTests.test_selective_sharing_against_separate_modes) ... ok
+test_separate_regions_on_same_line (test_traffic_model.TrafficModelTests.test_separate_regions_on_same_line) ... ok
+test_start_mode_preload (test_traffic_model.TrafficModelTests.test_start_mode_preload) ... ok
+test_threshold_lru_stream_thrashing (test_traffic_model.TrafficModelTests.test_threshold_lru_stream_thrashing) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.848s
+
+OK

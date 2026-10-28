@@ -1,0 +1,10 @@
+﻿model_id,model_label,variant,primary_variant,group_size,codes,scales,aux,total_bytes,n_modes,modes,padded_slots,mx_scale_groups,inactive_checkpoint_state_excluded
+github5,GitHub 5 precisies,direct,True,,760648,24,19048,779720,5,"[32, 8, 4, 2, 1]",0,0,True
+dual_direct,2 MX direct · B32,direct,True,32,163200,4080,12904,180184,2,"[6, 4]",1088,4080,True
+dual_mantissa,2 MX mantissatruncatie · B32,selective,True,32,97920,4080,12904,114904,2,"[6, 4]",1088,4080,True
+dual_mantissa,2 MX mantissatruncatie · B32,full_source,False,32,97920,4080,12904,114904,2,"[6, 4]",1088,4080,True
+triple_direct,3 MX direct · B32,direct,True,32,293760,8160,14952,316872,3,"[8, 6, 4]",1088,4080,True
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,130560,4080,14952,149592,3,"[8, 6, 4]",1088,4080,True
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,130560,4080,14952,149592,3,"[8, 6, 4]",1088,4080,True
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,138240,2160,14952,155352,3,"[8, 6, 4]",8768,2160,True
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,138240,2160,14952,155352,3,"[8, 6, 4]",8768,2160,True

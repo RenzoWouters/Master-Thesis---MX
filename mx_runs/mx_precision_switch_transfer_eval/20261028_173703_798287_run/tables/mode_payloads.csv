@@ -1,0 +1,27 @@
+﻿model_id,model_label,variant,primary_variant,group_size,mode,activation_bits,codes,scales,aux,total_bytes
+github5,GitHub 5 precisies,direct,True,,32,32,517888,0,10856,528744
+github5,GitHub 5 precisies,direct,True,,8,8,129472,24,10856,140352
+github5,GitHub 5 precisies,direct,True,,4,4,64736,24,10856,75616
+github5,GitHub 5 precisies,direct,True,,2,2,32368,24,10856,43248
+github5,GitHub 5 precisies,direct,True,,1,1,16184,24,10856,27064
+dual_direct,2 MX direct · B32,direct,True,32,6,32,97920,4080,10856,112856
+dual_direct,2 MX direct · B32,direct,True,32,4,32,65280,4080,10856,80216
+dual_mantissa,2 MX mantissatruncatie · B32,selective,True,32,6,32,97920,4080,10856,112856
+dual_mantissa,2 MX mantissatruncatie · B32,selective,True,32,4,32,65280,4080,10856,80216
+dual_mantissa,2 MX mantissatruncatie · B32,full_source,False,32,6,32,97920,4080,10856,112856
+dual_mantissa,2 MX mantissatruncatie · B32,full_source,False,32,4,32,97920,4080,10856,112856
+triple_direct,3 MX direct · B32,direct,True,32,8,32,130560,4080,10856,145496
+triple_direct,3 MX direct · B32,direct,True,32,6,32,97920,4080,10856,112856
+triple_direct,3 MX direct · B32,direct,True,32,4,32,65280,4080,10856,80216
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,8,32,130560,4080,10856,145496
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,6,32,97920,4080,10856,112856
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,4,32,65280,4080,10856,80216
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,8,32,130560,4080,10856,145496
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,6,32,130560,4080,10856,145496
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,4,32,130560,4080,10856,145496
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,8,32,138240,2160,10856,151256
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,6,32,103680,2160,10856,116696
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,4,32,69120,2160,10856,82136
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,8,32,138240,2160,10856,151256
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,6,32,138240,2160,10856,151256
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,4,32,138240,2160,10856,151256

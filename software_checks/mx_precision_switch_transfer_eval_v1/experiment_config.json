@@ -1,0 +1,22 @@
+{
+  "schema": "mx_precision_switch_transfer_config_v1",
+  "n_inferences": 64,
+  "dwell": 8,
+  "batch_size": 1,
+  "main_line_bytes": 64,
+  "cache_kib": [0, 16, 64, 128, 256, 1024],
+  "scenarios": ["alternating_extremes", "dwell_extremes", "cycle_all"],
+  "preload_policies": ["none", "all_regions"],
+  "sensitivity_line_bytes": [16, 32],
+  "sensitivity_cache_kib": 64,
+  "checkpoint": "epoch100",
+  "seed": 0,
+  "notes": [
+    "Alle resultaten zijn softwarematig gemodelleerde bytes/transacties; geen GPU- of hardwaremeting.",
+    "none = laden op aanvraag; de eerste inference vormt de afzonderlijk gerapporteerde initiële laadfase.",
+    "all_regions = alle operationele modidata vooraf lezen door dezelfde parametercache; te kleine caches kunnen data weer verdringen.",
+    "Gewichtcache en activatiebuffers zijn gescheiden; activaties verdringen hier geen gewichten.",
+    "cycle_all is aanvullend: verschillende aantallen modi geven verschillende precisiemengsels.",
+    "De eerste en laatste FP32-laag plus actieve BN-parameters worden meegeteld; trainingsmasters en Adam zijn geen inferencepayload."
+  ]
+}

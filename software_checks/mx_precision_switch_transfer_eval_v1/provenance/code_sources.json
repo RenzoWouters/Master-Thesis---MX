@@ -1,0 +1,50 @@
+[
+  {
+    "path": "provenance/svhn_quan.py",
+    "source_path": "work/code_inspection_20261023/anyprecision_upstream/Any-Precision-DNNs-master/models/svhn_quan.py",
+    "sha256": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/quan_ops.py",
+    "source_path": "work/code_inspection_20261023/anyprecision_upstream/Any-Precision-DNNs-master/models/quan_ops.py",
+    "sha256": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/dataset_data.py",
+    "source_path": "work/code_inspection_20261023/anyprecision_upstream/Any-Precision-DNNs-master/datasets/data.py",
+    "sha256": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/audited_mx_format.py",
+    "source_path": "output/mx_triple_group64_scale64_pilot5_v1/mx_format.py",
+    "sha256": "67971765aa88aaf622a758deb44a2d2206df0309d962e0b2fd8281637415dd50",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/audited_mx_e2m1.py",
+    "source_path": "output/mx_triple_group64_scale64_pilot5_v1/mx_e2m1.py",
+    "sha256": "9741fdc411d1bcabbda32c3bda88bfa8eae85885b231d0120f7177e7abadfbda",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/audited_mx_e4m3.py",
+    "source_path": "output/mx_triple_group64_scale64_pilot5_v1/mx_e4m3.py",
+    "sha256": "1358cca59c285f9d8fb33a713af6a2d43f8be3a0d2856e9fe4b735b16bf257a4",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/audited_posthoc_truncation.py",
+    "source_path": "output/mx_triple_group64_scale64_pilot5_v1/posthoc_truncation.py",
+    "sha256": "6bd0b9cef3495ec94805facd65290a3cddee41a3a336b9c1b842b0751cd48c0e",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  },
+  {
+    "path": "provenance/audited_trunc_adapter.py",
+    "source_path": "output/mx_triple_group64_scale64_pilot5_v1/trunc_adapter.py",
+    "sha256": "5890961377c2866613dca3a2c51299e59c38a5d4e393e06718498f94816f1815",
+    "purpose": "Read-only source audit; never imported by this experiment."
+  }
+]

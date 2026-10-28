@@ -1,0 +1,9 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_precision_switch_transfer_eval\20261028_173650_440367_check
+GEHEUGENTRANSFERPROEF: initiële loading + precisiewissels; zes bestaande modellen; CPU; geen training.
+ZELFTEST PASS: 38 tests.
+BRONCONTROLE: bestaande epoch-100-checkpoints/exports zoeken en SHA-256 controleren.
+BRONCONTROLE PASS: zes bestaande volledige trainingen bevestigd.
+CHECK KLAAR. Er is geen training of netwerk-inference uitgevoerd.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_precision_switch_transfer_eval\20261028_173650_440367_check\run_report.json
+Feedback: C:\Users\renzo\master-thesis-mx\mx_runs\mx_precision_switch_transfer_eval\20261028_173650_440367_check\feedback_bundle.zip

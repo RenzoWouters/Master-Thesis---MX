@@ -1,0 +1,8 @@
+{
+  "github5": "reference_runs/anyprecision_svhn_trainonly100/20261016_165710_766662_run",
+  "dual_direct": "mx_runs/mx_weights_dual_reference100/20261019_192538_709626_joint_run",
+  "dual_mantissa": "mx_runs/mx_truncation_aware_reference100/20261021_153559_999222_joint_run",
+  "triple_direct": "mx_runs/mx_weights_triple_direct_reference100/20261023_151331_732669_joint_run",
+  "triple_scale64_b32": "mx_runs/mx_triple_scale64_reference100/20261024_151210_665535_joint_run",
+  "triple_scale64_b64": "mx_runs/mx_triple_group64_scale64_reference100/20261027_172434_760515_joint_run"
+}

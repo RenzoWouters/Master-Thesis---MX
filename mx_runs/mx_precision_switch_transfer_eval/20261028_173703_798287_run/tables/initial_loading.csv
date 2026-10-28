@@ -1,0 +1,36 @@
+﻿model_id,model_label,variant,primary_variant,group_size,mode,line_bytes,load_kind,requested_bytes,read_bytes,codes_payload_bytes,codes_read_bytes,scales_payload_bytes,scales_read_bytes,aux_payload_bytes,aux_read_bytes
+github5,GitHub 5 precisies,direct,True,,32,64,chosen_mode_cold,528744,528768,517888,517888,0,0,10856,10880
+github5,GitHub 5 precisies,direct,True,,8,64,chosen_mode_cold,140352,140736,129472,129472,24,384,10856,10880
+github5,GitHub 5 precisies,direct,True,,4,64,chosen_mode_cold,75616,76032,64736,64768,24,384,10856,10880
+github5,GitHub 5 precisies,direct,True,,2,64,chosen_mode_cold,43248,43648,32368,32384,24,384,10856,10880
+github5,GitHub 5 precisies,direct,True,,1,64,chosen_mode_cold,27064,27520,16184,16256,24,384,10856,10880
+github5,GitHub 5 precisies,direct,True,,ALL,64,all_supported_modes,779720,780224,760648,760768,24,384,19048,19072
+dual_direct,2 MX direct · B32,direct,True,32,6,64,chosen_mode_cold,112856,113024,97920,97920,4080,4224,10856,10880
+dual_direct,2 MX direct · B32,direct,True,32,4,64,chosen_mode_cold,80216,80384,65280,65280,4080,4224,10856,10880
+dual_direct,2 MX direct · B32,direct,True,32,ALL,64,all_supported_modes,180184,180352,163200,163200,4080,4224,12904,12928
+dual_mantissa,2 MX mantissatruncatie · B32,selective,True,32,6,64,chosen_mode_cold,112856,113024,97920,97920,4080,4224,10856,10880
+dual_mantissa,2 MX mantissatruncatie · B32,selective,True,32,4,64,chosen_mode_cold,80216,80384,65280,65280,4080,4224,10856,10880
+dual_mantissa,2 MX mantissatruncatie · B32,selective,True,32,ALL,64,all_supported_modes,114904,115072,97920,97920,4080,4224,12904,12928
+dual_mantissa,2 MX mantissatruncatie · B32,full_source,False,32,6,64,chosen_mode_cold,112856,113024,97920,97920,4080,4224,10856,10880
+dual_mantissa,2 MX mantissatruncatie · B32,full_source,False,32,4,64,chosen_mode_cold,112856,113024,97920,97920,4080,4224,10856,10880
+dual_mantissa,2 MX mantissatruncatie · B32,full_source,False,32,ALL,64,all_supported_modes,114904,115072,97920,97920,4080,4224,12904,12928
+triple_direct,3 MX direct · B32,direct,True,32,8,64,chosen_mode_cold,145496,145664,130560,130560,4080,4224,10856,10880
+triple_direct,3 MX direct · B32,direct,True,32,6,64,chosen_mode_cold,112856,113024,97920,97920,4080,4224,10856,10880
+triple_direct,3 MX direct · B32,direct,True,32,4,64,chosen_mode_cold,80216,80384,65280,65280,4080,4224,10856,10880
+triple_direct,3 MX direct · B32,direct,True,32,ALL,64,all_supported_modes,316872,317184,293760,293760,8160,8448,14952,14976
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,8,64,chosen_mode_cold,145496,145664,130560,130560,4080,4224,10856,10880
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,6,64,chosen_mode_cold,112856,113024,97920,97920,4080,4224,10856,10880
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,4,64,chosen_mode_cold,80216,80384,65280,65280,4080,4224,10856,10880
+triple_scale64_b32,3 MX truncatie ×64 · B32,selective,True,32,ALL,64,all_supported_modes,149592,149760,130560,130560,4080,4224,14952,14976
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,8,64,chosen_mode_cold,145496,145664,130560,130560,4080,4224,10856,10880
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,6,64,chosen_mode_cold,145496,145664,130560,130560,4080,4224,10856,10880
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,4,64,chosen_mode_cold,145496,145664,130560,130560,4080,4224,10856,10880
+triple_scale64_b32,3 MX truncatie ×64 · B32,full_source,False,32,ALL,64,all_supported_modes,149592,149760,130560,130560,4080,4224,14952,14976
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,8,64,chosen_mode_cold,151256,151424,138240,138240,2160,2304,10856,10880
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,6,64,chosen_mode_cold,116696,116864,103680,103680,2160,2304,10856,10880
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,4,64,chosen_mode_cold,82136,82304,69120,69120,2160,2304,10856,10880
+triple_scale64_b64,3 MX truncatie ×64 · B64,selective,True,64,ALL,64,all_supported_modes,155352,155520,138240,138240,2160,2304,14952,14976
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,8,64,chosen_mode_cold,151256,151424,138240,138240,2160,2304,10856,10880
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,6,64,chosen_mode_cold,151256,151424,138240,138240,2160,2304,10856,10880
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,4,64,chosen_mode_cold,151256,151424,138240,138240,2160,2304,10856,10880
+triple_scale64_b64,3 MX truncatie ×64 · B64,full_source,False,64,ALL,64,all_supported_modes,155352,155520,138240,138240,2160,2304,14952,14976

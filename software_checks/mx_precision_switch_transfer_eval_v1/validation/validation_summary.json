@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "test_count": 38,
+  "test_failures": 0,
+  "test_errors": 0,
+  "simulation_combinations": 360,
+  "simulation_seconds": 11.33773101999941,
+  "simulation_basis": "REFERENCE_ONLY: fixed dense model geometry and pinned historical metadata; not measured target hardware",
+  "actual_windows_checkpoint_files_verified_here": false,
+  "notebook_code_cells_executed": 14,
+  "notebook_figures_generated": 8,
+  "notebook_validation_method": "All actual notebook code cells; display-only IPython shim in non-Jupyter validation runtime",
+  "notebook_visual_review": "PASS; eight figures inspected, legend overlaps corrected",
+  "delivered_notebook_outputs": "empty",
+  "original_results_modified": false,
+  "training_started": false,
+  "scope": "Six completed models, 18 primary precision views, 9 layouts including full-source controls; initial loads and switches separated."
+}

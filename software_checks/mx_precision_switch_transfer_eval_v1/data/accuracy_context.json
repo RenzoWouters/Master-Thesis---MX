@@ -1,0 +1,170 @@
+[
+  {
+    "model_id": "github5",
+    "run_id": "20261016_165710_766662_run",
+    "epoch100": [
+      {
+        "format": "W32/A32",
+        "weight_bits": 32,
+        "top1_percent": 94.7871849983839,
+        "correct1": 24675,
+        "n": 26032
+      },
+      {
+        "format": "W8/A8",
+        "weight_bits": 8,
+        "top1_percent": 94.92163491087892,
+        "correct1": 24710,
+        "n": 26032
+      },
+      {
+        "format": "W4/A4",
+        "weight_bits": 4,
+        "top1_percent": 94.85248924400737,
+        "correct1": 24692,
+        "n": 26032
+      },
+      {
+        "format": "W2/A2",
+        "weight_bits": 2,
+        "top1_percent": 93.66164720344192,
+        "correct1": 24382,
+        "n": 26032
+      },
+      {
+        "format": "W1/A1",
+        "weight_bits": 1,
+        "top1_percent": 86.3091579547453,
+        "correct1": 22468,
+        "n": 26032
+      }
+    ],
+    "origin": "Previously audited completed training; no new accuracy evaluation."
+  },
+  {
+    "model_id": "dual_direct",
+    "run_id": "20261019_192538_709626_joint_run",
+    "epoch100": [
+      {
+        "format": "E2M3",
+        "weight_bits": 6,
+        "top1_percent": 95.03303625368237,
+        "correct1": 24739,
+        "n": 26032
+      },
+      {
+        "format": "E2M1",
+        "weight_bits": 4,
+        "top1_percent": 95.02535340180775,
+        "correct1": 24737,
+        "n": 26032
+      }
+    ],
+    "origin": "Previously audited completed training; no new accuracy evaluation."
+  },
+  {
+    "model_id": "dual_mantissa",
+    "run_id": "20261021_153559_999222_joint_run",
+    "epoch100": [
+      {
+        "format": "E2M3",
+        "weight_bits": 6,
+        "top1_percent": 94.9638905961893,
+        "correct1": 24721,
+        "n": 26032
+      },
+      {
+        "format": "E2M1",
+        "weight_bits": 4,
+        "top1_percent": 94.94084204056546,
+        "correct1": 24715,
+        "n": 26032
+      }
+    ],
+    "origin": "Previously audited completed training; no new accuracy evaluation."
+  },
+  {
+    "model_id": "triple_direct",
+    "run_id": "20261023_151331_732669_joint_run",
+    "epoch100": [
+      {
+        "format": "E4M3",
+        "weight_bits": 8,
+        "top1_percent": 94.86017208650351,
+        "correct1": 24694,
+        "n": 26032
+      },
+      {
+        "format": "E2M3",
+        "weight_bits": 6,
+        "top1_percent": 95.00614627212121,
+        "correct1": 24732,
+        "n": 26032
+      },
+      {
+        "format": "E2M1",
+        "weight_bits": 4,
+        "top1_percent": 95.0714505177447,
+        "correct1": 24749,
+        "n": 26032
+      }
+    ],
+    "origin": "Previously audited completed training; no new accuracy evaluation."
+  },
+  {
+    "model_id": "triple_scale64_b32",
+    "run_id": "20261024_151210_665535_joint_run",
+    "epoch100": [
+      {
+        "format": "E4M3",
+        "weight_bits": 8,
+        "top1_percent": 94.9293177580643,
+        "correct1": 24712,
+        "n": 26032
+      },
+      {
+        "format": "E2M3",
+        "weight_bits": 6,
+        "top1_percent": 94.8985863458766,
+        "correct1": 24704,
+        "n": 26032
+      },
+      {
+        "format": "E2M1",
+        "weight_bits": 4,
+        "top1_percent": 94.79102641963196,
+        "correct1": 24676,
+        "n": 26032
+      }
+    ],
+    "origin": "Previously audited completed training; no new accuracy evaluation."
+  },
+  {
+    "model_id": "triple_scale64_b64",
+    "run_id": "20261027_172434_760515_joint_run",
+    "epoch100": [
+      {
+        "format": "E4M3",
+        "weight_bits": 8,
+        "top1_percent": 94.69114934526196,
+        "correct1": 24650,
+        "n": 26032
+      },
+      {
+        "format": "E2M3",
+        "weight_bits": 6,
+        "top1_percent": 94.54517515964426,
+        "correct1": 24612,
+        "n": 26032
+      },
+      {
+        "format": "E2M1",
+        "weight_bits": 4,
+        "top1_percent": 94.51060233089773,
+        "correct1": 24603,
+        "n": 26032
+      }
+    ],
+    "origin": "Previously audited completed training; no new accuracy evaluation."
+  }
+]

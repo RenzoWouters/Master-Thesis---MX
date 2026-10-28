@@ -1,0 +1,15 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_precision_switch_transfer_eval\20261028_173703_798287_run
+GEHEUGENTRANSFERPROEF: initiële loading + precisiewissels; zes bestaande modellen; CPU; geen training.
+ZELFTEST PASS: 38 tests.
+BRONCONTROLE: bestaande epoch-100-checkpoints/exports zoeken en SHA-256 controleren.
+BRONCONTROLE PASS: zes bestaande volledige trainingen bevestigd.
+MODELLERING: GitHub 5 precisies
+MODELLERING: 2 MX direct · B32
+MODELLERING: 2 MX mantissatruncatie · B32
+MODELLERING: 3 MX direct · B32
+MODELLERING: 3 MX truncatie ×64 · B32
+MODELLERING: 3 MX truncatie ×64 · B64
+SIMULATIE KLAAR: 360 combinaties in 6.91 s.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_precision_switch_transfer_eval\20261028_173703_798287_run\run_report.json
+Feedback: C:\Users\renzo\master-thesis-mx\mx_runs\mx_precision_switch_transfer_eval\20261028_173703_798287_run\feedback_bundle.zip
