@@ -1,0 +1,20 @@
+{
+  "schema": "svhn-trainonly100-completion-v1",
+  "synthetic_fixture_only": false,
+  "planned_epochs": 100,
+  "completed_epochs": 100,
+  "full_training_completed": true,
+  "optimizer_steps": 57300,
+  "expected_optimizer_steps_at_completion": 57300,
+  "all_epoch_precisions_complete": true,
+  "lr_schedule_verified": true,
+  "train_split": "train",
+  "extra_used": false,
+  "timing_complete": true,
+  "measured_completed_epoch_seconds": 3717.05783949999,
+  "measured_time_scope": "train + test + controls + checkpoint writes; excludes startup/final export",
+  "best_epoch_W32_A32": 54,
+  "last_epoch": 100,
+  "new_initialization_required_for_run": true,
+  "no_MX_or_stored_code_truncation": true
+}

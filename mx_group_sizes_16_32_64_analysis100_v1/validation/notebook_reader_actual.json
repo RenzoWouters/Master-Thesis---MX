@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "notebook": "/workspace/scratch/4619498905be/work/group64_full100_actual_20261027_180420/MX_triple_group64_scale64_reference100_resultaten.ipynb",
+  "notebook_sha256": "7269983364907e20f840664c323bf3aebe13e70b984aad0bb08f0da4d9f678a6",
+  "helper_sha256": "f652668b838691e3c7c7854b4f5c47d6c0e45330803dc4b4a09a6f1aa5362eff",
+  "executed_code_cells": 14,
+  "cells": [
+    {
+      "cell_index": 1,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 2,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 4,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 6,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 8,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 10,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 12,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 14,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 16,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 18,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 19,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 20,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 21,
+      "status": "PASS"
+    },
+    {
+      "cell_index": 23,
+      "status": "PASS"
+    }
+  ],
+  "parameter_overrides": {
+    "RUN_DIR": "/workspace/scratch/4619498905be/work/group64_full100_actual_20261027_180420",
+    "SAVE_FIGURES": false
+  },
+  "display_stub": "no-op IPython.display with no active shell",
+  "display_calls": 34,
+  "notebook_modified": false,
+  "executed_notebook_written": false,
+  "metrics_safe": true,
+  "selection_safe": true,
+  "prediction_safe": true,
+  "cost_report_verified": true,
+  "reference_complete": true,
+  "provenance_confirmed": true,
+  "synthetic": false,
+  "observed_last_epoch": 100,
+  "observed_best_epoch": 53,
+  "run_issues": [
+    {
+      "Niveau": "RUNWAARSCHUWING",
+      "Melding": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)"
+    },
+    {
+      "Niveau": "RUNWAARSCHUWING",
+      "Melding": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)"
+    }
+  ],
+  "analysis_error_count": 0,
+  "metrics_rows": 600,
+  "test_rows": 300,
+  "figures_created_by_notebook": [
+    "checkpoint_accuracy",
+    "group_comparison_curves",
+    "group_comparison_checkpoints",
+    "group_size_costs",
+    "quantization_diagnostics",
+    "accuracy_curves",
+    "objective_losses",
+    "prediction_diversity",
+    "timing",
+    "gpu_memory"
+  ],
+  "references": [
+    {
+      "group_size": 32,
+      "safe": true,
+      "compatible": true,
+      "synthetic": false,
+      "selected_epoch": 42,
+      "issues": [],
+      "metrics_rows": 600,
+      "test_rows": 300
+    },
+    {
+      "group_size": 16,
+      "safe": true,
+      "compatible": true,
+      "synthetic": false,
+      "selected_epoch": 53,
+      "issues": [],
+      "metrics_rows": 600,
+      "test_rows": 300
+    }
+  ],
+  "saved_existing_helper_figures": [
+    "/workspace/scratch/4619498905be/work/group64_full100_metric_audit/figures/group_comparison_curves.png",
+    "/workspace/scratch/4619498905be/work/group64_full100_metric_audit/figures/group_comparison_checkpoints.png"
+  ],
+  "compact_figure": "/workspace/scratch/4619498905be/work/group64_full100_metric_audit/figures/group_sizes_checkpoints_detail.png",
+  "input_file_count": 54,
+  "all_input_hashes_unchanged": true,
+  "seconds": 3.311055194999426
+}

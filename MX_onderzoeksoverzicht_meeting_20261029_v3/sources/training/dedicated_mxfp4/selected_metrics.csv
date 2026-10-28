@@ -1,0 +1,3 @@
+role,epoch,phase,mode,weight_format,activation_bits,upstream_selector,n,objective_type,objective_loss,top1_percent,top5_percent,correct1,correct5,count_top1_percent,lr
+best_active_test,97,test,mx,MXFP4_E2M1,32,32,26032,hard_cross_entropy,0.24462679476126886,94.90626920712968,99.3700061462815,24706,25868,94.90626920712968,1.0000000000000002e-06
+last_epoch,100,test,mx,MXFP4_E2M1,32,32,26032,hard_cross_entropy,0.24923457116857126,94.82175783650891,99.34311616472034,24684,25861,94.82175783650891,1.0000000000000002e-06

@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "review_scope": "Read-only independent review of plot helpers against unified scientific data and cost audit; no training run.",
+  "confirmed_coverage": [
+    "GitHub five precisions epoch100 plus selected checkpoint",
+    "MXFP6/MXFP4 dedicated, dual direct and dual mantissa",
+    "Dedicated three formats and eight triple training configurations",
+    "Posthoc versus training for MX casts, mantissa and exponent truncation",
+    "Scale controls and group-size comparisons",
+    "Logical single-mode storage, flexible multi-mode sources, FP32 training state, measured epoch times",
+    "Selected common checkpoint chosen by highest-precision score"
+  ],
+  "confirmed_scientific_distinctions": [
+    "GitHub activation precisions coupled to weight precision; all MX variants A32",
+    "Original training endpoint scores remain separate from later checkpoint reevaluations",
+    "Only within-checkpoint posthoc route pairs constitute same-weight comparisons",
+    "Freeze50 inherits first50 parent history and global best34 before freeze",
+    "Freeze50 still computes theta gradients and Adam moments with lr0",
+    "Model logical bytes remain distinct from exported container file sizes",
+    "All existing FP32/BN auxiliary state included for consistent current artifact accounting",
+    "Single mode storage distinct from flexible source supporting multiple modes"
+  ],
+  "visual_review": {
+    "02_twee_MX_epoch100": "PASS: values, labels, zoom axis explicit and no clipping",
+    "03_triple_epoch100": "PASS: nine rows including all requested triple variants; naive visible; no clipping",
+    "03_triple_epoch100_detail": "PASS: naive omission explicitly disclosed; all remaining scores visible",
+    "12_actieve_modelopslag": "PASS: all labels visible, components sum, auxiliary five-BN inclusion explained",
+    "14_flexibele_bronopslag": "PASS: separate dual/triple panels; direct stores separate codes while truncation shares source; all labels visible",
+    "15_FP32_trainingsstaat": "PASS: overhead/components displayed; freeze gradient/Adam limitation explicit",
+    "09_geleerde_schaalkeuzes": "PASS: fractions, repeated switches, freeze boundary and dynamic-source caveat correct; no clipping."
+  },
+  "open_issue": null,
+  "integration_requirement": "Notebook must inject DATA[costs] from storage audit because source unified/data.json excludes costs.",
+  "render_automation_note": "Out-of-canvas dummy matplotlib tick labels were not visible and are not true clipping defects; all tested scatter points were within plotted axes.",
+  "resolved_issue": "The scale-learning plot now uses choice_flips_during_epoch and was executed and visually checked successfully.",
+  "notebook_review": {
+    "path": "output/MX_onderzoeksoverzicht_meeting_20261029_v3/MX_onderzoeksoverzicht_meeting_20261029.ipynb",
+    "sha256": "514aa256fee143e869415f4d19169ab037c078176c89ffb2a334a53e9d187300",
+    "cells": 69,
+    "code_cells": 36,
+    "checks": [
+      {
+        "check": "Complete training rows and histories match audited unified data",
+        "passed": true
+      },
+      {
+        "check": "All posthoc records match audited unified data",
+        "passed": true
+      },
+      {
+        "check": "All embedded cost records match independent cost audit",
+        "passed": true
+      },
+      {
+        "check": "Embedded helper code matches current helper source",
+        "passed": true
+      },
+      {
+        "check": "No saved executed outputs",
+        "passed": true
+      },
+      {
+        "check": "No accidental tab escapes in Markdown equations",
+        "passed": true
+      },
+      {
+        "check": "Scale history key corrected and bounded scale plot execution completed",
+        "passed": true
+      },
+      {
+        "check": "Epoch100 and selected common checkpoints are separately shown",
+        "passed": true
+      },
+      {
+        "check": "Source scale remains dynamic and freeze theta grads/Adam retained explained",
+        "passed": true
+      },
+      {
+        "check": "Posthoc BN wording explicitly distinguishes W32-to-MX6 cast",
+        "passed": true
+      }
+    ],
+    "meta_difference_only": [
+      "notebook_revision added",
+      "previous_notebook_used added"
+    ],
+    "specific_verified_claims": [
+      "Every B32 test score exceeds B16 and B64 in each epoch76–100 for all three formats",
+      "Both focused learning-curve plots include every plotted point within their zoom ranges",
+      "Scale-choice percentage plot includes all fractions and allows 0% initial choices",
+      "All final source/test rows exactly preserve original or separately marked reevaluated accuracies"
+    ],
+    "minor_text_request_resolved": "Posthoc definition now states W32 BN is retained in initial W32-to-MXFP6 casting; later A/B/C comparisons retain the target precision bank."
+  },
+  "final_review_scope": "Required scientific comparisons, provenance distinctions and embedded data integrity audited. Both final presentation helper changes verified; actual exported triple-detail, flexible-source storage and scale-choice figures visually approved. Root performs complete notebook execution and remaining final checks.",
+  "historical_report_note": "plot_review.json records the initial 28/29 helper success before the scale history field was corrected; that blocker was subsequently resolved and its function executed successfully.",
+  "final_render_revision": {
+    "register": "Explicit display(fig), close(fig), return None prevents duplicated IPython result rendering.",
+    "table": "Title and dataframe are displayed only when SHOW_DETAIL_TABLES or force is true.",
+    "notebook_helper_matches_current_source": true,
+    "full_jupyter_execution": "Root reports all 36 code cells executed without errors; independent reviewer did not duplicate this full run.",
+    "final_export_visuals": [
+      {
+        "file": "output/MX_onderzoeksoverzicht_meeting_20261029_v3/figures/03b_triple_epoch100_detail.png",
+        "sha256": "2a7c5ea7cd6b5654a289e24fdbccdf99d622eac9b395996c3a092f6027dfb8e8",
+        "status": "PASS",
+        "notes": "Inspected actual final exported PNG: readable labels, correct scope and values, no overlaps or cut-off content."
+      },
+      {
+        "file": "output/MX_onderzoeksoverzicht_meeting_20261029_v3/figures/14_flexibele_bronopslag.png",
+        "sha256": "e12170e5d07138a54c30c50f0606b5d9a2eb63d6bf1097c727c41c599be7253d",
+        "status": "PASS",
+        "notes": "Inspected actual final exported PNG: readable labels, correct scope and values, no overlaps or cut-off content."
+      },
+      {
+        "file": "output/MX_onderzoeksoverzicht_meeting_20261029_v3/figures/09_geleerde_schaalkeuzes.png",
+        "sha256": "2a264bfed82e914ca128bb83aea4c3fa49372894ea3ff7fe60957c166bbbb31b",
+        "status": "PASS",
+        "notes": "Inspected actual final exported PNG: readable labels, correct scope and values, no overlaps or cut-off content."
+      }
+    ]
+  }
+}

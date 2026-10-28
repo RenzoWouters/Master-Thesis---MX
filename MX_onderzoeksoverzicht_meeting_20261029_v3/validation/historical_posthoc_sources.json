@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "original_bundle": "/workspace/scratch/4619498905be/work/meeting20261029_research/downloads/Master Thesis - Truncation-Ready Microscaling/feedback_bundle(20261020-153959).zip",
+      "sha256": "52b5d669258d6301087317759073e48a99b1451d6e14e72b3effb9d2996c193c",
+      "local_previous_analysis_sources": "/workspace/scratch/4619498905be/work/meeting20261029_research/posthoc_audit/old_meeting/bronnen/gap",
+      "matching_files": [
+        "layer_code_metrics.csv",
+        "paired_metrics.csv",
+        "metrics.csv",
+        "run.log",
+        "pip_freeze.txt",
+        "weight_pair_metrics.csv",
+        "dataset_manifest.json",
+        "run_report.json",
+        "pip_check.txt",
+        "historical_reproduction.csv",
+        "source_manifest.json",
+        "warnings.log",
+        "reference_inputs/checkpoint_selection.json",
+        "reference_inputs/run_report.json",
+        "reference_inputs/epoch_metrics.csv",
+        "reference_inputs/selected_metrics.csv"
+      ],
+      "matching_file_count": 16
+    },
+    {
+      "original_bundle": "/workspace/scratch/4619498905be/work/meeting20261029_research/downloads/Master Thesis - Truncation-Ready Microscaling/feedback_bundle(20261021-180819).zip",
+      "sha256": "628a8106e4413ed7eef118e20b128ca6feb67580fa4f6a972b52b040cc595934",
+      "local_previous_analysis_sources": "/workspace/scratch/4619498905be/work/meeting20261029_research/posthoc_audit/source_only/bronnen",
+      "matching_files": [
+        "paired_metrics.csv",
+        "metrics.csv",
+        "run.log",
+        "pip_freeze.txt",
+        "run_report.json",
+        "pip_check.txt",
+        "historical_reproduction.csv",
+        "worker_last/paired_metrics.csv",
+        "worker_last/metrics.csv",
+        "worker_last/layer_checks.csv",
+        "worker_last/per_image_outputs.npz",
+        "worker_last/worker.log",
+        "worker_last/dataset_manifest.json",
+        "worker_last/source_manifest.json",
+        "worker_last/compatibility.patch",
+        "worker_last/worker_report.json",
+        "reference_inputs/checkpoint_selection.json",
+        "reference_inputs/run_report.json",
+        "reference_inputs/selected_metrics.csv",
+        "worker_best/paired_metrics.csv",
+        "worker_best/metrics.csv",
+        "worker_best/layer_checks.csv",
+        "worker_best/per_image_outputs.npz",
+        "worker_best/worker.log",
+        "worker_best/dataset_manifest.json",
+        "worker_best/source_manifest.json",
+        "worker_best/compatibility.patch",
+        "worker_best/worker_report.json"
+      ],
+      "matching_file_count": 28
+    }
+  ]
+}

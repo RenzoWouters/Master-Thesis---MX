@@ -1,0 +1,18 @@
+{
+  "PROVENANCE.json": "d95a162afcdc2a0ad1d4360c213e956810761834fc12313ecc2db5c6dd70955f",
+  "README.md": "27d7f10a932f4a309739a076bb33f1ca28da320a52596ecdc9a623848116d929",
+  "figures/group_comparison_checkpoints.png": "6a8bbf07f403e39a91887f6c950de36667644991536f98b38de6f2fc09adc755",
+  "figures/group_comparison_curves.png": "50a61edf36cd392278eda8c9b06c6c4a1af364d005749d64b5d9b7914931db6c",
+  "figures/group_sizes_checkpoints_detail.png": "b3f05b52c3b89193a45408dbe1e420efba4848f94eea6c37425120e7e28a256a",
+  "sources/feedback_B64_reference100_original.zip": "ead1f28e75810021579bd303f6a695c17b76bd8389b3881538b9be6a08b198f0",
+  "tables/checkpoint_comparison.csv": "2a3e9b3054918b8e50a9b466a5e7775d6ae7c504dab53eee38f257084ceb6b51",
+  "tables/independent_group_costs.csv": "725c285bd8293ab2a575f553778d5801ea2357cf95bf61092f7475842cfc8779",
+  "tables/late_window_summary.csv": "d6707cfb06dfe6ff04dc2b53bdedaa96e0752e31f77df3b15b4904983c9e03f5",
+  "tables/timing_comparison.csv": "9266a8d0d76550f84615dd7b3df9f19232373b51b4585ae27ebbf1b10e4f1ca0",
+  "tables/trajectory_comparison.csv": "aa99f8c3143f9cf29548367738a2ca097dd35141afa53062452fce1a099bf61c",
+  "validation/metric_audit.json": "018139615ea0af0102b0d5d7740fa797801fd586e01744f47e6c5797f3f8421a",
+  "validation/metric_checks.json": "751a4a5eea7943b80d6ca5c77469c23ffe415a5077c71a20193213dd2af19dfe",
+  "validation/notebook_reader_actual.json": "7bf8af7ac4ae91ee97e9cc8158040fcf4e5f65b779f015a02fae3d30662cb584",
+  "validation/package_integrity_audit.json": "79f866a78513ea707874f3e9c159b4ba775420b9ac1e0ac0c7c2d0fc4628bf6f",
+  "validation/protocol_cost_timing_audit.json": "238b9e3a229507ad026f5d4f384f38650f6492d2995a8187f7837a974f6d551f"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "real_kernel_execution": true,
+  "isolated_directory": true,
+  "only_notebook_required": true,
+  "cells": 69,
+  "code_cells": 36,
+  "png_outputs": 25,
+  "figures": 25,
+  "figure_formats": [
+    "PNG",
+    "SVG"
+  ],
+  "all_code_cells_executed_without_errors": true,
+  "default_created_extra_files": false,
+  "delivered_notebook_unexecuted": true,
+  "executed_notebook_delivered": false,
+  "html_export_uses_successful_kernel_outputs": true,
+  "html_embedded_pngs": 25,
+  "sources_unchanged": true,
+  "original_source_file_count": 154,
+  "notebook_sha256": "514aa256fee143e869415f4d19169ab037c078176c89ffb2a334a53e9d187300",
+  "data_sha256": "22c32d7a04a23446645bf0267446ed24b888eaba9cdd4ea556b58c4f44c86696",
+  "numpy_pandas_matplotlib_only_in_deliverable": true,
+  "no_torch_dataset_checkpoint_or_training": true,
+  "visual_review": "PASS: final main accuracy, posthoc, timing, flexible storage and learned-choice plots"
+}

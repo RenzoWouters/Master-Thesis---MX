@@ -1,0 +1,7 @@
+layer,actual_weights,padded_codes,blocks,high_code_bytes,low_code_bytes_if_materialized,scale_bytes,low_equals_high_shift_2,scales_identical,sign_and_exponent_preserved,decoded_tensors_exact
+layers.3,1728,2048,64,1536,1024,64,True,True,True,True
+layers.6,2304,2560,80,1920,1280,80,True,True,True,True
+layers.10,4608,5120,160,3840,2560,160,True,True,True,True
+layers.13,9216,9216,288,6912,4608,288,True,True,True,True
+layers.16,9216,9216,288,6912,4608,288,True,True,True,True
+layers.20,102400,102400,3200,76800,51200,3200,True,True,True,True

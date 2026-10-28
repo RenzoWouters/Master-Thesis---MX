@@ -1,0 +1,3 @@
+role,epoch,weight_bits,weight_format,activation_bits,bn_bank_key,n,correct1,correct5,top1_percent,hard_cross_entropy,source_only,truncated_from_high,optimizer_steps
+last_epoch,100,4,MXFP4_E2M1,32,4,26032,24716,25877,94.94468346650277,0.19440275437394,True,True,0
+last_epoch,100,6,MXFP6_E2M3,32,32,26032,24722,25867,94.96773202212661,0.23891373378599037,True,False,0

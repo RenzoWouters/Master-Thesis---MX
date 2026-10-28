@@ -1,0 +1,768 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "delivered_package_zip_hash",
+      "passed": true
+    },
+    {
+      "check": "package_zip_crc",
+      "passed": true
+    },
+    {
+      "check": "executed_package_matches_delivered_file_manifest",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:CODEWIJZIGINGEN.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:EXPERIMENT_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:MX_triple_group64_scale64_reference100_resultaten.ipynb",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:README.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:REUSE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group16_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group_config.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:group_costs.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:joint_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:joint_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/final_assembly_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/independent_delta_audit.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/notebook_actual_group64_pilot_reader.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/notebook_runner_integration_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/notebook_validation_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/review_independent_delta.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/runner_implementation_audit.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/startup_regression_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/test_dataset_startup.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/test_training_integration.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/training_integration_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/validate_group64_full100_notebook.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:local_validation/validate_group64_full100_runner_notebook.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:mx_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:mx_format.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:notebook_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/RESULTATEN.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/audit_group64_pilot5_feedback.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/audit_summary.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/checkpoint_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/feedback_B64_pilot5_original.zip",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/group_costs_independent.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/notebook_loader_actual.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/trajectory_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_analysis/trajectory_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/group_size_costs.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/group_size_costs_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/timing_estimate.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:pilot_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/RESULTATEN_B16_100.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/audit_group16_full100_feedback.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/audit_summary.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/checkpoint_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/feedback_B16_full100_original.zip",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/group_costs_independent.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/notebook_loader_actual.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/phase_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/pilot_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/same_epoch_selected_diagnostic.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:previous_results/trajectory_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v1_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_EXPERIMENT_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_HERSTEL.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_REUSE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_pilot5_v2_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group16_scale64_pilot_reference_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group32_scale32_parent_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group32_scale32_parent_PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group32_scale64_pilot_reference_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group64_pilot5_v1_EXPERIMENT_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group64_pilot5_v1_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group64_pilot5_v1_PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group64_pilot5_v1_REUSE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group64_pilot5_v1_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/group64_pilot5_v1_run_train.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/dataset_startup_v1_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/dataset_startup_v2_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/final_fix_assembly.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/independent_collateral_audit.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/check_entry_validation_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/codec_runtime_checks.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/final_assembly_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/notebook_validation_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/paired_initialization.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/runner_notebook_integration.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/static_delta_audit.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group16_validation/inherited_v1/training_integration_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/check_entry_validation_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/codec_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/final_assembly_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/group_size_check_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/independent_delta_audit.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/notebook_actual_group16_reader.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/notebook_runner_integration_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/notebook_validation_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/run_codec_runtime_validation.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/runner_implementation_audit.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/startup_regression_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/test_core.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/test_dataset_startup.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/test_training_integration.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/training_integration_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/inherited_group64_pilot_validation/trunc_training_check_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/posthoc_scale64.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_pilot5_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_pilot5_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_pilot5_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_pilot5_notebook_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_pilot5_run_train.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_PACKAGE_SHA256.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_notebook_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_run_train.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_test_trunc_training.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_reference100_trunc_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_to_scale32_run_train.py.patch",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_to_scale32_test_trunc_training.py.patch",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_to_scale32_trunc_adapter.py.patch",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:provenance/scale64_to_scale32_trunc_support.py.patch",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:resume_core.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:run_train.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:scale64_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:smoke_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:svhn_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:test_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:test_group_size.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:test_joint.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:test_mx.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:test_trunc_training.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:trunc_support.py",
+      "passed": true
+    },
+    {
+      "check": "delivered_file_hash:upstream/Any-Precision-DNNs-master.zip",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group_costs.py",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:notebook_support.py",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:group16_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/group_size_costs.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/timing_estimate.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/group_size_costs_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:pilot_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/REFERENCE.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "feedback_embedded_file_hash:scale64_reference/run_report.json",
+      "passed": true
+    },
+    {
+      "check": "notebook_cell_count",
+      "passed": true
+    },
+    {
+      "check": "notebook_only_run_directory_parameter_cell_changed",
+      "passed": true
+    },
+    {
+      "check": "notebook_unexecuted",
+      "passed": true
+    },
+    {
+      "check": "protocol_config_exact",
+      "passed": true
+    }
+  ],
+  "n_checks": 189,
+  "source_package_sha256": "248f5b03d5e7b22eea6ca031711c47ee49351341fc4c066f3d6af0d83f0a9f7b",
+  "feedback_sha256": "ead1f28e75810021579bd303f6a695c17b76bd8389b3881538b9be6a08b198f0",
+  "notebook_changed_cells": [
+    1
+  ],
+  "note": "Feedback contains metadata and tables, not training checkpoint/export binaries."
+}

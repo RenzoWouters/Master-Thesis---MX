@@ -1,0 +1,5 @@
+active_bn_banks,all_model_state_bytes,all_parameter_bytes,active_parameter_bytes,adam_two_moments_bytes,subtotal_state_plus_moments
+1,537136,531816,527720,1055440,1592576
+2,537136,531816,528744,1057488,1594624
+3,537136,531816,529768,1059536,1596672
+5,537136,531816,531816,1063632,1600768

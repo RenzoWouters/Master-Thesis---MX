@@ -1,0 +1,18 @@
+{
+  "analysis_only": true,
+  "training_started": false,
+  "executed_notebook_delivered": false,
+  "original_uploaded_filename": "feedback_bundle(20261027-180420).zip",
+  "feedback_sha256": "ead1f28e75810021579bd303f6a695c17b76bd8389b3881538b9be6a08b198f0",
+  "source_run": "20261027_172434_760515_joint_run",
+  "reference_data": "Unchanged full100 B16/B32 references within original feedback ZIP",
+  "delivered_training_package_sha256": "248f5b03d5e7b22eea6ca031711c47ee49351341fc4c066f3d6af0d83f0a9f7b",
+  "all_original_inputs_preserved": true,
+  "primary_checkpoint_comparisons": [
+    "epoch100",
+    "first strict maximum of E4M3, common checkpoint for all modes"
+  ],
+  "main_figure_visually_reviewed": true,
+  "notebook_validation": "All 14 original code cells ran in memory against actual inputs; original notebook bytes unchanged.",
+  "limitation": "Metadata and aggregate tables audited; binary checkpoints/exports were not supplied or reevaluated."
+}
