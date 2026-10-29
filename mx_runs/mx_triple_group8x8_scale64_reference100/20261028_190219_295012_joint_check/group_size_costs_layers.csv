@@ -1,0 +1,55 @@
+layer,shape,group_size,layout_id,layout_label,group_shape,group_axis,weight_bits,weight_format,output_rows,weights_per_row,block_rows,blocks_per_row,padded_output_rows,padded_weights_per_row,n_weights,blocks,stored_weight_slots,padded_slots,packed_weight_bytes,scale_bytes,packed_weight_and_scale_bytes,fp32_weight_bytes,ideal_scale_bits_per_weight_without_padding,effective_bits_per_real_weight
+layers.3,"[16, 12, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,16,108,16,4,16,128,1728,64,2048,320,2048,64,2112,6912,0.25,9.777777777777779
+layers.3,"[16, 12, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,16,108,16,4,16,128,1728,64,2048,320,1536,64,1600,6912,0.25,7.407407407407407
+layers.3,"[16, 12, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,16,108,16,4,16,128,1728,64,2048,320,1024,64,1088,6912,0.25,5.037037037037037
+layers.6,"[16, 16, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,16,144,16,5,16,160,2304,80,2560,256,2560,80,2640,9216,0.25,9.166666666666666
+layers.6,"[16, 16, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,16,144,16,5,16,160,2304,80,2560,256,1920,80,2000,9216,0.25,6.944444444444445
+layers.6,"[16, 16, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,16,144,16,5,16,160,2304,80,2560,256,1280,80,1360,9216,0.25,4.722222222222222
+layers.10,"[32, 16, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,32,144,32,5,32,160,4608,160,5120,512,5120,160,5280,18432,0.25,9.166666666666666
+layers.10,"[32, 16, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,32,144,32,5,32,160,4608,160,5120,512,3840,160,4000,18432,0.25,6.944444444444445
+layers.10,"[32, 16, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,32,144,32,5,32,160,4608,160,5120,512,2560,160,2720,18432,0.25,4.722222222222222
+layers.13,"[32, 32, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,32,288,32,9,32,288,9216,288,9216,0,9216,288,9504,36864,0.25,8.25
+layers.13,"[32, 32, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,32,288,32,9,32,288,9216,288,9216,0,6912,288,7200,36864,0.25,6.25
+layers.13,"[32, 32, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,32,288,32,9,32,288,9216,288,9216,0,4608,288,4896,36864,0.25,4.25
+layers.16,"[32, 32, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,32,288,32,9,32,288,9216,288,9216,0,9216,288,9504,36864,0.25,8.25
+layers.16,"[32, 32, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,32,288,32,9,32,288,9216,288,9216,0,6912,288,7200,36864,0.25,6.25
+layers.16,"[32, 32, 3, 3]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,32,288,32,9,32,288,9216,288,9216,0,4608,288,4896,36864,0.25,4.25
+layers.20,"[128, 32, 5, 5]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,128,800,128,25,128,800,102400,3200,102400,0,102400,3200,105600,409600,0.25,8.25
+layers.20,"[128, 32, 5, 5]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,128,800,128,25,128,800,102400,3200,102400,0,76800,3200,80000,409600,0.25,6.25
+layers.20,"[128, 32, 5, 5]",32,row32,1×32,"[1, 32]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,128,800,128,25,128,800,102400,3200,102400,0,51200,3200,54400,409600,0.25,4.25
+layers.3,"[16, 12, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,16,108,16,2,16,128,1728,32,2048,320,2048,32,2080,6912,0.125,9.62962962962963
+layers.3,"[16, 12, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,16,108,16,2,16,128,1728,32,2048,320,1536,32,1568,6912,0.125,7.2592592592592595
+layers.3,"[16, 12, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,16,108,16,2,16,128,1728,32,2048,320,1024,32,1056,6912,0.125,4.888888888888889
+layers.6,"[16, 16, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,16,144,16,3,16,192,2304,48,3072,768,3072,48,3120,9216,0.125,10.833333333333334
+layers.6,"[16, 16, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,16,144,16,3,16,192,2304,48,3072,768,2304,48,2352,9216,0.125,8.166666666666666
+layers.6,"[16, 16, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,16,144,16,3,16,192,2304,48,3072,768,1536,48,1584,9216,0.125,5.5
+layers.10,"[32, 16, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,32,144,32,3,32,192,4608,96,6144,1536,6144,96,6240,18432,0.125,10.833333333333334
+layers.10,"[32, 16, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,32,144,32,3,32,192,4608,96,6144,1536,4608,96,4704,18432,0.125,8.166666666666666
+layers.10,"[32, 16, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,32,144,32,3,32,192,4608,96,6144,1536,3072,96,3168,18432,0.125,5.5
+layers.13,"[32, 32, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,32,288,32,5,32,320,9216,160,10240,1024,10240,160,10400,36864,0.125,9.027777777777779
+layers.13,"[32, 32, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,32,288,32,5,32,320,9216,160,10240,1024,7680,160,7840,36864,0.125,6.805555555555555
+layers.13,"[32, 32, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,32,288,32,5,32,320,9216,160,10240,1024,5120,160,5280,36864,0.125,4.583333333333333
+layers.16,"[32, 32, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,32,288,32,5,32,320,9216,160,10240,1024,10240,160,10400,36864,0.125,9.027777777777779
+layers.16,"[32, 32, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,32,288,32,5,32,320,9216,160,10240,1024,7680,160,7840,36864,0.125,6.805555555555555
+layers.16,"[32, 32, 3, 3]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,32,288,32,5,32,320,9216,160,10240,1024,5120,160,5280,36864,0.125,4.583333333333333
+layers.20,"[128, 32, 5, 5]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",8,E4M3,128,800,128,13,128,832,102400,1664,106496,4096,106496,1664,108160,409600,0.125,8.45
+layers.20,"[128, 32, 5, 5]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",6,E2M3,128,800,128,13,128,832,102400,1664,106496,4096,79872,1664,81536,409600,0.125,6.37
+layers.20,"[128, 32, 5, 5]",64,row64,1×64,"[1, 64]","flatten Cin*Kh*Kw within each Cout, zero-pad tail",4,E2M1,128,800,128,13,128,832,102400,1664,106496,4096,53248,1664,54912,409600,0.125,4.29
+layers.3,"[16, 12, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,8,E4M3,16,108,2,14,16,112,1728,28,1792,64,1792,28,1820,6912,0.125,8.425925925925926
+layers.3,"[16, 12, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,6,E2M3,16,108,2,14,16,112,1728,28,1792,64,1344,28,1372,6912,0.125,6.351851851851852
+layers.3,"[16, 12, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,4,E2M1,16,108,2,14,16,112,1728,28,1792,64,896,28,924,6912,0.125,4.277777777777778
+layers.6,"[16, 16, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,8,E4M3,16,144,2,18,16,144,2304,36,2304,0,2304,36,2340,9216,0.125,8.125
+layers.6,"[16, 16, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,6,E2M3,16,144,2,18,16,144,2304,36,2304,0,1728,36,1764,9216,0.125,6.125
+layers.6,"[16, 16, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,4,E2M1,16,144,2,18,16,144,2304,36,2304,0,1152,36,1188,9216,0.125,4.125
+layers.10,"[32, 16, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,8,E4M3,32,144,4,18,32,144,4608,72,4608,0,4608,72,4680,18432,0.125,8.125
+layers.10,"[32, 16, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,6,E2M3,32,144,4,18,32,144,4608,72,4608,0,3456,72,3528,18432,0.125,6.125
+layers.10,"[32, 16, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,4,E2M1,32,144,4,18,32,144,4608,72,4608,0,2304,72,2376,18432,0.125,4.125
+layers.13,"[32, 32, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,8,E4M3,32,288,4,36,32,288,9216,144,9216,0,9216,144,9360,36864,0.125,8.125
+layers.13,"[32, 32, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,6,E2M3,32,288,4,36,32,288,9216,144,9216,0,6912,144,7056,36864,0.125,6.125
+layers.13,"[32, 32, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,4,E2M1,32,288,4,36,32,288,9216,144,9216,0,4608,144,4752,36864,0.125,4.125
+layers.16,"[32, 32, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,8,E4M3,32,288,4,36,32,288,9216,144,9216,0,9216,144,9360,36864,0.125,8.125
+layers.16,"[32, 32, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,6,E2M3,32,288,4,36,32,288,9216,144,9216,0,6912,144,7056,36864,0.125,6.125
+layers.16,"[32, 32, 3, 3]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,4,E2M1,32,288,4,36,32,288,9216,144,9216,0,4608,144,4752,36864,0.125,4.125
+layers.20,"[128, 32, 5, 5]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,8,E4M3,128,800,16,100,128,800,102400,1600,102400,0,102400,1600,104000,409600,0.125,8.125
+layers.20,"[128, 32, 5, 5]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,6,E2M3,128,800,16,100,128,800,102400,1600,102400,0,76800,1600,78400,409600,0.125,6.125
+layers.20,"[128, 32, 5, 5]",64,tile8x8,8×8,"[8, 8]",8 Cout rows x 8 flattened Cin*Kh*Kw columns; zero-pad both matrix tails,4,E2M1,128,800,16,100,128,800,102400,1600,102400,0,51200,1600,52800,409600,0.125,4.125

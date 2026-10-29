@@ -1,0 +1,31 @@
+{
+  "group_size": 64,
+  "group_shape": [
+    8,
+    8
+  ],
+  "packed_bytes_per_group": {
+    "8": 65,
+    "6": 49,
+    "4": 33
+  },
+  "all_E2_codes_pack_match_independent_bitstream": true,
+  "B16_B32_packed_shapes_rejected": true,
+  "independent_adjacent_tiles_both_axis_padding_signed_zero": true,
+  "coordinate_oracle_and_noncontiguous_inverse_layout": true,
+  "all_three_codecs_and_fixed64_chain_transpose_equivalent": true,
+  "payload_roundtrips_old1D64_layout_and_invalid_padding_rejected": true,
+  "fixed64_scale_and_mantissa_scale_inheritance": true,
+  "actual_six_layer_payloads_match_independent_geometry": {
+    "weights": 129472,
+    "groups": 2024,
+    "padding_slots": 64,
+    "bytes_by_mode": {
+      "8": 131560,
+      "6": 99176,
+      "4": 66792
+    }
+  },
+  "status": "PASS",
+  "no_dataset_or_training": true
+}

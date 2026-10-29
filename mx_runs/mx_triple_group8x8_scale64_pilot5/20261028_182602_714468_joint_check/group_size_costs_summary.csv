@@ -1,0 +1,4 @@
+n_weights,blocks,stored_weight_slots,padded_slots,scale_bytes,fp32_weight_bytes,group_size,layout_id,layout_label,active_group_size,active_layout,accuracy_evidence,ideal_scale_bits_per_weight_without_padding,packed_e4m3_bytes,effective_bits_e4m3,packed_e2m3_bytes,effective_bits_e2m3,packed_e2m1_bytes,effective_bits_e2m1
+129472,4080,130560,1088,4080,517888,32,row32,1×32,False,False,not asserted by this analytical layout report,0.25,134640,8.319327731092438,102000,6.302521008403361,69360,4.285714285714286
+129472,2160,138240,8768,2160,517888,64,row64,1×64,False,False,not asserted by this analytical layout report,0.125,140400,8.675234799802274,105840,6.539792387543253,71280,4.404349975284231
+129472,2024,129536,64,2024,517888,64,tile8x8,8×8,True,True,not asserted by this analytical layout report,0.125,131560,8.129016312407316,99176,6.1280276816609,66792,4.127039050914483

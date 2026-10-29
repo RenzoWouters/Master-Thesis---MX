@@ -1,0 +1,26 @@
+{
+  "schema": "mx-group8x8-pilot5-group64-reference-v1",
+  "source": "actual completed row64 fixed-scale64 reference100; only epochs1-5 used for pilot comparison",
+  "source_run": "20261027_172434_760515_joint_run",
+  "reference_completed_epochs": 100,
+  "comparison_epochs": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "mx_block_size": 64,
+  "layout_id": "row64",
+  "selection_for_comparison": "first strict E4M3 top1 maximum WITHIN common early epochs; all modes at same epoch",
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "synthetic_fixture_only": false,
+  "files_sha256": {
+    "run_report.json": "dc4e7d8c26c30d955238eddb768916604efcfd16e8ac82cd2632f0bcac15c4ae",
+    "epoch_metrics.csv": "3d1bbdca0943aba4ac9e22950fe7f44687da0480b656171b14e1c5c3647b4f61",
+    "epoch_times.csv": "7ff0a25f94b692e1cd4b6e4484062db0f2643cf3e3416f8f4f837c827525be5e",
+    "checkpoint_selection.json": "6b0ccf066fbf68514c56439e2eb90f79eea34d6b9925942805d286aa665c44e8",
+    "selected_metrics.csv": "063a045cf605f86a5b525063459043b95cf56e306cf176f8f154615c57968e8b",
+    "training_summary.json": "a4a8a637304ced8df908dcaf8782b53858f06ece93a069ee1b68e4b032e53838"
+  }
+}

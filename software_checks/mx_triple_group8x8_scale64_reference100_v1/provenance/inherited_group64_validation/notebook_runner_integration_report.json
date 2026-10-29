@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "real_SVHN_training_performed": false,
+  "cases": {
+    "complete5": {
+      "path": "/workspace/scratch/4619498905be/work/group64_training_integration_v1/continuous5/20261026_205850_767326_joint_run",
+      "executed_code_cells": 14,
+      "figures_created": 10,
+      "inputs_unchanged": true,
+      "last_epoch": 5,
+      "selected_best_epoch": 1,
+      "metrics_safe": true,
+      "selection_safe": true,
+      "pilot_complete": true,
+      "costs_verified": true,
+      "six_export_layouts_verified": true,
+      "comparison_to_real_references_blocked": true,
+      "issues": [
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 1/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 1/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 1/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 2/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 2/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 2/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 3/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 3/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 3/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 4/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 4/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 4/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 5/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 5/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 5/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        }
+      ]
+    },
+    "partial1": {
+      "path": "/workspace/scratch/4619498905be/work/group64_training_integration_v1/early_stop1/20261026_205855_366990_joint_run",
+      "executed_code_cells": 14,
+      "figures_created": 10,
+      "inputs_unchanged": true,
+      "last_epoch": 1,
+      "selected_best_epoch": 1,
+      "metrics_safe": true,
+      "selection_safe": true,
+      "pilot_complete": false,
+      "costs_verified": true,
+      "six_export_layouts_verified": true,
+      "comparison_to_real_references_blocked": true,
+      "issues": [
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 1/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 1/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        },
+        {
+          "Niveau": "UITKOMST",
+          "Melding": "Epoch 1/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+        }
+      ]
+    },
+    "mixed_checkpoint_epochs": {
+      "rejected": true,
+      "synthetic_fixture_only": true
+    },
+    "corrupt_cost_geometry": {
+      "rejected": true,
+      "synthetic_fixture_only": true
+    },
+    "wrong_group_contract": {
+      "rejected": true,
+      "synthetic_fixture_only": true
+    },
+    "tampered_reference": {
+      "rejected": true,
+      "synthetic_fixture_only": true
+    },
+    "failed_partial_status": {
+      "pilot_not_claimed": true
+    },
+    "wrong_B16_full100_schema": {
+      "rejected": true
+    }
+  },
+  "final_source_sha256": {
+    "notebook_support.py": "d042a44274af21c940532ece795375fa08304309270e48d32df01f3269a579dc",
+    "MX_triple_group64_scale64_pilot5_resultaten.ipynb": "95c053109b682391afea862052b3a5b80c264510d14758d6177942dcd40873d0"
+  }
+}

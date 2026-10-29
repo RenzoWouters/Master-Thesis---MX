@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "training_started": false,
+  "notebook_code_cells_executed": 14,
+  "costs_recomputed": true,
+  "export_count_audits": 6,
+  "B32_as_B16_rejected": true,
+  "modified_total_rejected": true,
+  "synthetic_reference_comparison_blocked": true,
+  "all_delivery_outputs_empty": true
+}

@@ -1,0 +1,32 @@
+--- scale64/trunc_support.py
++++ scale32/trunc_support.py
+@@ -1,4 +1,4 @@
+-"""Three-mode E4-source exponent/mantissa truncation with lower scale x64.
++"""Three-mode E4-source exponent/mantissa truncation with lower scale x32.
+ 
+ The upstream loss/backprop/optimizer sequencing is unchanged.
+ Only six legacy selector lines are replaced by three select_mode calls.
+@@ -257,9 +257,9 @@
+         s.require(source_audit['high_encodings'] == source_audit['exponent_derivations']
+                   == source_audit['mantissa_derivations'] == 6 * len(loader),
+                   'Verkeerd aantal bronencoderingen of bitafleidingen.')
+-        s.require(source_audit['scale_offsets_plus6'] == 12 * len(loader)
++        s.require(source_audit['scale_offsets_plus5'] == 12 * len(loader)
+                   and source_audit['mantissa_scale_copies_unchanged'] == 6 * len(loader)
+-                  and source_audit['scale_exponent_offset'] == 6 and source_audit['scale_factor'] == 64
++                  and source_audit['scale_exponent_offset'] == 5 and source_audit['scale_factor'] == 32
+                   and source_audit['source_cache_cleared'] and a.cache_is_empty(model),
+                   'Vaste schaaloffset, mantissaschaal of cache-opruiming mislukt.')
+         source_audit['cache_cleared_before_adam'] = True
+@@ -288,9 +288,9 @@
+         for bit in a.MODES:
+             encoded = chain[bit]
+             row[str(bit)] = {'codes': encoded.codes.cpu(), 'scales': encoded.scale_codes.cpu()}
+-        s.require(torch.equal(row['6']['scales'].to(torch.int32), row['8']['scales'].to(torch.int32) + 6)
++        s.require(torch.equal(row['6']['scales'].to(torch.int32), row['8']['scales'].to(torch.int32) + 5)
+                   and torch.equal(row['6']['scales'], row['4']['scales']),
+-                  'Lagere modi moeten E4-schaalcode +6 en dezelfde onderlinge schaal behouden.')
++                  'Lagere modi moeten E4-schaalcode +5 en dezelfde onderlinge schaal behouden.')
+         result[name] = row
+     result['_inactive_bn'] = {n: v.detach().cpu().clone() for n, v in model.state_dict().items() if inactive_bn(n)}
+     return result

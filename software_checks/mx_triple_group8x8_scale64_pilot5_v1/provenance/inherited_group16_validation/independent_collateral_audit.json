@@ -1,0 +1,40 @@
+{
+  "status": "CONFIRMED_BUG",
+  "audit_scope": "Read-only targeted collateral x32->x64 string-substitution audit across production root Python files, compared with proven parent and original fixed64 runner",
+  "findings": [
+    {
+      "file": "run_train.py",
+      "line": 179,
+      "actual_expected_filenames": [
+        "train_32x64.mat",
+        "test_32x64.mat"
+      ],
+      "correct_filenames": [
+        "train_32x32.mat",
+        "test_32x32.mat"
+      ],
+      "cause": "unscoped x32 -> x64 substitution matched image dimensions inside filenames"
+    }
+  ],
+  "other_collateral_dimension_filename_damage_found": false,
+  "why_prior_checks_missed": {
+    "check": "create_context(check_only=True) returns before dataset startup",
+    "synthetic_run": "test_training_integration replaces entire create_context with fixture_context"
+  },
+  "recommended_regression": "Run actual create_context(check_only=False), substituting only CPU runtime and dataset I/O boundaries; canonical names accepted, wrong/extra names rejected before optimizer update. Use zero-stride uint8 image views and int64 labels to preserve real sizes without allocating dataset memory.",
+  "dataset_helpers_unchanged": {
+    "svhn_support.py": true,
+    "smoke_support.py": true,
+    "upstream/Any-Precision-DNNs-master.zip": true
+  },
+  "inputs_sha256": {
+    "run_train.py": "274cf12985dc8711155908f3da197b24fc127223e2b00f49ed35e741df22072a",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "local_validation/test_training_integration.py": "d1547b24a5287e76df5cf16ceec9f8cb7d33d697e6c73d669b877e72a886393b"
+  },
+  "upstream_svhn_mat_names_present": {
+    "train_32x32.mat": true,
+    "test_32x32.mat": true,
+    "extra_32x32.mat": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "unchanged_checks": {
+    "mx_e4m3.py:decode_elements": true,
+    "mx_e4m3.py:encode_elements": true,
+    "mx_e4m3.py:encode_tensor": true,
+    "mx_format.py:decode_elements": true,
+    "mx_format.py:encode_elements": true,
+    "mx_format.py:encode_tensor": true,
+    "mx_e2m1.py:decode_elements": true,
+    "mx_e2m1.py:encode_elements": true,
+    "mx_e2m1.py:encode_tensor": true,
+    "mx_adapter.py:effective_reference_weight": true,
+    "joint_adapter.py:WeightModeBatchNorm": true,
+    "unchanged_file:upstream/Any-Precision-DNNs-master.zip": true,
+    "unchanged_file:resume_core.py": true,
+    "unchanged_file:smoke_support.py": true,
+    "unchanged_file:svhn_support.py": true,
+    "unchanged_file:joint_support.py": true,
+    "unchanged_file:mx_adapter.py": true,
+    "unchanged_file:joint_adapter.py": true,
+    "mx_e4m3.py:_scale_power_of_two": true
+  },
+  "config_differences_vs_original_fixed64_B32_pilot": {
+    "comparison_baseline_block_size": {
+      "old": null,
+      "new": 32
+    },
+    "mx_block_size": {
+      "old": 32,
+      "new": 16
+    },
+    "mx_group_size_research_variant": {
+      "old": null,
+      "new": true
+    },
+    "purpose": {
+      "old": "five complete train-only epochs: route B, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1",
+      "new": "five complete train-only epochs: group size16, fixed scale64 route, E4M3 source, naive exponent truncation plus fixed scale64 to E2M3, then mantissa truncation to E2M1"
+    },
+    "schema": {
+      "old": "mx-triple-scale64-pilot5-protocol-v1",
+      "new": "mx-triple-group16-scale64-pilot5-protocol-v1"
+    }
+  }
+}

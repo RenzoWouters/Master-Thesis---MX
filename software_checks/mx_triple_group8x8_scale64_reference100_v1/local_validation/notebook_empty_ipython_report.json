@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "validation_only": true,
+  "training_started": false,
+  "executor": "Real IPython in-process; nbformat schema validated; no socket kernel required",
+  "run_directory": "/workspace/scratch/4619498905be/output/mx_triple_group8x8_scale64_reference100_v1",
+  "notebook_sha256": "73da91e7158647911360118e36c194d39840a2225f086ce2e1aff20839a72c5d",
+  "helper_sha256": "15a61ecbe0b7135dbdf85bd4f281c35782392e9d15602febb0d6c28dccd59d93",
+  "code_cells_executed": 14,
+  "cells": [
+    {
+      "cell": 1,
+      "status": "PASS",
+      "captured_display_items": 0,
+      "stderr": ""
+    },
+    {
+      "cell": 2,
+      "status": "PASS",
+      "captured_display_items": 4,
+      "stderr": ""
+    },
+    {
+      "cell": 4,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 6,
+      "status": "PASS",
+      "captured_display_items": 4,
+      "stderr": ""
+    },
+    {
+      "cell": 8,
+      "status": "PASS",
+      "captured_display_items": 3,
+      "stderr": ""
+    },
+    {
+      "cell": 10,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 12,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 14,
+      "status": "PASS",
+      "captured_display_items": 1,
+      "stderr": ""
+    },
+    {
+      "cell": 16,
+      "status": "PASS",
+      "captured_display_items": 1,
+      "stderr": ""
+    },
+    {
+      "cell": 18,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 19,
+      "status": "PASS",
+      "captured_display_items": 3,
+      "stderr": ""
+    },
+    {
+      "cell": 20,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 21,
+      "status": "PASS",
+      "captured_display_items": 6,
+      "stderr": ""
+    },
+    {
+      "cell": 23,
+      "status": "PASS",
+      "captured_display_items": 1,
+      "stderr": ""
+    }
+  ],
+  "synthetic_fixture_only": false,
+  "last_epoch": null,
+  "reference_complete": false,
+  "metrics_safe": true,
+  "selection_safe": true,
+  "prediction_safe": true,
+  "analysis_issues": [
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "run_report.json"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "history.json"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "training_summary.json"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "checkpoint_selection.json"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "timing_estimate.json"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "epoch_metrics.csv"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "selected_metrics.csv"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "epoch_times.csv"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "weight_updates.csv"
+    },
+    {
+      "Niveau": "ONTBREEKT",
+      "Melding": "group_size_costs.json; kostentabellen tonen uitsluitend de berekende zeslaaggeometrie."
+    },
+    {
+      "Niveau": "INFO",
+      "Melding": "Geen bruikbare afgeronde trainingsresultaten met alle drie modi ingelezen."
+    }
+  ],
+  "reference_checks": [
+    {
+      "group_size": 32,
+      "safe": true,
+      "compatible": false,
+      "issues": [
+        "Nog geen bevestigde 8×8/×64-trainingsmetrics om te vergelijken."
+      ]
+    },
+    {
+      "group_size": 64,
+      "safe": true,
+      "compatible": false,
+      "issues": [
+        "Nog geen bevestigde 8×8/×64-trainingsmetrics om te vergelijken."
+      ]
+    }
+  ],
+  "figures": [
+    "accuracy_curves.png",
+    "checkpoint_accuracy.png",
+    "gpu_memory.png",
+    "group_comparison_checkpoints.png",
+    "group_comparison_curves.png",
+    "group_size_costs.png",
+    "objective_losses.png",
+    "prediction_diversity.png",
+    "quantization_diagnostics.png",
+    "timing.png"
+  ],
+  "seconds": 1.7815548189973924,
+  "delivered_notebook_outputs_untouched": true
+}

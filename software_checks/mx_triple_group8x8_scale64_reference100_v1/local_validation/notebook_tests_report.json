@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "tests_run": 20,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 1.689399543000036,
+  "test_ids": [
+    "test_full100_notebook.Full100NotebookTests.test_actual_reference_hashes_and_all_hundred_epochs",
+    "test_full100_notebook.Full100NotebookTests.test_blank_notebook_schema_and_code_syntax",
+    "test_full100_notebook.Full100NotebookTests.test_check_only_or_empty_run_has_no_invented_accuracy",
+    "test_full100_notebook.Full100NotebookTests.test_contract_rejects_row64_with_same_group_size",
+    "test_full100_notebook.Full100NotebookTests.test_corrupt_reference_rejected",
+    "test_full100_notebook.Full100NotebookTests.test_exact_six_layer_costs_unchanged",
+    "test_full100_notebook.Full100NotebookTests.test_false_completion_flag_cannot_turn_five_epochs_into_full100",
+    "test_full100_notebook.Full100NotebookTests.test_full100_endpoint_and_common_e4_checkpoint",
+    "test_full100_notebook.Full100NotebookTests.test_full_curves_have_all_hundred_points",
+    "test_full100_notebook.Full100NotebookTests.test_measured_full100_duration_never_uses_old_projection",
+    "test_full100_notebook.Full100NotebookTests.test_missing_mode_epoch_blocks_full100",
+    "test_full100_notebook.Full100NotebookTests.test_partial_run_uses_common_range_and_never_invents_epoch100",
+    "test_full100_notebook.Full100NotebookTests.test_pilot_reference_metadata_cannot_pass_full100_loader",
+    "test_full100_notebook.Full100NotebookTests.test_row64_export_cannot_pass_tile8x8_audit",
+    "test_full100_notebook.Full100NotebookTests.test_synthetic_run_never_compared_to_real_research",
+    "test_full100_notebook.Full100NotebookTests.test_tampered_costs_rejected",
+    "test_full100_notebook.Full100NotebookTests.test_two_axis_padding_cost",
+    "test_full100_notebook.Full100NotebookTests.test_unconfirmed_status_or_selection_blocks_final_endpoint",
+    "test_full100_notebook.Full100NotebookTests.test_wrong_group_axis_rejected_with_correct_counts",
+    "test_full100_notebook.Full100NotebookTests.test_wrong_group_shape_rejected_with_correct_counts"
+  ],
+  "helper_sha256": "aeb325251c617639294ae6389638a0088206afe006058ca429c19f8ecea07d2f",
+  "test_sha256": "29e9c0f48660dc378b5862bb4741fbcbee05b46a670e8559dfcb1f5dd972309f",
+  "training_started": false
+}

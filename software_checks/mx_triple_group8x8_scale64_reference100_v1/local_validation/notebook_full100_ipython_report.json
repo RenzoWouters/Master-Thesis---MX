@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "validation_only": true,
+  "training_started": false,
+  "executor": "Real IPython in-process; nbformat schema validated; no socket kernel required",
+  "run_directory": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/full100_final_analysis_fixture",
+  "notebook_sha256": "73da91e7158647911360118e36c194d39840a2225f086ce2e1aff20839a72c5d",
+  "helper_sha256": "aeb325251c617639294ae6389638a0088206afe006058ca429c19f8ecea07d2f",
+  "code_cells_executed": 14,
+  "cells": [
+    {
+      "cell": 1,
+      "status": "PASS",
+      "captured_display_items": 0,
+      "stderr": ""
+    },
+    {
+      "cell": 2,
+      "status": "PASS",
+      "captured_display_items": 4,
+      "stderr": ""
+    },
+    {
+      "cell": 4,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 6,
+      "status": "PASS",
+      "captured_display_items": 4,
+      "stderr": ""
+    },
+    {
+      "cell": 8,
+      "status": "PASS",
+      "captured_display_items": 3,
+      "stderr": ""
+    },
+    {
+      "cell": 10,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 12,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 14,
+      "status": "PASS",
+      "captured_display_items": 1,
+      "stderr": ""
+    },
+    {
+      "cell": 16,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 18,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 19,
+      "status": "PASS",
+      "captured_display_items": 3,
+      "stderr": ""
+    },
+    {
+      "cell": 20,
+      "status": "PASS",
+      "captured_display_items": 2,
+      "stderr": ""
+    },
+    {
+      "cell": 21,
+      "status": "PASS",
+      "captured_display_items": 6,
+      "stderr": ""
+    },
+    {
+      "cell": 23,
+      "status": "PASS",
+      "captured_display_items": 1,
+      "stderr": ""
+    }
+  ],
+  "synthetic_fixture_only": true,
+  "last_epoch": 100,
+  "reference_complete": true,
+  "metrics_safe": true,
+  "selection_safe": true,
+  "prediction_safe": true,
+  "analysis_issues": [
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 1/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 1/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 1/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 2/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 2/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 2/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 3/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 3/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 3/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 4/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 4/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 4/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 5/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 5/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 5/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 6/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 6/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 6/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 7/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 7/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 7/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 8/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 8/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 8/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 9/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 9/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 9/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 10/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 10/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 10/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 11/E4M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 11/E2M3 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 11/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    },
+    {
+      "Niveau": "UITKOMST",
+      "Melding": "Epoch 12/E2M1 voorspelt alle testbeelden als cijfer 0; dit is een meetuitkomst, geen technische FAIL."
+    }
+  ],
+  "reference_checks": [
+    {
+      "group_size": 32,
+      "safe": true,
+      "compatible": false,
+      "issues": [
+        "8×8 is een synthetische softwarecontrole; geen onderzoeksvergelijking met de echte 1×32 / schaal ×64-run."
+      ]
+    },
+    {
+      "group_size": 64,
+      "safe": true,
+      "compatible": false,
+      "issues": [
+        "8×8 is een synthetische softwarecontrole; geen onderzoeksvergelijking met de echte 1×64 / schaal ×64-run."
+      ]
+    }
+  ],
+  "figures": [
+    "accuracy_curves.png",
+    "checkpoint_accuracy.png",
+    "gpu_memory.png",
+    "group_comparison_checkpoints.png",
+    "group_comparison_curves.png",
+    "group_size_costs.png",
+    "objective_losses.png",
+    "prediction_diversity.png",
+    "quantization_diagnostics.png",
+    "timing.png"
+  ],
+  "seconds": 6.870427445999667,
+  "delivered_notebook_outputs_untouched": true
+}

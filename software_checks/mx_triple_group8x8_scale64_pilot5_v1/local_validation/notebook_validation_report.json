@@ -1,0 +1,94 @@
+{
+  "schema": "mx-group8x8-pilot5-notebook-validation-v1",
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "training_started": false,
+  "notebook_delivery_outputs_cleared": true,
+  "notebook_cells": 24,
+  "notebook_code_cells": 14,
+  "unit_tests_passed": 12,
+  "unit_test_command": "python local_validation/test_notebook_analysis.py",
+  "checks": [
+    "exact 1x32/1x64/8x8 six-layer geometry totals",
+    "asymmetric two-axis padding",
+    "tampered cost report rejected",
+    "row64 export counts rejected as8x8",
+    "both actual historical reference hashes and first-five metrics verified",
+    "corrupt reference rejected",
+    "common E4-best checkpoint and first-maximum tie rule",
+    "partial pilot cannot invent epoch5 values",
+    "distinct row64/tile8x8 contract",
+    "blank notebook and code-cell syntax",
+    "wrong group_shape rejected even when numeric counts match",
+    "wrong group_axis rejected even when numeric counts match",
+    "actual codec CSV group_shape strings accepted in six selected export tables"
+  ],
+  "current_runner_config_matches_comparable_keys": {
+    "scale64_reference": {
+      "report_sha256": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+      "comparable_config_differences": [],
+      "first_five_test_records": 15,
+      "source_full_training_completed_epoch": 100
+    },
+    "group64_reference": {
+      "report_sha256": "dc4e7d8c26c30d955238eddb768916604efcfd16e8ac82cd2632f0bcac15c4ae",
+      "comparable_config_differences": [],
+      "first_five_test_records": 15,
+      "source_full_training_completed_epoch": 100
+    }
+  },
+  "empty_notebook_execution": {
+    "status": "PASS",
+    "validation_only": true,
+    "executor": "IPython in-process; nbformat schema validated; socket kernel unavailable in sandbox",
+    "training_started": false,
+    "run_directory": "/workspace/scratch/4619498905be/output/mx_triple_group8x8_scale64_pilot5_v1",
+    "code_cells_executed": 14,
+    "figures": [
+      "accuracy_curves.png",
+      "checkpoint_accuracy.png",
+      "gpu_memory.png",
+      "group_comparison_checkpoints.png",
+      "group_comparison_curves.png",
+      "group_size_costs.png",
+      "objective_losses.png",
+      "prediction_diversity.png",
+      "quantization_diagnostics.png",
+      "timing.png"
+    ],
+    "seconds": 1.8338634169995203
+  },
+  "plot_fixture_scope": "Artificial metrics used only to test plotting and selection; never research results. 3 plots rendered and inspected. Checkpoint legends moved outside bars.",
+  "actual_8x8_training_metrics_available": false,
+  "populated_runner_notebook_integration": {
+    "status": "PASS",
+    "validation_only": true,
+    "executor": "IPython in-process; nbformat schema validated; socket kernel unavailable in sandbox",
+    "training_started": false,
+    "run_directory": "/workspace/scratch/4619498905be/work/tile8x8_training_validation_20261028_v1/integration/continuous5/20261028_182203_885249_joint_run",
+    "code_cells_executed": 14,
+    "figures": [
+      "accuracy_curves.png",
+      "checkpoint_accuracy.png",
+      "gpu_memory.png",
+      "group_comparison_checkpoints.png",
+      "group_comparison_curves.png",
+      "group_size_costs.png",
+      "objective_losses.png",
+      "prediction_diversity.png",
+      "quantization_diagnostics.png",
+      "timing.png"
+    ],
+    "seconds": 3.2163899000006495
+  },
+  "populated_fixture_analysis": {
+    "synthetic_fixture_only": true,
+    "metrics_safe": true,
+    "selection_safe": true,
+    "cost_report_verified": true,
+    "selected_export_tables_verified": 6,
+    "analysis_errors": 0,
+    "interpretation": "constant predictions in tiny CPU fixture are outcomes, not technical failures; all metrics are explicitly synthetic"
+  },
+  "cost_metadata_hardening": "Cost report now includes explicit group_shape/group_axis per layer; all six previously generated codec CSV tables pass the new metadata guard. Final runner replay will regenerate full costs with these fields."
+}

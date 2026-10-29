@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "user_notebook_blank": true,
+  "user_notebook_path": "/workspace/scratch/4619498905be/output/mx_triple_group8x8_scale64_reference100_v1/MX_triple_group8x8_scale64_reference100_resultaten.ipynb",
+  "final_artifact_sha256": {
+    "notebook_support.py": "aeb325251c617639294ae6389638a0088206afe006058ca429c19f8ecea07d2f",
+    "MX_triple_group8x8_scale64_reference100_resultaten.ipynb": "73da91e7158647911360118e36c194d39840a2225f086ce2e1aff20839a72c5d",
+    "local_validation/test_full100_notebook.py": "29e9c0f48660dc378b5862bb4741fbcbee05b46a670e8559dfcb1f5dd972309f",
+    "scale64_reference/REFERENCE.json": "f8415010851027e854a1a1e4d8986794de79fbeb19c47266e0c89d43e4f34e91",
+    "group64_reference/REFERENCE.json": "56938e9b35ec14b37f32998b6daa4158ef1eb91e3d8a58633bfe36dcdf11dded"
+  },
+  "test_report": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/final_test_report.json",
+  "test_log": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/final_test_log.txt",
+  "notebook_executions": {
+    "full100": {
+      "path": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/final_full100_notebook_ipython/validation.json",
+      "status": "PASS",
+      "code_cells_executed": 14,
+      "figure_count": 10,
+      "analysis_errors": [],
+      "last_epoch": 100,
+      "reference_complete": true,
+      "final_helper": true
+    },
+    "partial74": {
+      "path": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/final_partial74_notebook_ipython/validation.json",
+      "status": "PASS",
+      "code_cells_executed": 14,
+      "figure_count": 10,
+      "analysis_errors": [],
+      "last_epoch": 74,
+      "reference_complete": false,
+      "final_helper": true
+    },
+    "check_only": {
+      "path": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/check_only_notebook_ipython_v2/validation.json",
+      "status": "PASS",
+      "code_cells_executed": 14,
+      "figure_count": 10,
+      "analysis_errors": [],
+      "last_epoch": null,
+      "reference_complete": false,
+      "final_helper": false
+    },
+    "empty": {
+      "path": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/empty_notebook_ipython/validation.json",
+      "status": "PASS",
+      "code_cells_executed": 14,
+      "figure_count": 10,
+      "analysis_errors": [],
+      "last_epoch": null,
+      "reference_complete": false,
+      "final_helper": false
+    }
+  },
+  "raw_reference_integrity": {
+    "scale64_reference": {
+      "run_report.json": {
+        "sha256": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "epoch_metrics.csv": {
+        "sha256": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "checkpoint_selection.json": {
+        "sha256": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "epoch_times.csv": {
+        "sha256": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "selected_metrics.csv": {
+        "sha256": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "training_summary.json": {
+        "sha256": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      }
+    },
+    "group64_reference": {
+      "run_report.json": {
+        "sha256": "dc4e7d8c26c30d955238eddb768916604efcfd16e8ac82cd2632f0bcac15c4ae",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "epoch_metrics.csv": {
+        "sha256": "3d1bbdca0943aba4ac9e22950fe7f44687da0480b656171b14e1c5c3647b4f61",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "epoch_times.csv": {
+        "sha256": "7ff0a25f94b692e1cd4b6e4484062db0f2643cf3e3416f8f4f837c827525be5e",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "checkpoint_selection.json": {
+        "sha256": "6b0ccf066fbf68514c56439e2eb90f79eea34d6b9925942805d286aa665c44e8",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "selected_metrics.csv": {
+        "sha256": "063a045cf605f86a5b525063459043b95cf56e306cf176f8f154615c57968e8b",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      },
+      "training_summary.json": {
+        "sha256": "a4a8a637304ced8df908dcaf8782b53858f06ece93a069ee1b68e4b032e53838",
+        "matches_pinned_manifest": true,
+        "matches_prior_pilot_copy": true
+      }
+    }
+  },
+  "group_costs_byte_identical_to_pilot": true,
+  "final_fixture_visuals_dir": "/workspace/scratch/4619498905be/work/tile8x8_full100_notebook_validation/selection_fixture_figures_final",
+  "visual_inspection": "Full100/checkpoint/partial curves, checkpoint accuracy, timings and costs inspected. Partial title fits on one line without clipping. Synthetic figures remain private validation data.",
+  "after_training_validation_change": "Only comparison plot title shortened to one line and matching assertion updated; training runtime and all selection/numeric logic unchanged.",
+  "no_svhn_training_started": true,
+  "executed_notebook_delivered": false
+}

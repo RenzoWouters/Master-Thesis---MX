@@ -1,0 +1,255 @@
+{
+  "status": "PASS",
+  "comparability_checks": {
+    "initial_model_sha256": true,
+    "rng_after_build_sha256": true,
+    "parameters": true,
+    "parameter_names": true,
+    "target_shapes": true,
+    "all_float32": true,
+    "all_A32": true,
+    "bn_bank_mapping": true,
+    "active_weight_modes": true
+  },
+  "results": {
+    "B32_parent": {
+      "active_weight_modes": [
+        4,
+        6,
+        8
+      ],
+      "all_A32": true,
+      "all_float32": true,
+      "bn_bank_mapping": {
+        "4": "4",
+        "6": "32",
+        "8": "8"
+      },
+      "group_size": 32,
+      "initial_model_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "parameter_names": [
+        "layers.0.weight",
+        "layers.0.bias",
+        "layers.3.weight",
+        "layers.4.bn_dict.1.weight",
+        "layers.4.bn_dict.1.bias",
+        "layers.4.bn_dict.2.weight",
+        "layers.4.bn_dict.2.bias",
+        "layers.4.bn_dict.4.weight",
+        "layers.4.bn_dict.4.bias",
+        "layers.4.bn_dict.8.weight",
+        "layers.4.bn_dict.8.bias",
+        "layers.4.bn_dict.32.weight",
+        "layers.4.bn_dict.32.bias",
+        "layers.6.weight",
+        "layers.7.bn_dict.1.weight",
+        "layers.7.bn_dict.1.bias",
+        "layers.7.bn_dict.2.weight",
+        "layers.7.bn_dict.2.bias",
+        "layers.7.bn_dict.4.weight",
+        "layers.7.bn_dict.4.bias",
+        "layers.7.bn_dict.8.weight",
+        "layers.7.bn_dict.8.bias",
+        "layers.7.bn_dict.32.weight",
+        "layers.7.bn_dict.32.bias",
+        "layers.10.weight",
+        "layers.11.bn_dict.1.weight",
+        "layers.11.bn_dict.1.bias",
+        "layers.11.bn_dict.2.weight",
+        "layers.11.bn_dict.2.bias",
+        "layers.11.bn_dict.4.weight",
+        "layers.11.bn_dict.4.bias",
+        "layers.11.bn_dict.8.weight",
+        "layers.11.bn_dict.8.bias",
+        "layers.11.bn_dict.32.weight",
+        "layers.11.bn_dict.32.bias",
+        "layers.13.weight",
+        "layers.14.bn_dict.1.weight",
+        "layers.14.bn_dict.1.bias",
+        "layers.14.bn_dict.2.weight",
+        "layers.14.bn_dict.2.bias",
+        "layers.14.bn_dict.4.weight",
+        "layers.14.bn_dict.4.bias",
+        "layers.14.bn_dict.8.weight",
+        "layers.14.bn_dict.8.bias",
+        "layers.14.bn_dict.32.weight",
+        "layers.14.bn_dict.32.bias",
+        "layers.16.weight",
+        "layers.17.bn_dict.1.weight",
+        "layers.17.bn_dict.1.bias",
+        "layers.17.bn_dict.2.weight",
+        "layers.17.bn_dict.2.bias",
+        "layers.17.bn_dict.4.weight",
+        "layers.17.bn_dict.4.bias",
+        "layers.17.bn_dict.8.weight",
+        "layers.17.bn_dict.8.bias",
+        "layers.17.bn_dict.32.weight",
+        "layers.17.bn_dict.32.bias",
+        "layers.20.weight",
+        "fc.weight",
+        "fc.bias"
+      ],
+      "parameters": 132954,
+      "rng_after_build_sha256": "20eb649b28932474aeba5ab5118dc1689699f0fa49b20f0539e9227ae9e870be",
+      "scale_factor": 32,
+      "target_shapes": {
+        "layers.10": [
+          32,
+          16,
+          3,
+          3
+        ],
+        "layers.13": [
+          32,
+          32,
+          3,
+          3
+        ],
+        "layers.16": [
+          32,
+          32,
+          3,
+          3
+        ],
+        "layers.20": [
+          128,
+          32,
+          5,
+          5
+        ],
+        "layers.3": [
+          16,
+          12,
+          3,
+          3
+        ],
+        "layers.6": [
+          16,
+          16,
+          3,
+          3
+        ]
+      }
+    },
+    "B16_new": {
+      "active_weight_modes": [
+        4,
+        6,
+        8
+      ],
+      "all_A32": true,
+      "all_float32": true,
+      "bn_bank_mapping": {
+        "4": "4",
+        "6": "32",
+        "8": "8"
+      },
+      "group_size": 16,
+      "initial_model_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "parameter_names": [
+        "layers.0.weight",
+        "layers.0.bias",
+        "layers.3.weight",
+        "layers.4.bn_dict.1.weight",
+        "layers.4.bn_dict.1.bias",
+        "layers.4.bn_dict.2.weight",
+        "layers.4.bn_dict.2.bias",
+        "layers.4.bn_dict.4.weight",
+        "layers.4.bn_dict.4.bias",
+        "layers.4.bn_dict.8.weight",
+        "layers.4.bn_dict.8.bias",
+        "layers.4.bn_dict.32.weight",
+        "layers.4.bn_dict.32.bias",
+        "layers.6.weight",
+        "layers.7.bn_dict.1.weight",
+        "layers.7.bn_dict.1.bias",
+        "layers.7.bn_dict.2.weight",
+        "layers.7.bn_dict.2.bias",
+        "layers.7.bn_dict.4.weight",
+        "layers.7.bn_dict.4.bias",
+        "layers.7.bn_dict.8.weight",
+        "layers.7.bn_dict.8.bias",
+        "layers.7.bn_dict.32.weight",
+        "layers.7.bn_dict.32.bias",
+        "layers.10.weight",
+        "layers.11.bn_dict.1.weight",
+        "layers.11.bn_dict.1.bias",
+        "layers.11.bn_dict.2.weight",
+        "layers.11.bn_dict.2.bias",
+        "layers.11.bn_dict.4.weight",
+        "layers.11.bn_dict.4.bias",
+        "layers.11.bn_dict.8.weight",
+        "layers.11.bn_dict.8.bias",
+        "layers.11.bn_dict.32.weight",
+        "layers.11.bn_dict.32.bias",
+        "layers.13.weight",
+        "layers.14.bn_dict.1.weight",
+        "layers.14.bn_dict.1.bias",
+        "layers.14.bn_dict.2.weight",
+        "layers.14.bn_dict.2.bias",
+        "layers.14.bn_dict.4.weight",
+        "layers.14.bn_dict.4.bias",
+        "layers.14.bn_dict.8.weight",
+        "layers.14.bn_dict.8.bias",
+        "layers.14.bn_dict.32.weight",
+        "layers.14.bn_dict.32.bias",
+        "layers.16.weight",
+        "layers.17.bn_dict.1.weight",
+        "layers.17.bn_dict.1.bias",
+        "layers.17.bn_dict.2.weight",
+        "layers.17.bn_dict.2.bias",
+        "layers.17.bn_dict.4.weight",
+        "layers.17.bn_dict.4.bias",
+        "layers.17.bn_dict.8.weight",
+        "layers.17.bn_dict.8.bias",
+        "layers.17.bn_dict.32.weight",
+        "layers.17.bn_dict.32.bias",
+        "layers.20.weight",
+        "fc.weight",
+        "fc.bias"
+      ],
+      "parameters": 132954,
+      "rng_after_build_sha256": "20eb649b28932474aeba5ab5118dc1689699f0fa49b20f0539e9227ae9e870be",
+      "scale_factor": 64,
+      "target_shapes": {
+        "layers.10": [
+          32,
+          16,
+          3,
+          3
+        ],
+        "layers.13": [
+          32,
+          32,
+          3,
+          3
+        ],
+        "layers.16": [
+          32,
+          32,
+          3,
+          3
+        ],
+        "layers.20": [
+          128,
+          32,
+          5,
+          5
+        ],
+        "layers.3": [
+          16,
+          12,
+          3,
+          3
+        ],
+        "layers.6": [
+          16,
+          16,
+          3,
+          3
+        ]
+      }
+    }
+  },
+  "note": "Independent fresh model initialization at seed20261009 on CPU; no dataset/optimizer step. Parent B32 is fixedx32 implementation but same architecture and state as fixedx64. See separate AST audit versus originalfixedx64."
+}

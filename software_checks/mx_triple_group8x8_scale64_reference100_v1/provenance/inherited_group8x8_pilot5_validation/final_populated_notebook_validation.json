@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "validation_only": true,
+  "executor": "IPython in-process; nbformat schema validated; socket kernel unavailable in sandbox",
+  "training_started": false,
+  "run_directory": "/workspace/scratch/4619498905be/work/tile8x8_training_validation_20261028_final/integration/continuous5/20261028_182333_271738_joint_run",
+  "code_cells_executed": 14,
+  "figures": [
+    "accuracy_curves.png",
+    "checkpoint_accuracy.png",
+    "gpu_memory.png",
+    "group_comparison_checkpoints.png",
+    "group_comparison_curves.png",
+    "group_size_costs.png",
+    "objective_losses.png",
+    "prediction_diversity.png",
+    "quantization_diagnostics.png",
+    "timing.png"
+  ],
+  "seconds": 3.0038128160013002,
+  "analysis_errors": [],
+  "metrics_safe": true,
+  "selection_safe": true,
+  "cost_report_verified": true,
+  "verified_export_tables": 6,
+  "synthetic_fixture_only": true
+}

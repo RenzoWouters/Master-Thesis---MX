@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "outcome": "tile8x8_real_create_context_and_first_loader_batches_pass",
+  "package": "/workspace/scratch/4619498905be/output/mx_triple_group8x8_scale64_reference100_v1",
+  "synthetic_fixture_only": true,
+  "real_create_context_executed": true,
+  "real_ensure_dataset_executed": true,
+  "real_validate_dataset_executed": true,
+  "real_model_optimizer_scheduler_loaders_constructed": true,
+  "SVHN_downloaded_or_used": false,
+  "training_epochs": 0,
+  "optimizer_updates": 0,
+  "raw_fixture_files_unchanged": true,
+  "extra_file_not_hashed_or_loaded": true,
+  "canonical_filenames": [
+    "train_32x32.mat",
+    "test_32x32.mat"
+  ],
+  "calls": {
+    "dataset_splits": [
+      "train",
+      "val"
+    ],
+    "hashed_files": [
+      "train_32x32.mat",
+      "test_32x32.mat"
+    ],
+    "optimizer_updates": 0,
+    "loader_items": 256
+  },
+  "runtime_torch": "2.10.0+cpu",
+  "runner_sha256": "f0433a0b4356d68ea65fea358c078a050a53a9916404c56111e7133b3fe2df79"
+}

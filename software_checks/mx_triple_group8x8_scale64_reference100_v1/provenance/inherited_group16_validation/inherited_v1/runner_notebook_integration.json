@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "fixture": "actual new runner synthetic output, five complete fixture epochs",
+  "run_dir": "/workspace/scratch/4619498905be/work/group16_runner_integration_v1/continuous5/20261026_181534_458139_joint_run",
+  "research_training_performed": false,
+  "notebook_code_cells_executed": 14,
+  "cost_report_verified": true,
+  "layout_audits": 6,
+  "analysis_errors": [],
+  "pilot_complete": true,
+  "original_input_hashes_unchanged": true,
+  "new_result_files": [],
+  "synthetic_comparison_blocked": true
+}

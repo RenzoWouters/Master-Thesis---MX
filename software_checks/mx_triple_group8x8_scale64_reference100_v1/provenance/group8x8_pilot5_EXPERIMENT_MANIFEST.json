@@ -1,0 +1,40 @@
+{
+  "schema": "mx-group8x8-scale64-pilot5-experiment-v1",
+  "package": "mx_triple_group8x8_scale64_pilot5_v1",
+  "implementation_parent": "mx_triple_group64_scale64_pilot5_v1",
+  "scientific_references": [
+    "mx_triple_scale64_reference100_v1",
+    "mx_triple_group64_scale64_reference100_v1"
+  ],
+  "protocol": "PROTOCOL.json",
+  "numerical_change": "square8x8 grouping versus row64; scalarcodecs,scale64 andtrainingprotocolunchanged",
+  "training_location": "userlaptop; preparation uses bounded synthetic CPU fixtures only",
+  "study_stage": "pilot5",
+  "notebook": "MX_triple_group8x8_scale64_pilot5_resultaten.ipynb",
+  "references": [
+    "scale64_reference/REFERENCE.json",
+    "group64_reference/REFERENCE.json"
+  ],
+  "reference_comparison_endpoint": 5,
+  "cost_reports": [
+    "group_size_costs.json",
+    "group_size_costs_summary.csv",
+    "group_size_costs_layers.csv"
+  ],
+  "learned_scale": false,
+  "activation_bits": 32,
+  "mx_block_size": 64,
+  "mx_group_layout": "tile8x8",
+  "mx_group_shape": [
+    8,
+    8
+  ],
+  "paper_background": {
+    "title": "Efficient Precision-Scalable Hardware for Microscaling (MX) Processing in Robotics Learning",
+    "section": "IV-A Square-based MX PE Array",
+    "url": "https://arxiv.org/html/2505.22404v2"
+  },
+  "old_results_modified": false,
+  "executed_notebook_delivered": false,
+  "actual_SVHN_training_started_during_preparation": false
+}

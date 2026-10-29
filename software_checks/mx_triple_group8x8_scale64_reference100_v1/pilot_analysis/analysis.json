@@ -1,0 +1,53 @@
+{
+  "schema": "mx-group8x8-pilot5-analysis-v1",
+  "status": "PASS",
+  "completed_epoch": 5,
+  "optimizer_steps": 2865,
+  "training_forward_passes": 8595,
+  "feedback_filename": "feedback_bundle(20261028-174439).zip",
+  "feedback_sha256": "0b16ed134bc93b5287f73950003012176e6598bb273db0596d574f3dfc09bd1f",
+  "pilot_initial_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "all_initializations_equal": true,
+  "epoch5_comparison": [
+    {
+      "layout": "8x8",
+      "epoch5_accuracy_percent": {
+        "MXFP4_E2M1": 91.50276581729638,
+        "MXFP6_E2M3": 91.67562998447524,
+        "MXFP8_E4M3": 93.13921326658956
+      },
+      "best_E4_epoch_within_1_5": 5
+    },
+    {
+      "layout": "1x32",
+      "epoch5_accuracy_percent": {
+        "MXFP4_E2M1": 90.8919791026429,
+        "MXFP6_E2M3": 91.29917025199754,
+        "MXFP8_E4M3": 93.00860479409957
+      },
+      "best_E4_epoch_within_1_5": 5
+    },
+    {
+      "layout": "1x64",
+      "epoch5_accuracy_percent": {
+        "MXFP4_E2M1": 91.29532881668175,
+        "MXFP6_E2M3": 90.97264903794789,
+        "MXFP8_E4M3": 92.61677934849416
+      },
+      "best_E4_epoch_within_1_5": 5
+    }
+  ],
+  "all_best_E4_pilot_checkpoints_are_epoch5": true,
+  "estimated_new100_seconds": 5448.9237201449,
+  "measured_pilot_wall_seconds": 286.9051175999921,
+  "conclusion": "Pilot is technically valid and positive enough for the same fixedscale64 8x8 route in a fresh100epochrun; one seed and5epochs do not establish finalaccuracy superiority",
+  "no_actual_new100_training_started": true,
+  "export_audit_scope": "CUDA runner reported exact decode; independent CSVgeometryaudit. Actual .pt exports are not included in feedback and were not redecoded locally.",
+  "reported_payload_bytes_by_bits": {
+    "8": 131560,
+    "6": 99176,
+    "4": 66792
+  },
+  "scale_groups": 2024,
+  "padding_slots": 64
+}

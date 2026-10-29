@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "parent": "mx_triple_group64_scale64_pilot5_v1",
+  "unchanged_AST": {
+    "mx_e4m3.py/decode_elements": true,
+    "mx_e4m3.py/encode_elements": true,
+    "mx_e4m3.py/_scale_power_of_two": true,
+    "mx_e4m3.py/_MXIdentitySTE": true,
+    "mx_format.py/decode_elements": true,
+    "mx_format.py/encode_elements": true,
+    "mx_format.py/pack6": true,
+    "mx_format.py/unpack6": true,
+    "mx_format.py/_MXIdentitySTE": true,
+    "mx_e2m1.py/decode_elements": true,
+    "mx_e2m1.py/encode_elements": true,
+    "mx_e2m1.py/pack4": true,
+    "mx_e2m1.py/unpack4": true,
+    "mx_e2m1.py/_MXIdentitySTE": true
+  }
+}

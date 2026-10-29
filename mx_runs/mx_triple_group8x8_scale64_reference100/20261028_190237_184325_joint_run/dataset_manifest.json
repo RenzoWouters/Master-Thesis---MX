@@ -1,0 +1,63 @@
+{
+  "files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": []
+  },
+  "selection": {
+    "train": {
+      "n": 73257,
+      "labels_histogram": [
+        4948,
+        13861,
+        10585,
+        8497,
+        7458,
+        6882,
+        5727,
+        5595,
+        5045,
+        4659
+      ],
+      "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "train_split_order": [
+      "train"
+    ],
+    "extra_used": false,
+    "held_out_validation_examples": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  }
+}
