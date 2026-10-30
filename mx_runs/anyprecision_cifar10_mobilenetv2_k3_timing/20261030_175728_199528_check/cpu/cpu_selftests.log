@@ -1,0 +1,13 @@
+CPU: modelstructuur, upstream-quantisatie, vijf BN-banken en recursieve updates controleren.
+CPU PASS: architecture_and_all_17_group_counts
+CPU PASS: 32_bit_forward_matches_independent_torchvision_topology
+CPU PASS: linear_projection_and_residual_preserve_negative_outputs
+CPU PASS: all_five_precisions_isolate_their_52_bn_banks
+CPU PASS: each_precision_reaches_fp32_masters_with_nonzero_gradients
+CPU PASS: recursive_teacher_detach_gradient_sum_and_single_adam_match_oracle
+CPU PASS: complete_mobilenet_update_and_adam_state_remain_finite_fp32
+CPU PASS: validation_does_not_update_weights_or_bn
+CPU PASS: rejects_mixed_precision_input
+CPU: databehoud, CIFAR-selectie en tijdextrapolatie controleren.
+CPU: rapportselectie, feedbackbundel en procesbegrenzing controleren.
+CPU-zelftests PASS; geen CUDA- of datasettraining uitgevoerd.

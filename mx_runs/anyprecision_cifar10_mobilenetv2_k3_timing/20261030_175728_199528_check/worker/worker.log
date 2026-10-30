@@ -1,0 +1,25 @@
+CUDA en FP32-instellingen controleren.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+CUDA-allocatorbudget: 6.15 GiB; fysieke capaciteit 7.96 GiB.
+Nieuw MobileNetV2-model initialiseren; K=3, native batch128, vijf precisies.
+Model: 2,822,698 FP32-parameters.
+Opwarming 1/4: 32 -> 8 -> 4 -> 2 -> 1, backward en Adam.
+pass 1/5: W32/A32 forward
+pass 1/5: W32/A32 backward
+pass 2/5: W8/A8 forward
+pass 2/5: W8/A8 backward
+pass 3/5: W4/A4 forward
+pass 3/5: W4/A4 backward
+pass 4/5: W2/A2 forward
+pass 4/5: W2/A2 backward
+pass 5/5: W1/A1 forward
+pass 5/5: W1/A1 backward
+Adam: one update from the sum of all five precision gradients
+Volledige update: 2.703 s; piek gereserveerd 1.54 GiB.
+Meting 2/4: 32 -> 8 -> 4 -> 2 -> 1, backward en Adam.
+Volledige update: 0.316 s; piek gereserveerd 1.54 GiB.
+Meting 3/4: 32 -> 8 -> 4 -> 2 -> 1, backward en Adam.
+Volledige update: 0.296 s; piek gereserveerd 1.54 GiB.
+Meting 4/4: 32 -> 8 -> 4 -> 2 -> 1, backward en Adam.
+Volledige update: 0.290 s; piek gereserveerd 1.54 GiB.
+PASS: de begrensde proef is voltooid. Geen volledige epoch- of meerdaagse training gestart.

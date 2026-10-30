@@ -1,0 +1,50 @@
+{
+  "model": "MobileNetV2-CIFAR10-K3-reconstruction",
+  "exact_paper_reproduction": false,
+  "architecture_basis": "torchvision MobileNetV2 standard width-1 stages, independently checked against torchvision 0.25.0",
+  "input_shape": [3, 32, 32],
+  "classes": 10,
+  "stem_channels": 32,
+  "stem_stride": 1,
+  "last_pointwise_channels": 1280,
+  "group_rule": "groups = expanded spatial input channels / 8",
+  "group_k": 3,
+  "spatial_grouped_convolutions": 17,
+  "dropout_probability": 0.2,
+  "initialization": "Conv Kaiming normal fan_out; BN gamma=1 beta=0; Linear normal std=0.01 bias=0",
+  "precision_order_train": [32, 8, 4, 2, 1],
+  "precision_order_eval": [1, 2, 4, 8, 32],
+  "parameter_count": 2822698,
+  "conv_count": 52,
+  "quantized_conv_count": 51,
+  "switch_bn_sites": 52,
+  "bn_banks": 260,
+  "activation_quantizer_count": 34,
+  "masters_and_arithmetic": "FP32, no AMP",
+  "weight_policy": "Original vendored Any-Precision tanh/E quantizer; its W32 path is not identity. Stem Conv2d and classifier Linear weights remain ordinary FP32.",
+  "activation_policy": "Internal nonlinear sites use released Any-Precision ReLU at A32; low-bit sites clamp to [0,1] then round with identity STE.",
+  "fp32_activation_exceptions": [
+    "Raw normalized input and stem ReLU",
+    "Linear projection BatchNorm outputs and residual additions, hence inputs to the next expansion can be floating point",
+    "Global pooling, dropout, classifier, softmax and losses"
+  ],
+  "activation_label_scope": "A bit labels identify placed quantizers; not every tensor or convolution input is quantized.",
+  "update": "One native minibatch, five forward/backward passes, sum gradients, exactly one Adam update. No microbatch emulation.",
+  "distillation": "Highest precision uses hard CE. Each lower precision uses detached soft targets from the immediately previous precision.",
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001,
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-8,
+    "weight_decay": 0.0
+  },
+  "bn_policy": "One independent bank per precision at every BN site, including stem. Evaluation updates no banks.",
+  "reconstruction_choices_not_confirmed_by_authors": [
+    "K=3",
+    "Width multiplier 1 and standard stage layout",
+    "Stem stride 1 for CIFAR10",
+    "Dropout 0.2 and torchvision initialization",
+    "Precise placement of Any-Precision operators inside MobileNetV2",
+    "Unquantized stem activation and preservation of linear bottleneck outputs"
+  ]
+}

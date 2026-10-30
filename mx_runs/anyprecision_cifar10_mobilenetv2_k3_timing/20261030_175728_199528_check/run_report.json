@@ -1,0 +1,1561 @@
+{
+  "schema_version": 1,
+  "experiment": "anyprecision_cifar10_mobilenetv2_k3_timing",
+  "command": "check",
+  "status": "PASS",
+  "run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_timing\\20261030_175728_199528_check",
+  "project_root": "C:\\Users\\renzo\\master-thesis-mx",
+  "protocol": {
+    "schema_version": 1,
+    "experiment": "anyprecision_cifar10_mobilenetv2_k3_timing",
+    "package": "anyprecision_cifar10_mobilenetv2_k3_timing_v1",
+    "seed": 20261030,
+    "dataset": "CIFAR-10",
+    "image_shape": [
+      3,
+      32,
+      32
+    ],
+    "batch_size": 128,
+    "validation_batch_size": 128,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "training_order": [
+      32,
+      8,
+      4,
+      2,
+      1
+    ],
+    "model": {
+      "architecture": "MobileNetV2 reconstruction",
+      "width_multiplier": 1.0,
+      "stem_stride": 1,
+      "num_classes": 10,
+      "group_K": 3,
+      "channels_per_group": 8,
+      "group_rule": "hidden_dim / 8 in the 17 central spatial convolutions",
+      "dropout": 0.2,
+      "master_dtype": "float32",
+      "first_convolution_and_last_classifier": "FP32",
+      "activation_policy": "upstream ReLU at A32, clamp[0,1]+uniform quantization at lower modes; stem ReLU and linear bottleneck/residual paths are FP exceptions",
+      "batchnorm": "five independent banks at every BatchNorm location"
+    },
+    "optimizer": {
+      "name": "Adam",
+      "lr": 0.001,
+      "weight_decay": 0.0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08
+    },
+    "training_loss": "hard CE at 32; detached recursive soft CE at 8/4/2/1; gradients summed; one Adam step per global batch",
+    "full_recipe_reference": {
+      "epochs": 400,
+      "lr_decay_epochs": [
+        150,
+        250,
+        350
+      ],
+      "lr_decay_factor": 0.1
+    },
+    "synthetic_check": {
+      "warmup_steps": 1,
+      "measured_steps": 3,
+      "timeout_seconds": 180
+    },
+    "real_data_probe": {
+      "train_steps": 100,
+      "warmup_train_steps": 10,
+      "validation_examples": 1000,
+      "warmup_validation_steps": 1,
+      "timeout_seconds": 600
+    },
+    "runtime": {
+      "cpu_threads": 4,
+      "data_workers": 0,
+      "cudnn_benchmark": true,
+      "cudnn_deterministic": false,
+      "amp": false,
+      "tf32": false,
+      "max_allocator_fraction": 0.85,
+      "initial_free_memory_fraction": 0.9
+    },
+    "exact_paper_reproduction": false,
+    "long_training_included": false,
+    "checkpoint_policy": "diagnostic partial-epoch checkpoint only; any later full training starts from zero"
+  },
+  "package_fingerprint": {
+    "sha256": "7f91826d7053da43fc0e8346ea663ed60d30b6734e06ab494451f3ddbd49128d",
+    "files": {
+      "data_support.py": "1a92ee9576955fcb0124fb8d35bc27ba0f213125685f168c3078eb0aa9e6810a",
+      "engine.py": "74d2e7eea5d619a2f5c9761a94f291a31ebf4448e1a3d5e9094d93f3b7366ce0",
+      "experiment_config.json": "06860fe7159828ba081b90ddab4c4e2316f1a3c559106ec4634cd2e7380e0349",
+      "mobilenet_model.py": "e675e95906bc2b84afc6dbf285a9b442c1cbb269122d48072430c55270c8980f",
+      "notebook_support.py": "54ec4f89aa14b3f739cea20665686bc8bc8e35c44c377ca8faad22c5de5ecd02",
+      "probe_worker.py": "1c92d7b397e329debbb37b754d125740d9490d20b7fede97c35c46a7f3333dcf",
+      "process_watchdog.py": "73c509b43422ec5210bd0743a084049a99ee6b9f8c2504cadaddbc269cb778ad",
+      "run_check.py": "a5e0c61372f3e18fb8bf2a44260117a58efd82b1dc14f29c4f6dadd59593d6da",
+      "SOURCE_MANIFEST.json": "db2e3811cbd661ad69e481038a937284a1e2ddd9ea03a61efb2e7bbb260c91e3",
+      "support.py": "27ea276d4de3df8644e61ea90810f7a7b90c49367b391b892940ad21dec084c8",
+      "test_data_timing.py": "f1fecb20b4a969616477ad3b3676b3fffe382646ba62ec5072de77b89a83ce98",
+      "test_model_engine.py": "9acfe4bbbebb55c0ea464de5ff11f61a6fac96e0e3ce9d9d9e13ace16b9108ad",
+      "test_runner.py": "0d0ba05222b6143f897f6ae830d7778c12282c46cb62059b2f15c4ece025f81b",
+      "timing_analysis.py": "b920d8af6571bde88e681ebf4619963870df8c1c542167209d15a2cb62e99532",
+      "upstream/__init__.py": "ab41b5556a91800dbf41e206ff65d14318b72f9f0afcf8c40a70fac66e2dc136",
+      "upstream/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "upstream/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71"
+    }
+  },
+  "environment_parent": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64"
+  },
+  "long_training_started": false,
+  "existing_results_modified": false,
+  "worker_result_file": "worker/worker_result.json",
+  "upstream_integrity": {
+    "status": "PASS",
+    "source_archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "unchanged_files": [
+      "upstream/quan_ops.py",
+      "upstream/losses.py",
+      "upstream/LICENSE.md"
+    ]
+  },
+  "package_integrity": {
+    "status": "PASS",
+    "verified_files": 19
+  },
+  "pip_check": {
+    "returncode": 0,
+    "output": "No broken requirements found."
+  },
+  "cpu_watchdog": {
+    "process_returncode": 0,
+    "timed_out": false,
+    "elapsed_seconds": 7.986618400085717,
+    "last_output": "CPU-zelftests PASS; geen CUDA- of datasettraining uitgevoerd.",
+    "pid": 39388,
+    "cleanup_failed": false,
+    "stdout_closed": true,
+    "timeout_seconds": 120,
+    "process_tree_control": "windows_job_object",
+    "process_tree_cleanup": {
+      "method": "windows_job_object",
+      "verified": true,
+      "job_assigned_before_worker_start": true,
+      "job_active_processes_after_stop": 0
+    },
+    "output_lines_dropped": 0
+  },
+  "checks": {
+    "status": "PASS",
+    "cuda_tested": false,
+    "dataset_downloaded": false,
+    "model_engine": {
+      "status": "PASS",
+      "device": "cpu",
+      "cuda_tested": false,
+      "elapsed_seconds": 3.4946738998405635,
+      "test_count": 9,
+      "tests_run": 9,
+      "tests": [
+        {
+          "name": "architecture_and_all_17_group_counts",
+          "passed": true,
+          "details": {
+            "name": "MobileNetV2-CIFAR10-K3-reconstruction",
+            "exact_paper_reproduction": false,
+            "width_multiplier": 1.0,
+            "input_shape": [
+              3,
+              32,
+              32
+            ],
+            "num_classes": 10,
+            "stem_stride": 1,
+            "group_k": 3,
+            "channels_per_group": 8,
+            "stages_t_c_n_s": [
+              [
+                1,
+                16,
+                1,
+                1
+              ],
+              [
+                6,
+                24,
+                2,
+                2
+              ],
+              [
+                6,
+                32,
+                3,
+                2
+              ],
+              [
+                6,
+                64,
+                4,
+                2
+              ],
+              [
+                6,
+                96,
+                3,
+                1
+              ],
+              [
+                6,
+                160,
+                3,
+                2
+              ],
+              [
+                6,
+                320,
+                1,
+                1
+              ]
+            ],
+            "dropout_probability": 0.2,
+            "training_precisions": [
+              32,
+              8,
+              4,
+              2,
+              1
+            ],
+            "evaluation_precisions": [
+              1,
+              2,
+              4,
+              8,
+              32
+            ],
+            "parameter_count": 2822698,
+            "fp32_master_bytes": 11290792,
+            "floating_buffer_bytes": 682240,
+            "parameter_gradient_adam_moments_bytes_estimate": 45163168,
+            "optimizer_memory_estimate_excludes": "activations, workspaces, caches, step tensors and buffers",
+            "conv_count": 52,
+            "quantized_conv_count": 51,
+            "grouped_spatial_conv_count": 17,
+            "switch_bn_count": 52,
+            "bn_bank_count": 260,
+            "activation_quantizer_count": 34,
+            "all_master_parameters_fp32": true,
+            "first_and_last_weight_layers": "FP32 stem Conv2d and FP32 final Linear",
+            "weight_quantization": "Unchanged released Any-Precision tanh/E quantizer, including its non-identity 32-bit path",
+            "activation_quantization": "At placed nonlinear internal activations: ReLU for 32, clamp[0,1] and round for 1/2/4/8",
+            "activation_fp32_exceptions": [
+              "Raw normalized input, stem convolution and stem ReLU are not activation-quantized.",
+              "Linear projection BN outputs and residual additions have no extra activation or quantizer.",
+              "Consequently the next expansion convolution can consume a floating-point linear/residual output.",
+              "Pooling, dropout, classifier and softmax/loss remain floating-point."
+            ],
+            "precision_label_scope": "A bits describe placed quantizers, not every intermediate tensor or every convolution input",
+            "bn_policy": "Independent bank for each of 1/2/4/8/32 at every BN site, including stem; each selected once per full update",
+            "spatial_groups": [
+              {
+                "block": 0,
+                "input_channels": 32,
+                "hidden_channels": 32,
+                "output_channels": 16,
+                "stride": 1,
+                "expansion": 1,
+                "groups": 4,
+                "channels_per_group": 8,
+                "residual": false
+              },
+              {
+                "block": 1,
+                "input_channels": 16,
+                "hidden_channels": 96,
+                "output_channels": 24,
+                "stride": 2,
+                "expansion": 6,
+                "groups": 12,
+                "channels_per_group": 8,
+                "residual": false
+              },
+              {
+                "block": 2,
+                "input_channels": 24,
+                "hidden_channels": 144,
+                "output_channels": 24,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 18,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 3,
+                "input_channels": 24,
+                "hidden_channels": 144,
+                "output_channels": 32,
+                "stride": 2,
+                "expansion": 6,
+                "groups": 18,
+                "channels_per_group": 8,
+                "residual": false
+              },
+              {
+                "block": 4,
+                "input_channels": 32,
+                "hidden_channels": 192,
+                "output_channels": 32,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 24,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 5,
+                "input_channels": 32,
+                "hidden_channels": 192,
+                "output_channels": 32,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 24,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 6,
+                "input_channels": 32,
+                "hidden_channels": 192,
+                "output_channels": 64,
+                "stride": 2,
+                "expansion": 6,
+                "groups": 24,
+                "channels_per_group": 8,
+                "residual": false
+              },
+              {
+                "block": 7,
+                "input_channels": 64,
+                "hidden_channels": 384,
+                "output_channels": 64,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 48,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 8,
+                "input_channels": 64,
+                "hidden_channels": 384,
+                "output_channels": 64,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 48,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 9,
+                "input_channels": 64,
+                "hidden_channels": 384,
+                "output_channels": 64,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 48,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 10,
+                "input_channels": 64,
+                "hidden_channels": 384,
+                "output_channels": 96,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 48,
+                "channels_per_group": 8,
+                "residual": false
+              },
+              {
+                "block": 11,
+                "input_channels": 96,
+                "hidden_channels": 576,
+                "output_channels": 96,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 72,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 12,
+                "input_channels": 96,
+                "hidden_channels": 576,
+                "output_channels": 96,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 72,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 13,
+                "input_channels": 96,
+                "hidden_channels": 576,
+                "output_channels": 160,
+                "stride": 2,
+                "expansion": 6,
+                "groups": 72,
+                "channels_per_group": 8,
+                "residual": false
+              },
+              {
+                "block": 14,
+                "input_channels": 160,
+                "hidden_channels": 960,
+                "output_channels": 160,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 120,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 15,
+                "input_channels": 160,
+                "hidden_channels": 960,
+                "output_channels": 160,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 120,
+                "channels_per_group": 8,
+                "residual": true
+              },
+              {
+                "block": 16,
+                "input_channels": 160,
+                "hidden_channels": 960,
+                "output_channels": 320,
+                "stride": 1,
+                "expansion": 6,
+                "groups": 120,
+                "channels_per_group": 8,
+                "residual": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "32_bit_forward_matches_independent_torchvision_topology",
+          "passed": true,
+          "details": {
+            "max_abs_difference": 0.0
+          }
+        },
+        {
+          "name": "linear_projection_and_residual_preserve_negative_outputs",
+          "passed": true,
+          "details": {}
+        },
+        {
+          "name": "all_five_precisions_isolate_their_52_bn_banks",
+          "passed": true,
+          "details": {}
+        },
+        {
+          "name": "each_precision_reaches_fp32_masters_with_nonzero_gradients",
+          "passed": true,
+          "details": {
+            "1": {
+              "stem": 579.0755615234375,
+              "first_grouped_master": 120.40106201171875,
+              "classifier": 10.062382698059082
+            },
+            "2": {
+              "stem": 13305.2919921875,
+              "first_grouped_master": 8274.1884765625,
+              "classifier": 9.747146606445312
+            },
+            "4": {
+              "stem": 16428.57421875,
+              "first_grouped_master": 14048.6328125,
+              "classifier": 9.829486846923828
+            },
+            "8": {
+              "stem": 15075.984375,
+              "first_grouped_master": 12757.3291015625,
+              "classifier": 9.766580581665039
+            },
+            "32": {
+              "stem": 155.70245361328125,
+              "first_grouped_master": 126.94783020019531,
+              "classifier": 12.782458305358887
+            }
+          }
+        },
+        {
+          "name": "recursive_teacher_detach_gradient_sum_and_single_adam_match_oracle",
+          "passed": true,
+          "details": {
+            "optimizer_calls": 1,
+            "rng_exact": true,
+            "losses_match_independent_soft_ce": true
+          }
+        },
+        {
+          "name": "complete_mobilenet_update_and_adam_state_remain_finite_fp32",
+          "passed": true,
+          "details": {}
+        },
+        {
+          "name": "validation_does_not_update_weights_or_bn",
+          "passed": true,
+          "details": {}
+        },
+        {
+          "name": "rejects_mixed_precision_input",
+          "passed": true,
+          "details": {}
+        }
+      ],
+      "model_summary": {
+        "name": "MobileNetV2-CIFAR10-K3-reconstruction",
+        "exact_paper_reproduction": false,
+        "width_multiplier": 1.0,
+        "input_shape": [
+          3,
+          32,
+          32
+        ],
+        "num_classes": 10,
+        "stem_stride": 1,
+        "group_k": 3,
+        "channels_per_group": 8,
+        "stages_t_c_n_s": [
+          [
+            1,
+            16,
+            1,
+            1
+          ],
+          [
+            6,
+            24,
+            2,
+            2
+          ],
+          [
+            6,
+            32,
+            3,
+            2
+          ],
+          [
+            6,
+            64,
+            4,
+            2
+          ],
+          [
+            6,
+            96,
+            3,
+            1
+          ],
+          [
+            6,
+            160,
+            3,
+            2
+          ],
+          [
+            6,
+            320,
+            1,
+            1
+          ]
+        ],
+        "dropout_probability": 0.2,
+        "training_precisions": [
+          32,
+          8,
+          4,
+          2,
+          1
+        ],
+        "evaluation_precisions": [
+          1,
+          2,
+          4,
+          8,
+          32
+        ],
+        "parameter_count": 2822698,
+        "fp32_master_bytes": 11290792,
+        "floating_buffer_bytes": 682240,
+        "parameter_gradient_adam_moments_bytes_estimate": 45163168,
+        "optimizer_memory_estimate_excludes": "activations, workspaces, caches, step tensors and buffers",
+        "conv_count": 52,
+        "quantized_conv_count": 51,
+        "grouped_spatial_conv_count": 17,
+        "switch_bn_count": 52,
+        "bn_bank_count": 260,
+        "activation_quantizer_count": 34,
+        "all_master_parameters_fp32": true,
+        "first_and_last_weight_layers": "FP32 stem Conv2d and FP32 final Linear",
+        "weight_quantization": "Unchanged released Any-Precision tanh/E quantizer, including its non-identity 32-bit path",
+        "activation_quantization": "At placed nonlinear internal activations: ReLU for 32, clamp[0,1] and round for 1/2/4/8",
+        "activation_fp32_exceptions": [
+          "Raw normalized input, stem convolution and stem ReLU are not activation-quantized.",
+          "Linear projection BN outputs and residual additions have no extra activation or quantizer.",
+          "Consequently the next expansion convolution can consume a floating-point linear/residual output.",
+          "Pooling, dropout, classifier and softmax/loss remain floating-point."
+        ],
+        "precision_label_scope": "A bits describe placed quantizers, not every intermediate tensor or every convolution input",
+        "bn_policy": "Independent bank for each of 1/2/4/8/32 at every BN site, including stem; each selected once per full update",
+        "spatial_groups": [
+          {
+            "block": 0,
+            "input_channels": 32,
+            "hidden_channels": 32,
+            "output_channels": 16,
+            "stride": 1,
+            "expansion": 1,
+            "groups": 4,
+            "channels_per_group": 8,
+            "residual": false
+          },
+          {
+            "block": 1,
+            "input_channels": 16,
+            "hidden_channels": 96,
+            "output_channels": 24,
+            "stride": 2,
+            "expansion": 6,
+            "groups": 12,
+            "channels_per_group": 8,
+            "residual": false
+          },
+          {
+            "block": 2,
+            "input_channels": 24,
+            "hidden_channels": 144,
+            "output_channels": 24,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 18,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 3,
+            "input_channels": 24,
+            "hidden_channels": 144,
+            "output_channels": 32,
+            "stride": 2,
+            "expansion": 6,
+            "groups": 18,
+            "channels_per_group": 8,
+            "residual": false
+          },
+          {
+            "block": 4,
+            "input_channels": 32,
+            "hidden_channels": 192,
+            "output_channels": 32,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 24,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 5,
+            "input_channels": 32,
+            "hidden_channels": 192,
+            "output_channels": 32,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 24,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 6,
+            "input_channels": 32,
+            "hidden_channels": 192,
+            "output_channels": 64,
+            "stride": 2,
+            "expansion": 6,
+            "groups": 24,
+            "channels_per_group": 8,
+            "residual": false
+          },
+          {
+            "block": 7,
+            "input_channels": 64,
+            "hidden_channels": 384,
+            "output_channels": 64,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 48,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 8,
+            "input_channels": 64,
+            "hidden_channels": 384,
+            "output_channels": 64,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 48,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 9,
+            "input_channels": 64,
+            "hidden_channels": 384,
+            "output_channels": 64,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 48,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 10,
+            "input_channels": 64,
+            "hidden_channels": 384,
+            "output_channels": 96,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 48,
+            "channels_per_group": 8,
+            "residual": false
+          },
+          {
+            "block": 11,
+            "input_channels": 96,
+            "hidden_channels": 576,
+            "output_channels": 96,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 72,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 12,
+            "input_channels": 96,
+            "hidden_channels": 576,
+            "output_channels": 96,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 72,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 13,
+            "input_channels": 96,
+            "hidden_channels": 576,
+            "output_channels": 160,
+            "stride": 2,
+            "expansion": 6,
+            "groups": 72,
+            "channels_per_group": 8,
+            "residual": false
+          },
+          {
+            "block": 14,
+            "input_channels": 160,
+            "hidden_channels": 960,
+            "output_channels": 160,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 120,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 15,
+            "input_channels": 160,
+            "hidden_channels": 960,
+            "output_channels": 160,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 120,
+            "channels_per_group": 8,
+            "residual": true
+          },
+          {
+            "block": 16,
+            "input_channels": 160,
+            "hidden_channels": 960,
+            "output_channels": 320,
+            "stride": 1,
+            "expansion": 6,
+            "groups": 120,
+            "channels_per_group": 8,
+            "residual": false
+          }
+        ]
+      }
+    },
+    "data_timing": {
+      "status": "PASS",
+      "tests_run": 14,
+      "output": "test_audit_includes_metadata_and_changes_no_bytes (test_data_timing.DataTests.test_audit_includes_metadata_and_changes_no_bytes) ... ok\ntest_corrupt_metadata_is_not_repaired_even_with_download (test_data_timing.DataTests.test_corrupt_metadata_is_not_repaired_even_with_download) ... ok\ntest_discovery_accepts_dataset_folder_itself (test_data_timing.DataTests.test_discovery_accepts_dataset_folder_itself) ... ok\ntest_existing_valid_data_avoid_downloader (test_data_timing.DataTests.test_existing_valid_data_avoid_downloader) ... ok\ntest_missing_data_never_implicitly_download (test_data_timing.DataTests.test_missing_data_never_implicitly_download) ... ok\ntest_missing_discovery_is_read_only_and_explicit (test_data_timing.DataTests.test_missing_discovery_is_read_only_and_explicit) ... ok\ntest_official_normalization (test_data_timing.DataTests.test_official_normalization) ... ok\ntest_seeded_prefix_and_balanced_validation_without_global_rng_change (test_data_timing.DataTests.test_seeded_prefix_and_balanced_validation_without_global_rng_change) ... ok\ntest_unexpected_split_size_and_labels_stop_run (test_data_timing.DataTests.test_unexpected_split_size_and_labels_stop_run) ... ok\ntest_end_to_end_epoch_estimate_no_second_precision_multiplier (test_data_timing.TimingTests.test_end_to_end_epoch_estimate_no_second_precision_multiplier) ... ok\ntest_invalid_measurements_are_rejected (test_data_timing.TimingTests.test_invalid_measurements_are_rejected) ... ok\ntest_no_eligible_rows_does_not_invent_estimates (test_data_timing.TimingTests.test_no_eligible_rows_does_not_invent_estimates) ... ok\ntest_quantile_scenarios_are_descriptive (test_data_timing.TimingTests.test_quantile_scenarios_are_descriptive) ... ok\ntest_synthetic_compute_excludes_data_validation_and_checkpoints (test_data_timing.TimingTests.test_synthetic_compute_excludes_data_validation_and_checkpoints) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.115s\n\nOK\n",
+      "scope": "CPU fixtures only; no real dataset download or training"
+    },
+    "runner": {
+      "status": "PASS",
+      "tests_run": 9,
+      "tests": [
+        "results_directories_unique_previous_retained",
+        "only_matching_successful_check_selected",
+        "missing_check_rejected",
+        "feedback_excludes_weights_and_dataset",
+        "timeout_overrides_partial_worker_pass",
+        "cleanup_failure_never_accepted",
+        "successful_worker_accepted",
+        "native_process_tree_success_and_cleanup",
+        "native_process_timeout_stops_owned_child"
+      ],
+      "scope": "CPU/filesystem/native process containment; no CUDA; no dataset"
+    }
+  },
+  "watchdog": {
+    "process_returncode": 0,
+    "timed_out": false,
+    "elapsed_seconds": 7.256358799990267,
+    "last_output": "PASS: de begrensde proef is voltooid. Geen volledige epoch- of meerdaagse training gestart.",
+    "pid": 8560,
+    "cleanup_failed": false,
+    "stdout_closed": true,
+    "timeout_seconds": 180,
+    "process_tree_control": "windows_job_object",
+    "process_tree_cleanup": {
+      "method": "windows_job_object",
+      "verified": true,
+      "job_assigned_before_worker_start": true,
+      "job_active_processes_after_stop": 0
+    },
+    "output_lines_dropped": 0
+  },
+  "worker_result": {
+    "schema_version": 1,
+    "experiment": "anyprecision_cifar10_mobilenetv2_k3_timing",
+    "status": "PASS",
+    "kind": "synthetic",
+    "eligible_check": true,
+    "protocol": {
+      "schema_version": 1,
+      "experiment": "anyprecision_cifar10_mobilenetv2_k3_timing",
+      "package": "anyprecision_cifar10_mobilenetv2_k3_timing_v1",
+      "seed": 20261030,
+      "dataset": "CIFAR-10",
+      "image_shape": [
+        3,
+        32,
+        32
+      ],
+      "batch_size": 128,
+      "validation_batch_size": 128,
+      "bits": [
+        1,
+        2,
+        4,
+        8,
+        32
+      ],
+      "training_order": [
+        32,
+        8,
+        4,
+        2,
+        1
+      ],
+      "model": {
+        "architecture": "MobileNetV2 reconstruction",
+        "width_multiplier": 1.0,
+        "stem_stride": 1,
+        "num_classes": 10,
+        "group_K": 3,
+        "channels_per_group": 8,
+        "group_rule": "hidden_dim / 8 in the 17 central spatial convolutions",
+        "dropout": 0.2,
+        "master_dtype": "float32",
+        "first_convolution_and_last_classifier": "FP32",
+        "activation_policy": "upstream ReLU at A32, clamp[0,1]+uniform quantization at lower modes; stem ReLU and linear bottleneck/residual paths are FP exceptions",
+        "batchnorm": "five independent banks at every BatchNorm location"
+      },
+      "optimizer": {
+        "name": "Adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08
+      },
+      "training_loss": "hard CE at 32; detached recursive soft CE at 8/4/2/1; gradients summed; one Adam step per global batch",
+      "full_recipe_reference": {
+        "epochs": 400,
+        "lr_decay_epochs": [
+          150,
+          250,
+          350
+        ],
+        "lr_decay_factor": 0.1
+      },
+      "synthetic_check": {
+        "warmup_steps": 1,
+        "measured_steps": 3,
+        "timeout_seconds": 180
+      },
+      "real_data_probe": {
+        "train_steps": 100,
+        "warmup_train_steps": 10,
+        "validation_examples": 1000,
+        "warmup_validation_steps": 1,
+        "timeout_seconds": 600
+      },
+      "runtime": {
+        "cpu_threads": 4,
+        "data_workers": 0,
+        "cudnn_benchmark": true,
+        "cudnn_deterministic": false,
+        "amp": false,
+        "tf32": false,
+        "max_allocator_fraction": 0.85,
+        "initial_free_memory_fraction": 0.9
+      },
+      "exact_paper_reproduction": false,
+      "long_training_included": false,
+      "checkpoint_policy": "diagnostic partial-epoch checkpoint only; any later full training starts from zero"
+    },
+    "completed_updates": 4,
+    "train_rows": [],
+    "validation_rows": [],
+    "synthetic_rows": [
+      {
+        "step": 1,
+        "batch_size": 128,
+        "warmup": true,
+        "data_wait_s": 0.0,
+        "h2d_s": 0.0,
+        "compute_s": 2.7034911999944597,
+        "wall_s": 2.7034911999944597,
+        "loss_by_bit": {
+          "32": 2.3291826248168945,
+          "8": 2.2961649894714355,
+          "4": 2.299783229827881,
+          "2": 2.29964542388916,
+          "1": 2.3009471893310547
+        }
+      },
+      {
+        "step": 2,
+        "batch_size": 128,
+        "warmup": false,
+        "data_wait_s": 0.0,
+        "h2d_s": 0.0,
+        "compute_s": 0.3155934000387788,
+        "wall_s": 0.3155934000387788,
+        "loss_by_bit": {
+          "32": 2.0419046878814697,
+          "8": 2.287590503692627,
+          "4": 2.2940421104431152,
+          "2": 2.2927322387695312,
+          "1": 2.295046091079712
+        }
+      },
+      {
+        "step": 3,
+        "batch_size": 128,
+        "warmup": false,
+        "data_wait_s": 0.0,
+        "h2d_s": 0.0,
+        "compute_s": 0.2958264001645148,
+        "wall_s": 0.2958264001645148,
+        "loss_by_bit": {
+          "32": 1.7367019653320312,
+          "8": 2.2606589794158936,
+          "4": 2.275265693664551,
+          "2": 2.27502703666687,
+          "1": 2.277099132537842
+        }
+      },
+      {
+        "step": 4,
+        "batch_size": 128,
+        "warmup": false,
+        "data_wait_s": 0.0,
+        "h2d_s": 0.0,
+        "compute_s": 0.2904081998858601,
+        "wall_s": 0.2904081998858601,
+        "loss_by_bit": {
+          "32": 1.3741624355316162,
+          "8": 2.2606563568115234,
+          "4": 2.2742295265197754,
+          "2": 2.2703359127044678,
+          "1": 2.27280855178833
+        }
+      }
+    ],
+    "memory_rows": [
+      {
+        "phase": "initial",
+        "step": 0,
+        "allocated_bytes": 12360192,
+        "reserved_bytes": 31457280,
+        "peak_allocated_bytes": 12360192,
+        "peak_reserved_bytes": 31457280,
+        "free_bytes": 7307526144,
+        "total_bytes": 8546484224
+      },
+      {
+        "phase": "synthetic",
+        "step": 1,
+        "allocated_bytes": 67259392,
+        "reserved_bytes": 910163968,
+        "peak_allocated_bytes": 1647335424,
+        "peak_reserved_bytes": 1658847232,
+        "free_bytes": 6380584960,
+        "total_bytes": 8546484224
+      },
+      {
+        "phase": "synthetic",
+        "step": 2,
+        "allocated_bytes": 67013632,
+        "reserved_bytes": 950009856,
+        "peak_allocated_bytes": 1647335424,
+        "peak_reserved_bytes": 1658847232,
+        "free_bytes": 6340739072,
+        "total_bytes": 8546484224
+      },
+      {
+        "phase": "synthetic",
+        "step": 3,
+        "allocated_bytes": 67013632,
+        "reserved_bytes": 950009856,
+        "peak_allocated_bytes": 1647335424,
+        "peak_reserved_bytes": 1658847232,
+        "free_bytes": 6340739072,
+        "total_bytes": 8546484224
+      },
+      {
+        "phase": "synthetic",
+        "step": 4,
+        "allocated_bytes": 67013632,
+        "reserved_bytes": 950009856,
+        "peak_allocated_bytes": 1647335424,
+        "peak_reserved_bytes": 1658847232,
+        "free_bytes": 6340739072,
+        "total_bytes": 8546484224
+      },
+      {
+        "phase": "final",
+        "step": 4,
+        "allocated_bytes": 67013632,
+        "reserved_bytes": 950009856,
+        "peak_allocated_bytes": 1647335424,
+        "peak_reserved_bytes": 1658847232,
+        "free_bytes": 6340739072,
+        "total_bytes": 8546484224
+      }
+    ],
+    "timing_scope": "Each step contains all five precision forwards; training also contains five backwards and one Adam update. No extra factor five.",
+    "memory_scope": "PyTorch caching-allocator allocated/reserved/peak counters and CUDA device-free bytes; not physical residency or Windows shared GPU memory.",
+    "long_training_started": false,
+    "exact_paper_reproduction": false,
+    "last_progress": {
+      "message": "Meting 4/4: 32 -> 8 -> 4 -> 2 -> 1, backward en Adam.",
+      "elapsed_seconds": 4.834702900145203
+    },
+    "elapsed_seconds": 5.384897600160912,
+    "runtime": {
+      "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "machine": "AMD64",
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "numpy": "2.5.2",
+      "cuda_build": "12.8",
+      "cudnn_version": 91002,
+      "precision_api": "fp32_precision=ieee",
+      "cudnn_benchmark": true,
+      "cudnn_deterministic": false,
+      "amp": false,
+      "cpu_threads": 4,
+      "device": {
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "total_memory_bytes": 8546484224,
+        "initial_free_bytes": 7338983424,
+        "cuda_reported_total_bytes": 8546484224,
+        "capability": [
+          12,
+          0
+        ],
+        "allocator_fraction": 0.7728423651741828,
+        "allocator_budget_bytes": 6605085081
+      }
+    },
+    "model_summary": {
+      "name": "MobileNetV2-CIFAR10-K3-reconstruction",
+      "exact_paper_reproduction": false,
+      "width_multiplier": 1.0,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "stem_stride": 1,
+      "group_k": 3,
+      "channels_per_group": 8,
+      "stages_t_c_n_s": [
+        [
+          1,
+          16,
+          1,
+          1
+        ],
+        [
+          6,
+          24,
+          2,
+          2
+        ],
+        [
+          6,
+          32,
+          3,
+          2
+        ],
+        [
+          6,
+          64,
+          4,
+          2
+        ],
+        [
+          6,
+          96,
+          3,
+          1
+        ],
+        [
+          6,
+          160,
+          3,
+          2
+        ],
+        [
+          6,
+          320,
+          1,
+          1
+        ]
+      ],
+      "dropout_probability": 0.2,
+      "training_precisions": [
+        32,
+        8,
+        4,
+        2,
+        1
+      ],
+      "evaluation_precisions": [
+        1,
+        2,
+        4,
+        8,
+        32
+      ],
+      "parameter_count": 2822698,
+      "fp32_master_bytes": 11290792,
+      "floating_buffer_bytes": 682240,
+      "parameter_gradient_adam_moments_bytes_estimate": 45163168,
+      "optimizer_memory_estimate_excludes": "activations, workspaces, caches, step tensors and buffers",
+      "conv_count": 52,
+      "quantized_conv_count": 51,
+      "grouped_spatial_conv_count": 17,
+      "switch_bn_count": 52,
+      "bn_bank_count": 260,
+      "activation_quantizer_count": 34,
+      "all_master_parameters_fp32": true,
+      "first_and_last_weight_layers": "FP32 stem Conv2d and FP32 final Linear",
+      "weight_quantization": "Unchanged released Any-Precision tanh/E quantizer, including its non-identity 32-bit path",
+      "activation_quantization": "At placed nonlinear internal activations: ReLU for 32, clamp[0,1] and round for 1/2/4/8",
+      "activation_fp32_exceptions": [
+        "Raw normalized input, stem convolution and stem ReLU are not activation-quantized.",
+        "Linear projection BN outputs and residual additions have no extra activation or quantizer.",
+        "Consequently the next expansion convolution can consume a floating-point linear/residual output.",
+        "Pooling, dropout, classifier and softmax/loss remain floating-point."
+      ],
+      "precision_label_scope": "A bits describe placed quantizers, not every intermediate tensor or every convolution input",
+      "bn_policy": "Independent bank for each of 1/2/4/8/32 at every BN site, including stem; each selected once per full update",
+      "spatial_groups": [
+        {
+          "block": 0,
+          "input_channels": 32,
+          "hidden_channels": 32,
+          "output_channels": 16,
+          "stride": 1,
+          "expansion": 1,
+          "groups": 4,
+          "channels_per_group": 8,
+          "residual": false
+        },
+        {
+          "block": 1,
+          "input_channels": 16,
+          "hidden_channels": 96,
+          "output_channels": 24,
+          "stride": 2,
+          "expansion": 6,
+          "groups": 12,
+          "channels_per_group": 8,
+          "residual": false
+        },
+        {
+          "block": 2,
+          "input_channels": 24,
+          "hidden_channels": 144,
+          "output_channels": 24,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 18,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 3,
+          "input_channels": 24,
+          "hidden_channels": 144,
+          "output_channels": 32,
+          "stride": 2,
+          "expansion": 6,
+          "groups": 18,
+          "channels_per_group": 8,
+          "residual": false
+        },
+        {
+          "block": 4,
+          "input_channels": 32,
+          "hidden_channels": 192,
+          "output_channels": 32,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 24,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 5,
+          "input_channels": 32,
+          "hidden_channels": 192,
+          "output_channels": 32,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 24,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 6,
+          "input_channels": 32,
+          "hidden_channels": 192,
+          "output_channels": 64,
+          "stride": 2,
+          "expansion": 6,
+          "groups": 24,
+          "channels_per_group": 8,
+          "residual": false
+        },
+        {
+          "block": 7,
+          "input_channels": 64,
+          "hidden_channels": 384,
+          "output_channels": 64,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 48,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 8,
+          "input_channels": 64,
+          "hidden_channels": 384,
+          "output_channels": 64,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 48,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 9,
+          "input_channels": 64,
+          "hidden_channels": 384,
+          "output_channels": 64,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 48,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 10,
+          "input_channels": 64,
+          "hidden_channels": 384,
+          "output_channels": 96,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 48,
+          "channels_per_group": 8,
+          "residual": false
+        },
+        {
+          "block": 11,
+          "input_channels": 96,
+          "hidden_channels": 576,
+          "output_channels": 96,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 72,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 12,
+          "input_channels": 96,
+          "hidden_channels": 576,
+          "output_channels": 96,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 72,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 13,
+          "input_channels": 96,
+          "hidden_channels": 576,
+          "output_channels": 160,
+          "stride": 2,
+          "expansion": 6,
+          "groups": 72,
+          "channels_per_group": 8,
+          "residual": false
+        },
+        {
+          "block": 14,
+          "input_channels": 160,
+          "hidden_channels": 960,
+          "output_channels": 160,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 120,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 15,
+          "input_channels": 160,
+          "hidden_channels": 960,
+          "output_channels": 160,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 120,
+          "channels_per_group": 8,
+          "residual": true
+        },
+        {
+          "block": 16,
+          "input_channels": 160,
+          "hidden_channels": 960,
+          "output_channels": 320,
+          "stride": 1,
+          "expansion": 6,
+          "groups": 120,
+          "channels_per_group": 8,
+          "residual": false
+        }
+      ]
+    },
+    "bn_training_check": {
+      "status": "PASS",
+      "banks": 260,
+      "updates_per_bank": 4
+    },
+    "timing_summary": {
+      "schema_version": 1,
+      "kind": "synthetic_compute_only",
+      "precision_passes_per_update": 5,
+      "precision_multiplier_applied": 1,
+      "training": {
+        "observed_rows": 4,
+        "observed_samples": 512,
+        "warmup_requested_rows": 1,
+        "warmup_discarded_rows": 1,
+        "partial_rows_not_used_for_forecast": 0,
+        "eligible_rows": 3,
+        "batch_size": 128,
+        "eligible_steps": [
+          2,
+          3,
+          4
+        ],
+        "available": true,
+        "stats": {
+          "wall_s": {
+            "mean": 0.30060933336305123,
+            "median": 0.2958264001645148,
+            "p10": 0.291491839941591,
+            "p90": 0.311640000063926,
+            "min": 0.2904081998858601,
+            "max": 0.3155934000387788
+          },
+          "data_wait_s": {
+            "mean": 0.0,
+            "median": 0.0,
+            "p10": 0.0,
+            "p90": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "h2d_s": {
+            "mean": 0.0,
+            "median": 0.0,
+            "p10": 0.0,
+            "p90": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "compute_s": {
+            "mean": 0.30060933336305123,
+            "median": 0.2958264001645148,
+            "p10": 0.291491839941591,
+            "p90": 0.311640000063926,
+            "min": 0.2904081998858601,
+            "max": 0.3155934000387788
+          }
+        }
+      },
+      "validation": {
+        "observed_rows": 0,
+        "observed_samples": 0,
+        "warmup_requested_rows": 1,
+        "warmup_discarded_rows": 0,
+        "partial_rows_not_used_for_forecast": 0,
+        "eligible_rows": 0,
+        "batch_size": 128,
+        "eligible_steps": [],
+        "available": false,
+        "stats": {
+          "wall_s": null,
+          "data_wait_s": null,
+          "h2d_s": null,
+          "compute_s": null
+        }
+      },
+      "full_epoch": {
+        "train_examples": 50000,
+        "validation_examples": 10000,
+        "train_batches": 391,
+        "validation_batches": 79,
+        "batch_size": 128,
+        "train_last_batch": 80,
+        "validation_last_batch": 16,
+        "checkpoints_per_epoch": 1
+      },
+      "per_epoch": {
+        "training_seconds": 117.53824934495303,
+        "training_only_seconds": 117.53824934495303,
+        "validation_seconds": null,
+        "checkpoint_seconds": null,
+        "total_seconds": null,
+        "scenario_low_seconds": null,
+        "scenario_high_seconds": null
+      },
+      "projections": {
+        "5": {
+          "epochs": 5,
+          "training_hours": 0.163247568534657,
+          "validation_hours": null,
+          "checkpoint_hours": null,
+          "total_hours": null,
+          "scenario_low_hours": null,
+          "scenario_high_hours": null,
+          "training_scenario_low_hours": 0.1582962630793918,
+          "training_scenario_high_hours": 0.16923783336804868
+        },
+        "100": {
+          "epochs": 100,
+          "training_hours": 3.26495137069314,
+          "validation_hours": null,
+          "checkpoint_hours": null,
+          "total_hours": null,
+          "scenario_low_hours": null,
+          "scenario_high_hours": null,
+          "training_scenario_low_hours": 3.165925261587836,
+          "training_scenario_high_hours": 3.384756667360974
+        },
+        "400": {
+          "epochs": 400,
+          "training_hours": 13.05980548277256,
+          "validation_hours": null,
+          "checkpoint_hours": null,
+          "total_hours": null,
+          "scenario_low_hours": null,
+          "scenario_high_hours": null,
+          "training_scenario_low_hours": 12.663701046351344,
+          "training_scenario_high_hours": 13.539026669443896
+        }
+      },
+      "estimate_complete": false,
+      "timing_basis": "compute_s",
+      "tail_batch_policy": "conservative: last partial batch counted as a full 128-image batch",
+      "scenario_definition": "p10/p90 of observed steady full-batch times, extrapolated; not a confidence interval",
+      "notes": [
+        "One row already covers all five precisions. No extra factor of five is applied.",
+        "One complete training epoch means all 50,000 train images; validation means all 10,000 official test images.",
+        "Initial imports, dataset checksum/loading, worker startup, first CUDA warmup and notebook time are excluded from the extrapolation.",
+        "Report/JSON output outside the supplied wall_s intervals is not included; the caller reports total loop wall time separately.",
+        "Checkpoint estimate assumes one measured write per epoch; changed checkpoint policy changes the total.",
+        "A short run cannot establish sustained thermal performance or final accuracy.",
+        "Synthetic results exclude data loading, validation and checkpoint cost; use real-data results for a complete estimate."
+      ]
+    },
+    "accuracy_interpretation": "Synthetic inputs: no accuracy result; no CIFAR-10 training.",
+    "finite_check": {
+      "status": "PASS",
+      "model_and_optimizer_finite": true,
+      "master_dtype": "float32"
+    }
+  },
+  "elapsed_seconds": 15.642564299982041,
+  "feedback_bundle": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_timing\\20261030_175728_199528_check\\feedback_bundle.zip"
+}

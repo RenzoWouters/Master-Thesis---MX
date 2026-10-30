@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "experiment": "anyprecision_cifar10_mobilenetv2_k3_timing",
+  "status": "FAIL",
+  "kind": "real",
+  "eligible_check": false,
+  "protocol": {
+    "schema_version": 1,
+    "experiment": "anyprecision_cifar10_mobilenetv2_k3_timing",
+    "package": "anyprecision_cifar10_mobilenetv2_k3_timing_v1",
+    "seed": 20261030,
+    "dataset": "CIFAR-10",
+    "image_shape": [
+      3,
+      32,
+      32
+    ],
+    "batch_size": 128,
+    "validation_batch_size": 128,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "training_order": [
+      32,
+      8,
+      4,
+      2,
+      1
+    ],
+    "model": {
+      "architecture": "MobileNetV2 reconstruction",
+      "width_multiplier": 1.0,
+      "stem_stride": 1,
+      "num_classes": 10,
+      "group_K": 3,
+      "channels_per_group": 8,
+      "group_rule": "hidden_dim / 8 in the 17 central spatial convolutions",
+      "dropout": 0.2,
+      "master_dtype": "float32",
+      "first_convolution_and_last_classifier": "FP32",
+      "activation_policy": "upstream ReLU at A32, clamp[0,1]+uniform quantization at lower modes; stem ReLU and linear bottleneck/residual paths are FP exceptions",
+      "batchnorm": "five independent banks at every BatchNorm location"
+    },
+    "optimizer": {
+      "name": "Adam",
+      "lr": 0.001,
+      "weight_decay": 0.0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08
+    },
+    "training_loss": "hard CE at 32; detached recursive soft CE at 8/4/2/1; gradients summed; one Adam step per global batch",
+    "full_recipe_reference": {
+      "epochs": 400,
+      "lr_decay_epochs": [
+        150,
+        250,
+        350
+      ],
+      "lr_decay_factor": 0.1
+    },
+    "synthetic_check": {
+      "warmup_steps": 1,
+      "measured_steps": 3,
+      "timeout_seconds": 180
+    },
+    "real_data_probe": {
+      "train_steps": 100,
+      "warmup_train_steps": 10,
+      "validation_examples": 1000,
+      "warmup_validation_steps": 1,
+      "timeout_seconds": 600
+    },
+    "runtime": {
+      "cpu_threads": 4,
+      "data_workers": 0,
+      "cudnn_benchmark": true,
+      "cudnn_deterministic": false,
+      "amp": false,
+      "tf32": false,
+      "max_allocator_fraction": 0.85,
+      "initial_free_memory_fraction": 0.9
+    },
+    "exact_paper_reproduction": false,
+    "long_training_included": false,
+    "checkpoint_policy": "diagnostic partial-epoch checkpoint only; any later full training starts from zero"
+  },
+  "completed_updates": 0,
+  "train_rows": [],
+  "validation_rows": [],
+  "synthetic_rows": [],
+  "memory_rows": [],
+  "timing_scope": "Each step contains all five precision forwards; training also contains five backwards and one Adam update. No extra factor five.",
+  "memory_scope": "PyTorch caching-allocator allocated/reserved/peak counters and CUDA device-free bytes; not physical residency or Windows shared GPU memory.",
+  "long_training_started": false,
+  "exact_paper_reproduction": false,
+  "last_progress": {
+    "message": "Bestaande CIFAR-10-bestanden controleren; alleen met --download wordt zo nodig gedownload.",
+    "elapsed_seconds": 3.1872644999530166
+  },
+  "elapsed_seconds": 3.413466499885544,
+  "runtime": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "cuda_build": "12.8",
+    "cudnn_version": 91002,
+    "precision_api": "fp32_precision=ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "amp": false,
+    "cpu_threads": 4,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "total_memory_bytes": 8546484224,
+      "initial_free_bytes": 7338983424,
+      "cuda_reported_total_bytes": 8546484224,
+      "capability": [
+        12,
+        0
+      ],
+      "allocator_fraction": 0.7728423651741828,
+      "allocator_budget_bytes": 6605085081
+    }
+  },
+  "error": "CIFAR-10-controle mislukt: batches.meta: ontbreekt. Bestaande data worden niet gerepareerd of overschreven. Kies een andere bestaande datasetmap of een nieuwe lege map voor --download.",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_cifar10_mobilenetv2_k3_timing_v1\\probe_worker.py\", line 106, in run\n    train_loader, val_loader, data_info = make_loaders(\n                                          ~~~~~~~~~~~~^\n        args.data_root, seed=s.CONFIG[\"seed\"], workers=s.CONFIG[\"runtime\"][\"data_workers\"],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        download=args.download, train_steps=s.CONFIG[\"real_data_probe\"][\"train_steps\"],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        validation_examples=s.CONFIG[\"real_data_probe\"][\"validation_examples\"])\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_cifar10_mobilenetv2_k3_timing_v1\\data_support.py\", line 192, in make_loaders\n    audit = _prepare_data(root, download=bool(download))\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_cifar10_mobilenetv2_k3_timing_v1\\data_support.py\", line 119, in _prepare_data\n    result = audit_cifar10(root)\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_cifar10_mobilenetv2_k3_timing_v1\\data_support.py\", line 105, in audit_cifar10\n    raise CIFAR10DataError(\n    ...<3 lines>...\n    )\ndata_support.CIFAR10DataError: CIFAR-10-controle mislukt: batches.meta: ontbreekt. Bestaande data worden niet gerepareerd of overschreven. Kies een andere bestaande datasetmap of een nieuwe lege map voor --download.\n"
+}

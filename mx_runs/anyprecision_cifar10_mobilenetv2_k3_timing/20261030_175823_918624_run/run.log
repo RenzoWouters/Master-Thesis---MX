@@ -1,0 +1,32 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_cifar10_mobilenetv2_k3_timing\20261030_175823_918624_run
+MOBILENETV2 / CIFAR-10: K=3; batch128; W/A 32,8,4,2,1; FP32-masters; Adam; geen MX.
+Gedocumenteerde reconstructie. Dit pakket voert alleen een begrensde haalbaarheidsproef uit.
+Korte realdataproef: 100 updates op 12.800 trainbeelden; daarna 1.000 evaluatiebeelden.
+CUDA en FP32-instellingen controleren.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+CUDA-allocatorbudget: 6.15 GiB; fysieke capaciteit 7.96 GiB.
+Bestaande CIFAR-10-bestanden controleren; alleen met --download wordt zo nodig gedownload.
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_cifar10_mobilenetv2_k3_timing_v1\probe_worker.py", line 106, in run
+    train_loader, val_loader, data_info = make_loaders(
+                                          ~~~~~~~~~~~~^
+        args.data_root, seed=s.CONFIG["seed"], workers=s.CONFIG["runtime"]["data_workers"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        download=args.download, train_steps=s.CONFIG["real_data_probe"]["train_steps"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        validation_examples=s.CONFIG["real_data_probe"]["validation_examples"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_cifar10_mobilenetv2_k3_timing_v1\data_support.py", line 192, in make_loaders
+    audit = _prepare_data(root, download=bool(download))
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_cifar10_mobilenetv2_k3_timing_v1\data_support.py", line 119, in _prepare_data
+    result = audit_cifar10(root)
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_cifar10_mobilenetv2_k3_timing_v1\data_support.py", line 105, in audit_cifar10
+    raise CIFAR10DataError(
+    ...<3 lines>...
+    )
+data_support.CIFAR10DataError: CIFAR-10-controle mislukt: batches.meta: ontbreekt. Bestaande data worden niet gerepareerd of overschreven. Kies een andere bestaande datasetmap of een nieuwe lege map voor --download.
+
+PROEF NIET GESLAAGD: CIFAR-10-controle mislukt: batches.meta: ontbreekt. Bestaande data worden niet gerepareerd of overschreven. Kies een andere bestaande datasetmap of een nieuwe lege map voor --download.
+EINDSTATUS: FAIL
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_cifar10_mobilenetv2_k3_timing\20261030_175823_918624_run\run_report.json
+Deel feedback_bundle.zip uit deze map. Checkpoint en CIFAR-10 blijven lokaal.

@@ -1,0 +1,56 @@
+{
+  "status": "PASS_CPU_VALIDATION",
+  "cuda_tested": false,
+  "windows_gpu_tested": false,
+  "real_dataset_training_executed": false,
+  "performance_estimate_measured": false,
+  "exact_paper_reproduction_claimed": false,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/workspace/scratch/4619498905be/work/resnet50_validation_env/bin/python",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "validation_torch": "2.10.0+cpu",
+  "validation_torchvision": "0.25.0+cpu",
+  "cpu_selftests": {
+    "total": 32,
+    "model_engine": 9,
+    "data_timing": 14,
+    "runner": 9,
+    "status": "PASS"
+  },
+  "checkpoint_serialization": {
+    "status": "PASS",
+    "method": "Real save_checkpoint with tiny CPU FP32 model and initialized Adam; only CUDA synchronize/get_rng_state_all mocked.",
+    "checks": [
+      "weights_only=True load",
+      "exact model and optimizer tensor round trip",
+      "FP32 finite state",
+      "partial-epoch/restart metadata",
+      "CPU RNG preserved",
+      "SHA256 and atomic rename"
+    ]
+  },
+  "notebook_validation": {
+    "status": "PASS",
+    "cell_count": 15,
+    "code_cells_compiled": 7,
+    "unexecuted_delivery": true,
+    "support_functions_exercised": [
+      "clearly artificial real-data fixture",
+      "clearly artificial synthetic fixture",
+      "actual CUDA-unavailable failure report"
+    ],
+    "plots_visually_inspected": 6,
+    "full_notebook_execution_performed": false,
+    "fixtures_in_delivery": false
+  },
+  "expected_no_cuda_check": {
+    "status": "EXPECTED_FAIL",
+    "cpu_tests_passed": true,
+    "reason": "Validation host has no CUDA; CUDA worker fails clearly and writes feedback bundle."
+  },
+  "scope": "CPU correctness and reporting checks only. Laptop CUDA memory, numerical behavior and speed require the supplied check and run commands.",
+  "final_manifest_verification": "PASS: 19 runtime/source files; full CPU selftest rerun on packaged sources."
+}

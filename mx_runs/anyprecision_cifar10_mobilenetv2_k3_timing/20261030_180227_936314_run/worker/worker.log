@@ -1,0 +1,45 @@
+CUDA en FP32-instellingen controleren.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+CUDA-allocatorbudget: 6.15 GiB; fysieke capaciteit 7.96 GiB.
+Bestaande CIFAR-10-bestanden controleren; alleen met --download wordt zo nodig gedownload.
+CIFAR-10: 50.000 train / 10.000 test; proef gebruikt 12.800 trainbeelden en 1.000 testbeelden.
+Nieuw MobileNetV2-model initialiseren; K=3, native batch128, vijf precisies.
+Model: 2,822,698 FP32-parameters.
+pass 1/5: W32/A32 forward
+pass 1/5: W32/A32 backward
+pass 2/5: W8/A8 forward
+pass 2/5: W8/A8 backward
+pass 3/5: W4/A4 forward
+pass 3/5: W4/A4 backward
+pass 4/5: W2/A2 forward
+pass 4/5: W2/A2 backward
+pass 5/5: W1/A1 forward
+pass 5/5: W1/A1 backward
+Adam: one update from the sum of all five precision gradients
+Train 1/100: 2.150 s/update; W32 loss=2.3018; alle vijf precisies voltooid.
+Train 2/100: 0.304 s/update; W32 loss=2.4143; alle vijf precisies voltooid.
+Train 3/100: 0.270 s/update; W32 loss=2.3817; alle vijf precisies voltooid.
+Train 10/100: 0.308 s/update; W32 loss=2.3665; alle vijf precisies voltooid.
+Train 20/100: 0.302 s/update; W32 loss=2.3306; alle vijf precisies voltooid.
+Train 30/100: 0.247 s/update; W32 loss=2.1740; alle vijf precisies voltooid.
+Train 40/100: 0.301 s/update; W32 loss=2.1737; alle vijf precisies voltooid.
+Train 50/100: 0.306 s/update; W32 loss=2.2390; alle vijf precisies voltooid.
+Train 60/100: 0.289 s/update; W32 loss=2.1212; alle vijf precisies voltooid.
+Train 70/100: 0.251 s/update; W32 loss=2.0137; alle vijf precisies voltooid.
+Train 80/100: 0.305 s/update; W32 loss=2.1204; alle vijf precisies voltooid.
+Train 90/100: 0.295 s/update; W32 loss=1.9407; alle vijf precisies voltooid.
+Train 100/100: 0.253 s/update; W32 loss=2.0394; alle vijf precisies voltooid.
+Diagnosecheckpoint opslaan; toekomstige volledige training begint opnieuw vanaf nul.
+Tijdmeting evaluatie: 1.000 beelden, alle vijf precisies, geen updates.
+Validatie 1/8: 0.101 s, 128 beelden, vijf precisies.
+Validatie 2/8: 0.125 s, 128 beelden, vijf precisies.
+Validatie 3/8: 0.110 s, 128 beelden, vijf precisies.
+Validatie 4/8: 0.092 s, 128 beelden, vijf precisies.
+Validatie 5/8: 0.089 s, 128 beelden, vijf precisies.
+Validatie 6/8: 0.090 s, 128 beelden, vijf precisies.
+Validatie 7/8: 0.092 s, 128 beelden, vijf precisies.
+Validatie 8/8: 0.651 s, 104 beelden, vijf precisies.
+SCHATTING 5 epochs: 0.17 uur inclusief vijf-precisievalidatie en checkpoint per epoch.
+SCHATTING 100 epochs: 3.37 uur inclusief vijf-precisievalidatie en checkpoint per epoch.
+SCHATTING 400 epochs: 13.48 uur inclusief vijf-precisievalidatie en checkpoint per epoch.
+PASS: de begrensde proef is voltooid. Geen volledige epoch- of meerdaagse training gestart.

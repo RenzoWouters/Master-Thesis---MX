@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "scope": "Executable Python, experiment/model configuration and upstream provenance. Notebook and explanatory documents may be edited or executed without invalidating the runtime check.",
+  "files": {
+    "SOURCE_MANIFEST.json": "db2e3811cbd661ad69e481038a937284a1e2ddd9ea03a61efb2e7bbb260c91e3",
+    "data_support.py": "1a92ee9576955fcb0124fb8d35bc27ba0f213125685f168c3078eb0aa9e6810a",
+    "engine.py": "74d2e7eea5d619a2f5c9761a94f291a31ebf4448e1a3d5e9094d93f3b7366ce0",
+    "experiment_config.json": "06860fe7159828ba081b90ddab4c4e2316f1a3c559106ec4634cd2e7380e0349",
+    "mobilenet_model.py": "e675e95906bc2b84afc6dbf285a9b442c1cbb269122d48072430c55270c8980f",
+    "model_contract.json": "e52ee0a673730f78736e098b2373bb67ffb6f76657a55b036c078dc881c98af1",
+    "notebook_support.py": "54ec4f89aa14b3f739cea20665686bc8bc8e35c44c377ca8faad22c5de5ecd02",
+    "probe_worker.py": "1c92d7b397e329debbb37b754d125740d9490d20b7fede97c35c46a7f3333dcf",
+    "process_watchdog.py": "73c509b43422ec5210bd0743a084049a99ee6b9f8c2504cadaddbc269cb778ad",
+    "run_check.py": "a5e0c61372f3e18fb8bf2a44260117a58efd82b1dc14f29c4f6dadd59593d6da",
+    "support.py": "27ea276d4de3df8644e61ea90810f7a7b90c49367b391b892940ad21dec084c8",
+    "test_data_timing.py": "f1fecb20b4a969616477ad3b3676b3fffe382646ba62ec5072de77b89a83ce98",
+    "test_model_engine.py": "9acfe4bbbebb55c0ea464de5ff11f61a6fac96e0e3ce9d9d9e13ace16b9108ad",
+    "test_runner.py": "0d0ba05222b6143f897f6ae830d7778c12282c46cb62059b2f15c4ece025f81b",
+    "timing_analysis.py": "b920d8af6571bde88e681ebf4619963870df8c1c542167209d15a2cb62e99532",
+    "upstream/LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+    "upstream/__init__.py": "ab41b5556a91800dbf41e206ff65d14318b72f9f0afcf8c40a70fac66e2dc136",
+    "upstream/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+    "upstream/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71"
+  }
+}
