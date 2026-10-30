@@ -1,0 +1,110 @@
+{
+  "epoch": 5,
+  "lr": 0.001,
+  "global_updates": 1955,
+  "training": {
+    "1": {
+      "loss": 1.7181263223648071,
+      "top1": 38.452,
+      "top5": 89.206,
+      "samples": 50000
+    },
+    "2": {
+      "loss": 1.508294894104004,
+      "top1": 46.404,
+      "top5": 92.326,
+      "samples": 50000
+    },
+    "4": {
+      "loss": 1.3544017263412476,
+      "top1": 51.968000006103516,
+      "top5": 93.954,
+      "samples": 50000
+    },
+    "8": {
+      "loss": 1.3125973190689086,
+      "top1": 52.526000006103516,
+      "top5": 94.172,
+      "samples": 50000
+    },
+    "32": {
+      "loss": 1.1944458475494384,
+      "top1": 56.972,
+      "top5": 95.068,
+      "samples": 50000
+    }
+  },
+  "validation": {
+    "1": {
+      "loss": 1.590984762763977,
+      "top1": 40.49,
+      "top5": 90.6,
+      "samples": 10000
+    },
+    "2": {
+      "loss": 1.394647315788269,
+      "top1": 48.23,
+      "top5": 93.28,
+      "samples": 10000
+    },
+    "4": {
+      "loss": 1.2732720153808594,
+      "top1": 52.75,
+      "top5": 94.98,
+      "samples": 10000
+    },
+    "8": {
+      "loss": 1.2259831512451171,
+      "top1": 55.09,
+      "top5": 95.31,
+      "samples": 10000
+    },
+    "32": {
+      "loss": 1.159889070892334,
+      "top1": 58.66,
+      "top5": 95.92,
+      "samples": 10000
+    }
+  },
+  "timing": {
+    "train_seconds": 122.02167019993067,
+    "validation_seconds": 9.244836299913004,
+    "checkpoint_seconds": 0.25853440002538264,
+    "total_seconds": 131.875830499921
+  },
+  "memory": {
+    "phase": "epoch",
+    "step": 5,
+    "allocated_bytes": 65439744,
+    "reserved_bytes": 952107008,
+    "peak_allocated_bytes": 921244672,
+    "peak_reserved_bytes": 952107008,
+    "free_bytes": 6338641920,
+    "total_bytes": 8546484224
+  },
+  "checkpoint": {
+    "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0005.pt",
+    "bytes": 35518031,
+    "seconds": 0.25853440002538264,
+    "sha256": "a0fb2167bebaf298263eff197fcbf18fa2b0c0730e8bebf67c03c2d61e3e5820",
+    "epoch_completed": 5,
+    "partial_epoch": false,
+    "resume_supported": false,
+    "in_feedback_bundle": false
+  },
+  "bn_training_check": {
+    "status": "PASS",
+    "banks": 260,
+    "updates_per_bank": 391
+  },
+  "bn_evaluation_check": {
+    "status": "PASS",
+    "all_buffers_unchanged": true,
+    "banks": 260
+  },
+  "finite_check": {
+    "status": "PASS",
+    "model_and_optimizer_finite": true,
+    "master_dtype": "float32"
+  }
+}

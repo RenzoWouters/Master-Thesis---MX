@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "scope": "Executable Python, experiment/model configuration and upstream provenance. Notebook and explanatory documents may be edited or executed without invalidating runtime checks.",
+  "files": {
+    "SOURCE_MANIFEST.json": "db2e3811cbd661ad69e481038a937284a1e2ddd9ea03a61efb2e7bbb260c91e3",
+    "checkpoint_support.py": "b4dff751bf68467b408e718b7782ba64668c3fc5e857346f577150a7cf567997",
+    "data_support.py": "a89f138c454d441166705e2068605ddc017c9446f7edeb36816fe0aae752eb0e",
+    "engine.py": "74d2e7eea5d619a2f5c9761a94f291a31ebf4448e1a3d5e9094d93f3b7366ce0",
+    "experiment_config.json": "bd03562b7e0da2042f7e57ca92323d6573d9da854096d9e1cec67b28b710b5b8",
+    "mobilenet_model.py": "e675e95906bc2b84afc6dbf285a9b442c1cbb269122d48072430c55270c8980f",
+    "model_contract.json": "e52ee0a673730f78736e098b2373bb67ffb6f76657a55b036c078dc881c98af1",
+    "notebook_support.py": "2d5d3d4a67fa9fc3d1062bbffa67a4240fe1c96f9f0e6662d75625af84a40d3e",
+    "process_watchdog.py": "73c509b43422ec5210bd0743a084049a99ee6b9f8c2504cadaddbc269cb778ad",
+    "run_train.py": "b1bd63cc05a377c366f3e8d4775a181f1e48f4bfe8c0c31dc0ed97ff93f1e2c2",
+    "support.py": "27ea276d4de3df8644e61ea90810f7a7b90c49367b391b892940ad21dec084c8",
+    "test_checkpoint.py": "45bf4648529d17821cc428709e8e316979cb7f9aee2f3a5d18908772458e8c03",
+    "test_data_timing.py": "f1fecb20b4a969616477ad3b3676b3fffe382646ba62ec5072de77b89a83ce98",
+    "test_full_data.py": "6d32cac5f47a83cc68d738dfaa5a147b1e500981796583533821029be6664326",
+    "test_model_engine.py": "9acfe4bbbebb55c0ea464de5ff11f61a6fac96e0e3ce9d9d9e13ace16b9108ad",
+    "test_runner.py": "cd2e893db51222e6eca1194c7ff0787d52c0d3569b28125281f993eeaef82ff7",
+    "timing_analysis.py": "b920d8af6571bde88e681ebf4619963870df8c1c542167209d15a2cb62e99532",
+    "train_worker.py": "6b52968c5babdf83697599d63f0a6de63a9e4a9e72b1b24707f436dabba47431",
+    "upstream/LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+    "upstream/__init__.py": "ab41b5556a91800dbf41e206ff65d14318b72f9f0afcf8c40a70fac66e2dc136",
+    "upstream/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+    "upstream/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "experiment": "anyprecision_cifar10_mobilenetv2_k3_pilot5",
+  "package": "anyprecision_cifar10_mobilenetv2_k3_pilot5_v1",
+  "seed": 20261030,
+  "dataset": "CIFAR-10",
+  "image_shape": [
+    3,
+    32,
+    32
+  ],
+  "batch_size": 128,
+  "validation_batch_size": 128,
+  "bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "training_order": [
+    32,
+    8,
+    4,
+    2,
+    1
+  ],
+  "model": {
+    "architecture": "MobileNetV2 reconstruction",
+    "width_multiplier": 1.0,
+    "stem_stride": 1,
+    "num_classes": 10,
+    "group_K": 3,
+    "channels_per_group": 8,
+    "group_rule": "hidden_dim / 8 in the 17 central spatial convolutions",
+    "dropout": 0.2,
+    "master_dtype": "float32",
+    "first_convolution_and_last_classifier": "FP32",
+    "activation_policy": "upstream ReLU at A32, clamp[0,1]+uniform quantization at lower modes; stem ReLU and linear bottleneck/residual paths are FP exceptions",
+    "batchnorm": "five independent banks at every BatchNorm location"
+  },
+  "optimizer": {
+    "name": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "training_loss": "hard CE at 32; detached recursive soft CE at 8/4/2/1; gradients summed; one Adam step per global batch",
+  "full_recipe_reference": {
+    "epochs": 400,
+    "lr_decay_epochs": [
+      150,
+      250,
+      350
+    ],
+    "lr_decay_factor": 0.1
+  },
+  "synthetic_check": {
+    "warmup_steps": 1,
+    "measured_steps": 2,
+    "timeout_seconds": 240
+  },
+  "runtime": {
+    "cpu_threads": 4,
+    "data_workers": 0,
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "amp": false,
+    "tf32": false,
+    "max_allocator_fraction": 0.85,
+    "initial_free_memory_fraction": 0.9
+  },
+  "exact_paper_reproduction": false,
+  "long_training_included": false,
+  "checkpoint_policy": "Every complete epoch; resume only within this five-epoch pilot; any later 400-epoch reference starts from zero.",
+  "epochs": 5,
+  "pilot": {
+    "epochs": 5,
+    "train_examples": 50000,
+    "validation_examples": 10000,
+    "timeout_seconds": 1800,
+    "checkpoint_every_epoch": true,
+    "select_checkpoint_by": "highest validation top1 at W32/A32; earliest epoch on exact tie",
+    "data_workers": 0,
+    "train_drop_last": false,
+    "validation_drop_last": false
+  }
+}

@@ -1,0 +1,193 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_cifar10_mobilenetv2_k3_pilot5\20261030_191224_715515_run
+MOBILENETV2 / CIFAR-10 PILOT: 5 epochs; K=3; batch128; W/A 32,8,4,2,1; FP32; Adam lr=0.001.
+50.000 train / 10.000 test per epoch. De latere 400-epochreferentie begint opnieuw vanaf nul.
+Pilot tot en met epoch 5; checkpoint na iedere volledige epoch.
+CUDA en FP32-instellingen controleren.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU; allocatorbudget 6.15 GiB.
+Nieuw MobileNetV2-model initialiseren; K=3, vijf BN-banken per locatie.
+Volledige CIFAR-10-data controleren: 50.000 train / 10.000 test.
+Start epoch 1/5, learning rate 0.001; volledige train- en testset.
+pass 1/5: W32/A32 forward
+pass 1/5: W32/A32 backward
+pass 2/5: W8/A8 forward
+pass 2/5: W8/A8 backward
+pass 3/5: W4/A4 forward
+pass 3/5: W4/A4 backward
+pass 4/5: W2/A2 forward
+pass 4/5: W2/A2 backward
+pass 5/5: W1/A1 forward
+pass 5/5: W1/A1 backward
+Adam: one update from the sum of all five precision gradients
+Epoch 1/5 Train 1/391: 2.429 s; W32 loss=2.3485; vijf precisies.
+Epoch 1/5 Train 25/391: 0.254 s; W32 loss=2.3366; vijf precisies.
+MobileNetV2-pilot: wacht 15 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 25/391: 0.254 s; W32 loss=2.3366; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 50/391: 0.293 s; W32 loss=2.0801; vijf precisies.
+Epoch 1/5 Train 75/391: 0.294 s; W32 loss=1.9960; vijf precisies.
+MobileNetV2-pilot: wacht 30 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 75/391: 0.294 s; W32 loss=1.9960; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 100/391: 0.304 s; W32 loss=1.9477; vijf precisies.
+Epoch 1/5 Train 125/391: 0.309 s; W32 loss=1.9195; vijf precisies.
+MobileNetV2-pilot: wacht 45 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 125/391: 0.309 s; W32 loss=1.9195; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 150/391: 0.310 s; W32 loss=1.8643; vijf precisies.
+Epoch 1/5 Train 175/391: 0.355 s; W32 loss=1.8848; vijf precisies.
+MobileNetV2-pilot: wacht 61 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 175/391: 0.355 s; W32 loss=1.8848; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 200/391: 0.313 s; W32 loss=1.7880; vijf precisies.
+Epoch 1/5 Train 225/391: 0.313 s; W32 loss=1.8361; vijf precisies.
+MobileNetV2-pilot: wacht 76 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 225/391: 0.313 s; W32 loss=1.8361; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 250/391: 0.309 s; W32 loss=1.8817; vijf precisies.
+Epoch 1/5 Train 275/391: 0.308 s; W32 loss=1.7364; vijf precisies.
+MobileNetV2-pilot: wacht 91 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 275/391: 0.308 s; W32 loss=1.7364; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 300/391: 0.313 s; W32 loss=1.9691; vijf precisies.
+MobileNetV2-pilot: wacht 106 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 300/391: 0.313 s; W32 loss=1.9691; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 325/391: 0.309 s; W32 loss=1.8141; vijf precisies.
+Epoch 1/5 Train 350/391: 0.307 s; W32 loss=1.7289; vijf precisies.
+MobileNetV2-pilot: wacht 121 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Train 350/391: 0.307 s; W32 loss=1.7289; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Train 375/391: 0.307 s; W32 loss=1.6868; vijf precisies.
+Epoch 1/5 Train 391/391: 1.587 s; W32 loss=1.7240; vijf precisies.
+Epoch 1/5 Test 1/79: 0.125 s; W32 loss=1.7337; vijf precisies.
+Epoch 1/5 Test 25/79: 0.109 s; W32 loss=1.7010; vijf precisies.
+Epoch 1/5 Test 50/79: 0.116 s; W32 loss=1.7305; vijf precisies.
+MobileNetV2-pilot: wacht 136 s / limiet 1800 s; laatste uitvoer: Epoch 1/5 Test 50/79: 0.116 s; W32 loss=1.7305; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 1/5 Test 75/79: 0.111 s; W32 loss=1.6995; vijf precisies.
+Epoch 1/5 Test 79/79: 0.533 s; W32 loss=1.6558; vijf precisies.
+Epoch 1: checkpoint opslaan; beste W32-checkpoint tot nu toe epoch 1.
+EPOCH 1/5 VOLTOOID: W32/A32=36.50%; W8/A8=33.74%; W4/A4=32.58%; W2/A2=28.03%; W1/A1=22.21%; 132.9 s.
+Start epoch 2/5, learning rate 0.001; volledige train- en testset.
+Epoch 2/5 Train 1/391: 0.396 s; W32 loss=1.6517; vijf precisies.
+Epoch 2/5 Train 25/391: 0.320 s; W32 loss=1.7069; vijf precisies.
+MobileNetV2-pilot: wacht 151 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 25/391: 0.320 s; W32 loss=1.7069; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 50/391: 0.311 s; W32 loss=1.8551; vijf precisies.
+Epoch 2/5 Train 75/391: 0.313 s; W32 loss=1.7737; vijf precisies.
+MobileNetV2-pilot: wacht 166 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 75/391: 0.313 s; W32 loss=1.7737; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 100/391: 0.300 s; W32 loss=1.8349; vijf precisies.
+Epoch 2/5 Train 125/391: 0.308 s; W32 loss=1.7219; vijf precisies.
+MobileNetV2-pilot: wacht 181 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 125/391: 0.308 s; W32 loss=1.7219; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 150/391: 0.329 s; W32 loss=1.8466; vijf precisies.
+Epoch 2/5 Train 175/391: 0.309 s; W32 loss=1.5522; vijf precisies.
+MobileNetV2-pilot: wacht 196 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 175/391: 0.309 s; W32 loss=1.5522; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 200/391: 0.337 s; W32 loss=1.7462; vijf precisies.
+Epoch 2/5 Train 225/391: 0.323 s; W32 loss=1.6482; vijf precisies.
+MobileNetV2-pilot: wacht 212 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 225/391: 0.323 s; W32 loss=1.6482; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 250/391: 0.313 s; W32 loss=1.6071; vijf precisies.
+MobileNetV2-pilot: wacht 227 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 250/391: 0.313 s; W32 loss=1.6071; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 275/391: 0.314 s; W32 loss=1.6111; vijf precisies.
+Epoch 2/5 Train 300/391: 0.313 s; W32 loss=1.5495; vijf precisies.
+MobileNetV2-pilot: wacht 242 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 300/391: 0.313 s; W32 loss=1.5495; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 325/391: 0.322 s; W32 loss=1.5448; vijf precisies.
+Epoch 2/5 Train 350/391: 0.331 s; W32 loss=1.4310; vijf precisies.
+MobileNetV2-pilot: wacht 257 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Train 350/391: 0.331 s; W32 loss=1.4310; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Train 375/391: 0.289 s; W32 loss=1.4682; vijf precisies.
+Epoch 2/5 Train 391/391: 0.289 s; W32 loss=1.4220; vijf precisies.
+Epoch 2/5 Test 1/79: 0.122 s; W32 loss=1.3749; vijf precisies.
+Epoch 2/5 Test 25/79: 0.112 s; W32 loss=1.3428; vijf precisies.
+Epoch 2/5 Test 50/79: 0.112 s; W32 loss=1.3717; vijf precisies.
+Epoch 2/5 Test 75/79: 0.112 s; W32 loss=1.4008; vijf precisies.
+MobileNetV2-pilot: wacht 272 s / limiet 1800 s; laatste uitvoer: Epoch 2/5 Test 75/79: 0.112 s; W32 loss=1.4008; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 2/5 Test 79/79: 0.097 s; W32 loss=1.5134; vijf precisies.
+Epoch 2: checkpoint opslaan; beste W32-checkpoint tot nu toe epoch 2.
+EPOCH 2/5 VOLTOOID: W32/A32=45.80%; W8/A8=39.60%; W4/A4=39.26%; W2/A2=34.70%; W1/A1=30.34%; 134.5 s.
+Start epoch 3/5, learning rate 0.001; volledige train- en testset.
+Epoch 3/5 Train 1/391: 0.334 s; W32 loss=1.3635; vijf precisies.
+Epoch 3/5 Train 25/391: 0.310 s; W32 loss=1.4563; vijf precisies.
+MobileNetV2-pilot: wacht 287 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 25/391: 0.310 s; W32 loss=1.4563; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 50/391: 0.311 s; W32 loss=1.5239; vijf precisies.
+Epoch 3/5 Train 75/391: 0.304 s; W32 loss=1.4416; vijf precisies.
+MobileNetV2-pilot: wacht 302 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 75/391: 0.304 s; W32 loss=1.4416; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 100/391: 0.306 s; W32 loss=1.5296; vijf precisies.
+Epoch 3/5 Train 125/391: 0.308 s; W32 loss=1.4266; vijf precisies.
+MobileNetV2-pilot: wacht 317 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 125/391: 0.308 s; W32 loss=1.4266; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 150/391: 0.307 s; W32 loss=1.4730; vijf precisies.
+Epoch 3/5 Train 175/391: 0.307 s; W32 loss=1.4441; vijf precisies.
+MobileNetV2-pilot: wacht 332 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 175/391: 0.307 s; W32 loss=1.4441; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 200/391: 0.306 s; W32 loss=1.5421; vijf precisies.
+Epoch 3/5 Train 225/391: 0.298 s; W32 loss=1.4238; vijf precisies.
+MobileNetV2-pilot: wacht 347 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 225/391: 0.298 s; W32 loss=1.4238; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 250/391: 0.311 s; W32 loss=1.4626; vijf precisies.
+Epoch 3/5 Train 275/391: 0.309 s; W32 loss=1.3777; vijf precisies.
+MobileNetV2-pilot: wacht 363 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 275/391: 0.309 s; W32 loss=1.3777; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 300/391: 0.304 s; W32 loss=1.3327; vijf precisies.
+Epoch 3/5 Train 325/391: 0.332 s; W32 loss=1.3538; vijf precisies.
+MobileNetV2-pilot: wacht 378 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 325/391: 0.332 s; W32 loss=1.3538; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 350/391: 0.321 s; W32 loss=1.4445; vijf precisies.
+Epoch 3/5 Train 375/391: 0.342 s; W32 loss=1.2459; vijf precisies.
+MobileNetV2-pilot: wacht 393 s / limiet 1800 s; laatste uitvoer: Epoch 3/5 Train 375/391: 0.342 s; W32 loss=1.2459; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 3/5 Train 391/391: 0.290 s; W32 loss=1.6053; vijf precisies.
+Epoch 3/5 Test 1/79: 0.130 s; W32 loss=1.3137; vijf precisies.
+Epoch 3/5 Test 25/79: 0.120 s; W32 loss=1.1692; vijf precisies.
+Epoch 3/5 Test 50/79: 0.109 s; W32 loss=1.3011; vijf precisies.
+Epoch 3/5 Test 75/79: 0.107 s; W32 loss=1.1645; vijf precisies.
+Epoch 3/5 Test 79/79: 0.101 s; W32 loss=1.4470; vijf precisies.
+Epoch 3: checkpoint opslaan; beste W32-checkpoint tot nu toe epoch 3.
+EPOCH 3/5 VOLTOOID: W32/A32=51.42%; W8/A8=47.27%; W4/A4=45.72%; W2/A2=41.38%; W1/A1=35.95%; 130.4 s.
+Start epoch 4/5, learning rate 0.001; volledige train- en testset.
+Epoch 4/5 Train 1/391: 0.326 s; W32 loss=1.4855; vijf precisies.
+MobileNetV2-pilot: wacht 408 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 1/391: 0.326 s; W32 loss=1.4855; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 25/391: 0.304 s; W32 loss=1.5434; vijf precisies.
+Epoch 4/5 Train 50/391: 0.321 s; W32 loss=1.4301; vijf precisies.
+MobileNetV2-pilot: wacht 423 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 50/391: 0.321 s; W32 loss=1.4301; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 75/391: 0.293 s; W32 loss=1.2077; vijf precisies.
+Epoch 4/5 Train 100/391: 0.310 s; W32 loss=1.4581; vijf precisies.
+MobileNetV2-pilot: wacht 438 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 100/391: 0.310 s; W32 loss=1.4581; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 125/391: 0.307 s; W32 loss=1.4639; vijf precisies.
+Epoch 4/5 Train 150/391: 0.320 s; W32 loss=1.4610; vijf precisies.
+MobileNetV2-pilot: wacht 453 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 150/391: 0.320 s; W32 loss=1.4610; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 175/391: 0.304 s; W32 loss=1.3352; vijf precisies.
+Epoch 4/5 Train 200/391: 0.301 s; W32 loss=1.2298; vijf precisies.
+MobileNetV2-pilot: wacht 468 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 200/391: 0.301 s; W32 loss=1.2298; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 225/391: 0.313 s; W32 loss=1.1323; vijf precisies.
+Epoch 4/5 Train 250/391: 0.337 s; W32 loss=1.3830; vijf precisies.
+MobileNetV2-pilot: wacht 483 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 250/391: 0.337 s; W32 loss=1.3830; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 275/391: 0.316 s; W32 loss=1.2613; vijf precisies.
+Epoch 4/5 Train 300/391: 0.307 s; W32 loss=1.3294; vijf precisies.
+MobileNetV2-pilot: wacht 498 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 300/391: 0.307 s; W32 loss=1.3294; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 325/391: 0.308 s; W32 loss=1.2696; vijf precisies.
+Epoch 4/5 Train 350/391: 0.314 s; W32 loss=1.3481; vijf precisies.
+MobileNetV2-pilot: wacht 514 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Train 350/391: 0.314 s; W32 loss=1.3481; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Train 375/391: 0.314 s; W32 loss=1.5269; vijf precisies.
+Epoch 4/5 Train 391/391: 0.271 s; W32 loss=1.2035; vijf precisies.
+Epoch 4/5 Test 1/79: 0.117 s; W32 loss=1.1986; vijf precisies.
+Epoch 4/5 Test 25/79: 0.118 s; W32 loss=1.1403; vijf precisies.
+MobileNetV2-pilot: wacht 529 s / limiet 1800 s; laatste uitvoer: Epoch 4/5 Test 25/79: 0.118 s; W32 loss=1.1403; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 4/5 Test 50/79: 0.121 s; W32 loss=1.1561; vijf precisies.
+Epoch 4/5 Test 75/79: 0.121 s; W32 loss=1.1255; vijf precisies.
+Epoch 4/5 Test 79/79: 0.094 s; W32 loss=1.1437; vijf precisies.
+Epoch 4: checkpoint opslaan; beste W32-checkpoint tot nu toe epoch 4.
+EPOCH 4/5 VOLTOOID: W32/A32=55.31%; W8/A8=50.73%; W4/A4=49.88%; W2/A2=45.49%; W1/A1=38.50%; 132.2 s.
+Start epoch 5/5, learning rate 0.001; volledige train- en testset.
+Epoch 5/5 Train 1/391: 0.336 s; W32 loss=1.1990; vijf precisies.
+Epoch 5/5 Train 25/391: 0.311 s; W32 loss=1.0842; vijf precisies.
+MobileNetV2-pilot: wacht 544 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 25/391: 0.311 s; W32 loss=1.0842; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 50/391: 0.310 s; W32 loss=1.2633; vijf precisies.
+Epoch 5/5 Train 75/391: 0.312 s; W32 loss=1.3366; vijf precisies.
+MobileNetV2-pilot: wacht 559 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 75/391: 0.312 s; W32 loss=1.3366; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 100/391: 0.315 s; W32 loss=1.1240; vijf precisies.
+MobileNetV2-pilot: wacht 574 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 100/391: 0.315 s; W32 loss=1.1240; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 125/391: 0.322 s; W32 loss=1.2603; vijf precisies.
+Epoch 5/5 Train 150/391: 0.309 s; W32 loss=1.1314; vijf precisies.
+MobileNetV2-pilot: wacht 589 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 150/391: 0.309 s; W32 loss=1.1314; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 175/391: 0.309 s; W32 loss=1.1584; vijf precisies.
+Epoch 5/5 Train 200/391: 0.311 s; W32 loss=1.1852; vijf precisies.
+MobileNetV2-pilot: wacht 604 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 200/391: 0.311 s; W32 loss=1.1852; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 225/391: 0.312 s; W32 loss=1.0448; vijf precisies.
+Epoch 5/5 Train 250/391: 0.326 s; W32 loss=1.2089; vijf precisies.
+MobileNetV2-pilot: wacht 619 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 250/391: 0.326 s; W32 loss=1.2089; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 275/391: 0.318 s; W32 loss=1.1481; vijf precisies.
+Epoch 5/5 Train 300/391: 0.335 s; W32 loss=1.2549; vijf precisies.
+MobileNetV2-pilot: wacht 634 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 300/391: 0.335 s; W32 loss=1.2549; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 325/391: 0.307 s; W32 loss=1.2430; vijf precisies.
+Epoch 5/5 Train 350/391: 0.319 s; W32 loss=1.0992; vijf precisies.
+MobileNetV2-pilot: wacht 649 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Train 350/391: 0.319 s; W32 loss=1.0992; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Train 375/391: 0.301 s; W32 loss=1.3016; vijf precisies.
+Epoch 5/5 Train 391/391: 0.270 s; W32 loss=1.1996; vijf precisies.
+Epoch 5/5 Test 1/79: 0.118 s; W32 loss=1.0894; vijf precisies.
+Epoch 5/5 Test 25/79: 0.122 s; W32 loss=1.1019; vijf precisies.
+Epoch 5/5 Test 50/79: 0.120 s; W32 loss=1.0915; vijf precisies.
+MobileNetV2-pilot: wacht 665 s / limiet 1800 s; laatste uitvoer: Epoch 5/5 Test 50/79: 0.120 s; W32 loss=1.0915; vijf precisies. (wachtmelding, geen bewijs van GPU-voortgang)
+Epoch 5/5 Test 75/79: 0.107 s; W32 loss=1.0450; vijf precisies.
+Epoch 5/5 Test 79/79: 0.093 s; W32 loss=0.9117; vijf precisies.
+Epoch 5: checkpoint opslaan; beste W32-checkpoint tot nu toe epoch 5.
+EPOCH 5/5 VOLTOOID: W32/A32=58.66%; W8/A8=55.09%; W4/A4=52.75%; W2/A2=48.23%; W1/A1=40.49%; 131.9 s.
+Pilot van vijf epochs voltooid.
+WORKERSTATUS: PASS
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_cifar10_mobilenetv2_k3_pilot5\20261030_191224_715515_run\run_report.json
+Deel feedback_bundle.zip. Epochcheckpoints en CIFAR-10 blijven lokaal.

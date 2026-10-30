@@ -1,0 +1,25 @@
+{
+  "archive_name": "14-Any-Precision-DNNs-master.zip",
+  "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+  "source_url": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+  "files": [
+    {
+      "archive_member": "Any-Precision-DNNs-master/models/quan_ops.py",
+      "packaged_path": "upstream/quan_ops.py",
+      "sha256": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "modified": false
+    },
+    {
+      "archive_member": "Any-Precision-DNNs-master/models/losses.py",
+      "packaged_path": "upstream/losses.py",
+      "sha256": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "modified": false
+    },
+    {
+      "archive_member": "Any-Precision-DNNs-master/LICENSE.md",
+      "packaged_path": "upstream/LICENSE.md",
+      "sha256": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "modified": false
+    }
+  ]
+}

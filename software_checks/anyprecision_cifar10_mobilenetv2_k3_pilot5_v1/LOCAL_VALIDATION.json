@@ -1,0 +1,63 @@
+{
+  "status": "PASS_CPU_AND_REPORTING_VALIDATION",
+  "cuda_tested_locally": false,
+  "windows_gpu_tested_locally": false,
+  "real_cifar_training_executed_locally": false,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu"
+  },
+  "cpu_selftests": {
+    "total": 61,
+    "groups": {
+      "model_engine": 9,
+      "data_timing": 14,
+      "full_data": 9,
+      "checkpoint_resume": 11,
+      "runner": 18
+    },
+    "status": "PASS"
+  },
+  "checkpoint_resume": {
+    "cpu_exact_model_adam_and_rng_continuation": true,
+    "new_python_process_continuation": true,
+    "actual_worker_save_load_restore_history_integration": "PASS",
+    "bitexact_cuda_guaranteed": false,
+    "cuda_diagnostic_in_user_check": true
+  },
+  "notebook": {
+    "cells": 16,
+    "compiled_code_cells": 7,
+    "unexecuted": true,
+    "full_notebook_execution_performed": false,
+    "support_functions_fixture_tested": true,
+    "plots_visually_inspected": 7,
+    "fresh_resume_flag_regression": "PASS",
+    "fixtures_in_delivery": false
+  },
+  "expected_no_cuda_failure": "PASS: GPU worker fails with clear report on CPU-only validation host; no silent fallback.",
+  "syntax_checked_python_files": [
+    "checkpoint_support.py",
+    "data_support.py",
+    "engine.py",
+    "mobilenet_model.py",
+    "notebook_support.py",
+    "process_watchdog.py",
+    "run_train.py",
+    "support.py",
+    "test_checkpoint.py",
+    "test_data_timing.py",
+    "test_full_data.py",
+    "test_model_engine.py",
+    "test_runner.py",
+    "timing_analysis.py",
+    "train_worker.py",
+    "upstream/__init__.py",
+    "upstream/losses.py",
+    "upstream/quan_ops.py"
+  ],
+  "data_scope": "Full50,000train/10,000test coverage tested with isolated index fixtures. No real CIFAR training run here.",
+  "prior_timing_deliverable_unchanged": true,
+  "limits": "Actual laptop CUDA execution, Windows checkpoint file publication, learning curves and duration must be checked by user check/run."
+}

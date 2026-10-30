@@ -1,0 +1,110 @@
+{
+  "epoch": 4,
+  "lr": 0.001,
+  "global_updates": 1564,
+  "training": {
+    "1": {
+      "loss": 1.7999682065582276,
+      "top1": 35.248,
+      "top5": 87.314,
+      "samples": 50000
+    },
+    "2": {
+      "loss": 1.6197701929473878,
+      "top1": 42.034,
+      "top5": 90.656,
+      "samples": 50000
+    },
+    "4": {
+      "loss": 1.471007034034729,
+      "top1": 47.192,
+      "top5": 92.548,
+      "samples": 50000
+    },
+    "8": {
+      "loss": 1.4277239483261108,
+      "top1": 47.874,
+      "top5": 92.794,
+      "samples": 50000
+    },
+    "32": {
+      "loss": 1.3153472784805298,
+      "top1": 52.192,
+      "top5": 93.836,
+      "samples": 50000
+    }
+  },
+  "validation": {
+    "1": {
+      "loss": 1.6543928703308106,
+      "top1": 38.5,
+      "top5": 89.57,
+      "samples": 10000
+    },
+    "2": {
+      "loss": 1.4743836084365844,
+      "top1": 45.49,
+      "top5": 92.49,
+      "samples": 10000
+    },
+    "4": {
+      "loss": 1.3614271493911743,
+      "top1": 49.88,
+      "top5": 94.1,
+      "samples": 10000
+    },
+    "8": {
+      "loss": 1.345112108039856,
+      "top1": 50.73,
+      "top5": 94.1,
+      "samples": 10000
+    },
+    "32": {
+      "loss": 1.2502775177001952,
+      "top1": 55.31,
+      "top5": 94.99,
+      "samples": 10000
+    }
+  },
+  "timing": {
+    "train_seconds": 122.45198620017618,
+    "validation_seconds": 9.061756700044498,
+    "checkpoint_seconds": 0.3506219999399036,
+    "total_seconds": 132.22302979999222
+  },
+  "memory": {
+    "phase": "epoch",
+    "step": 4,
+    "allocated_bytes": 65439744,
+    "reserved_bytes": 952107008,
+    "peak_allocated_bytes": 921244672,
+    "peak_reserved_bytes": 952107008,
+    "free_bytes": 6338641920,
+    "total_bytes": 8546484224
+  },
+  "checkpoint": {
+    "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0004.pt",
+    "bytes": 35516943,
+    "seconds": 0.3506219999399036,
+    "sha256": "fc433a86ca3af4517f98e9a21ede85ec42274ba2647f2c077c0f5d10f9ced721",
+    "epoch_completed": 4,
+    "partial_epoch": false,
+    "resume_supported": true,
+    "in_feedback_bundle": false
+  },
+  "bn_training_check": {
+    "status": "PASS",
+    "banks": 260,
+    "updates_per_bank": 391
+  },
+  "bn_evaluation_check": {
+    "status": "PASS",
+    "all_buffers_unchanged": true,
+    "banks": 260
+  },
+  "finite_check": {
+    "status": "PASS",
+    "model_and_optimizer_finite": true,
+    "master_dtype": "float32"
+  }
+}

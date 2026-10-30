@@ -1,0 +1,552 @@
+[
+  {
+    "epoch": 1,
+    "lr": 0.001,
+    "global_updates": 391,
+    "training": {
+      "1": {
+        "loss": 2.2223243556976318,
+        "top1": 14.422,
+        "top5": 60.684,
+        "samples": 50000
+      },
+      "2": {
+        "loss": 2.136565564994812,
+        "top1": 18.55800000305176,
+        "top5": 68.268,
+        "samples": 50000
+      },
+      "4": {
+        "loss": 2.0438272779464723,
+        "top1": 23.184,
+        "top5": 75.142,
+        "samples": 50000
+      },
+      "8": {
+        "loss": 2.007329048576355,
+        "top1": 24.106,
+        "top5": 75.782,
+        "samples": 50000
+      },
+      "32": {
+        "loss": 1.9300705981826782,
+        "top1": 27.604,
+        "top5": 80.242,
+        "samples": 50000
+      }
+    },
+    "validation": {
+      "1": {
+        "loss": 2.0578707340240476,
+        "top1": 22.21,
+        "top5": 75.49,
+        "samples": 10000
+      },
+      "2": {
+        "loss": 1.9208319429397582,
+        "top1": 28.03,
+        "top5": 81.15,
+        "samples": 10000
+      },
+      "4": {
+        "loss": 1.8046446495056152,
+        "top1": 32.58,
+        "top5": 85.2,
+        "samples": 10000
+      },
+      "8": {
+        "loss": 1.7824907501220704,
+        "top1": 33.74,
+        "top5": 86.06,
+        "samples": 10000
+      },
+      "32": {
+        "loss": 1.7436390504837036,
+        "top1": 36.5,
+        "top5": 88.13,
+        "samples": 10000
+      }
+    },
+    "timing": {
+      "train_seconds": 122.61018920014612,
+      "validation_seconds": 9.630212800111622,
+      "checkpoint_seconds": 0.2842619998846203,
+      "total_seconds": 132.92402049992234
+    },
+    "memory": {
+      "phase": "epoch",
+      "step": 1,
+      "allocated_bytes": 65439744,
+      "reserved_bytes": 150994944,
+      "peak_allocated_bytes": 1647335424,
+      "peak_reserved_bytes": 1658847232,
+      "free_bytes": 7139753984,
+      "total_bytes": 8546484224
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0001.pt",
+      "bytes": 35468239,
+      "seconds": 0.2842619998846203,
+      "sha256": "a8e63333320434a00de5aec464f0ce0f5e92701424a9ae8ef643c2defeed46da",
+      "epoch_completed": 1,
+      "partial_epoch": false,
+      "resume_supported": true,
+      "in_feedback_bundle": false
+    },
+    "bn_training_check": {
+      "status": "PASS",
+      "banks": 260,
+      "updates_per_bank": 391
+    },
+    "bn_evaluation_check": {
+      "status": "PASS",
+      "all_buffers_unchanged": true,
+      "banks": 260
+    },
+    "finite_check": {
+      "status": "PASS",
+      "model_and_optimizer_finite": true,
+      "master_dtype": "float32"
+    }
+  },
+  {
+    "epoch": 2,
+    "lr": 0.001,
+    "global_updates": 782,
+    "training": {
+      "1": {
+        "loss": 2.0233715128326417,
+        "top1": 25.140000003051757,
+        "top5": 78.496,
+        "samples": 50000
+      },
+      "2": {
+        "loss": 1.9016635556411743,
+        "top1": 30.11,
+        "top5": 82.964,
+        "samples": 50000
+      },
+      "4": {
+        "loss": 1.7698609381484984,
+        "top1": 35.07,
+        "top5": 86.99,
+        "samples": 50000
+      },
+      "8": {
+        "loss": 1.7237827732086182,
+        "top1": 35.464,
+        "top5": 87.214,
+        "samples": 50000
+      },
+      "32": {
+        "loss": 1.6212058388900756,
+        "top1": 39.71,
+        "top5": 89.514,
+        "samples": 50000
+      }
+    },
+    "validation": {
+      "1": {
+        "loss": 1.8966507120132445,
+        "top1": 30.34,
+        "top5": 83.25,
+        "samples": 10000
+      },
+      "2": {
+        "loss": 1.774910684776306,
+        "top1": 34.7,
+        "top5": 86.76,
+        "samples": 10000
+      },
+      "4": {
+        "loss": 1.6626016040802003,
+        "top1": 39.26,
+        "top5": 90.25,
+        "samples": 10000
+      },
+      "8": {
+        "loss": 1.664724589920044,
+        "top1": 39.6,
+        "top5": 90.36,
+        "samples": 10000
+      },
+      "32": {
+        "loss": 1.514106833076477,
+        "top1": 45.8,
+        "top5": 92.19,
+        "samples": 10000
+      }
+    },
+    "timing": {
+      "train_seconds": 124.92110550007783,
+      "validation_seconds": 9.018964499933645,
+      "checkpoint_seconds": 0.2450528999324888,
+      "total_seconds": 134.54931850009598
+    },
+    "memory": {
+      "phase": "epoch",
+      "step": 2,
+      "allocated_bytes": 65439744,
+      "reserved_bytes": 952107008,
+      "peak_allocated_bytes": 921244672,
+      "peak_reserved_bytes": 952107008,
+      "free_bytes": 6338641920,
+      "total_bytes": 8546484224
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0002.pt",
+      "bytes": 35514831,
+      "seconds": 0.2450528999324888,
+      "sha256": "b2de467bcd8b72ce6a9464c1d3fe6e1311fa925e726107abd2088d6d5da7f01f",
+      "epoch_completed": 2,
+      "partial_epoch": false,
+      "resume_supported": true,
+      "in_feedback_bundle": false
+    },
+    "bn_training_check": {
+      "status": "PASS",
+      "banks": 260,
+      "updates_per_bank": 391
+    },
+    "bn_evaluation_check": {
+      "status": "PASS",
+      "all_buffers_unchanged": true,
+      "banks": 260
+    },
+    "finite_check": {
+      "status": "PASS",
+      "model_and_optimizer_finite": true,
+      "master_dtype": "float32"
+    }
+  },
+  {
+    "epoch": 3,
+    "lr": 0.001,
+    "global_updates": 1173,
+    "training": {
+      "1": {
+        "loss": 1.9066640916061401,
+        "top1": 30.67,
+        "top5": 83.94,
+        "samples": 50000
+      },
+      "2": {
+        "loss": 1.7491688444137574,
+        "top1": 36.328,
+        "top5": 87.694,
+        "samples": 50000
+      },
+      "4": {
+        "loss": 1.6002086605453492,
+        "top1": 42.004,
+        "top5": 90.638,
+        "samples": 50000
+      },
+      "8": {
+        "loss": 1.5526562073898316,
+        "top1": 42.728,
+        "top5": 90.792,
+        "samples": 50000
+      },
+      "32": {
+        "loss": 1.4450863660430908,
+        "top1": 47.366,
+        "top5": 92.35,
+        "samples": 50000
+      }
+    },
+    "validation": {
+      "1": {
+        "loss": 1.7557247249603272,
+        "top1": 35.95,
+        "top5": 85.68,
+        "samples": 10000
+      },
+      "2": {
+        "loss": 1.593650430870056,
+        "top1": 41.38,
+        "top5": 90.1,
+        "samples": 10000
+      },
+      "4": {
+        "loss": 1.4669042161941528,
+        "top1": 45.72,
+        "top5": 91.81,
+        "samples": 10000
+      },
+      "8": {
+        "loss": 1.4389821367263793,
+        "top1": 47.27,
+        "top5": 92.62,
+        "samples": 10000
+      },
+      "32": {
+        "loss": 1.3272013622283936,
+        "top1": 51.42,
+        "top5": 93.73,
+        "samples": 10000
+      }
+    },
+    "timing": {
+      "train_seconds": 120.71853049984202,
+      "validation_seconds": 9.00814040005207,
+      "checkpoint_seconds": 0.2682553001213819,
+      "total_seconds": 130.36369140003808
+    },
+    "memory": {
+      "phase": "epoch",
+      "step": 3,
+      "allocated_bytes": 65439744,
+      "reserved_bytes": 952107008,
+      "peak_allocated_bytes": 921244672,
+      "peak_reserved_bytes": 952107008,
+      "free_bytes": 6338641920,
+      "total_bytes": 8546484224
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0003.pt",
+      "bytes": 35515919,
+      "seconds": 0.2682553001213819,
+      "sha256": "c5b8460db79c517ca7c3cc61382042f52148d42afaac84bca6ec2235fb53e9f3",
+      "epoch_completed": 3,
+      "partial_epoch": false,
+      "resume_supported": true,
+      "in_feedback_bundle": false
+    },
+    "bn_training_check": {
+      "status": "PASS",
+      "banks": 260,
+      "updates_per_bank": 391
+    },
+    "bn_evaluation_check": {
+      "status": "PASS",
+      "all_buffers_unchanged": true,
+      "banks": 260
+    },
+    "finite_check": {
+      "status": "PASS",
+      "model_and_optimizer_finite": true,
+      "master_dtype": "float32"
+    }
+  },
+  {
+    "epoch": 4,
+    "lr": 0.001,
+    "global_updates": 1564,
+    "training": {
+      "1": {
+        "loss": 1.7999682065582276,
+        "top1": 35.248,
+        "top5": 87.314,
+        "samples": 50000
+      },
+      "2": {
+        "loss": 1.6197701929473878,
+        "top1": 42.034,
+        "top5": 90.656,
+        "samples": 50000
+      },
+      "4": {
+        "loss": 1.471007034034729,
+        "top1": 47.192,
+        "top5": 92.548,
+        "samples": 50000
+      },
+      "8": {
+        "loss": 1.4277239483261108,
+        "top1": 47.874,
+        "top5": 92.794,
+        "samples": 50000
+      },
+      "32": {
+        "loss": 1.3153472784805298,
+        "top1": 52.192,
+        "top5": 93.836,
+        "samples": 50000
+      }
+    },
+    "validation": {
+      "1": {
+        "loss": 1.6543928703308106,
+        "top1": 38.5,
+        "top5": 89.57,
+        "samples": 10000
+      },
+      "2": {
+        "loss": 1.4743836084365844,
+        "top1": 45.49,
+        "top5": 92.49,
+        "samples": 10000
+      },
+      "4": {
+        "loss": 1.3614271493911743,
+        "top1": 49.88,
+        "top5": 94.1,
+        "samples": 10000
+      },
+      "8": {
+        "loss": 1.345112108039856,
+        "top1": 50.73,
+        "top5": 94.1,
+        "samples": 10000
+      },
+      "32": {
+        "loss": 1.2502775177001952,
+        "top1": 55.31,
+        "top5": 94.99,
+        "samples": 10000
+      }
+    },
+    "timing": {
+      "train_seconds": 122.45198620017618,
+      "validation_seconds": 9.061756700044498,
+      "checkpoint_seconds": 0.3506219999399036,
+      "total_seconds": 132.22302979999222
+    },
+    "memory": {
+      "phase": "epoch",
+      "step": 4,
+      "allocated_bytes": 65439744,
+      "reserved_bytes": 952107008,
+      "peak_allocated_bytes": 921244672,
+      "peak_reserved_bytes": 952107008,
+      "free_bytes": 6338641920,
+      "total_bytes": 8546484224
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0004.pt",
+      "bytes": 35516943,
+      "seconds": 0.3506219999399036,
+      "sha256": "fc433a86ca3af4517f98e9a21ede85ec42274ba2647f2c077c0f5d10f9ced721",
+      "epoch_completed": 4,
+      "partial_epoch": false,
+      "resume_supported": true,
+      "in_feedback_bundle": false
+    },
+    "bn_training_check": {
+      "status": "PASS",
+      "banks": 260,
+      "updates_per_bank": 391
+    },
+    "bn_evaluation_check": {
+      "status": "PASS",
+      "all_buffers_unchanged": true,
+      "banks": 260
+    },
+    "finite_check": {
+      "status": "PASS",
+      "model_and_optimizer_finite": true,
+      "master_dtype": "float32"
+    }
+  },
+  {
+    "epoch": 5,
+    "lr": 0.001,
+    "global_updates": 1955,
+    "training": {
+      "1": {
+        "loss": 1.7181263223648071,
+        "top1": 38.452,
+        "top5": 89.206,
+        "samples": 50000
+      },
+      "2": {
+        "loss": 1.508294894104004,
+        "top1": 46.404,
+        "top5": 92.326,
+        "samples": 50000
+      },
+      "4": {
+        "loss": 1.3544017263412476,
+        "top1": 51.968000006103516,
+        "top5": 93.954,
+        "samples": 50000
+      },
+      "8": {
+        "loss": 1.3125973190689086,
+        "top1": 52.526000006103516,
+        "top5": 94.172,
+        "samples": 50000
+      },
+      "32": {
+        "loss": 1.1944458475494384,
+        "top1": 56.972,
+        "top5": 95.068,
+        "samples": 50000
+      }
+    },
+    "validation": {
+      "1": {
+        "loss": 1.590984762763977,
+        "top1": 40.49,
+        "top5": 90.6,
+        "samples": 10000
+      },
+      "2": {
+        "loss": 1.394647315788269,
+        "top1": 48.23,
+        "top5": 93.28,
+        "samples": 10000
+      },
+      "4": {
+        "loss": 1.2732720153808594,
+        "top1": 52.75,
+        "top5": 94.98,
+        "samples": 10000
+      },
+      "8": {
+        "loss": 1.2259831512451171,
+        "top1": 55.09,
+        "top5": 95.31,
+        "samples": 10000
+      },
+      "32": {
+        "loss": 1.159889070892334,
+        "top1": 58.66,
+        "top5": 95.92,
+        "samples": 10000
+      }
+    },
+    "timing": {
+      "train_seconds": 122.02167019993067,
+      "validation_seconds": 9.244836299913004,
+      "checkpoint_seconds": 0.25853440002538264,
+      "total_seconds": 131.875830499921
+    },
+    "memory": {
+      "phase": "epoch",
+      "step": 5,
+      "allocated_bytes": 65439744,
+      "reserved_bytes": 952107008,
+      "peak_allocated_bytes": 921244672,
+      "peak_reserved_bytes": 952107008,
+      "free_bytes": 6338641920,
+      "total_bytes": 8546484224
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_cifar10_mobilenetv2_k3_pilot5\\20261030_191224_715515_run\\worker\\checkpoints\\epoch_0005.pt",
+      "bytes": 35518031,
+      "seconds": 0.25853440002538264,
+      "sha256": "a0fb2167bebaf298263eff197fcbf18fa2b0c0730e8bebf67c03c2d61e3e5820",
+      "epoch_completed": 5,
+      "partial_epoch": false,
+      "resume_supported": false,
+      "in_feedback_bundle": false
+    },
+    "bn_training_check": {
+      "status": "PASS",
+      "banks": 260,
+      "updates_per_bank": 391
+    },
+    "bn_evaluation_check": {
+      "status": "PASS",
+      "all_buffers_unchanged": true,
+      "banks": 260
+    },
+    "finite_check": {
+      "status": "PASS",
+      "model_and_optimizer_finite": true,
+      "master_dtype": "float32"
+    }
+  }
+]
