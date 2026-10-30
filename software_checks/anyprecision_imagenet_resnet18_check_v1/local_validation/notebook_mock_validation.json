@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "Mock notebook/helper validation only; no GPU/model measurements. Code cells executed with a no-op IPython.display stub, figures separately rendered. Delivered notebook remains unexecuted.",
+  "scenarios": {
+    "PASS": {
+      "status": "PASS",
+      "rows": 4,
+      "completed_points": 7,
+      "projection_rows": 3,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "TIMEOUT": {
+      "status": "PASS",
+      "rows": 4,
+      "completed_points": 6,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "OOM": {
+      "status": "PASS",
+      "rows": 4,
+      "completed_points": 5,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "FAIL": {
+      "status": "PASS",
+      "rows": 4,
+      "completed_points": 5,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "CPU_SELFTEST": {
+      "status": "PASS",
+      "rows": 4,
+      "completed_points": 5,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "NO_REPORT": {
+      "status": "PASS",
+      "rows": 4,
+      "completed_points": 5,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    }
+  },
+  "delivered_notebook_unexecuted": true
+}

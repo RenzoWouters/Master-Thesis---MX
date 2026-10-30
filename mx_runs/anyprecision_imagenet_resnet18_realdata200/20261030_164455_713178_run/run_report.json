@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "package_id": "anyprecision_imagenet_resnet18_realdata200_v1",
+  "command": "resnet18_realdata200_pilot",
+  "requested_command": "run",
+  "status": "FAIL",
+  "started_utc": "2026-10-30T15:44:55.713845+00:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_imagenet_resnet18_realdata200\\20261030_164455_713178_run",
+  "config": {
+    "schema_version": 1,
+    "package_id": "anyprecision_imagenet_resnet18_realdata200_v1",
+    "command_kind": "resnet18_realdata200_pilot",
+    "dataset": "Full ImageNet-1k required; diagnostic training prefix and stratified validation subset",
+    "model": "resnet18q_reconstructed",
+    "architecture_source": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+    "quantizer_source": "Any-Precision-DNNs/models/quan_ops.py",
+    "loss_source": "Any-Precision-DNNs/models/losses.py",
+    "exact_original_resnet18_reproduction_claim": false,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "global_batch": 256,
+    "reference_replicas": 4,
+    "bn_shards": [
+      64,
+      64,
+      64,
+      64
+    ],
+    "execution": "serial_dp4",
+    "bn_policy": "retain_first_shard_buffers_once_per_precision; preserve architecture shared stem/projection BN",
+    "optimizer": "SGD",
+    "lr": 0.3,
+    "momentum": 0.9,
+    "weight_decay": 1e-05,
+    "reference_epochs": 80,
+    "lr_milestones": [
+      45,
+      60,
+      70
+    ],
+    "lr_gamma": 0.1,
+    "reference_schedule_used_in_check": false,
+    "seed": 20261009,
+    "amp": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "activation_checkpointing": false,
+    "mx": false,
+    "weight_truncation": false,
+    "cpu_threads": 4,
+    "dataset_required": true,
+    "eligible_as_pilot_check": false,
+    "assumptions": [
+      "Global batch256 and four localBN64 groups are our reconstruction choices, borrowed from the released R50 recipe.",
+      "Momentum0.9 comes from the shared upstream optimizer; weight_decay1e-5 comes from the released R50 recipe; original R18 settings not independently confirmed.",
+      "Architecture comes from TruncQuant; original Any-Precision R18 architecture identity has not been established.",
+      "SGD LR0.3 and 80-epoch schedule are the paper ImageNet any-precision recipe, not the revised GitHub R50 LR0.5.",
+      "This partial epoch is a practical data/speed check, not a converged accuracy result or full ImageNet reference."
+    ],
+    "sources": {
+      "anyprecision_paper": "https://arxiv.org/html/1911.07346v2",
+      "anyprecision_code": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+      "truncquant_code": "https://github.com/a2jinhee/TruncQuant"
+    },
+    "train_batches": 200,
+    "train_samples": 51200,
+    "validation_per_class": 5,
+    "validation_samples": 5000,
+    "validation_batch": 64,
+    "default_workers": 4,
+    "data_loader_timeout_seconds": 120,
+    "run_timeout_seconds": 1200,
+    "projection_exclude_first_batches": 20,
+    "training_scope": "200 global training updates from a fresh initialization only",
+    "completed_epochs_expected": 0,
+    "eligible_for_reference_resume": false,
+    "full_training_starts_from_zero": true
+  },
+  "runtime_options": {
+    "workers": 4,
+    "cpu_threads": 4
+  },
+  "package_signature": {
+    "files": {
+      "data_support.py": "14728f9cd39fc0ed0f3f6b16da9b6aaae72b7ec1b903a08c0fdd17fdbd330506",
+      "engine.py": "d16fce898b261a00d240020248f4f033722773bea87c1794ba200e7556edb590",
+      "experiment_config.json": "5c4df4680c1fd50db741d9b277420c54b51c5190b9bbc58df0d0c782ebc9bd20",
+      "notebook_support.py": "398e72608ebbef0013e2fa5be4e0a7313c4ba329c4c8fe563c3c01fc98d108e2",
+      "pilot_worker.py": "62d23a77b782c2731238a2c65558d549369956ef4afdfcd833d84a83aed4c59f",
+      "process_watchdog.py": "73c509b43422ec5210bd0743a084049a99ee6b9f8c2504cadaddbc269cb778ad",
+      "resnet18_model.py": "9a6168e2b5468ae55e3a116deff84c4f45fcff12236a756af2c0432fd3f1fb1a",
+      "run_pilot.py": "334dae84d2c1a9cc8c4858d9be55b02194b9e215506373c48f9cc473bf1ba8f0",
+      "runtime_checks.py": "bf4b1d4b711a14c1a085a04a3851c69c5ad63741b33444576285edcd91964e4d",
+      "SOURCE_MANIFEST.json": "d6174920b6fde9e34f69f60f1e6607ec34a2eb91e6aea39e6bf101add6be55e2",
+      "support.py": "d97b8a2812fe749786d8a9d2962c47050fb7e800d98104c6e9b3ff0148b9d74e",
+      "test_data.py": "62e744ef19a5bbd8c08c1b8ae89d234d040f5312ddaebd4521f7e309aa24fc0b",
+      "test_engine.py": "c9b427993e382e57be99e8674806954b832f18168758c6a94c0c22459bfc8689",
+      "test_pipeline.py": "0f00e0ec76d6311bf433e523dce376b5eae6805a6196c22ce381ce91bafd56a3",
+      "test_resnet18.py": "cbd8172d0d68b9ba2e52ca4549ce90b55e0a4b3c8dd46aebdfd5b047af64671e",
+      "test_watchdog.py": "820dc939b2a2ccfb1c9271e80151b6c0d7e38d44d449eb675481f8584be5d628"
+    },
+    "sha256": "fa4aef22e0625bd904691da2c0dcf4665aacd4204fdeee8913e29541f21f5289"
+  },
+  "completed_epochs": 0,
+  "scope": "Fresh diagnostic training prefix: 200 global batches and 5,000 stratified validation images.",
+  "eligible_for_reference_resume": false,
+  "approved_synthetic_check": {
+    "status": "PASS",
+    "original_report": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_imagenet_resnet18_check\\20261030_163140_020326_check",
+    "original_started_utc": "2026-10-30T15:31:40.020939+00:00",
+    "source": "approved_synthetic_check.json",
+    "synthetic_probe_repeated": false,
+    "unchanged_model_engine_and_recipe": true,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "index": 0,
+      "total_memory_bytes": 8546484224,
+      "compute_capability": [
+        12,
+        0
+      ],
+      "visible_device_count": 1
+    },
+    "packages": {
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "numpy": "2.5.2",
+      "Pillow": "12.3.0",
+      "pandas": "2.3.3",
+      "matplotlib": "3.10.8"
+    }
+  },
+  "error": "ImageNet-map ontbreekt: C:\\Users\\renzo\\master-thesis-mx\\data\\imagenet. Geef --imagenet-root met een bestaande, voorbereide ILSVRC2012-map met train/<wnid>/ en val/<wnid>/. De proef met echte data kan pas daarna starten; er wordt niets gedownload.",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_imagenet_resnet18_realdata200_v1\\run_pilot.py\", line 183, in main\n    report['dataset'] = audit_imagenet(args.imagenet_root, strict=True, progress=log)\n                        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_imagenet_resnet18_realdata200_v1\\data_support.py\", line 97, in audit_imagenet\n    _require(root.is_dir(),\n    ~~~~~~~~^^^^^^^^^^^^^^^\n             f\"ImageNet-map ontbreekt: {root}. Geef --imagenet-root met een bestaande, \"\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n             \"voorbereide ILSVRC2012-map met train/<wnid>/ en val/<wnid>/. \"\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n             \"De proef met echte data kan pas daarna starten; er wordt niets gedownload.\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renzo\\master-thesis-mx\\software_checks\\anyprecision_imagenet_resnet18_realdata200_v1\\data_support.py\", line 41, in _require\n    raise ImageNetDataError(message)\ndata_support.ImageNetDataError: ImageNet-map ontbreekt: C:\\Users\\renzo\\master-thesis-mx\\data\\imagenet. Geef --imagenet-root met een bestaande, voorbereide ILSVRC2012-map met train/<wnid>/ en val/<wnid>/. De proef met echte data kan pas daarna starten; er wordt niets gedownload.\n",
+  "ended_utc": "2026-10-30T15:44:55.742253+00:00",
+  "wall_seconds": 0.028424900025129318
+}

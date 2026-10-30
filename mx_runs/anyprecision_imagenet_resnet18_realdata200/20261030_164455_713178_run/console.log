@@ -1,0 +1,24 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_imagenet_resnet18_realdata200\20261030_164455_713178_run
+RESNET-18 / IMAGENET: 200 batches256; BN64 x4; W/A 32,8,4,2,1; FP32; SGD lr=0.3.
+Gedocumenteerde reconstructie; de volledige training begint later opnieuw vanaf nul.
+Eerst ImageNet-inventaris controleren: C:\Users\renzo\master-thesis-mx\data\imagenet
+FAIL: ImageNet-map ontbreekt: C:\Users\renzo\master-thesis-mx\data\imagenet. Geef --imagenet-root met een bestaande, voorbereide ILSVRC2012-map met train/<wnid>/ en val/<wnid>/. De proef met echte data kan pas daarna starten; er wordt niets gedownload.
+Traceback (most recent call last):
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_imagenet_resnet18_realdata200_v1\run_pilot.py", line 183, in main
+    report['dataset'] = audit_imagenet(args.imagenet_root, strict=True, progress=log)
+                        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_imagenet_resnet18_realdata200_v1\data_support.py", line 97, in audit_imagenet
+    _require(root.is_dir(),
+    ~~~~~~~~^^^^^^^^^^^^^^^
+             f"ImageNet-map ontbreekt: {root}. Geef --imagenet-root met een bestaande, "
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             "voorbereide ILSVRC2012-map met train/<wnid>/ en val/<wnid>/. "
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             "De proef met echte data kan pas daarna starten; er wordt niets gedownload.")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\renzo\master-thesis-mx\software_checks\anyprecision_imagenet_resnet18_realdata200_v1\data_support.py", line 41, in _require
+    raise ImageNetDataError(message)
+data_support.ImageNetDataError: ImageNet-map ontbreekt: C:\Users\renzo\master-thesis-mx\data\imagenet. Geef --imagenet-root met een bestaande, voorbereide ILSVRC2012-map met train/<wnid>/ en val/<wnid>/. De proef met echte data kan pas daarna starten; er wordt niets gedownload.
+
+EINDSTATUS: FAIL
+Deel feedback_bundle.zip uit deze map. Het diagnosecheckpoint en ImageNet blijven lokaal.

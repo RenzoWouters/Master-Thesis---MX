@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "validated_utc": "2026-10-30T15:43:28.764754+00:00",
+  "scope": "Software validation only; no real ImageNet GPU training was run in this environment.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/workspace/scratch/4619498905be/work/resnet50_validation_env/bin/python",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torchvision": "0.25.0+cpu",
+      "numpy": "2.3.5",
+      "Pillow": "12.3.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8"
+    },
+    "pip_check": {
+      "returncode": 0,
+      "output": "No broken requirements found."
+    },
+    "torch_import": "2.10.0+cpu",
+    "torchvision_import": "0.25.0+cpu",
+    "torch_cuda_build": null
+  },
+  "CPU_selftests": {
+    "engine": "PASS",
+    "resnet18": "PASS",
+    "data": "PASS",
+    "watchdog": "PASS",
+    "pipeline": "PASS"
+  },
+  "public_selftest_seconds": 15.839845214002708,
+  "missing_data_stops_before_GPU_or_training": true,
+  "checkpoint_weights_only_roundtrip": "PASS",
+  "mock_worker_success_200_updates_and_5000_validation": "PASS",
+  "mock_partial_OOM_preserves_completed_measurements": "PASS",
+  "notebook_delivered_unexecuted": true,
+  "local_Windows_native_runtime": "NOT_TESTED; native CPU watchdog tests run on the user platform before the pilot.",
+  "local_DataLoader_tensor_IPC": "NOT_TESTED; sandbox blocks resource-sharing Unix sockets. Spawn image decoding/pickling was checked with a metadata-only test collator.",
+  "real_ImageNet_GPU_training": "NOT_RUN"
+}

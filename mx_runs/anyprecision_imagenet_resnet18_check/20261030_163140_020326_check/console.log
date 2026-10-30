@@ -1,0 +1,129 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_imagenet_resnet18_check\20261030_163140_020326_check
+RESNET-18-CONTROLE: batch256; vier groepen64; W/A 1,2,4,8,32; FP32; SGD lr=0.3; geen MX.
+Gedocumenteerde reconstructie; geen claim van exacte reproductie van het oorspronkelijke ResNet-18-resultaat.
+Omgevingscontrole: pip check (maximaal 30 seconden).
+pip check: No broken requirements found.
+CPU-controle: onafhankelijke vier-replica-oracle voor gradients, BN en SGD.
+CPU-controle: ResNet-18-architectuur en oorspronkelijke quantizers tegenover de ongewijzigde bron.
+CPU-controle: bronintegriteit, meetgrenzen en automatisch stoppen van het testproces.
+CPU-zelftests geslaagd.
+Start GPU-proces: uitsluitend ResNet-18, batch256 als vier BN64-groepen.
+Harde GPU-tijdslimiet: 300 seconden inclusief opwarming en beide metingen.
+ResNet-18: cuda_initialization_start; 0.1 s
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+RESNET-18: FP32; W/A 1,2,4,8,32; batch256 als vier BN64-groepen; SGD lr=0.3.
+ResNet-18: model_allocation_start; 3.2 s
+ResNet-18: model_and_inputs_done; 3.3 s
+Opwarming: één volledige update met alle vijf precisies, backward en SGD.
+ResNet-18: validation_before_start; 3.3 s
+ResNet-18: validation_before_done; 3.3 s
+ResNet-18: precision_start; W32/A32; 3.3 s
+ResNet-18: forward_start; W32/A32; groep 1/4; 3.3 s
+ResNet-18: forward_done; W32/A32; groep 1/4; 4.3 s
+ResNet-18: backward_start; W32/A32; groep 1/4; 4.3 s
+ResNet-18: backward_done; W32/A32; groep 1/4; 6.2 s
+ResNet-18: forward_start; W32/A32; groep 2/4; 6.2 s
+ResNet-18: forward_done; W32/A32; groep 2/4; 6.2 s
+ResNet-18: backward_start; W32/A32; groep 2/4; 6.2 s
+ResNet-18: backward_done; W32/A32; groep 2/4; 6.3 s
+ResNet-18: forward_start; W32/A32; groep 3/4; 6.3 s
+ResNet-18: forward_done; W32/A32; groep 3/4; 6.3 s
+ResNet-18: backward_start; W32/A32; groep 3/4; 6.3 s
+ResNet-18: backward_done; W32/A32; groep 3/4; 6.4 s
+ResNet-18: forward_start; W32/A32; groep 4/4; 6.4 s
+ResNet-18: forward_done; W32/A32; groep 4/4; 6.4 s
+ResNet-18: backward_start; W32/A32; groep 4/4; 6.4 s
+ResNet-18: backward_done; W32/A32; groep 4/4; 6.5 s
+ResNet-18: precision_done; W32/A32; 6.5 s
+ResNet-18: precision_start; W8/A8; 6.5 s
+ResNet-18: forward_start; W8/A8; groep 1/4; 6.5 s
+ResNet-18: forward_done; W8/A8; groep 1/4; 6.5 s
+ResNet-18: backward_start; W8/A8; groep 1/4; 6.5 s
+ResNet-18: backward_done; W8/A8; groep 1/4; 6.6 s
+ResNet-18: forward_start; W8/A8; groep 2/4; 6.6 s
+ResNet-18: forward_done; W8/A8; groep 2/4; 6.7 s
+ResNet-18: backward_start; W8/A8; groep 2/4; 6.7 s
+ResNet-18: backward_done; W8/A8; groep 2/4; 6.7 s
+ResNet-18: forward_start; W8/A8; groep 3/4; 6.7 s
+ResNet-18: forward_done; W8/A8; groep 3/4; 6.8 s
+ResNet-18: backward_start; W8/A8; groep 3/4; 6.8 s
+ResNet-18: backward_done; W8/A8; groep 3/4; 6.8 s
+ResNet-18: forward_start; W8/A8; groep 4/4; 6.8 s
+ResNet-18: forward_done; W8/A8; groep 4/4; 6.9 s
+ResNet-18: backward_start; W8/A8; groep 4/4; 6.9 s
+ResNet-18: backward_done; W8/A8; groep 4/4; 6.9 s
+ResNet-18: precision_done; W8/A8; 7.0 s
+ResNet-18: precision_start; W4/A4; 7.0 s
+ResNet-18: forward_start; W4/A4; groep 1/4; 7.0 s
+ResNet-18: forward_done; W4/A4; groep 1/4; 7.0 s
+ResNet-18: backward_start; W4/A4; groep 1/4; 7.0 s
+ResNet-18: backward_done; W4/A4; groep 1/4; 7.1 s
+ResNet-18: forward_start; W4/A4; groep 2/4; 7.1 s
+ResNet-18: forward_done; W4/A4; groep 2/4; 7.1 s
+ResNet-18: backward_start; W4/A4; groep 2/4; 7.1 s
+ResNet-18: backward_done; W4/A4; groep 2/4; 7.2 s
+ResNet-18: forward_start; W4/A4; groep 3/4; 7.2 s
+ResNet-18: forward_done; W4/A4; groep 3/4; 7.2 s
+ResNet-18: backward_start; W4/A4; groep 3/4; 7.2 s
+ResNet-18: backward_done; W4/A4; groep 3/4; 7.3 s
+ResNet-18: forward_start; W4/A4; groep 4/4; 7.3 s
+ResNet-18: forward_done; W4/A4; groep 4/4; 7.3 s
+ResNet-18: backward_start; W4/A4; groep 4/4; 7.3 s
+ResNet-18: backward_done; W4/A4; groep 4/4; 7.4 s
+ResNet-18: precision_done; W4/A4; 7.4 s
+ResNet-18: precision_start; W2/A2; 7.4 s
+ResNet-18: forward_start; W2/A2; groep 1/4; 7.4 s
+ResNet-18: forward_done; W2/A2; groep 1/4; 7.4 s
+ResNet-18: backward_start; W2/A2; groep 1/4; 7.4 s
+ResNet-18: backward_done; W2/A2; groep 1/4; 7.5 s
+ResNet-18: forward_start; W2/A2; groep 2/4; 7.5 s
+ResNet-18: forward_done; W2/A2; groep 2/4; 7.6 s
+ResNet-18: backward_start; W2/A2; groep 2/4; 7.6 s
+ResNet-18: backward_done; W2/A2; groep 2/4; 7.6 s
+ResNet-18: forward_start; W2/A2; groep 3/4; 7.6 s
+ResNet-18: forward_done; W2/A2; groep 3/4; 7.7 s
+ResNet-18: backward_start; W2/A2; groep 3/4; 7.7 s
+ResNet-18: backward_done; W2/A2; groep 3/4; 7.7 s
+ResNet-18: forward_start; W2/A2; groep 4/4; 7.7 s
+ResNet-18: forward_done; W2/A2; groep 4/4; 7.8 s
+ResNet-18: backward_start; W2/A2; groep 4/4; 7.8 s
+ResNet-18: backward_done; W2/A2; groep 4/4; 7.8 s
+ResNet-18: precision_done; W2/A2; 7.8 s
+ResNet-18: precision_start; W1/A1; 7.8 s
+ResNet-18: forward_start; W1/A1; groep 1/4; 7.9 s
+ResNet-18: forward_done; W1/A1; groep 1/4; 7.9 s
+ResNet-18: backward_start; W1/A1; groep 1/4; 7.9 s
+ResNet-18: backward_done; W1/A1; groep 1/4; 8.0 s
+ResNet-18: forward_start; W1/A1; groep 2/4; 8.0 s
+ResNet-18: forward_done; W1/A1; groep 2/4; 8.0 s
+ResNet-18: backward_start; W1/A1; groep 2/4; 8.0 s
+ResNet-18: backward_done; W1/A1; groep 2/4; 8.1 s
+ResNet-18: forward_start; W1/A1; groep 3/4; 8.1 s
+ResNet-18: forward_done; W1/A1; groep 3/4; 8.1 s
+ResNet-18: backward_start; W1/A1; groep 3/4; 8.1 s
+ResNet-18: backward_done; W1/A1; groep 3/4; 8.2 s
+ResNet-18: forward_start; W1/A1; groep 4/4; 8.2 s
+ResNet-18: forward_done; W1/A1; groep 4/4; 8.2 s
+ResNet-18: backward_start; W1/A1; groep 4/4; 8.2 s
+ResNet-18: backward_done; W1/A1; groep 4/4; 8.3 s
+ResNet-18: precision_done; W1/A1; 8.3 s
+ResNet-18: gradient_validation_start; 8.3 s
+ResNet-18: gradient_validation_done; 8.3 s
+ResNet-18: optimizer_start; 8.3 s
+ResNet-18: optimizer_done; 8.3 s
+ResNet-18: validation_after_start; 8.3 s
+ResNet-18: validation_after_done; 8.4 s
+ResNet-18: measured_update_start; 8.4 s
+Gemeten volledige update 1/2; geen extra synchronisatie binnen de engine.
+ResNet-18: measured_update_done; 10.5 s
+Stapduur: 2.099 s
+ResNet-18: measured_update_start; 10.5 s
+Gemeten volledige update 2/2; geen extra synchronisatie binnen de engine.
+ResNet-18: measured_update_done; 12.6 s
+Stapduur: 2.090 s
+ResNet-18: final_finite_checks_start; 12.6 s
+ResNet-18: final_finite_checks_done; 12.6 s
+WORKER STATUS: PASS
+Controle afgerond. Beoordeel geheugenruimte en snelheid voordat een ImageNet-pilot wordt voorbereid.
+EINDSTATUS: PASS
+Deel feedback_bundle.zip uit deze map. Deze controle start geen ImageNet-training.

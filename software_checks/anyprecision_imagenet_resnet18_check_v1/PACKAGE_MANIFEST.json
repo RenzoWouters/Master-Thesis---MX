@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "package_id": "anyprecision_imagenet_resnet18_check_v1",
+  "files_sha256": {
+    "PROTOCOL.md": "dbafb69bf8d6e3fe2047a1af4fe55125e7dd61295f9f68aef9a02d3a712f4fab",
+    "README.md": "cc0aa5feced05ca780722dbc29774ff31eac7c0d54dd1fb1d6b25f0f0d9e2307",
+    "ResNet18_geheugen_snelheid_check.ipynb": "e5187683477ad9eb5d834e8b4f6d6130b7683e63049f18958869e037d1cd7bf2",
+    "SOURCE_MANIFEST.json": "6be311ccd309518e9bb396e63624e92eb8c4d66e81d45271822e606d765a4bb1",
+    "baseline_results.json": "572be993c324a804d4cedeedcfa0087bd088861eb9b3a7f86a66e182913e65c6",
+    "check_watchdog.py": "fb80ecf8136e32318fab554e1b4cc450e0fb3ca32672576956a98f40ab459e1b",
+    "engine.py": "d16fce898b261a00d240020248f4f033722773bea87c1794ba200e7556edb590",
+    "experiment_config.json": "a56de32230ab0c160249403bc37f8885a69bad9f28677d63f3f5899f8707d25d",
+    "gpu_worker.py": "02b74e99f80d9f105dc0b7b6a7d51eb0ac72e13ef9bd569637e9e72929feda86",
+    "local_validation/README.md": "17d3764f2aea0ec93868ae8cd2419ffce6d8d4d3d45137b06a891051e40c7192",
+    "local_validation/cpu_host_check_expected_no_cuda.json": "8ac2c36219b20f8e6b99006aa756db52b161158c724d726bfe0a2f6315410b59",
+    "local_validation/cpu_model_equivalence.json": "b5788cc8b03ee95254d684a34dafd3d172aaf36794a1d69cbb5107b70293bd34",
+    "local_validation/cpu_orchestration_tests.json": "cf601bac7c7beaa6bf33d524d3b02734014fe8dba4b734200644f53f8067227a",
+    "local_validation/notebook_mock_validation.json": "69033398f9ca43470ed99545292f41d454616cf4fbbc55b9c5b5437befb71484",
+    "local_validation/validation_summary.json": "73af8fc2fc01e512f0e68b1ce6d70c69e5877498e25a97a785b47d51c9c429cb",
+    "notebook_support.py": "7ae0eb39ec279e64e4d3e943c805b6b64f17c152d69537c9eb9dca1aa2c57ce5",
+    "resnet18_model.py": "9a6168e2b5468ae55e3a116deff84c4f45fcff12236a756af2c0432fd3f1fb1a",
+    "run_check.py": "8c73ed1fa5b7b4e8ee1bece7d861c9fe7c73ee42ab48b6cc255e84cc8de83138",
+    "support.py": "1d0aa6dc2ee696f9856e31183fdf70c1cc524405c1488eb5542aefc92398712d",
+    "test_diagnostic.py": "2e8f8b10c7264b9c6dcb1265c770da58aac09bb7c7139481494f8265cc559780",
+    "test_engine.py": "c9b427993e382e57be99e8674806954b832f18168758c6a94c0c22459bfc8689",
+    "test_resnet18.py": "cbd8172d0d68b9ba2e52ca4549ce90b55e0a4b3c8dd46aebdfd5b047af64671e",
+    "vendor/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "vendor/TruncQuant-master.zip": "ff661e1b3fbc76cb565acf7fd9286a5d04a2cacb39ef04afa097ac41f3c99a05"
+  },
+  "note": "The manifest does not include its own hash. Vendor source archives are unchanged."
+}

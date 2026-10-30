@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "CPU contract/serialization tests plus mocked GPU worker orchestration.",
+  "contract": {
+    "status": "PASS",
+    "prior_synthetic_PASS_reused": true,
+    "bounded_cli": true,
+    "weighted_partial_validation_batch": true,
+    "BN_training_retention": {
+      "status": "PASS",
+      "optimizer_updates": 200,
+      "shared_bn_modules": 4,
+      "precision_specific_bn_banks": 80,
+      "updates_per_shared_bn": 1000,
+      "updates_per_precision_bn_bank": 200
+    },
+    "changed_validation_BN_rejected": true
+  },
+  "checkpoint": {
+    "status": "PASS",
+    "weights_only_load_succeeded": true,
+    "FP32_model_and_SGD_preserved": true,
+    "not_full_epoch_or_reference_resume": true,
+    "existing_checkpoint_not_overwritten": true
+  },
+  "worker_success": {
+    "status": "PASS",
+    "mock_only": true,
+    "observed_worker_status": "PASS",
+    "completed_training_updates": 200,
+    "validation_batches": 79,
+    "total_time_components_verified": true,
+    "partial_results_preserved": true,
+    "no_accuracy_or_GPU_speed_claim": true
+  },
+  "worker_partial_OOM": {
+    "status": "PASS",
+    "mock_only": true,
+    "observed_worker_status": "OOM",
+    "completed_training_updates": 50,
+    "validation_batches": 0,
+    "total_time_components_verified": true,
+    "partial_results_preserved": true,
+    "no_accuracy_or_GPU_speed_claim": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "package_id": "anyprecision_imagenet_resnet18_check_v1",
+  "command_kind": "resnet18_feasibility_check",
+  "dataset": "Synthetic ImageNet-shaped inputs; no ImageNet files loaded",
+  "model": "resnet18q_reconstructed",
+  "architecture_source": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+  "quantizer_source": "Any-Precision-DNNs/models/quan_ops.py",
+  "loss_source": "Any-Precision-DNNs/models/losses.py",
+  "exact_original_resnet18_reproduction_claim": false,
+  "bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "global_batch": 256,
+  "reference_replicas": 4,
+  "bn_shards": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "execution": "serial_dp4",
+  "bn_policy": "retain_first_shard_buffers_once_per_precision; preserve architecture shared stem/projection BN",
+  "optimizer": "SGD",
+  "lr": 0.3,
+  "momentum": 0.9,
+  "weight_decay": 1e-05,
+  "reference_epochs": 80,
+  "lr_milestones": [
+    45,
+    60,
+    70
+  ],
+  "lr_gamma": 0.1,
+  "reference_schedule_used_in_check": false,
+  "seed": 20261009,
+  "amp": false,
+  "fp32_precision": "ieee",
+  "cudnn_benchmark": true,
+  "cudnn_deterministic": false,
+  "activation_checkpointing": false,
+  "mx": false,
+  "weight_truncation": false,
+  "warmup_updates": 1,
+  "measured_updates": 2,
+  "gpu_timeout_seconds": 300,
+  "cpu_threads": 4,
+  "training_authorized": false,
+  "dataset_required": false,
+  "eligible_as_pilot_check": false,
+  "assumptions": [
+    "Global batch256 and four localBN64 groups are our reconstruction choices, borrowed from the released R50 recipe.",
+    "Momentum0.9 comes from the shared upstream optimizer; weight_decay1e-5 comes from the released R50 recipe; original R18 settings not independently confirmed.",
+    "Architecture comes from TruncQuant; original Any-Precision R18 architecture identity has not been established.",
+    "SGD LR0.3 and 80-epoch schedule are the paper ImageNet any-precision recipe, not the revised GitHub R50 LR0.5.",
+    "Synthetic timing is an initial feasibility check, not accuracy or proven long-training runtime."
+  ],
+  "sources": {
+    "anyprecision_paper": "https://arxiv.org/html/1911.07346v2",
+    "anyprecision_code": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+    "truncquant_code": "https://github.com/a2jinhee/TruncQuant"
+  }
+}

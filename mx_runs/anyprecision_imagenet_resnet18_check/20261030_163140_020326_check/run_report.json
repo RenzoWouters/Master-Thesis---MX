@@ -1,0 +1,1095 @@
+{
+  "schema_version": 1,
+  "package_id": "anyprecision_imagenet_resnet18_check_v1",
+  "command": "resnet18_feasibility_check",
+  "requested_command": "check",
+  "status": "PASS",
+  "eligible_as_pilot_check": false,
+  "started_utc": "2026-10-30T15:31:40.020939+00:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_imagenet_resnet18_check\\20261030_163140_020326_check",
+  "config": {
+    "schema_version": 1,
+    "package_id": "anyprecision_imagenet_resnet18_check_v1",
+    "command_kind": "resnet18_feasibility_check",
+    "dataset": "Synthetic ImageNet-shaped inputs; no ImageNet files loaded",
+    "model": "resnet18q_reconstructed",
+    "architecture_source": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+    "quantizer_source": "Any-Precision-DNNs/models/quan_ops.py",
+    "loss_source": "Any-Precision-DNNs/models/losses.py",
+    "exact_original_resnet18_reproduction_claim": false,
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "global_batch": 256,
+    "reference_replicas": 4,
+    "bn_shards": [
+      64,
+      64,
+      64,
+      64
+    ],
+    "execution": "serial_dp4",
+    "bn_policy": "retain_first_shard_buffers_once_per_precision; preserve architecture shared stem/projection BN",
+    "optimizer": "SGD",
+    "lr": 0.3,
+    "momentum": 0.9,
+    "weight_decay": 1e-05,
+    "reference_epochs": 80,
+    "lr_milestones": [
+      45,
+      60,
+      70
+    ],
+    "lr_gamma": 0.1,
+    "reference_schedule_used_in_check": false,
+    "seed": 20261009,
+    "amp": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "activation_checkpointing": false,
+    "mx": false,
+    "weight_truncation": false,
+    "warmup_updates": 1,
+    "measured_updates": 2,
+    "gpu_timeout_seconds": 300,
+    "cpu_threads": 4,
+    "training_authorized": false,
+    "dataset_required": false,
+    "eligible_as_pilot_check": false,
+    "assumptions": [
+      "Global batch256 and four localBN64 groups are our reconstruction choices, borrowed from the released R50 recipe.",
+      "Momentum0.9 comes from the shared upstream optimizer; weight_decay1e-5 comes from the released R50 recipe; original R18 settings not independently confirmed.",
+      "Architecture comes from TruncQuant; original Any-Precision R18 architecture identity has not been established.",
+      "SGD LR0.3 and 80-epoch schedule are the paper ImageNet any-precision recipe, not the revised GitHub R50 LR0.5.",
+      "Synthetic timing is an initial feasibility check, not accuracy or proven long-training runtime."
+    ],
+    "sources": {
+      "anyprecision_paper": "https://arxiv.org/html/1911.07346v2",
+      "anyprecision_code": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+      "truncquant_code": "https://github.com/a2jinhee/TruncQuant"
+    }
+  },
+  "package_signature": {
+    "files": {
+      "check_watchdog.py": "fb80ecf8136e32318fab554e1b4cc450e0fb3ca32672576956a98f40ab459e1b",
+      "engine.py": "d16fce898b261a00d240020248f4f033722773bea87c1794ba200e7556edb590",
+      "experiment_config.json": "a56de32230ab0c160249403bc37f8885a69bad9f28677d63f3f5899f8707d25d",
+      "gpu_worker.py": "02b74e99f80d9f105dc0b7b6a7d51eb0ac72e13ef9bd569637e9e72929feda86",
+      "notebook_support.py": "7ae0eb39ec279e64e4d3e943c805b6b64f17c152d69537c9eb9dca1aa2c57ce5",
+      "resnet18_model.py": "9a6168e2b5468ae55e3a116deff84c4f45fcff12236a756af2c0432fd3f1fb1a",
+      "run_check.py": "8c73ed1fa5b7b4e8ee1bece7d861c9fe7c73ee42ab48b6cc255e84cc8de83138",
+      "SOURCE_MANIFEST.json": "6be311ccd309518e9bb396e63624e92eb8c4d66e81d45271822e606d765a4bb1",
+      "support.py": "1d0aa6dc2ee696f9856e31183fdf70c1cc524405c1488eb5542aefc92398712d",
+      "test_diagnostic.py": "2e8f8b10c7264b9c6dcb1265c770da58aac09bb7c7139481494f8265cc559780",
+      "test_engine.py": "c9b427993e382e57be99e8674806954b832f18168758c6a94c0c22459bfc8689",
+      "test_resnet18.py": "cbd8172d0d68b9ba2e52ca4549ce90b55e0a4b3c8dd46aebdfd5b047af64671e"
+    },
+    "sha256": "7faf8375c2fcae33dabbd5080d7feac59fe00e03e2aeb8482389c27aa954894f"
+  },
+  "scope": "Synthetic feasibility only. No ImageNet data, epochs, saved model tensors or accuracy results.",
+  "reconstruction": "TruncQuant R18 architecture with original Any-Precision quantizers/loss and documented recipe choices.",
+  "baseline_comparison": "Prior R50 laptop checks are hardware context, not a controlled architecture-only comparison.",
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "numpy": "2.5.2",
+      "Pillow": "12.3.0",
+      "pandas": "2.3.3",
+      "matplotlib": "3.10.8"
+    },
+    "pip_check": {
+      "returncode": 0,
+      "output": "No broken requirements found."
+    },
+    "torch_import": "2.10.0+cu128",
+    "torchvision_import": "0.25.0+cu128",
+    "torch_cuda_build": "12.8"
+  },
+  "source": {
+    "anyprecision": {
+      "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "files_sha256": {
+        "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+        "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+        "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+        "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+        "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+        "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+        "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+        "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+        "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+        "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+        "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+        "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+        "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+        "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+        "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+        "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+        "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+      },
+      "modified_source_files": []
+    },
+    "truncquant": {
+      "archive_sha256": "ff661e1b3fbc76cb565acf7fd9286a5d04a2cacb39ef04afa097ac41f3c99a05",
+      "files_sha256": {
+        "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+        "README.md": "2f0780f36f2b02f7b3d45e61773ccc9dac81375c463b5ea996a3da03a0037e2c",
+        "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+        "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+        "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+        "models/__init__.py": "005297d12e5c88aa1aa5f451604dd6a0c1981e279cd1b56ae2edfc8a7df8dda3",
+        "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+        "models/model_quan.py": "fcdf3bba409d7e1d5f067d9ee7cdc4292f8dcf239e33d2eee6b20dd050913a26",
+        "models/quan_ops.py": "14e1af4b0178ee525bd6aa42d9751aff6f60e42cae2c6ff81b10a896db5a5b6e",
+        "models/resnet_quan.py": "c9f6b8662e9d50cf48fb1d541c5cb94b38bf9913b0fa3f7fe486f3e8f739cb25",
+        "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+        "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+        "test_cifar10.sh": "a88602c5719b0e492993c54f7cde1ff22608cfbbf1288d4c507fa663a2011847",
+        "test_imagenet.py": "4338471fc7f5ce863a42cbfc3c24bea8b8dfccaa2f79a90c33003f4bbc54f2f6",
+        "test_imagenet.sh": "2cad215e15ef581b0b4b36ff43df97b53a32c728c42934f5fbc525bded8a9ea4",
+        "train.py": "70cfc414d15456dffc2af39a90031109502b31dc7d383a3e97b383c310bd76d2",
+        "train_cifar10.sh": "7db6ff574b93f14015473ab9fbba20660970198f1502a38b171ab130f2254dd9",
+        "train_imagenet.py": "fd4804161a5959ad8e5be22f0580b96bc3f910d2e33dd18c03ce06fb74bf32f4",
+        "train_imagenet.sh": "95350149212e200c4dc31b9abc21cbbe3b84daf264c0cc4459e9addc0ead4a62",
+        "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+        "trunc_models/__init__.py": "79f3c004623ee5734e8704d364b432019f99d154475f2a6b62af6f3b29eb076a",
+        "trunc_models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+        "trunc_models/trunc_quan_ops.py": "7412992da1abac650c29545d9a51ba7b17bc06a0e31dd97b07d6e58142d6383a",
+        "trunc_models/trunc_resnet_quan.py": "8c278e922dac649f80e041782ba56831845498561f6f344dc07aebb7886fd40d",
+        "trunc_train.py": "bf626d0704665d0eaefa7655109bae70b31bb0edec1ca4ca6924d85e369b8185",
+        "utils.py": "831af28e0f44b6246ab9387791486af1d9f800f4b45b960779cd64eff0cf0b29"
+      },
+      "modified_source_files": []
+    },
+    "integration": {
+      "architecture": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+      "quantizers_and_soft_loss": "Original Any-Precision source, loaded under private module names",
+      "source_files_modified": false,
+      "exact_original_paper_R18_identity_established": false,
+      "note": "The separate TruncQuant models/resnet18q route is not used."
+    }
+  },
+  "selftests": {
+    "engine": {
+      "status": "PASS",
+      "device": "cpu",
+      "torch_version": "2.10.0+cu128",
+      "synthetic_fixture_only": true,
+      "real_dataset_loaded": false,
+      "independent_oracle": "explicit deep-copied replicas, gathered outputs, one global mean loss per mode",
+      "serial_cases": [
+        {
+          "status": "PASS",
+          "samples": 8,
+          "chunk_sizes": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        },
+        {
+          "status": "PASS",
+          "samples": 13,
+          "chunk_sizes": [
+            4,
+            4,
+            4,
+            1
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        },
+        {
+          "status": "PASS",
+          "samples": 5,
+          "chunk_sizes": [
+            2,
+            2,
+            1
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        },
+        {
+          "status": "PASS",
+          "samples": 1,
+          "chunk_sizes": [
+            1
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        }
+      ],
+      "native_case": {
+        "status": "PASS",
+        "parameter_max_abs": 0.0,
+        "gradient_max_abs": 0.0,
+        "buffer_max_abs": 0.0
+      },
+      "BN_difference_case": {
+        "status": "PASS",
+        "native_batch_changes_BN": true,
+        "naive_accumulation_changes_running_buffers": true,
+        "native_running_var_max_abs_difference": 0.027016937732696533,
+        "naive_running_mean_max_abs_difference": 0.11842328310012817,
+        "serial_BN_updates_per_mode": 1,
+        "naive_BN_updates_per_mode": 4
+      },
+      "evaluation_case": {
+        "status": "PASS",
+        "all_modes_hard_CE": true,
+        "buffers_parameters_gradients_unchanged": true,
+        "module_training_flags_restored": true
+      },
+      "rejection_cases": {
+        "status": "PASS",
+        "rejected_before_optimizer_update": [
+          "unsupported_mode",
+          "wrong_replica_count",
+          "non_FP32_inputs",
+          "nonfinite_input",
+          "missing_required_gradient"
+        ]
+      },
+      "progress_cases": {
+        "status": "PASS",
+        "cases": [
+          {
+            "mode": "serial_dp4",
+            "validate": false,
+            "events": 92,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          },
+          {
+            "mode": "serial_dp4",
+            "validate": true,
+            "events": 98,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          },
+          {
+            "mode": "native256",
+            "validate": false,
+            "events": 32,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          },
+          {
+            "mode": "native256",
+            "validate": true,
+            "events": 38,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          }
+        ]
+      },
+      "tolerances": {
+        "parameter_atol": 2e-06,
+        "gradient_atol": 2e-05,
+        "parameter_gradient_rtol": 5e-05,
+        "buffer_atol": 1e-06,
+        "buffer_rtol": 1e-05
+      },
+      "seconds": 2.347814599983394
+    },
+    "resnet18": {
+      "status": "PASS",
+      "device": "cpu",
+      "torch_version": "2.10.0+cu128",
+      "synthetic_inputs_only": true,
+      "ImageNet_data_loaded": false,
+      "full_model_equivalence": {
+        "status": "PASS",
+        "input_shape": [
+          2,
+          3,
+          32,
+          32
+        ],
+        "architecture": {
+          "model": "resnet18q_reconstruction",
+          "architecture_source": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+          "quantizer_source": "Original Any-Precision/models/quan_ops.py",
+          "original_paper_R18_identity_verified": false,
+          "stage_blocks": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stage_channels": [
+            64,
+            128,
+            256,
+            512
+          ],
+          "parameter_count": 11720232,
+          "parameter_bytes": 46880928,
+          "buffer_bytes": 161952,
+          "output_classes": 1000,
+          "precision_bits": [
+            1,
+            2,
+            4,
+            8,
+            32
+          ],
+          "quantized_convolution_paths": [
+            "layer1.0.conv1",
+            "layer1.0.conv2",
+            "layer1.1.conv1",
+            "layer1.1.conv2",
+            "layer2.0.conv1",
+            "layer2.0.conv2",
+            "layer2.1.conv1",
+            "layer2.1.conv2",
+            "layer3.0.conv1",
+            "layer3.0.conv2",
+            "layer3.1.conv1",
+            "layer3.1.conv2",
+            "layer4.0.conv1",
+            "layer4.0.conv2",
+            "layer4.1.conv1",
+            "layer4.1.conv2"
+          ],
+          "FP32_convolution_paths": [
+            "conv1",
+            "layer2.0.downsample.0",
+            "layer3.0.downsample.0",
+            "layer4.0.downsample.0"
+          ],
+          "FP32_classifier": "fc",
+          "switchable_BN_paths": [
+            "layer1.0.bn1",
+            "layer1.0.bn2",
+            "layer1.1.bn1",
+            "layer1.1.bn2",
+            "layer2.0.bn1",
+            "layer2.0.bn2",
+            "layer2.1.bn1",
+            "layer2.1.bn2",
+            "layer3.0.bn1",
+            "layer3.0.bn2",
+            "layer3.1.bn1",
+            "layer3.1.bn2",
+            "layer4.0.bn1",
+            "layer4.0.bn2",
+            "layer4.1.bn1",
+            "layer4.1.bn2"
+          ],
+          "switchable_BN_banks_per_module": 5,
+          "shared_BN_paths": [
+            "bn1",
+            "layer2.0.downsample.1",
+            "layer3.0.downsample.1",
+            "layer4.0.downsample.1"
+          ],
+          "activation_quantizer_paths": [
+            "layer1.0.act1.quan",
+            "layer1.0.act2.quan",
+            "layer1.1.act1.quan",
+            "layer1.1.act2.quan",
+            "layer2.0.act1.quan",
+            "layer2.0.act2.quan",
+            "layer2.1.act1.quan",
+            "layer2.1.act2.quan",
+            "layer3.0.act1.quan",
+            "layer3.0.act2.quan",
+            "layer3.1.act1.quan",
+            "layer3.1.act2.quan",
+            "layer4.0.act1.quan",
+            "layer4.0.act2.quan",
+            "layer4.1.act1.quan",
+            "layer4.1.act2.quan"
+          ],
+          "BN_semantics": "Branch BN banks are precision-specific; stem and projection BN are shared across precisions.",
+          "FP32_weight_mode": "Original tanh/normalization/mean-absolute scaling retained in quantized convolutions.",
+          "truncation": false,
+          "MX": false
+        },
+        "initialization_state_and_RNG_exact": true,
+        "modes": {
+          "32": {
+            "status": "PASS",
+            "logits_max_abs": 0.0,
+            "input_gradient_max_abs": 0.0,
+            "loss_abs_difference": 0.0,
+            "parameters": 0.0,
+            "gradients": 0.0,
+            "buffers": 0.0
+          },
+          "8": {
+            "status": "PASS",
+            "logits_max_abs": 0.0,
+            "input_gradient_max_abs": 0.0,
+            "loss_abs_difference": 0.0,
+            "parameters": 0.0,
+            "gradients": 0.0,
+            "buffers": 0.0
+          },
+          "4": {
+            "status": "PASS",
+            "logits_max_abs": 0.0,
+            "input_gradient_max_abs": 0.0,
+            "loss_abs_difference": 0.0,
+            "parameters": 0.0,
+            "gradients": 0.0,
+            "buffers": 0.0
+          },
+          "2": {
+            "status": "PASS",
+            "logits_max_abs": 0.0,
+            "input_gradient_max_abs": 0.0,
+            "loss_abs_difference": 0.0,
+            "parameters": 0.0,
+            "gradients": 0.0,
+            "buffers": 0.0
+          },
+          "1": {
+            "status": "PASS",
+            "logits_max_abs": 0.0,
+            "input_gradient_max_abs": 0.0,
+            "loss_abs_difference": 0.0,
+            "parameters": 0.0,
+            "gradients": 0.0,
+            "buffers": 0.0
+          }
+        },
+        "all_parameter_gradients_present": true,
+        "BN_counts": {
+          "precision_specific_banks": 80,
+          "updates_per_bank": 1,
+          "shared_BN_modules": 4,
+          "updates_per_shared_BN": 5
+        },
+        "one_joint_SGD_update": true,
+        "post_update_max_abs": {
+          "parameters": 0.0,
+          "gradients": 0.0,
+          "buffers": 0.0
+        },
+        "momentum_max_abs": 0.0,
+        "oracle": "Unmodified pinned TruncQuant resnet18q(trunc=False), not the unavailable original Any-Precision R18."
+      },
+      "serial_replica_equivalence": {
+        "status": "PASS",
+        "input_shape": [
+          15,
+          3,
+          32,
+          32
+        ],
+        "chunk_sizes": [
+          4,
+          4,
+          4,
+          3
+        ],
+        "oracle": "Explicit untouched TruncQuant model replicas; gathered global loss; summed replica gradients.",
+        "one_SGD_update": true,
+        "RNG_unchanged": true,
+        "BN_counts": {
+          "precision_specific_banks": 80,
+          "updates_per_bank": 1,
+          "shared_BN_modules": 4,
+          "updates_per_shared_BN": 5
+        },
+        "state_max_abs": {
+          "parameters": 0.0,
+          "gradients": 0.0,
+          "buffers": 0.0
+        },
+        "momentum_max_abs": 0.0,
+        "parameter_atol": 3e-06,
+        "gradient_atol": 1e-05,
+        "rtol": 0.0001,
+        "BN_buffer_comparison": "exact"
+      },
+      "source_rejection": {
+        "status": "PASS",
+        "changed_quantizer_source_rejected_before_import": true
+      },
+      "source_files_unchanged": true,
+      "caller_CPU_RNG_restored": true,
+      "seconds": 6.626112600089982,
+      "limitation": "CPU semantic checks with small spatial inputs; no CUDA equivalence, GPU-memory estimate or ImageNet accuracy claim."
+    },
+    "diagnostic": {
+      "status": "PASS",
+      "device": "CPU / mocked CUDA",
+      "scope": "Integrity, fixed recipe, process lifetime, status gates, timing and persistence; these mocks make no GPU speed or model-equivalence claim.",
+      "sources": {
+        "status": "PASS",
+        "rejected_inputs": [
+          "changed_engine",
+          "changed_anyprecision",
+          "missing_anyprecision",
+          "changed_truncquant",
+          "missing_truncquant",
+          "changed_extracted_quantizer"
+        ],
+        "original_archives_and_inherited_code_unchanged": true,
+        "verified_pinned_files": 5,
+        "extracted_copy_verified": true
+      },
+      "preflight_gating": {
+        "status": "PASS",
+        "source_failure_before_environment_or_gpu": true,
+        "failure_report_and_feedback_preserved": true
+      },
+      "output_isolation": {
+        "status": "PASS",
+        "new_outputs_are_unique": true,
+        "collision_rejected": true,
+        "prior_results_unchanged": true
+      },
+      "cli": {
+        "status": "PASS",
+        "rejected_training_commands": [
+          "run",
+          "resume",
+          "train"
+        ]
+      },
+      "contract": {
+        "status": "PASS",
+        "fixed_recipe_checked": {
+          "bits": [
+            1,
+            2,
+            4,
+            8,
+            32
+          ],
+          "global_batch": 256,
+          "reference_replicas": 4,
+          "bn_shards": [
+            64,
+            64,
+            64,
+            64
+          ],
+          "execution": "serial_dp4",
+          "optimizer": "SGD",
+          "lr": 0.3,
+          "momentum": 0.9,
+          "weight_decay": 1e-05,
+          "amp": false,
+          "fp32_precision": "ieee",
+          "cudnn_benchmark": true,
+          "warmup_updates": 1,
+          "measured_updates": 2,
+          "gpu_timeout_seconds": 300,
+          "dataset_required": false,
+          "training_authorized": false,
+          "eligible_as_pilot_check": false
+        },
+        "python_optimized_mode_rejected": true,
+        "rejected_invalid_runtime_evidence": [
+          "metrics_samples",
+          "metrics_optimizer_updates",
+          "metrics_mode",
+          "metrics_chunk_sizes",
+          "metrics_forwards",
+          "metrics_replicas_used",
+          "missing_precision",
+          "nan_loss",
+          "bad_topk",
+          "bn_kept_all_four_replicas",
+          "shared_bn_only_one_precision"
+        ],
+        "bn_shared_and_switched_update_semantics": {
+          "status": "PASS",
+          "shared_bn_modules": 4,
+          "switchable_bn_bank_modules": 80,
+          "updates_per_shared_bn": 5,
+          "updates_per_precision_bn_bank": 1,
+          "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+        }
+      },
+      "optimizer_wiring": {
+        "status": "PASS",
+        "original_quantizers_and_soft_loss_selected": true,
+        "classes": 1000,
+        "optimizer": "SGD",
+        "lr": 0.3,
+        "momentum": 0.9,
+        "weight_decay": 1e-05
+      },
+      "worker": {
+        "success": {
+          "status": "PASS",
+          "mock_worker_status": "PASS",
+          "recipe_unchanged": true,
+          "timing_excludes_boundary_telemetry": true,
+          "partial_times_preserved": true,
+          "cumulative_peaks_preserved": true,
+          "all_three_update_attempts": true,
+          "final_state_check_executed": true,
+          "invalid_final_state_rejected": false
+        },
+        "partial_failure": {
+          "status": "PASS",
+          "mock_worker_status": "FAIL",
+          "recipe_unchanged": true,
+          "timing_excludes_boundary_telemetry": true,
+          "partial_times_preserved": true,
+          "cumulative_peaks_preserved": true,
+          "all_three_update_attempts": true,
+          "final_state_check_executed": false,
+          "invalid_final_state_rejected": false
+        },
+        "partial_oom": {
+          "status": "PASS",
+          "mock_worker_status": "OOM",
+          "recipe_unchanged": true,
+          "timing_excludes_boundary_telemetry": true,
+          "partial_times_preserved": true,
+          "cumulative_peaks_preserved": true,
+          "all_three_update_attempts": true,
+          "final_state_check_executed": false,
+          "invalid_final_state_rejected": false
+        },
+        "invalid_final_state": {
+          "status": "PASS",
+          "mock_worker_status": "FAIL",
+          "recipe_unchanged": true,
+          "timing_excludes_boundary_telemetry": true,
+          "partial_times_preserved": true,
+          "cumulative_peaks_preserved": true,
+          "all_three_update_attempts": true,
+          "final_state_check_executed": true,
+          "invalid_final_state_rejected": true
+        },
+        "source_failure": {
+          "status": "PASS",
+          "mock_worker_status": "FAIL",
+          "source_failure_precedes_cuda": true
+        }
+      },
+      "parent_outcomes": {
+        "status": "PASS",
+        "outcomes": {
+          "completed": "PASS",
+          "incomplete_pass": "REJECTED",
+          "late_pass": "TIMEOUT",
+          "failed_cleanup": "FAIL",
+          "partial_progress": "TIMEOUT",
+          "actual_oom": "OOM",
+          "inconsistent_exit": "REJECTED"
+        },
+        "deadline_seconds": 300,
+        "child_reports_preserved": true,
+        "partial_step_preserved": true,
+        "diagnostic_never_unlocks_pilot": true
+      },
+      "watchdog": {
+        "successful_exit": {
+          "status": "PASS",
+          "timed_out": false,
+          "elapsed_seconds": 0.26086989999748766,
+          "returncode": 0,
+          "child_terminated": true,
+          "log_lines": 1
+        },
+        "nonzero_exit": {
+          "status": "PASS",
+          "timed_out": false,
+          "elapsed_seconds": 0.26367180002853274,
+          "returncode": 7,
+          "child_terminated": true,
+          "log_lines": 1
+        },
+        "quiet_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.3135541998781264,
+          "returncode": 1,
+          "child_terminated": true,
+          "log_lines": 2
+        },
+        "continuous_output_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.30507600004784763,
+          "returncode": 1,
+          "child_terminated": true,
+          "log_lines": 52
+        },
+        "partial_line_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.3126908000558615,
+          "returncode": 1,
+          "child_terminated": true,
+          "log_lines": 3
+        },
+        "eof_without_exit_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.30989850009791553,
+          "returncode": 1,
+          "child_terminated": true,
+          "log_lines": 2
+        },
+        "interrupt_cleanup": {
+          "status": "PASS",
+          "interrupt_propagated": true,
+          "child_terminated": true,
+          "elapsed_seconds": 0.058677599998191
+        }
+      }
+    }
+  },
+  "gpu_check": {
+    "model": "ResNet-18 reconstructed",
+    "mode": "serial_dp4",
+    "status": "PASS",
+    "eligible_as_pilot_check": false,
+    "exact_original_paper_reproduction_claim": false,
+    "input_shape": [
+      256,
+      3,
+      224,
+      224
+    ],
+    "global_batch": 256,
+    "precision_bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "batchnorm_shard_sizes": [
+      64,
+      64,
+      64,
+      64
+    ],
+    "warmup_updates": 1,
+    "measured_updates": 2,
+    "optimizer": {
+      "name": "SGD",
+      "lr": 0.3,
+      "momentum": 0.9,
+      "weight_decay": 1e-05
+    },
+    "synthetic_data": true,
+    "training_accuracy_reported": false,
+    "optimizer_updates_completed": 3,
+    "step_seconds": [
+      2.0994587999302894,
+      2.089594099903479
+    ],
+    "memory_updates": [
+      {
+        "kind": "warmup",
+        "index": 0,
+        "status": "PASS",
+        "before": {
+          "allocated_bytes": 202347520,
+          "reserved_bytes": 222298112,
+          "free_bytes": 7114588160,
+          "device_total_bytes": 8546484224,
+          "elapsed_seconds": 3.272594999987632
+        },
+        "seconds": 5.114088699920103,
+        "after": {
+          "allocated_bytes": 316021760,
+          "reserved_bytes": 2373976064,
+          "free_bytes": 4916772864,
+          "device_total_bytes": 8546484224,
+          "elapsed_seconds": 8.388279899954796
+        },
+        "peak_allocated_bytes": 3172548608,
+        "peak_reserved_bytes": 3296722944
+      },
+      {
+        "kind": "measured",
+        "index": 1,
+        "status": "PASS",
+        "before": {
+          "allocated_bytes": 316021760,
+          "reserved_bytes": 2373976064,
+          "free_bytes": 4916772864,
+          "device_total_bytes": 8546484224,
+          "elapsed_seconds": 8.39029230014421
+        },
+        "seconds": 2.0994587999302894,
+        "after": {
+          "allocated_bytes": 316103680,
+          "reserved_bytes": 2451570688,
+          "free_bytes": 4839178240,
+          "device_total_bytes": 8546484224,
+          "elapsed_seconds": 10.49232459999621
+        },
+        "peak_allocated_bytes": 2348436480,
+        "peak_reserved_bytes": 2451570688
+      },
+      {
+        "kind": "measured",
+        "index": 2,
+        "status": "PASS",
+        "before": {
+          "allocated_bytes": 316103680,
+          "reserved_bytes": 2451570688,
+          "free_bytes": 4839178240,
+          "device_total_bytes": 8546484224,
+          "elapsed_seconds": 10.495277000125498
+        },
+        "seconds": 2.089594099903479,
+        "after": {
+          "allocated_bytes": 316103680,
+          "reserved_bytes": 2451570688,
+          "free_bytes": 4839178240,
+          "device_total_bytes": 8546484224,
+          "elapsed_seconds": 12.587335200048983
+        },
+        "peak_allocated_bytes": 2349616128,
+        "peak_reserved_bytes": 2451570688
+      }
+    ],
+    "bn_update_checks": [
+      {
+        "status": "PASS",
+        "shared_bn_modules": 4,
+        "switchable_bn_bank_modules": 80,
+        "updates_per_shared_bn": 5,
+        "updates_per_precision_bn_bank": 1,
+        "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+      },
+      {
+        "status": "PASS",
+        "shared_bn_modules": 4,
+        "switchable_bn_bank_modules": 80,
+        "updates_per_shared_bn": 5,
+        "updates_per_precision_bn_bank": 1,
+        "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+      },
+      {
+        "status": "PASS",
+        "shared_bn_modules": 4,
+        "switchable_bn_bank_modules": 80,
+        "updates_per_shared_bn": 5,
+        "updates_per_precision_bn_bank": 1,
+        "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+      }
+    ],
+    "timing_scope": "One global256 update across five precisions and four BN64 shards, including backward/SGD. Inputs already on GPU; excludes data loading, boundary telemetry and final validity checks.",
+    "memory_counter_scope": "PyTorch allocated/reserved and CUDA mem_get_info, not physical VRAM residency or Windows shared-memory usage. A killed update has no final peak observation.",
+    "comparison_note": "Previous R50 checks provide hardware context only: architecture and LR differ. CPU equivalence is not a claim of bit-exact CUDA execution.",
+    "last_progress": {
+      "stage": "final_finite_checks_done",
+      "elapsed_seconds": 12.639204300008714
+    },
+    "runtime": {
+      "seed": 20261009,
+      "threads": 4,
+      "AMP": false,
+      "torch_compile": false,
+      "fp32_precision": "ieee",
+      "cudnn_benchmark": true,
+      "cudnn_deterministic": false,
+      "activation_checkpointing": false,
+      "bitexact_resume_guarantee": false,
+      "device": {
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "index": 0,
+        "total_memory_bytes": 8546484224,
+        "compute_capability": [
+          12,
+          0
+        ],
+        "visible_device_count": 1
+      }
+    },
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "index": 0,
+      "total_memory_bytes": 8546484224,
+      "compute_capability": [
+        12,
+        0
+      ],
+      "visible_device_count": 1
+    },
+    "free_memory_before_model_bytes": 7338983424,
+    "device_memory_bytes": 8546484224,
+    "architecture": {
+      "model": "resnet18q_reconstruction",
+      "architecture_source": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+      "quantizer_source": "Original Any-Precision/models/quan_ops.py",
+      "original_paper_R18_identity_verified": false,
+      "stage_blocks": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stage_channels": [
+        64,
+        128,
+        256,
+        512
+      ],
+      "parameter_count": 11720232,
+      "parameter_bytes": 46880928,
+      "buffer_bytes": 161952,
+      "output_classes": 1000,
+      "precision_bits": [
+        1,
+        2,
+        4,
+        8,
+        32
+      ],
+      "quantized_convolution_paths": [
+        "layer1.0.conv1",
+        "layer1.0.conv2",
+        "layer1.1.conv1",
+        "layer1.1.conv2",
+        "layer2.0.conv1",
+        "layer2.0.conv2",
+        "layer2.1.conv1",
+        "layer2.1.conv2",
+        "layer3.0.conv1",
+        "layer3.0.conv2",
+        "layer3.1.conv1",
+        "layer3.1.conv2",
+        "layer4.0.conv1",
+        "layer4.0.conv2",
+        "layer4.1.conv1",
+        "layer4.1.conv2"
+      ],
+      "FP32_convolution_paths": [
+        "conv1",
+        "layer2.0.downsample.0",
+        "layer3.0.downsample.0",
+        "layer4.0.downsample.0"
+      ],
+      "FP32_classifier": "fc",
+      "switchable_BN_paths": [
+        "layer1.0.bn1",
+        "layer1.0.bn2",
+        "layer1.1.bn1",
+        "layer1.1.bn2",
+        "layer2.0.bn1",
+        "layer2.0.bn2",
+        "layer2.1.bn1",
+        "layer2.1.bn2",
+        "layer3.0.bn1",
+        "layer3.0.bn2",
+        "layer3.1.bn1",
+        "layer3.1.bn2",
+        "layer4.0.bn1",
+        "layer4.0.bn2",
+        "layer4.1.bn1",
+        "layer4.1.bn2"
+      ],
+      "switchable_BN_banks_per_module": 5,
+      "shared_BN_paths": [
+        "bn1",
+        "layer2.0.downsample.1",
+        "layer3.0.downsample.1",
+        "layer4.0.downsample.1"
+      ],
+      "activation_quantizer_paths": [
+        "layer1.0.act1.quan",
+        "layer1.0.act2.quan",
+        "layer1.1.act1.quan",
+        "layer1.1.act2.quan",
+        "layer2.0.act1.quan",
+        "layer2.0.act2.quan",
+        "layer2.1.act1.quan",
+        "layer2.1.act2.quan",
+        "layer3.0.act1.quan",
+        "layer3.0.act2.quan",
+        "layer3.1.act1.quan",
+        "layer3.1.act2.quan",
+        "layer4.0.act1.quan",
+        "layer4.0.act2.quan",
+        "layer4.1.act1.quan",
+        "layer4.1.act2.quan"
+      ],
+      "BN_semantics": "Branch BN banks are precision-specific; stem and projection BN are shared across precisions.",
+      "FP32_weight_mode": "Original tanh/normalization/mean-absolute scaling retained in quantized convolutions.",
+      "truncation": false,
+      "MX": false
+    },
+    "parameter_count": 11720232,
+    "peak_allocated_bytes": 3172548608,
+    "peak_reserved_bytes": 3296722944,
+    "warmup_seconds": 5.114088699920103,
+    "median_step_seconds": 2.0945264499168843,
+    "synthetic_images_per_second": 122.22333120221933,
+    "logical_precision_passes": 15,
+    "model_forward_backward_pairs": 60,
+    "finite_losses_and_gradients": true,
+    "finite_check_scope": "Warmup losses/gradients; measured losses; final model/BN/SGD state.",
+    "interpretation": "PASS means the short synthetic check succeeded, not that long training is feasible.",
+    "final_memory": {
+      "allocated_bytes": 316103680,
+      "reserved_bytes": 2451570688,
+      "free_bytes": 4839178240,
+      "device_total_bytes": 8546484224,
+      "elapsed_seconds": 12.640722600044683
+    },
+    "ended_utc": "2026-10-30T15:32:07.671507+00:00",
+    "process_returncode": 0,
+    "timed_out": false,
+    "elapsed_seconds": 14.444160500075668,
+    "last_output": "WORKER STATUS: PASS",
+    "pid": 28480,
+    "cleanup_failed": false,
+    "stdout_closed": true,
+    "timeout_seconds": 300.0
+  },
+  "comparison_context": {
+    "baseline_run": "20261030_151050_855963_check",
+    "baseline_model": "ResNet-50",
+    "candidate_model": "ResNet-18 reconstructed",
+    "baseline_lr": 0.5,
+    "candidate_lr": 0.3,
+    "same_package_versions": true,
+    "same_gpu": true,
+    "note": "Non-concurrent observations; architecture and LR differ. Free memory is recorded separately."
+  },
+  "ended_utc": "2026-10-30T15:32:08.323369+00:00",
+  "wall_seconds": 28.302442600019276
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Process orchestration only; no CUDA or training.",
+  "host": "linux",
+  "runtime": "work/resnet50_validation_env/bin/python",
+  "native_suite_seconds": 1.884560323000187,
+  "native_tests_passed": [
+    "successful_exit",
+    "normal_exit_with_descendant",
+    "nonzero_exit_with_descendant",
+    "quiet_timeout_with_descendant",
+    "continuous_output_timeout",
+    "partial_line_timeout",
+    "eof_without_exit_timeout",
+    "interrupt_with_descendant",
+    "logging_error_with_descendant"
+  ],
+  "unrelated_process_preserved": true,
+  "windows_mock_tests_passed": [
+    "job_assignment_precedes_worker_gate",
+    "timeout_targets_only_owned_PID_tree_and_job",
+    "normal_launcher_exit_still_cleans_descendants",
+    "failed_assignment_never_starts_worker"
+  ],
+  "windows_native_execution": "Not available in the local Linux runtime; the same native suite runs on the laptop.",
+  "windows_api_reference": "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects",
+  "implementation": {
+    "Windows": "Gated launcher joins kill-on-close Job Object before starting worker; exact-PID taskkill /T /F on forced stop; job verifies no active descendants.",
+    "POSIX": "Owned process group/session with TERM then KILL; /proc used only when PID namespace matches runtime."
+  }
+}

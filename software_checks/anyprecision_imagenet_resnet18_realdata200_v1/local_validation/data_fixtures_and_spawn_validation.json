@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "Small generated image fixtures and CPU-only data-loader tests; no ImageNet/GPU benchmark.",
+  "selection": {
+    "status": "PASS",
+    "training_matches_full_randperm_prefix": true,
+    "no_repeated_indices": true,
+    "same_seed_repeats_selection": true,
+    "changed_seed_changes_selection": true,
+    "exact_validation_class_balance": true,
+    "validation_not_class_order_prefix": true,
+    "global_RNGs_unchanged": true
+  },
+  "structure": {
+    "status": "PASS",
+    "rejected": [
+      "archive_not_prepared",
+      "flat_validation",
+      "invalid_class_name",
+      "mismatched_labels",
+      "missing_root"
+    ]
+  },
+  "traversal": {
+    "status": "PASS",
+    "nested_path_order_matches_ImageFolder": true
+  },
+  "loaders": {
+    "status": "PASS",
+    "bounded_train_loader_exhaustion": true,
+    "stratified_validation_and_partial_last_batch": true,
+    "transforms_equal_independent_ImageFolder": true,
+    "strict_public_dataset_requirements_enforced": true,
+    "stale_path_count_and_root_manifests_rejected": true,
+    "corrupt_decode_and_wrong_validation_counts_rejected": true,
+    "dataset_files_unchanged": true,
+    "selected_dataset_pickle_roundtrip": true,
+    "spawn_worker_iteration_with_metadata_only_test_collator": "PASS",
+    "spawn_tensor_IPC": "NOT_TESTED: sandbox blocks the Unix resource-sharing socket; production default collator is unchanged."
+  },
+  "caller_global_RNG_restored": true,
+  "seconds": 6.747250096999778
+}

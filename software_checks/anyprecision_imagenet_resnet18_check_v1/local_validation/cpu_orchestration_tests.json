@@ -1,0 +1,226 @@
+{
+  "status": "PASS",
+  "device": "CPU / mocked CUDA",
+  "scope": "Integrity, fixed recipe, process lifetime, status gates, timing and persistence; these mocks make no GPU speed or model-equivalence claim.",
+  "sources": {
+    "status": "PASS",
+    "rejected_inputs": [
+      "changed_engine",
+      "changed_anyprecision",
+      "missing_anyprecision",
+      "changed_truncquant",
+      "missing_truncquant",
+      "changed_extracted_quantizer"
+    ],
+    "original_archives_and_inherited_code_unchanged": true,
+    "verified_pinned_files": 5,
+    "extracted_copy_verified": true
+  },
+  "preflight_gating": {
+    "status": "PASS",
+    "source_failure_before_environment_or_gpu": true,
+    "failure_report_and_feedback_preserved": true
+  },
+  "output_isolation": {
+    "status": "PASS",
+    "new_outputs_are_unique": true,
+    "collision_rejected": true,
+    "prior_results_unchanged": true
+  },
+  "cli": {
+    "status": "PASS",
+    "rejected_training_commands": [
+      "run",
+      "resume",
+      "train"
+    ]
+  },
+  "contract": {
+    "status": "PASS",
+    "fixed_recipe_checked": {
+      "bits": [
+        1,
+        2,
+        4,
+        8,
+        32
+      ],
+      "global_batch": 256,
+      "reference_replicas": 4,
+      "bn_shards": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "execution": "serial_dp4",
+      "optimizer": "SGD",
+      "lr": 0.3,
+      "momentum": 0.9,
+      "weight_decay": 1e-05,
+      "amp": false,
+      "fp32_precision": "ieee",
+      "cudnn_benchmark": true,
+      "warmup_updates": 1,
+      "measured_updates": 2,
+      "gpu_timeout_seconds": 300,
+      "dataset_required": false,
+      "training_authorized": false,
+      "eligible_as_pilot_check": false
+    },
+    "python_optimized_mode_rejected": true,
+    "rejected_invalid_runtime_evidence": [
+      "metrics_samples",
+      "metrics_optimizer_updates",
+      "metrics_mode",
+      "metrics_chunk_sizes",
+      "metrics_forwards",
+      "metrics_replicas_used",
+      "missing_precision",
+      "nan_loss",
+      "bad_topk",
+      "bn_kept_all_four_replicas",
+      "shared_bn_only_one_precision"
+    ],
+    "bn_shared_and_switched_update_semantics": {
+      "status": "PASS",
+      "shared_bn_modules": 4,
+      "switchable_bn_bank_modules": 80,
+      "updates_per_shared_bn": 5,
+      "updates_per_precision_bn_bank": 1,
+      "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+    }
+  },
+  "optimizer_wiring": {
+    "status": "PASS",
+    "original_quantizers_and_soft_loss_selected": true,
+    "classes": 1000,
+    "optimizer": "SGD",
+    "lr": 0.3,
+    "momentum": 0.9,
+    "weight_decay": 1e-05
+  },
+  "worker": {
+    "success": {
+      "status": "PASS",
+      "mock_worker_status": "PASS",
+      "recipe_unchanged": true,
+      "timing_excludes_boundary_telemetry": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true,
+      "all_three_update_attempts": true,
+      "final_state_check_executed": true,
+      "invalid_final_state_rejected": false
+    },
+    "partial_failure": {
+      "status": "PASS",
+      "mock_worker_status": "FAIL",
+      "recipe_unchanged": true,
+      "timing_excludes_boundary_telemetry": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true,
+      "all_three_update_attempts": true,
+      "final_state_check_executed": false,
+      "invalid_final_state_rejected": false
+    },
+    "partial_oom": {
+      "status": "PASS",
+      "mock_worker_status": "OOM",
+      "recipe_unchanged": true,
+      "timing_excludes_boundary_telemetry": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true,
+      "all_three_update_attempts": true,
+      "final_state_check_executed": false,
+      "invalid_final_state_rejected": false
+    },
+    "invalid_final_state": {
+      "status": "PASS",
+      "mock_worker_status": "FAIL",
+      "recipe_unchanged": true,
+      "timing_excludes_boundary_telemetry": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true,
+      "all_three_update_attempts": true,
+      "final_state_check_executed": true,
+      "invalid_final_state_rejected": true
+    },
+    "source_failure": {
+      "status": "PASS",
+      "mock_worker_status": "FAIL",
+      "source_failure_precedes_cuda": true
+    }
+  },
+  "parent_outcomes": {
+    "status": "PASS",
+    "outcomes": {
+      "completed": "PASS",
+      "incomplete_pass": "REJECTED",
+      "late_pass": "TIMEOUT",
+      "failed_cleanup": "FAIL",
+      "partial_progress": "TIMEOUT",
+      "actual_oom": "OOM",
+      "inconsistent_exit": "REJECTED"
+    },
+    "deadline_seconds": 300,
+    "child_reports_preserved": true,
+    "partial_step_preserved": true,
+    "diagnostic_never_unlocks_pilot": true
+  },
+  "watchdog": {
+    "successful_exit": {
+      "status": "PASS",
+      "timed_out": false,
+      "elapsed_seconds": 0.015285891000530683,
+      "returncode": 0,
+      "child_terminated": true,
+      "log_lines": 1
+    },
+    "nonzero_exit": {
+      "status": "PASS",
+      "timed_out": false,
+      "elapsed_seconds": 0.015575524997984758,
+      "returncode": 7,
+      "child_terminated": true,
+      "log_lines": 1
+    },
+    "quiet_timeout": {
+      "status": "PASS",
+      "timed_out": true,
+      "elapsed_seconds": 0.30148051399737597,
+      "returncode": -15,
+      "child_terminated": true,
+      "log_lines": 2
+    },
+    "continuous_output_timeout": {
+      "status": "PASS",
+      "timed_out": true,
+      "elapsed_seconds": 0.3012977430007595,
+      "returncode": -15,
+      "child_terminated": true,
+      "log_lines": 60
+    },
+    "partial_line_timeout": {
+      "status": "PASS",
+      "timed_out": true,
+      "elapsed_seconds": 0.3014974069992604,
+      "returncode": -15,
+      "child_terminated": true,
+      "log_lines": 3
+    },
+    "eof_without_exit_timeout": {
+      "status": "PASS",
+      "timed_out": true,
+      "elapsed_seconds": 0.3014562690004823,
+      "returncode": -15,
+      "child_terminated": true,
+      "log_lines": 2
+    },
+    "interrupt_cleanup": {
+      "status": "PASS",
+      "interrupt_propagated": true,
+      "child_terminated": true,
+      "elapsed_seconds": 0.025046552997082472
+    }
+  }
+}

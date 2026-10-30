@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "archives": {
+    "anyprecision": {
+      "archive_relpath": "vendor/Any-Precision-DNNs-master.zip",
+      "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "root": "Any-Precision-DNNs-master",
+      "files_sha256": {
+        "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+        "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+        "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+        "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+        "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+        "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+        "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+        "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+        "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+        "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+        "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+        "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+        "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+        "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+        "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+        "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+        "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+      }
+    },
+    "truncquant": {
+      "archive_relpath": "vendor/TruncQuant-master.zip",
+      "archive_sha256": "ff661e1b3fbc76cb565acf7fd9286a5d04a2cacb39ef04afa097ac41f3c99a05",
+      "root": "TruncQuant-master",
+      "files_sha256": {
+        "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+        "README.md": "2f0780f36f2b02f7b3d45e61773ccc9dac81375c463b5ea996a3da03a0037e2c",
+        "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+        "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+        "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+        "models/__init__.py": "005297d12e5c88aa1aa5f451604dd6a0c1981e279cd1b56ae2edfc8a7df8dda3",
+        "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+        "models/model_quan.py": "fcdf3bba409d7e1d5f067d9ee7cdc4292f8dcf239e33d2eee6b20dd050913a26",
+        "models/quan_ops.py": "14e1af4b0178ee525bd6aa42d9751aff6f60e42cae2c6ff81b10a896db5a5b6e",
+        "models/resnet_quan.py": "c9f6b8662e9d50cf48fb1d541c5cb94b38bf9913b0fa3f7fe486f3e8f739cb25",
+        "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+        "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+        "test_cifar10.sh": "a88602c5719b0e492993c54f7cde1ff22608cfbbf1288d4c507fa663a2011847",
+        "test_imagenet.py": "4338471fc7f5ce863a42cbfc3c24bea8b8dfccaa2f79a90c33003f4bbc54f2f6",
+        "test_imagenet.sh": "2cad215e15ef581b0b4b36ff43df97b53a32c728c42934f5fbc525bded8a9ea4",
+        "train.py": "70cfc414d15456dffc2af39a90031109502b31dc7d383a3e97b383c310bd76d2",
+        "train_cifar10.sh": "7db6ff574b93f14015473ab9fbba20660970198f1502a38b171ab130f2254dd9",
+        "train_imagenet.py": "fd4804161a5959ad8e5be22f0580b96bc3f910d2e33dd18c03ce06fb74bf32f4",
+        "train_imagenet.sh": "95350149212e200c4dc31b9abc21cbbe3b84daf264c0cc4459e9addc0ead4a62",
+        "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+        "trunc_models/__init__.py": "79f3c004623ee5734e8704d364b432019f99d154475f2a6b62af6f3b29eb076a",
+        "trunc_models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+        "trunc_models/trunc_quan_ops.py": "7412992da1abac650c29545d9a51ba7b17bc06a0e31dd97b07d6e58142d6383a",
+        "trunc_models/trunc_resnet_quan.py": "8c278e922dac649f80e041782ba56831845498561f6f344dc07aebb7886fd40d",
+        "trunc_train.py": "bf626d0704665d0eaefa7655109bae70b31bb0edec1ca4ca6924d85e369b8185",
+        "utils.py": "831af28e0f44b6246ab9387791486af1d9f800f4b45b960779cd64eff0cf0b29"
+      }
+    }
+  },
+  "inherited_files": {
+    "engine.py": {
+      "sha256": "d16fce898b261a00d240020248f4f033722773bea87c1794ba200e7556edb590",
+      "source_package": "anyprecision_imagenet_resnet18_check_v1",
+      "changed": false
+    },
+    "test_engine.py": {
+      "sha256": "c9b427993e382e57be99e8674806954b832f18168758c6a94c0c22459bfc8689",
+      "source_package": "anyprecision_imagenet_resnet18_check_v1",
+      "changed": false
+    },
+    "resnet18_model.py": {
+      "sha256": "9a6168e2b5468ae55e3a116deff84c4f45fcff12236a756af2c0432fd3f1fb1a",
+      "source_package": "anyprecision_imagenet_resnet18_check_v1",
+      "changed": false
+    },
+    "test_resnet18.py": {
+      "sha256": "cbd8172d0d68b9ba2e52ca4549ce90b55e0a4b3c8dd46aebdfd5b047af64671e",
+      "source_package": "anyprecision_imagenet_resnet18_check_v1",
+      "changed": false
+    }
+  },
+  "note": "Source archives remain byte-for-byte copies. Only textual source files are extracted; bytecode and OS metadata are not used."
+}

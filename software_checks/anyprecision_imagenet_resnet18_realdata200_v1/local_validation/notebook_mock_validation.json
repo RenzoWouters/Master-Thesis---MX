@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "Mock notebook/helper validation only. No real ImageNet, model or GPU measurements. Code cells executed with a display stub; plots rendered separately. Delivered notebook is unexecuted.",
+  "cases": {
+    "PASS": {
+      "status": "PASS",
+      "recorded_steps": 200,
+      "projection_rows": 3,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "TIMEOUT": {
+      "status": "PASS",
+      "recorded_steps": 137,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "OOM": {
+      "status": "PASS",
+      "recorded_steps": 60,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "FAIL": {
+      "status": "PASS",
+      "recorded_steps": 0,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "DATA_ONLY": {
+      "status": "PASS",
+      "recorded_steps": 0,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "CPU_SELFTEST": {
+      "status": "PASS",
+      "recorded_steps": 0,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "INCOMPLETE_PASS": {
+      "status": "PASS",
+      "recorded_steps": 200,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    },
+    "NO_REPORT": {
+      "status": "PASS",
+      "recorded_steps": 0,
+      "projection_rows": 0,
+      "code_cells_executed_with_display_stub": 7
+    }
+  },
+  "delivered_notebook_unexecuted": true,
+  "no_mock_data_or_figures_in_package": true
+}

@@ -1,0 +1,296 @@
+{
+  "model": "ResNet-18 reconstructed",
+  "mode": "serial_dp4",
+  "status": "PASS",
+  "eligible_as_pilot_check": false,
+  "exact_original_paper_reproduction_claim": false,
+  "input_shape": [
+    256,
+    3,
+    224,
+    224
+  ],
+  "global_batch": 256,
+  "precision_bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "batchnorm_shard_sizes": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "warmup_updates": 1,
+  "measured_updates": 2,
+  "optimizer": {
+    "name": "SGD",
+    "lr": 0.3,
+    "momentum": 0.9,
+    "weight_decay": 1e-05
+  },
+  "synthetic_data": true,
+  "training_accuracy_reported": false,
+  "optimizer_updates_completed": 3,
+  "step_seconds": [
+    2.0994587999302894,
+    2.089594099903479
+  ],
+  "memory_updates": [
+    {
+      "kind": "warmup",
+      "index": 0,
+      "status": "PASS",
+      "before": {
+        "allocated_bytes": 202347520,
+        "reserved_bytes": 222298112,
+        "free_bytes": 7114588160,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 3.272594999987632
+      },
+      "seconds": 5.114088699920103,
+      "after": {
+        "allocated_bytes": 316021760,
+        "reserved_bytes": 2373976064,
+        "free_bytes": 4916772864,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 8.388279899954796
+      },
+      "peak_allocated_bytes": 3172548608,
+      "peak_reserved_bytes": 3296722944
+    },
+    {
+      "kind": "measured",
+      "index": 1,
+      "status": "PASS",
+      "before": {
+        "allocated_bytes": 316021760,
+        "reserved_bytes": 2373976064,
+        "free_bytes": 4916772864,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 8.39029230014421
+      },
+      "seconds": 2.0994587999302894,
+      "after": {
+        "allocated_bytes": 316103680,
+        "reserved_bytes": 2451570688,
+        "free_bytes": 4839178240,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 10.49232459999621
+      },
+      "peak_allocated_bytes": 2348436480,
+      "peak_reserved_bytes": 2451570688
+    },
+    {
+      "kind": "measured",
+      "index": 2,
+      "status": "PASS",
+      "before": {
+        "allocated_bytes": 316103680,
+        "reserved_bytes": 2451570688,
+        "free_bytes": 4839178240,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 10.495277000125498
+      },
+      "seconds": 2.089594099903479,
+      "after": {
+        "allocated_bytes": 316103680,
+        "reserved_bytes": 2451570688,
+        "free_bytes": 4839178240,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 12.587335200048983
+      },
+      "peak_allocated_bytes": 2349616128,
+      "peak_reserved_bytes": 2451570688
+    }
+  ],
+  "bn_update_checks": [
+    {
+      "status": "PASS",
+      "shared_bn_modules": 4,
+      "switchable_bn_bank_modules": 80,
+      "updates_per_shared_bn": 5,
+      "updates_per_precision_bn_bank": 1,
+      "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+    },
+    {
+      "status": "PASS",
+      "shared_bn_modules": 4,
+      "switchable_bn_bank_modules": 80,
+      "updates_per_shared_bn": 5,
+      "updates_per_precision_bn_bank": 1,
+      "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+    },
+    {
+      "status": "PASS",
+      "shared_bn_modules": 4,
+      "switchable_bn_bank_modules": 80,
+      "updates_per_shared_bn": 5,
+      "updates_per_precision_bn_bank": 1,
+      "scope": "One retained replica-zero forward per precision; BN64 is unchanged."
+    }
+  ],
+  "timing_scope": "One global256 update across five precisions and four BN64 shards, including backward/SGD. Inputs already on GPU; excludes data loading, boundary telemetry and final validity checks.",
+  "memory_counter_scope": "PyTorch allocated/reserved and CUDA mem_get_info, not physical VRAM residency or Windows shared-memory usage. A killed update has no final peak observation.",
+  "comparison_note": "Previous R50 checks provide hardware context only: architecture and LR differ. CPU equivalence is not a claim of bit-exact CUDA execution.",
+  "last_progress": {
+    "stage": "final_finite_checks_done",
+    "elapsed_seconds": 12.639204300008714
+  },
+  "runtime": {
+    "seed": 20261009,
+    "threads": 4,
+    "AMP": false,
+    "torch_compile": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "activation_checkpointing": false,
+    "bitexact_resume_guarantee": false,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "index": 0,
+      "total_memory_bytes": 8546484224,
+      "compute_capability": [
+        12,
+        0
+      ],
+      "visible_device_count": 1
+    }
+  },
+  "device": {
+    "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "index": 0,
+    "total_memory_bytes": 8546484224,
+    "compute_capability": [
+      12,
+      0
+    ],
+    "visible_device_count": 1
+  },
+  "free_memory_before_model_bytes": 7338983424,
+  "device_memory_bytes": 8546484224,
+  "architecture": {
+    "model": "resnet18q_reconstruction",
+    "architecture_source": "TruncQuant/trunc_models/trunc_resnet_quan.py::ResNet(BasicBlock,[2,2,2,2])",
+    "quantizer_source": "Original Any-Precision/models/quan_ops.py",
+    "original_paper_R18_identity_verified": false,
+    "stage_blocks": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "stage_channels": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "parameter_count": 11720232,
+    "parameter_bytes": 46880928,
+    "buffer_bytes": 161952,
+    "output_classes": 1000,
+    "precision_bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "quantized_convolution_paths": [
+      "layer1.0.conv1",
+      "layer1.0.conv2",
+      "layer1.1.conv1",
+      "layer1.1.conv2",
+      "layer2.0.conv1",
+      "layer2.0.conv2",
+      "layer2.1.conv1",
+      "layer2.1.conv2",
+      "layer3.0.conv1",
+      "layer3.0.conv2",
+      "layer3.1.conv1",
+      "layer3.1.conv2",
+      "layer4.0.conv1",
+      "layer4.0.conv2",
+      "layer4.1.conv1",
+      "layer4.1.conv2"
+    ],
+    "FP32_convolution_paths": [
+      "conv1",
+      "layer2.0.downsample.0",
+      "layer3.0.downsample.0",
+      "layer4.0.downsample.0"
+    ],
+    "FP32_classifier": "fc",
+    "switchable_BN_paths": [
+      "layer1.0.bn1",
+      "layer1.0.bn2",
+      "layer1.1.bn1",
+      "layer1.1.bn2",
+      "layer2.0.bn1",
+      "layer2.0.bn2",
+      "layer2.1.bn1",
+      "layer2.1.bn2",
+      "layer3.0.bn1",
+      "layer3.0.bn2",
+      "layer3.1.bn1",
+      "layer3.1.bn2",
+      "layer4.0.bn1",
+      "layer4.0.bn2",
+      "layer4.1.bn1",
+      "layer4.1.bn2"
+    ],
+    "switchable_BN_banks_per_module": 5,
+    "shared_BN_paths": [
+      "bn1",
+      "layer2.0.downsample.1",
+      "layer3.0.downsample.1",
+      "layer4.0.downsample.1"
+    ],
+    "activation_quantizer_paths": [
+      "layer1.0.act1.quan",
+      "layer1.0.act2.quan",
+      "layer1.1.act1.quan",
+      "layer1.1.act2.quan",
+      "layer2.0.act1.quan",
+      "layer2.0.act2.quan",
+      "layer2.1.act1.quan",
+      "layer2.1.act2.quan",
+      "layer3.0.act1.quan",
+      "layer3.0.act2.quan",
+      "layer3.1.act1.quan",
+      "layer3.1.act2.quan",
+      "layer4.0.act1.quan",
+      "layer4.0.act2.quan",
+      "layer4.1.act1.quan",
+      "layer4.1.act2.quan"
+    ],
+    "BN_semantics": "Branch BN banks are precision-specific; stem and projection BN are shared across precisions.",
+    "FP32_weight_mode": "Original tanh/normalization/mean-absolute scaling retained in quantized convolutions.",
+    "truncation": false,
+    "MX": false
+  },
+  "parameter_count": 11720232,
+  "peak_allocated_bytes": 3172548608,
+  "peak_reserved_bytes": 3296722944,
+  "warmup_seconds": 5.114088699920103,
+  "median_step_seconds": 2.0945264499168843,
+  "synthetic_images_per_second": 122.22333120221933,
+  "logical_precision_passes": 15,
+  "model_forward_backward_pairs": 60,
+  "finite_losses_and_gradients": true,
+  "finite_check_scope": "Warmup losses/gradients; measured losses; final model/BN/SGD state.",
+  "interpretation": "PASS means the short synthetic check succeeded, not that long training is feasible.",
+  "final_memory": {
+    "allocated_bytes": 316103680,
+    "reserved_bytes": 2451570688,
+    "free_bytes": 4839178240,
+    "device_total_bytes": 8546484224,
+    "elapsed_seconds": 12.640722600044683
+  },
+  "ended_utc": "2026-10-30T15:32:07.671507+00:00"
+}
