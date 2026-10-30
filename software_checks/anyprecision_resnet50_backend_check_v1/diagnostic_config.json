@@ -1,0 +1,30 @@
+{
+  "package_id": "anyprecision_resnet50_backend_check_v1",
+  "command_kind": "backend_diagnostic",
+  "training_authorized": false,
+  "dataset_required": false,
+  "global_batch": 256,
+  "bn_shards": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "precision_bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "execution": "serial_dp4",
+  "amp": false,
+  "fp32_precision": "ieee",
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": false,
+  "warmup_updates": 1,
+  "measured_updates": 2,
+  "gpu_timeout_seconds": 300,
+  "seed": 20261009,
+  "note": "Only cuDNN algorithm selection changes; no inference about accuracy or bitexact GPU equality. This report cannot unlock the pilot."
+}

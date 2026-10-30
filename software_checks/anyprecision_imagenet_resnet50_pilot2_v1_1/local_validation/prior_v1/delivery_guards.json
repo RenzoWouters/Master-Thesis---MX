@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "torch": "2.10.0+cpu"
+  },
+  "checks": {
+    "cpu_selftests": "PASS",
+    "no_cuda_no_cpu_training_fallback": "PASS",
+    "data_guard": "PASS",
+    "run_guard": "PASS",
+    "feedback_bundles_exclude_checkpoints": "PASS",
+    "notebook_result_path_injected": "PASS",
+    "source_and_notebook_syntax": "PASS",
+    "notebook_unexecuted": "PASS"
+  },
+  "gpu_training_tested": false,
+  "imagenet_training_started": false,
+  "negative_tests": "The public check intentionally refuses CPU-only runtime; data refuses missing ImageNet; run refuses non-PASS proof."
+}

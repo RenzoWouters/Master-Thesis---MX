@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-10-30T13:25:01.336598+00:00",
+  "scope": "data_support.py, notebook_support.py and unexecuted pilot notebook",
+  "status": "PASS_WITH_PLATFORM_LIMITATIONS",
+  "checks": [
+    {
+      "check": "read_only_dataset_audit",
+      "status": "PASS",
+      "detail": "Tiny generated PIL-image fixture; class order, counts, sample decoding, before/after file hashes unchanged."
+    },
+    {
+      "check": "dataset_rejection_guards",
+      "status": "PASS",
+      "detail": "Strict audit refused a subset; mismatched train/val WNID mappings refused."
+    },
+    {
+      "check": "real_imagenet_loader_on_tiny_fixture",
+      "status": "PASS",
+      "detail": "Torch 2.10 CPU and torchvision 0.25; workers=0, RGB 224x224 FP32 tensors, final partial batch, trainbatch256 requirement, sampler-generator restoration."
+    },
+    {
+      "check": "worker_callback_pickling",
+      "status": "PASS",
+      "detail": "Top-level seed_worker function round-trips through pickle."
+    },
+    {
+      "check": "spawn_worker_runtime",
+      "status": "BLOCKED_BY_SANDBOX",
+      "detail": "Local test with workers=1 hit a multiprocessing IPC SocketListener permission error and was stopped. Root may rerun the isolated test with --spawn-worker in an approved environment."
+    },
+    {
+      "check": "notebook_structure",
+      "status": "PASS",
+      "detail": "JSON parsed, all code cells compiled, all execution_count values None and all output lists empty."
+    },
+    {
+      "check": "notebook_check_and_training_cases",
+      "status": "PASS",
+      "detail": "Internal mock reports exercised check-only/OOM and completed-epoch analysis, same-epoch best-W32 selection and ordinary time projection."
+    },
+    {
+      "check": "notebook_visual_review",
+      "status": "PASS",
+      "detail": "Rendered mock memory and checkpoint plots inspected. Failed/OOM category remains visible without a zero-value measurement."
+    },
+    {
+      "check": "resume_timing_projection",
+      "status": "PASS",
+      "detail": "Explicit report projection preferred; missing epoch-1 time falls back to measured later epochs with an explicit limitation; ordinary complete timing still computes correctly; entirely absent timing produces no estimate."
+    }
+  ],
+  "limitations": [
+    "No real ImageNet dataset was available or processed.",
+    "No real training accuracy, GPU memory usage, or GPU timing was measured by these tests.",
+    "Windows/CUDA execution and multiworker Windows DataLoader execution remain to be checked on the user laptop.",
+    "Plot fixtures were synthetic validation inputs and are outside the deliverable package."
+  ],
+  "loader_test_command": "/workspace/scratch/4619498905be/work/resnet50_validation_env/bin/python /workspace/scratch/4619498905be/work/test_resnet50_data_loader.py --spawn-worker",
+  "followup_spawn_worker_test": {
+    "status": "PASS",
+    "platform": "Linux with multiprocessing start method spawn",
+    "workers": 1,
+    "fixture_only": true,
+    "windows_cuda_tested": false,
+    "note": "The same DataLoader fixture completed with workers 0 and 1 after allowing local process IPC."
+  }
+}

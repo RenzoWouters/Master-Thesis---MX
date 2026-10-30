@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "torch_version": "2.10.0+cpu",
+  "synthetic_fixture_only": true,
+  "real_dataset_loaded": false,
+  "independent_oracle": "explicit deep-copied replicas, gathered outputs, one global mean loss per mode",
+  "serial_cases": [
+    {
+      "status": "PASS",
+      "samples": 8,
+      "chunk_sizes": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "one_update": true,
+      "recursive_teacher_order": true,
+      "replica_zero_buffers": true,
+      "parameter_max_abs": 0.0,
+      "gradient_max_abs": 0.0,
+      "buffer_max_abs": 0.0
+    },
+    {
+      "status": "PASS",
+      "samples": 13,
+      "chunk_sizes": [
+        4,
+        4,
+        4,
+        1
+      ],
+      "one_update": true,
+      "recursive_teacher_order": true,
+      "replica_zero_buffers": true,
+      "parameter_max_abs": 0.0,
+      "gradient_max_abs": 0.0,
+      "buffer_max_abs": 0.0
+    },
+    {
+      "status": "PASS",
+      "samples": 5,
+      "chunk_sizes": [
+        2,
+        2,
+        1
+      ],
+      "one_update": true,
+      "recursive_teacher_order": true,
+      "replica_zero_buffers": true,
+      "parameter_max_abs": 0.0,
+      "gradient_max_abs": 0.0,
+      "buffer_max_abs": 0.0
+    },
+    {
+      "status": "PASS",
+      "samples": 1,
+      "chunk_sizes": [
+        1
+      ],
+      "one_update": true,
+      "recursive_teacher_order": true,
+      "replica_zero_buffers": true,
+      "parameter_max_abs": 0.0,
+      "gradient_max_abs": 0.0,
+      "buffer_max_abs": 0.0
+    }
+  ],
+  "native_case": {
+    "status": "PASS",
+    "parameter_max_abs": 0.0,
+    "gradient_max_abs": 0.0,
+    "buffer_max_abs": 0.0
+  },
+  "BN_difference_case": {
+    "status": "PASS",
+    "native_batch_changes_BN": true,
+    "naive_accumulation_changes_running_buffers": true,
+    "native_running_var_max_abs_difference": 0.027016937732696533,
+    "naive_running_mean_max_abs_difference": 0.11842328310012817,
+    "serial_BN_updates_per_mode": 1,
+    "naive_BN_updates_per_mode": 4
+  },
+  "evaluation_case": {
+    "status": "PASS",
+    "all_modes_hard_CE": true,
+    "buffers_parameters_gradients_unchanged": true,
+    "module_training_flags_restored": true
+  },
+  "rejection_cases": {
+    "status": "PASS",
+    "rejected_before_optimizer_update": [
+      "unsupported_mode",
+      "wrong_replica_count",
+      "non_FP32_inputs",
+      "nonfinite_input",
+      "missing_required_gradient"
+    ]
+  },
+  "progress_cases": {
+    "status": "PASS",
+    "cases": [
+      {
+        "mode": "serial_dp4",
+        "validate": false,
+        "events": 92,
+        "state_gradient_momentum_and_teachers_exact": true,
+        "python_numpy_torch_rng_unchanged": true,
+        "scalar_metadata_only": true
+      },
+      {
+        "mode": "serial_dp4",
+        "validate": true,
+        "events": 98,
+        "state_gradient_momentum_and_teachers_exact": true,
+        "python_numpy_torch_rng_unchanged": true,
+        "scalar_metadata_only": true
+      },
+      {
+        "mode": "native256",
+        "validate": false,
+        "events": 32,
+        "state_gradient_momentum_and_teachers_exact": true,
+        "python_numpy_torch_rng_unchanged": true,
+        "scalar_metadata_only": true
+      },
+      {
+        "mode": "native256",
+        "validate": true,
+        "events": 38,
+        "state_gradient_momentum_and_teachers_exact": true,
+        "python_numpy_torch_rng_unchanged": true,
+        "scalar_metadata_only": true
+      }
+    ]
+  },
+  "tolerances": {
+    "parameter_atol": 2e-06,
+    "gradient_atol": 2e-05,
+    "parameter_gradient_rtol": 5e-05,
+    "buffer_atol": 1e-06,
+    "buffer_rtol": 1e-05
+  },
+  "seconds": 0.34098337899922626
+}

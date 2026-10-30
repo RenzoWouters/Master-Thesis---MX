@@ -1,0 +1,24 @@
+{
+  "package_id": "anyprecision_resnet50_backend_check_v1",
+  "created_utc": "2026-10-30T14:21:30.377603+00:00",
+  "files_sha256": {
+    "README.md": "7ebc28ea4ea9897aebd1d69ea996daf2f332202fed7e895fb26e8831d6eee8c1",
+    "Resultaten_backend_check.ipynb": "b3fb11b21c7a1ea6755c3b2ae6d7fe16051450869985b576ba6c40fa00bdba44",
+    "backend_worker.py": "37dedc69a493347b23064835d1f0bcaf0e0a9b3b4efe3cfbff23f8e147e1b0b2",
+    "baseline_results.json": "0516ecdef0e78c7baa1fd998af8a06ab42fcf21f0cde1eb6f724a2d37076898c",
+    "diagnostic_config.json": "124d02b66997b192823ab51f747de4d36379a925e91ff832ddc2846ac8ebeb0f",
+    "local_validation/VALIDATION.md": "f5f3e52f7227eac338073c639a52df6171d6356e5ef2b5f401dd2c013d053b81",
+    "local_validation/delivery_selftests.json": "d79f90bffd54a556300eb312537f789a0d3e26de89f7f12066b93aed4072e9ee",
+    "local_validation/delivery_validation.json": "e3c5780efd43c7e41a9b21a9b66ae07c59b66e6f6baadb53d613b3edfeaf5713",
+    "local_validation/notebook_validation.json": "92943e79ea805b48d53fa8175aac4759470ab18ba59bca8f1a062163d4127c7a",
+    "local_validation/worker_selftests.json": "84c0466908c98b43f81a72b18e1837e47c034fc5ac667bfbb7e2de84f887b3cb",
+    "notebook_support.py": "b4b48279e88ae18ed0537b4c4494d5ef2a5f784acca47b536088aa12d3cdeacf",
+    "reference_manifest.json": "f937041bf042643cfe833593b9ee49fc3428f54bcc55e9f84b8bcc6548106177",
+    "run_check.py": "3f7116a038aac6b78b271cb77e7c3c767badbf6208e553bbda9bae1cd3256d53",
+    "test_backend_worker.py": "7d14a5ebf09d68deb0d68e96cb25c3d5acd2e9e559df1d5109818a82afac4f97",
+    "test_delivery.py": "85107806b726ca817989836e4a54057c117ef674a641e347455c0320ab2dc60f"
+  },
+  "required_sibling_package": "anyprecision_imagenet_resnet50_pilot2_v1_1",
+  "scope": "one synthetic backend diagnostic; no ImageNet training; no automatic pilot clearance",
+  "local_validation_device": "cpu"
+}

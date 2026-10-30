@@ -1,0 +1,2 @@
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+native256: opwarming met alle vijf precisies, backward en SGD; effectieve batch 256.

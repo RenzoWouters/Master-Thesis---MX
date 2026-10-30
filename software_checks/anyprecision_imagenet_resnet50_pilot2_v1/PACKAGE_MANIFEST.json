@@ -1,0 +1,28 @@
+{
+  "package_id": "anyprecision_imagenet_resnet50_pilot2_v1",
+  "created_utc": "2026-10-30T13:31:16.707571+00:00",
+  "files_sha256": {
+    "AnyPrecision_ResNet50_ImageNet_pilot2_resultaten.ipynb": "be96e40da0ce75433b4b6030d3ff0ef6731e2ab9a9bfcd433bb05a344f6ccd33",
+    "PROTOCOL.md": "d8ee4d5971e409aab6d044ab59c2fdcb44e85c53492e4fe02853cced2e091853",
+    "README.md": "6d473f01f99867da321d4b0f7f07424992b57c58893b1c9908cf29e848790db0",
+    "SOURCE_MANIFEST.json": "25ddf0dd181ced5d6a727538018100418239b7950d020fc0bbe84c68db7549ce",
+    "common.py": "35f50411cdb23380f7a4deb3b783ba47fcdee8a746a3417445e68303dcd292c7",
+    "data_support.py": "e1cffed1667ca20c4fbfa64f209c67844f785130602bf05c3571b4f30cbeec49",
+    "engine.py": "083194bf483597e3647d2a8878e215c5ed486bf2d24085a9f92251b7119bf514",
+    "experiment_config.json": "800dead6a14c592eda9873d1be4705e64d66716c3fd452bb8576672c6e662f39",
+    "local_validation/VALIDATION.md": "f449b656b031988ec6b50ed410a0b40ced19b2a3b18ec40274986dae437f7573",
+    "local_validation/data_and_notebook.json": "e26e226a8c27c671bd6b9415ae43f0165d16676e34c099ea42178bf4edb169bd",
+    "local_validation/delivery_guards.json": "be1d1aed596c0f173d26531d19e1c5a030e64aa0b02ee5261017f34d4d87d590",
+    "local_validation/engine_selftests.json": "fa34cfbf34640a4547f27bfc4a929df1059fdf202159867c99ce2b25fb50cc23",
+    "local_validation/runner_selftests.json": "eaa1da77dee1168c22771b744d27334750bdc26c974a5e150f98f962b87f0bf7",
+    "local_validation/upstream_integration.json": "2d1d4bca16b3507da83690f9b6a22de82bb9f7401f86309807ee4c6983bed981",
+    "notebook_support.py": "477bf6ebaed12bf89ba3e20c1c86734e447c663d40531ac011ad55a2ccb88ba2",
+    "run_train.py": "0b17ef1fea25da2d1a0e7dda2aa725982d0e4c1f0747cebf5633e90ebf2a9cbf",
+    "test_engine.py": "cf4597415800dba1c27fc0b44f1f2b568fb7fe2844445c78143f1fc7a7b6a7f8",
+    "test_runner.py": "c05c3ddc7094182e63b5d675802735966c2eadc4e529065d7ddee184a525f838",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "training_started_during_preparation": false,
+  "validation_device": "cpu",
+  "gpu_validation_required_on_user_laptop": true
+}

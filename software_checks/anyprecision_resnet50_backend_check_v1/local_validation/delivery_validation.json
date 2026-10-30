@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "CPU software validation; real GPU validation remains required",
+  "public_check_expected_result": "FAIL because CUDA is unavailable",
+  "public_check_actual_result": "FAIL",
+  "command": "backend_diagnostic",
+  "eligible_as_pilot_check": false,
+  "reference_unchanged": true,
+  "source_archive_verified": true,
+  "base_engine_runner_watchdog_selftests": "PASS",
+  "backend_worker_mocks": "PASS",
+  "delivery_guards": "PASS",
+  "feedback_zip_valid_and_complete": true,
+  "no_model_checkpoints_in_feedback": true,
+  "notebook_unexecuted_and_path_injected": true,
+  "changed_files_since_public_check": []
+}

@@ -1,0 +1,90 @@
+{
+  "mode": "serial_dp4",
+  "status": "PASS",
+  "input_shape": [
+    256,
+    3,
+    224,
+    224
+  ],
+  "global_batch": 256,
+  "precision_bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "batchnorm_shard_sizes": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "warmup_updates": 1,
+  "measured_updates": 2,
+  "synthetic_data": true,
+  "training_accuracy_reported": false,
+  "timing_scope": "Complete five-precision forward/backward/SGD step; tensors already on GPU; excludes ImageNet I/O.",
+  "reference_bn_policy": true,
+  "last_progress": {
+    "stage": "final_finite_checks_done",
+    "elapsed_seconds": 235.12601849995553
+  },
+  "runtime": {
+    "seed": 20261009,
+    "threads": 4,
+    "AMP": false,
+    "torch_compile": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "bitexact_resume_guarantee": false,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "index": 0,
+      "total_memory_bytes": 8546484224,
+      "compute_capability": [
+        12,
+        0
+      ],
+      "visible_device_count": 1
+    }
+  },
+  "device": {
+    "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "index": 0,
+    "total_memory_bytes": 8546484224,
+    "compute_capability": [
+      12,
+      0
+    ],
+    "visible_device_count": 1
+  },
+  "free_memory_before_model_bytes": 7338983424,
+  "device_memory_bytes": 8546484224,
+  "parameter_count": 25769512,
+  "optimizer_updates_completed": 3,
+  "step_seconds": [
+    84.34228450013325,
+    107.21771270013414
+  ],
+  "median_step_seconds": 95.7799986001337,
+  "synthetic_images_per_second": 2.672791853639082,
+  "optimizer_updates": 3,
+  "logical_precision_passes": 15,
+  "physical_forward_backward_passes": 60,
+  "finite_losses_and_gradients": true,
+  "finite_check_scope": "Warmup losses/gradients; measured losses; final model/BN/SGD state.",
+  "peak_allocated_bytes": 8526634496,
+  "peak_reserved_bytes": 8667529216,
+  "ended_utc": "2026-10-30T14:14:54.496040+00:00",
+  "process_returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 236.88782890001312,
+  "last_output": "WORKER STATUS: PASS",
+  "pid": 46624,
+  "cleanup_failed": false,
+  "stdout_closed": true,
+  "timeout_seconds": 300.0
+}

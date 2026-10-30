@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "torch_version": "2.10.0+cpu",
+  "synthetic_fixture_only": true,
+  "checkpoint_continuity": {
+    "status": "PASS",
+    "training_steps_per_route": 2,
+    "safe_weights_only_roundtrip": true,
+    "parameters_BN_gradients_SGD_momentum_equal": true,
+    "python_numpy_torch_loader_RNG_equal": true,
+    "comparison": "Uninterrupted second step versus first-step checkpoint + restored RNG + second step"
+  },
+  "learning_rate_schedule": {
+    "status": "PASS",
+    "scalar_scheduler_steps": 80,
+    "model_training_epochs": 0,
+    "lr_after_completed_steps": {
+      "0": 0.5,
+      "44": 0.5,
+      "45": 0.05,
+      "59": 0.05,
+      "60": 0.005000000000000001,
+      "69": 0.005000000000000001,
+      "70": 0.0005000000000000001,
+      "80": 0.0005000000000000001
+    },
+    "restore_at_44_then_decay_at_45_equal": true
+  },
+  "finite_gates": {
+    "status": "PASS",
+    "valid_values_accepted": true,
+    "rejected": [
+      "nonfinite_loss",
+      "invalid_accuracy_counts",
+      "nonfinite_model",
+      "nonfinite_optimizer"
+    ]
+  },
+  "seconds": 0.06735246300013387
+}

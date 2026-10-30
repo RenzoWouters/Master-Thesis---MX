@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "device": "mock / no CUDA",
+  "scope": "Worker orchestration, timing boundaries and persistence only; no GPU/model equivalence claim.",
+  "cases": {
+    "success": {
+      "status": "PASS",
+      "mock_worker_status": "PASS",
+      "reference_config_unchanged": true,
+      "no_midstep_observation": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true
+    },
+    "failure": {
+      "status": "PASS",
+      "mock_worker_status": "FAIL",
+      "reference_config_unchanged": true,
+      "no_midstep_observation": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true
+    },
+    "oom": {
+      "status": "PASS",
+      "mock_worker_status": "OOM",
+      "reference_config_unchanged": true,
+      "no_midstep_observation": true,
+      "partial_times_preserved": true,
+      "cumulative_peaks_preserved": true
+    }
+  }
+}

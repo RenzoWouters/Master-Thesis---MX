@@ -1,0 +1,21 @@
+{
+  "reference_package": "anyprecision_imagenet_resnet50_pilot2_v1_1",
+  "package_signature": {
+    "sha256": "1a3c81b6e3db6585ea1a9c5abbc6b93e16f6eed0bcdb59646c5958c307c7b0a6",
+    "files": {
+      "SOURCE_MANIFEST.json": "25ddf0dd181ced5d6a727538018100418239b7950d020fc0bbe84c68db7549ce",
+      "check_watchdog.py": "fb80ecf8136e32318fab554e1b4cc450e0fb3ca32672576956a98f40ab459e1b",
+      "common.py": "35f50411cdb23380f7a4deb3b783ba47fcdee8a746a3417445e68303dcd292c7",
+      "data_support.py": "e1cffed1667ca20c4fbfa64f209c67844f785130602bf05c3571b4f30cbeec49",
+      "engine.py": "d16fce898b261a00d240020248f4f033722773bea87c1794ba200e7556edb590",
+      "experiment_config.json": "81dddb2039228828bf6e00a355e0d2b629cbfb179d5298151323f7be5a3802ff",
+      "notebook_support.py": "a2603c6c12255612de7c7c42b10e0a7bdc3fec891130187ba2895644dbe2999c",
+      "run_train.py": "55d28ef49cbbdf1b80c1d507bb4f786c941dbefdee611f8d95db1f805111e308",
+      "test_check_watchdog.py": "ea61851a4de090037254fd68b567c369c4f2384beb6707f3a29debbf2aee0077",
+      "test_engine.py": "c9b427993e382e57be99e8674806954b832f18168758c6a94c0c22459bfc8689",
+      "test_runner.py": "c05c3ddc7094182e63b5d675802735966c2eadc4e529065d7ddee184a525f838"
+    }
+  },
+  "source_archive_relpath": "upstream/Any-Precision-DNNs-master.zip",
+  "source_archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

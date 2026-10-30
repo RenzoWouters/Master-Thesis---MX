@@ -1,0 +1,110 @@
+serial_dp4: cuda_initialization_start; 0.0 s
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+BACKENDPROEF: cudnn.benchmark=False; batch 256, BN-groepen 64 en FP32 blijven behouden.
+serial_dp4: model_allocation_start; 1.3 s
+serial_dp4: model_and_inputs_done; 1.5 s
+serial_dp4: opwarming met alle vijf precisies, backward en SGD; effectieve batch 256.
+serial_dp4: validation_before_start; 1.5 s
+serial_dp4: validation_before_done; 1.6 s
+serial_dp4: precision_start; W32/A32; 1.6 s
+serial_dp4: forward_start; W32/A32; groep 1/4; 1.6 s
+serial_dp4: forward_done; W32/A32; groep 1/4; 1.8 s
+serial_dp4: backward_start; W32/A32; groep 1/4; 1.8 s
+serial_dp4: backward_done; W32/A32; groep 1/4; 2.1 s
+serial_dp4: forward_start; W32/A32; groep 2/4; 2.1 s
+serial_dp4: forward_done; W32/A32; groep 2/4; 2.2 s
+serial_dp4: backward_start; W32/A32; groep 2/4; 2.2 s
+serial_dp4: backward_done; W32/A32; groep 2/4; 2.4 s
+serial_dp4: forward_start; W32/A32; groep 3/4; 2.5 s
+serial_dp4: forward_done; W32/A32; groep 3/4; 2.6 s
+serial_dp4: backward_start; W32/A32; groep 3/4; 2.6 s
+serial_dp4: backward_done; W32/A32; groep 3/4; 2.8 s
+serial_dp4: forward_start; W32/A32; groep 4/4; 2.8 s
+serial_dp4: forward_done; W32/A32; groep 4/4; 2.9 s
+serial_dp4: backward_start; W32/A32; groep 4/4; 2.9 s
+serial_dp4: backward_done; W32/A32; groep 4/4; 3.1 s
+serial_dp4: precision_done; W32/A32; 3.1 s
+serial_dp4: precision_start; W8/A8; 3.1 s
+serial_dp4: forward_start; W8/A8; groep 1/4; 3.1 s
+serial_dp4: forward_done; W8/A8; groep 1/4; 3.8 s
+serial_dp4: backward_start; W8/A8; groep 1/4; 3.8 s
+serial_dp4: backward_done; W8/A8; groep 1/4; 5.5 s
+serial_dp4: forward_start; W8/A8; groep 2/4; 5.5 s
+serial_dp4: forward_done; W8/A8; groep 2/4; 6.2 s
+serial_dp4: backward_start; W8/A8; groep 2/4; 6.2 s
+serial_dp4: backward_done; W8/A8; groep 2/4; 8.5 s
+serial_dp4: forward_start; W8/A8; groep 3/4; 8.5 s
+serial_dp4: forward_done; W8/A8; groep 3/4; 9.2 s
+serial_dp4: backward_start; W8/A8; groep 3/4; 9.2 s
+serial_dp4: backward_done; W8/A8; groep 3/4; 12.3 s
+serial_dp4: forward_start; W8/A8; groep 4/4; 12.3 s
+serial_dp4: forward_done; W8/A8; groep 4/4; 13.0 s
+serial_dp4: backward_start; W8/A8; groep 4/4; 13.0 s
+serial_dp4: backward_done; W8/A8; groep 4/4; 16.1 s
+serial_dp4: precision_done; W8/A8; 16.1 s
+serial_dp4: precision_start; W4/A4; 16.1 s
+serial_dp4: forward_start; W4/A4; groep 1/4; 16.1 s
+serial_dp4: forward_done; W4/A4; groep 1/4; 16.8 s
+serial_dp4: backward_start; W4/A4; groep 1/4; 16.8 s
+serial_dp4: backward_done; W4/A4; groep 1/4; 19.1 s
+serial_dp4: forward_start; W4/A4; groep 2/4; 19.1 s
+serial_dp4: forward_done; W4/A4; groep 2/4; 19.8 s
+serial_dp4: backward_start; W4/A4; groep 2/4; 19.8 s
+serial_dp4: backward_done; W4/A4; groep 2/4; 22.8 s
+serial_dp4: forward_start; W4/A4; groep 3/4; 22.8 s
+serial_dp4: forward_done; W4/A4; groep 3/4; 23.4 s
+serial_dp4: backward_start; W4/A4; groep 3/4; 23.4 s
+serial_dp4: backward_done; W4/A4; groep 3/4; 26.4 s
+serial_dp4: forward_start; W4/A4; groep 4/4; 26.4 s
+serial_dp4: forward_done; W4/A4; groep 4/4; 27.0 s
+serial_dp4: backward_start; W4/A4; groep 4/4; 27.0 s
+serial_dp4: backward_done; W4/A4; groep 4/4; 30.0 s
+serial_dp4: precision_done; W4/A4; 30.0 s
+serial_dp4: precision_start; W2/A2; 30.0 s
+serial_dp4: forward_start; W2/A2; groep 1/4; 30.0 s
+serial_dp4: forward_done; W2/A2; groep 1/4; 30.6 s
+serial_dp4: backward_start; W2/A2; groep 1/4; 30.6 s
+serial_dp4: backward_done; W2/A2; groep 1/4; 32.8 s
+serial_dp4: forward_start; W2/A2; groep 2/4; 32.8 s
+serial_dp4: forward_done; W2/A2; groep 2/4; 33.5 s
+serial_dp4: backward_start; W2/A2; groep 2/4; 33.5 s
+serial_dp4: backward_done; W2/A2; groep 2/4; 36.4 s
+serial_dp4: forward_start; W2/A2; groep 3/4; 36.4 s
+serial_dp4: forward_done; W2/A2; groep 3/4; 37.1 s
+serial_dp4: backward_start; W2/A2; groep 3/4; 37.1 s
+serial_dp4: backward_done; W2/A2; groep 3/4; 40.0 s
+serial_dp4: forward_start; W2/A2; groep 4/4; 40.0 s
+serial_dp4: forward_done; W2/A2; groep 4/4; 40.6 s
+serial_dp4: backward_start; W2/A2; groep 4/4; 40.6 s
+serial_dp4: backward_done; W2/A2; groep 4/4; 43.6 s
+serial_dp4: precision_done; W2/A2; 43.6 s
+serial_dp4: precision_start; W1/A1; 43.6 s
+serial_dp4: forward_start; W1/A1; groep 1/4; 43.6 s
+serial_dp4: forward_done; W1/A1; groep 1/4; 44.2 s
+serial_dp4: backward_start; W1/A1; groep 1/4; 44.2 s
+serial_dp4: backward_done; W1/A1; groep 1/4; 46.4 s
+serial_dp4: forward_start; W1/A1; groep 2/4; 46.4 s
+serial_dp4: forward_done; W1/A1; groep 2/4; 47.1 s
+serial_dp4: backward_start; W1/A1; groep 2/4; 47.1 s
+serial_dp4: backward_done; W1/A1; groep 2/4; 50.0 s
+serial_dp4: forward_start; W1/A1; groep 3/4; 50.1 s
+serial_dp4: forward_done; W1/A1; groep 3/4; 50.7 s
+serial_dp4: backward_start; W1/A1; groep 3/4; 50.7 s
+serial_dp4: backward_done; W1/A1; groep 3/4; 53.6 s
+serial_dp4: forward_start; W1/A1; groep 4/4; 53.6 s
+serial_dp4: forward_done; W1/A1; groep 4/4; 54.3 s
+serial_dp4: backward_start; W1/A1; groep 4/4; 54.3 s
+serial_dp4: backward_done; W1/A1; groep 4/4; 57.2 s
+serial_dp4: precision_done; W1/A1; 57.2 s
+serial_dp4: gradient_validation_start; 57.2 s
+serial_dp4: gradient_validation_done; 57.3 s
+serial_dp4: optimizer_start; 57.3 s
+serial_dp4: optimizer_done; 57.3 s
+serial_dp4: validation_after_start; 57.3 s
+serial_dp4: validation_after_done; 57.4 s
+serial_dp4: measured_update_start; 57.4 s
+serial_dp4: gemeten volledige stap 1/2.
+serial_dp4: measured_update_done; 208.2 s
+Stapduur: 150.816 s
+serial_dp4: measured_update_start; 208.2 s
+serial_dp4: gemeten volledige stap 2/2.

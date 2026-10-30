@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "package_id": "anyprecision_imagenet_resnet50_pilot2_v1_1",
+  "command": "check",
+  "status": "PASS",
+  "started_utc": "2026-10-30T14:10:50.857153+00:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\anyprecision_imagenet_resnet50_pilot2\\20261030_151050_855963_check",
+  "config": {
+    "package_id": "anyprecision_imagenet_resnet50_pilot2_v1_1",
+    "schema_version": 1,
+    "dataset": "ImageNet-1k / ILSVRC2012",
+    "model": "resnet50q",
+    "bits": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "pilot_epochs": 2,
+    "reference_epochs": 80,
+    "global_batch": 256,
+    "reference_replicas": 4,
+    "execution": "serial_dp4",
+    "bn_policy": "retain_first_shard_buffers_once_per_precision",
+    "optimizer": "SGD",
+    "lr": 0.5,
+    "momentum": 0.9,
+    "weight_decay": 1e-05,
+    "lr_milestones": [
+      45,
+      60,
+      70
+    ],
+    "lr_gamma": 0.1,
+    "seed": 20261009,
+    "training_from_scratch": true,
+    "amp": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "github_top1_percent": {
+      "1": 58.77,
+      "2": 71.66,
+      "4": 73.84,
+      "8": 74.07,
+      "32": 74.63
+    },
+    "reference_url": "https://github.com/SHI-Labs/Any-Precision-DNNs",
+    "note": "GitHub reference, not the paper LR=0.3 recipe. Published accuracy checkpoint epoch is not established by README."
+  },
+  "package_signature": {
+    "sha256": "1a3c81b6e3db6585ea1a9c5abbc6b93e16f6eed0bcdb59646c5958c307c7b0a6",
+    "files": {
+      "SOURCE_MANIFEST.json": "25ddf0dd181ced5d6a727538018100418239b7950d020fc0bbe84c68db7549ce",
+      "check_watchdog.py": "fb80ecf8136e32318fab554e1b4cc450e0fb3ca32672576956a98f40ab459e1b",
+      "common.py": "35f50411cdb23380f7a4deb3b783ba47fcdee8a746a3417445e68303dcd292c7",
+      "data_support.py": "e1cffed1667ca20c4fbfa64f209c67844f785130602bf05c3571b4f30cbeec49",
+      "engine.py": "d16fce898b261a00d240020248f4f033722773bea87c1794ba200e7556edb590",
+      "experiment_config.json": "81dddb2039228828bf6e00a355e0d2b629cbfb179d5298151323f7be5a3802ff",
+      "notebook_support.py": "a2603c6c12255612de7c7c42b10e0a7bdc3fec891130187ba2895644dbe2999c",
+      "run_train.py": "55d28ef49cbbdf1b80c1d507bb4f786c941dbefdee611f8d95db1f805111e308",
+      "test_check_watchdog.py": "ea61851a4de090037254fd68b567c369c4f2384beb6707f3a29debbf2aee0077",
+      "test_engine.py": "c9b427993e382e57be99e8674806954b832f18168758c6a94c0c22459bfc8689",
+      "test_runner.py": "c05c3ddc7094182e63b5d675802735966c2eadc4e529065d7ddee184a525f838"
+    }
+  },
+  "epochs": [],
+  "latest_completed_epoch": 0,
+  "authorized_scope": "synthetic checks and two real ImageNet pilot epochs only",
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "changed_upstream_files": [],
+    "used_modules": [
+      "models",
+      "models.losses",
+      "optimizer"
+    ],
+    "note": "Auteursmodel, quantizers en soft loss ongewijzigd. De nieuwe runner voert de gedocumenteerde trainingslus uit."
+  },
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "numpy": "2.5.2",
+      "Pillow": "12.3.0",
+      "pandas": "2.3.3",
+      "matplotlib": "3.10.8"
+    },
+    "pip_check": {
+      "returncode": 0,
+      "output": "No broken requirements found."
+    },
+    "torch_import": "2.10.0+cu128",
+    "torchvision_import": "0.25.0+cu128",
+    "torch_cuda_build": "12.8"
+  },
+  "selftests": {
+    "engine": {
+      "status": "PASS",
+      "device": "cpu",
+      "torch_version": "2.10.0+cu128",
+      "synthetic_fixture_only": true,
+      "real_dataset_loaded": false,
+      "independent_oracle": "explicit deep-copied replicas, gathered outputs, one global mean loss per mode",
+      "serial_cases": [
+        {
+          "status": "PASS",
+          "samples": 8,
+          "chunk_sizes": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        },
+        {
+          "status": "PASS",
+          "samples": 13,
+          "chunk_sizes": [
+            4,
+            4,
+            4,
+            1
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        },
+        {
+          "status": "PASS",
+          "samples": 5,
+          "chunk_sizes": [
+            2,
+            2,
+            1
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        },
+        {
+          "status": "PASS",
+          "samples": 1,
+          "chunk_sizes": [
+            1
+          ],
+          "one_update": true,
+          "recursive_teacher_order": true,
+          "replica_zero_buffers": true,
+          "parameter_max_abs": 0.0,
+          "gradient_max_abs": 0.0,
+          "buffer_max_abs": 0.0
+        }
+      ],
+      "native_case": {
+        "status": "PASS",
+        "parameter_max_abs": 0.0,
+        "gradient_max_abs": 0.0,
+        "buffer_max_abs": 0.0
+      },
+      "BN_difference_case": {
+        "status": "PASS",
+        "native_batch_changes_BN": true,
+        "naive_accumulation_changes_running_buffers": true,
+        "native_running_var_max_abs_difference": 0.027016937732696533,
+        "naive_running_mean_max_abs_difference": 0.11842328310012817,
+        "serial_BN_updates_per_mode": 1,
+        "naive_BN_updates_per_mode": 4
+      },
+      "evaluation_case": {
+        "status": "PASS",
+        "all_modes_hard_CE": true,
+        "buffers_parameters_gradients_unchanged": true,
+        "module_training_flags_restored": true
+      },
+      "rejection_cases": {
+        "status": "PASS",
+        "rejected_before_optimizer_update": [
+          "unsupported_mode",
+          "wrong_replica_count",
+          "non_FP32_inputs",
+          "nonfinite_input",
+          "missing_required_gradient"
+        ]
+      },
+      "progress_cases": {
+        "status": "PASS",
+        "cases": [
+          {
+            "mode": "serial_dp4",
+            "validate": false,
+            "events": 92,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          },
+          {
+            "mode": "serial_dp4",
+            "validate": true,
+            "events": 98,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          },
+          {
+            "mode": "native256",
+            "validate": false,
+            "events": 32,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          },
+          {
+            "mode": "native256",
+            "validate": true,
+            "events": 38,
+            "state_gradient_momentum_and_teachers_exact": true,
+            "python_numpy_torch_rng_unchanged": true,
+            "scalar_metadata_only": true
+          }
+        ]
+      },
+      "tolerances": {
+        "parameter_atol": 2e-06,
+        "gradient_atol": 2e-05,
+        "parameter_gradient_rtol": 5e-05,
+        "buffer_atol": 1e-06,
+        "buffer_rtol": 1e-05
+      },
+      "seconds": 2.721857399912551
+    },
+    "runner": {
+      "status": "PASS",
+      "device": "cpu",
+      "torch_version": "2.10.0+cu128",
+      "synthetic_fixture_only": true,
+      "checkpoint_continuity": {
+        "status": "PASS",
+        "training_steps_per_route": 2,
+        "safe_weights_only_roundtrip": true,
+        "parameters_BN_gradients_SGD_momentum_equal": true,
+        "python_numpy_torch_loader_RNG_equal": true,
+        "comparison": "Uninterrupted second step versus first-step checkpoint + restored RNG + second step"
+      },
+      "learning_rate_schedule": {
+        "status": "PASS",
+        "scalar_scheduler_steps": 80,
+        "model_training_epochs": 0,
+        "lr_after_completed_steps": {
+          "0": 0.5,
+          "44": 0.5,
+          "45": 0.05,
+          "59": 0.05,
+          "60": 0.005000000000000001,
+          "69": 0.005000000000000001,
+          "70": 0.0005000000000000001,
+          "80": 0.0005000000000000001
+        },
+        "restore_at_44_then_decay_at_45_equal": true
+      },
+      "finite_gates": {
+        "status": "PASS",
+        "valid_values_accepted": true,
+        "rejected": [
+          "nonfinite_loss",
+          "invalid_accuracy_counts",
+          "nonfinite_model",
+          "nonfinite_optimizer"
+        ]
+      },
+      "seconds": 0.07641049986705184
+    },
+    "watchdog": {
+      "status": "PASS",
+      "device": "none",
+      "platform": "win32",
+      "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+      "cases": {
+        "successful_exit": {
+          "status": "PASS",
+          "timed_out": false,
+          "elapsed_seconds": 0.27399339992552996,
+          "returncode": 0,
+          "child_terminated": true,
+          "last_output": "completed",
+          "log_lines": 1
+        },
+        "nonzero_exit": {
+          "status": "PASS",
+          "timed_out": false,
+          "elapsed_seconds": 0.2614704999141395,
+          "returncode": 7,
+          "child_terminated": true,
+          "last_output": "failed",
+          "log_lines": 1
+        },
+        "quiet_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.31451050005853176,
+          "returncode": 1,
+          "child_terminated": true,
+          "last_output": "Nog geen uitvoer van het testproces.",
+          "log_lines": 2
+        },
+        "continuous_output_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.30455809994600713,
+          "returncode": 1,
+          "child_terminated": true,
+          "last_output": "tick",
+          "log_lines": 52
+        },
+        "partial_line_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.31503699999302626,
+          "returncode": 1,
+          "child_terminated": true,
+          "last_output": "partial",
+          "log_lines": 3
+        },
+        "eof_without_exit_timeout": {
+          "status": "PASS",
+          "timed_out": true,
+          "elapsed_seconds": 0.30931050004437566,
+          "returncode": 1,
+          "child_terminated": true,
+          "last_output": "Nog geen uitvoer van het testproces.",
+          "log_lines": 2
+        },
+        "interrupt_cleanup": {
+          "status": "PASS",
+          "interrupt_propagated": true,
+          "child_terminated": true,
+          "elapsed_seconds": 0.056314799934625626
+        },
+        "proof_gates": {
+          "status": "PASS",
+          "rejected_proofs": [
+            "selected_timeout",
+            "only_native_pass",
+            "selected_skipped"
+          ],
+          "serial_pass_with_native_skipped_accepted": true,
+          "newest_matching_timeout_blocks_older_pass": true,
+          "explicit_valid_report_still_supported": true,
+          "mandatory_timeout_blocks_run": true,
+          "optional_native_not_started_after_mandatory_timeout": true
+        },
+        "parent_outcome_precedence": {
+          "status": "PASS",
+          "outcomes": {
+            "late_pass": "TIMEOUT",
+            "failed_cleanup": "FAIL",
+            "partial_progress": "TIMEOUT",
+            "actual_oom": "OOM",
+            "inconsistent_exit": "REJECTED"
+          },
+          "child_reports_preserved": true,
+          "parent_outcome_persisted": true
+        }
+      },
+      "elapsed_seconds": 1.8689747001044452,
+      "scope": "Synthetic stdlib subprocesses and mocked status gates; no Windows/CUDA validation."
+    },
+    "upstream_model": {
+      "parameter_count": 25769512,
+      "switchable_bn_modules": 53,
+      "output_shapes": {
+        "32": [
+          2,
+          1000
+        ],
+        "8": [
+          2,
+          1000
+        ],
+        "4": [
+          2,
+          1000
+        ],
+        "2": [
+          2,
+          1000
+        ],
+        "1": [
+          2,
+          1000
+        ]
+      },
+      "input_shape": [
+        2,
+        3,
+        64,
+        64
+      ],
+      "purpose": "Kleine functionele controle; geen geheugenschatting en geen datasetaccuracy."
+    }
+  },
+  "check_policy": {
+    "gpu_timeout_seconds": 300.0,
+    "heartbeat_seconds": 15,
+    "include_native256": false
+  },
+  "memory_tests": {
+    "native256": {
+      "mode": "native256",
+      "status": "SKIPPED",
+      "reason": "Optionele diagnose; niet nodig voor de gekozen serial_dp4-uitvoering.",
+      "batchnorm_shard_sizes": [
+        256
+      ],
+      "step_seconds": []
+    },
+    "serial_dp4": {
+      "mode": "serial_dp4",
+      "status": "PASS",
+      "input_shape": [
+        256,
+        3,
+        224,
+        224
+      ],
+      "global_batch": 256,
+      "precision_bits": [
+        1,
+        2,
+        4,
+        8,
+        32
+      ],
+      "batchnorm_shard_sizes": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "warmup_updates": 1,
+      "measured_updates": 2,
+      "synthetic_data": true,
+      "training_accuracy_reported": false,
+      "timing_scope": "Complete five-precision forward/backward/SGD step; tensors already on GPU; excludes ImageNet I/O.",
+      "reference_bn_policy": true,
+      "last_progress": {
+        "stage": "final_finite_checks_done",
+        "elapsed_seconds": 235.12601849995553
+      },
+      "runtime": {
+        "seed": 20261009,
+        "threads": 4,
+        "AMP": false,
+        "torch_compile": false,
+        "fp32_precision": "ieee",
+        "cudnn_benchmark": true,
+        "cudnn_deterministic": false,
+        "bitexact_resume_guarantee": false,
+        "device": {
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "index": 0,
+          "total_memory_bytes": 8546484224,
+          "compute_capability": [
+            12,
+            0
+          ],
+          "visible_device_count": 1
+        }
+      },
+      "device": {
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "index": 0,
+        "total_memory_bytes": 8546484224,
+        "compute_capability": [
+          12,
+          0
+        ],
+        "visible_device_count": 1
+      },
+      "free_memory_before_model_bytes": 7338983424,
+      "device_memory_bytes": 8546484224,
+      "parameter_count": 25769512,
+      "optimizer_updates_completed": 3,
+      "step_seconds": [
+        84.34228450013325,
+        107.21771270013414
+      ],
+      "median_step_seconds": 95.7799986001337,
+      "synthetic_images_per_second": 2.672791853639082,
+      "optimizer_updates": 3,
+      "logical_precision_passes": 15,
+      "physical_forward_backward_passes": 60,
+      "finite_losses_and_gradients": true,
+      "finite_check_scope": "Warmup losses/gradients; measured losses; final model/BN/SGD state.",
+      "peak_allocated_bytes": 8526634496,
+      "peak_reserved_bytes": 8667529216,
+      "ended_utc": "2026-10-30T14:14:54.496040+00:00",
+      "process_returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 236.88782890001312,
+      "last_output": "WORKER STATUS: PASS",
+      "pid": 46624,
+      "cleanup_failed": false,
+      "stdout_closed": true,
+      "timeout_seconds": 300.0
+    }
+  },
+  "selected_execution": "serial_dp4",
+  "device": {
+    "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "index": 0,
+    "total_memory_bytes": 8546484224,
+    "compute_capability": [
+      12,
+      0
+    ],
+    "visible_device_count": 1
+  },
+  "ended_utc": "2026-10-30T14:14:55.201655+00:00",
+  "wall_seconds": 244.34312540013343
+}

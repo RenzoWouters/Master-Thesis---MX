@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "scope": "Software-only checks, no CUDA/ImageNet run",
+  "cli_check_expected_status": "FAIL: CUDA unavailable",
+  "cli_check_actual_status": "FAIL",
+  "native_default_skipped": true,
+  "no_native_process_created": true,
+  "serial_failure_report_saved": true,
+  "complete_console_log_in_feedback": true,
+  "feedback_zip_valid": true,
+  "feedback_no_checkpoints": true,
+  "notebook_unexecuted": true,
+  "unchanged_files": {
+    "common.py": true,
+    "data_support.py": true,
+    "SOURCE_MANIFEST.json": true,
+    "upstream/Any-Precision-DNNs-master.zip": true
+  },
+  "unchanged_training_configuration": true,
+  "upstream_model_cpu_smoke": {
+    "parameter_count": 25769512,
+    "switchable_bn_modules": 53,
+    "output_shapes": {
+      "32": [
+        2,
+        1000
+      ],
+      "8": [
+        2,
+        1000
+      ],
+      "4": [
+        2,
+        1000
+      ],
+      "2": [
+        2,
+        1000
+      ],
+      "1": [
+        2,
+        1000
+      ]
+    },
+    "input_shape": [
+      2,
+      3,
+      64,
+      64
+    ],
+    "purpose": "Kleine functionele controle; geen geheugenschatting en geen datasetaccuracy."
+  }
+}

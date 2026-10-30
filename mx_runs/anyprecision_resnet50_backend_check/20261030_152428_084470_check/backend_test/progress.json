@@ -1,0 +1,143 @@
+{
+  "mode": "serial_dp4",
+  "candidate": "cudnn_benchmark_false",
+  "status": "RUNNING",
+  "eligible_as_pilot_check": false,
+  "backend_change": {
+    "cudnn_benchmark": {
+      "baseline": true,
+      "candidate": false
+    }
+  },
+  "input_shape": [
+    256,
+    3,
+    224,
+    224
+  ],
+  "global_batch": 256,
+  "precision_bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "batchnorm_shard_sizes": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "reference_bn_policy": true,
+  "warmup_updates": 1,
+  "measured_updates": 2,
+  "synthetic_data": true,
+  "training_accuracy_reported": false,
+  "optimizer_updates_completed": 2,
+  "step_seconds": [
+    150.81590040004812
+  ],
+  "memory_updates": [
+    {
+      "kind": "warmup",
+      "index": 0,
+      "status": "PASS",
+      "before": {
+        "allocated_bytes": 259503616,
+        "reserved_bytes": 281018368,
+        "free_bytes": 7055867904,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 1.4542285001371056
+      },
+      "seconds": 55.969730200013146,
+      "after": {
+        "allocated_bytes": 486995456,
+        "reserved_bytes": 8537505792,
+        "free_bytes": 0,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 57.42502490011975
+      },
+      "peak_allocated_bytes": 8420064768,
+      "peak_reserved_bytes": 8537505792
+    },
+    {
+      "kind": "measured",
+      "index": 1,
+      "status": "PASS",
+      "before": {
+        "allocated_bytes": 486995456,
+        "reserved_bytes": 8537505792,
+        "free_bytes": 0,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 57.426336200209334
+      },
+      "seconds": 150.81590040004812,
+      "after": {
+        "allocated_bytes": 489682432,
+        "reserved_bytes": 8686403584,
+        "free_bytes": 0,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 208.24402310000733
+      },
+      "peak_allocated_bytes": 8529845760,
+      "peak_reserved_bytes": 8686403584
+    },
+    {
+      "kind": "measured",
+      "index": 2,
+      "status": "RUNNING",
+      "before": {
+        "allocated_bytes": 489682432,
+        "reserved_bytes": 8686403584,
+        "free_bytes": 0,
+        "device_total_bytes": 8546484224,
+        "elapsed_seconds": 208.24732680013403
+      }
+    }
+  ],
+  "timing_scope": "Complete five-precision forward/backward/SGD step; inputs already on GPU; excludes ImageNet I/O, progress writes and boundary memory observations.",
+  "memory_counter_scope": "PyTorch allocated/reserved counters and CUDA mem_get_info; not a measurement of physical VRAM residency or Windows shared memory.",
+  "comparison_note": "Same instrumented warmup and uninstrumented timed engine calls as v1_1; cuDNN kernel choices may differ numerically, so no bit-exact CUDA claim.",
+  "last_progress": {
+    "stage": "measured_update_start",
+    "update": 2,
+    "elapsed_seconds": 208.24807650013827
+  },
+  "runtime": {
+    "seed": 20261009,
+    "threads": 4,
+    "AMP": false,
+    "torch_compile": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "bitexact_resume_guarantee": false,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "index": 0,
+      "total_memory_bytes": 8546484224,
+      "compute_capability": [
+        12,
+        0
+      ],
+      "visible_device_count": 1
+    }
+  },
+  "device": {
+    "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "index": 0,
+    "total_memory_bytes": 8546484224,
+    "compute_capability": [
+      12,
+      0
+    ],
+    "visible_device_count": 1
+  },
+  "free_memory_before_model_bytes": 7338983424,
+  "device_memory_bytes": 8546484224,
+  "parameter_count": 25769512,
+  "peak_allocated_bytes": 8529845760,
+  "peak_reserved_bytes": 8686403584,
+  "warmup_seconds": 55.969730200013146
+}

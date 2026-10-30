@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "notebook_unexecuted": true,
+  "syntax_pass": true,
+  "cases": {
+    "PASS": {
+      "status": "PASS",
+      "only_complete_checks_plotted": true,
+      "baseline_values_unchanged": true
+    },
+    "OOM": {
+      "status": "PASS",
+      "only_complete_checks_plotted": true,
+      "baseline_values_unchanged": true
+    },
+    "TIMEOUT": {
+      "status": "PASS",
+      "only_complete_checks_plotted": true,
+      "baseline_values_unchanged": true
+    },
+    "NIET_UITGEVOERD": {
+      "status": "PASS",
+      "only_complete_checks_plotted": true,
+      "baseline_values_unchanged": true
+    },
+    "CPU_SELFTEST": {
+      "status": "PASS",
+      "no_gpu_pass_inferred": true,
+      "no_fake_measurements": true
+    }
+  },
+  "scope": "Artificial candidate values only for notebook rendering tests; no measured new GPU result.",
+  "partial_result_scope_labeled": true,
+  "title_headroom_visually_verified": true
+}

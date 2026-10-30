@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "device": "none",
+  "platform": "linux",
+  "reference_files_unchanged": true,
+  "checked_reference_files": 12,
+  "rejected_inputs": [
+    "changed_engine",
+    "missing_common",
+    "changed_upstream_archive",
+    "diagnostic_cannot_unlock_pilot"
+  ],
+  "rejected_training_commands": [
+    "run",
+    "resume",
+    "train"
+  ],
+  "fixed_batch_and_precision_contract": true,
+  "diagnostic_cannot_unlock_pilot": true,
+  "parent_outcome_precedence": {
+    "completed": "PASS",
+    "late_pass": "TIMEOUT",
+    "cleanup_failed": "FAIL",
+    "actual_oom": "OOM"
+  },
+  "elapsed_seconds": 0.01534419000017806,
+  "scope": "Reference hashes, parser and pilot-report gates; no GPU or real training."
+}

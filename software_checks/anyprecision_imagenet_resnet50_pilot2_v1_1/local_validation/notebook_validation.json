@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "v1.1 docs and unexecuted notebook changes",
+  "code_ast_and_notebook_cells": "PASS",
+  "notebook_unexecuted": true,
+  "no_synthetic_results_in_deliverable": true,
+  "cases": [
+    {
+      "case": "serial_pass_native_skipped",
+      "status": "PASS",
+      "measured_bar_count": 3
+    },
+    {
+      "case": "serial_timeout_native_skipped",
+      "status": "PASS",
+      "measured_bar_count": 0
+    },
+    {
+      "case": "serial_pass_native_timeout",
+      "status": "PASS",
+      "measured_bar_count": 3
+    },
+    {
+      "case": "legacy_both_pass",
+      "status": "PASS",
+      "measured_bar_count": 6
+    }
+  ],
+  "limitations": [
+    "Mock reports only; no GPU or ImageNet measurement."
+  ],
+  "visual_review": "PASS: valid mocked PASS/SKIPPED and TIMEOUT/SKIPPED layouts; all-unmeasured plots suppress arbitrary y ticks."
+}

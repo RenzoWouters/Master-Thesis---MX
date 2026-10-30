@@ -1,0 +1,141 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_imagenet_resnet50_pilot2\20261030_151050_855963_check
+RESNET-50 / IMAGENET: GitHub any-precision; W/A 1,2,4,8,32; batch 256; FP32; geen MX.
+pip check: No broken requirements found.
+CPU-zelftests: onafhankelijke replica-controle en auteursmodel met vijf precisies geslaagd.
+Eerst de gekozen uitvoering: serial_dp4, vier groepen van 64; globale batch blijft 256.
+native256 wordt overgeslagen. Deze extra diagnose is niet nodig voor de pilot.
+Start afzonderlijk proces: serial_dp4; tijdslimiet 300 s.
+serial_dp4: cuda_initialization_start; 0.0 s
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+serial_dp4: model_allocation_start; 1.3 s
+serial_dp4: model_and_inputs_done; 1.5 s
+serial_dp4: opwarming met alle vijf precisies, backward en SGD; effectieve batch 256.
+serial_dp4: validation_before_start; 1.5 s
+serial_dp4: validation_before_done; 1.6 s
+serial_dp4: precision_start; W32/A32; 1.6 s
+serial_dp4: forward_start; W32/A32; groep 1/4; 1.6 s
+serial_dp4: forward_done; W32/A32; groep 1/4; 5.2 s
+serial_dp4: backward_start; W32/A32; groep 1/4; 5.3 s
+serial_dp4: backward_done; W32/A32; groep 1/4; 13.3 s
+serial_dp4: forward_start; W32/A32; groep 2/4; 13.4 s
+serial_dp4: forward_done; W32/A32; groep 2/4; 13.5 s
+serial_dp4: backward_start; W32/A32; groep 2/4; 13.5 s
+serial_dp4: backward_done; W32/A32; groep 2/4; 13.7 s
+serial_dp4: forward_start; W32/A32; groep 3/4; 13.7 s
+serial_dp4: forward_done; W32/A32; groep 3/4; 13.8 s
+serial_dp4: backward_start; W32/A32; groep 3/4; 13.8 s
+serial_dp4: backward_done; W32/A32; groep 3/4; 14.0 s
+serial_dp4: wacht 15 s / limiet 300 s; laatste uitvoer: serial_dp4: backward_done; W32/A32; groep 3/4; 14.0 s (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: forward_start; W32/A32; groep 4/4; 14.0 s
+serial_dp4: forward_done; W32/A32; groep 4/4; 14.1 s
+serial_dp4: backward_start; W32/A32; groep 4/4; 14.1 s
+serial_dp4: backward_done; W32/A32; groep 4/4; 14.3 s
+serial_dp4: precision_done; W32/A32; 14.3 s
+serial_dp4: precision_start; W8/A8; 14.3 s
+serial_dp4: forward_start; W8/A8; groep 1/4; 14.3 s
+serial_dp4: forward_done; W8/A8; groep 1/4; 15.1 s
+serial_dp4: backward_start; W8/A8; groep 1/4; 15.1 s
+serial_dp4: backward_done; W8/A8; groep 1/4; 16.9 s
+serial_dp4: forward_start; W8/A8; groep 2/4; 17.0 s
+serial_dp4: forward_done; W8/A8; groep 2/4; 18.0 s
+serial_dp4: backward_start; W8/A8; groep 2/4; 18.0 s
+serial_dp4: backward_done; W8/A8; groep 2/4; 18.7 s
+serial_dp4: forward_start; W8/A8; groep 3/4; 18.7 s
+serial_dp4: forward_done; W8/A8; groep 3/4; 19.8 s
+serial_dp4: backward_start; W8/A8; groep 3/4; 19.8 s
+serial_dp4: backward_done; W8/A8; groep 3/4; 20.5 s
+serial_dp4: forward_start; W8/A8; groep 4/4; 20.5 s
+serial_dp4: forward_done; W8/A8; groep 4/4; 21.5 s
+serial_dp4: backward_start; W8/A8; groep 4/4; 21.5 s
+serial_dp4: backward_done; W8/A8; groep 4/4; 22.3 s
+serial_dp4: precision_done; W8/A8; 22.3 s
+serial_dp4: precision_start; W4/A4; 22.3 s
+serial_dp4: forward_start; W4/A4; groep 1/4; 22.3 s
+serial_dp4: forward_done; W4/A4; groep 1/4; 23.3 s
+serial_dp4: backward_start; W4/A4; groep 1/4; 23.3 s
+serial_dp4: backward_done; W4/A4; groep 1/4; 24.0 s
+serial_dp4: forward_start; W4/A4; groep 2/4; 24.1 s
+serial_dp4: forward_done; W4/A4; groep 2/4; 25.1 s
+serial_dp4: backward_start; W4/A4; groep 2/4; 25.1 s
+serial_dp4: backward_done; W4/A4; groep 2/4; 25.8 s
+serial_dp4: forward_start; W4/A4; groep 3/4; 25.8 s
+serial_dp4: forward_done; W4/A4; groep 3/4; 26.8 s
+serial_dp4: backward_start; W4/A4; groep 3/4; 26.8 s
+serial_dp4: backward_done; W4/A4; groep 3/4; 27.5 s
+serial_dp4: forward_start; W4/A4; groep 4/4; 27.5 s
+serial_dp4: forward_done; W4/A4; groep 4/4; 28.6 s
+serial_dp4: backward_start; W4/A4; groep 4/4; 28.6 s
+serial_dp4: wacht 30 s / limiet 300 s; laatste uitvoer: serial_dp4: backward_start; W4/A4; groep 4/4; 28.6 s (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: backward_done; W4/A4; groep 4/4; 29.3 s
+serial_dp4: precision_done; W4/A4; 29.3 s
+serial_dp4: precision_start; W2/A2; 29.3 s
+serial_dp4: forward_start; W2/A2; groep 1/4; 29.3 s
+serial_dp4: forward_done; W2/A2; groep 1/4; 30.3 s
+serial_dp4: backward_start; W2/A2; groep 1/4; 30.3 s
+serial_dp4: backward_done; W2/A2; groep 1/4; 31.0 s
+serial_dp4: forward_start; W2/A2; groep 2/4; 31.0 s
+serial_dp4: forward_done; W2/A2; groep 2/4; 32.1 s
+serial_dp4: backward_start; W2/A2; groep 2/4; 32.1 s
+serial_dp4: backward_done; W2/A2; groep 2/4; 32.8 s
+serial_dp4: forward_start; W2/A2; groep 3/4; 32.8 s
+serial_dp4: forward_done; W2/A2; groep 3/4; 33.8 s
+serial_dp4: backward_start; W2/A2; groep 3/4; 33.8 s
+serial_dp4: backward_done; W2/A2; groep 3/4; 34.5 s
+serial_dp4: forward_start; W2/A2; groep 4/4; 34.5 s
+serial_dp4: forward_done; W2/A2; groep 4/4; 35.5 s
+serial_dp4: backward_start; W2/A2; groep 4/4; 35.5 s
+serial_dp4: backward_done; W2/A2; groep 4/4; 36.2 s
+serial_dp4: precision_done; W2/A2; 36.2 s
+serial_dp4: precision_start; W1/A1; 36.2 s
+serial_dp4: forward_start; W1/A1; groep 1/4; 36.2 s
+serial_dp4: forward_done; W1/A1; groep 1/4; 37.3 s
+serial_dp4: backward_start; W1/A1; groep 1/4; 37.3 s
+serial_dp4: backward_done; W1/A1; groep 1/4; 38.0 s
+serial_dp4: forward_start; W1/A1; groep 2/4; 38.0 s
+serial_dp4: forward_done; W1/A1; groep 2/4; 39.0 s
+serial_dp4: backward_start; W1/A1; groep 2/4; 39.0 s
+serial_dp4: backward_done; W1/A1; groep 2/4; 39.7 s
+serial_dp4: forward_start; W1/A1; groep 3/4; 39.7 s
+serial_dp4: forward_done; W1/A1; groep 3/4; 40.7 s
+serial_dp4: backward_start; W1/A1; groep 3/4; 40.7 s
+serial_dp4: backward_done; W1/A1; groep 3/4; 41.4 s
+serial_dp4: forward_start; W1/A1; groep 4/4; 41.5 s
+serial_dp4: forward_done; W1/A1; groep 4/4; 42.5 s
+serial_dp4: backward_start; W1/A1; groep 4/4; 42.5 s
+serial_dp4: backward_done; W1/A1; groep 4/4; 43.2 s
+serial_dp4: precision_done; W1/A1; 43.2 s
+serial_dp4: gradient_validation_start; 43.2 s
+serial_dp4: gradient_validation_done; 43.2 s
+serial_dp4: optimizer_start; 43.2 s
+serial_dp4: optimizer_done; 43.3 s
+serial_dp4: validation_after_start; 43.3 s
+serial_dp4: validation_after_done; 43.4 s
+serial_dp4: measured_update_start; 43.4 s
+serial_dp4: gemeten volledige stap 1/2.
+serial_dp4: wacht 45 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 1/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 60 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 1/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 76 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 1/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 91 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 1/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 106 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 1/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 121 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 1/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: measured_update_done; 127.8 s
+Stapduur: 84.342 s
+serial_dp4: measured_update_start; 127.8 s
+serial_dp4: gemeten volledige stap 2/2.
+serial_dp4: wacht 136 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 151 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 166 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 181 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 197 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 212 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: wacht 227 s / limiet 300 s; laatste uitvoer: serial_dp4: gemeten volledige stap 2/2. (wachtmelding, geen bewijs van GPU-voortgang)
+serial_dp4: measured_update_done; 235.0 s
+Stapduur: 107.218 s
+serial_dp4: final_finite_checks_start; 235.0 s
+serial_dp4: final_finite_checks_done; 235.1 s
+WORKER STATUS: PASS
+CHECK PASS: batch 256; vier groepen van 64; vijf precisies; één SGD-update; BN-replicabeleid gecontroleerd.
+Dit is een synthetische controle. Nog geen ImageNet-training uitgevoerd.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_imagenet_resnet50_pilot2\20261030_151050_855963_check\run_report.json
+Deel feedback_bundle.zip uit deze map. Checkpoints en dataset blijven lokaal.

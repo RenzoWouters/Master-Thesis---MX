@@ -1,0 +1,68 @@
+{
+  "mode": "serial_dp4",
+  "status": "RUNNING",
+  "input_shape": [
+    256,
+    3,
+    224,
+    224
+  ],
+  "global_batch": 256,
+  "precision_bits": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "batchnorm_shard_sizes": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "warmup_updates": 1,
+  "measured_updates": 2,
+  "synthetic_data": true,
+  "training_accuracy_reported": false,
+  "timing_scope": "Complete five-precision forward/backward/SGD step; tensors already on GPU; excludes ImageNet I/O.",
+  "reference_bn_policy": true,
+  "last_progress": {
+    "stage": "final_finite_checks_done",
+    "elapsed_seconds": 241.2155444000382
+  },
+  "runtime": {
+    "seed": 20261009,
+    "threads": 4,
+    "AMP": false,
+    "torch_compile": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "bitexact_resume_guarantee": false,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "index": 0,
+      "total_memory_bytes": 8546484224,
+      "compute_capability": [
+        12,
+        0
+      ],
+      "visible_device_count": 1
+    }
+  },
+  "device": {
+    "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "index": 0,
+    "total_memory_bytes": 8546484224,
+    "compute_capability": [
+      12,
+      0
+    ],
+    "visible_device_count": 1
+  },
+  "free_memory_before_model_bytes": 7338983424,
+  "device_memory_bytes": 8546484224,
+  "parameter_count": 25769512,
+  "optimizer_updates_completed": 3
+}

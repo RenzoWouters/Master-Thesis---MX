@@ -1,0 +1,8 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\anyprecision_imagenet_resnet50_pilot2\20261030_143333_728349_check
+RESNET-50 / IMAGENET: GitHub any-precision; W/A 1,2,4,8,32; batch 256; FP32; geen MX.
+pip check: No broken requirements found.
+CPU-zelftests: onafhankelijke replica-controle en auteursmodel met vijf precisies geslaagd.
+native256 is een geheugendiagnose. Een OOM daar is toegestaan als serial_dp4 daarna slaagt.
+Start afzonderlijk proces: native256
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+native256: opwarming met alle vijf precisies, backward en SGD; effectieve batch 256.

@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "real_dataset_loaded": false,
+  "CUDA_tested": false,
+  "input_shape": [
+    4,
+    3,
+    64,
+    64
+  ],
+  "device": "cpu",
+  "seed": 20261009,
+  "torch": "2.10.0+cpu",
+  "source_directory": "/workspace/scratch/4619498905be/work/anyprecision_uploaded_20261030/Any-Precision-DNNs-master",
+  "configuration": {
+    "seed": 20261009,
+    "threads": 2,
+    "AMP": false,
+    "torch_compile": false,
+    "fp32_precision": "ieee",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "bitexact_resume_guarantee": false
+  },
+  "parameters": 25769512,
+  "trainable_parameters": 25769512,
+  "optimizer": {
+    "name": "SGD",
+    "lr": 0.5,
+    "momentum": 0.9,
+    "weight_decay": 1e-05
+  },
+  "source_hashes": {
+    "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9",
+    "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+    "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+    "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+    "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+    "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+    "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+    "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+    "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+    "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+    "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+    "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc"
+  },
+  "train_step": {
+    "by_bit": {
+      "32": {
+        "loss": 7.036033630371094,
+        "top1_correct": 0,
+        "top5_correct": 0,
+        "samples": 4
+      },
+      "8": {
+        "loss": 6.878190040588379,
+        "top1_correct": 0,
+        "top5_correct": 0,
+        "samples": 4
+      },
+      "4": {
+        "loss": 6.885990142822266,
+        "top1_correct": 0,
+        "top5_correct": 0,
+        "samples": 4
+      },
+      "2": {
+        "loss": 6.886658668518066,
+        "top1_correct": 0,
+        "top5_correct": 0,
+        "samples": 4
+      },
+      "1": {
+        "loss": 6.889117240905762,
+        "top1_correct": 0,
+        "top5_correct": 0,
+        "samples": 4
+      }
+    },
+    "samples": 4,
+    "optimizer_updates": 1,
+    "forwards": 20,
+    "mode": "serial_dp4",
+    "chunk_sizes": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "replicas_used": 4,
+    "bn_policy": "torch.chunk(4); local BN; retain only replica-zero buffers per precision",
+    "validated": true
+  },
+  "BN_banks_checked": 265,
+  "BN_counter_deltas": [
+    1
+  ],
+  "all_trainable_gradients_present": true,
+  "all_parameters_gradients_optimizer_and_buffers_finite_FP32": true,
+  "eval_batch": {
+    "by_bit": {
+      "1": {
+        "loss": 1.4320886135101318,
+        "top1_correct": 1,
+        "top5_correct": 4,
+        "samples": 4
+      },
+      "2": {
+        "loss": 1.4037349224090576,
+        "top1_correct": 1,
+        "top5_correct": 4,
+        "samples": 4
+      },
+      "4": {
+        "loss": 1.391160488128662,
+        "top1_correct": 2,
+        "top5_correct": 4,
+        "samples": 4
+      },
+      "8": {
+        "loss": 1.3880603313446045,
+        "top1_correct": 2,
+        "top5_correct": 4,
+        "samples": 4
+      },
+      "32": {
+        "loss": 1.397042989730835,
+        "top1_correct": 2,
+        "top5_correct": 4,
+        "samples": 4
+      }
+    },
+    "samples": 4,
+    "optimizer_updates": 0,
+    "forwards": 5
+  },
+  "eval_buffers_unchanged": true,
+  "FP32_configuration_readback": {
+    "global": "ieee",
+    "matmul": "ieee",
+    "cudnn": "ieee",
+    "cudnn_conv": "ieee"
+  },
+  "source_unchanged": true,
+  "seconds": 8.46917148600005
+}
