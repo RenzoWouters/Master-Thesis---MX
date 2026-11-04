@@ -1,0 +1,1620 @@
+{
+  "schema": "mx-truncation-research-midterm-v1",
+  "dataset": "SVHN",
+  "model": "CNN-8",
+  "formats": [
+    "E4M3",
+    "E2M3",
+    "E2M1"
+  ],
+  "training": {
+    "epochs": 100,
+    "optimizer": "Adam",
+    "initial_lr": 0.001,
+    "batch_size": 128,
+    "lr_milestones": [
+      50,
+      75,
+      90
+    ],
+    "lr_decay_factor": 0.1,
+    "weight_decay": 0.0,
+    "dropout_probability": 0.5,
+    "activation_bits": 32,
+    "group_size": 32,
+    "scale_format": "E8M0",
+    "distillation": "Recursive knowledge distillation: joint models only",
+    "distillation_order": [
+      "E4M3",
+      "E2M3",
+      "E2M1"
+    ],
+    "seed": 20261009,
+    "master_dtype_during_training": "float32",
+    "common_run_configuration": {
+      "planned_epochs": 100,
+      "optimizer": "adam",
+      "lr": 0.001,
+      "batch_size": 128,
+      "scheduler_milestones": [
+        50,
+        75,
+        90
+      ],
+      "scheduler_gamma": 0.1,
+      "weight_decay": 0.0,
+      "activation_bits": 32,
+      "mx_scale_format": "E8M0",
+      "master_dtype": "float32",
+      "seed": 20261009,
+      "expand": 2
+    },
+    "group_size_policy": "32 unless specified",
+    "scale_choice_learning_rate": 0.001,
+    "scale_choice_freeze_epoch": 50,
+    "freeze50_total_epochs": 100
+  },
+  "accuracy": [
+    {
+      "id": "dedicated",
+      "label": "Dedicated QAT \u2014 separate models",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.68346649338734,
+          "correct": 24648,
+          "n": 26032,
+          "training_id": "dedicated_e4m3",
+          "run_id": "20261023_132558_081080_mx_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "1c3cd97637c4c88b5f8ccbc9bc81d69046471861fa8fdf65d5245f32a68c7402"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.82559925775698,
+          "correct": 24685,
+          "n": 26032,
+          "training_id": "dedicated_mxfp6",
+          "run_id": "20261017_190413_551517_mx_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "e276bea6a3c9a6716a88535800b383fe35de6d77c3d6925a4cadaa0b24e411d1"
+        },
+        "E2M1": {
+          "accuracy_percent": 94.82175783650891,
+          "correct": 24684,
+          "n": 26032,
+          "training_id": "dedicated_mxfp4",
+          "run_id": "20261021_182608_167996_mx_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "81d92fff125392a55c7de83a711411d16596f2aff3d26babc8986e176bf02e4a"
+        }
+      },
+      "group_size": 32,
+      "section": "Previous exponent-truncation references"
+    },
+    {
+      "id": "joint_direct",
+      "label": "Joint QAT \u2014 direct quantization",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.86017208650351,
+          "correct": 24694,
+          "n": 26032,
+          "training_id": "triple_direct",
+          "run_id": "20261023_151331_732669_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339"
+        },
+        "E2M3": {
+          "accuracy_percent": 95.00614627212121,
+          "correct": 24732,
+          "n": 26032,
+          "training_id": "triple_direct",
+          "run_id": "20261023_151331_732669_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339"
+        },
+        "E2M1": {
+          "accuracy_percent": 95.0714505177447,
+          "correct": 24749,
+          "n": 26032,
+          "training_id": "triple_direct",
+          "run_id": "20261023_151331_732669_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339"
+        }
+      },
+      "group_size": 32,
+      "section": "Previous exponent-truncation references"
+    },
+    {
+      "id": "post_training_truncation",
+      "label": "Joint QAT + post-training exponent & mantissa truncation",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.86017209588199,
+          "correct": 24694,
+          "n": 26032,
+          "training_id": "triple_direct",
+          "measurement_kind": "native_evaluation",
+          "epoch": 100,
+          "case_id": "triple_initial__triple_direct__last_epoch__direct8",
+          "evaluation_run_id": "20261023_173343_934141_evaluate",
+          "checkpoint_sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339",
+          "optimizer_steps": 0,
+          "batchnorm_recalibrated": false,
+          "bn_bank_key": "8",
+          "scale_exponent_offset": 0,
+          "classes_predicted": 10,
+          "dominant_class": 1,
+          "dominant_prediction_fraction": 0.1967578365089121,
+          "source_metrics_file": "sources/posthoc/triple_initial/metrics.csv",
+          "source_metrics_sha256": "eb5dcd4e8def1adcd731a7ec366451276c245183128b29491cf425d3b117c83c",
+          "per_image_recount_verified": true,
+          "per_image_source_sha256": "d934d4e74b28159a8eb3b8b93aab77ad06d52cc2510fd93cd98c8353ed7a1ccf"
+        },
+        "E2M3": {
+          "accuracy_percent": 15.938076213890596,
+          "correct": 4149,
+          "n": 26032,
+          "training_id": "triple_direct",
+          "measurement_kind": "posthoc_conversion",
+          "epoch": 100,
+          "case_id": "triple_initial__triple_direct__last_epoch__exponent86",
+          "evaluation_run_id": "20261023_173343_934141_evaluate",
+          "checkpoint_sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339",
+          "optimizer_steps": 0,
+          "batchnorm_recalibrated": false,
+          "bn_bank_key": "32",
+          "scale_exponent_offset": 0,
+          "classes_predicted": 1,
+          "dominant_class": 2,
+          "dominant_prediction_fraction": 1.0,
+          "source_metrics_file": "sources/posthoc/triple_initial/metrics.csv",
+          "source_metrics_sha256": "eb5dcd4e8def1adcd731a7ec366451276c245183128b29491cf425d3b117c83c",
+          "per_image_recount_verified": true,
+          "per_image_source_sha256": "d934d4e74b28159a8eb3b8b93aab77ad06d52cc2510fd93cd98c8353ed7a1ccf"
+        },
+        "E2M1": {
+          "accuracy_percent": 15.938076213890596,
+          "correct": 4149,
+          "n": 26032,
+          "training_id": "triple_direct",
+          "measurement_kind": "posthoc_conversion",
+          "epoch": 100,
+          "case_id": "triple_initial__triple_direct__last_epoch__combined864",
+          "evaluation_run_id": "20261023_173343_934141_evaluate",
+          "checkpoint_sha256": "987fdcda2a1d68f6faee9243d649cc0266eee37f5631fd2435ec5b127c3b9339",
+          "optimizer_steps": 0,
+          "batchnorm_recalibrated": false,
+          "bn_bank_key": "4",
+          "scale_exponent_offset": 0,
+          "classes_predicted": 1,
+          "dominant_class": 2,
+          "dominant_prediction_fraction": 1.0,
+          "source_metrics_file": "sources/posthoc/triple_initial/metrics.csv",
+          "source_metrics_sha256": "eb5dcd4e8def1adcd731a7ec366451276c245183128b29491cf425d3b117c83c",
+          "per_image_recount_verified": true,
+          "per_image_source_sha256": "d934d4e74b28159a8eb3b8b93aab77ad06d52cc2510fd93cd98c8353ed7a1ccf"
+        }
+      },
+      "group_size": 32,
+      "section": "Previous exponent-truncation references"
+    },
+    {
+      "id": "joint_truncation",
+      "label": "Joint truncation-aware training \u2014 scale \u00d71",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 86.39751075130339,
+          "correct": 22491,
+          "n": 26032,
+          "training_id": "triple_naive",
+          "run_id": "20261023_184058_211397_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "d011fb555e27e3a87e881314851e4edbc30c39a76acabcae2d78dd5c27151d8a"
+        },
+        "E2M3": {
+          "accuracy_percent": 87.06207744314689,
+          "correct": 22664,
+          "n": 26032,
+          "training_id": "triple_naive",
+          "run_id": "20261023_184058_211397_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "d011fb555e27e3a87e881314851e4edbc30c39a76acabcae2d78dd5c27151d8a"
+        },
+        "E2M1": {
+          "accuracy_percent": 87.13890596189306,
+          "correct": 22684,
+          "n": 26032,
+          "training_id": "triple_naive",
+          "run_id": "20261023_184058_211397_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "d011fb555e27e3a87e881314851e4edbc30c39a76acabcae2d78dd5c27151d8a"
+        }
+      },
+      "group_size": 32,
+      "section": "Previous exponent-truncation references"
+    },
+    {
+      "id": "fixed_scale32",
+      "label": "Fixed scale \u00d732",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.70651505370043,
+          "correct": 24654,
+          "n": 26032,
+          "training_id": "triple_scale32",
+          "run_id": "20261024_194510_445043_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "a24b41d9ecb959d1b4b62259fee0f0dcc746cc341ece195d69a99f5a02e21aba"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.85248923931813,
+          "correct": 24692,
+          "n": 26032,
+          "training_id": "triple_scale32",
+          "run_id": "20261024_194510_445043_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "a24b41d9ecb959d1b4b62259fee0f0dcc746cc341ece195d69a99f5a02e21aba"
+        },
+        "E2M1": {
+          "accuracy_percent": 94.91395205431506,
+          "correct": 24708,
+          "n": 26032,
+          "training_id": "triple_scale32",
+          "run_id": "20261024_194510_445043_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "a24b41d9ecb959d1b4b62259fee0f0dcc746cc341ece195d69a99f5a02e21aba"
+        }
+      },
+      "group_size": 32,
+      "section": "Scale and group-size research",
+      "lineage": {
+        "kind": "fresh_training",
+        "parent_id": null,
+        "shared_epochs": null
+      }
+    },
+    {
+      "id": "fixed_scale64",
+      "label": "Fixed scale \u00d764",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.9293177580643,
+          "correct": 24712,
+          "n": 26032,
+          "training_id": "triple_scale64",
+          "run_id": "20261024_151210_665535_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "0605299354c6eb8dbee48cc318a118f1572e98c133441593c99fc71dcb96217d"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.8985863458766,
+          "correct": 24704,
+          "n": 26032,
+          "training_id": "triple_scale64",
+          "run_id": "20261024_151210_665535_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "0605299354c6eb8dbee48cc318a118f1572e98c133441593c99fc71dcb96217d"
+        },
+        "E2M1": {
+          "accuracy_percent": 94.79102641963196,
+          "correct": 24676,
+          "n": 26032,
+          "training_id": "triple_scale64",
+          "run_id": "20261024_151210_665535_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "0605299354c6eb8dbee48cc318a118f1572e98c133441593c99fc71dcb96217d"
+        }
+      },
+      "group_size": 32,
+      "section": "Scale and group-size research",
+      "lineage": {
+        "kind": "fresh_training",
+        "parent_id": null,
+        "shared_epochs": null
+      }
+    },
+    {
+      "id": "learned100",
+      "label": "Learned choice \u00d732/\u00d764 \u2014 until epoch 100",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.9331591840016,
+          "correct": 24713,
+          "n": 26032,
+          "training_id": "triple_learned100",
+          "run_id": "20261025_150724_515132_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "44bc5709a0c994cb5da567693b334432cb76828d5ece043bd049c381a91fd57b"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.1763982696627,
+          "correct": 24516,
+          "n": 26032,
+          "training_id": "triple_learned100",
+          "run_id": "20261025_150724_515132_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "44bc5709a0c994cb5da567693b334432cb76828d5ece043bd049c381a91fd57b"
+        },
+        "E2M1": {
+          "accuracy_percent": 93.94975414405077,
+          "correct": 24457,
+          "n": 26032,
+          "training_id": "triple_learned100",
+          "run_id": "20261025_150724_515132_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "44bc5709a0c994cb5da567693b334432cb76828d5ece043bd049c381a91fd57b"
+        }
+      },
+      "group_size": 32,
+      "section": "Scale and group-size research",
+      "lineage": {
+        "kind": "fresh_training",
+        "parent_id": null,
+        "shared_epochs": null
+      }
+    },
+    {
+      "id": "freeze50",
+      "label": "Learned choice \u00d732/\u00d764 \u2014 until epoch 50, then fixed",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.77566072057198,
+          "correct": 24672,
+          "n": 26032,
+          "training_id": "triple_freeze50",
+          "run_id": "20261025_183915_084406_freeze100_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "f2c2bb1b4c26336ec9301fa117f3b3bd27e4668dd90c8a47dd3f8f4fada718bb"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.71419790088581,
+          "correct": 24656,
+          "n": 26032,
+          "training_id": "triple_freeze50",
+          "run_id": "20261025_183915_084406_freeze100_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "f2c2bb1b4c26336ec9301fa117f3b3bd27e4668dd90c8a47dd3f8f4fada718bb"
+        },
+        "E2M1": {
+          "accuracy_percent": 94.52596802995772,
+          "correct": 24607,
+          "n": 26032,
+          "training_id": "triple_freeze50",
+          "run_id": "20261025_183915_084406_freeze100_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "f2c2bb1b4c26336ec9301fa117f3b3bd27e4668dd90c8a47dd3f8f4fada718bb"
+        }
+      },
+      "group_size": 32,
+      "section": "Scale and group-size research",
+      "lineage": {
+        "kind": "continuation_branch",
+        "parent_id": "triple_learned100",
+        "shared_epochs": [
+          1,
+          50
+        ],
+        "freeze_after_epoch": 50,
+        "frozen_epoch_range": [
+          51,
+          100
+        ],
+        "continuation_stages": [
+          [
+            51,
+            55
+          ],
+          [
+            56,
+            100
+          ]
+        ],
+        "global_best_inherited": true,
+        "selected_source_stage": "shared_before_freeze",
+        "new_optimizer_steps_after_branchpoint": 28650,
+        "new_training_passes_after_branchpoint": 85950,
+        "offset_values_fixed": true,
+        "source_scale_dynamic": true,
+        "theta_gradients_computed": true,
+        "theta_adam_moments_updated": true
+      }
+    },
+    {
+      "id": "group16",
+      "label": "Group size 16 \u2014 scale \u00d764",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.79102642901044,
+          "correct": 24676,
+          "n": 26032,
+          "training_id": "triple_group16",
+          "run_id": "20261026_190508_857016_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "06c2dcf70d976f911c2b4cb0793158ff735aff246df611d766f8b14b46231fa4"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.54517515964426,
+          "correct": 24612,
+          "n": 26032,
+          "training_id": "triple_group16",
+          "run_id": "20261026_190508_857016_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "06c2dcf70d976f911c2b4cb0793158ff735aff246df611d766f8b14b46231fa4"
+        },
+        "E2M1": {
+          "accuracy_percent": 94.57206514120541,
+          "correct": 24619,
+          "n": 26032,
+          "training_id": "triple_group16",
+          "run_id": "20261026_190508_857016_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "06c2dcf70d976f911c2b4cb0793158ff735aff246df611d766f8b14b46231fa4"
+        }
+      },
+      "group_size": 16,
+      "section": "Scale and group-size research",
+      "lineage": {
+        "kind": "fresh_training",
+        "parent_id": null,
+        "shared_epochs": null
+      }
+    },
+    {
+      "id": "group64",
+      "label": "Group size 64 \u2014 scale \u00d764",
+      "values": {
+        "E4M3": {
+          "accuracy_percent": 94.69114934526196,
+          "correct": 24650,
+          "n": 26032,
+          "training_id": "triple_group64",
+          "run_id": "20261027_172434_760515_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "c2fd1551b4ce067d35a8f16f94c61ecddd707114f1219059301582b673897b45"
+        },
+        "E2M3": {
+          "accuracy_percent": 94.54517515964426,
+          "correct": 24612,
+          "n": 26032,
+          "training_id": "triple_group64",
+          "run_id": "20261027_172434_760515_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "c2fd1551b4ce067d35a8f16f94c61ecddd707114f1219059301582b673897b45"
+        },
+        "E2M1": {
+          "accuracy_percent": 94.51060233089773,
+          "correct": 24603,
+          "n": 26032,
+          "training_id": "triple_group64",
+          "run_id": "20261027_172434_760515_joint_run",
+          "measurement_kind": "original training record",
+          "epoch": 100,
+          "checkpoint_sha256": "c2fd1551b4ce067d35a8f16f94c61ecddd707114f1219059301582b673897b45"
+        }
+      },
+      "group_size": 64,
+      "section": "Scale and group-size research",
+      "lineage": {
+        "kind": "fresh_training",
+        "parent_id": null,
+        "shared_epochs": null
+      }
+    }
+  ],
+  "storage": [
+    {
+      "id": "triple_dedicated_separate",
+      "label": "Dedicated models",
+      "group_size": 32,
+      "representation": "Three packed models: MXFP8 + MXFP6 + MXFP4",
+      "code_bytes": 293760,
+      "scale_bytes": 12240,
+      "choice_bytes": 0,
+      "retained_state_bytes": 57744,
+      "total_bytes": 363744,
+      "auxiliary_copies": 3,
+      "implementation": "existing_separate_exports",
+      "accuracy_method_id": "dedicated",
+      "delta_vs_naive_bytes": 209856
+    },
+    {
+      "id": "triple_direct_posthoc_source",
+      "label": "Joint QAT + post-training truncation",
+      "group_size": 32,
+      "representation": "One MXFP8 source; lower modes by exponent and mantissa truncation, scale unchanged",
+      "code_bytes": 130560,
+      "scale_bytes": 4080,
+      "choice_bytes": 0,
+      "retained_state_bytes": 19248,
+      "total_bytes": 153888,
+      "auxiliary_copies": 1,
+      "implementation": "joint_direct_MXFP8_source_with_post_training_exponent_and_mantissa_truncation",
+      "accuracy_method_id": "post_training_truncation",
+      "delta_vs_naive_bytes": 0
+    },
+    {
+      "id": "triple_naive_source",
+      "label": "Joint truncation-aware training \u2014 scale \u00d71",
+      "group_size": 32,
+      "representation": "One MXFP8 source; lower modes by exponent and mantissa truncation, scale unchanged",
+      "code_bytes": 130560,
+      "scale_bytes": 4080,
+      "choice_bytes": 0,
+      "retained_state_bytes": 19248,
+      "total_bytes": 153888,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "joint_truncation",
+      "delta_vs_naive_bytes": 0
+    },
+    {
+      "id": "triple_scale32_source",
+      "label": "Fixed scale \u00d732",
+      "group_size": 32,
+      "representation": "One MXFP8 source; lower formats derived using the trained truncation route",
+      "code_bytes": 130560,
+      "scale_bytes": 4080,
+      "choice_bytes": 0,
+      "retained_state_bytes": 19248,
+      "total_bytes": 153888,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "fixed_scale32",
+      "delta_vs_naive_bytes": 0
+    },
+    {
+      "id": "triple_scale64_source",
+      "label": "Fixed scale \u00d764",
+      "group_size": 32,
+      "representation": "One MXFP8 source; lower formats derived using the trained truncation route",
+      "code_bytes": 130560,
+      "scale_bytes": 4080,
+      "choice_bytes": 0,
+      "retained_state_bytes": 19248,
+      "total_bytes": 153888,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "fixed_scale64",
+      "delta_vs_naive_bytes": 0
+    },
+    {
+      "id": "triple_learned100_source",
+      "label": "Learned choice \u00d732/\u00d764 \u2014 until epoch 100",
+      "group_size": 32,
+      "representation": "One MXFP8 source; lower formats derived using the trained truncation route",
+      "code_bytes": 130560,
+      "scale_bytes": 4080,
+      "choice_bytes": 510,
+      "retained_state_bytes": 19248,
+      "total_bytes": 154398,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "learned100",
+      "delta_vs_naive_bytes": 510
+    },
+    {
+      "id": "triple_freeze50_source",
+      "label": "Learned choice \u00d732/\u00d764 \u2014 until epoch 50, then fixed",
+      "group_size": 32,
+      "representation": "One MXFP8 source; lower formats derived using the trained truncation route",
+      "code_bytes": 130560,
+      "scale_bytes": 4080,
+      "choice_bytes": 510,
+      "retained_state_bytes": 19248,
+      "total_bytes": 154398,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "freeze50",
+      "delta_vs_naive_bytes": 510
+    },
+    {
+      "id": "triple_group16_source",
+      "label": "Group size 16 \u2014 scale \u00d764",
+      "group_size": 16,
+      "representation": "One MXFP8 source; lower formats derived using the trained truncation route",
+      "code_bytes": 129536,
+      "scale_bytes": 8096,
+      "choice_bytes": 0,
+      "retained_state_bytes": 19248,
+      "total_bytes": 156880,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "group16",
+      "delta_vs_naive_bytes": 2992
+    },
+    {
+      "id": "triple_group64_source",
+      "label": "Group size 64 \u2014 scale \u00d764",
+      "group_size": 64,
+      "representation": "One MXFP8 source; lower formats derived using the trained truncation route",
+      "code_bytes": 138240,
+      "scale_bytes": 2160,
+      "choice_bytes": 0,
+      "retained_state_bytes": 19248,
+      "total_bytes": 159648,
+      "auxiliary_copies": 1,
+      "implementation": "existing_truncatable_source_export",
+      "accuracy_method_id": "group64",
+      "delta_vs_naive_bytes": 5760
+    }
+  ],
+  "accuracy_axis_windows": [
+    [
+      14.0,
+      18.0
+    ],
+    [
+      85.0,
+      96.0
+    ]
+  ],
+  "storage_accounting": {
+    "group_layouts": {
+      "16": {
+        "id": "mx_e4m3_b16",
+        "group_size": 16,
+        "n_weights": 129472,
+        "blocks": 8096,
+        "stored_slots": 129536,
+        "padding_slots": 64,
+        "code_bytes": 129536,
+        "scale_bytes": 8096,
+        "aux_bytes": 19248,
+        "total_model_bytes": 156880
+      },
+      "32": {
+        "id": "mx_e4m3_b32",
+        "group_size": 32,
+        "n_weights": 129472,
+        "blocks": 4080,
+        "stored_slots": 130560,
+        "padding_slots": 1088,
+        "code_bytes": 130560,
+        "scale_bytes": 4080,
+        "aux_bytes": 19248,
+        "total_model_bytes": 153888
+      },
+      "64": {
+        "id": "mx_e4m3_b64",
+        "group_size": 64,
+        "n_weights": 129472,
+        "blocks": 2160,
+        "stored_slots": 138240,
+        "padding_slots": 8768,
+        "code_bytes": 138240,
+        "scale_bytes": 2160,
+        "aux_bytes": 19248,
+        "total_model_bytes": 159648
+      }
+    },
+    "target_weight_count": 129472,
+    "fp32_first_last_bytes_per_model": 8808,
+    "batchnorm_bytes_per_model_all_five_banks": 10440,
+    "retained_state_bytes_per_model": 19248,
+    "learned_choice_bits_per_group": 1,
+    "learned_choice_group_count": 4080,
+    "learned_choice_packed_bytes": 510,
+    "reference_source_bytes": 153888,
+    "scope": "Logical persistent model payload supporting all three modes; includes code padding, E8M0 scales, packed scale-choice bits where used, FP32 first/last layers, and all five existing BatchNorm banks per model copy. Excludes activations, temporary runtime buffers, optimizer state, gradients and file-container overhead."
+  },
+  "eight_by_eight": {
+    "main_figure_included": false,
+    "verified_epoch100_record_in_source": false,
+    "status": "A five-epoch pilot was discussed previously; no verified 100-epoch result is present in the source dataset used for these figures.",
+    "not_equivalent_to": "The one-dimensional group-size-64 experiment"
+  },
+  "provenance": {
+    "source_notebook": "MX_onderzoeksoverzicht_meeting_20261029.ipynb",
+    "source_notebook_library_id": "libfile_6fcbc29932c88191b47bf7be6a45d2f1",
+    "decoded_source_sha256": "145471897ecfb37c5741e076c213d674e1e1920a29c7fb1077e39a94ccdefd83",
+    "reference_notebook": "MX_Exponent_Truncation_SVHN_CNN8_Midterm.ipynb",
+    "reference_notebook_sha256": "6f5ea9f6283642436eeef21c7aa19de5fc713ed5eeaee06c1caa49d6c2dcc706",
+    "training_sources": {
+      "dedicated_e4m3": {
+        "run_id": "20261023_132558_081080_mx_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261023-121902).zip",
+          "zip_sha256": "db59f4677a72bbbe5d5abe5fdb91afb53d6330904218dfd5620a8b7285c6407d",
+          "metrics_path": "sources/training/dedicated_e4m3/epoch_metrics.csv",
+          "metrics_sha256": "048305dbf277809c7a68d01cb3588f0063933bbd92276fc31129e2dbb7a976cd",
+          "report_path": "sources/training/dedicated_e4m3/run_report.json",
+          "report_sha256": "12118850ee093fa17ed91aaf1d31a985d73960bd878186daaf4db27c980b2d89",
+          "selection_path": "sources/training/dedicated_e4m3/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/dedicated_e4m3/selected_metrics.csv",
+          "epoch_times_path": "sources/training/dedicated_e4m3/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 1,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": false,
+          "truncation": false,
+          "selection_policy": "first strict maximum of active-mode official-test top1",
+          "loss": "hard-label CrossEntropyLoss, mean reduction"
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "dedicated_mxfp6": {
+        "run_id": "20261017_190413_551517_mx_run",
+        "source": {
+          "bundle_name": "feedback_bundle(9).zip",
+          "zip_sha256": "a9a3cf057abc0957778259e0e960538921d89f74e4f953868ca569655f1c1f9d",
+          "metrics_path": "sources/training/dedicated_mxfp6/epoch_metrics.csv",
+          "metrics_sha256": "fc96fcb071fbb4fe480d88995310dadeda8eb619a3f428bd0b25a2bf870f33ea",
+          "report_path": "sources/training/dedicated_mxfp6/run_report.json",
+          "report_sha256": "e9cbbc16f4168c3ebb6de0f1c7bf1162b913c81de1934a969ed87f22874ad872",
+          "selection_path": "sources/training/dedicated_mxfp6/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/dedicated_mxfp6/selected_metrics.csv",
+          "epoch_times_path": "sources/training/dedicated_mxfp6/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 1,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": false,
+          "truncation": false,
+          "selection_policy": "first strict maximum of active-mode official-test top1",
+          "loss": "hard-label CrossEntropyLoss, mean reduction"
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "dedicated_mxfp4": {
+        "run_id": "20261021_182608_167996_mx_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261021-171049).zip",
+          "zip_sha256": "951f865bc08883bbe88cbe8d14b76a2f612a454b6cef058e15f3a9784b13dc86",
+          "metrics_path": "sources/training/dedicated_mxfp4/epoch_metrics.csv",
+          "metrics_sha256": "5e526a4c2633a97e37087802e3212b5a7ecb1d2e0e4612b0154da91172abae00",
+          "report_path": "sources/training/dedicated_mxfp4/run_report.json",
+          "report_sha256": "9d192214376689a0f39547ddad3162132d997312f3afed74e880acf0677c085d",
+          "selection_path": "sources/training/dedicated_mxfp4/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/dedicated_mxfp4/selected_metrics.csv",
+          "epoch_times_path": "sources/training/dedicated_mxfp4/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 1,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": false,
+          "truncation": false,
+          "selection_policy": "first strict maximum of active-mode official-test top1",
+          "loss": "hard-label CrossEntropyLoss, mean reduction"
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_direct": {
+        "run_id": "20261023_151331_732669_joint_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261023-150530).zip",
+          "zip_sha256": "68b55b2432bdc6802094e8968ad5d97252b8166ebbca4d1651fc438c6c66e259",
+          "metrics_path": "sources/training/triple_direct/epoch_metrics.csv",
+          "metrics_sha256": "52df99915d90f3626399db078f610ac4a2ada7658052eed37ed76a7cd0a006c8",
+          "report_path": "sources/training/triple_direct/run_report.json",
+          "report_sha256": "0016d288cbc372e1d1341435357a258f92a93bef3b13d2f3141dca030d2f776c",
+          "selection_path": "sources/training/triple_direct/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_direct/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_direct/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": false,
+          "mantissa_truncation": false,
+          "exponent_truncation": false,
+          "shared_scale_compensation": false,
+          "learned_shared_scale": false,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_naive": {
+        "run_id": "20261023_184058_211397_joint_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261023-181200).zip",
+          "zip_sha256": "4d31fe092f620ceb044b576d279580b49f8ff4473e1ae37957a04169f37012c7",
+          "metrics_path": "sources/training/triple_naive/epoch_metrics.csv",
+          "metrics_sha256": "a9ec9ac706b75af6c7144da6ded18286cf676cdee724444892974c627d2bd337",
+          "report_path": "sources/training/triple_naive/run_report.json",
+          "report_sha256": "2d748a0bf643131d2f99a004cbb82c325133be115823e73d3ec918a4d827d5e6",
+          "selection_path": "sources/training/triple_naive/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_naive/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_naive/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": false,
+          "learned_shared_scale": false,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_scale32": {
+        "run_id": "20261024_194510_445043_joint_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261025-124719).zip",
+          "zip_sha256": "f4ec1fa26336e2ad6552f0ae39a5a9c5e1f14dcbcc255818edb8c9bf7ba56e00",
+          "metrics_path": "sources/training/triple_scale32/epoch_metrics.csv",
+          "metrics_sha256": "2269bb98b6e2838ae2bddfb4a674fc2c2b0f5b535bfbea744d2d23ef833f89ac",
+          "report_path": "sources/training/triple_scale32/run_report.json",
+          "report_sha256": "be771afb34ad1043a07a77e0ceee50f591e3155578fc8a7a04960c60f3dda6a8",
+          "selection_path": "sources/training/triple_scale32/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_scale32/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_scale32/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": true,
+          "learned_shared_scale": false,
+          "scale_factor": 32,
+          "scale_exponent_offset": 5,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_scale64": {
+        "run_id": "20261024_151210_665535_joint_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261024-145841).zip",
+          "zip_sha256": "811b18d3878d7699a01fb7e9a449e9591bcbe07d56aee56bb76bd36a32d47887",
+          "metrics_path": "sources/training/triple_scale64/epoch_metrics.csv",
+          "metrics_sha256": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+          "report_path": "sources/training/triple_scale64/run_report.json",
+          "report_sha256": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+          "selection_path": "sources/training/triple_scale64/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_scale64/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_scale64/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": true,
+          "learned_shared_scale": false,
+          "scale_factor": 64,
+          "scale_exponent_offset": 6,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_learned100": {
+        "run_id": "20261025_150724_515132_joint_run",
+        "source": {
+          "bundle_name": "lineage.json",
+          "zip_sha256": "6c7725d81e981991f4ecac067687e532082f45dc9653e9f510216c9838280afb",
+          "metrics_path": "sources/training/triple_learned100/epoch_metrics.csv",
+          "metrics_sha256": "21bc82c1506d153fbadba7b0fb7372eaa1da7af7bd1076cee55045307ae11bca",
+          "report_path": "sources/training/triple_learned100/run_report.json",
+          "report_sha256": "b8aa053be06c0c58073666446fddac3993c35dc13398f9efe131c33e6720f438",
+          "selection_path": "sources/training/triple_learned100/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_learned100/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_learned100/epoch_times.csv",
+          "scale_metrics_path": "sources/training/triple_learned100/scale_epoch_metrics.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 137034,
+          "base_parameters": 132954,
+          "learned_scale_parameters": 4080,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "scale_lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": true,
+          "learned_shared_scale": true,
+          "scale_factor_choices": [
+            32,
+            64
+          ],
+          "scale_exponent_offset_choices": [
+            5,
+            6
+          ],
+          "scale_proxy_bounds": [
+            5.0,
+            6.0
+          ],
+          "scale_threshold": 5.5,
+          "source_scale_learned": false,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_freeze50": {
+        "run_id": "20261025_183915_084406_freeze100_run",
+        "source": {
+          "bundle_name": "lineage.json",
+          "zip_sha256": "43355332b6be546f3a73a71d075f73e1668e6c5493644f83239d97c3512d6b4b",
+          "metrics_path": "sources/training/triple_freeze50/epoch_metrics.csv",
+          "metrics_sha256": "6b19f3ad14ddc825bd8111a80b8949114f7b0600e2ad9849766f6c8ae349a2f7",
+          "report_path": "sources/training/triple_freeze50/run_report.json",
+          "report_sha256": "95eae353a7cbd6fd60dba8244df65a40d1c82b2e6f2fef2f1646ed4b1e6c5dd4",
+          "selection_path": "sources/training/triple_freeze50/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_freeze50/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_freeze50/epoch_times.csv",
+          "scale_metrics_path": "sources/training/triple_freeze50/scale_epoch_metrics.csv",
+          "metrics_epoch_range": [
+            51,
+            100
+          ],
+          "inherited_metrics_path": "sources/training/triple_learned100/epoch_metrics.csv",
+          "inherited_metrics_epoch_range": [
+            1,
+            50
+          ],
+          "inherited_scale_metrics_path": "sources/training/triple_learned100/scale_epoch_metrics.csv"
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 137034,
+          "base_parameters": 132954,
+          "learned_scale_parameters": 4080,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "scale_lr": 0.0,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 32,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": true,
+          "learned_shared_scale": true,
+          "scale_factor_choices": [
+            32,
+            64
+          ],
+          "scale_exponent_offset_choices": [
+            5,
+            6
+          ],
+          "scale_proxy_bounds": [
+            5.0,
+            6.0
+          ],
+          "scale_threshold": 5.5,
+          "source_scale_learned": false,
+          "offset_updates_enabled": false,
+          "source_scale_dynamic": true,
+          "freeze_anchor_epoch": 50,
+          "theta_gradients_computed": true,
+          "theta_adam_moments_updated": true,
+          "freeze_method": "theta Adam-group lr=0; requires_grad remains true; scheduler scale group lr/base_lrs/last_lr zero",
+          "selection_policy": "first strict maximum E4M3 official-test top1 within51-100; additional global1-100 selection explicitly labelled by stage",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "continuation_branch",
+          "parent_id": "triple_learned100",
+          "shared_epochs": [
+            1,
+            50
+          ],
+          "freeze_after_epoch": 50,
+          "frozen_epoch_range": [
+            51,
+            100
+          ],
+          "continuation_stages": [
+            [
+              51,
+              55
+            ],
+            [
+              56,
+              100
+            ]
+          ],
+          "global_best_inherited": true,
+          "selected_source_stage": "shared_before_freeze",
+          "new_optimizer_steps_after_branchpoint": 28650,
+          "new_training_passes_after_branchpoint": 85950,
+          "offset_values_fixed": true,
+          "source_scale_dynamic": true,
+          "theta_gradients_computed": true,
+          "theta_adam_moments_updated": true
+        }
+      },
+      "triple_group16": {
+        "run_id": "20261026_190508_857016_joint_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261026-195319).zip",
+          "zip_sha256": "c8d3f0ff1d4f74eccda551a0c2c8cb3710cdcac8dddcc9c7fd22288fc4587271",
+          "metrics_path": "sources/training/triple_group16/epoch_metrics.csv",
+          "metrics_sha256": "5c9669b12473e3f7d9cb07b25a228805248ffa7fb2b1372e50f825578bed2530",
+          "report_path": "sources/training/triple_group16/run_report.json",
+          "report_sha256": "91a2b18d569d2097b72181cf278d7a087e3bd52afd9b753d60bcdaed09843a48",
+          "selection_path": "sources/training/triple_group16/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_group16/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_group16/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 16,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": true,
+          "learned_shared_scale": false,
+          "scale_factor": 64,
+          "scale_exponent_offset": 6,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      },
+      "triple_group64": {
+        "run_id": "20261027_172434_760515_joint_run",
+        "source": {
+          "bundle_name": "feedback_bundle(20261027-180420).zip",
+          "zip_sha256": "ead1f28e75810021579bd303f6a695c17b76bd8389b3881538b9be6a08b198f0",
+          "metrics_path": "sources/training/triple_group64/epoch_metrics.csv",
+          "metrics_sha256": "3d1bbdca0943aba4ac9e22950fe7f44687da0480b656171b14e1c5c3647b4f61",
+          "report_path": "sources/training/triple_group64/run_report.json",
+          "report_sha256": "dc4e7d8c26c30d955238eddb768916604efcfd16e8ac82cd2632f0bcac15c4ae",
+          "selection_path": "sources/training/triple_group64/checkpoint_selection.json",
+          "selected_metrics_path": "sources/training/triple_group64/selected_metrics.csv",
+          "epoch_times_path": "sources/training/triple_group64/epoch_times.csv",
+          "metrics_epoch_range": [
+            1,
+            100
+          ]
+        },
+        "config": {
+          "model": "svhnq",
+          "expand": 2,
+          "dataset": "svhn",
+          "train_split": "train",
+          "test_split": "test",
+          "extra_used": false,
+          "train_examples": 73257,
+          "test_examples": 26032,
+          "validation_examples": 0,
+          "parameters": 132954,
+          "seed": 20261009,
+          "batch_size": 128,
+          "optimizer": "adam",
+          "lr": 0.001,
+          "weight_decay": 0.0,
+          "scheduler_milestones": [
+            50,
+            75,
+            90
+          ],
+          "scheduler_gamma": 0.1,
+          "planned_epochs": 100,
+          "activation_bits": 32,
+          "master_dtype": "float32",
+          "gradient_dtype": "float32",
+          "adam_moments_dtype": "float32",
+          "mx_block_size": 64,
+          "mx_scale_format": "E8M0",
+          "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+          "passes_per_training_batch": 3,
+          "optimizer_steps_per_training_batch": 1,
+          "distillation": true,
+          "truncation": true,
+          "mantissa_truncation": true,
+          "exponent_truncation": true,
+          "shared_scale_compensation": true,
+          "learned_shared_scale": false,
+          "scale_factor": 64,
+          "scale_exponent_offset": 6,
+          "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+          "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+          "training_mode_order": [
+            8,
+            6,
+            4
+          ],
+          "bn_bank_mapping": {
+            "8": "8",
+            "6": "32",
+            "4": "4"
+          }
+        },
+        "lineage": {
+          "kind": "fresh_training",
+          "parent_id": null,
+          "shared_epochs": null
+        }
+      }
+    },
+    "dropout_evidence": {
+      "source": "Any-Precision-DNNs-master.zip / models/svhn_quan.py",
+      "source_sha256": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "setting": "nn.Dropout(0.5) in the common CNN-8 architecture",
+      "verification_scope": "Architecture setting; no new inspection of binary models or per-run wrapper code."
+    },
+    "posthoc_case_ids": {
+      "E4M3": "triple_initial__triple_direct__last_epoch__direct8",
+      "E2M3": "triple_initial__triple_direct__last_epoch__exponent86",
+      "E2M1": "triple_initial__triple_direct__last_epoch__combined864"
+    },
+    "joint_qat_single_source": {
+      "training_id": "triple_direct",
+      "export_file": "mx_direct_MXFP8_E4M3_last.pt",
+      "export_sha256": "d692c4b293ea924281ffd1698020bd8cff2a486f663ee62babf24c5f6afbec9d",
+      "source_report_sha256": "0016d288cbc372e1d1341435357a258f92a93bef3b13d2f3141dca030d2f776c",
+      "logical_source_bytes": 153888,
+      "accuracy_figure_row": "post_training_truncation"
+    },
+    "storage_calculation_method": "Read-only recomputation from tensor metadata; validated against actual full100 group reports and all full100 export layer CSVs.",
+    "reference_rows_preserved": true,
+    "original_logged_training_metrics_preserved": true,
+    "new_training_or_model_evaluation": false,
+    "checkpoints_or_binary_exports_loaded": false
+  }
+}

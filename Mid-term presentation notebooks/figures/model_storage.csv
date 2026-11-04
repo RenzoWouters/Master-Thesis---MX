@@ -1,0 +1,6 @@
+component,bytes
+Shared FP32 convolution and linear parameters,526696
+"BatchNorm affine parameters, all five banks",5120
+"BatchNorm running statistics, all five banks",5120
+"BatchNorm counters, all five banks",200
+Total,537136

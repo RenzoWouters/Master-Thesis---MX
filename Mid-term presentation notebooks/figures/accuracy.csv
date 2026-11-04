@@ -1,0 +1,31 @@
+method_id,method,group_size,format,accuracy_percent,correct,n
+dedicated,Dedicated QAT — separate models,32,E4M3,94.68346649338734,24648,26032
+dedicated,Dedicated QAT — separate models,32,E2M3,94.82559925775698,24685,26032
+dedicated,Dedicated QAT — separate models,32,E2M1,94.82175783650891,24684,26032
+joint_direct,Joint QAT — direct quantization,32,E4M3,94.86017208650351,24694,26032
+joint_direct,Joint QAT — direct quantization,32,E2M3,95.00614627212121,24732,26032
+joint_direct,Joint QAT — direct quantization,32,E2M1,95.0714505177447,24749,26032
+post_training_truncation,Joint QAT + post-training exponent & mantissa truncation,32,E4M3,94.86017209588199,24694,26032
+post_training_truncation,Joint QAT + post-training exponent & mantissa truncation,32,E2M3,15.938076213890596,4149,26032
+post_training_truncation,Joint QAT + post-training exponent & mantissa truncation,32,E2M1,15.938076213890596,4149,26032
+joint_truncation,Joint truncation-aware training — scale ×1,32,E4M3,86.39751075130339,22491,26032
+joint_truncation,Joint truncation-aware training — scale ×1,32,E2M3,87.06207744314689,22664,26032
+joint_truncation,Joint truncation-aware training — scale ×1,32,E2M1,87.13890596189306,22684,26032
+fixed_scale32,Fixed scale ×32,32,E4M3,94.70651505370043,24654,26032
+fixed_scale32,Fixed scale ×32,32,E2M3,94.85248923931813,24692,26032
+fixed_scale32,Fixed scale ×32,32,E2M1,94.91395205431506,24708,26032
+fixed_scale64,Fixed scale ×64,32,E4M3,94.9293177580643,24712,26032
+fixed_scale64,Fixed scale ×64,32,E2M3,94.8985863458766,24704,26032
+fixed_scale64,Fixed scale ×64,32,E2M1,94.79102641963196,24676,26032
+learned100,Learned choice ×32/×64 — until epoch 100,32,E4M3,94.9331591840016,24713,26032
+learned100,Learned choice ×32/×64 — until epoch 100,32,E2M3,94.1763982696627,24516,26032
+learned100,Learned choice ×32/×64 — until epoch 100,32,E2M1,93.94975414405077,24457,26032
+freeze50,"Learned choice ×32/×64 — until epoch 50, then fixed",32,E4M3,94.77566072057198,24672,26032
+freeze50,"Learned choice ×32/×64 — until epoch 50, then fixed",32,E2M3,94.71419790088581,24656,26032
+freeze50,"Learned choice ×32/×64 — until epoch 50, then fixed",32,E2M1,94.52596802995772,24607,26032
+group16,Group size 16 — scale ×64,16,E4M3,94.79102642901044,24676,26032
+group16,Group size 16 — scale ×64,16,E2M3,94.54517515964426,24612,26032
+group16,Group size 16 — scale ×64,16,E2M1,94.57206514120541,24619,26032
+group64,Group size 64 — scale ×64,64,E4M3,94.69114934526196,24650,26032
+group64,Group size 64 — scale ×64,64,E2M3,94.54517515964426,24612,26032
+group64,Group size 64 — scale ×64,64,E2M1,94.51060233089773,24603,26032
