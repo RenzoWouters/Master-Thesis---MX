@@ -1,0 +1,103 @@
+{
+  "parent": "mx_triple_learned_scale32_64_pilot5_v1",
+  "current": "mx_triple_learned_scale10_pilot5_v1",
+  "changes": {
+    "export_policy": {
+      "before": "one E4M3 source plus packed one-bit block choices and BN auxiliary state; derive lower exports only from saved source codes/scales/choices; no MX masters or FP32 theta in compact exports; resume retains theta and Adam",
+      "after": "one E4M3 source plus packed four-bit block offset0..9 choices and BN auxiliary state; derive lower exports only from saved source codes/scales/choices; no MX masters or FP32 theta in compact exports; resume retains theta and Adam"
+    },
+    "mx_scale_policy": {
+      "before": "unchanged E4M3 source scale floor(log2(amax))-8; both lower codes equal source E8M0 code plus per-block hard offset5/6; promoted integer addition; overflow rejected without clipping/wrap, including zero blocks",
+      "after": "unchanged E4M3 source scale floor(log2(amax))-8; both lower codes equal source E8M0 code plus per-block hard offset0..9; promoted integer addition; overflow rejected without clipping/wrap, including zero blocks"
+    },
+    "packed_choice_bits_per_block": {
+      "before": null,
+      "after": 4
+    },
+    "packed_choice_bytes": {
+      "before": null,
+      "after": 2040
+    },
+    "purpose": {
+      "before": "five complete train-only epochs: learned binary per-block lower scale32/64; unchanged E4M3 source and exponent/mantissa bit truncation",
+      "after": "five complete train-only epochs: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation"
+    },
+    "scale_exponent_offset_choices": {
+      "before": [
+        5,
+        6
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "scale_factor_choices": {
+      "before": [
+        32,
+        64
+      ],
+      "after": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512
+      ]
+    },
+    "scale_proxy_bounds": {
+      "before": [
+        5.0,
+        6.0
+      ],
+      "after": [
+        0.0,
+        9.0
+      ]
+    },
+    "scale_rounding": {
+      "before": null,
+      "after": "nearest_integer_ties_up; floor(theta)+(theta-floor(theta)>=0.5)"
+    },
+    "scale_threshold": {
+      "before": 5.5,
+      "after": null
+    },
+    "scale_thresholds": {
+      "before": null,
+      "after": [
+        0.5,
+        1.5,
+        2.5,
+        3.5,
+        4.5,
+        5.5,
+        6.5,
+        7.5,
+        8.5
+      ]
+    },
+    "scale_tie_break": {
+      "before": "offset6",
+      "after": "higher_offset"
+    },
+    "schema": {
+      "before": "mx-triple-learned-scale32-64-pilot5-protocol-v1",
+      "after": "mx-triple-learned-scale10-pilot5-protocol-v1"
+    }
+  },
+  "all_other_protocol_fields_equal": true
+}

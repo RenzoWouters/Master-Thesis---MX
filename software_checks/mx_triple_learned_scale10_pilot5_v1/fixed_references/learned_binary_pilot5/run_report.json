@@ -1,0 +1,829 @@
+{
+  "schema": "mx-triple-learned-scale32-64-pilot5-report-v1",
+  "status": "PASS",
+  "package_revision": "mx_triple_learned_scale32_64_pilot5_v1",
+  "command": "run",
+  "mode": "joint",
+  "started_at": "2026-10-25T14:33:53.569997+01:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale32_64_pilot5\\20261025_143353_569521_joint_run",
+  "argv": [
+    ".\\software_checks\\mx_triple_learned_scale32_64_pilot5_v1\\run_train.py",
+    "run"
+  ],
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "limitations": [
+    "train only; shared E4M3 source and two code-derived MX modes; this is not a paper reproduction",
+    "FP32 update master/gradients/Adam; A32; exponent MSB and mantissa truncation, lower scales follow a shared learned binary block choice times32/64",
+    "three forward/backwards: E4M3 hard CE, E2M3/E2M1 recursive detached soft CE, one Adam step",
+    "BN banks learn during training; learned hard block offset5/6; log-exponent STE; E4 source scale unchanged",
+    "five-epoch pilot is not evidence about final100epoch convergence; low accuracy is a valid measured outcome",
+    "official test used for checkpoint selection, not an independent test estimate",
+    "numerical weight-only MX emulation; no native MX kernel or energy claim",
+    "GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism",
+    "one seed, five train-only pilot epochs; no proof of general superiority or convergence"
+  ],
+  "config": {
+    "schema": "mx-triple-learned-scale32-64-pilot5-protocol-v1",
+    "purpose": "five complete train-only epochs: learned binary per-block lower scale32/64; unchanged E4M3 source and exponent/mantissa bit truncation",
+    "mode": "joint",
+    "weight_format": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6,
+      8
+    ],
+    "weight_formats": {
+      "8": "MXFP8_E4M3",
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "codec_revision": {
+      "8": "e4m3-exact-binary-v2",
+      "6": "unchanged-E2M3-decode",
+      "4": "unchanged-E2M1-decode"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in ALL THREE modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "unchanged E4M3 source scale floor(log2(amax))-8; both lower codes equal source E8M0 code plus per-block hard offset5/6; promoted integer addition; overflow rejected without clipping/wrap, including zero blocks",
+    "mx_rounding": "E4M3 source nearest ties-to-even; finite FP32 source, scalar subnormal flush; lower modes exact bit mappings without additional rounding",
+    "ste_policy": "identity wrt G(W) all three modes; theta gradient ln(2)*sum_real_block(grad_q*q) from E2M3/E2M1; no normalization; no direct E4 theta gradient; source codes/scales detached; retain G(W) derivatives",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": true,
+    "mantissa_truncation": true,
+    "exponent_truncation": true,
+    "shared_scale_compensation": true,
+    "learned_shared_scale": true,
+    "scale_exponent_offset_choices": [
+      5,
+      6
+    ],
+    "scale_factor_choices": [
+      32,
+      64
+    ],
+    "scale_proxy_dtype": "float32",
+    "scale_proxy_init": 6.0,
+    "scale_proxy_bounds": [
+      5.0,
+      6.0
+    ],
+    "scale_threshold": 5.5,
+    "scale_tie_break": "offset6",
+    "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+    "scale_gradient_normalization": "none",
+    "scale_projection": "after_each_Adam_step",
+    "scale_granularity": "per_MX_block",
+    "source_scale_learned": false,
+    "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+    "source_weight_bits": 8,
+    "exponent_mapping": "s e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation",
+    "mantissa_mapping": "derived E2M3 uint8 codes >> 2; exact same per-block learned scale as E2M3",
+    "source_cache_policy": "detached integer source, hard choices and derived codes; theta version fixed within triplet; cached q saved for backward; cleared before Adam",
+    "direct_lower_quantization": false,
+    "exponent_bias_compensation": false,
+    "distillation": true,
+    "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+    "passes_per_training_batch": 3,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      8,
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6,
+      8
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6,
+      8
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "8": "8",
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "normal training updates of three mode banks E4M3=8,E2M3=32,E2M1=4; parameters and running stats learn per mode; eval frozen; keys are storage IDs, all A32; banks1/2 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 137034,
+    "base_parameters": 132954,
+    "learned_scale_parameters": 4080,
+    "planned_epochs": 100,
+    "pilot_stop_epoch": 5,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "scale_lr": 0.001,
+    "weight_decay": 0.0,
+    "optimizer_groups": [
+      "weights",
+      "scale_proxy"
+    ],
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "all three modes on complete official test after every epoch; hard CE for each",
+    "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+    "reporting_policy": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "one E4M3 source plus packed one-bit block choices and BN auxiliary state; derive lower exports only from saved source codes/scales/choices; no MX masters or FP32 theta in compact exports; resume retains theta and Adam",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "package_sha256": {
+    "CODEWIJZIGINGEN.md": "fa7291ed0520e5d2c3ad9778bf0da265b086467ab59ac08475e5b7abe128d4eb",
+    "EXPERIMENT_MANIFEST.json": "adee1ea0823729f4a69824a071b64549c4626efd8fc05ce5fe17dd864e53a5cd",
+    "MX_triple_learned_scale32_64_pilot5_resultaten.ipynb": "7d26b37cbf76d88530a43fadb558c148a78b3cb3e0a04889749b21dd5627f717",
+    "PROTOCOL.json": "d51bbb19027f00c84aa4b0b06d9b69ee415e3a40f02c68b85c7d7b39292df91f",
+    "PROTOCOL.md": "d234eb85e0fb50e66f18465a6b558d5cb65bd87353cf10d4636f050f41836dbe",
+    "README.md": "72867cab52f7dc1b0fa5d05a2173b24261acb1b96b5d1f2a481059983c3fc5b1",
+    "REUSE_MANIFEST.json": "041499e1a48b93c1d8e238dd2c6079620172944016deb337fc472bd6473dd901",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "TRAINING_CHANGE_MANIFEST.json": "e5ed391f491dfd066627d028fdc08418236c5758b95df2c37d7ef7eb0d133f11",
+    "fixed_references/scale32/REFERENCE.json": "9ba9c74cdd40530e48ac9d50333e82808c5d1b3466845dd64bd725f26fce0cf5",
+    "fixed_references/scale32/checkpoint_selection.json": "8daeaafa5a55bc0e50e880c48935ee3e085a5435acbd094311489cef1bd2156b",
+    "fixed_references/scale32/epoch_metrics.csv": "2269bb98b6e2838ae2bddfb4a674fc2c2b0f5b535bfbea744d2d23ef833f89ac",
+    "fixed_references/scale32/epoch_times.csv": "776318b09ecbe849adbef92af60726f8d4c5c8a032473a2d69f79c0ab653e824",
+    "fixed_references/scale32/run_report.json": "be771afb34ad1043a07a77e0ceee50f591e3155578fc8a7a04960c60f3dda6a8",
+    "fixed_references/scale32/selected_metrics.csv": "bc6f76b40b0f9c27eefe0e8af67fb65f3e57757f6a9c780de1970e15b876537c",
+    "fixed_references/scale32/training_summary.json": "757277cb8629df6c28c5942c42473276e597cbde7be822fed37189b63af8ac86",
+    "fixed_references/scale64/REFERENCE.json": "a323762894db83b15af10e79a8aff0128c50f7946805a04517e17a9f627377db",
+    "fixed_references/scale64/checkpoint_selection.json": "e970f58444b462afdfab2f61077567800979224bb7a501a044e56d68b7280eea",
+    "fixed_references/scale64/epoch_metrics.csv": "cb6c9ddcff6c263bf24c3cde3b02bab8ead694ae21e278b58d1632bf67ce60ab",
+    "fixed_references/scale64/epoch_times.csv": "ac1b94f918946cfeb3e9016f66210eebdaa366949558bfbc27e627db81756f1f",
+    "fixed_references/scale64/run_report.json": "f53511694e0762f55cf5b3fb8b85e9e0a2738b91a415b825418b10cb5398db0c",
+    "fixed_references/scale64/selected_metrics.csv": "299f08fa3d0d9faf74dbd991ea550df2037aca858772d7a8ad384558deeb9b5c",
+    "fixed_references/scale64/training_summary.json": "15e260e67af12e473a852974526e0bdf66c7bd3fa192c43fb425846d343d10fe",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "local_validation/VALIDATION.md": "2d6d57bbde06328d5df1644248e88b79650d7c1791ec431e236f7c3172b6da5a",
+    "local_validation/check_entry_validation_report.json": "602539650d706b73d208596f89b7bc555dfbc22340c38c1026b464a1fd9cfd5d",
+    "local_validation/core_check_report.json": "40f6eafc206274addff2157ae5ba042d587dbd290ea57d682b04b3e9d0948db6",
+    "local_validation/final_export_validation_report.json": "b31c83c90110e7f0c8096af466bb81c6e73cde5ebd1fa5cdb20f79de8732cbff",
+    "local_validation/notebook_validation_report.json": "06229c93318136f526af5c7bc651f3fded55b6b08c88afd091105520e3195c79",
+    "local_validation/package_assembly_validation.json": "9559f19a904da0d9b4532ad3bd48db68fb810b03db7cf52f38ba1d2c0995a27b",
+    "local_validation/runner_notebook_integration.json": "a7e83cec49b22a9dc1286d0ea58d04d2c38946e0845eddf1a02d6a0220176b74",
+    "local_validation/runner_validation_binding.json": "4b4aae2c6372e9238d6c67a3a6593a2070e814b76becac9e9e107880b3bfe55b",
+    "local_validation/test_notebook.py": "6cfdb7d85f5a617d46b61aacc6e4c8bb156e95ebe13e3e096af24bd42914df66",
+    "local_validation/test_training_integration.py": "9e52cf29b0f3a9dd1d0c73015dacd8d3494d1e90e94f7b352cbc0c88b748a8c3",
+    "local_validation/training_integration_report.json": "8915db0928a1f23e7179d28a414d49acaa0d06ecd1a8547e8318f6e3a772ad18",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "c280a7414454019237f8256af2ff9285955a2fd4e912bea1de8ab7ba93b411f8",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "provenance/scale32_pilot5_PACKAGE_SHA256.json": "c907b3db126475a1a2135729826d80f5809666ae715b9314991bcd0f86307f0d",
+    "provenance/scale32_pilot5_PROTOCOL.json": "64ac160c5dfb7a9523e449753744bb2d707e9b908f77e863ac0364e5ec76c931",
+    "provenance/scale32_pilot5_PROTOCOL.md": "94af83153b7b2d19109594b7527c423738114bd59752b0e79b7ad0e1feff9a35",
+    "provenance/scale32_pilot5_run_train.py": "1400fd6f391b6a02ae84e01b0254a281f145c42550b99b320ce414acd79c45ce",
+    "provenance/scale32_pilot5_test_trunc_training.py": "f7e7c39b83a53b3ea1e4dfba9826c6cde01f0a4819c062a61005ba685b395bec",
+    "provenance/scale32_pilot5_trunc_adapter.py": "1a5a756735315050f8dc09cc113e19d006942a95f92cedfa04e1581938e03eb2",
+    "provenance/scale32_pilot5_trunc_support.py": "b6e520c2f307adb0a6e5920e672c9bd2ab066545735410bbed6e3efc9800aaed",
+    "provenance/scale32_reference100_PACKAGE_SHA256.json": "a6db5684a0cf2c4368d7dfa6a4ee397d1c96dadbf2a73878b677eb5c4339a292",
+    "provenance/scale32_reference100_PROTOCOL.json": "c5f62da046a0ba79574a3e87c3c8c9105dc233313308cdb30faafb13bfa04a90",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "e5bd1a470bdb864638b9884d042624309c015dfe09d72addb00161f446ded69c",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_learned_scale.py": "a0111e8d47b62d2b4339f7b43835530b0b42e4c03d910d4e5adaaaca192da8fe",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "trunc_adapter.py": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+    "trunc_support.py": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "seed_source": "explicit local seed, not reported by authors",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "torch_num_threads": 16,
+    "matmul_fp32_precision": "none",
+    "cudnn_conv_fp32_precision": "tf32",
+    "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "exact_cuda_resume_guaranteed": false
+  },
+  "data_preparation_seconds_including_download_and_checksums": 0.4160200000042096,
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": []
+  },
+  "dataset_load_seconds": 1.3909295999910682,
+  "dataset_selection": {
+    "train": {
+      "n": 73257,
+      "labels_histogram": [
+        4948,
+        13861,
+        10585,
+        8497,
+        7458,
+        6882,
+        5727,
+        5595,
+        5045,
+        4659
+      ],
+      "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "train_split_order": [
+      "train"
+    ],
+    "extra_used": false,
+    "held_out_validation_examples": 0
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  },
+  "contract_sha256": "168927fae398b00c0441d474d685580a8f1f4aca418df023378fea7a45d4be70",
+  "completed_epoch": 5,
+  "scale_learning_summary": {
+    "schema": "mx-triple-learned-scale32-64-pilot5-scale-learning-v1",
+    "learned_scale_parameters": 4080,
+    "initial_theta": 6.0,
+    "threshold": 5.5,
+    "tie_offset": 6,
+    "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+    "gradient_normalization": "none",
+    "scale_lr": 0.001,
+    "projection_after_every_Adam_update": true,
+    "completed_optimizer_updates": 2865,
+    "theta_changed_in_any_epoch": true,
+    "nonzero_scale_gradient_observed": true,
+    "total_choice_flips_including_repeat_flips": 242,
+    "total_projected_values_including_repeats": 724849,
+    "hard_switch_required_for_technical_PASS": false,
+    "zero_finite_scale_gradients_are_valid_diagnostics": true,
+    "packed_scale_choice_bytes": 510,
+    "analytical_FP32_theta_gradient_Adam_bytes": 65280,
+    "analytical_bytes_exclude_framework_and_temporaries": true,
+    "selected": {
+      "best_E4M3_test": {
+        "epoch": 4,
+        "blocks": 4080,
+        "count_x32": 17,
+        "count_x64": 4063
+      },
+      "last_epoch": {
+        "epoch": 5,
+        "blocks": 4080,
+        "count_x32": 42,
+        "count_x64": 4038
+      }
+    },
+    "synthetic_fixture_only": false
+  },
+  "optimizer_steps": 2865,
+  "selected_best_epoch": 4,
+  "selected_last_epoch": 5,
+  "initial_model_sha256": "962aee1030c3263ce2250accc6a78afcf495574f2d35f4bdaf2556b51828ad32",
+  "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "checkpoint_selection": {
+    "policy": "first strict maximum of E4M3/A32 official-test top1",
+    "best": {
+      "epoch": 4,
+      "file": "best_checkpoint.pt",
+      "sha256": "20cd07aafb8143c4e8ce367db9c4d80b1ae1754fb09217ba084eeeabaa2d6d5e",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale32_64_pilot5\\20261025_143353_569521_joint_run\\checkpoints\\epoch_00004.pt",
+      "selection_score_E4M3": 92.71281498754838
+    },
+    "last": {
+      "epoch": 5,
+      "file": "last_checkpoint.pt",
+      "sha256": "a52dd42ca87f5edcb327d6758e43161e938dbab6eee1c16a43bd6fc2c7f70196",
+      "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale32_64_pilot5\\20261025_143353_569521_joint_run\\checkpoints\\epoch_00005.pt",
+      "selection_score_E4M3": 92.69360785786183
+    },
+    "same_checkpoint": false,
+    "selected_on_official_test": true,
+    "independent_test_estimate": false,
+    "selection_mode": "MXFP8_E4M3/A32",
+    "all_modes_from_same_selected_checkpoint": true
+  },
+  "training_summary": {
+    "schema": "mx-triple-learned-scale32-64-pilot5-completion-v1",
+    "planned_epochs": 100,
+    "pilot_stop_epoch": 5,
+    "completed_epochs": 5,
+    "pilot_completed": true,
+    "full_training_completed": false,
+    "full_100_epoch_training_completed": false,
+    "optimizer_steps": 2865,
+    "expected_optimizer_steps_at_pilot_completion": 2865,
+    "expected_training_forward_passes_at_pilot_completion": 8595,
+    "best_epoch_E4M3_A32": 4,
+    "last_epoch": 5,
+    "lr_schedule_verified": true,
+    "all_epoch_modes_complete": true,
+    "resumed": false,
+    "new_initialization_not_previous_experiment_warmstart": true,
+    "training_forward_passes": 8595,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "mode": "joint",
+    "weight_formats": {
+      "8": "MXFP8_E4M3",
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "activation_bits": 32,
+    "distillation": true,
+    "truncation": true,
+    "source_weight_bits": 8,
+    "exponent_truncation": true,
+    "mantissa_truncation": true,
+    "shared_scale_compensation": true,
+    "learned_shared_scale": true,
+    "scale_exponent_offset_choices": [
+      5,
+      6
+    ],
+    "scale_factor_choices": [
+      32,
+      64
+    ],
+    "scale_proxy_init": 6.0,
+    "scale_proxy_bounds": [
+      5.0,
+      6.0
+    ],
+    "learned_scale_parameters": 4080,
+    "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+    "scale_gradient_normalization": "none",
+    "scale_projection_after_every_update": true,
+    "scale_lr": 0.001,
+    "scale_learning_summary": {
+      "schema": "mx-triple-learned-scale32-64-pilot5-scale-learning-v1",
+      "learned_scale_parameters": 4080,
+      "initial_theta": 6.0,
+      "threshold": 5.5,
+      "tie_offset": 6,
+      "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+      "gradient_normalization": "none",
+      "scale_lr": 0.001,
+      "projection_after_every_Adam_update": true,
+      "completed_optimizer_updates": 2865,
+      "theta_changed_in_any_epoch": true,
+      "nonzero_scale_gradient_observed": true,
+      "total_choice_flips_including_repeat_flips": 242,
+      "total_projected_values_including_repeats": 724849,
+      "hard_switch_required_for_technical_PASS": false,
+      "zero_finite_scale_gradients_are_valid_diagnostics": true,
+      "packed_scale_choice_bytes": 510,
+      "analytical_FP32_theta_gradient_Adam_bytes": 65280,
+      "analytical_bytes_exclude_framework_and_temporaries": true,
+      "selected": {
+        "best_E4M3_test": {
+          "epoch": 4,
+          "blocks": 4080,
+          "count_x32": 17,
+          "count_x64": 4063
+        },
+        "last_epoch": {
+          "epoch": 5,
+          "blocks": 4080,
+          "count_x32": 42,
+          "count_x64": 4038
+        }
+      },
+      "synthetic_fixture_only": false
+    },
+    "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+    "initial_model_sha256": "962aee1030c3263ce2250accc6a78afcf495574f2d35f4bdaf2556b51828ad32",
+    "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "measured_completed_epoch_seconds": 325.9808932997985,
+    "gradient_checks_before_every_update": true,
+    "fp32_masters_and_moments_verified": true,
+    "one_E4_source_per_layer_per_minibatch_verified": true,
+    "all_lower_scale_bytes_equal_current_E4_source": false,
+    "all_lower_scale_codes_equal_current_E4_source_plus_learned_choice": true,
+    "all_mantissa_scale_bytes_equal_E2M3": true,
+    "source_cache_cleared_before_every_optimizer_update": true,
+    "batchnorm_learned_during_training_eval_frozen": true,
+    "synthetic_fixture_only": false
+  },
+  "timing_estimate": {
+    "available": true,
+    "planned_epochs": 100,
+    "steady_epoch_seconds": [
+      65.87362569989637,
+      65.90021689992864,
+      65.95313209993765,
+      65.86775159998797
+    ],
+    "steady_epochs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "median_epoch_seconds": 65.8869212999125,
+    "first_epoch_seconds": 62.38616700004786,
+    "estimated_100_epoch_seconds": 6585.1913756913855,
+    "observed_range_projection_seconds": [
+      6583.293575398857,
+      6591.746244893875
+    ],
+    "range_is_confidence_interval": false,
+    "method": "first measured epoch + 99 * median of non-first-process epochs; includes train, test and checkpoint",
+    "excludes": [
+      "download",
+      "dependency installation",
+      "dataset loading",
+      "final report export"
+    ],
+    "limitations": [
+      "same laptop/backend/data loading conditions required",
+      "five epochs do not measure the LR transitions at 50/75/90",
+      "thermal and background-load drift over a long run not established"
+    ],
+    "weight_mode": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+    "includes": [
+      "three-mode training",
+      "three-mode test",
+      "epoch diagnostics",
+      "checkpoint write"
+    ],
+    "measured_completed_epoch_seconds": 325.9808932997985,
+    "pilot_completed": true,
+    "full_training_completed": false,
+    "full_100_epoch_training_completed": false,
+    "measured_100_epoch_seconds": null,
+    "interpretation": "Measured pilot time covers the completed epochs. The 100-epoch estimate is a projection for a fresh run under comparable conditions, not measured or remaining time."
+  },
+  "mx_exports": {
+    "best_E4M3_test": {
+      "8": {
+        "file": "mx_source_MXFP8_E4M3_best.pt",
+        "sha256": "6f9bbbfc0f723747eaea12b5976d22ac2bee852c546aa8d69f6c6b7277f5a745",
+        "bytes": 199385,
+        "epoch": 4,
+        "weight_bits": 8,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": false,
+        "source_weight_bits": 8,
+        "is_source_export": true,
+        "derived_from_saved_source": false,
+        "source_file_sha256": "6f9bbbfc0f723747eaea12b5976d22ac2bee852c546aa8d69f6c6b7277f5a745",
+        "source_scale_bytes_copied": true,
+        "scale_exponent_offset": 0,
+        "scale_factor": 1,
+        "scale_exponent_offset_choices": [
+          0
+        ],
+        "scale_factor_choices": [
+          1
+        ],
+        "packed_scale_choices_in_source": true,
+        "packed_scale_choices_bytes": 510,
+        "fp32_scale_proxies_absent": true,
+        "shared_scale_compensation": false,
+        "learned_shared_scale": false,
+        "master_weights_read_to_derive": false,
+        "master_weights_read_to_encode_source": true,
+        "saved_and_reloaded": true,
+        "encoding_and_comparison_device": "cuda:0",
+        "export_validation_scope": "exact weights versus live shared-source route on training device; no full test rerun"
+      },
+      "6": {
+        "file": "mx_derived_MXFP6_E2M3_best.pt",
+        "sha256": "56c21dd8bc366496eadb54db13237dfb349237f7001973e34676dbb80e963b19",
+        "bytes": 167513,
+        "epoch": 4,
+        "weight_bits": 6,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": true,
+        "source_weight_bits": 8,
+        "is_source_export": false,
+        "derived_from_saved_source": true,
+        "source_file_sha256": "6f9bbbfc0f723747eaea12b5976d22ac2bee852c546aa8d69f6c6b7277f5a745",
+        "source_scale_bytes_copied": false,
+        "scale_exponent_offset": null,
+        "scale_factor": null,
+        "scale_exponent_offset_choices": [
+          5,
+          6
+        ],
+        "scale_factor_choices": [
+          32,
+          64
+        ],
+        "packed_scale_choices_in_source": true,
+        "packed_scale_choices_bytes": 510,
+        "fp32_scale_proxies_absent": true,
+        "shared_scale_compensation": true,
+        "learned_shared_scale": true,
+        "master_weights_read_to_derive": false,
+        "master_weights_read_to_encode_source": false,
+        "saved_and_reloaded": true,
+        "encoding_and_comparison_device": "cuda:0",
+        "export_validation_scope": "exact weights versus live shared-source route on training device; no full test rerun"
+      },
+      "4": {
+        "file": "mx_derived_MXFP4_E2M1_best.pt",
+        "sha256": "19320980212b09d3b3011f5d44da37dc464413444e7e38c63d0043e9302e927e",
+        "bytes": 134873,
+        "epoch": 4,
+        "weight_bits": 4,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": true,
+        "source_weight_bits": 8,
+        "is_source_export": false,
+        "derived_from_saved_source": true,
+        "source_file_sha256": "6f9bbbfc0f723747eaea12b5976d22ac2bee852c546aa8d69f6c6b7277f5a745",
+        "source_scale_bytes_copied": false,
+        "scale_exponent_offset": null,
+        "scale_factor": null,
+        "scale_exponent_offset_choices": [
+          5,
+          6
+        ],
+        "scale_factor_choices": [
+          32,
+          64
+        ],
+        "packed_scale_choices_in_source": true,
+        "packed_scale_choices_bytes": 510,
+        "fp32_scale_proxies_absent": true,
+        "shared_scale_compensation": true,
+        "learned_shared_scale": true,
+        "master_weights_read_to_derive": false,
+        "master_weights_read_to_encode_source": false,
+        "saved_and_reloaded": true,
+        "encoding_and_comparison_device": "cuda:0",
+        "export_validation_scope": "exact weights versus live shared-source route on training device; no full test rerun"
+      }
+    },
+    "last_epoch": {
+      "8": {
+        "file": "mx_source_MXFP8_E4M3_last.pt",
+        "sha256": "7352f0b6af39ec1120d793f67db896a7e3094d82a7fb79831ad87ca0311f51a8",
+        "bytes": 199385,
+        "epoch": 5,
+        "weight_bits": 8,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": false,
+        "source_weight_bits": 8,
+        "is_source_export": true,
+        "derived_from_saved_source": false,
+        "source_file_sha256": "7352f0b6af39ec1120d793f67db896a7e3094d82a7fb79831ad87ca0311f51a8",
+        "source_scale_bytes_copied": true,
+        "scale_exponent_offset": 0,
+        "scale_factor": 1,
+        "scale_exponent_offset_choices": [
+          0
+        ],
+        "scale_factor_choices": [
+          1
+        ],
+        "packed_scale_choices_in_source": true,
+        "packed_scale_choices_bytes": 510,
+        "fp32_scale_proxies_absent": true,
+        "shared_scale_compensation": false,
+        "learned_shared_scale": false,
+        "master_weights_read_to_derive": false,
+        "master_weights_read_to_encode_source": true,
+        "saved_and_reloaded": true,
+        "encoding_and_comparison_device": "cuda:0",
+        "export_validation_scope": "exact weights versus live shared-source route on training device; no full test rerun"
+      },
+      "6": {
+        "file": "mx_derived_MXFP6_E2M3_last.pt",
+        "sha256": "45945fdfd869fa0abc5abb65056ecb72032cf8c2c2d62d61e7dcc8757dc8d41f",
+        "bytes": 167513,
+        "epoch": 5,
+        "weight_bits": 6,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": true,
+        "source_weight_bits": 8,
+        "is_source_export": false,
+        "derived_from_saved_source": true,
+        "source_file_sha256": "7352f0b6af39ec1120d793f67db896a7e3094d82a7fb79831ad87ca0311f51a8",
+        "source_scale_bytes_copied": false,
+        "scale_exponent_offset": null,
+        "scale_factor": null,
+        "scale_exponent_offset_choices": [
+          5,
+          6
+        ],
+        "scale_factor_choices": [
+          32,
+          64
+        ],
+        "packed_scale_choices_in_source": true,
+        "packed_scale_choices_bytes": 510,
+        "fp32_scale_proxies_absent": true,
+        "shared_scale_compensation": true,
+        "learned_shared_scale": true,
+        "master_weights_read_to_derive": false,
+        "master_weights_read_to_encode_source": false,
+        "saved_and_reloaded": true,
+        "encoding_and_comparison_device": "cuda:0",
+        "export_validation_scope": "exact weights versus live shared-source route on training device; no full test rerun"
+      },
+      "4": {
+        "file": "mx_derived_MXFP4_E2M1_last.pt",
+        "sha256": "ceee31da5d1c724cd9168e2df77516baa79cbf9344af55720c68988f5d5c58ca",
+        "bytes": 134873,
+        "epoch": 5,
+        "weight_bits": 4,
+        "decoded_weights_exact": true,
+        "six_fp32_masters_absent": true,
+        "full_test_forward_rerun": false,
+        "truncation": true,
+        "source_weight_bits": 8,
+        "is_source_export": false,
+        "derived_from_saved_source": true,
+        "source_file_sha256": "7352f0b6af39ec1120d793f67db896a7e3094d82a7fb79831ad87ca0311f51a8",
+        "source_scale_bytes_copied": false,
+        "scale_exponent_offset": null,
+        "scale_factor": null,
+        "scale_exponent_offset_choices": [
+          5,
+          6
+        ],
+        "scale_factor_choices": [
+          32,
+          64
+        ],
+        "packed_scale_choices_in_source": true,
+        "packed_scale_choices_bytes": 510,
+        "fp32_scale_proxies_absent": true,
+        "shared_scale_compensation": true,
+        "learned_shared_scale": true,
+        "master_weights_read_to_derive": false,
+        "master_weights_read_to_encode_source": false,
+        "saved_and_reloaded": true,
+        "encoding_and_comparison_device": "cuda:0",
+        "export_validation_scope": "exact weights versus live shared-source route on training device; no full test rerun"
+      }
+    }
+  },
+  "synthetic_fixture_only": false,
+  "full_training_completed": false,
+  "pilot_completed": true,
+  "training_forward_passes": 8595,
+  "source_unchanged": true,
+  "dataset_files_unchanged": true,
+  "ended_at": "2026-10-25T14:39:27.262784+01:00",
+  "session_wall_seconds": 333.692051500082
+}

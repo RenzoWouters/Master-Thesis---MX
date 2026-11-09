@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "date": "2026-11-04",
+  "package": "mx_triple_learned_scale10_reference100_v1",
+  "runtime_manifest_files": 73,
+  "actual_verify_package_passed": true,
+  "config_matches_runner": true,
+  "numerical_core_files_unchanged": 16,
+  "changed_python_files": [
+    "run_train.py",
+    "notebook_support.py"
+  ],
+  "protocol_changes": [
+    "pilot_stop_epoch",
+    "purpose",
+    "reference_end_epoch",
+    "reporting_policy",
+    "scale_freeze_epoch",
+    "scale_learning_end_epoch",
+    "schema"
+  ],
+  "notebook_blank_and_nbformat_valid": true,
+  "notebook_cells": 28,
+  "notebook_code_cells": 17,
+  "one_root_notebook": true,
+  "pinned_reference_directories_verified": [
+    "pilot_reference",
+    "fixed_references/learned_binary_pilot5",
+    "fixed_references/scale32",
+    "fixed_references/learned_binary_reference100",
+    "fixed_references/scale64"
+  ],
+  "final_runner_binding_report_sha256": "de42ce7358f180564b85b38979c928631b0c955aa08fc2b26f6af32df1682104",
+  "final_notebook_report_sha256": "48ad1b01539ec026190aa7b4872803730edf3b16132b51e96451d5d379e81041",
+  "root_visual_QA": "PASS; curves, both checkpoint panels and all ten factor histograms inspected",
+  "actual_SVHN_training_performed_here": false,
+  "CUDA_training_performed_here": false,
+  "validation_scope": "CPU synthetic training and export tests; real prior pilot and reference data read only; original synthetic truncated history preserved, reported, and mitigated by final verified export guard"
+}

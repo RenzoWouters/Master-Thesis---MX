@@ -1,0 +1,20 @@
+{
+  "schema": "mx-scale10-actual-pilot5-reference-v1",
+  "completed_epochs": 5,
+  "synthetic_fixture_only": false,
+  "source_feedback_file": "feedback_bundle(20261104-180536).zip",
+  "source_feedback_sha256": "a61a9eabfb8c07dccc98014349437e599a846249f5d5a1e018ac4e893d8d671f",
+  "source_library_file_id": "libfile_c68e8f67ca1081919898957ffdeb3d3b",
+  "files_sha256": {
+    "checkpoint_selection.json": "0c5e52efec6263506c2b9701aeb37edd9cee892841f4aae24d3a5193c53959e1",
+    "epoch_metrics.csv": "ae912941a7b2d651be1774c9f0bca780b349ac7c11adc514b398234bc1cc335c",
+    "epoch_times.csv": "778eb8046173723f49f4db90a59a242d7ab49081933e691c2b16a97f5a817bae",
+    "run_report.json": "efd2ae9c1d0536caa0477854de284765b68812411be99894666860500166185d",
+    "scale_block_state.csv": "cefcf13c27774b7e1183b57c50f37be1895d63aa7ec810a3a541e4a2d357ff32",
+    "scale_epoch_metrics.csv": "aa30de64d17f71ec6c4dc784f86cfd9b6589de289b3bd45bb03413a65783346c",
+    "scale_learning_summary.json": "80c0902ea512cc4bb514d436739a78f2c91ab0b6f2cadfb9c0f0936b6a3d988b",
+    "selected_metrics.csv": "49f18a7ace4336bd23db28190ec5c574986bc0a400ae2e151fd598ed645d5139",
+    "timing_estimate.json": "701299d1fb5696220639b1811c865aca3432eb55ba1504e48194ef72a2bec5fb",
+    "training_summary.json": "992d3e2d6fdd3d3bb1ae7f6dea742671443a1a734f3078a1207fc5535b6842a6"
+  }
+}

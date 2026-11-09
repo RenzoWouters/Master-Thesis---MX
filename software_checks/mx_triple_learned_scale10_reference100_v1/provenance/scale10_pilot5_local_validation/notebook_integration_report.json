@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "tests": {
+    "continuous5": {
+      "status": "PASS",
+      "completed_epochs": 5,
+      "all_16_notebook_code_cells_executed": true,
+      "generated_figures": 14,
+      "copied_runner_inputs_unchanged": true,
+      "no_SVHN_accuracy_claim": true
+    },
+    "resume2_to5": {
+      "status": "PASS",
+      "completed_epochs": 5,
+      "all_16_notebook_code_cells_executed": true,
+      "generated_figures": 14,
+      "copied_runner_inputs_unchanged": true,
+      "no_SVHN_accuracy_claim": true
+    },
+    "stop2": {
+      "status": "PASS",
+      "completed_epochs": 2,
+      "all_16_notebook_code_cells_executed": true,
+      "generated_figures": 14,
+      "copied_runner_inputs_unchanged": true,
+      "no_SVHN_accuracy_claim": true
+    },
+    "wrong_binary_learned_contract": {
+      "status": "PASS",
+      "completed_epochs": null,
+      "all_16_notebook_code_cells_executed": true,
+      "generated_figures": 14,
+      "copied_runner_inputs_unchanged": true,
+      "no_SVHN_accuracy_claim": true
+    },
+    "discovery": {
+      "status": "PASS",
+      "latest_failed_training_is_visible": true,
+      "later_check_does_not_hide_training": true,
+      "explicit_older_run_supported": true,
+      "relocated_feedback_supported": true,
+      "empty_template_reports_missing_data": true
+    }
+  },
+  "binary_non_scale_recipe_fields_identical": true,
+  "template_sha256": "6458df7beb680e4fde10b8ec11bb5ea3f9a059350d241c85e4a1062d3a4a6428",
+  "helper_sha256": "efc36136d02f2845662b2811d01c37b40d981797bb2f9ce473c1bd6ce86a17c8"
+}

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "actual_SVHN_or_CUDA_training_performed": false,
+  "full100_and_resume50_numerical_validation": {
+    "continuous_optimizer_updates": 200,
+    "resumed_new_optimizer_updates": 100,
+    "partial_optimizer_updates": 2,
+    "total": 302,
+    "exact_CPU_equality": {
+      "model": "exact CPU tensor/container equality",
+      "optimizer": "exact CPU tensor/container equality",
+      "scheduler": "exact CPU tensor/container equality",
+      "rng": "exact CPU tensor/container equality",
+      "scale_block_state.csv": "byte-identical",
+      "scale_epoch_metrics.csv": "byte-identical"
+    },
+    "all100_LR_boundaries_verified_both_groups": true,
+    "epoch50_complete_unfrozen_checkpoint_verified": true
+  },
+  "validation_harness_bookkeeping_failure": {
+    "original_harness_exit_code": 1,
+    "failure_stage": "Final bookkeeping assertion after all functional runner/CLI assertions",
+    "failure_message": "RuntimeError: Pakketbestand gewijzigd: EXPERIMENT_MANIFEST.json",
+    "cause": "One stale s.verify_package call remained while package assembly was still in progress.",
+    "runner_failure": false,
+    "correction": "Use the same recorded stable runtime_hashes contract at final bookkeeping.",
+    "corrected_harness_file": "/workspace/scratch/4619498905be/work/mx_triple_learned_scale10_reference100_v1/local_validation/test_training_integration.py",
+    "corrected_harness_sha256": "0d7501b57581dd0eaf94cfc9a6fbacc3dabf561f323464551e7f47dbaf594fa7",
+    "original_harness_sha256_reconstructed_from_single_line_change": "037afdf91d429c8db1c3cf53a1740fc6f7a4c4d193188d3d57dfec3446b5f1a3",
+    "corrected_harness_fully_rerun": false,
+    "actual_training_not_repeated_for_bookkeeping": true,
+    "verification": "Read-only independent checks of original checkpoints, histories, exports and runtime bindings."
+  },
+  "artifact_integrity_issue": {
+    "original_resumed_history_truncated": true,
+    "original_feedback_also_truncated": true,
+    "original_corrupt_file_preserved": true,
+    "origin": "unresolved; no evidence of source/checkpoint corruption; not reproduced by two export-only runs",
+    "corrupt_file_sha256": "646db574f3a863bc9da466066024184733c565cd3dcaa1ee3706f58110dd8690",
+    "corrupt_bytes": 8705454,
+    "reconstructed_from_verified_checkpoint100_and_immutable_timing_sidecar": true,
+    "reconstructed_bytes": 17050619,
+    "reconstructed_sha256": "b1c7cd157e09afc6a389f7988b69fa6012530683f877da166219b8b49de4be15",
+    "reexport_performed_without_training": true,
+    "final_production_export_checks_entire_history_before_success": true,
+    "final_export_and_feedback_history_match_exactly": true,
+    "truncated_missing_and_incomplete_valid_JSON_rejected": true
+  },
+  "final_code_binding": {
+    "only_export_guard_import_helper_and_final_call_changed": true,
+    "previously_executed_run_train_sha256": "6cbc901444aeeacc598f0288980164c5f8bdb2273d0cfd2a342cb6d705e226d5",
+    "final_run_train_sha256": "8266b93a5d1c3ae3f2538475be1337ae086c7559a585489f067f955b58857981",
+    "all_other_training_runtime_files_unchanged": true
+  },
+  "final_training_runtime_sha256": {
+    "PROTOCOL.json": "1687575d0c2e4da3577839e932b1efa737c774dfc19ea484a620c3b7fe3b0ee7",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "8266b93a5d1c3ae3f2538475be1337ae086c7559a585489f067f955b58857981",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_learned_scale.py": "e723365216e4dac59d6d8f4cb3325754a1a18fbd6409fb1b9f0f788d3cc16b31",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "trunc_adapter.py": "7b24418b4b4ea42e9ec7ea629cfa8da3b31619bd0f84eb656e73f7ffb9f330cb",
+    "trunc_support.py": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "report_files_sha256": {
+    "training_integration_report.json": "b11d7b9d2ca2e199a219b5a907ddeddbfeaa45bbbce42cd4af74d2abe7a37f1a",
+    "history_export_investigation.json": "44ac57e7e59634fe146b708399dcdf7c6c4acced1c8e48273151e3b58ede4d6b",
+    "history_export_guard_validation.json": "33c9571f52091da04159b0c0b954d327d2d7c37a5063038f7c6baf3edf51b114",
+    "history_export_guard_test_executed.py": "f9db63d27fe12e20146307862a7a0454a64d1b1f42f495bda258009a51b4031e"
+  },
+  "final_package_manifest_checked_by_parent_after_assembly": false,
+  "validation_scope_note": "Functional full100 checks ran before the final export guard; AST binding proves every training statement unchanged. Final guard/export regression used saved checkpoints only. The original truncated artifact is not accepted as a clean history."
+}

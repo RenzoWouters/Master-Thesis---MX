@@ -1,0 +1,55 @@
+{
+  "parent": "mx_triple_learned_scale10_pilot5_v1",
+  "current": "mx_triple_learned_scale10_reference100_v1",
+  "differences": {
+    "pilot_stop_epoch": {
+      "before": 5,
+      "after": null,
+      "before_present": true,
+      "after_present": false
+    },
+    "purpose": {
+      "before": "five complete train-only epochs: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation",
+      "after": "one hundred complete train-only epochs from fresh initialization: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation; scale choices learn through epoch100",
+      "before_present": true,
+      "after_present": true
+    },
+    "reference_end_epoch": {
+      "before": null,
+      "after": 100,
+      "before_present": false,
+      "after_present": true
+    },
+    "reporting_policy": {
+      "before": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+      "after": "all three modes from same selected E4M3-best checkpoint; also all at epoch100 or the last completed epoch of an interrupted run",
+      "before_present": true,
+      "after_present": true
+    },
+    "scale_freeze_epoch": {
+      "before": null,
+      "after": null,
+      "before_present": false,
+      "after_present": true
+    },
+    "scale_learning_end_epoch": {
+      "before": null,
+      "after": 100,
+      "before_present": false,
+      "after_present": true
+    },
+    "schema": {
+      "before": "mx-triple-learned-scale10-pilot5-protocol-v1",
+      "after": "mx-triple-learned-scale10-reference100-protocol-v1",
+      "before_present": true,
+      "after_present": true
+    }
+  },
+  "number_of_differences": 7,
+  "all_other_protocol_fields_equal": true,
+  "training_numerical_configuration_changed": false,
+  "notes": [
+    "planned_epochs and scheduler remain100/50,75,90; only executable duration and reporting/provenance change",
+    "scale_learning_end_epoch100 and scale_freeze_epoch null document existing uninterrupted scale learning; no change to optimizer or gradient"
+  ]
+}

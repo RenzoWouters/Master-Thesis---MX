@@ -1,0 +1,84 @@
+{
+  "schema": "mx-learned-scale32-64-pilot5-assembly-v1",
+  "status": "PASS",
+  "no_new_SVHN_training": true,
+  "CUDA_not_tested_here": true,
+  "protocol_matches_executable": true,
+  "hard_endpoint": 5,
+  "all_final_runtime_hashes_match_validation_binding": true,
+  "final_notebook_hashes_match_both_notebook_reports": true,
+  "unexecuted_notebook_code_cells": 15,
+  "core_report_matches_final_core_report": true,
+  "python_sources_compile": [
+    "joint_adapter.py",
+    "joint_support.py",
+    "local_validation/test_notebook.py",
+    "local_validation/test_training_integration.py",
+    "mx_adapter.py",
+    "mx_e2m1.py",
+    "mx_e4m3.py",
+    "mx_format.py",
+    "notebook_support.py",
+    "posthoc_truncation.py",
+    "provenance/scale32_pilot5_run_train.py",
+    "provenance/scale32_pilot5_test_trunc_training.py",
+    "provenance/scale32_pilot5_trunc_adapter.py",
+    "provenance/scale32_pilot5_trunc_support.py",
+    "resume_core.py",
+    "run_train.py",
+    "smoke_support.py",
+    "svhn_support.py",
+    "test_e4m3.py",
+    "test_joint.py",
+    "test_learned_scale.py",
+    "test_mx.py",
+    "trunc_adapter.py",
+    "trunc_support.py"
+  ],
+  "byte_identical_runtime_files": 15,
+  "old_packages_preserved": {
+    "mx_triple_scale32_pilot5_v1": {
+      "manifest_files_verified": 66,
+      "all_unchanged": true,
+      "zip_sha256": "1332abc8b34a757f7ee6b693df66f500e9027e264ac18dfc2cb46bbaa9680552"
+    },
+    "mx_triple_scale32_reference100_v1": {
+      "manifest_files_verified": 81,
+      "all_unchanged": true,
+      "zip_sha256": "0b506b359c64e61766427ae92c5b3aaf0d87f43a1872f6c58806761e9150ea19"
+    }
+  },
+  "input_feedback_sha256": "f4ec1fa26336e2ad6552f0ae39a5a9c5e1f14dcbcc255818edb8c9bf7ba56e00",
+  "input_feedback_extracted_files_unchanged": 33,
+  "fixed_references": {
+    "32": {
+      "raw_files_verified": 6,
+      "byte_identical_to_actual_feedback": true,
+      "original_epochs": 100,
+      "comparison_endpoint": 5
+    },
+    "64": {
+      "raw_files_verified": 6,
+      "byte_identical_to_actual_feedback": true,
+      "original_epochs": 100,
+      "comparison_endpoint": 5
+    }
+  },
+  "runtime_sha256": {
+    "run_train.py": "e5bd1a470bdb864638b9884d042624309c015dfe09d72addb00161f446ded69c",
+    "trunc_support.py": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+    "trunc_adapter.py": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8"
+  },
+  "notebook_sha256": "7d26b37cbf76d88530a43fadb558c148a78b3cb3e0a04889749b21dd5627f717",
+  "notebook_helper_sha256": "c280a7414454019237f8256af2ff9285955a2fd4e912bea1de8ab7ba93b411f8"
+}

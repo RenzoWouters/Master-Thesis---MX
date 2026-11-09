@@ -1,0 +1,20 @@
+{
+  "schema": "mx-learned-scale32-64-actual-pilot5-reference-v1",
+  "source_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale32_64_pilot5\\20261025_143353_569521_joint_run",
+  "source_report_schema": "mx-triple-learned-scale32-64-pilot5-report-v1",
+  "completed_epochs": 5,
+  "synthetic_fixture_only": false,
+  "new_full_training_warmstarts_this_pilot": false,
+  "source_feedback_sha256": "d911f57c76220211ab76cbac0144cc78f026ee532de45ec7d53eea0a6c83ae8d",
+  "files_sha256": {
+    "run_report.json": "6d7d491de48b8237405e9489544333f9d787a63c0b62c0135dd99a6e766b1cab",
+    "epoch_metrics.csv": "a244b6cc4e669e6eb55026f772e817e69b53d279129a236b4e036e2891b073e6",
+    "epoch_times.csv": "009a1767eb05836d1e45ce27274f067a466a038c77f34413f1071848c7f41e3a",
+    "checkpoint_selection.json": "fb11b51b79c39a4de24134ee57ff4668257cb2437d5086fbe612e6a7a1db9994",
+    "selected_metrics.csv": "0b44944622cc48ac9f2d0e36825da07bc5fe1c2c2c88c10eed27726c90393c42",
+    "training_summary.json": "9e3d5780a4ff2e0e907964f7a804a544fd1213ada28be2b5c9114419a0b723b1",
+    "scale_learning_summary.json": "5ef386fb7cbb58151aea41f548b08a391251a20d7181d6b8bd0d7238d5ec3851",
+    "scale_epoch_metrics.csv": "ce38b0b84428c4760921dd955d371df2c4d1d4fcfd69055c2122d12a9cfc4ce0",
+    "scale_block_state.csv": "2fac3349fd1e961146b57cbf37b366b7f9d26f4b6b49222ef694a6ff274e4245"
+  }
+}
