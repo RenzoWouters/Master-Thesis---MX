@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "synthetic_layout_fixture_only": true,
+  "no_training_executed": true,
+  "counts_epoch50_used_only_for_layout": {
+    "1": 0,
+    "2": 0,
+    "4": 0,
+    "8": 0,
+    "16": 5,
+    "32": 1191,
+    "64": 2745,
+    "128": 139,
+    "256": 0,
+    "512": 0
+  },
+  "rendered_figures": [
+    "factors",
+    "full_context",
+    "accuracy_zoom",
+    "endpoint",
+    "best",
+    "delta",
+    "choices",
+    "objectives",
+    "timing",
+    "costs"
+  ],
+  "factor_plot_visual_review": "PASS: all ten rows, zero counts, count and percentage labels visible in both checkpoint panels",
+  "choice_plot_visual_review": "PASS: all ten legend categories, inherited source scale remains dynamic note, event counts distinguished",
+  "notebook_cells": 24,
+  "nbformat_valid": true,
+  "all_code_cells_compile": true,
+  "code_outputs_empty": true,
+  "factor_count_sums": 4080,
+  "factor_percent_sums": 100,
+  "fp32_neighbour_boundary_and_ties_up_check": "PASS",
+  "warning": "Internal layout fixture reuses parent accuracy values for plotting only; not new measurements and not deliverable research results."
+}

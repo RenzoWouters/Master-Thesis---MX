@@ -1,0 +1,50 @@
+{
+  "schema": "mx-scale10-reference100-notebook-resumed-reader-v1",
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "no_training": true,
+  "helper_sha256": "a723e0c8ba72a924f0f7c026ccf83c2d3ac5178f0144153def043b2bc438f90d",
+  "reexported_resume100": {
+    "path": "/workspace/scratch/4619498905be/work/scale10_full100_validation/export_readback_v1",
+    "reference_complete": true,
+    "last_epoch": 100,
+    "metric_rows": 600,
+    "scale_block_rows": 412080,
+    "scale_epoch_rows": 600,
+    "analysis_errors": [],
+    "source_history_sha256": "b1c7cd157e09afc6a389f7988b69fa6012530683f877da166219b8b49de4be15",
+    "scope": "read-only verification of existing production re-export from verified checkpoint100 plus timing sidecar; original corrupt artifact is not repaired in place"
+  },
+  "original_truncated_history": {
+    "path": "/workspace/scratch/4619498905be/work/scale10_full100_validation/integration_v1/resume50_to100/20261104_191435_287243_joint_resume",
+    "source_history_sha256": "646db574f3a863bc9da466066024184733c565cd3dcaa1ee3706f58110dd8690",
+    "reference_complete": false,
+    "scale_diagnostics_safe": false,
+    "analysis_error_count": 804,
+    "first_errors": [
+      {
+        "Niveau": "FOUT",
+        "Melding": "history.json: Expecting ',' delimiter: line 293838 column 43 (char 8705454)"
+      },
+      {
+        "Niveau": "FOUT",
+        "Melding": "Schaaldiagnostiek: epoch0: θ-blokstaat ontbreekt in history.json."
+      },
+      {
+        "Niveau": "FOUT",
+        "Melding": "Schaaldiagnostiek: epoch1: θ-blokstaat ontbreekt in history.json."
+      },
+      {
+        "Niveau": "FOUT",
+        "Melding": "Schaaldiagnostiek: epoch2: θ-blokstaat ontbreekt in history.json."
+      },
+      {
+        "Niveau": "FOUT",
+        "Melding": "Schaaldiagnostiek: epoch3: θ-blokstaat ontbreekt in history.json."
+      }
+    ],
+    "handled_without_exception": true,
+    "input_unchanged": true
+  },
+  "elapsed_seconds": 24.753822141001365
+}

@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_SVHN_accuracy_or_GPU_timing_result": true,
+  "scope": "Read/revalidate existing numerical integration_v2 evidence; rerun only corrected main entry and early failure.",
+  "original_integration_terminated_after_numerical_checks": "Notebook exclusive-create duplicate in main export; corrected only write_notebook.",
+  "pre_fix_code_binding": {
+    "run_train.py": "3b8c6078e0300b48491ba3fc8636a5438d8f63119bd1c83ca143518249ded0f4",
+    "freeze_core.py": "dff71d4e85f22f0c5b08ffcf7307a7cc59d0b8db0b1ef00573dfaee742625260",
+    "runtime_bridge.py": "daa49e11cbe84d3e700efece8a868f080fbff5b28e5b5e044f563b144fdb91be",
+    "test_freeze.py": "d49e09812ad8d0cd16bd74c61073293947114dd458c8f614c628613ea92bc836"
+  },
+  "code_binding": {
+    "run_train.py": "b65cd7e8f6d235d3fcbe4496dff5e2496d77d17b8697f6a8f053813ca6c3b848",
+    "freeze_core.py": "dff71d4e85f22f0c5b08ffcf7307a7cc59d0b8db0b1ef00573dfaee742625260",
+    "runtime_bridge.py": "daa49e11cbe84d3e700efece8a868f080fbff5b28e5b5e044f563b144fdb91be",
+    "test_freeze.py": "d49e09812ad8d0cd16bd74c61073293947114dd458c8f614c628613ea92bc836"
+  },
+  "changed_AST_functions": [
+    "write_notebook"
+  ],
+  "all_other_runner_AST_and_core_files_identical": true,
+  "parent_checkpoint_sha256": "fdc08fb42940bc8fec075b869c3448cd9754d436539168b0ef80941b78d9f313",
+  "fixture_epochs_previously_executed": 55,
+  "new_synthetic_training_epochs_in_successful_main_entry": 1,
+  "new_synthetic_optimizer_updates_in_successful_main_entry": 2,
+  "reporting_tail_reuses_completed_main_entry": true,
+  "previously_executed_cases_revalidated": {
+    "frozen51_to55": {
+      "completed_epoch": 55,
+      "status": "PASS",
+      "history_sha256": "f2038910b8bf7d58c75b74e8e464a0f8b0c5de7ed0a0e1ba3822368a402686f5",
+      "original_run_report_sha256": "167fc9b0108d739e470ada8ef850eb511a85bc0947b4a4cce4f28ad7360812cd"
+    },
+    "stop_after52": {
+      "completed_epoch": 52,
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "history_sha256": "1863e3be16427289bd8c10f2f439de85927fb1cdd5916fa46febc38092bc68a8",
+      "original_run_report_sha256": "ece4c02ab10be0f17811d293c4e8ec8654b7a4b4615fe9bc74a9f790243afba7"
+    },
+    "resume52_to55": {
+      "completed_epoch": 55,
+      "status": "PASS",
+      "history_sha256": "c8ee57e7b92d83201f18644a98bfaea1c13982e168f6c8a48ab35c294038460a",
+      "original_run_report_sha256": "358abc24de4bb5dc2410dc53beb4f36d9e358e3f099b79b7a733e044e8aa3d7f"
+    },
+    "softstop51": {
+      "completed_epoch": 51,
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "history_sha256": "9a2f093300073b9ea108c28fd3cb30b3face24621278a503ba45273d296a007f",
+      "original_run_report_sha256": "35436ab83c1bcadbdf885946459622ca3733c5941889616e1259acea948951ee"
+    }
+  },
+  "main_cases": {
+    "main_partial51": {
+      "exit_code": 0,
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "unexecuted_notebook_in_feedback": true,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_freeze_validation/reporting_tail_v1/main_partial51/20261109_182820_689100_freeze_run"
+    },
+    "main_missing_parent": {
+      "exit_code": 1,
+      "status": "FAIL",
+      "unexecuted_notebook_in_feedback": true,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_freeze_validation/reporting_tail_v1/main_missing_parent/20261109_182914_574845_freeze_run"
+    }
+  },
+  "CLI_rejections": {
+    "run --stop-after-epoch 50": {
+      "exit_code": 2,
+      "message": "run_train.py: error: --stop-after-epoch moet 51 tot en met 55 zijn; standaard55."
+    },
+    "run --stop-after-epoch 56": {
+      "exit_code": 2,
+      "message": "run_train.py: error: --stop-after-epoch moet 51 tot en met 55 zijn; standaard55."
+    },
+    "run --device cpu": {
+      "exit_code": 2,
+      "message": "run_train.py: error: argument --device: invalid choice: 'cpu' (choose from cuda, cuda:0)"
+    },
+    "run --synthetic": {
+      "exit_code": 2,
+      "message": "run_train.py: error: unrecognized arguments: --synthetic"
+    },
+    "resume": {
+      "exit_code": 2,
+      "message": "run_train.py: error: Alleen resume vereist --checkpoint; run vertrekt altijd van het oudercheckpoint50."
+    }
+  },
+  "tests": {
+    "CPU_resume52_exact_model_optimizer_scheduler_RNG": true,
+    "theta_and_all10_choices_exact_frozen": true,
+    "ten_factor_counts_and_zero_jump_metrics": true,
+    "four_bit_independent_export_oracle_and_reconstruction": true,
+    "weights_and_BN_continue": true,
+    "partial_and_softstop_incomplete": true,
+    "history_export_readback_complete": true,
+    "idempotent_existing_notebook_allows_main_export": true,
+    "early_missing_parent_FAIL_keeps_blank_notebook": true,
+    "original_parent_unchanged": true
+  },
+  "test_file_sha256": "466ec6c82fee71eb0e80fb87df2df2923fbefaa4b3d5ff48fca722b6726b00e2",
+  "duration_seconds": 21.463794176999727
+}

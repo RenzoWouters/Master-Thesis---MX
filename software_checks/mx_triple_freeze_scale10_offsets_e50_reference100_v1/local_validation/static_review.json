@@ -1,0 +1,32 @@
+{
+  "scope": "Read-only static review of remaining export, early check/FAIL notebook, idempotency and history guard paths; defaults and documentation versus actual ten-choice pilot55. No numerical training validation.",
+  "blocking_code_findings": [],
+  "checked": [
+    "Compact exports reload the saved E4M3 source and derive lower modes from saved codes/scales/choices; decoded weights compare exactly to the live route on the training device.",
+    "All ten scale offsets 0..9 and factors 1..512 appear in exports. Global prefreeze selected checkpoint uses its original contract and own stored theta distribution.",
+    "Notebook is copied before package/evidence/checkpoint checks, and repeated copying requires exact expected JSON and helper bytes without overwrite.",
+    "Feedback includes notebook/helper and runner/runtime snapshot on early failures; selected training checkpoints remain local.",
+    "Full history is read back and compared before training PASS; notebook verifies history bytes, SHA, epoch count and exact_trace_match.",
+    "Check-only and empty failed outputs are handled without presenting epoch100 as measured.",
+    "README/defaults/PROTOCOL target actual frozen checkpoint55 and add only56..100; source freeze at50, A32/FP32, LR0 for theta, milestones50/75/90, 4080 groups, all ten choices retained.",
+    "Actual pilot metadata matches checkpoint SHA212cd65e11ceaef1d862ec77027a2deaea0b66aa6a3992e40ae029d2c2b659b9, PASS55, 31515 optimizer updates and counts5/1191/2745/139 for x16/x32/x64/x128."
+  ],
+  "minor_findings": [
+    "notebook_support.status_markdown says the history contains five inherited epochs even when run check or early FAIL has no history; recommend conditional wording. Diagnostics and plots already handle empty state.",
+    "PACKAGE_SHA256.json was absent during the read-only check; parent informed to pin the final assembly. No final-manifest integrity claim."
+  ],
+  "limitations": [
+    "No actual SVHN/CUDA training run.",
+    "No numerical integration PASS from this reviewer; parent owns fixture integration.",
+    "README local_validation claims require final artifacts and successful parent tests."
+  ],
+  "reviewed_files_sha256": {
+    "run_train.py": "b23930aad8beef47def46c45995d783b0ed17359275add043355fbb816d4d23a",
+    "continuation_core.py": "2f6a07e2db80b66e5ac3d1e1aeb53e7ec89cb5a0ac4c778aa0c12ea53c54a8a2",
+    "continuation_bridge.py": "bf4a8b5ee7bfabac4a37df70bc5d502eab092ffabe8291b14fb7b32abeee2bfd",
+    "PROTOCOL.json": "c25cd88f8d7bfbf43e0d7da859a09b6506f3e4cb64df1eabb27b129f70ec91f1",
+    "README.md": "440b240208872825db3ba102e5d9778b8ea77f394258e3dc2873871eb87d9755",
+    "notebook_support.py": "ed59a4f8b89d67eb1459e35744c36c6c25266355f4028beee093111e06c85309",
+    "MX_triple_freeze_scale10_offsets_e50_reference100_resultaten.ipynb": "473cf688a6bcb944ba900c476daffb238bc446dfbdaa0d0e4eed52e86bbbe9cd"
+  }
+}

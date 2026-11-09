@@ -1,0 +1,49 @@
+{
+  "policy": "first strict maximum E4M3 official-test top1 within51-100; additional global1-100 selection explicitly labelled by stage",
+  "last": {
+    "epoch": 100,
+    "file": "last_checkpoint.pt",
+    "sha256": "fe0d4fb5b3eed9748f97877e1cd3c575bf534ba5ebcdcd7b31f016cd75bc7c95",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_freeze_scale10_offsets_e50_reference100\\20261109_194830_177741_freeze100_run\\checkpoints\\epoch_00100.pt",
+    "source_stage": "frozen_continuation56_100",
+    "selection_score_E4M3": 94.89858635056584
+  },
+  "best_postfreeze": {
+    "epoch": 62,
+    "file": "best_postfreeze_checkpoint.pt",
+    "sha256": "c3be0eed372391f3cd9cbc234fab67861e7f27f70e0719ef493896d48bd0e2f7",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_freeze_scale10_offsets_e50_reference100\\20261109_194830_177741_freeze100_run\\checkpoints\\epoch_00062.pt",
+    "source_stage": "frozen_continuation56_100",
+    "selection_score_E4M3": 95.00614627681045
+  },
+  "best_global": {
+    "epoch": 62,
+    "file": "best_global_checkpoint.pt",
+    "sha256": "c3be0eed372391f3cd9cbc234fab67861e7f27f70e0719ef493896d48bd0e2f7",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_freeze_scale10_offsets_e50_reference100\\20261109_194830_177741_freeze100_run\\checkpoints\\epoch_00062.pt",
+    "source_stage": "frozen_continuation56_100",
+    "selection_score_E4M3": 95.00614627681045
+  },
+  "selection_epoch_range": [
+    51,
+    100
+  ],
+  "global_selection_epoch_range": [
+    1,
+    100
+  ],
+  "planned_selection_epoch_range": [
+    51,
+    100
+  ],
+  "planned_global_selection_epoch_range": [
+    1,
+    100
+  ],
+  "primary_endpoint": 100,
+  "selected_on_official_test": true,
+  "independent_test_estimate": false,
+  "selection_mode": "MXFP8_E4M3/A32",
+  "all_modes_from_same_selected_checkpoint": true,
+  "global_best_before_freeze": false
+}

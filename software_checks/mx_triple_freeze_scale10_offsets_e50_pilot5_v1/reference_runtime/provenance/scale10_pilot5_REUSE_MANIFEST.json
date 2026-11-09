@@ -1,0 +1,31 @@
+{
+  "schema": "mx-scale10-pilot5-reuse-v1",
+  "parent_package": "mx_triple_learned_scale32_64_pilot5_v1",
+  "parent_zip_sha256": "8950a35cc20e3a3bb5c3fea6c4659716bf821e604d8d4c6704679196b5154e83",
+  "binary_reference100_zip_sha256": "3ade94d0ac1b09afc69c1ff0aedcc2e0deb9c81d8d79c2605889aa40cd407bfb",
+  "parent_original_hashes_verified": 62,
+  "unchanged_python_files": {
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8"
+  },
+  "modified_python_files": {
+    "notebook_support.py": "efc36136d02f2845662b2811d01c37b40d981797bb2f9ce473c1bd6ce86a17c8",
+    "run_train.py": "0e20d66895326457d2e5b4a79267fff639e8862b16bd8815f0013ce92aba24d3",
+    "test_learned_scale.py": "e723365216e4dac59d6d8f4cb3325754a1a18fbd6409fb1b9f0f788d3cc16b31",
+    "trunc_adapter.py": "7b24418b4b4ea42e9ec7ea629cfa8da3b31619bd0f84eb656e73f7ffb9f330cb",
+    "trunc_support.py": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc"
+  },
+  "all_other_protocol_fields_equal": true,
+  "old_results_modified": false
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "synthetic CPU software validation only; not research outcomes",
+  "attempts": [
+    {
+      "name": "integration_v1",
+      "status": "LOCAL_TEST_HARNESS_ERROR",
+      "detail": "Numerical freeze/resume/export checks completed; one-element main-case tuple lacked a trailing comma. Test harness corrected; production code unchanged."
+    },
+    {
+      "name": "check_entry_v1",
+      "status": "LOCAL_ENVIRONMENT_PREREQUISITE_MISSING",
+      "detail": "CPU validation virtual environment lacked pip. ensurepip installed the bundled pip; no experiment code or user environment altered."
+    },
+    {
+      "name": "integration_v2",
+      "status": "PRODUCTION_REPORTING_BUG_FOUND",
+      "detail": "Prewritten notebook was written a second time at export using exclusive-create mode. Main run export failed with FileExistsError. Fix requested from runner owner before final verification.",
+      "resolution": "Only write_notebook changed: existing exact matching notebook/helper is accepted without rewriting; production main epoch51 export subsequently passed."
+    },
+    {
+      "name": "reporting_tail_v1_initial",
+      "status": "LOCAL_TEST_PATH_FIXTURE_ERROR",
+      "detail": "After successful production main51, missing-parent test path incorrectly made output a descendant of its source directory. Output guard correctly rejected. Fixture moved to sibling absent_source; successful main result reused without another training epoch."
+    }
+  ]
+}

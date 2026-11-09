@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "review_scope": "Runner, ten-choice metadata, CPU synthetic main run/resume/check and source-only export integration",
+  "actual_CUDA_tested": false,
+  "actual_SVHN_data_loaded": false,
+  "not_a_training_accuracy_or_GPU_timing_result": true,
+  "training_integration_report": "/workspace/scratch/4619498905be/work/scale10_validation/review/integration_run1/training_integration_report.json",
+  "check_entry_report": "/workspace/scratch/4619498905be/work/scale10_validation/review/check_entry_run1/check_entry_validation_report.json",
+  "synthetic_updates": 22,
+  "CPU_integration_seconds": 23.758757101999436,
+  "runtime_file_identity": {
+    "run_train.py": {
+      "sha256": "0e20d66895326457d2e5b4a79267fff639e8862b16bd8815f0013ce92aba24d3",
+      "matches_current_deliverable": true
+    },
+    "trunc_adapter.py": {
+      "sha256": "7b24418b4b4ea42e9ec7ea629cfa8da3b31619bd0f84eb656e73f7ffb9f330cb",
+      "matches_current_deliverable": true
+    },
+    "trunc_support.py": {
+      "sha256": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc",
+      "matches_current_deliverable": true
+    },
+    "svhn_support.py": {
+      "sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "matches_current_deliverable": true
+    },
+    "resume_core.py": {
+      "sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "matches_current_deliverable": true
+    },
+    "test_learned_scale.py": {
+      "sha256": "e723365216e4dac59d6d8f4cb3325754a1a18fbd6409fb1b9f0f788d3cc16b31",
+      "matches_current_deliverable": true
+    },
+    "mx_format.py": {
+      "sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "matches_current_deliverable": true
+    },
+    "mx_e4m3.py": {
+      "sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "matches_current_deliverable": true
+    },
+    "mx_e2m1.py": {
+      "sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "matches_current_deliverable": true
+    },
+    "joint_adapter.py": {
+      "sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "matches_current_deliverable": true
+    },
+    "joint_support.py": {
+      "sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "matches_current_deliverable": true
+    },
+    "smoke_support.py": {
+      "sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "matches_current_deliverable": true
+    },
+    "posthoc_truncation.py": {
+      "sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "matches_current_deliverable": true
+    }
+  },
+  "all_relevant_runtime_files_match_current_deliverable": true,
+  "new_blockers": [],
+  "earlier_findings_resolved": [
+    "write_scale_results generalized to ten exact choices",
+    "nibble export metadata and2040bytes",
+    "separate chosen edge versus clamped proxy diagnostics",
+    "old binary checkpoints rejected by contract",
+    "actual offset0 equality metadata",
+    "feedback notebook/helper inclusion also on early failure"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema": "mx-triple-learned-scale32-64-pilot5-protocol-v1",
+  "purpose": "five complete train-only epochs: learned binary per-block lower scale32/64; unchanged E4M3 source and exponent/mantissa bit truncation",
+  "mode": "joint",
+  "weight_format": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+  "weight_bits": [
+    4,
+    6,
+    8
+  ],
+  "weight_formats": {
+    "8": "MXFP8_E4M3",
+    "6": "MXFP6_E2M3",
+    "4": "MXFP4_E2M1"
+  },
+  "codec_revision": {
+    "8": "e4m3-exact-binary-v2",
+    "6": "unchanged-E2M3-decode",
+    "4": "unchanged-E2M1-decode"
+  },
+  "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+  "activation_bits": 32,
+  "activation_policy": "original A32/ReLU in ALL THREE modes",
+  "master_dtype": "float32",
+  "gradient_dtype": "float32",
+  "adam_moments_dtype": "float32",
+  "mx_block_size": 32,
+  "mx_scale_format": "E8M0",
+  "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+  "mx_scale_policy": "unchanged E4M3 source scale floor(log2(amax))-8; both lower codes equal source E8M0 code plus per-block hard offset5/6; promoted integer addition; overflow rejected without clipping/wrap, including zero blocks",
+  "mx_rounding": "E4M3 source nearest ties-to-even; finite FP32 source, scalar subnormal flush; lower modes exact bit mappings without additional rounding",
+  "ste_policy": "identity wrt G(W) all three modes; theta gradient ln(2)*sum_real_block(grad_q*q) from E2M3/E2M1; no normalization; no direct E4 theta gradient; source codes/scales detached; retain G(W) derivatives",
+  "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+  "truncation": true,
+  "mantissa_truncation": true,
+  "exponent_truncation": true,
+  "shared_scale_compensation": true,
+  "learned_shared_scale": true,
+  "scale_exponent_offset_choices": [
+    5,
+    6
+  ],
+  "scale_factor_choices": [
+    32,
+    64
+  ],
+  "scale_proxy_dtype": "float32",
+  "scale_proxy_init": 6.0,
+  "scale_proxy_bounds": [
+    5.0,
+    6.0
+  ],
+  "scale_threshold": 5.5,
+  "scale_tie_break": "offset6",
+  "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+  "scale_gradient_normalization": "none",
+  "scale_projection": "after_each_Adam_step",
+  "scale_granularity": "per_MX_block",
+  "source_scale_learned": false,
+  "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+  "source_weight_bits": 8,
+  "exponent_mapping": "s e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation",
+  "mantissa_mapping": "derived E2M3 uint8 codes >> 2; exact same per-block learned scale as E2M3",
+  "source_cache_policy": "detached integer source, hard choices and derived codes; theta version fixed within triplet; cached q saved for backward; cleared before Adam",
+  "direct_lower_quantization": false,
+  "exponent_bias_compensation": false,
+  "distillation": true,
+  "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+  "passes_per_training_batch": 3,
+  "optimizer_steps_per_training_batch": 1,
+  "training_mode_order": [
+    8,
+    6,
+    4
+  ],
+  "test_mode_order": [
+    4,
+    6,
+    8
+  ],
+  "internal_upstream_selectors": [
+    4,
+    6,
+    8
+  ],
+  "legacy_abits_and_wbits": 32,
+  "model_bank_structure": [
+    1,
+    2,
+    4,
+    8,
+    32
+  ],
+  "bn_bank_mapping": {
+    "8": "8",
+    "6": "32",
+    "4": "4"
+  },
+  "batchnorm_policy": "normal training updates of three mode banks E4M3=8,E2M3=32,E2M1=4; parameters and running stats learn per mode; eval frozen; keys are storage IDs, all A32; banks1/2 unused",
+  "extra_FP32_teacher_forward": false,
+  "dataset": "svhn",
+  "train_split": "train",
+  "test_split": "test",
+  "extra_used": false,
+  "train_examples": 73257,
+  "test_examples": 26032,
+  "validation_examples": 0,
+  "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+  "model": "svhnq",
+  "expand": 2,
+  "parameters": 137034,
+  "base_parameters": 132954,
+  "learned_scale_parameters": 4080,
+  "planned_epochs": 100,
+  "pilot_stop_epoch": 5,
+  "batch_size": 128,
+  "optimizer": "adam",
+  "lr": 0.001,
+  "scale_lr": 0.001,
+  "weight_decay": 0.0,
+  "optimizer_groups": [
+    "weights",
+    "scale_proxy"
+  ],
+  "scheduler_milestones": [
+    50,
+    75,
+    90
+  ],
+  "scheduler_gamma": 0.1,
+  "workers": 0,
+  "pin_memory": true,
+  "drop_last": false,
+  "train_shuffle": true,
+  "test_shuffle": false,
+  "seed": 20261009,
+  "evaluation_policy": "all three modes on complete official test after every epoch; hard CE for each",
+  "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+  "reporting_policy": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+  "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+  "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+  "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+  "export_policy": "one E4M3 source plus packed one-bit block choices and BN auxiliary state; derive lower exports only from saved source codes/scales/choices; no MX masters or FP32 theta in compact exports; resume retains theta and Adam",
+  "exact_historical_paper_reproduction_proven": false
+}

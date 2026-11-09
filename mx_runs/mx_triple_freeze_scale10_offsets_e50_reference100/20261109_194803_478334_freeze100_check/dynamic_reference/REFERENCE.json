@@ -1,0 +1,22 @@
+{
+  "schema": "mx-freeze-scale10-reference100-dynamic-reference-v1",
+  "source_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale10_reference100\\20261104_193228_406260_joint_run",
+  "source_contract_sha256": "a8827be03630210d9b4e4968809157f7aeea21ae1e1e488f767c4ba602b04ab3",
+  "source_history_sha256": "f644f5ce9426924c772e9e7d0208e4365e00065edc2fbcb17e89cf660f7b4be9",
+  "history_json_external_at_packaging": true,
+  "history_source_policy": "Read only original local ten-choice full100 history.json; require pinned bytes; copy verbatim into new results.",
+  "files_sha256": {
+    "checkpoint_selection.json": "fc2874e4fd42ee6700ac22b10df8aa80f9e3ff0c8e372ed302f881895ba609bf",
+    "dataset_manifest.json": "5563e05a2aac2a4f688ccb154f2cc17641d130574d9b16cad2966654629bccf0",
+    "epoch50_checkpoint.json": "943744cd29ba285f61e315c1137d0791770be1d38d02dde2abaaf72a712b907c",
+    "epoch_metrics.csv": "f07dd8f412e3a706136222810043e62527fc0c1596e6f757f909e0a78c9860d0",
+    "epoch_times.csv": "45d5285034f7f59b637e70be7c149cd78944fb1d67a9435a2c1576bfeac3caf1",
+    "parent_contract.json": "5e4875242117180237db62651045cbd8565ca3a13265add6c7fbdefd0b75483b",
+    "run_report.json": "8e36165b9ca9e6c891342adf495491a64eca17d138159385fc765bd689c20e52",
+    "scale_epoch_metrics.csv": "1a527b2de4fbf2f1e1ad3d446ce74a66e904bff81b8fc7a13b4af1fcdccd8ca0",
+    "selected_metrics.csv": "af5e9eb60dc328bb81341faa10befaacc3e5cb1375c3fce8f32d32cadfec2915",
+    "training_summary.json": "991d0d3ea51e578e416f8d782b8f3eb7bc7d96d4ab14889c3b35d9566ec40e9e",
+    "history.json": "f644f5ce9426924c772e9e7d0208e4365e00065edc2fbcb17e89cf660f7b4be9"
+  },
+  "synthetic_fixture_only": false
+}

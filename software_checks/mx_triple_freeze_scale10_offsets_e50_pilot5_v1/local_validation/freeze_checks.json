@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_data": true,
+  "source_report": "check_entry_validation_report.json",
+  "code_binding": {
+    "run_train.py": "b65cd7e8f6d235d3fcbe4496dff5e2496d77d17b8697f6a8f053813ca6c3b848",
+    "freeze_core.py": "dff71d4e85f22f0c5b08ffcf7307a7cc59d0b8db0b1ef00573dfaee742625260",
+    "runtime_bridge.py": "daa49e11cbe84d3e700efece8a868f080fbff5b28e5b5e044f563b144fdb91be",
+    "test_freeze.py": "d49e09812ad8d0cd16bd74c61073293947114dd458c8f614c628613ea92bc836"
+  },
+  "synthetic_checks_only": true,
+  "SVHN_training_performed": false,
+  "checks": {
+    "all_ten_offset_choices_present_in_freeze_fixture": true,
+    "freeze_consumes_no_rng": true,
+    "weight_lr_preserved_theta_lr_zero": true,
+    "absolute_scheduler_position50_preserved": true,
+    "all_three_optimizer_updates_guarded": true,
+    "all_theta_exact_at_bounds_and_threshold": true,
+    "weights_still_update": true,
+    "theta_moments_still_diagnostic_updates": true,
+    "absolute_adam_scheduler_steps53": true,
+    "zero_theta_lr_survives_scheduler_steps": true,
+    "E4_source_scale_remains_dynamic": true,
+    "both_lower_scales_follow_current_source_plus_fixed_offset": true,
+    "negative_theta_drift_stays_in_same_hard_bin": true,
+    "one_ulp_theta_drift_rejected_even_without_choice_change": true,
+    "nonzero_theta_lr_rejected": true
+  },
+  "intervention": {
+    "theta_lr_before": 0.0001,
+    "theta_lr_after": 0.0,
+    "weights_and_bn_unchanged_at_fork": true,
+    "adam_moments_unchanged_at_fork": true,
+    "weight_learning_rate_unchanged": true,
+    "scheduler_epoch_unchanged": true,
+    "theta_gradients_computed": true,
+    "theta_adam_moments_updated": true
+  }
+}

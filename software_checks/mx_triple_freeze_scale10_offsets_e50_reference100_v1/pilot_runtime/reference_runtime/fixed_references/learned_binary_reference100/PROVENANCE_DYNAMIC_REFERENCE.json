@@ -1,0 +1,21 @@
+{
+  "schema": "mx-freeze100-dynamic-reference-v1",
+  "source_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale32_64_reference100\\20261025_150724_515132_joint_run",
+  "source_contract_sha256": "fc9d8c652e8977052cd89ed10905c9e5a77155b34c14a4412b1d47b0b9a92cc6",
+  "source_history_sha256": "f82164837a70e9cea1e7a52932d7d2f193371de2f0bd7fda87618cbc29867c5a",
+  "history_json_external_at_packaging": true,
+  "history_source_policy": "read only original local run history.json; require pinned bytes; copy verbatim into new results",
+  "files_sha256": {
+    "checkpoint_selection.json": "298b8d6528ecd29a9aedcc56b7f62c6cf9386e3cbc96729234e802a51d0c73b6",
+    "dataset_manifest.json": "5563e05a2aac2a4f688ccb154f2cc17641d130574d9b16cad2966654629bccf0",
+    "epoch_metrics.csv": "21bc82c1506d153fbadba7b0fb7372eaa1da7af7bd1076cee55045307ae11bca",
+    "epoch_times.csv": "9668ba0d35c5443c166baf99c6147a5421cff62c5a87853b57f3d854dfaeb9c9",
+    "parent_contract.json": "f43c3ce5887c33165dabc186608da6a01af80562d3b229769b3d0c65ac6affa5",
+    "run_report.json": "b8aa053be06c0c58073666446fddac3993c35dc13398f9efe131c33e6720f438",
+    "scale_epoch_metrics.csv": "9d79770e4e23a736c4b7a5075730be6ba5920695cee1c5c2d1a1eb171f65479d",
+    "selected_metrics.csv": "f5a3130b2e006ef1bde55ae561856110ad5b3b689ba589147a597544e0cf5a5d",
+    "training_summary.json": "a7f17e07266668f6ccd03f74f31722db30c0bcc4d4b67894821684112322e7ed",
+    "history.json": "f82164837a70e9cea1e7a52932d7d2f193371de2f0bd7fda87618cbc29867c5a"
+  },
+  "synthetic_fixture_only": false
+}

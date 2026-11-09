@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "synthetic_CPU_only": true,
+  "training_integration": true,
+  "check_entry": true,
+  "notebook_runtime_and_layout": true,
+  "provenance": true,
+  "raw_research_data_modified": false,
+  "CUDA_training_started": false,
+  "model_training_code_unchanged_after_integration": true,
+  "final_notebook_helper_sha256": "67aa534228db8427cd66ed96180aa3c7031c5cf273ffbfa03229c0408284a9ec",
+  "notebook_sha256": "473cf688a6bcb944ba900c476daffb238bc446dfbdaa0d0e4eed52e86bbbe9cd"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "final delivery assembly; not an SVHN or CUDA result",
+  "parent_runtime_byte_identical": true,
+  "parent_runtime_source_package_files": 139,
+  "actual_parent_reference_files_pinned": 12,
+  "original_reference_runtime_manifest_files_verified": 73,
+  "all_root_Python_AST_valid": true,
+  "config_equals_PROTOCOL_json": true,
+  "package_manifest_verified": true,
+  "package_manifest_sha256": "a1a954e3725e69c90f52082ed6a0aa13187d408ce67dbdded9b35d2f753e530f",
+  "runner_sha256": "b65cd7e8f6d235d3fcbe4496dff5e2496d77d17b8697f6a8f053813ca6c3b848",
+  "notebook_helper_sha256": "e39099e03dc8454709e2f0bc7777a8622c7f74a99beb6fc88407e329de652a71",
+  "blank_notebook_sha256": "bcdac5d2a7601f6a2cb148467ca898fc5f6d2a658945a3bdb3ba34d28948d4bd",
+  "final_files_match_validation_report_bindings": true,
+  "all_delivered_notebooks_root_unexecuted": true,
+  "existing_research_results_and_notebooks_preserved": true,
+  "actual_parent_checkpoint_remains_user_local": true,
+  "actual_parent_checkpoint_SHA256": "0276dc622aaa3b763ef3929de8713e673b6734947d53f1f3f4c7316e0d228b61",
+  "all_ten_factor_choices_visible_in_notebook": true,
+  "new_epochs_only": [
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "control_retrained": false,
+  "SVHN_training_started_here": false
+}

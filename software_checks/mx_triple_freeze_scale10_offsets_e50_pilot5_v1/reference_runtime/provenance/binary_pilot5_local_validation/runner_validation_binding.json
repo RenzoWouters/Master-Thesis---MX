@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "not_research_training_or_accuracy": true,
+  "real_data_loaded_or_downloaded": false,
+  "CUDA_tested": false,
+  "scope": "Actual main training and check entry on synthetic CPU fixtures; final strict metadata validator change rechecked against all compact saved exports",
+  "runtime_files": {
+    "run_train.py": {
+      "actual_main_snapshot_sha256": "e5bd1a470bdb864638b9884d042624309c015dfe09d72addb00161f446ded69c",
+      "current_sha256": "e5bd1a470bdb864638b9884d042624309c015dfe09d72addb00161f446ded69c",
+      "identical": true
+    },
+    "trunc_support.py": {
+      "actual_main_snapshot_sha256": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+      "current_sha256": "55af000920d26b401921a7437986e93e8c9ccd59a0e0c95cc88ec7340a441be8",
+      "identical": true
+    },
+    "trunc_adapter.py": {
+      "actual_main_snapshot_sha256": "1f3a7fdd2a6957b058daecb4e525894e23443ce72dda42fe07e07e92283f0bb6",
+      "current_sha256": "16c1f5106ad6707938af7c76e4eb76ad13ca3e026f1bfdb8739d2e6bf99a8d9b",
+      "identical": false
+    },
+    "joint_support.py": {
+      "actual_main_snapshot_sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "current_sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "identical": true
+    },
+    "joint_adapter.py": {
+      "actual_main_snapshot_sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "current_sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "identical": true
+    },
+    "mx_adapter.py": {
+      "actual_main_snapshot_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "current_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "identical": true
+    },
+    "mx_format.py": {
+      "actual_main_snapshot_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "current_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "identical": true
+    },
+    "mx_e4m3.py": {
+      "actual_main_snapshot_sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "current_sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "identical": true
+    },
+    "mx_e2m1.py": {
+      "actual_main_snapshot_sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "current_sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "identical": true
+    },
+    "posthoc_truncation.py": {
+      "actual_main_snapshot_sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "current_sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "identical": true
+    },
+    "resume_core.py": {
+      "actual_main_snapshot_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "current_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "identical": true
+    },
+    "svhn_support.py": {
+      "actual_main_snapshot_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "current_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "identical": true
+    },
+    "smoke_support.py": {
+      "actual_main_snapshot_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "current_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "identical": true
+    }
+  },
+  "post_snapshot_change": "Only trunc_adapter export metadata validation became stricter: finite scalar provenance and exact Python types. Training forward/backward/caching/projection unchanged. Final source/derived reload plus three-mode source-only reconstruction rechecked with exact logits. Final focused core tests are independently reported by their owner.",
+  "validation_reports": {
+    "training_integration_report.json": "8915db0928a1f23e7179d28a414d49acaa0d06ecd1a8547e8318f6e3a772ad18",
+    "check_entry_validation_report.json": "602539650d706b73d208596f89b7bc555dfbc22340c38c1026b464a1fd9cfd5d",
+    "final_export_validation_report.json": "b31c83c90110e7f0c8096af466bb81c6e73cde5ebd1fa5cdb20f79de8732cbff"
+  },
+  "notebook_validation": "Final notebook/helper validated separately by notebook owner; copied snapshot notebook was unexecuted and correctly repointed in actual runner result and feedback."
+}

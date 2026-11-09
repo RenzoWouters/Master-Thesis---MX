@@ -1,0 +1,77 @@
+{
+  "schema": "mx-scale10-reference100-notebook-validation-v1",
+  "synthetic_fixture_only": true,
+  "no_SVHN_training": true,
+  "no_dataset_or_checkpoint_loaded": true,
+  "helper_sha256": "a723e0c8ba72a924f0f7c026ccf83c2d3ac5178f0144153def043b2bc438f90d",
+  "notebook_sha256": "f09ec5b1715736e16cd8b4cfa3c87dcf59b33b7f5ea37b68d51a72130bddff32",
+  "checks": {
+    "three_real100_references_and_separate_real5_pilot_pinned": true,
+    "synthetic_results_do_not_enter_research_comparisons": true,
+    "full100_curves_four_series_and_common_best_checkpoint": true,
+    "partial_prefix_filters_reference_curves_and_best_selection": true,
+    "wrong_LR_at_epoch51_rejected": true,
+    "best_checkpoint_selection_mismatch_rejected": true,
+    "theta_outside_range_rejected": true,
+    "completion_flags_cannot_invent_missing_epochs": true,
+    "changed_reference_bytes_blocked": true,
+    "raw_run_and_reference_inputs_unchanged": true,
+    "no_torch_model_checkpoint_import": true,
+    "blank_delivered_notebook": true,
+    "all_delivered_cells_execute_in_each_scenario": true
+  },
+  "scenarios": {
+    "full100": {
+      "code_cells_executed": 17,
+      "figures": 14,
+      "last_epoch": 100,
+      "reference_complete": true,
+      "error_messages": [],
+      "synthetic": true
+    },
+    "partial": {
+      "code_cells_executed": 17,
+      "figures": 14,
+      "last_epoch": 1,
+      "reference_complete": false,
+      "error_messages": [],
+      "synthetic": true
+    },
+    "early_fail": {
+      "code_cells_executed": 17,
+      "figures": 14,
+      "last_epoch": null,
+      "reference_complete": false,
+      "error_messages": [
+        {
+          "Niveau": "RUNFOUT",
+          "Melding": "RuntimeError('Hervatprotocol/omgeving/bron verschilt: /config:keys')"
+        }
+      ],
+      "synthetic": true
+    },
+    "empty_template": {
+      "code_cells_executed": 17,
+      "figures": 14,
+      "last_epoch": null,
+      "reference_complete": false,
+      "error_messages": [],
+      "synthetic": false
+    }
+  },
+  "elapsed_seconds": 26.381537776000187,
+  "status": "PASS",
+  "visual_review": {
+    "status": "PASS",
+    "reviewed_by": "notebook agent using view_image",
+    "scope": "four-series full curves, epoch100/common-best comparison, all ten factor proportions in all six layers",
+    "figures_are_synthetic_software_QA_only": true,
+    "figures": [
+      "comparison_curves_SYNTHETIC.png",
+      "comparison_checkpoints_SYNTHETIC.png",
+      "scale_choices_SYNTHETIC.png"
+    ],
+    "overlap_or_clipping_observed": false
+  },
+  "resumed_fixture_status": "Production re-export from verified checkpoint100 and immutable timing sidecar read successfully; separate notebook_resumed_reader_report.json. Original truncated export remains marked corrupt."
+}

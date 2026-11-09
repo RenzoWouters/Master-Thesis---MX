@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "scope": "read-only notebook integration; explicit software fixtures only",
+  "no_training_started": true,
+  "outputs_in_deliverable_notebook_empty": true,
+  "all_ten_factors_including_zero_visible": true,
+  "actual_parent_epoch50_counts_verified": true,
+  "fixtures": [
+    {
+      "fixture": "frozen51_to55",
+      "status": "PASS",
+      "complete": true,
+      "epochs": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "code_cells_executed": 13,
+      "input_files_unchanged": true,
+      "issues": [
+        {
+          "Niveau": "SYNTHETISCH",
+          "Melding": "Softwarefixture: getallen zijn geen SVHN-onderzoeksresultaten."
+        },
+        {
+          "Niveau": "INTERPRETATIE",
+          "Melding": "De dynamische variant is de bestaande training. Er is geen nieuwe dynamische controlerun. CUDA is niet bitexact reproduceerbaar; één voortzetting bepaalt geen run-tot-runspreiding."
+        }
+      ]
+    },
+    {
+      "fixture": "stop_after52",
+      "status": "PASS",
+      "complete": false,
+      "epochs": [
+        51,
+        52
+      ],
+      "code_cells_executed": 13,
+      "input_files_unchanged": true,
+      "issues": [
+        {
+          "Niveau": "SYNTHETISCH",
+          "Melding": "Softwarefixture: getallen zijn geen SVHN-onderzoeksresultaten."
+        },
+        {
+          "Niveau": "VOORLOPIG",
+          "Melding": "Alleen nieuwe epochs [51, 52] aanwezig; epoch 55 is nog geen eindresultaat."
+        },
+        {
+          "Niveau": "INTERPRETATIE",
+          "Melding": "De dynamische variant is de bestaande training. Er is geen nieuwe dynamische controlerun. CUDA is niet bitexact reproduceerbaar; één voortzetting bepaalt geen run-tot-runspreiding."
+        }
+      ]
+    },
+    {
+      "fixture": "resume52_to55",
+      "status": "PASS",
+      "complete": true,
+      "epochs": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "code_cells_executed": 13,
+      "input_files_unchanged": true,
+      "issues": [
+        {
+          "Niveau": "SYNTHETISCH",
+          "Melding": "Softwarefixture: getallen zijn geen SVHN-onderzoeksresultaten."
+        },
+        {
+          "Niveau": "INTERPRETATIE",
+          "Melding": "De dynamische variant is de bestaande training. Er is geen nieuwe dynamische controlerun. CUDA is niet bitexact reproduceerbaar; één voortzetting bepaalt geen run-tot-runspreiding."
+        }
+      ]
+    },
+    {
+      "fixture": "softstop51",
+      "status": "PASS",
+      "complete": false,
+      "epochs": [
+        51
+      ],
+      "code_cells_executed": 13,
+      "input_files_unchanged": true,
+      "issues": [
+        {
+          "Niveau": "SYNTHETISCH",
+          "Melding": "Softwarefixture: getallen zijn geen SVHN-onderzoeksresultaten."
+        },
+        {
+          "Niveau": "VOORLOPIG",
+          "Melding": "Alleen nieuwe epochs [51] aanwezig; epoch 55 is nog geen eindresultaat."
+        },
+        {
+          "Niveau": "INTERPRETATIE",
+          "Melding": "De dynamische variant is de bestaande training. Er is geen nieuwe dynamische controlerun. CUDA is niet bitexact reproduceerbaar; één voortzetting bepaalt geen run-tot-runspreiding."
+        }
+      ]
+    },
+    {
+      "fixture": "early_failure",
+      "status": "PASS",
+      "no_results_presented": true,
+      "code_cells_executed": 13,
+      "input_files_unchanged": true,
+      "issues": [
+        {
+          "Niveau": "RUNFOUT",
+          "Melding": "Rapportstatus: FAIL. Eventueel getoonde afgeronde epochs maken deze run geen PASS."
+        },
+        {
+          "Niveau": "INFO",
+          "Melding": "Er zijn nog geen volledig geëxporteerde trainingsepochs beschikbaar."
+        }
+      ]
+    },
+    {
+      "fixture": "check_only",
+      "status": "PASS",
+      "no_results_presented": true,
+      "code_cells_executed": 13,
+      "input_files_unchanged": true,
+      "issues": [
+        {
+          "Niveau": "INFO",
+          "Melding": "Technische controle; er zijn geen nieuwe trainingsepochs uitgevoerd."
+        }
+      ]
+    },
+    {
+      "fixture": "corrupt_factor",
+      "status": "PASS",
+      "corrupt_data_rejected": true
+    }
+  ],
+  "helper_sha256": "e39099e03dc8454709e2f0bc7777a8622c7f74a99beb6fc88407e329de652a71",
+  "notebook_sha256": "bcdac5d2a7601f6a2cb148467ca898fc5f6d2a658945a3bdb3ba34d28948d4bd"
+}

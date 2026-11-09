@@ -1,0 +1,35 @@
+{
+  "schema": "mx-scale10-pilot5-final-validation-v1",
+  "status": "PASS",
+  "CPU_only": true,
+  "CUDA_tested_here": false,
+  "real_SVHN_training_executed_here": false,
+  "numerical_core_checks": 21,
+  "real_runner_synthetic_integration_passed": true,
+  "CPU_resume_model_Adam_scheduler_rng_exact": true,
+  "notebook_code_cells_executed_on_fixtures": 16,
+  "notebook_figures_rendered_on_fixtures": 14,
+  "delivered_notebook_outputs_empty": true,
+  "reports": {
+    "core_check_report.json": {
+      "status": "PASS",
+      "sha256": "69912eb2063ad2816e70bf440f3af3cfb34a33e2ab964065a28cc4aa7677a5ae"
+    },
+    "training_integration_report.json": {
+      "status": "PASS",
+      "sha256": "380029c85a3e05bdd4db4670c18834704b4fccdfd15a2798fc954c7979d695c6"
+    },
+    "check_entry_validation_report.json": {
+      "status": "PASS",
+      "sha256": "3578fc6cc01601650eeecc7630bdcff59c6168c2e0f8cfc06a01785740e8225e"
+    },
+    "notebook_validation_report.json": {
+      "status": "PASS",
+      "sha256": "1a8540983cf6fb6cc0e27e30dd2eefbee70a3c85349f86064aca4d575e878254"
+    },
+    "notebook_integration_report.json": {
+      "status": "PASS",
+      "sha256": "ffdb9f426b5ae386fe7a52ac2bf167c480a2edee4e4b96a6feeb0d8eac5e6f4b"
+    }
+  }
+}

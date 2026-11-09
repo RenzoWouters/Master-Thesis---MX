@@ -1,0 +1,61 @@
+{
+  "synthetic_fixture_only": true,
+  "training_performed": false,
+  "source_checkpoint_sha256": "7a0810374d9a76537c141a97c6516da9569cc2ee00c2d55c518b0ca528c974ee",
+  "original_corrupt_history_sha256": "646db574f3a863bc9da466066024184733c565cd3dcaa1ee3706f58110dd8690",
+  "corrupt_bytes": 8705454,
+  "reconstructed_bytes": 17050619,
+  "corrupt_is_exact_prefix": true,
+  "corrupt_is_exact_first_half": false,
+  "reconstructed_sha256": "b1c7cd157e09afc6a389f7988b69fa6012530683f877da166219b8b49de4be15",
+  "original_corrupt_history_preserved": true,
+  "restored_final_timing_from_immutable_sidecar": true,
+  "export_only_completed": true,
+  "export_history_bytes": 17050619,
+  "export_history_sha256": "b1c7cd157e09afc6a389f7988b69fa6012530683f877da166219b8b49de4be15",
+  "export_history_equals_reconstructed": true,
+  "feedback_history_equals_reconstructed": true,
+  "export_json_events": [
+    {
+      "filename": "checkpoint_selection.json",
+      "seconds": 0.00019794799845840316,
+      "bytes": 1001
+    },
+    {
+      "filename": "history.json",
+      "seconds": 0.44093638000049395,
+      "bytes": 17050619,
+      "sha256": "b1c7cd157e09afc6a389f7988b69fa6012530683f877da166219b8b49de4be15",
+      "equals_expected": true,
+      "epochs": 100
+    },
+    {
+      "filename": "scale_learning_summary.json",
+      "seconds": 0.00042492700049479026,
+      "bytes": 2897
+    },
+    {
+      "filename": "epoch50_checkpoint.json",
+      "seconds": 0.0002013020002777921,
+      "bytes": 736
+    },
+    {
+      "filename": "training_summary.json",
+      "seconds": 0.00032933399961621035,
+      "bytes": 6525
+    },
+    {
+      "filename": "timing_estimate.json",
+      "seconds": 0.0002244970000901958,
+      "bytes": 4733
+    },
+    {
+      "filename": "MX_triple_learned_scale10_reference100_resultaten.ipynb",
+      "seconds": 0.00037967899879731704,
+      "bytes": 23561
+    }
+  ],
+  "original_corrupt_history_unchanged": true,
+  "checkpoint_unchanged": true,
+  "status": "PASS"
+}

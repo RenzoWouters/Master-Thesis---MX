@@ -1,0 +1,102 @@
+{
+  "schema": "mx-triple-learned-scale32-64-pilot5-completion-v1",
+  "planned_epochs": 100,
+  "pilot_stop_epoch": 5,
+  "completed_epochs": 5,
+  "pilot_completed": true,
+  "full_training_completed": false,
+  "full_100_epoch_training_completed": false,
+  "optimizer_steps": 2865,
+  "expected_optimizer_steps_at_pilot_completion": 2865,
+  "expected_training_forward_passes_at_pilot_completion": 8595,
+  "best_epoch_E4M3_A32": 4,
+  "last_epoch": 5,
+  "lr_schedule_verified": true,
+  "all_epoch_modes_complete": true,
+  "resumed": false,
+  "new_initialization_not_previous_experiment_warmstart": true,
+  "training_forward_passes": 8595,
+  "train_examples": 73257,
+  "test_examples": 26032,
+  "mode": "joint",
+  "weight_formats": {
+    "8": "MXFP8_E4M3",
+    "6": "MXFP6_E2M3",
+    "4": "MXFP4_E2M1"
+  },
+  "activation_bits": 32,
+  "distillation": true,
+  "truncation": true,
+  "source_weight_bits": 8,
+  "exponent_truncation": true,
+  "mantissa_truncation": true,
+  "shared_scale_compensation": true,
+  "learned_shared_scale": true,
+  "scale_exponent_offset_choices": [
+    5,
+    6
+  ],
+  "scale_factor_choices": [
+    32,
+    64
+  ],
+  "scale_proxy_init": 6.0,
+  "scale_proxy_bounds": [
+    5.0,
+    6.0
+  ],
+  "learned_scale_parameters": 4080,
+  "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+  "scale_gradient_normalization": "none",
+  "scale_projection_after_every_update": true,
+  "scale_lr": 0.001,
+  "scale_learning_summary": {
+    "schema": "mx-triple-learned-scale32-64-pilot5-scale-learning-v1",
+    "learned_scale_parameters": 4080,
+    "initial_theta": 6.0,
+    "threshold": 5.5,
+    "tie_offset": 6,
+    "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+    "gradient_normalization": "none",
+    "scale_lr": 0.001,
+    "projection_after_every_Adam_update": true,
+    "completed_optimizer_updates": 2865,
+    "theta_changed_in_any_epoch": true,
+    "nonzero_scale_gradient_observed": true,
+    "total_choice_flips_including_repeat_flips": 242,
+    "total_projected_values_including_repeats": 724849,
+    "hard_switch_required_for_technical_PASS": false,
+    "zero_finite_scale_gradients_are_valid_diagnostics": true,
+    "packed_scale_choice_bytes": 510,
+    "analytical_FP32_theta_gradient_Adam_bytes": 65280,
+    "analytical_bytes_exclude_framework_and_temporaries": true,
+    "selected": {
+      "best_E4M3_test": {
+        "epoch": 4,
+        "blocks": 4080,
+        "count_x32": 17,
+        "count_x64": 4063
+      },
+      "last_epoch": {
+        "epoch": 5,
+        "blocks": 4080,
+        "count_x32": 42,
+        "count_x64": 4038
+      }
+    },
+    "synthetic_fixture_only": false
+  },
+  "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+  "initial_model_sha256": "962aee1030c3263ce2250accc6a78afcf495574f2d35f4bdaf2556b51828ad32",
+  "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "measured_completed_epoch_seconds": 325.9808932997985,
+  "gradient_checks_before_every_update": true,
+  "fp32_masters_and_moments_verified": true,
+  "one_E4_source_per_layer_per_minibatch_verified": true,
+  "all_lower_scale_bytes_equal_current_E4_source": false,
+  "all_lower_scale_codes_equal_current_E4_source_plus_learned_choice": true,
+  "all_mantissa_scale_bytes_equal_E2M3": true,
+  "source_cache_cleared_before_every_optimizer_update": true,
+  "batchnorm_learned_during_training_eval_frozen": true,
+  "synthetic_fixture_only": false
+}

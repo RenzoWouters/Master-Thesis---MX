@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "actual_pilot_feedback_sha256": "c68e20f54a5815ea5f9c14d3c4633d061467eec75c118e5c22e6cae5347a71de",
+  "inherited_pilot_files_byte_identical": 151,
+  "local_reference_files_verified": true,
+  "pilot_feedback_raw_reports_byte_identical": true,
+  "actual_checkpoint55_present_here": false,
+  "actual_checkpoint55_verified_on_user_check_before_training": true,
+  "checkpoint55_expected_sha256": "212cd65e11ceaef1d862ec77027a2deaea0b66aa6a3992e40ae029d2c2b659b9"
+}
