@@ -1,0 +1,47 @@
+{
+  "schema": "independent-e2-reference100-final-validation-v1",
+  "status": "PASS",
+  "actual_new100_SVHN_training_started": false,
+  "actual_independent_pilot_status": "PASS",
+  "actual_independent_pilot_feedback_sha256": "01dd87d6ef0cd882c02d51e20990466d8dc5328743de5b40f55e875726506d06",
+  "raw_research_data_modified": false,
+  "draft_files_verified_unchanged_through_tests": 79,
+  "numerical_modules_byte_identical_to_actual_pilot": 16,
+  "production_config_matches_tested_config": true,
+  "runner_integration_status": "PASS",
+  "runner_scope": "actual check entry plus100epoch main/loop/export/resume on three CPU synthetic images",
+  "continuous100_equals_stop50_resume100_exact_CPU": true,
+  "scale_optimization_enabled_through100": true,
+  "notebook_validation_passed": true,
+  "delivered_notebook_cells": 35,
+  "delivered_notebook_executed": false,
+  "all10_notebook_figures_rendered": true,
+  "visual_review": [
+    "full_accuracy_curves",
+    "last10_accuracy_zoom",
+    "absolute_and_observed_relative_scale_evolution"
+  ],
+  "historical_reference_marker_sha256": {
+    "fixed_scale64_reference": "a323762894db83b15af10e79a8aff0128c50f7946805a04517e17a9f627377db",
+    "relative_scale10_reference": "e2df45acecccb8e56115b4d01f90b11a5f43bb4c9bfa0291a4000401046f866e",
+    "relative_scale10_full100_reference": "1198b78a9ce247fb0ae5c712f0ae63a7975a555e95dffc95bfa772ce531b0f4e",
+    "independent_pilot_reference": "a0d1ea4e5b3fce20ead37b9ed476a050360f966b4055a77cc2d391188e513a5a"
+  },
+  "report_sha256": {
+    "runner_integration_report.json": "6b267ff0dade9697c11baf6fe1876b326d9154be6ddfd3e0357f624d546847f2",
+    "check_entry_report.json": "032ab0acd5a436b0d803d8db5ac0bbea49f25341763a15f2b15f00570d1b5fc4",
+    "notebook_validation_report.json": "cc2d51d3003cbef5ad0288f1b5e0d9009703ab51680770df715db845ae7d5908",
+    "notebook_pending_validation_report.json": "ca850436359d06e65ab4ebd8b12c3ace2980e7bdc5a04c51d8d7890d928be9ae",
+    "partial_reader_validation.json": "47222c79e1eaed185dacc7e569deedb23d6e3f1be1cf48978528aaf8d658cbd8",
+    "actual_pilot_audit.json": "c3c82e5fb0165bff47128a716fbc9e908610ef918832ce69dd32afde6a8ba261",
+    "actual_pilot_metrics.json": "d38103e42dd4d24a429749f1a37a8cc7f55b4a6dde6070ac8d0d9b186a10e7ec",
+    "actual_pilot_scales.json": "bfd15a13f2816439a5178361fae427f360451af7d6405d78dbf2020f0c5bc961"
+  },
+  "limits": [
+    "CPU synthetic fixture only; no new100epoch SVHN or CUDA run",
+    "CPU test-only oracle and dependency inventory; production guards unchanged",
+    "bitexact CUDA resume not guaranteed",
+    "synthetic values are not research accuracy or GPU timing"
+  ],
+  "documentation": "VALIDATION.md"
+}

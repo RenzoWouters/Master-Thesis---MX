@@ -1,0 +1,107 @@
+{
+  "schema": "independent-e2-scale-reuse-v1",
+  "source": "Actual runner_source from user feedback_bundle(20261111-150756).zip",
+  "source_feedback_sha256": "593215bbb631a50bc2785359a9552e46fa5d3a8f4c0846fe3dc34cbfaaa98d1b",
+  "source_runner_sha256": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293",
+  "unchanged_files": [
+    {
+      "file": "joint_adapter.py",
+      "sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+      "source_sha256": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed"
+    },
+    {
+      "file": "joint_support.py",
+      "sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+      "source_sha256": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89"
+    },
+    {
+      "file": "mx_adapter.py",
+      "sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "source_sha256": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617"
+    },
+    {
+      "file": "mx_e2m1.py",
+      "sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "source_sha256": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b"
+    },
+    {
+      "file": "mx_e4m3.py",
+      "sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "source_sha256": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a"
+    },
+    {
+      "file": "mx_format.py",
+      "sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "source_sha256": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c"
+    },
+    {
+      "file": "posthoc_truncation.py",
+      "sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+      "source_sha256": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313"
+    },
+    {
+      "file": "resume_core.py",
+      "sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "source_sha256": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9"
+    },
+    {
+      "file": "smoke_support.py",
+      "sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "source_sha256": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8"
+    },
+    {
+      "file": "svhn_support.py",
+      "sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "source_sha256": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395"
+    },
+    {
+      "file": "test_e4m3.py",
+      "sha256": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+      "source_sha256": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2"
+    },
+    {
+      "file": "test_joint.py",
+      "sha256": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+      "source_sha256": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4"
+    },
+    {
+      "file": "test_mx.py",
+      "sha256": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+      "source_sha256": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8"
+    },
+    {
+      "file": "upstream/Any-Precision-DNNs-master.zip",
+      "sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+      "source_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+    }
+  ],
+  "modified_files": [
+    {
+      "file": "notebook_support.py",
+      "sha256": "c2c323f11ae01d4b8bec65152a3b6a2571759f3dabfc3861186799a9f526d9d7",
+      "source_sha256": "8c88732c8176bd961f987e899e8aafb8ce1478ff3743c38633e6acc6412affaa"
+    },
+    {
+      "file": "run_train.py",
+      "sha256": "15830ee2f72fa6170475c2fd81d48163fdafc7f9c84e56f26d7cf610221adf88",
+      "source_sha256": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293"
+    },
+    {
+      "file": "test_learned_scale.py",
+      "sha256": "24951a8f56748bdc1eb4e787491cac767a5c8b0d0486ba5e7fc7395b464cac40",
+      "source_sha256": "2005a6b38250384851d3425b5793f5c99eb59fde43c71d5ef8f2e3840117a88d"
+    },
+    {
+      "file": "trunc_adapter.py",
+      "sha256": "513a226e9bf74cefc5d72b0d45172297e191cc715ac7d47473c01cf6308c2e32",
+      "source_sha256": "93ab499629cc443a0e750ca3cda91398acf1775ade5b844c3c29927540d8066c"
+    },
+    {
+      "file": "trunc_support.py",
+      "sha256": "68bd49fc8e1ce888d8f0f502baa8de340d59b9ce882cbc2501bf3e08578b2827",
+      "source_sha256": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc"
+    }
+  ],
+  "upstream_archive_unchanged": true,
+  "raw_research_data_modified": false
+}

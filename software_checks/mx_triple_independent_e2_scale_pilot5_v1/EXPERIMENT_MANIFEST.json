@@ -1,0 +1,17 @@
+{
+  "schema": "independent-e2-pilot5-experiment-v1",
+  "name": "mx_triple_independent_e2_scale_pilot5_v1",
+  "research_status": "planned pilot; no training results for this variant yet",
+  "dataset": "SVHN train/test",
+  "architecture": "CNN-8 svhnq expand2",
+  "new_parameters": 4080,
+  "real_mx_weights": 129472,
+  "padded_mx_slots": 130560,
+  "historical_reference_directories": [
+    "relative_scale10_reference",
+    "fixed_scale64_reference"
+  ],
+  "raw_reference_files_preserved": true,
+  "train_locally_only_after_check_PASS": true,
+  "full_training_authorized_in_this_package": false
+}

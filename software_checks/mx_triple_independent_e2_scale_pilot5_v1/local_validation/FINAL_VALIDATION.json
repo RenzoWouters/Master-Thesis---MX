@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "CPU numerical and runner integration, unexecuted notebook validation, packaging integrity",
+  "actual_SVHN_training_executed": false,
+  "CUDA_tested_here": false,
+  "CPU_pip_check_exercised": false,
+  "production_dependency_and_initialization_guards_unchanged": true,
+  "tested_runtime_code_unchanged_after_integration": true,
+  "runtime_files_sha256": {
+    "run_train.py": "15830ee2f72fa6170475c2fd81d48163fdafc7f9c84e56f26d7cf610221adf88",
+    "trunc_adapter.py": "513a226e9bf74cefc5d72b0d45172297e191cc715ac7d47473c01cf6308c2e32",
+    "trunc_support.py": "68bd49fc8e1ce888d8f0f502baa8de340d59b9ce882cbc2501bf3e08578b2827",
+    "test_learned_scale.py": "24951a8f56748bdc1eb4e787491cac767a5c8b0d0486ba5e7fc7395b464cac40",
+    "notebook_support.py": "c2c323f11ae01d4b8bec65152a3b6a2571759f3dabfc3861186799a9f526d9d7",
+    "MX_triple_independent_e2_scale_pilot5_resultaten.ipynb": "e214df7b61fcb545a617d1b0de1fc00336d4e5d671c3a6ce4e424dc7858ec393"
+  },
+  "references_unchanged": {
+    "relative_scale10_reference": {
+      "marker_sha256": "e2df45acecccb8e56115b4d01f90b11a5f43bb4c9bfa0291a4000401046f866e",
+      "verified_files": 11
+    },
+    "fixed_scale64_reference": {
+      "marker_sha256": "a323762894db83b15af10e79a8aff0128c50f7946805a04517e17a9f627377db",
+      "verified_files": 6
+    }
+  },
+  "notebook_unexecuted": true,
+  "raw_data_modified": false,
+  "synthetic_outputs_delivered_as_research_results": false,
+  "figures_visually_reviewed": [
+    "accuracy curves",
+    "absolute and relative scale distributions",
+    "analytical storage costs"
+  ],
+  "known_validation_environment_limits": "See VALIDATION.md and check_entry_report.json; CPU author initialization oracle and dependency inventory are test-only adaptations."
+}

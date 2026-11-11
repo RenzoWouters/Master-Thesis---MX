@@ -1,0 +1,4 @@
+id,label,group_size,representation,code_bytes,scale_bytes,choice_bytes,retained_state_bytes,total_bytes,auxiliary_copies,implementation,accuracy_method_id,delta_vs_naive_bytes
+triple_scale64_source,Fixed scale ×64,32,One MXFP8 source; lower formats derived using the trained truncation route,130560,4080,0,19248,153888,1,existing_truncatable_source_export,fixed_scale64,0
+triple_group16_source,Group size 16 — scale ×64,16,One MXFP8 source; lower formats derived using the trained truncation route,129536,8096,0,19248,156880,1,existing_truncatable_source_export,group16,2992
+triple_group64_source,Group size 64 — scale ×64,64,One MXFP8 source; lower formats derived using the trained truncation route,138240,2160,0,19248,159648,1,existing_truncatable_source_export,group64,5760

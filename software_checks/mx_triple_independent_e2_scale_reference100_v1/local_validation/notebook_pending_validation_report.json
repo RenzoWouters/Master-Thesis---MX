@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "deliverable_notebook_unexecuted",
+    "all_notebook_code_cells_compile",
+    "pending_not_fabricated_as_results",
+    "all_three_historical_references_verified",
+    "actual_pilot_evidence_kept_separate_from_new_run",
+    "all_pending_figures_render"
+  ],
+  "synthetic_fixture_only": true,
+  "actual_SVHN_training_executed": false,
+  "saved_figures_are_synthetic_validation_outputs_not_research_results": true
+}

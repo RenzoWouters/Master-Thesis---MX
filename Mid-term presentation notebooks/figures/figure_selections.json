@@ -1,0 +1,40 @@
+{
+  "revision": {
+    "description": "Shared-scale figures preserved; group-size figures show only 32/16/64 at x64",
+    "source_notebook": "MX_Truncation_Research_SVHN_CNN8_Midterm.ipynb",
+    "data_policy": "Original embedded DATA copied without changing measurements or accounting",
+    "reference_policy": "Shared scale: original reference rows. Group size: only group 32 as reference.",
+    "group32_control_method_id": "fixed_scale64"
+  },
+  "selections": {
+    "shared_scale_accuracy": [
+      "dedicated",
+      "joint_direct",
+      "post_training_truncation",
+      "joint_truncation",
+      "fixed_scale32",
+      "fixed_scale64",
+      "learned100",
+      "freeze50"
+    ],
+    "shared_scale_storage": [
+      "dedicated",
+      "post_training_truncation",
+      "joint_truncation",
+      "fixed_scale32",
+      "fixed_scale64",
+      "learned100",
+      "freeze50"
+    ],
+    "group_size_accuracy": [
+      "fixed_scale64",
+      "group16",
+      "group64"
+    ],
+    "group_size_storage": [
+      "fixed_scale64",
+      "group16",
+      "group64"
+    ]
+  }
+}

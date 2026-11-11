@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": [
+    "deliverable_notebook_unexecuted",
+    "all_notebook_code_cells_compile",
+    "pending_not_turned_into_zeros_or_results",
+    "pinned_historical_references_verified",
+    "all_pending_figures_render",
+    "synthetic_run_evidence_consistent",
+    "synthetic_results_never_mixed_with_research_baselines",
+    "pilot5_last_and_best_checkpoint_available",
+    "all_notebook_tables_and_text_render",
+    "all_synthetic_figures_render",
+    "stale_accuracy_csv_rejected",
+    "stale_absolute_scale_csv_rejected",
+    "old_relative_contract_rejected",
+    "incorrect_best_checkpoint_rejected",
+    "changed_historical_marker_rejected",
+    "accuracy_zoom_contains_all_values",
+    "accuracy_zoom_contains_all_values",
+    "accuracy_zoom_contains_all_values",
+    "partial_two_epoch_read",
+    "resumed_five_epoch_read",
+    "all_notebook_cells_executed_in_scratch_no_saved_outputs",
+    "notebook_byte_identical_after_execution"
+  ],
+  "synthetic_fixture_only": true,
+  "actual_SVHN_training_executed": false,
+  "figures_are_synthetic_test_outputs_not_research_results": true
+}

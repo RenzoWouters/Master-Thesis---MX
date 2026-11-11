@@ -1,0 +1,16 @@
+{
+  "stop50_reader": {
+    "passed": true,
+    "last_epoch": 50,
+    "status": "STOPPED_AT_EPOCH_BOUNDARY",
+    "issues": []
+  },
+  "resume50_to100": {
+    "status": "PASS",
+    "completed_epoch": 100
+  },
+  "reject_foreign_contract": {
+    "status": "FAIL",
+    "completed_epoch": null
+  }
+}

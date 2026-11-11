@@ -1,0 +1,163 @@
+{
+  "reference": "relative_scale10_reference/run_report.json config",
+  "changes": {
+    "e2_scale_bits_per_block": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": 8
+    },
+    "e2_scale_bytes": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": 4080
+    },
+    "export_policy": {
+      "relative10_pilot5": "one E4M3 source plus packed four-bit block offset0..9 choices and BN auxiliary state; derive lower exports only from saved source codes/scales/choices; no MX masters or FP32 theta in compact exports; resume retains theta and Adam",
+      "independent_e2_pilot5": "one E4M3 source plus one independent absolute E8M0 lower scale byte per group and BN auxiliary state; derive lower exports only from saved source codes and absolute lower scales; no MX masters or FP32 phi in compact exports; resume retains phi and Adam"
+    },
+    "fp32_decode_policy": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": "reject overflow; exponents126/127 are valid E8M0 but not all E2 element codes remain finite in FP32"
+    },
+    "independent_E2_shared_scale": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": true
+    },
+    "initial_relative_factor": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": 64
+    },
+    "initial_relative_offset": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": 6
+    },
+    "mx_scale_policy": {
+      "relative10_pilot5": "unchanged E4M3 source scale floor(log2(amax))-8; both lower codes equal source E8M0 code plus per-block hard offset0..9; promoted integer addition; overflow rejected without clipping/wrap, including zero blocks",
+      "independent_e2_pilot5": "unchanged dynamic E4M3 source scale floor(log2(amax))-8; E2M3 and E2M1 share independent absolute E8M0 exponent round_half_up(phi); initialize once from initial E4 exponent+6, never recompute phi from E4; E8M0 finite exponents -127..127; reject nonfinite FP32 decode without clipping or wrap"
+    },
+    "observed_relative_offset_is_diagnostic_only": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": true
+    },
+    "packed_choice_bits_per_block": {
+      "relative10_pilot5": 4,
+      "independent_e2_pilot5": null
+    },
+    "packed_choice_bytes": {
+      "relative10_pilot5": 2040,
+      "independent_e2_pilot5": null
+    },
+    "purpose": {
+      "relative10_pilot5": "five complete train-only epochs: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation",
+      "independent_e2_pilot5": "five complete train-only pilot epochs from fresh weights; learn an independent absolute E8M0 scale shared by the E2 modes, initialized once to the initial E4 scale x64; unchanged E4 source and exponent/mantissa bit truncation"
+    },
+    "reference_end_epoch": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": 100
+    },
+    "relative_factor_constrained_after_initialization": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": false
+    },
+    "reporting_policy": {
+      "relative10_pilot5": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+      "independent_e2_pilot5": "all three modes at epoch5 or actual final epoch and at the same E4M3-best checkpoint; compare only matched epochs against historical five-epoch references; no epoch100 accuracy claim"
+    },
+    "scale_exponent_offset_choices": {
+      "relative10_pilot5": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "independent_e2_pilot5": null
+    },
+    "scale_factor_choices": {
+      "relative10_pilot5": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "independent_e2_pilot5": null
+    },
+    "scale_learning_end_epoch": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": 100
+    },
+    "scale_parameterization": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": "independent_absolute_log2_E2_scale"
+    },
+    "scale_proxy_bounds": {
+      "relative10_pilot5": [
+        0.0,
+        9.0
+      ],
+      "independent_e2_pilot5": [
+        -127.0,
+        127.0
+      ]
+    },
+    "scale_proxy_init": {
+      "relative10_pilot5": 6.0,
+      "independent_e2_pilot5": null
+    },
+    "scale_proxy_initialization": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": "initial_E4_E8M0_exponent_plus_6_once_before_optimizer"
+    },
+    "scale_proxy_name": {
+      "relative10_pilot5": null,
+      "independent_e2_pilot5": "phi"
+    },
+    "scale_rounding": {
+      "relative10_pilot5": "nearest_integer_ties_up; floor(theta)+(theta-floor(theta)>=0.5)",
+      "independent_e2_pilot5": "nearest_integer_ties_up; floor(phi)+(phi-floor(phi)>=0.5)"
+    },
+    "scale_thresholds": {
+      "relative10_pilot5": [
+        0.5,
+        1.5,
+        2.5,
+        3.5,
+        4.5,
+        5.5,
+        6.5,
+        7.5,
+        8.5
+      ],
+      "independent_e2_pilot5": null
+    },
+    "scale_tie_break": {
+      "relative10_pilot5": "higher_offset",
+      "independent_e2_pilot5": "higher_exponent"
+    },
+    "schema": {
+      "relative10_pilot5": "mx-triple-learned-scale10-pilot5-protocol-v1",
+      "independent_e2_pilot5": "mx-triple-independent-e2-scale-pilot5-protocol-v1"
+    },
+    "shared_scale_compensation": {
+      "relative10_pilot5": true,
+      "independent_e2_pilot5": null
+    },
+    "source_cache_policy": {
+      "relative10_pilot5": "detached integer source, hard choices and derived codes; theta version fixed within triplet; cached q saved for backward; cleared before Adam",
+      "independent_e2_pilot5": "detached integer source, absolute lower scale and derived codes; phi version fixed within triplet; cached q saved for backward; cleared before Adam"
+    },
+    "ste_policy": {
+      "relative10_pilot5": "identity wrt G(W) all three modes; theta gradient ln(2)*sum_real_block(grad_q*q) from E2M3/E2M1; no normalization; no direct E4 theta gradient; source codes/scales detached; retain G(W) derivatives",
+      "independent_e2_pilot5": "identity wrt G(W) all three modes; phi gradient ln(2)*sum_real_block(grad_q*q) from E2M3/E2M1; no normalization; no direct E4 phi gradient; source codes/scales detached; retain G(W) derivatives"
+    }
+  }
+}

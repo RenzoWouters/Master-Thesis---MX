@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": [
+    "deliverable_notebook_unexecuted",
+    "all_notebook_code_cells_compile",
+    "pending_not_fabricated_as_results",
+    "all_three_historical_references_verified",
+    "actual_pilot_evidence_kept_separate_from_new_run",
+    "all_pending_figures_render",
+    "full100_runner_evidence_consistent",
+    "synthetic_run_never_mixed_with_historical_accuracy",
+    "true_hundred_epochs_and_common_best_selection",
+    "measured_full100_time_distinct_from_projection",
+    "all_notebook_tables_text_render",
+    "plot_learning_zoom_preserves_all_accuracy_points",
+    "plot_learning_zoom_preserves_all_accuracy_points",
+    "plot_learning_zoom_preserves_all_accuracy_points",
+    "plot_final_window_zoom_preserves_all_accuracy_points",
+    "plot_final_window_zoom_preserves_all_accuracy_points",
+    "plot_final_window_zoom_preserves_all_accuracy_points",
+    "all_full100_figures_render",
+    "stale_accuracy_csv_rejected",
+    "incorrect_lr_after_epoch50_rejected",
+    "pilot_contract_rejected_by_full100_reader",
+    "incorrect_shared_best_selection_rejected",
+    "complete_notebook_execution_does_not_save_outputs",
+    "all_notebook_cells_execute_without_writing_figures"
+  ],
+  "synthetic_fixture_only": true,
+  "actual_SVHN_training_executed": false,
+  "saved_figures_are_synthetic_validation_outputs_not_research_results": true
+}

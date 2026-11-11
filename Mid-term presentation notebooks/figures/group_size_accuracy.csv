@@ -1,0 +1,10 @@
+method_id,method,group_size,format,accuracy_percent,correct,n
+fixed_scale64,Fixed scale ×64,32,E4M3,94.9293177580643,24712,26032
+fixed_scale64,Fixed scale ×64,32,E2M3,94.8985863458766,24704,26032
+fixed_scale64,Fixed scale ×64,32,E2M1,94.79102641963196,24676,26032
+group16,Group size 16 — scale ×64,16,E4M3,94.79102642901044,24676,26032
+group16,Group size 16 — scale ×64,16,E2M3,94.54517515964426,24612,26032
+group16,Group size 16 — scale ×64,16,E2M1,94.57206514120541,24619,26032
+group64,Group size 64 — scale ×64,64,E4M3,94.69114934526196,24650,26032
+group64,Group size 64 — scale ×64,64,E2M3,94.54517515964426,24612,26032
+group64,Group size 64 — scale ×64,64,E2M1,94.51060233089773,24603,26032

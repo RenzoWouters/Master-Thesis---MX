@@ -1,0 +1,20 @@
+{
+  "schema": "independent-e2-reference100-experiment-v1",
+  "name": "mx_triple_independent_e2_scale_reference100_v1",
+  "purpose": "Measure complete training with independent absolute E2 scale after technically successfulpilot",
+  "planned_epochs": 100,
+  "start": "fresh initialization",
+  "scale_learning_end_epoch": 100,
+  "freeze": null,
+  "new_parameters": 4080,
+  "historical_references": [
+    "fixed_scale64_reference",
+    "relative_scale10_reference",
+    "relative_scale10_full100_reference",
+    "independent_pilot_reference"
+  ],
+  "pilot_evidence_directory": "independent_pilot_reference",
+  "full100_results_exist": false,
+  "training_is_started_only_by_explicit_run_command": true,
+  "raw_research_data_modified": false
+}

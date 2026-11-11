@@ -1,0 +1,42 @@
+{
+  "schema": "independent-e2-scale-training-change-v1",
+  "absolute_scale_contract": {
+    "e4_scale": "unchanged dynamic source amax E8M0",
+    "e2_scale": "one independently learned absolute E8M0 scale per group, shared by E2M3 and E2M1",
+    "proxy": "FP32 phi = log2(S_E2), bounds [-127,127]",
+    "initialization": "initial E4 exponent+6 once before optimizer, no RNG draw",
+    "after_initialization": "never recompute phi from current source; no relative-factor constraint",
+    "codes": "E4 source -> exponent MSB E2M3 -> mantissa E2M1 unchanged",
+    "gradient": "same identity weight STE plus ln2 group-sum(grad*q) scale surrogate; no normalization"
+  },
+  "unchanged_training": {
+    "A": 32,
+    "master": "FP32",
+    "group_size": 32,
+    "passes": 3,
+    "optimizer_steps_per_batch": 1,
+    "optimizer": "Adam",
+    "weight_and_scale_lr": 0.001,
+    "seed": 20261009,
+    "batch_size": 128,
+    "milestones": [
+      50,
+      75,
+      90
+    ],
+    "train_only_no_extra": true
+  },
+  "pilot_limit": 5,
+  "fresh_initialization": true,
+  "freeze": null,
+  "independent_e2_export_bytes": 4080,
+  "extra_bytes_vs_fixed64": 4080,
+  "extra_bytes_vs_fourbit_relative10": 2040,
+  "absolute_exponents_and_observed_ratios_reported_separately": true,
+  "raw_research_data_modified": false,
+  "notes": [
+    "No new accuracy results are bundled. Historical references are retained byte for byte.",
+    "The independent E2 scale no longer follows current E4 amax automatically; this is the intended parameterization change.",
+    "Finite E8M0 does not guarantee finite FP32 products; decode overflow fails explicitly."
+  ]
+}

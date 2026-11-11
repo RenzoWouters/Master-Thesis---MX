@@ -1,0 +1,25 @@
+{
+  "schema": "independent-e2-pilot-evidence-v1",
+  "source_feedback_file": "feedback_bundle(20261111-160359).zip",
+  "source_feedback_sha256": "01dd87d6ef0cd882c02d51e20990466d8dc5328743de5b40f55e875726506d06",
+  "source_library_file_id": "libfile_168e534251108191a74a0d2f9208f05a",
+  "raw_reference_marker_sha256": "a0d1ea4e5b3fce20ead37b9ed476a050360f966b4055a77cc2d391188e513a5a",
+  "verified_actual_status": "PASS",
+  "epochs": 5,
+  "updates": 2865,
+  "passes": 8595,
+  "epoch5_top1_percent": {
+    "E4M3": 92.68976644130301,
+    "E2M3": 91.62185003073141,
+    "E2M1": 91.53349723417332
+  },
+  "best_E4_shared_checkpoint": 5,
+  "phi_changed_groups_since_initialization": 4080,
+  "hard_absolute_E2_exponents_changed_since_initialization": 10,
+  "source_E4_exponents_changed_since_initialization": 2037,
+  "interpretation": "Absolute proxies learn; most observed relative-ratio movement initially comes from the dynamic E4 source. Five epochs do not establish final accuracy superiority.",
+  "session_seconds": 344.6503645000048,
+  "estimated_100_epoch_seconds": 6746.650566740427,
+  "duration_is_projection": true,
+  "pilot_used_as_warmstart": false
+}

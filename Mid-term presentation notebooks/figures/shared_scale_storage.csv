@@ -1,0 +1,8 @@
+id,label,group_size,representation,code_bytes,scale_bytes,choice_bytes,retained_state_bytes,total_bytes,auxiliary_copies,implementation,accuracy_method_id,delta_vs_naive_bytes
+triple_dedicated_separate,Dedicated models,32,Three packed models: MXFP8 + MXFP6 + MXFP4,293760,12240,0,57744,363744,3,existing_separate_exports,dedicated,209856
+triple_direct_posthoc_source,Joint QAT + post-training truncation,32,"One MXFP8 source; lower modes by exponent and mantissa truncation, scale unchanged",130560,4080,0,19248,153888,1,joint_direct_MXFP8_source_with_post_training_exponent_and_mantissa_truncation,post_training_truncation,0
+triple_naive_source,Joint truncation-aware training — scale ×1,32,"One MXFP8 source; lower modes by exponent and mantissa truncation, scale unchanged",130560,4080,0,19248,153888,1,existing_truncatable_source_export,joint_truncation,0
+triple_scale32_source,Fixed scale ×32,32,One MXFP8 source; lower formats derived using the trained truncation route,130560,4080,0,19248,153888,1,existing_truncatable_source_export,fixed_scale32,0
+triple_scale64_source,Fixed scale ×64,32,One MXFP8 source; lower formats derived using the trained truncation route,130560,4080,0,19248,153888,1,existing_truncatable_source_export,fixed_scale64,0
+triple_learned100_source,Learned choice ×32/×64 — until epoch 100,32,One MXFP8 source; lower formats derived using the trained truncation route,130560,4080,510,19248,154398,1,existing_truncatable_source_export,learned100,510
+triple_freeze50_source,"Learned choice ×32/×64 — until epoch 50, then fixed",32,One MXFP8 source; lower formats derived using the trained truncation route,130560,4080,510,19248,154398,1,existing_truncatable_source_export,freeze50,510

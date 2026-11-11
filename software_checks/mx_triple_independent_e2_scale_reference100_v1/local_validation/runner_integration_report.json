@@ -1,0 +1,291 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "no_SVHN_data_loaded_or_downloaded": true,
+  "not_a_SVHN_accuracy_or_GPU_timing_result": true,
+  "scope": "actual check entry plus100epoch main/loop/export/resume on three CPU synthetic images",
+  "test_duration_seconds": 197.87125301199922,
+  "cases": {
+    "continuous100": {
+      "updates": 200,
+      "fresh_model_sha256": "27847904100ff75e4364494bab9cbebc0130adba3532aed049426b1578fbc013",
+      "status": "PASS",
+      "output_directory": "/workspace/scratch/4619498905be/work/independent_e2_full100_validation_v1/continuous100/20261111_171023_497286_joint_run"
+    },
+    "stop50": {
+      "updates": 100,
+      "fresh_model_sha256": "27847904100ff75e4364494bab9cbebc0130adba3532aed049426b1578fbc013",
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "output_directory": "/workspace/scratch/4619498905be/work/independent_e2_full100_validation_v1/stop50/20261111_171147_031351_joint_run"
+    },
+    "resume50_to100": {
+      "updates": 100,
+      "fresh_model_sha256": "27847904100ff75e4364494bab9cbebc0130adba3532aed049426b1578fbc013",
+      "status": "PASS",
+      "output_directory": "/workspace/scratch/4619498905be/work/independent_e2_full100_validation_v1/resume50_to100/20261111_171223_117197_joint_resume"
+    },
+    "reject_foreign_contract": {
+      "updates": 0,
+      "fresh_model_sha256": "27847904100ff75e4364494bab9cbebc0130adba3532aed049426b1578fbc013",
+      "status": "FAIL",
+      "output_directory": "/workspace/scratch/4619498905be/work/independent_e2_full100_validation_v1/reject_foreign_contract/20261111_171325_914751_joint_resume"
+    }
+  },
+  "scale_tables": {
+    "rows": 412080,
+    "all_absolute_and_observed_relative_values_match_trace": true
+  },
+  "exports": {
+    "selected_source_layer_pairs_checked": 12,
+    "absolute_E2_scale_bytes": 4080,
+    "source_only_reload_logits_exact": true,
+    "masters_and_phi_absent": true
+  },
+  "comparison_join_100_epochs_300_rows_tested_only_with_synthetic_self_trace": true,
+  "comparison_rejects_changed_sample_order_at_epoch74": true,
+  "real_fixed_and_relative_baselines_100_epochs_read_only_verified": true,
+  "continuous100_equals_stop50_resume100_model_optimizer_scheduler_RNG_sample_orders_exact_CPU": true,
+  "LR_milestone_checks": {
+    "1": {
+      "used": 0.001,
+      "next": 0.001
+    },
+    "49": {
+      "used": 0.001,
+      "next": 0.001
+    },
+    "50": {
+      "used": 0.001,
+      "next": 0.0001
+    },
+    "51": {
+      "used": 0.0001,
+      "next": 0.0001
+    },
+    "74": {
+      "used": 0.0001,
+      "next": 0.0001
+    },
+    "75": {
+      "used": 0.0001,
+      "next": 1e-05
+    },
+    "76": {
+      "used": 1e-05,
+      "next": 1e-05
+    },
+    "89": {
+      "used": 1e-05,
+      "next": 1e-05
+    },
+    "90": {
+      "used": 1e-05,
+      "next": 1.0000000000000002e-06
+    },
+    "91": {
+      "used": 1.0000000000000002e-06,
+      "next": 1.0000000000000002e-06
+    },
+    "99": {
+      "used": 1.0000000000000002e-06,
+      "next": 1.0000000000000002e-06
+    },
+    "100": {
+      "used": 1.0000000000000002e-06,
+      "next": 1.0000000000000002e-06
+    }
+  },
+  "phi_optimizer_updates_through_epoch100": true,
+  "phi_values_changed_after_epoch50": true,
+  "partial_run_not_marked_PASS": true,
+  "foreign_contract_rejected_before_restore_or_updates": true,
+  "historical_raw_references_unchanged": true,
+  "production_config": {
+    "schema": "mx-triple-independent-e2-scale-reference100-protocol-v1",
+    "purpose": "one hundred complete train-only epochs from fresh weights; learn an independent absolute E8M0 scale shared by the E2 modes through epoch100 without a freeze, initialized once to the initial E4 scale x64; unchanged E4 source and exponent/mantissa bit truncation",
+    "mode": "joint",
+    "weight_format": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6,
+      8
+    ],
+    "weight_formats": {
+      "8": "MXFP8_E4M3",
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "codec_revision": {
+      "8": "e4m3-exact-binary-v2",
+      "6": "unchanged-E2M3-decode",
+      "4": "unchanged-E2M1-decode"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in ALL THREE modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "unchanged dynamic E4M3 source scale floor(log2(amax))-8; E2M3 and E2M1 share independent absolute E8M0 exponent round_half_up(phi); initialize once from initial E4 exponent+6, never recompute phi from E4; E8M0 finite exponents -127..127; reject nonfinite FP32 decode without clipping or wrap",
+    "mx_rounding": "E4M3 source nearest ties-to-even; finite FP32 source, scalar subnormal flush; lower modes exact bit mappings without additional rounding",
+    "ste_policy": "identity wrt G(W) all three modes; phi gradient ln(2)*sum_real_block(grad_q*q) from E2M3/E2M1; no normalization; no direct E4 phi gradient; source codes/scales detached; retain G(W) derivatives",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": true,
+    "mantissa_truncation": true,
+    "exponent_truncation": true,
+    "independent_E2_shared_scale": true,
+    "learned_shared_scale": true,
+    "scale_parameterization": "independent_absolute_log2_E2_scale",
+    "scale_proxy_dtype": "float32",
+    "scale_proxy_name": "phi",
+    "scale_proxy_initialization": "initial_E4_E8M0_exponent_plus_6_once_before_optimizer",
+    "initial_relative_offset": 6,
+    "initial_relative_factor": 64,
+    "scale_proxy_bounds": [
+      -127.0,
+      127.0
+    ],
+    "scale_tie_break": "higher_exponent",
+    "scale_rounding": "nearest_integer_ties_up; floor(phi)+(phi-floor(phi)>=0.5)",
+    "e2_scale_bits_per_block": 8,
+    "e2_scale_bytes": 4080,
+    "relative_factor_constrained_after_initialization": false,
+    "fp32_decode_policy": "reject overflow; exponents126/127 are valid E8M0 but not all E2 element codes remain finite in FP32",
+    "observed_relative_offset_is_diagnostic_only": true,
+    "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+    "scale_gradient_normalization": "none",
+    "scale_projection": "after_each_Adam_step",
+    "scale_granularity": "per_MX_block",
+    "source_scale_learned": false,
+    "quantization_source": "one current E4M3 encoding per MX layer and minibatch, shared across all three modes",
+    "source_weight_bits": 8,
+    "exponent_mapping": "s e3 e2 e1 e0 m2 m1 m0 -> s e3 e2 m2 m1 m0; target bias1; no bias compensation",
+    "mantissa_mapping": "derived E2M3 uint8 codes >> 2; exact same per-block learned scale as E2M3",
+    "source_cache_policy": "detached integer source, absolute lower scale and derived codes; phi version fixed within triplet; cached q saved for backward; cleared before Adam",
+    "direct_lower_quantization": false,
+    "exponent_bias_compensation": false,
+    "distillation": true,
+    "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+    "passes_per_training_batch": 3,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      8,
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6,
+      8
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6,
+      8
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "8": "8",
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "normal training updates of three mode banks E4M3=8,E2M3=32,E2M1=4; parameters and running stats learn per mode; eval frozen; keys are storage IDs, all A32; banks1/2 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 137034,
+    "base_parameters": 132954,
+    "learned_scale_parameters": 4080,
+    "planned_epochs": 100,
+    "reference_end_epoch": 100,
+    "scale_learning_end_epoch": 100,
+    "scale_freeze_epoch": null,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "scale_lr": 0.001,
+    "weight_decay": 0.0,
+    "optimizer_groups": [
+      "weights",
+      "scale_proxy"
+    ],
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "all three modes on complete official test after every epoch; hard CE for each",
+    "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+    "reporting_policy": "all three modes at epoch100 or actual final epoch and at the same E4M3-best checkpoint; compare only matched observed epochs against historical references; partial runs never claim epoch100 completion",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "one E4M3 source plus one independent absolute E8M0 lower scale byte per group and BN auxiliary state; derive lower exports only from saved source codes and absolute lower scales; no MX masters or FP32 phi in compact exports; resume retains phi and Adam",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "test_file_sha256": "f801432fe294a00f6dd421e1b85d648220c2a6a11d5427f49c09abaf0a2e8cd2",
+  "check_entry_report": {
+    "status": "PASS",
+    "scope": "actual main/check on CPU, test-only runtime and explicit CPU oracle substitution",
+    "production_initialization_guard_unchanged": true,
+    "historical_reference_unchanged": true,
+    "production_dependency_checks_unchanged": true,
+    "pip_health_not_exercised_in_CPU_fixture": true,
+    "reason_for_test_dependency_inventory": "isolated CPU validation venv contains no pip module",
+    "historical_Windows_initial_hash": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "test_only_CPU_oracle_hash": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+    "source_module_imports_isolated_in_fresh_process": true,
+    "actual_output": "/workspace/scratch/4619498905be/work/independent_e2_full100_validation_v1/check-entry/output/20261111_171018_071514_joint_check",
+    "test_report": {
+      "all254_finite_source_codes_match_independent_bitstrings_at_absolute_scales": true,
+      "signed_zero_source_preserved_and_E2M1_shares_E2M3_scale": true,
+      "all255_finite_E8M0_codes_allowed_independently_of_source_scale": true,
+      "e126_e127_validity_depends_on_element_FP32_product_and_overflow_fails_fast": true,
+      "invalid_source_or_lower_codes_shapes_and_dtypes_rejected": true,
+      "all_positive_negative_half_ties_and_nextafter_neighbors_round_half_up_exactly": true,
+      "fixed_phi_does_not_follow_E4_scale_and_phi_plus1_doubles_only_lower_weights": true,
+      "analytic_surrogate_matches_real_element_oracle_and_lower_gradients_sum": true,
+      "master_identity_E4_phi_gradient_None_zero_groups_and_padding_correct": true,
+      "absolute_scale_surrogate_retained_at_finite_E8M0_endpoints": true,
+      "original_G_derivatives_retained_without_scale_multiplier_in_master_gradient": true,
+      "real_Adam_update_crosses_negative_exponent_threshold": true,
+      "4080_phi_parameters_initialized_once_at_exact_fixed64_without_RNG_or_base_state_changes": true,
+      "Adam_projection_only_uses_E8M0_bounds_and_both_endpoints_can_move_inward": true,
+      "absolute_exponent_histograms_flips_bounds_and_observed_relative_diagnostics_correct": true,
+      "three_passes_one_production_Adam_update_phi_learns_and_cache_survives_backward": true,
+      "state_restore_preserves_absolute_phi_Adam_and_forward_never_reinitializes": true,
+      "evaluation_preserves_phi_weights_and_BN": true,
+      "invalid_cycle_and_phi_code_or_scale_mutation_rejected_and_cache_cleaned": true,
+      "4080_absolute_E2_scale_bytes_no_master_or_phi_leakage_and_source_only_reconstruction": true,
+      "all_modes_reconstruct_logits_without_encoders_or_G_and_reject_old_or_malformed_exports": true,
+      "status": "PASS",
+      "RNG_and_backend_restored": true
+    },
+    "no_SVHN_training": true
+  }
+}

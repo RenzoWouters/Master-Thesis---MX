@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "feedback_sha256": "01dd87d6ef0cd882c02d51e20990466d8dc5328743de5b40f55e875726506d06",
+  "actual_delivered_source_files_match": true,
+  "source_files_checked": 29,
+  "source_files_sha256": {
+    "PROTOCOL.md": "4c559ed5c5a573a598f68f0de0b2c7489f85e6e5bc21267f4acacc6e76550967",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "trunc_adapter.py": "513a226e9bf74cefc5d72b0d45172297e191cc715ac7d47473c01cf6308c2e32",
+    "trunc_support.py": "68bd49fc8e1ce888d8f0f502baa8de340d59b9ce882cbc2501bf3e08578b2827",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4",
+    "TRAINING_CHANGE_MANIFEST.json": "7e314b8c53ff3f35f43d13e3ec61dc62c4cf9c9d527679a9b6191cebafe970be",
+    "test_learned_scale.py": "24951a8f56748bdc1eb4e787491cac767a5c8b0d0486ba5e7fc7395b464cac40",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "MX_triple_independent_e2_scale_pilot5_resultaten.ipynb": "e214df7b61fcb545a617d1b0de1fc00336d4e5d671c3a6ce4e424dc7858ec393",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "run_train.py": "15830ee2f72fa6170475c2fd81d48163fdafc7f9c84e56f26d7cf610221adf88",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "PACKAGE_SHA256.json": "3636e90011898debc58e73ae0376fa877be890c4adae66fccda7a307019bb043",
+    "REUSE_MANIFEST.json": "2aee55e7a47dfb5b8d99baf4cbfe6e27ff5da9d6da31adb86744fe753e3ecfc9",
+    "PROTOCOL.json": "acba39bdbb8d72c1364d34df050586e29c5703adc4714f0690562f6e275007d3",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "README.md": "ae6c9062136c2f0680ac51afa027fb9a3c7f8bc2a137469c4ab1bcecde0b71eb",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "notebook_support.py": "c2c323f11ae01d4b8bec65152a3b6a2571759f3dabfc3861186799a9f526d9d7",
+    "EXPERIMENT_MANIFEST.json": "30f46064ea0a7579aea1a53a4eb88540463a66926bf8728ee5a684ad9a33c8d4",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "CONFIG_DIFFERENCES.json": "9467d6809e80b69883d51b81c6bae2ee41dcf6a07680024b146617ff585111bc",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "epochs": 5,
+  "optimizer_steps": 2865,
+  "training_passes": 8595,
+  "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "history_sha256": "0c1ee97942bbeb117da60dcc0712d01108fc50e51157edac21a2e7fd33edf20a",
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "raw_source_modified": false,
+  "limits": "No independent inference rerun: training checkpoints remain on user machine; report, traces, CSV, source identity and scale arithmetic audited."
+}

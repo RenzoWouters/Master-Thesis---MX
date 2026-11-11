@@ -1,0 +1,9 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_independent_e2_scale_reference100\20261111_172046_150407_joint_check
+ONAFHANKELIJKE E2-SCHAAL:100 epochs vanaf nul; gewichten en phi blijven leren tot100; absolute E8M0-schaal per B32-groep, eenmaal gestart bij E4 x64; E4M3 -> E2M3 -> E2M1; A32; FP32-masters.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+INDEPENDENT E2 SCALE CHECK PASS: absolute E8M0, eenmalige x64-init, onafhankelijke bronbeweging, expliciete blokgradient, cache, Adam en 8bit-schaalexports.
+CHECK PASS: onafhankelijke absolute E2-schaal; start exact aanvankelijk x64; exponent- en mantissatruncatie; identity-mastergradient, absolute log-schaalgradient, E8M0-projectie en bronexport met twee schaalbanken. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_independent_e2_scale_reference100\20261111_172046_150407_joint_check\run_report.json

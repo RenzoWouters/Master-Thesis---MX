@@ -1,0 +1,228 @@
+{
+  "status": "PASS",
+  "data_type": "actual SVHN pilot; one seed; not a repeated-seed estimate",
+  "sources": [
+    "run_report.json",
+    "history.json",
+    "epoch_metrics.csv",
+    "selected_metrics.csv",
+    "checkpoint_selection.json",
+    "epoch_times.csv",
+    "timing_estimate.json",
+    "relative_scale10_reference/epoch_metrics.csv",
+    "relative_scale10_reference/history.json",
+    "fixed_scale64_reference/epoch_metrics.csv"
+  ],
+  "epochs": {
+    "1": {
+      "8": {
+        "top1_percent": 87.83036262591924,
+        "correct1": 22864,
+        "n": 26032
+      },
+      "6": {
+        "top1_percent": 85.38721573448063,
+        "correct1": 22228,
+        "n": 26032
+      },
+      "4": {
+        "top1_percent": 86.38982789942877,
+        "correct1": 22489,
+        "n": 26032
+      }
+    },
+    "2": {
+      "8": {
+        "top1_percent": 90.384910874229,
+        "correct1": 23529,
+        "n": 26032
+      },
+      "6": {
+        "top1_percent": 86.77397048847033,
+        "correct1": 22589,
+        "n": 26032
+      },
+      "4": {
+        "top1_percent": 87.08512599408151,
+        "correct1": 22670,
+        "n": 26032
+      }
+    },
+    "3": {
+      "8": {
+        "top1_percent": 91.61416717885679,
+        "correct1": 23849,
+        "n": 26032
+      },
+      "6": {
+        "top1_percent": 90.2082052858021,
+        "correct1": 23483,
+        "n": 26032
+      },
+      "4": {
+        "top1_percent": 89.70881991395206,
+        "correct1": 23353,
+        "n": 26032
+      }
+    },
+    "4": {
+      "8": {
+        "top1_percent": 92.07129685601795,
+        "correct1": 23968,
+        "n": 26032
+      },
+      "6": {
+        "top1_percent": 91.05716041794714,
+        "correct1": 23704,
+        "n": 26032
+      },
+      "4": {
+        "top1_percent": 91.13014751075599,
+        "correct1": 23723,
+        "n": 26032
+      }
+    },
+    "5": {
+      "8": {
+        "top1_percent": 92.68976644130301,
+        "correct1": 24129,
+        "n": 26032
+      },
+      "6": {
+        "top1_percent": 91.62185003073141,
+        "correct1": 23851,
+        "n": 26032
+      },
+      "4": {
+        "top1_percent": 91.53349723417332,
+        "correct1": 23828,
+        "n": 26032
+      }
+    }
+  },
+  "best_E4_epoch": 5,
+  "same_best_and_last": true,
+  "references": {
+    "relative_scale10_reference": {
+      "epoch5": {
+        "8": {
+          "top1_percent": 92.65519359848876,
+          "correct1": 24120,
+          "n": 26032
+        },
+        "6": {
+          "top1_percent": 91.42593729855022,
+          "correct1": 23800,
+          "n": 26032
+        },
+        "4": {
+          "top1_percent": 91.60264289166639,
+          "correct1": 23846,
+          "n": 26032
+        }
+      },
+      "delta_new_minus_reference_pp": {
+        "8": 0.03457284281424222,
+        "6": 0.19591273218118488,
+        "4": -0.06914565749306689
+      },
+      "delta_new_minus_reference_correct_images": {
+        "8": 9,
+        "6": 51,
+        "4": -18
+      },
+      "source_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale10_pilot5\\20261104_185824_003629_joint_run"
+    },
+    "fixed_scale64_reference": {
+      "epoch5": {
+        "8": {
+          "top1_percent": 93.00860479409957,
+          "correct1": 24212,
+          "n": 26032
+        },
+        "6": {
+          "top1_percent": 91.29917025199754,
+          "correct1": 23767,
+          "n": 26032
+        },
+        "4": {
+          "top1_percent": 90.8919791026429,
+          "correct1": 23661,
+          "n": 26032
+        }
+      },
+      "delta_new_minus_reference_pp": {
+        "8": -0.31883835279656125,
+        "6": 0.3226797787338711,
+        "4": 0.6415181315304181
+      },
+      "delta_new_minus_reference_correct_images": {
+        "8": -83,
+        "6": 84,
+        "4": 167
+      },
+      "source_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_scale64_reference100\\20261024_151210_665535_joint_run"
+    }
+  },
+  "historical_relative_sample_order_checks": {
+    "1": {
+      "train": true,
+      "test": true
+    },
+    "2": {
+      "train": true,
+      "test": true
+    },
+    "3": {
+      "train": true,
+      "test": true
+    },
+    "4": {
+      "train": true,
+      "test": true
+    },
+    "5": {
+      "train": true,
+      "test": true
+    }
+  },
+  "base_state_same_as_relative_reference": true,
+  "technical_checks": {
+    "completed_epochs": 5,
+    "optimizer_steps": 2865,
+    "forward_passes": 8595,
+    "fp32_masters_moments": true,
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "no_freeze": true,
+    "history_sha256_verified": true
+  },
+  "timing": {
+    "session_seconds": 344.6503645000048,
+    "measured_epochs_seconds": 335.9504501996562,
+    "steady_epoch_median_seconds": 67.48308594990522,
+    "estimated100_seconds": 6746.650566740427,
+    "projection_range_seconds": [
+      6652.147844688036,
+      6860.265110115055
+    ],
+    "confidence_interval": false,
+    "peak_allocated_MiB": 154.8115234375,
+    "peak_reserved_MiB": 172.0
+  },
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "interpretation": "Technical success. Five epochs and one seed do not establish final accuracy advantage; differences from historical runs are descriptive, without paired predictions or repeated seeds."
+}

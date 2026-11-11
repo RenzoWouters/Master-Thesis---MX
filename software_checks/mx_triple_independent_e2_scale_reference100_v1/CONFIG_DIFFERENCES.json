@@ -1,0 +1,22 @@
+{
+  "reference": "Actual independent fiveepoch run_report.json config",
+  "actual_pilot_feedback_sha256": "01dd87d6ef0cd882c02d51e20990466d8dc5328743de5b40f55e875726506d06",
+  "differences": {
+    "pilot_stop_epoch": {
+      "pilot5": 5,
+      "reference100": null
+    },
+    "purpose": {
+      "pilot5": "five complete train-only pilot epochs from fresh weights; learn an independent absolute E8M0 scale shared by the E2 modes, initialized once to the initial E4 scale x64; unchanged E4 source and exponent/mantissa bit truncation",
+      "reference100": "one hundred complete train-only epochs from fresh weights; learn an independent absolute E8M0 scale shared by the E2 modes through epoch100 without a freeze, initialized once to the initial E4 scale x64; unchanged E4 source and exponent/mantissa bit truncation"
+    },
+    "reporting_policy": {
+      "pilot5": "all three modes at epoch5 or actual final epoch and at the same E4M3-best checkpoint; compare only matched epochs against historical five-epoch references; no epoch100 accuracy claim",
+      "reference100": "all three modes at epoch100 or actual final epoch and at the same E4M3-best checkpoint; compare only matched observed epochs against historical references; partial runs never claim epoch100 completion"
+    },
+    "schema": {
+      "pilot5": "mx-triple-independent-e2-scale-pilot5-protocol-v1",
+      "reference100": "mx-triple-independent-e2-scale-reference100-protocol-v1"
+    }
+  }
+}
