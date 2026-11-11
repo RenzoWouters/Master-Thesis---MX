@@ -1,0 +1,1872 @@
+{
+  "schema": "mx-scale10-init1-pilot5-independent-audit-v1",
+  "status": "PASS",
+  "source_zip": "feedback_bundle(20261110-164812).zip",
+  "source_zip_sha256": "ebe4be6e368edd079af8d96810e87225fb72a37db1195e48739fb895847fcbe9",
+  "source_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale10_init1_pilot5\\20261110_174101_905133_joint_run",
+  "source_history_sha256": "feff0253b1b1a3d72977384d7eb903ad74eaf864240eb21380b7e8ea09556f29",
+  "checks": [
+    {
+      "check": "real pilot PASS, only5 complete",
+      "passed": true
+    },
+    {
+      "check": "not synthetic data",
+      "passed": true
+    },
+    {
+      "check": "all five epochs",
+      "passed": true
+    },
+    {
+      "check": "all4080 theta initialize0",
+      "passed": true
+    },
+    {
+      "check": "historical pilot theta initialize6",
+      "passed": true
+    },
+    {
+      "check": "matching initial base FP32/BN hashes",
+      "passed": true
+    },
+    {
+      "check": "history readback SHA exact",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: checkpoint_selection.json",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: epoch_times.csv",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: history.json",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: run_report.json",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: scale_block_state.csv",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: scale_epoch_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: scale_learning_summary.json",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: selected_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: timing_estimate.json",
+      "passed": true
+    },
+    {
+      "check": "historical reference hash: training_summary.json",
+      "passed": true
+    },
+    {
+      "check": "actual package identity matches bundled seal",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: REUSE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: TRAINING_CHANGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: joint_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: smoke_support.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: test_mx.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: notebook_support.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: mx_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: MX_triple_learned_scale10_init1_pilot5_resultaten.ipynb",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: test_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: svhn_support.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: run_train.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: trunc_support.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: mx_format.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: CONFIG_DIFFERENCES.json",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: test_learned_scale.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: joint_support.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: resume_core.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: README.md",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: test_joint.py",
+      "passed": true
+    },
+    {
+      "check": "bundled source hash: upstream/Any-Precision-DNNs-master.zip",
+      "passed": true
+    },
+    {
+      "check": "configuration differences match planned single numeric ablation",
+      "passed": true
+    },
+    {
+      "check": "A32 FP32 B32",
+      "passed": true
+    },
+    {
+      "check": "all ten choices, same scale learningrate, no freeze",
+      "passed": true
+    },
+    {
+      "check": "finite projected theta epoch1",
+      "passed": true
+    },
+    {
+      "check": "optimizer/BN epoch1",
+      "passed": true
+    },
+    {
+      "check": "same train sample order epoch1",
+      "passed": true
+    },
+    {
+      "check": "coverage complete train epoch1",
+      "passed": true
+    },
+    {
+      "check": "same test sample order epoch1",
+      "passed": true
+    },
+    {
+      "check": "coverage complete test epoch1",
+      "passed": true
+    },
+    {
+      "check": "all modes/data train epoch1",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts train epoch1",
+      "passed": true
+    },
+    {
+      "check": "all modes/data test epoch1",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts test epoch1",
+      "passed": true
+    },
+    {
+      "check": "finite gradients every update epoch1",
+      "passed": true
+    },
+    {
+      "check": "three recursive passes epoch1",
+      "passed": true
+    },
+    {
+      "check": "source/truncation/scale projection guards epoch1",
+      "passed": true
+    },
+    {
+      "check": "finite FP32 Adam state epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed all ten factor counts epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.3 epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.6 epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.10 epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.13 epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.16 epoch1",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.20 epoch1",
+      "passed": true
+    },
+    {
+      "check": "finite projected theta epoch2",
+      "passed": true
+    },
+    {
+      "check": "optimizer/BN epoch2",
+      "passed": true
+    },
+    {
+      "check": "same train sample order epoch2",
+      "passed": true
+    },
+    {
+      "check": "coverage complete train epoch2",
+      "passed": true
+    },
+    {
+      "check": "same test sample order epoch2",
+      "passed": true
+    },
+    {
+      "check": "coverage complete test epoch2",
+      "passed": true
+    },
+    {
+      "check": "all modes/data train epoch2",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts train epoch2",
+      "passed": true
+    },
+    {
+      "check": "all modes/data test epoch2",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts test epoch2",
+      "passed": true
+    },
+    {
+      "check": "finite gradients every update epoch2",
+      "passed": true
+    },
+    {
+      "check": "three recursive passes epoch2",
+      "passed": true
+    },
+    {
+      "check": "source/truncation/scale projection guards epoch2",
+      "passed": true
+    },
+    {
+      "check": "finite FP32 Adam state epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed all ten factor counts epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.3 epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.6 epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.10 epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.13 epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.16 epoch2",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.20 epoch2",
+      "passed": true
+    },
+    {
+      "check": "finite projected theta epoch3",
+      "passed": true
+    },
+    {
+      "check": "optimizer/BN epoch3",
+      "passed": true
+    },
+    {
+      "check": "same train sample order epoch3",
+      "passed": true
+    },
+    {
+      "check": "coverage complete train epoch3",
+      "passed": true
+    },
+    {
+      "check": "same test sample order epoch3",
+      "passed": true
+    },
+    {
+      "check": "coverage complete test epoch3",
+      "passed": true
+    },
+    {
+      "check": "all modes/data train epoch3",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts train epoch3",
+      "passed": true
+    },
+    {
+      "check": "all modes/data test epoch3",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts test epoch3",
+      "passed": true
+    },
+    {
+      "check": "finite gradients every update epoch3",
+      "passed": true
+    },
+    {
+      "check": "three recursive passes epoch3",
+      "passed": true
+    },
+    {
+      "check": "source/truncation/scale projection guards epoch3",
+      "passed": true
+    },
+    {
+      "check": "finite FP32 Adam state epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed all ten factor counts epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.3 epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.6 epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.10 epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.13 epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.16 epoch3",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.20 epoch3",
+      "passed": true
+    },
+    {
+      "check": "finite projected theta epoch4",
+      "passed": true
+    },
+    {
+      "check": "optimizer/BN epoch4",
+      "passed": true
+    },
+    {
+      "check": "same train sample order epoch4",
+      "passed": true
+    },
+    {
+      "check": "coverage complete train epoch4",
+      "passed": true
+    },
+    {
+      "check": "same test sample order epoch4",
+      "passed": true
+    },
+    {
+      "check": "coverage complete test epoch4",
+      "passed": true
+    },
+    {
+      "check": "all modes/data train epoch4",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts train epoch4",
+      "passed": true
+    },
+    {
+      "check": "all modes/data test epoch4",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts test epoch4",
+      "passed": true
+    },
+    {
+      "check": "finite gradients every update epoch4",
+      "passed": true
+    },
+    {
+      "check": "three recursive passes epoch4",
+      "passed": true
+    },
+    {
+      "check": "source/truncation/scale projection guards epoch4",
+      "passed": true
+    },
+    {
+      "check": "finite FP32 Adam state epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed all ten factor counts epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.3 epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.6 epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.10 epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.13 epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.16 epoch4",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.20 epoch4",
+      "passed": true
+    },
+    {
+      "check": "finite projected theta epoch5",
+      "passed": true
+    },
+    {
+      "check": "optimizer/BN epoch5",
+      "passed": true
+    },
+    {
+      "check": "same train sample order epoch5",
+      "passed": true
+    },
+    {
+      "check": "coverage complete train epoch5",
+      "passed": true
+    },
+    {
+      "check": "same test sample order epoch5",
+      "passed": true
+    },
+    {
+      "check": "coverage complete test epoch5",
+      "passed": true
+    },
+    {
+      "check": "all modes/data train epoch5",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts train epoch5",
+      "passed": true
+    },
+    {
+      "check": "all modes/data test epoch5",
+      "passed": true
+    },
+    {
+      "check": "accuracy recomputed from correct counts test epoch5",
+      "passed": true
+    },
+    {
+      "check": "finite gradients every update epoch5",
+      "passed": true
+    },
+    {
+      "check": "three recursive passes epoch5",
+      "passed": true
+    },
+    {
+      "check": "source/truncation/scale projection guards epoch5",
+      "passed": true
+    },
+    {
+      "check": "finite FP32 Adam state epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed all ten factor counts epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.3 epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.6 epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.10 epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.13 epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.16 epoch5",
+      "passed": true
+    },
+    {
+      "check": "recomputed theta layer layers.20 epoch5",
+      "passed": true
+    },
+    {
+      "check": "global repeated switch sum",
+      "passed": true
+    },
+    {
+      "check": "global projected value sum",
+      "passed": true
+    },
+    {
+      "check": "best E4 checkpoint recomputed at epoch5",
+      "passed": true
+    },
+    {
+      "check": "reported source and dataset unchanged",
+      "passed": true
+    },
+    {
+      "check": "reported compact export guards best_E4M3_test/8",
+      "passed": true
+    },
+    {
+      "check": "reported compact export guards best_E4M3_test/6",
+      "passed": true
+    },
+    {
+      "check": "reported compact export guards best_E4M3_test/4",
+      "passed": true
+    },
+    {
+      "check": "reported compact export guards last_epoch/8",
+      "passed": true
+    },
+    {
+      "check": "reported compact export guards last_epoch/6",
+      "passed": true
+    },
+    {
+      "check": "reported compact export guards last_epoch/4",
+      "passed": true
+    },
+    {
+      "check": "total updates/passes",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV row count",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch1/8",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch1/6",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch1/4",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch2/8",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch2/6",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch2/4",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch3/8",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch3/6",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch3/4",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch4/8",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch4/6",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch4/4",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch5/8",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch5/6",
+      "passed": true
+    },
+    {
+      "check": "comparison CSV delta epoch5/4",
+      "passed": true
+    },
+    {
+      "check": "100 epoch time projection recomputed",
+      "passed": true
+    },
+    {
+      "check": "all raw feedback files unchanged",
+      "passed": true
+    }
+  ],
+  "check_count": 183,
+  "matched_bundled_source_files": 27,
+  "best_E4_epoch": 5,
+  "last_epoch": 5,
+  "epoch5_accuracy_comparison": [
+    {
+      "epoch": 5,
+      "format": "MXFP8_E4M3",
+      "weight_bits": 8,
+      "init1_accuracy_percent": 80.96189304532342,
+      "init64_accuracy_percent": 92.65519359848876,
+      "difference_pp": -11.693300553165344,
+      "init1_correct": 21076,
+      "init64_correct": 24120,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 5,
+      "format": "MXFP6_E2M3",
+      "weight_bits": 6,
+      "init1_accuracy_percent": 81.53810694060886,
+      "init64_accuracy_percent": 91.42593729855022,
+      "difference_pp": -9.887830357941368,
+      "init1_correct": 21226,
+      "init64_correct": 23800,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 5,
+      "format": "MXFP4_E2M1",
+      "weight_bits": 4,
+      "init1_accuracy_percent": 81.71865395966233,
+      "init64_accuracy_percent": 91.60264289166639,
+      "difference_pp": -9.883988932004058,
+      "init1_correct": 21273,
+      "init64_correct": 23846,
+      "test_examples": 26032
+    }
+  ],
+  "per_epoch_accuracy_comparison": [
+    {
+      "epoch": 1,
+      "format": "MXFP8_E4M3",
+      "weight_bits": 8,
+      "init1_accuracy_percent": 74.3584818590911,
+      "init64_accuracy_percent": 88.05700675153116,
+      "difference_pp": -13.698524892440062,
+      "init1_correct": 19357,
+      "init64_correct": 22923,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 1,
+      "format": "MXFP6_E2M3",
+      "weight_bits": 6,
+      "init1_accuracy_percent": 76.85156730178242,
+      "init64_accuracy_percent": 86.33988935755453,
+      "difference_pp": -9.488322055772102,
+      "init1_correct": 20006,
+      "init64_correct": 22476,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 1,
+      "format": "MXFP4_E2M1",
+      "weight_bits": 4,
+      "init1_accuracy_percent": 76.95912722802704,
+      "init64_accuracy_percent": 86.0172095835099,
+      "difference_pp": -9.058082355482853,
+      "init1_correct": 20034,
+      "init64_correct": 22392,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 2,
+      "format": "MXFP8_E4M3",
+      "weight_bits": 8,
+      "init1_accuracy_percent": 77.88875229547708,
+      "init64_accuracy_percent": 91.11862323294407,
+      "difference_pp": -13.229870937466998,
+      "init1_correct": 20276,
+      "init64_correct": 23720,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 2,
+      "format": "MXFP6_E2M3",
+      "weight_bits": 6,
+      "init1_accuracy_percent": 78.73770743231137,
+      "init64_accuracy_percent": 88.63322064212736,
+      "difference_pp": -9.895513209815988,
+      "init1_correct": 20497,
+      "init64_correct": 23073,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 2,
+      "format": "MXFP4_E2M1",
+      "weight_bits": 4,
+      "init1_accuracy_percent": 78.83758450199214,
+      "init64_accuracy_percent": 89.27089735240972,
+      "difference_pp": -10.433312850417579,
+      "init1_correct": 20523,
+      "init64_correct": 23239,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 3,
+      "format": "MXFP8_E4M3",
+      "weight_bits": 8,
+      "init1_accuracy_percent": 79.21788567447487,
+      "init64_accuracy_percent": 91.90227412415489,
+      "difference_pp": -12.684388449680014,
+      "init1_correct": 20622,
+      "init64_correct": 23924,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 3,
+      "format": "MXFP6_E2M3",
+      "weight_bits": 6,
+      "init1_accuracy_percent": 79.01044867854948,
+      "init64_accuracy_percent": 90.31960663798402,
+      "difference_pp": -11.309157959434543,
+      "init1_correct": 20568,
+      "init64_correct": 23512,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 3,
+      "format": "MXFP4_E2M1",
+      "weight_bits": 4,
+      "init1_accuracy_percent": 79.27934849416103,
+      "init64_accuracy_percent": 90.62692070359017,
+      "difference_pp": -11.347572209429146,
+      "init1_correct": 20638,
+      "init64_correct": 23592,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 4,
+      "format": "MXFP8_E4M3",
+      "weight_bits": 8,
+      "init1_accuracy_percent": 80.67378610471457,
+      "init64_accuracy_percent": 92.40550091256374,
+      "difference_pp": -11.731714807849173,
+      "init1_correct": 21001,
+      "init64_correct": 24055,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 4,
+      "format": "MXFP6_E2M3",
+      "weight_bits": 6,
+      "init1_accuracy_percent": 81.16548862468998,
+      "init64_accuracy_percent": 90.63076212952748,
+      "difference_pp": -9.465273504837498,
+      "init1_correct": 21129,
+      "init64_correct": 23593,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 4,
+      "format": "MXFP4_E2M1",
+      "weight_bits": 4,
+      "init1_accuracy_percent": 81.00799016594961,
+      "init64_accuracy_percent": 90.50015365703749,
+      "difference_pp": -9.49216349108788,
+      "init1_correct": 21088,
+      "init64_correct": 23559,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 5,
+      "format": "MXFP8_E4M3",
+      "weight_bits": 8,
+      "init1_accuracy_percent": 80.96189304532342,
+      "init64_accuracy_percent": 92.65519359848876,
+      "difference_pp": -11.693300553165344,
+      "init1_correct": 21076,
+      "init64_correct": 24120,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 5,
+      "format": "MXFP6_E2M3",
+      "weight_bits": 6,
+      "init1_accuracy_percent": 81.53810694060886,
+      "init64_accuracy_percent": 91.42593729855022,
+      "difference_pp": -9.887830357941368,
+      "init1_correct": 21226,
+      "init64_correct": 23800,
+      "test_examples": 26032
+    },
+    {
+      "epoch": 5,
+      "format": "MXFP4_E2M1",
+      "weight_bits": 4,
+      "init1_accuracy_percent": 81.71865395966233,
+      "init64_accuracy_percent": 91.60264289166639,
+      "difference_pp": -9.883988932004058,
+      "init1_correct": 21273,
+      "init64_correct": 23846,
+      "test_examples": 26032
+    }
+  ],
+  "per_epoch_scale_summary": [
+    {
+      "epoch": 1,
+      "factor_counts": {
+        "1": 1955,
+        "2": 2125,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "factor_percentages": {
+        "1": 47.916666666666664,
+        "2": 52.083333333333336,
+        "4": 0.0,
+        "8": 0.0,
+        "16": 0.0,
+        "32": 0.0,
+        "64": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "theta_mean": 0.4602292008115132,
+      "theta_min": 0.0,
+      "theta_max": 1.0291953086853027,
+      "theta_positive_count": 4011,
+      "exact_theta0_count": 69,
+      "theta_update_nonzero_blocks": 4011,
+      "hard_switches_including_repeats": 2281,
+      "projected_values_including_repeats": 141634,
+      "scale_gradient_l2_min": 5.152244739292655e-06,
+      "scale_gradient_l2_max": 0.026904137805104256,
+      "total_epoch_seconds": 65.88447970012203
+    },
+    {
+      "epoch": 2,
+      "factor_counts": {
+        "1": 1652,
+        "2": 2428,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "factor_percentages": {
+        "1": 40.490196078431374,
+        "2": 59.509803921568626,
+        "4": 0.0,
+        "8": 0.0,
+        "16": 0.0,
+        "32": 0.0,
+        "64": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "theta_mean": 0.5605018474124944,
+      "theta_min": 0.0,
+      "theta_max": 1.337013602256775,
+      "theta_positive_count": 4040,
+      "exact_theta0_count": 40,
+      "theta_update_nonzero_blocks": 4075,
+      "hard_switches_including_repeats": 1023,
+      "projected_values_including_repeats": 37694,
+      "scale_gradient_l2_min": 0.00295405276119709,
+      "scale_gradient_l2_max": 0.03150727227330208,
+      "total_epoch_seconds": 58.17017799988389
+    },
+    {
+      "epoch": 3,
+      "factor_counts": {
+        "1": 1527,
+        "2": 2552,
+        "4": 1,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "factor_percentages": {
+        "1": 37.4264705882353,
+        "2": 62.549019607843135,
+        "4": 0.024509803921568627,
+        "8": 0.0,
+        "16": 0.0,
+        "32": 0.0,
+        "64": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "theta_mean": 0.6150441854955676,
+      "theta_min": 0.0,
+      "theta_max": 1.5022226572036743,
+      "theta_positive_count": 4052,
+      "exact_theta0_count": 28,
+      "theta_update_nonzero_blocks": 4077,
+      "hard_switches_including_repeats": 992,
+      "projected_values_including_repeats": 22240,
+      "scale_gradient_l2_min": 0.002807512180879712,
+      "scale_gradient_l2_max": 0.031382400542497635,
+      "total_epoch_seconds": 58.888529899995774
+    },
+    {
+      "epoch": 4,
+      "factor_counts": {
+        "1": 1452,
+        "2": 2622,
+        "4": 6,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "factor_percentages": {
+        "1": 35.588235294117645,
+        "2": 64.26470588235294,
+        "4": 0.14705882352941177,
+        "8": 0.0,
+        "16": 0.0,
+        "32": 0.0,
+        "64": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "theta_mean": 0.6473040735485671,
+      "theta_min": 0.0,
+      "theta_max": 1.6505482196807861,
+      "theta_positive_count": 4039,
+      "exact_theta0_count": 41,
+      "theta_update_nonzero_blocks": 4049,
+      "hard_switches_including_repeats": 986,
+      "projected_values_including_repeats": 18927,
+      "scale_gradient_l2_min": 0.00274711474776268,
+      "scale_gradient_l2_max": 0.026324020698666573,
+      "total_epoch_seconds": 59.74701299984008
+    },
+    {
+      "epoch": 5,
+      "factor_counts": {
+        "1": 1389,
+        "2": 2679,
+        "4": 12,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "factor_percentages": {
+        "1": 34.044117647058826,
+        "2": 65.66176470588235,
+        "4": 0.29411764705882354,
+        "8": 0.0,
+        "16": 0.0,
+        "32": 0.0,
+        "64": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "theta_mean": 0.6650132988807884,
+      "theta_min": 0.0,
+      "theta_max": 1.7529438734054565,
+      "theta_positive_count": 4031,
+      "exact_theta0_count": 49,
+      "theta_update_nonzero_blocks": 4048,
+      "hard_switches_including_repeats": 1055,
+      "projected_values_including_repeats": 23206,
+      "scale_gradient_l2_min": 0.0027492402587085962,
+      "scale_gradient_l2_max": 0.01992144249379635,
+      "total_epoch_seconds": 59.58396039996296
+    }
+  ],
+  "per_layer_scale_summary": [
+    {
+      "epoch": 1,
+      "layer": "layers.3",
+      "blocks": 64,
+      "theta_mean": 0.05679535274884984,
+      "theta_min": 0.0,
+      "theta_max": 0.209066703915596,
+      "exact_theta0_count": 7,
+      "factor_counts": {
+        "1": 64,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 4385,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 1,
+      "layer": "layers.6",
+      "blocks": 80,
+      "theta_mean": 0.057964796917167404,
+      "theta_min": 0.0,
+      "theta_max": 0.23703259229660034,
+      "exact_theta0_count": 2,
+      "factor_counts": {
+        "1": 80,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 4982,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 1,
+      "layer": "layers.10",
+      "blocks": 160,
+      "theta_mean": 0.05331864341133041,
+      "theta_min": 0.0,
+      "theta_max": 0.21632230281829834,
+      "exact_theta0_count": 12,
+      "factor_counts": {
+        "1": 160,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 9418,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 1,
+      "layer": "layers.13",
+      "blocks": 288,
+      "theta_mean": 0.06574012985826509,
+      "theta_min": 0.0,
+      "theta_max": 0.27512767910957336,
+      "exact_theta0_count": 8,
+      "factor_counts": {
+        "1": 288,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 12798,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 1,
+      "layer": "layers.16",
+      "blocks": 288,
+      "theta_mean": 0.19159360803113637,
+      "theta_min": 0.0,
+      "theta_max": 0.5062402486801147,
+      "exact_theta0_count": 9,
+      "factor_counts": {
+        "1": 285,
+        "2": 3,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 7128,
+      "choice_flips_including_repeats": 39
+    },
+    {
+      "epoch": 1,
+      "layer": "layers.20",
+      "blocks": 3200,
+      "theta_mean": 0.5583812354761605,
+      "theta_min": 0.0,
+      "theta_max": 1.0291953086853027,
+      "exact_theta0_count": 31,
+      "factor_counts": {
+        "1": 1078,
+        "2": 2122,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 102923,
+      "choice_flips_including_repeats": 2242
+    },
+    {
+      "epoch": 2,
+      "layer": "layers.3",
+      "blocks": 64,
+      "theta_mean": 0.07153102568747727,
+      "theta_min": 0.0,
+      "theta_max": 0.36350396275520325,
+      "exact_theta0_count": 1,
+      "factor_counts": {
+        "1": 64,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 3001,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 2,
+      "layer": "layers.6",
+      "blocks": 80,
+      "theta_mean": 0.07048006554498443,
+      "theta_min": 0.0,
+      "theta_max": 0.23779956996440887,
+      "exact_theta0_count": 7,
+      "factor_counts": {
+        "1": 80,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 4391,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 2,
+      "layer": "layers.10",
+      "blocks": 160,
+      "theta_mean": 0.062386082891543994,
+      "theta_min": 0.0,
+      "theta_max": 0.2578963041305542,
+      "exact_theta0_count": 5,
+      "factor_counts": {
+        "1": 160,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 5078,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 2,
+      "layer": "layers.13",
+      "blocks": 288,
+      "theta_mean": 0.07221680286508242,
+      "theta_min": 0.0,
+      "theta_max": 0.2928568720817566,
+      "exact_theta0_count": 14,
+      "factor_counts": {
+        "1": 288,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 6665,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 2,
+      "layer": "layers.16",
+      "blocks": 288,
+      "theta_mean": 0.19996016331757793,
+      "theta_min": 0.0,
+      "theta_max": 0.5886026620864868,
+      "exact_theta0_count": 6,
+      "factor_counts": {
+        "1": 275,
+        "2": 13,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 5455,
+      "choice_flips_including_repeats": 408
+    },
+    {
+      "epoch": 2,
+      "layer": "layers.20",
+      "blocks": 3200,
+      "theta_mean": 0.6838320021975396,
+      "theta_min": 0.0,
+      "theta_max": 1.337013602256775,
+      "exact_theta0_count": 7,
+      "factor_counts": {
+        "1": 785,
+        "2": 2415,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 13104,
+      "choice_flips_including_repeats": 615
+    },
+    {
+      "epoch": 3,
+      "layer": "layers.3",
+      "blocks": 64,
+      "theta_mean": 0.08003245649842938,
+      "theta_min": 0.0,
+      "theta_max": 0.44233548641204834,
+      "exact_theta0_count": 10,
+      "factor_counts": {
+        "1": 64,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 1989,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 3,
+      "layer": "layers.6",
+      "blocks": 80,
+      "theta_mean": 0.0793929848472544,
+      "theta_min": 0.0,
+      "theta_max": 0.29396000504493713,
+      "exact_theta0_count": 6,
+      "factor_counts": {
+        "1": 80,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 3002,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 3,
+      "layer": "layers.10",
+      "blocks": 160,
+      "theta_mean": 0.06790144545298063,
+      "theta_min": 0.0,
+      "theta_max": 0.2853279411792755,
+      "exact_theta0_count": 3,
+      "factor_counts": {
+        "1": 160,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 3284,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 3,
+      "layer": "layers.13",
+      "blocks": 288,
+      "theta_mean": 0.07673607611566366,
+      "theta_min": 0.0,
+      "theta_max": 0.36436954140663147,
+      "exact_theta0_count": 3,
+      "factor_counts": {
+        "1": 288,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 5969,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 3,
+      "layer": "layers.16",
+      "blocks": 288,
+      "theta_mean": 0.2057285138051207,
+      "theta_min": 0.0,
+      "theta_max": 0.6316066980361938,
+      "exact_theta0_count": 5,
+      "factor_counts": {
+        "1": 268,
+        "2": 20,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 5600,
+      "choice_flips_including_repeats": 449
+    },
+    {
+      "epoch": 3,
+      "layer": "layers.20",
+      "blocks": 3200,
+      "theta_mean": 0.7517789773901791,
+      "theta_min": 0.0,
+      "theta_max": 1.5022226572036743,
+      "exact_theta0_count": 1,
+      "factor_counts": {
+        "1": 667,
+        "2": 2532,
+        "4": 1,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 2396,
+      "choice_flips_including_repeats": 543
+    },
+    {
+      "epoch": 4,
+      "layer": "layers.3",
+      "blocks": 64,
+      "theta_mean": 0.09000517982326528,
+      "theta_min": 0.0,
+      "theta_max": 0.49324604868888855,
+      "exact_theta0_count": 5,
+      "factor_counts": {
+        "1": 64,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 3292,
+      "choice_flips_including_repeats": 18
+    },
+    {
+      "epoch": 4,
+      "layer": "layers.6",
+      "blocks": 80,
+      "theta_mean": 0.08564544746022876,
+      "theta_min": 0.0,
+      "theta_max": 0.3926894962787628,
+      "exact_theta0_count": 7,
+      "factor_counts": {
+        "1": 80,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 2583,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 4,
+      "layer": "layers.10",
+      "blocks": 160,
+      "theta_mean": 0.07247397323142338,
+      "theta_min": 0.0,
+      "theta_max": 0.32622459530830383,
+      "exact_theta0_count": 6,
+      "factor_counts": {
+        "1": 160,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 3420,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 4,
+      "layer": "layers.13",
+      "blocks": 288,
+      "theta_mean": 0.0797648752159148,
+      "theta_min": 0.0,
+      "theta_max": 0.3827248811721802,
+      "exact_theta0_count": 10,
+      "factor_counts": {
+        "1": 288,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 2859,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 4,
+      "layer": "layers.16",
+      "blocks": 288,
+      "theta_mean": 0.2107152872489577,
+      "theta_min": 0.0,
+      "theta_max": 0.621131956577301,
+      "exact_theta0_count": 11,
+      "factor_counts": {
+        "1": 270,
+        "2": 18,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 6142,
+      "choice_flips_including_repeats": 374
+    },
+    {
+      "epoch": 4,
+      "layer": "layers.20",
+      "blocks": 3200,
+      "theta_mean": 0.7916045407080423,
+      "theta_min": 0.0,
+      "theta_max": 1.6505482196807861,
+      "exact_theta0_count": 2,
+      "factor_counts": {
+        "1": 590,
+        "2": 2604,
+        "4": 6,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 631,
+      "choice_flips_including_repeats": 594
+    },
+    {
+      "epoch": 5,
+      "layer": "layers.3",
+      "blocks": 64,
+      "theta_mean": 0.09789464590866004,
+      "theta_min": 0.0,
+      "theta_max": 0.4980841875076294,
+      "exact_theta0_count": 2,
+      "factor_counts": {
+        "1": 64,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 2970,
+      "choice_flips_including_repeats": 6
+    },
+    {
+      "epoch": 5,
+      "layer": "layers.6",
+      "blocks": 80,
+      "theta_mean": 0.09302224060529625,
+      "theta_min": 0.0,
+      "theta_max": 0.48450517654418945,
+      "exact_theta0_count": 5,
+      "factor_counts": {
+        "1": 80,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 3491,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 5,
+      "layer": "layers.10",
+      "blocks": 160,
+      "theta_mean": 0.07860226927166422,
+      "theta_min": 0.0,
+      "theta_max": 0.3501110076904297,
+      "exact_theta0_count": 12,
+      "factor_counts": {
+        "1": 160,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 4523,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 5,
+      "layer": "layers.13",
+      "blocks": 288,
+      "theta_mean": 0.08415103962710822,
+      "theta_min": 0.0,
+      "theta_max": 0.44557443261146545,
+      "exact_theta0_count": 11,
+      "factor_counts": {
+        "1": 288,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 5005,
+      "choice_flips_including_repeats": 0
+    },
+    {
+      "epoch": 5,
+      "layer": "layers.16",
+      "blocks": 288,
+      "theta_mean": 0.21471962952193735,
+      "theta_min": 0.0,
+      "theta_max": 0.6477951407432556,
+      "exact_theta0_count": 18,
+      "factor_counts": {
+        "1": 267,
+        "2": 21,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 6606,
+      "choice_flips_including_repeats": 363
+    },
+    {
+      "epoch": 5,
+      "layer": "layers.20",
+      "blocks": 3200,
+      "theta_mean": 0.8127800334527023,
+      "theta_min": 0.0,
+      "theta_max": 1.7529438734054565,
+      "exact_theta0_count": 1,
+      "factor_counts": {
+        "1": 530,
+        "2": 2658,
+        "4": 12,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0
+      },
+      "projected_values_including_repeats": 611,
+      "choice_flips_including_repeats": 686
+    }
+  ],
+  "timing": {
+    "measured_pilot_epoch_sum_seconds": 302.27416099980474,
+    "median_steady_epoch_seconds": 59.23624514997937,
+    "projected_fresh100_seconds": 5930.272749548079,
+    "projected_fresh100_minutes": 98.83787915913466,
+    "observed_range_projection_minutes": [
+      97.07886836147712,
+      99.68064611140484
+    ],
+    "range_is_confidence_interval": false,
+    "not_measured100": true
+  },
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "no_technical_blocker_for_100_epochs": true,
+  "limits": [
+    "One seed; historical comparison; CUDA nondeterminism is retained.",
+    "Five epochs cannot determine final convergence or optimum scales.",
+    "Checkpoint/export .pt payloads are not in the feedback ZIP; export correctness is a recorded runtime check, not an independently repeated decoder test here.",
+    "Best checkpoint selected on official test set; not an independent validation estimate."
+  ],
+  "interpretation_nl": [
+    "De initialisatie heeft in deze proef een groot effect op het vroege leertraject: de accuracies liggen op epoch5 ongeveer9,9 tot11,7 procentpunt lager dan bij init×64.",
+    "De schaalparameters zijn niet geblokkeerd op0:4031 van4080 zijn positief; ×2 wordt door2679 groepen gekozen en ×4 door12.",
+    "De vier eerste MX-lagen kiezen aan het einde nog uitsluitend×1; de×2/×4-keuzes zitten hoofdzakelijk in de laatste MX-laag.",
+    "Het is na5epochs niet bekend of init×1 later×32/×64 nadert of in een andere regio blijft. Een100epochrun met dezelfde leerregel en zonder vroeg bevriezen beantwoordt die vraag beter.",
+    "Ook E4M3 loopt achter; haar eigen schaal wordt niet door theta geleerd, maar de gedeelde FP32-gewichten worden mede door de lagere precisies bijgewerkt. Dat is een plausibele verklaring, niet afzonderlijk geïsoleerd in deze proef."
+  ]
+}

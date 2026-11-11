@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "synthetic_plot_only": true,
+  "scope": "Layout/read-only notebook cells and source-reference validation, not training accuracy.",
+  "checks": [
+    {
+      "test": "Historical source is complete real init64 pilot5",
+      "passed": true
+    },
+    {
+      "test": "Historical reference core validation has no errors",
+      "passed": true
+    },
+    {
+      "test": "Notebook has25cells and13code cells",
+      "passed": true
+    },
+    {
+      "test": "Delivered notebook has no execution output",
+      "passed": true
+    },
+    {
+      "test": "Parameter cell tagged for runner",
+      "passed": true
+    },
+    {
+      "test": "All9figures generated from notebook analysis cells",
+      "passed": true
+    },
+    {
+      "test": "No warnings during synthetic plot generation",
+      "passed": true
+    },
+    {
+      "test": "Accuracy panels share identical y-limits",
+      "passed": true
+    },
+    {
+      "test": "Low initial accuracy and high E4 accuracy both visible",
+      "passed": true
+    },
+    {
+      "test": "Checkpoint figures have identical zoom axes",
+      "passed": true
+    },
+    {
+      "test": "Bothvariants andall3modes for endpoint",
+      "passed": true
+    },
+    {
+      "test": "Sharedselectedcheckpointpervariant endpoint",
+      "passed": true
+    },
+    {
+      "test": "Bothvariants andall3modes for best",
+      "passed": true
+    },
+    {
+      "test": "Sharedselectedcheckpointpervariant best",
+      "passed": true
+    },
+    {
+      "test": "All10factors including9zero categories shown",
+      "passed": true
+    },
+    {
+      "test": "Factorcountgraph hasinitialcurrentandhistoricalpanels",
+      "passed": true
+    },
+    {
+      "test": "Factorcountbars startatzero",
+      "passed": true
+    },
+    {
+      "test": "Factorcountbars startatzero",
+      "passed": true
+    },
+    {
+      "test": "Factorcountbars startatzero",
+      "passed": true
+    },
+    {
+      "test": "Heatmapretainsall10factors",
+      "passed": true
+    },
+    {
+      "test": "Continuousmovement shownwhileallhardchoicesremain1",
+      "passed": true
+    },
+    {
+      "test": "Boundaryoccupancy distinguishedfromhardfactor1",
+      "passed": true
+    },
+    {
+      "test": "Theta layerpanels share identical limits",
+      "passed": true
+    },
+    {
+      "test": "Highcloseaccuracies zoom instead of0\u2013100",
+      "passed": true
+    },
+    {
+      "test": "Noepoch5endpointinventedforpartialrun",
+      "passed": true
+    },
+    {
+      "test": "Historicalbestselection croppedtosamepartialwindow",
+      "passed": true
+    },
+    {
+      "test": "Emptytechnicalcheck hasnomeasuredtrainingresults",
+      "passed": true
+    },
+    {
+      "test": "Allanalysiscells tolerateemptytechnicalcheck",
+      "passed": true
+    },
+    {
+      "test": "DeliveredhelperandnotebookunchangedbyQA",
+      "passed": true
+    }
+  ],
+  "check_count": 29,
+  "source_sha256": {
+    "notebook_support.py": "99415b6f0e2bacfddab96712851a6acc507a336b69fdef4c76487dd4124ab310",
+    "MX_triple_learned_scale10_init1_pilot5_resultaten.ipynb": "55c83a4d88321001406d4369b8ea4ded426b476d710d2ba9089f10a4de7fc467"
+  },
+  "warnings": [],
+  "visual_review": "PASS: accuracy curves, paired checkpoint, factor heatmap, boundary/projection panels and final zoomed per-layer theta panels inspected; no overlap or clipping."
+}

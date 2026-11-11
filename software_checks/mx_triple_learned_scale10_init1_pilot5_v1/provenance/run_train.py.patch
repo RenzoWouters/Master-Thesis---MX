@@ -1,0 +1,475 @@
+--- init64_reference100/run_train.py
++++ init1_pilot5/run_train.py
+@@ -1,12 +1,12 @@
+-"""One hundred train-only epochs: ten learned block scale factors1..512, E4 source, A32.
+-
+-Each block has FP32 theta initialized at6 and projected into[0,9] after Adam.
++"""Five train-only epochs: ten learned block scale factors1..512 initialized at x1.
++
++Each block has FP32 theta initialized at0 and projected into[0,9] after Adam.
+ Nearest integer offset, ties upward, selects source exponent+0..9; E2 modes share it.
+ Backward preserves identity to G(W) and adds ln(2)*blocksum(grad_q*q) to theta.
+ There is no LSQ gradient normalization and no learned E4 source scale.
+ Exactly three recursive-distillation passes and one Adam step per minibatch.
+-Weights and scale choices learn through epoch100, using the original LR schedule.
+-Every complete epoch is saved, including epoch50 for an optional later freeze branch.
++Weights and scale choices learn through epoch5; original100-epoch LR milestones stay unchanged.
++Every complete pilot epoch is saved; no scale freezing or extended training is permitted.
+ """
+ from __future__ import annotations
+ 
+@@ -40,8 +40,8 @@
+ def config(mode: str = 'joint') -> dict:
+     s.require(mode == 'joint', 'Deze proef heeft exact drie gezamenlijke MX-modi uit één E4M3-bron.')
+     return {
+-        'schema': 'mx-triple-learned-scale10-reference100-protocol-v1',
+-        'purpose': 'one hundred complete train-only epochs from fresh initialization: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation; scale choices learn through epoch100',
++        'schema': 'mx-triple-learned-scale10-init1-pilot5-protocol-v1',
++        'purpose': 'five-epoch initialization ablation: all ten lower scale factors remain learnable; theta starts at0 (x1), all other training choices match the historical init64 pilot',
+         'mode': mode, 'weight_format': t.weight_format(mode), 'weight_bits': [4, 6, 8],
+         'weight_formats': {'8': 'MXFP8_E4M3', '6': 'MXFP6_E2M3', '4': 'MXFP4_E2M1'},
+         'codec_revision': {'8': 'e4m3-exact-binary-v2', '6': 'unchanged-E2M3-decode', '4': 'unchanged-E2M1-decode'},
+@@ -57,7 +57,7 @@
+         'truncation': True, 'mantissa_truncation': True, 'exponent_truncation': True,
+         'shared_scale_compensation': True, 'learned_shared_scale': True,
+         'scale_exponent_offset_choices': list(range(10)), 'scale_factor_choices': [1 << k for k in range(10)],
+-        'scale_proxy_dtype': 'float32', 'scale_proxy_init': 6.0, 'scale_proxy_bounds': [0.0, 9.0],
++        'scale_proxy_dtype': 'float32', 'scale_proxy_init': 0.0, 'scale_proxy_bounds': [0.0, 9.0],
+         'scale_thresholds': [k + .5 for k in range(9)], 'scale_tie_break': 'higher_offset',
+         'scale_rounding': 'nearest_integer_ties_up; floor(theta)+(theta-floor(theta)>=0.5)',
+         'packed_choice_bits_per_block': 4, 'packed_choice_bytes': 2040,
+@@ -83,8 +83,8 @@
+         'initialization_policy': 'fresh seed20261009; same untrained state as prior model construction; no warmstart',
+         'model': 'svhnq', 'expand': 2, 'parameters': 137034,
+         'base_parameters': 132954, 'learned_scale_parameters': 4080,
+-        'planned_epochs': 100, 'reference_end_epoch': 100,
+-        'scale_learning_end_epoch': 100, 'scale_freeze_epoch': None,
++        'planned_epochs': 5, 'pilot_epochs': 5, 'reference_end_epoch': 100,
++        'scale_learning_end_epoch': 5, 'scale_freeze_epoch': None,
+         'batch_size': 128, 'optimizer': 'adam', 'lr': .001, 'scale_lr': .001, 'weight_decay': 0.0,
+         'optimizer_groups': ['weights', 'scale_proxy'],
+         'scheduler_milestones': [50, 75, 90], 'scheduler_gamma': .1,
+@@ -92,13 +92,128 @@
+         'train_shuffle': True, 'test_shuffle': False, 'seed': 20261009,
+         'evaluation_policy': 'all three modes on complete official test after every epoch; hard CE for each',
+         'selection_policy': 'first strict maximum of E4M3/A32 official-test top1',
+-        'reporting_policy': 'all three modes from same selected E4M3-best checkpoint; also all at epoch100 or the last completed epoch of an interrupted run',
++        'reporting_policy': 'all three modes at epoch5 and the same E4M3-best pilot checkpoint; compare only matching epochs1..5 with the historical init64 pilot',
+         'backend_policy': 'github: cudnn.benchmark=True; no deterministic override',
+         'rng_policy': 'global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries',
+         'checkpoint_policy': 'immutable FP32 training state per epoch and selected best/last copies',
+         'export_policy': 'one E4M3 source plus packed four-bit block offset0..9 choices and BN auxiliary state; derive lower exports only from saved source codes/scales/choices; no MX masters or FP32 theta in compact exports; resume retains theta and Adam',
+         'exact_historical_paper_reproduction_proven': False,
+     }
++
++
++
++NOTEBOOK = 'MX_triple_learned_scale10_init1_pilot5_resultaten.ipynb'
++
++
++def load_initialization_reference(directory=None):
++    directory = ROOT / 'init64_reference' if directory is None else Path(directory)
++    meta = json.loads((directory / 'REFERENCE.json').read_text(encoding='utf-8'))
++    for name, digest in meta['files_sha256'].items():
++        path = (directory / name).resolve()
++        s.require(path.is_relative_to(directory.resolve()) and path.is_file()
++                  and s.legacy.sha256(path) == digest, 'Initialisatiereferentie gewijzigd: ' + name)
++    report = json.loads((directory / 'run_report.json').read_text(encoding='utf-8'))
++    history = json.loads((directory / 'history.json').read_text(encoding='utf-8'))
++    s.require(report['status'] == 'PASS' and report['config']['scale_proxy_init'] == 6.0,
++              'Verwacht de oorspronkelijke geslaagde init x64-pilot.')
++    s.require([r['epoch'] for r in history['epochs']] == list(range(1, 6)),
++              'De vergelijking vereist precies de vijf oorspronkelijke piloteepochs.')
++    s.require(history['initial_base_model_sha256'] == report['initial_base_model_sha256'],
++              'Initialisatiereferentie heeft verschillende oorspronkelijke modelidentiteiten.')
++    return dict(directory=directory, meta=meta, report=report, history=history)
++
++
++def archive_initialization_reference(out):
++    source = ROOT / 'init64_reference'
++    destination = out / 'init64_reference'
++    if destination.exists():
++        for path in source.rglob('*'):
++            if path.is_file():
++                other = destination / path.relative_to(source)
++                s.require(other.is_file() and other.read_bytes() == path.read_bytes(),
++                          'Bestaande gearchiveerde referentie wijkt af: ' + str(other))
++    else:
++        shutil.copytree(source, destination)
++
++
++def validate_initialization(model, c, reference, report):
++    s.require(c['scale_proxy_init'] == a.THETA_INITIAL == 0.0,
++              'Deze proef moet alle schaalparameters op nul initialiseren.')
++    state = a.validate_scale_parameters(model)
++    s.require(state['total_blocks'] == 4080 and state['theta_at_min_blocks'] == 4080
++              and state['factor_counts']['1'] == 4080,
++              'Niet alle groepen starten exact op theta0/factor1.')
++    base = s.legacy.state_digest(a.base_state_dict(model))
++    s.require(base == reference['history']['initial_base_model_sha256'],
++              'FP32-gewichten of BN-initialisatie wijken af van de init64-referentie.')
++    report['initialization_verification'] = dict(
++        initial_theta=0.0, initial_factor=1, original_initial_theta=6.0,
++        all4080_groups_start_at_x1=True, initial_base_model_sha256=base,
++        same_base_weights_and_BN_as_init64=True,
++        only_scale_initialization_is_the_intended_training_change=True,
++        source_scale_is_still_dynamic=True, all_ten_choices_remain_learnable=True)
++
++
++def write_initialization_comparison(ctx, out, trace):
++    if ctx.contract['synthetic_fixture_only'] and not hasattr(ctx, 'initialization_reference'):
++        result = dict(synthetic_fixture_only=True, comparison_performed=False,
++                      reason='Synthetic software fixture is not compared with real research data.')
++        s.write_json(out / 'initialization_reference_report.json', result)
++        ctx.report['initialization_reference'] = result
++        return result
++    reference = getattr(ctx, 'initialization_reference', None) or load_initialization_reference()
++    old = reference['history']
++    s.require(trace['initial_base_model_sha256'] == old['initial_base_model_sha256'],
++              'De twee initialisatieruns vertrekken niet van dezelfde basisgewichten/BN.')
++    rows = []
++    orders = True
++    for record in trace['epochs']:
++        counterpart = old['epochs'][record['epoch'] - 1]
++        for phase in ('train', 'test'):
++            match = record['coverage'][phase]['order_sha256'] == counterpart['coverage'][phase]['order_sha256']
++            orders = orders and match
++            s.require(match, 'Samplevolgorde verschilt van de oorspronkelijke init64-pilot.')
++        bybit = {row['weight_bits']: row for row in counterpart['test']}
++        for row in record['test']:
++            other = bybit[row['weight_bits']]
++            s.require(row['n'] == other['n'], 'Verschillend aantal testbeelden.')
++            rows.append(dict(epoch=record['epoch'], weight_bits=row['weight_bits'],
++                weight_format=row['weight_format'], init1_top1_percent=row['top1_percent'],
++                init64_top1_percent=other['top1_percent'],
++                difference_percentage_points=row['top1_percent']-other['top1_percent'],
++                init1_correct1=row['correct1'], init64_correct1=other['correct1'],
++                test_examples=row['n']))
++    s.write_csv(out / 'initialization_comparison.csv', rows)
++    result = dict(synthetic_fixture_only=ctx.contract['synthetic_fixture_only'], comparison_performed=True,
++        matched_epochs=[r['epoch'] for r in trace['epochs']],
++        initial_base_model_sha256=trace['initial_base_model_sha256'],
++        initial_base_weights_and_BN_match=True, all_sample_orders_match=orders,
++        new_initial_theta=0.0, reference_initial_theta=6.0,
++        comparison_is_historical=True, exact_CUDA_repeat_not_claimed=True,
++        source_reference_sha256=s.legacy.sha256(reference['directory']/'REFERENCE.json'))
++    s.write_json(out / 'initialization_reference_report.json', result)
++    ctx.report['initialization_reference'] = result
++    return result
++
++
++def write_notebook(out):
++    notebook = json.loads((ROOT / NOTEBOOK).read_text(encoding='utf-8'))
++    for cell in notebook['cells']:
++        if 'parameters' in cell.get('metadata', {}).get('tags', []):
++            cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n',
++                              'SAVE_FIGURES = False\n']
++    target = out / NOTEBOOK
++    if target.exists():
++        s.require(json.loads(target.read_text(encoding='utf-8')) == notebook,
++                  'Bestaande notebook verschilt; niets overschrijven.')
++    else:
++        s.write_json(target, notebook)
++    raw = (ROOT / 'notebook_support.py').read_bytes()
++    target = out / 'notebook_support.py'
++    if target.exists():
++        s.require(target.read_bytes() == raw, 'Bestaande notebookhelper verschilt; niets overschrijven.')
++    else:
++        with target.open('xb') as handle: handle.write(raw)
+ 
+ 
+ def dependencies(out: Path, log) -> None:
+@@ -116,6 +231,8 @@
+ def create_context(args, out: Path, report: dict, log, check_only: bool = False):
+     package_hashes = s.verify_package()
+     c = config(args.mode)
++    reference = load_initialization_reference()
++    archive_initialization_reference(out)
+     source, source_info = s.legacy.prepare_source(out)
+     report.update(config=c, source=source_info, package_sha256=package_hashes,
+                   interpreter=sys.executable)
+@@ -129,6 +246,7 @@
+     log('Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.')
+     model = None
+     if check_only:
++        initialization_rng = rt.core.capture_rng({}, rt.device)
+         import test_mx
+         import test_e4m3
+         import test_learned_scale
+@@ -162,7 +280,12 @@
+                 report['notebook_dependencies'][name] = metadata.version(name)
+             except metadata.PackageNotFoundError:
+                 report['notebook_dependencies'][name] = 'MISSING: notebook only'
+-        log('CHECK PASS: tien geleerde blokfactoren1..512; exacte forward, identity-mastergradient, log-exponent-schaalgradient, projectie en 4-bit-keuze-export. Geen SVHN-training.')
++        # Codec checks use their own seed; restore the actual experiment seed
++        # before comparing fresh FP32 weights and BN with the historical pilot.
++        rt.core.restore_rng(initialization_rng, {}, rt.device)
++        initial_model = t.build_model(modules, c['mode'], rt.device)
++        validate_initialization(initial_model, c, reference, report)
++        log('CHECK PASS: init x1 en tien geleerde blokfactoren1..512; exacte forward, identity-mastergradient, log-exponent-schaalgradient, projectie en 4-bit-keuze-export. Geen SVHN-training.')
+         return None
+ 
+     start_data = time.perf_counter()
+@@ -204,6 +327,7 @@
+     model = t.build_model(modules, c['mode'], rt.device)
+     s.require(model.expand == c['expand'] and sum(p.numel() for p in model.parameters()) == c['parameters'],
+               'Onverwacht model; verwacht svhnq expand=2.')
++    validate_initialization(model, c, reference, report)
+     optimizer = t.build_optimizer(modules, model, c)
+     scheduler = modules.optimizer.get_lr_scheduler('adam', optimizer, c['scheduler_milestones'])
+     contract = {
+@@ -237,16 +361,17 @@
+ def run_epochs(ctx, out: Path, log, stop_after: int, resume: Path | None = None,
+                install_signal_handler: bool = True) -> dict:
+     rt, c = ctx.rt, ctx.c
+-    s.require(c['planned_epochs'] == c['reference_end_epoch'] == 100,
+-              'Onjuist honderd-epochreferentiecontract.')
+-    s.require(c['scale_learning_end_epoch'] == 100 and c['scale_freeze_epoch'] is None,
+-              'Deze referentie leert de schaalkeuzes tot en met epoch100; geen freeze.')
+-    s.require(type(stop_after) is int and 1 <= stop_after <= c['reference_end_epoch'],
+-              'De stop-epoch moet binnen het vaste 100-epochschema liggen.')
++    s.require(c['planned_epochs'] == 5 and c['reference_end_epoch'] == 100,
++              'Onjuist vijf-epochpilotcontract met oorspronkelijk100-epochschema.')
++    s.require(c['scale_learning_end_epoch'] == 5 and c['scale_freeze_epoch'] is None,
++              'Deze pilot leert de schaalkeuzes tot en met epoch5; geen freeze.')
++    s.require(type(stop_after) is int and 1 <= stop_after <= c['planned_epochs'],
++              'De stop-epoch moet tussen1 en5 liggen; de oorspronkelijke LR-mijlpalen blijven behouden.')
+     torch, core, device = rt.torch, rt.core, rt.device
+     model, optimizer, scheduler, loaders = ctx.model, ctx.optimizer, ctx.scheduler, ctx.loaders
+     for directory in ['checkpoints', 'epoch_summaries', 'sample_order', 'batch_metrics']:
+         (out / directory).mkdir(exist_ok=True)
++    s.require(float(c['scale_proxy_init']) == a.THETA_INITIAL == 0.0, 'Init1-protocol en adapter verschillen.')
+     trace = {'initial_model_sha256': s.legacy.state_digest(model.state_dict()),
+              'initial_base_model_sha256': s.legacy.state_digest(a.base_state_dict(model)),
+              'initial_scale_state': t.scale_state(model), 'epochs': []}
+@@ -297,7 +422,7 @@
+             for milestone in c['scheduler_milestones']:
+                 if milestone < epoch: expected_scale_lr *= c['scheduler_gamma']
+             s.require(scale_lr == expected_scale_lr, 'Schaal-LR wijkt af van het vastgelegde schema.')
+-            log(f'EPOCH {epoch}/{stop_after}; MODE={c["mode"]}; LR={lr:g}; volledig schema={c["planned_epochs"]}')
++            log(f'EPOCH {epoch}/{stop_after}; MODE={c["mode"]}; LR={lr:g}; oorspronkelijk schema={c["reference_end_epoch"]}')
+             before_weights = t.layer_snapshot(model, c['mode'])
+             train_rows, train_s, ast_hash, grad_audit = t.phase(rt, ctx.source, ctx.modules, model, optimizer,
+                   loaders['train'], epoch, 'train', lr, out / 'batch_metrics', log, c['mode'])
+@@ -390,6 +515,7 @@
+     """Persist and independently validate all ten choices and resumed history."""
+     import torch
+     records = trace['epochs']
++    c_initial = float(ctx.c['scale_proxy_init'])
+     rows = [row for record in records for row in record['scale_epoch_metrics']]
+     block_rows = []
+     states = [(0, trace['initial_scale_state'])] + [(r['epoch'], r['scale_state']) for r in records]
+@@ -407,7 +533,7 @@
+                       and bool(((value >= 0) & (value <= 9)).all()), 'Ongeldige opgeslagen schaalstaat: ' + name)
+             offsets = choices(value)
+             if epoch == 0 and not ctx.contract['synthetic_fixture_only']:
+-                s.require(bool((value == 6).all()), 'Nieuwe referentie moet starten met alle blokken op x64.')
++                s.require(bool((value == c_initial).all()), 'Nieuwe pilot moet starten met alle blokken op x1.')
+             for channel, values in enumerate(state[name]):
+                 for index, theta in enumerate(values):
+                     offset = int(offsets[channel, index])
+@@ -461,9 +587,9 @@
+                          'factor_counts': {str(f): sum(r[f'count_x{f}'] for r in rr) for f in a.SCALE_FACTORS}}
+     packed_bytes = sum((math.prod(a.block_shape(tuple(ctx.model.get_submodule(n).weight.shape))) + 1) // 2
+                        for n in a.TARGET_LAYERS)
+-    result = {'schema': 'mx-triple-learned-scale10-reference100-scale-learning-v1',
++    result = {'schema': 'mx-triple-learned-scale10-init1-pilot5-scale-learning-v1',
+               'learned_scale_parameters': ctx.c['learned_scale_parameters'],
+-              'initial_theta': 6.0, 'thresholds': [k + .5 for k in range(9)], 'tie_break': 'higher_offset',
++              'initial_theta': float(ctx.c['scale_proxy_init']), 'thresholds': [k + .5 for k in range(9)], 'tie_break': 'higher_offset',
+               'offset_choices': list(a.OFFSET_CHOICES), 'factor_choices': list(a.SCALE_FACTORS),
+               'theta_bounds': [0.0, 9.0],
+               'scale_gradient': ctx.c['scale_gradient'], 'gradient_normalization': 'none',
+@@ -515,12 +641,12 @@
+     s.require(records and [r['epoch'] for r in records] == list(range(1, records[-1]['epoch'] + 1)),
+               'Onvolledige epochgeschiedenis.')
+     expected_steps = math.ceil(c['train_examples'] / c['batch_size'])
+-    s.require(c['planned_epochs'] == c['reference_end_epoch'] == 100,
+-              'Onjuist honderd-epochreferentiecontract.')
+-    s.require(c['scale_learning_end_epoch'] == 100 and c['scale_freeze_epoch'] is None,
+-              'Deze referentie leert de schaalkeuzes tot en met epoch100; geen freeze.')
+-    s.require(0 < records[-1]['epoch'] <= c['reference_end_epoch'],
+-              'Referentie moet uiterlijk na honderd epochs stoppen.')
++    s.require(c['planned_epochs'] == 5 and c['reference_end_epoch'] == 100,
++              'Onjuist vijf-epochpilotcontract met oorspronkelijk100-epochschema.')
++    s.require(c['scale_learning_end_epoch'] == 5 and c['scale_freeze_epoch'] is None,
++              'Deze pilot leert de schaalkeuzes tot en met epoch5; geen freeze.')
++    s.require(0 < records[-1]['epoch'] <= c['planned_epochs'],
++              'Deze pilot moet uiterlijk na vijf epochs stoppen.')
+     for record in records:
+         epoch = record['epoch']
+         s.require(record['optimizer_steps'] == expected_steps * epoch, 'Verkeerd aantal updates.')
+@@ -702,30 +828,9 @@
+     s.write_csv(out / 'test_prediction_counts.csv', prediction_rows)
+     scale_summary = write_scale_results(ctx, out, trace)
+     elapsed = sum(r['total_epoch_seconds'] for r in records)
+-    pilot_completed = False  # This is a fresh reference run, not a continuation of the pilot.
+-    full_completed = last['epoch'] == c['reference_end_epoch']
+-    epoch50_checkpoint = {'available': False, 'epoch': 50,
+-                          'reason': 'Epoch50 has not yet been completed in this run history.'}
+-    if last['epoch'] >= 50:
+-        record50 = records[49]
+-        path50 = Path(record50['checkpoint_path'])
+-        s.require(record50['epoch'] == 50 and path50.is_file(),
+-                  'Het volledige checkpoint van epoch50 ontbreekt.')
+-        hash50 = core.file_sha256(path50)
+-        marker50 = path50.with_suffix('.pt.sha256')
+-        s.require(marker50.is_file() and marker50.read_text(encoding='ascii').strip() == hash50,
+-                  'Checksum van het bewaarde epoch50-checkpoint wijkt af.')
+-        epoch50_checkpoint = {'available': True, 'epoch': 50,
+-            'original_checkpoint': str(path50), 'sha256': hash50,
+-            'optimizer_steps': record50['optimizer_steps'],
+-            'scale_lr_used': record50['scale_lr_used'], 'scale_lr_next': record50['scale_lr_next'],
+-            'full_training_state': True,
+-            'state_includes': ['FP32 weights', 'FP32 scale proxies', 'both Adam groups',
+-                               'scheduler', 'Python/NumPy/Torch CPU/CUDA RNG', 'full epoch history'],
+-            'purpose': 'Optional future freeze branch; this reference continues learning scales through epoch100.',
+-            'checkpoint_in_feedback_bundle': False}
+-    s.write_json(out / 'epoch50_checkpoint.json', epoch50_checkpoint)
+-    summary = {'schema': 'mx-triple-learned-scale10-reference100-completion-v1',
++    pilot_completed = last['epoch'] == c['planned_epochs']
++    full_completed = False  # This bounded pilot cannot finish100 epochs.
++    summary = {'schema': 'mx-triple-learned-scale10-init1-pilot5-completion-v1',
+                'planned_epochs': c['planned_epochs'], 'reference_end_epoch': c['reference_end_epoch'],
+                'completed_epochs': last['epoch'], 'pilot_completed': pilot_completed,
+                'full_training_completed': full_completed,
+@@ -744,13 +849,12 @@
+                'exponent_truncation': True, 'mantissa_truncation': True,
+                'shared_scale_compensation': True, 'learned_shared_scale': True,
+                'scale_exponent_offset_choices': list(range(10)), 'scale_factor_choices': [1 << k for k in range(10)],
+-               'scale_proxy_init': 6.0, 'scale_proxy_bounds': [0.0, 9.0],
++               'scale_proxy_init': 0.0, 'scale_proxy_bounds': [0.0, 9.0],
+                'learned_scale_parameters': c['learned_scale_parameters'],
+                'scale_gradient': c['scale_gradient'], 'scale_gradient_normalization': 'none',
+                'scale_projection_after_every_update': True, 'scale_lr': c['scale_lr'],
+                'scale_learning_end_epoch': c['scale_learning_end_epoch'],
+                'scale_freeze_epoch': c['scale_freeze_epoch'],
+-               'epoch50_checkpoint': epoch50_checkpoint,
+                'scale_learning_summary': scale_summary,
+                'quantization_source': c['quantization_source'],
+                'initial_model_sha256': trace['initial_model_sha256'],
+@@ -766,7 +870,7 @@
+                'batchnorm_learned_during_training_eval_frozen': True,
+                'synthetic_fixture_only': ctx.contract['synthetic_fixture_only']}
+     s.write_json(out / 'training_summary.json', summary)
+-    estimate = s.estimate_time(records, c['planned_epochs'])
++    estimate = s.estimate_time(records, c['reference_end_epoch'])
+     estimate['weight_mode'] = c['weight_format']
+     estimate['includes'] = ['three-mode training', 'three-mode test', 'epoch diagnostics', 'checkpoint write']
+     estimate['measured_completed_epoch_seconds'] = elapsed
+@@ -801,24 +905,14 @@
+                       synthetic_fixture_only=ctx.contract['synthetic_fixture_only'],
+                       full_training_completed=full_completed, pilot_completed=pilot_completed,
+                       full_100_epoch_training_completed=full_completed,
+-                      epoch50_checkpoint=epoch50_checkpoint,
+                       training_forward_passes=last['optimizer_steps'] * 3)
+-    notebook_name = 'MX_triple_learned_scale10_reference100_resultaten.ipynb'
+-    notebook = json.loads((ROOT / notebook_name).read_text(encoding='utf-8'))
+-    for cell in notebook['cells']:
+-        if 'parameters' in cell.get('metadata', {}).get('tags', []):
+-            cell['source'] = ['from pathlib import Path\n', f'RUN_DIR = Path({str(out.resolve())!r})\n',
+-                              'SAVE_FIGURES = False  # Zet op True om figuren in een nieuwe analysemap te bewaren.\n']
+-    s.write_json(out / notebook_name, notebook)
+-    with (ROOT / 'notebook_support.py').open('rb') as src, (out / 'notebook_support.py').open('xb') as dst:
+-        shutil.copyfileobj(src, dst)
+-    # Archive unchanged real references and the completed earlier pilot beside the notebook.
+-    shutil.copytree(ROOT / 'fixed_references', out / 'fixed_references')
+-    shutil.copytree(ROOT / 'pilot_reference', out / 'pilot_reference')
++    write_initialization_comparison(ctx, out, trace)
++    write_notebook(out)
++    archive_initialization_reference(out)
+     ctx.report['history_export_validation'] = validate_history_export(
+         out / 'history.json', trace, core)
+     log(f'BEHOUDEN: alle drie modi uit beste E4M3-checkpoint {best["epoch"]}; laatste {last["epoch"]}.')
+-    log(f'REFERENTIE: {last["epoch"]}/100 epochs; {last["optimizer_steps"]} updates; '
++    log(f'PILOT INIT x1: {last["epoch"]}/5 epochs; {last["optimizer_steps"]} updates; '
+         f'{last["optimizer_steps"] * 3} trainingspasses; gemeten epochtijd={elapsed / 60:.2f} min.')
+ 
+ 
+@@ -839,12 +933,12 @@
+              'dataset_manifest.json', 'source_manifest.json', 'compatibility.patch',
+              'pip_freeze.txt', 'pip_check.txt', 'run.log', 'warnings.log',
+              'training_change_manifest.json', 'training_summary.json',
+-             'epoch50_checkpoint.json',
++             'initialization_reference_report.json', 'initialization_comparison.csv',
+              'test_prediction_counts.csv', 'scale_epoch_metrics.csv', 'scale_block_state.csv', 'scale_learning_summary.json',
+              'codec_report.json', 'trunc_training_check_report.json',
+-             'MX_triple_learned_scale10_reference100_resultaten.ipynb', 'notebook_support.py']
++             'MX_triple_learned_scale10_init1_pilot5_resultaten.ipynb', 'notebook_support.py']
+     names += [f'mx_export_layers_{bit}_{role}.csv' for bit in a.MODES for role in ('best', 'last')]
+-    for reference_directory in ['fixed_references', 'pilot_reference']:
++    for reference_directory in ['init64_reference']:
+         if (out / reference_directory).is_dir():
+             names += [str(path.relative_to(out)).replace('\\', '/')
+                       for path in sorted((out / reference_directory).rglob('*')) if path.is_file()]
+@@ -856,11 +950,11 @@
+                 z.write(path, name)
+                 added.add(name)
+         # Keep the analysis notebook available even when check/run fails early.
+-        for name in ['MX_triple_learned_scale10_reference100_resultaten.ipynb', 'notebook_support.py']:
++        for name in ['MX_triple_learned_scale10_init1_pilot5_resultaten.ipynb', 'notebook_support.py']:
+             if name not in added:
+                 z.write(ROOT / name, name)
+                 added.add(name)
+-        for reference_directory in ['fixed_references', 'pilot_reference']:
++        for reference_directory in ['init64_reference']:
+             if not (out / reference_directory).is_dir():
+                 for path in sorted((ROOT / reference_directory).rglob('*')):
+                     if path.is_file():
+@@ -880,14 +974,14 @@
+     parser.add_argument('command', choices=['check', 'run', 'resume'])
+     parser.set_defaults(mode='joint')
+     parser.add_argument('--data-root', type=Path, default=Path('data/svhn'))
+-    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_learned_scale10_reference100'))
++    parser.add_argument('--output-root', type=Path, default=Path('mx_runs/mx_triple_learned_scale10_init1_pilot5'))
+     parser.add_argument('--device', choices=['cuda', 'cuda:0'], default='cuda:0')
+     parser.add_argument('--download', action='store_true')
+-    parser.add_argument('--stop-after-epoch', type=int, default=100)
++    parser.add_argument('--stop-after-epoch', type=int, default=5)
+     parser.add_argument('--checkpoint', type=Path)
+     args = parser.parse_args()
+-    if not 1 <= args.stop_after_epoch <= 100:
+-        parser.error('De stop-epoch moet tussen1 en100 liggen; het oorspronkelijke100-epochschema blijft behouden.')
++    if not 1 <= args.stop_after_epoch <= 5:
++        parser.error('De stop-epoch moet tussen1 en5 liggen; het oorspronkelijke100-epochschema blijft behouden.')
+     if (args.command == 'resume') != (args.checkpoint is not None):
+         parser.error('Alleen resume vereist --checkpoint; run begint altijd vanaf initialisatie.')
+     # CHECK ONLY: configure cuBLAS before any CUDA context is initialized.
+@@ -901,15 +995,15 @@
+     stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+     out = (args.output_root / (stamp + '_' + args.mode + '_' + args.command)).resolve()
+     out.mkdir(parents=True, exist_ok=False)
+-    report = {'schema': 'mx-triple-learned-scale10-reference100-report-v1', 'status': 'RUNNING',
+-              'package_revision': 'mx_triple_learned_scale10_reference100_v1',
++    report = {'schema': 'mx-triple-learned-scale10-init1-pilot5-report-v1', 'status': 'RUNNING',
++              'package_revision': 'mx_triple_learned_scale10_init1_pilot5_v1',
+               'command': args.command, 'mode': args.mode, 'started_at': s.now(),
+               'output_directory': str(out), 'argv': sys.argv, 'warnings': [],
+               'limitations': ['train only; shared E4M3 source and two code-derived MX modes; this is not a paper reproduction',
+                               'FP32 update master/gradients/Adam; A32; exponent MSB and mantissa truncation, lower scales follow a shared learned ten-choice block factor1..512',
+                               'three forward/backwards: E4M3 hard CE, E2M3/E2M1 recursive detached soft CE, one Adam step',
+                               'BN banks learn during training; learned hard block offset0..9; log-exponent STE; E4 source scale unchanged',
+-                              'fresh100epoch reference; scale choices learn throughout; no freeze at50; low accuracy is a valid measured outcome',
++                              'five-epoch init1 ablation from fresh original weights; all ten scale choices learn; no freeze; low accuracy or no hard switches are valid measured outcomes',
+                               'official test used for checkpoint selection, not an independent test estimate',
+                               'numerical weight-only MX emulation; no native MX kernel or energy claim',
+                               'GPU bit-exact repeat/resume not guaranteed; fixed seed is not proof of determinism',
+@@ -933,7 +1027,8 @@
+             warnings.simplefilter('default')
+             warnings.showwarning = warning_handler
+             log('RESULTATENMAP: ' + str(out))
+-            log('GELEERDE TIEN-SCHALEN-REFERENTIE: 100 epochs vanaf nul; E4M3 -> E2M3 -> E2M1; 4080 FP32-keuzeparameters tot en met epoch100; harde blokoffset0..9 (factor1..512); A32; FP32-masters.')
++            log('INIT x1-PILOT: maximaal5 epochs vanaf nul; alleen theta-initialisatie6->0 verandert; tien leerbare factoren1..512; E4M3 -> E2M3 -> E2M1; A32; FP32-masters.')
++            write_notebook(out)
+             ctx = create_context(args, out, report, log, check_only=args.command == 'check')
+             if ctx is None:
+                 report['status'] = 'PASS'
+@@ -941,7 +1036,7 @@
+                 trace = run_epochs(ctx, out, log, args.stop_after_epoch, args.checkpoint)
+                 export_results(ctx, out, trace, log)
+                 verify_unchanged(ctx, log)
+-                report['status'] = 'PASS' if report['full_training_completed'] else 'STOPPED_AT_EPOCH_BOUNDARY'
++                report['status'] = 'PASS' if report['pilot_completed'] else 'STOPPED_AT_EPOCH_BOUNDARY'
+             exit_code = 0
+     except BaseException as exc:
+         report['status'] = 'INTERRUPTED' if isinstance(exc, KeyboardInterrupt) else 'FAIL'

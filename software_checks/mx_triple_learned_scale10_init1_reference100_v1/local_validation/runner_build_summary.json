@@ -1,0 +1,22 @@
+{
+  "runtime_complete": true,
+  "runtime_sha256": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293",
+  "unchanged_numerical_files_verified": 16,
+  "checks": [
+    {
+      "report": "check_entry_report.json",
+      "status": "PASS"
+    },
+    {
+      "report": "training_integration_report.json",
+      "status": "PASS"
+    },
+    {
+      "report": "reference_contract_report.json",
+      "status": "PASS"
+    }
+  ],
+  "no_SVHN_training": true,
+  "no_CUDA_validation": true,
+  "final_seal_pending_root": true
+}

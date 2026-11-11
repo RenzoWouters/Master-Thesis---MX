@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic CPU integration outputs only. Full unchanged notebook cells executed; no real-data training.",
+  "checks": [
+    {
+      "mode": "complete5",
+      "executed_code_cells": 13,
+      "figures": 9,
+      "status": "PASS",
+      "last_epoch": 5,
+      "synthetic_only": true,
+      "reference_comparison": false,
+      "warnings": [
+        "The 'float_precision' argument is deprecated. Use the default float precision instead."
+      ]
+    },
+    {
+      "mode": "partial2",
+      "executed_code_cells": 13,
+      "figures": 9,
+      "status": "PASS",
+      "last_epoch": 2,
+      "synthetic_only": true,
+      "reference_comparison": false,
+      "warnings": [
+        "The 'float_precision' argument is deprecated. Use the default float precision instead."
+      ]
+    },
+    {
+      "mode": "resume2_to5",
+      "executed_code_cells": 13,
+      "figures": 9,
+      "status": "PASS",
+      "last_epoch": 5,
+      "synthetic_only": true,
+      "reference_comparison": false,
+      "warnings": [
+        "The 'float_precision' argument is deprecated. Use the default float precision instead."
+      ]
+    }
+  ],
+  "source_sha256": {
+    "notebook_support.py": "99415b6f0e2bacfddab96712851a6acc507a336b69fdef4c76487dd4124ab310",
+    "MX_triple_learned_scale10_init1_pilot5_resultaten.ipynb": "55c83a4d88321001406d4369b8ea4ded426b476d710d2ba9089f10a4de7fc467"
+  }
+}

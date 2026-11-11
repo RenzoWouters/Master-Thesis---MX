@@ -1,0 +1,43 @@
+{
+  "baseline": "init64_reference/run_report.json",
+  "runtime": "PROTOCOL.json",
+  "differences": {
+    "pilot_epochs": {
+      "init64_pilot": null,
+      "init1_pilot": 5
+    },
+    "pilot_stop_epoch": {
+      "init64_pilot": 5,
+      "init1_pilot": null
+    },
+    "planned_epochs": {
+      "init64_pilot": 100,
+      "init1_pilot": 5
+    },
+    "purpose": {
+      "init64_pilot": "five complete train-only epochs: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation",
+      "init1_pilot": "five-epoch initialization ablation: all ten lower scale factors remain learnable; theta starts at0 (x1), all other training choices match the historical init64 pilot"
+    },
+    "reference_end_epoch": {
+      "init64_pilot": null,
+      "init1_pilot": 100
+    },
+    "reporting_policy": {
+      "init64_pilot": "all three modes from same selected E4M3-best checkpoint; also all at last pilot epoch",
+      "init1_pilot": "all three modes at epoch5 and the same E4M3-best pilot checkpoint; compare only matching epochs1..5 with the historical init64 pilot"
+    },
+    "scale_learning_end_epoch": {
+      "init64_pilot": null,
+      "init1_pilot": 5
+    },
+    "scale_proxy_init": {
+      "init64_pilot": 6.0,
+      "init1_pilot": 0.0
+    },
+    "schema": {
+      "init64_pilot": "mx-triple-learned-scale10-pilot5-protocol-v1",
+      "init1_pilot": "mx-triple-learned-scale10-init1-pilot5-protocol-v1"
+    }
+  },
+  "interpretation": "Only scale_proxy_init changes the numerical training setting; other differences rename and strictly bound the five-epoch pilot while retaining the original LR milestones."
+}

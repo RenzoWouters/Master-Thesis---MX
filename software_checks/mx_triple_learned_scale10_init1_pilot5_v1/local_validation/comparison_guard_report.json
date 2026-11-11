@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "software_schema_fixture_only": true,
+  "no_new_accuracy_data": true,
+  "historical_files_untouched": true,
+  "same_trace_produces15_matched_comparisons": true,
+  "mismatched_base_and_sample_order_rejected": true
+}

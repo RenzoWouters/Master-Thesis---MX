@@ -1,0 +1,291 @@
+{
+  "schema": "mx-scale10-init1-full100-readonly-code-review-v1",
+  "status": "PASS",
+  "scope": "Static and reference-loader review only; no training, no runner edits. Packaging/notebook assembly remains parent responsibility.",
+  "checks": [
+    {
+      "check": "runtime config equals published protocol",
+      "passed": true
+    },
+    {
+      "check": "100 epochs weights and all scales, no freeze",
+      "passed": true
+    },
+    {
+      "check": "theta0 initialization enforced",
+      "passed": true
+    },
+    {
+      "check": "all ten choices remain available",
+      "passed": true
+    },
+    {
+      "check": "original milestones and identical weight/scale lr",
+      "passed": true
+    },
+    {
+      "check": "A32 FP32 B32 retained",
+      "passed": true
+    },
+    {
+      "check": "recursive losses exactly retained",
+      "passed": true
+    },
+    {
+      "check": "full100 config differs numerically only by initial scale",
+      "passed": true
+    },
+    {
+      "check": "pilot config changes only planned horizon and reporting",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code trunc_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code joint_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code smoke_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code test_mx.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code mx_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code test_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code svhn_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code trunc_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code mx_format.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code test_learned_scale.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code joint_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code resume_core.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged pilot code test_joint.py",
+      "passed": true
+    },
+    {
+      "check": "old full100 adapter only changes theta6 to theta0",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code mx_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code joint_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code smoke_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code test_mx.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code mx_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code mx_e2m1.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code test_e4m3.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code svhn_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code trunc_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code mx_format.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code joint_support.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code resume_core.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code posthoc_truncation.py",
+      "passed": true
+    },
+    {
+      "check": "unchanged original full100 code test_joint.py",
+      "passed": true
+    },
+    {
+      "check": "full training epoch loop AST identical apart from logging",
+      "passed": true
+    },
+    {
+      "check": "full contract compared before checkpoint state applied",
+      "passed": true
+    },
+    {
+      "check": "pilot and init64 checkpoints incompatible by experiment schema",
+      "passed": true
+    },
+    {
+      "check": "CLI default100 and explicit1..100 bound",
+      "passed": true
+    },
+    {
+      "check": "run rejects checkpoint argument, no implicit pilot continuation",
+      "passed": true
+    },
+    {
+      "check": "fresh unique output and dedicated100 directory",
+      "passed": true
+    },
+    {
+      "check": "complete init64 training reference accepted by actual loader",
+      "passed": true
+    },
+    {
+      "check": "full100 baseline and actual init1 pilot share base hash",
+      "passed": true
+    },
+    {
+      "check": "full100 baseline and actual init1 pilot first5 train orders match",
+      "passed": true
+    },
+    {
+      "check": "full100 baseline and actual init1 pilot first5 test orders match",
+      "passed": true
+    },
+    {
+      "check": "actual fresh initialization compared to historical base",
+      "passed": true
+    },
+    {
+      "check": "per-epoch train/test sample order guard retained",
+      "passed": true
+    },
+    {
+      "check": "review did not change runner files",
+      "passed": true
+    }
+  ],
+  "check_count": 53,
+  "config_difference_vs_old_full100": {
+    "scale_proxy_init": {
+      "old": 6.0,
+      "new": 0.0
+    },
+    "schema": {
+      "old": "mx-triple-learned-scale10-reference100-protocol-v1",
+      "new": "mx-triple-learned-scale10-init1-reference100-protocol-v1"
+    },
+    "purpose": {
+      "old": "one hundred complete train-only epochs from fresh initialization: ten learned per-block lower scale factors1..512; unchanged E4M3 source and exponent/mantissa bit truncation; scale choices learn through epoch100",
+      "new": "one hundred complete train-only epochs from fresh initialization at theta0 (x1): all ten lower scale factors remain learnable through epoch100; unchanged E4 source and exponent/mantissa bit truncation"
+    },
+    "reporting_policy": {
+      "old": "all three modes from same selected E4M3-best checkpoint; also all at epoch100 or the last completed epoch of an interrupted run",
+      "new": "all three modes at epoch100 and the same E4M3-best checkpoint; partial runs report their actual last epoch; compare only available matched epochs against the historical init64 run"
+    }
+  },
+  "config_difference_vs_actual_pilot": {
+    "scale_learning_end_epoch": {
+      "pilot": 5,
+      "new": 100
+    },
+    "pilot_epochs": {
+      "pilot": 5,
+      "new": null
+    },
+    "schema": {
+      "pilot": "mx-triple-learned-scale10-init1-pilot5-protocol-v1",
+      "new": "mx-triple-learned-scale10-init1-reference100-protocol-v1"
+    },
+    "purpose": {
+      "pilot": "five-epoch initialization ablation: all ten lower scale factors remain learnable; theta starts at0 (x1), all other training choices match the historical init64 pilot",
+      "new": "one hundred complete train-only epochs from fresh initialization at theta0 (x1): all ten lower scale factors remain learnable through epoch100; unchanged E4 source and exponent/mantissa bit truncation"
+    },
+    "planned_epochs": {
+      "pilot": 5,
+      "new": 100
+    },
+    "reporting_policy": {
+      "pilot": "all three modes at epoch5 and the same E4M3-best pilot checkpoint; compare only matching epochs1..5 with the historical init64 pilot",
+      "new": "all three modes at epoch100 and the same E4M3-best checkpoint; partial runs report their actual last epoch; compare only available matched epochs against the historical init64 run"
+    }
+  },
+  "code_sha256": {
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "trunc_adapter.py": "93ab499629cc443a0e750ca3cda91398acf1775ade5b844c3c29927540d8066c",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "test_mx.py": "79c7c353cf6228f6e09bda5302238db39bd52ee8ed5b1a70f0a36c7c19a42ce8",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "test_e4m3.py": "2a69408e83d19789633d177029282eb07ac00adc27c48d23e6b537d11fa4b7a2",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "run_train.py": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293",
+    "trunc_support.py": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "test_learned_scale.py": "2005a6b38250384851d3425b5793f5c99eb59fde43c71d5ef8f2e3840117a88d",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "test_joint.py": "5c7e8cfd1001ce9f0f88acc293a1f05d84b3f172e81b2bac1da4f6e929448cf4"
+  },
+  "reference_sha256": "1198b78a9ce247fb0ae5c712f0ae63a7975a555e95dffc95bfa772ce531b0f4e",
+  "blockers": [],
+  "notes": [
+    "The full reference directory and pilot evidence are staged separately at review time and must be copied into final package before sealing.",
+    "The runner emits epoch50_checkpoint.json, includes that metadata in the feedback bundle, and preserves the full per-epoch training checkpoint including epoch50. After epoch50 the metadata records its SHA256, optimizer steps, scale learningrates and included training state; before then it explicitly reports unavailable.",
+    "Exact CUDA resume is not guaranteed by the retained backend; the review establishes code invariants, not GPU bitwise behavior."
+  ],
+  "annotation_correction": "The earlier annotation claiming the epoch50 sidecar summary was absent was incorrect; corrected after inspecting the actual writer and feedback file list. No runner code or tests changed."
+}

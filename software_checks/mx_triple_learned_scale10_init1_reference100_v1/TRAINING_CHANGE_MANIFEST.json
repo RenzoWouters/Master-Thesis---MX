@@ -1,0 +1,36 @@
+{
+  "schema": "mx-triple-learned-scale10-init1-reference100-changes-v1",
+  "baseline": "passed init1 pilot5",
+  "only_intended_training_change": "fresh100-epoch run instead of bounded5-epoch pilot; original100-epoch schedule, theta0, gradient, optimizer, numerical kernels unchanged",
+  "initialization": "new original base state, all4080 theta0; no pilot checkpoint warmstart",
+  "planned_epochs": 100,
+  "scale_learning_end_epoch": 100,
+  "scale_freeze_epoch": null,
+  "new_full_training_started_here": false,
+  "new_schemas_prevent_cross_experiment_resume": true,
+  "numerical_runtime_changed_files": [],
+  "unchanged": [
+    "mx_e4m3.py",
+    "trunc_adapter.py",
+    "joint_adapter.py",
+    "smoke_support.py",
+    "test_mx.py",
+    "mx_adapter.py",
+    "mx_e2m1.py",
+    "test_e4m3.py",
+    "svhn_support.py",
+    "trunc_support.py",
+    "mx_format.py",
+    "test_learned_scale.py",
+    "joint_support.py",
+    "resume_core.py",
+    "posthoc_truncation.py",
+    "test_joint.py"
+  ],
+  "other_changes": [
+    "experiment identity and completion reporting",
+    "bounded100 endpoint",
+    "historical matched-epoch reference comparison",
+    "notebook and documentation"
+  ]
+}

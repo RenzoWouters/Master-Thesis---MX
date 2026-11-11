@@ -1,0 +1,32 @@
+--- init64_reference100/test_learned_scale.py
++++ init1_pilot5/test_learned_scale.py
+@@ -260,8 +260,27 @@
+     assert s.legacy.state_digest(original.state_dict()) == s.legacy.state_digest(a.base_state_dict(model))
+     assert sum(p.numel() for p in model.parameters()) == 137034
+     assert sum(p.numel() for p in a.scale_parameters(model)) == 4080
+-    assert all(bool((p == 6).all()) for p in a.scale_parameters(model))
+-    assert a.validate_scale_parameters(model)['choice64_blocks'] == 4080
++    assert a.THETA_INITIAL == 0.0
++    assert all(bool((p == 0).all()) for p in a.scale_parameters(model))
++    assert a.validate_scale_parameters(model)['factor_counts']['1'] == 4080
++    # Starting at the lower boundary is not an absorbing state: an Adam
++    # descent direction toward positive theta must move it off zero. The
++    # opposite direction is projected back to zero by the production guard.
++    boundary_model = copy.deepcopy(model)
++    boundary_optimizer = torch.optim.Adam(a.scale_parameters(boundary_model), lr=.001)
++    for p in a.scale_parameters(boundary_model): p.grad = -torch.ones_like(p)
++    boundary_optimizer.step(); projection = a.project_scales_(boundary_model)
++    assert all(bool((p > 0).all()) for p in a.scale_parameters(boundary_model))
++    assert projection['projected_values'] == 0
++    with torch.no_grad():
++        for p in a.scale_parameters(boundary_model): p.zero_()
++    boundary_optimizer = torch.optim.Adam(a.scale_parameters(boundary_model), lr=.001)
++    for p in a.scale_parameters(boundary_model): p.grad = torch.ones_like(p)
++    boundary_optimizer.step(); projection = a.project_scales_(boundary_model)
++    assert projection['projected_values'] == 4080
++    assert all(bool((p == 0).all()) for p in a.scale_parameters(boundary_model))
++    checks['init0_can_leave_boundary_upward_and_downward_Adam_step_projects_exactly'] = True
++
+     with torch.no_grad():
+         a.scale_parameters(model)[0].flatten()[0] = -.2
+         a.scale_parameters(model)[-1].flatten()[-1] = 9.2

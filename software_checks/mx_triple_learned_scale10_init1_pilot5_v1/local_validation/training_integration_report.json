@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_training": true,
+  "true_initial_theta": 0,
+  "train_examples": 3,
+  "test_examples": 3,
+  "batch_size": 2,
+  "cases": {
+    "complete5": {
+      "status": "PASS",
+      "last_epoch": 5,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_init1_build/integration_v5/complete5/20261110_173315_860409_joint_run"
+    },
+    "partial2": {
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "last_epoch": 2,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_init1_build/integration_v5/partial2/20261110_173317_169852_joint_run"
+    },
+    "resume2_to5": {
+      "status": "PASS",
+      "last_epoch": 5,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_init1_build/integration_v5/resume2_to5/20261110_173318_003418_joint_resume"
+    }
+  },
+  "all_modes_A32_FP32_original_passes": true,
+  "resume2_to5_exact_model_Adam_scheduler_RNG": true,
+  "CPU_init1_matches_independent_CPU_init64_base_exactly": true,
+  "CPU_initial_base_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+  "historical_CUDA_base_guard_unchanged": true,
+  "zero_start_can_learn_upward": true,
+  "direct_lower_encoders_forbidden": true,
+  "packed_source_only_exports_verified": true,
+  "hard_five_epoch_limit": {
+    "run --stop-after-epoch 6": 2,
+    "run --stop-after-epoch 100": 2,
+    "run --stop-after-epoch 0": 2,
+    "resume": 2,
+    "run --device cpu": 2
+  },
+  "no_research_metrics_compared_to_synthetic": true,
+  "code_binding": {
+    "run_train.py": "c36712592b55daa5782c0f2d39113127293fd229dc52d9f74762df4f0ad1c122",
+    "trunc_adapter.py": "93ab499629cc443a0e750ca3cda91398acf1775ade5b844c3c29927540d8066c",
+    "trunc_support.py": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc",
+    "test_learned_scale.py": "2005a6b38250384851d3425b5793f5c99eb59fde43c71d5ef8f2e3840117a88d"
+  },
+  "duration_seconds": 11.330542609000076
+}

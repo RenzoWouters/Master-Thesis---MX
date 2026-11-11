@@ -1,0 +1,31 @@
+{
+  "baseline": "actual init1 pilot run_report.json from feedback_bundle(20261110-164812).zip",
+  "runtime": "PROTOCOL.json",
+  "differences": {
+    "pilot_epochs": {
+      "init1_pilot": 5,
+      "init1_reference100": null
+    },
+    "planned_epochs": {
+      "init1_pilot": 5,
+      "init1_reference100": 100
+    },
+    "purpose": {
+      "init1_pilot": "five-epoch initialization ablation: all ten lower scale factors remain learnable; theta starts at0 (x1), all other training choices match the historical init64 pilot",
+      "init1_reference100": "one hundred complete train-only epochs from fresh initialization at theta0 (x1): all ten lower scale factors remain learnable through epoch100; unchanged E4 source and exponent/mantissa bit truncation"
+    },
+    "reporting_policy": {
+      "init1_pilot": "all three modes at epoch5 and the same E4M3-best pilot checkpoint; compare only matching epochs1..5 with the historical init64 pilot",
+      "init1_reference100": "all three modes at epoch100 and the same E4M3-best checkpoint; partial runs report their actual last epoch; compare only available matched epochs against the historical init64 run"
+    },
+    "scale_learning_end_epoch": {
+      "init1_pilot": 5,
+      "init1_reference100": 100
+    },
+    "schema": {
+      "init1_pilot": "mx-triple-learned-scale10-init1-pilot5-protocol-v1",
+      "init1_reference100": "mx-triple-learned-scale10-init1-reference100-protocol-v1"
+    }
+  },
+  "interpretation": "No numerical kernel or optimizer change; new run starts fresh with theta0 and retains learning through100 epochs under the original LR milestones."
+}

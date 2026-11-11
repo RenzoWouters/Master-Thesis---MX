@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "scope": "Read-only actual historical references plus explicitly synthetic plot-only fixtures; no training",
+  "checks": [
+    {
+      "test": "Actual historical init64 reference100 validates, theta rebuilt from raw history",
+      "passed": true
+    },
+    {
+      "test": "Actual init1 pilot validates",
+      "passed": true
+    },
+    {
+      "test": "All reference group states for epoch0\u2013100 retained",
+      "passed": true
+    },
+    {
+      "test": "Notebook delivered unexecuted",
+      "passed": true
+    },
+    {
+      "test": "One tagged parameter cell",
+      "passed": true
+    },
+    {
+      "test": "Synthetic100 endpoint available only with complete measured rows",
+      "passed": true
+    },
+    {
+      "test": "Three precision curves share y-limits",
+      "passed": true
+    },
+    {
+      "test": "Both full curves reach epoch100",
+      "passed": true
+    },
+    {
+      "test": "Readable100-epoch ticks",
+      "passed": true
+    },
+    {
+      "test": "Low early accuracy retained",
+      "passed": true
+    },
+    {
+      "test": "endpoint uses one checkpoint for each set of three modes",
+      "passed": true
+    },
+    {
+      "test": "best uses one checkpoint for each set of three modes",
+      "passed": true
+    },
+    {
+      "test": "Paired checkpoint figures share zoom limits",
+      "passed": true
+    },
+    {
+      "test": "Partial run does not invent epoch100 endpoint",
+      "passed": true
+    },
+    {
+      "test": "Best comparison uses same partial53-epoch window",
+      "passed": true
+    },
+    {
+      "test": "All remaining figures render with100-epoch synthetic series",
+      "passed": true
+    },
+    {
+      "test": "All10 factors and101 states in heatmap",
+      "passed": true
+    },
+    {
+      "test": "Heatmap100-epoch axes remain readable",
+      "passed": true
+    },
+    {
+      "test": "Initial factor table includes nine zero categories",
+      "passed": true
+    },
+    {
+      "test": "Count bars use zero baseline",
+      "passed": true
+    },
+    {
+      "test": "Synthetic below-threshold theta moves while hard factor stays1",
+      "passed": true
+    },
+    {
+      "test": "Small theta movement visibly zoomed",
+      "passed": true
+    },
+    {
+      "test": "Empty technical check renders explicit empty states",
+      "passed": true
+    }
+  ],
+  "check_count": 23,
+  "source_sha256": {
+    "notebook_support.py": "8c88732c8176bd961f987e899e8aafb8ce1478ff3743c38633e6acc6412affaa",
+    "MX_triple_learned_scale10_init1_reference100_resultaten.ipynb": "73da342a9dce2ecf2d352de719b938a805e99d7a25ee402e00adc12370ae4db9"
+  },
+  "warnings": [
+    "The 'float_precision' argument is deprecated. Use the default float precision instead."
+  ],
+  "visual_review": "PASS: full100 accuracy, paired endpoint, all10factor heatmaps and continuous theta layer panels inspected; no clipping or overlap."
+}

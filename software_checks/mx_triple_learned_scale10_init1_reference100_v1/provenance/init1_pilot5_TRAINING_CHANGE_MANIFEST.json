@@ -1,0 +1,30 @@
+{
+  "schema": "mx-triple-learned-scale10-init1-pilot5-changes-v1",
+  "only_intended_numerical_change": "THETA_INITIAL 6.0 -> 0.0; x64 -> x1",
+  "unchanged": [
+    "source E4M3 encoding",
+    "exponent/mantissa bit mapping",
+    "A32",
+    "FP32 masters",
+    "recursive losses",
+    "identity weight STE",
+    "scale gradient",
+    "Adam and LR .001",
+    "B32 grouping",
+    "data/seed/batch size",
+    "all ten factor options"
+  ],
+  "pilot_epochs": 5,
+  "original_schedule_epochs": 100,
+  "new_full_training_started": false,
+  "initialization_ref": "original init64 pilot5; same base weights/BN and per-epoch data orders required",
+  "new_schemas_prevent_cross_experiment_resume": true,
+  "numerical_runtime_changed_files": [
+    "trunc_adapter.py"
+  ],
+  "other_changes": [
+    "bounded runner identity/reporting/reference checks",
+    "init0 boundary tests",
+    "notebook and documentation"
+  ]
+}

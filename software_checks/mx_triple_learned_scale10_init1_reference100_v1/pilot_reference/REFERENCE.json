@@ -1,0 +1,33 @@
+{
+  "schema": "mx-init1-reference100-pilot-reference-v1",
+  "description": "Completed init1 five-epoch pilot; historical reference only, no checkpoint warmstart.",
+  "source_library_file_id": "libfile_d2747fee655c8191959678bcddd06270",
+  "source_archive_name": "feedback_bundle(20261110-164812).zip",
+  "source_archive_sha256": "ebe4be6e368edd079af8d96810e87225fb72a37db1195e48739fb895847fcbe9",
+  "source_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale10_init1_pilot5\\20261110_174101_905133_joint_run",
+  "scale_proxy_init": 0.0,
+  "epochs": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "synthetic_fixture_only": false,
+  "files_sha256": {
+    "checkpoint_selection.json": "de85ab27d463d05aee22cf46bc3f6a86c7fe571ff41e5dd9cb6efbd51b27601d",
+    "epoch_metrics.csv": "aa2145554a5d71d717a5802efd2ba3b72b284bc520c1e36fc2bb9ec191a4f1bf",
+    "epoch_times.csv": "b415a707e807d051dcdb9eff8cb988dc1fedd2f7024a9ff502de923430a314d4",
+    "history.json": "feff0253b1b1a3d72977384d7eb903ad74eaf864240eb21380b7e8ea09556f29",
+    "initialization_comparison.csv": "68745b2323cc3570cfe2faab99e4ed04437bed3d3cd6f5225f98ca985867efeb",
+    "initialization_reference_report.json": "8dcc34fc95325509020a4b17808b0155f94fb7e7b31b36a4a63eece90fd0c391",
+    "run_report.json": "e9a41dc4e2a8554df8a6b979a5672a51e036be36304d667d15c15db2a0ebb5b7",
+    "scale_block_state.csv": "2a17224efc9a5595cf5c137a1aa0205fea1650930312fcd81c0ec9e95fbe147d",
+    "scale_epoch_metrics.csv": "56e0d347418d1362acdcca07133c1451f0e304be3d32516b207d48fbb098d842",
+    "scale_learning_summary.json": "7a14c01d0e8bb3e411841392da452b7da7147b1593efb8644bc8f5746b71184c",
+    "selected_metrics.csv": "1eb3a69ded4f81cb67bf990942b4756a6d7262e2e5b83bccf2d467edb6768d88",
+    "timing_estimate.json": "2c06bc6a00d39d057a5b881119cef652b22b25100d1f360c127080f2c8074fb0",
+    "training_summary.json": "b604ee2f033b32d043c534c508604cf21ad7a0ee6411ec29b180962618bb1693",
+    "warnings.log": "ddf2cbfa58bca04dbb34c9a7cb4763c372fa8533aa88aefe522da731f811c37a"
+  }
+}

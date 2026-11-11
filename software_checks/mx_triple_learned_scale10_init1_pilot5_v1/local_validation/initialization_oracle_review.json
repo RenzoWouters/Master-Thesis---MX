@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Read-only independent CPU initialization comparison; not SVHN training and not a historical CUDA rerun",
+  "seed": 20261009,
+  "environment": "Linux; PyTorch 2.10.0+cpu; CPU model construction before adaptation",
+  "source_import_consumes_torch_rng": false,
+  "original_unadapted_author_model_base_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+  "old_theta6_adapter_base_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+  "new_theta0_adapter_base_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+  "old_and_new_base_states_tensorwise_exact": true,
+  "old_adapter_theta_initial": 6.0,
+  "new_adapter_theta_initial": 0.0,
+  "historical_windows_cu128_base_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "same_cpu_hash_also_present_in_earlier_full100_synthetic_integration": "/workspace/scratch/4619498905be/work/scale10_full100_validation/integration_v1/continuous100/20261104_191338_916146_joint_run/history.json",
+  "conclusion": "The init1 change preserves the original base weights and BN on CPU exactly. The original unadapted CPU model itself differs from the historical Windows/cu128 hash, so CPU tests must use a distinct synthetic initialization reference; the production historical hash guard remains intact.",
+  "unresolved": "The exact low-level cause of the cross-platform initial-byte difference is not established and was not pursued after demonstrating equality against the original CPU oracle.",
+  "production_files_or_historical_data_modified_by_this_review": false,
+  "source_sha256": {
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/run_train.py": "c36712592b55daa5782c0f2d39113127293fd229dc52d9f74762df4f0ad1c122",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/trunc_adapter.py": "93ab499629cc443a0e750ca3cda91398acf1775ade5b844c3c29927540d8066c",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/trunc_support.py": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/provenance/init64_reference100_trunc_adapter.py": "7b24418b4b4ea42e9ec7ea629cfa8da3b31619bd0f84eb656e73f7ffb9f330cb",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/init64_reference/REFERENCE.json": "e2df45acecccb8e56115b4d01f90b11a5f43bb4c9bfa0291a4000401046f866e",
+    "work/mx_triple_learned_scale10_init1_pilot5_v1/init64_reference/history.json": "f1aa2016418b9531d6f4b40fc28a0820ee0ee8fd9b63b2e6963cdc4d4ddf01d2",
+    "work/scale10_init1_build/integration_v2/source/source_workcopy/models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+    "work/scale10_init1_build/integration_v2/source/source_workcopy/models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71"
+  }
+}

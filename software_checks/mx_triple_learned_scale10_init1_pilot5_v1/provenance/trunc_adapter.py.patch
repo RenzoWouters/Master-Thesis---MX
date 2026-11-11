@@ -1,0 +1,11 @@
+--- init64_reference100/trunc_adapter.py
++++ init1_pilot5/trunc_adapter.py
+@@ -34,7 +34,7 @@
+ SCALE_FACTORS = tuple(1 << offset for offset in OFFSET_CHOICES)
+ CHOICE_BITS = 4
+ ROUNDING_POLICY = 'nearest_integer_half_up'
+-THETA_MIN, THETA_MAX, THETA_INITIAL = 0.0, 9.0, 6.0
++THETA_MIN, THETA_MAX, THETA_INITIAL = 0.0, 9.0, 0.0
+ MX_WEIGHT_SHAPES = {'layers.3': (16, 12, 3, 3), 'layers.6': (16, 16, 3, 3),
+                     'layers.10': (32, 16, 3, 3), 'layers.13': (32, 32, 3, 3),
+                     'layers.16': (32, 32, 3, 3), 'layers.20': (128, 32, 5, 5)}

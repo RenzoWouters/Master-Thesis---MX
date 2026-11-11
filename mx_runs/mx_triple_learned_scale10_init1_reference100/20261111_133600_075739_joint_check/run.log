@@ -1,0 +1,9 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_learned_scale10_init1_reference100\20261111_133600_075739_joint_check
+INIT x1-REFERENTIE:100 epochs vanaf nul; schaalkeuzes leren tot en met100; tien leerbare factoren1..512; E4M3 -> E2M3 -> E2M1; A32; FP32-masters.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+LEARNED SCALE10 CHECK PASS: tien harde keuzes x1..x512, identity-mastergradient, expliciete blokgradient, cache, Adam en 4bit-bronexports.
+CHECK PASS: init x1 en tien geleerde blokfactoren1..512; exacte forward, identity-mastergradient, log-exponent-schaalgradient, projectie en 4-bit-keuze-export. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_learned_scale10_init1_reference100\20261111_133600_075739_joint_check\run_report.json

@@ -1,0 +1,19 @@
+{
+  "synthetic_fixture_only": false,
+  "comparison_performed": true,
+  "matched_epochs": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "initial_base_weights_and_BN_match": true,
+  "all_sample_orders_match": true,
+  "new_initial_theta": 0.0,
+  "reference_initial_theta": 6.0,
+  "comparison_is_historical": true,
+  "exact_CUDA_repeat_not_claimed": true,
+  "source_reference_sha256": "e2df45acecccb8e56115b4d01f90b11a5f43bb4c9bfa0291a4000401046f866e"
+}

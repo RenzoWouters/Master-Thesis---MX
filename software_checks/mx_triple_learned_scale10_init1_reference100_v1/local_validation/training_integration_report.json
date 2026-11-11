@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "CUDA_tested": false,
+  "no_SVHN_training": true,
+  "true_initial_theta": 0,
+  "train_examples": 3,
+  "test_examples": 3,
+  "batch_size": 2,
+  "cases": {
+    "complete100": {
+      "status": "PASS",
+      "last_epoch": 100,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_init1_full100_runner_validation/integration_v1/complete100/20261110_175340_939165_joint_run"
+    },
+    "partial2": {
+      "status": "STOPPED_AT_EPOCH_BOUNDARY",
+      "last_epoch": 2,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_init1_full100_runner_validation/integration_v1/partial2/20261110_175412_791712_joint_run"
+    },
+    "resume50_to100": {
+      "status": "PASS",
+      "last_epoch": 100,
+      "output_directory": "/workspace/scratch/4619498905be/work/scale10_init1_full100_runner_validation/integration_v1/resume50_to100/20261110_175413_926102_joint_resume"
+    }
+  },
+  "all_modes_A32_FP32_original_passes": true,
+  "resume50_to100_exact_model_Adam_scheduler_RNG": true,
+  "all_three_LR_milestones_verified_for_both_groups": true,
+  "scale_optimizer_updates_continue_after_epoch50": true,
+  "CPU_init1_matches_independent_CPU_init64_base_exactly": true,
+  "CPU_initial_base_sha256": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+  "historical_CUDA_base_guard_unchanged": true,
+  "zero_start_can_learn_upward": true,
+  "direct_lower_encoders_forbidden": true,
+  "packed_source_only_exports_verified": true,
+  "hard_hundred_epoch_limit": {
+    "run --stop-after-epoch 101": 2,
+    "run --stop-after-epoch 0": 2,
+    "resume": 2,
+    "run --device cpu": 2
+  },
+  "no_research_metrics_compared_to_synthetic": true,
+  "code_binding": {
+    "run_train.py": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293",
+    "trunc_adapter.py": "93ab499629cc443a0e750ca3cda91398acf1775ade5b844c3c29927540d8066c",
+    "trunc_support.py": "0ee198e61b1d9da280504dcc0fac9225aabdc284f21de2a95f434171863579fc",
+    "test_learned_scale.py": "2005a6b38250384851d3425b5793f5c99eb59fde43c71d5ef8f2e3840117a88d"
+  },
+  "duration_seconds": 62.622704587000044
+}

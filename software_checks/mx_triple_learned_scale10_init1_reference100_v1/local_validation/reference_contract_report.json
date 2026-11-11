@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "software_schema_fixture_only": true,
+  "no_new_accuracy_data": true,
+  "historical_files_untouched": true,
+  "cases": {
+    "full100": {
+      "matched_epochs": 100,
+      "rows": 300,
+      "remaining_epochs_explicitly_unmatched": 0,
+      "mismatched_base_and_last_matched_order_rejected": true
+    },
+    "pilot_fallback": {
+      "matched_epochs": 5,
+      "rows": 15,
+      "remaining_epochs_explicitly_unmatched": 95,
+      "mismatched_base_and_last_matched_order_rejected": true
+    }
+  },
+  "run_train_sha256": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293"
+}

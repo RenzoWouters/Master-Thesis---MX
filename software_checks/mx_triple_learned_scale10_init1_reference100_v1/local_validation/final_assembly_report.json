@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "Final assembly, file identity, reference and configuration verification; no research training",
+  "runtime_sha256": "7f2c41a8d842d6ef251d9677bdd920ebc8382019c6cee6c86bb4520470df0293",
+  "numerical_reuse_files": 16,
+  "all_reference_markers_verified": {
+    "init64_full100_reference": "1198b78a9ce247fb0ae5c712f0ae63a7975a555e95dffc95bfa772ce531b0f4e",
+    "pilot_reference": "2696703e27ac0257e40dde2364dd5f2b878321911ea7e1c42be9096dd595d380",
+    "init64_reference": "e2df45acecccb8e56115b4d01f90b11a5f43bb4c9bfa0291a4000401046f866e"
+  },
+  "notebook_code_cells": 17,
+  "notebook_unexecuted": true,
+  "all_named_validation_reports_pass": [
+    "check_entry_report.json",
+    "training_integration_report.json",
+    "reference_contract_report.json",
+    "plot_qa_report.json",
+    "notebook_cells_qa_report.json",
+    "independent_code_review.json"
+  ],
+  "synthetic_CPU_validation_only": true,
+  "SVHN_training_started_here": false,
+  "CUDA_training_started_here": false,
+  "original_feedback_unchanged": true
+}

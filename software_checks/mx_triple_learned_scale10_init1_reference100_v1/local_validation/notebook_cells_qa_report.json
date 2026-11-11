@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "scope": "Entire unchanged notebook code on actual synthetic CPU runner outputs and an empty check; no SVHN training",
+  "cases": [
+    {
+      "case": "complete100",
+      "status": "PASS",
+      "executed_code_cells": 17,
+      "figures": 15,
+      "last_epoch": 100,
+      "synthetic_only": true,
+      "historical_comparison": false,
+      "duration_seconds": 7.895538022999972,
+      "warnings": [
+        "The 'float_precision' argument is deprecated. Use the default float precision instead."
+      ]
+    },
+    {
+      "case": "partial2",
+      "status": "PASS",
+      "executed_code_cells": 17,
+      "figures": 15,
+      "last_epoch": 2,
+      "synthetic_only": true,
+      "historical_comparison": false,
+      "duration_seconds": 0.5927206970000043,
+      "warnings": [
+        "The 'float_precision' argument is deprecated. Use the default float precision instead."
+      ]
+    },
+    {
+      "case": "resume50_to100",
+      "status": "PASS",
+      "executed_code_cells": 17,
+      "figures": 15,
+      "last_epoch": 100,
+      "synthetic_only": true,
+      "historical_comparison": false,
+      "duration_seconds": 8.039619971999855,
+      "warnings": [
+        "The 'float_precision' argument is deprecated. Use the default float precision instead."
+      ]
+    },
+    {
+      "case": "check",
+      "status": "PASS",
+      "executed_code_cells": 17,
+      "figures": 15,
+      "last_epoch": null,
+      "synthetic_only": true,
+      "historical_comparison": false,
+      "duration_seconds": 0.14317531500000769,
+      "warnings": []
+    }
+  ],
+  "source_sha256": {
+    "notebook_support.py": "8c88732c8176bd961f987e899e8aafb8ce1478ff3743c38633e6acc6412affaa",
+    "MX_triple_learned_scale10_init1_reference100_resultaten.ipynb": "73da342a9dce2ecf2d352de719b938a805e99d7a25ee402e00adc12370ae4db9"
+  }
+}
