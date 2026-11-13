@@ -1,0 +1,91 @@
+{
+  "schema": "mx-triple-independent-e2-scale-freeze50-reference100-scale-learning-v1",
+  "learned_scale_parameters": 4080,
+  "initialization": "initial_E4_E8M0_exponent_plus_6_once_before_optimizer",
+  "initial_relative_offset": 6,
+  "initial_relative_factor": 64,
+  "tie_break": "higher_exponent",
+  "phi_bounds": [
+    -127.0,
+    127.0
+  ],
+  "relative_factor_constrained_after_initialization": false,
+  "scale_gradient": "ln(2)*sum_real_block(grad_q*q); accumulate E2M3 and E2M1 only",
+  "gradient_normalization": "none",
+  "scale_lr": 0.001,
+  "frozen_scale_lr": 0.0,
+  "projection_after_every_Adam_update": false,
+  "scale_gradients_enabled_after50": false,
+  "scale_learning_end_epoch": 50,
+  "scale_freeze_epoch": 50,
+  "completed_optimizer_updates": 57300,
+  "phi_changed_in_any_epoch": true,
+  "nonzero_scale_gradient_observed": true,
+  "total_exponent_flips_including_repeat_flips": 181607,
+  "total_exponent_jump_distance": 181607,
+  "max_exponent_jump": 1,
+  "total_projected_values_including_repeats": 0,
+  "hard_switch_required_for_technical_PASS": false,
+  "zero_finite_scale_gradients_are_valid_diagnostics": true,
+  "e4_scale_bytes": 4080,
+  "independent_e2_scale_bytes": 4080,
+  "combined_scale_bytes": 8160,
+  "extra_export_bytes_vs_fixed_x64": 4080,
+  "extra_export_bytes_vs_fourbit_relative10": 2040,
+  "analytical_FP32_phi_gradient_Adam_bytes": 65280,
+  "analytical_bytes_exclude_framework_and_temporaries": true,
+  "selected": {
+    "best_E4M3_test": {
+      "epoch": 34,
+      "blocks": 4080,
+      "e2_exponent_counts": {
+        "-7": 572,
+        "-6": 12,
+        "-8": 2981,
+        "-9": 513,
+        "-10": 2
+      },
+      "observed_relative_offset_counts": {
+        "4": 2377,
+        "5": 273,
+        "3": 1282,
+        "2": 97,
+        "6": 38,
+        "7": 13
+      },
+      "relative_offsets_are_diagnostics_not_choices": true
+    },
+    "last_epoch": {
+      "epoch": 100,
+      "blocks": 4080,
+      "e2_exponent_counts": {
+        "-8": 2827,
+        "-7": 611,
+        "-6": 24,
+        "-9": 616,
+        "-10": 2
+      },
+      "observed_relative_offset_counts": {
+        "3": 2442,
+        "4": 1123,
+        "5": 63,
+        "2": 411,
+        "6": 33,
+        "7": 7,
+        "1": 1
+      },
+      "relative_offsets_are_diagnostics_not_choices": true
+    }
+  },
+  "synthetic_fixture_only": false,
+  "branch_exponent_flips": 0,
+  "branch_phi_changed_blocks": 0,
+  "freeze_checks": {
+    "phi_unchanged": true,
+    "hard_E2_scales_unchanged": true,
+    "scale_optimizer_state_unchanged": true,
+    "scale_gradients_absent": true,
+    "frozen_parameter_tensors": 6,
+    "frozen_parameters": 4080
+  }
+}

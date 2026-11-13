@@ -1,0 +1,51 @@
+{
+  "bundled_source_files_verified_against_manifest": 31,
+  "top_notebook_helper_matches": true,
+  "all_reference_files_match_sealed_package": true,
+  "raw_feedback_sha256": "fb0c3b30896d4a5a9fea540338a92668ecc37cc27d4e68b3818fa1f70baf2837",
+  "run_status": "PASS",
+  "completed_epoch": 100,
+  "optimizer_steps": 57300,
+  "training_forward_passes": 171900,
+  "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "initialization_verification": {
+    "initial_relative_offset": 6,
+    "initial_relative_factor": 64,
+    "all4080_groups_start_at_initial_E4_scale_x64": true,
+    "initial_base_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "same_base_weights_and_BN_as_relative_reference": true,
+    "scale_parameterization_is_the_intended_training_change": true,
+    "source_scale_is_still_dynamic": true,
+    "absolute_E2_scale_independent_after_initialization": true,
+    "relative_factor_is_not_constrained": true
+  },
+  "source_unchanged": true,
+  "dataset_files_unchanged": true,
+  "history_export_validation": {
+    "file": "history.json",
+    "bytes": 31493602,
+    "sha256": "8095632c0bc4d7306d77707ec14177dcd2f2a1b7a2f019d88fa967c1848e5e74",
+    "epochs": 100,
+    "exact_trace_match": true
+  },
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "session_wall_seconds": 6478.802888399921,
+  "limits": [
+    "Data audit only; checkpoint tensor bytes and inference unavailable in feedback",
+    "Manifest verifies internal consistency; original delivered archive not downloaded in this audit"
+  ],
+  "known_previous_turn_key_source_hashes_match": true
+}

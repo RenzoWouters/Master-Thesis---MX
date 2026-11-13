@@ -1,0 +1,21 @@
+{
+  "complete_parent_state_restored": true,
+  "transition_preserves_all_model_values_and_RNG": true,
+  "dynamic_E4_scale_independent_of_frozen_E2": true,
+  "phi_unchanged": true,
+  "hard_E2_scales_unchanged": true,
+  "scale_optimizer_state_unchanged": true,
+  "scale_gradients_absent": true,
+  "frozen_parameter_tensors": 6,
+  "frozen_parameters": 4080,
+  "three_passes_one_Adam_update": true,
+  "frozen_scale_Adam_steps_and_moments_preserved": true,
+  "weight_and_BN_updates_continue": true,
+  "mutated_phi_moment_or_gradient_rejected": true,
+  "original_forward_ast_sha256": "a1327bc7b429c5df5436ae50394cd08e83b8da3a4d14cf8bd257baa22d2ed5bc",
+  "synthetic_step_seconds": 0.0983871119997275,
+  "status": "PASS",
+  "parent_state_restored_after_check": true,
+  "no_SVHN_data_loaded": true,
+  "no_SVHN_training": true
+}

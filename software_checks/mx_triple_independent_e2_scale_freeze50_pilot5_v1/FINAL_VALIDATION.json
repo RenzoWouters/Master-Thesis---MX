@@ -1,0 +1,45 @@
+{
+  "schema": "independent-e2-freeze50-pilot5-final-validation-v1",
+  "status": "PASS",
+  "actual_new_SVHN_training_started": false,
+  "actual_parent_checkpoint_available_in_build_environment": false,
+  "source_feedback_sha256": "fb0c3b30896d4a5a9fea540338a92668ecc37cc27d4e68b3818fa1f70baf2837",
+  "raw_research_data_modified": false,
+  "provisional_production_files_unchanged_through_tests": 102,
+  "numerical_adapter_and_codecs_unchanged": true,
+  "unchanged_parent_source_modules": 15,
+  "production_config_matches_tested_config": true,
+  "runner_integration_scope": "actual learning-control100 CPU trace, pinned parent50, freeze/check/export and continuation/resume on three synthetic images",
+  "runner_integration_status": "PASS",
+  "main_check_status": "PASS",
+  "notebook_validation_status": "PASS",
+  "continuous55_equals_stop52_resume55_exact_CPU": true,
+  "phi_hard_E2_scale_codes_and_scale_Adam_preserved_after_each_update": true,
+  "weight_and_BN_updates_continue": true,
+  "sample_orders_match_parent_control": true,
+  "own_resume_is_linked_to_pinned_parent": true,
+  "pilot_hard_stop_epoch": 55,
+  "delivered_notebook_unexecuted": true,
+  "notebook_cells": 31,
+  "notebook_figures_validated": 13,
+  "user_chart_style": "one panel per precision; variants on categorical y-axis; uniform circles; percentage at every point; relevant accuracy zoom",
+  "visual_checks": [
+    "categorical checkpoint comparisons",
+    "separate E4 source changes and fixed absolute E2 scales"
+  ],
+  "partial52_reader_validated": true,
+  "report_sha256": {
+    "runner_integration_report.json": "558e84a61e12ecbad5256affa8372757c93e77d294029623674548b667b5966c",
+    "check_report.json": "4a1b2bd924bc2e381594d1a30e171a4f609c1449b17c3080d08aeb524188436d",
+    "check_entry_report.json": "f25bc675779e6522ea6540a117acedd70d44025ba655c1bcc13d407205763284",
+    "notebook_validation_report.json": "29380a0448160867dd1de25b744012679e77df69ae5f506071603d45e5321385",
+    "notebook_pending_validation_report.json": "0a1507572eea8cb7bf65acfca5f503fc1c77e2acdea1f16335469b7c69d97082"
+  },
+  "review": "read-only code/protocol review found no blocking issues; claims scoped to CPU synthetic tests",
+  "limits": [
+    "Three CPU synthetic images; not SVHN accuracy or GPU timing",
+    "Actual parent checkpoint and CUDA environment are verified by user check command",
+    "CPU exact resume does not imply CUDA exactness under original cuDNN policy",
+    "Freeze does not itself prove compute or accuracy improvement"
+  ]
+}

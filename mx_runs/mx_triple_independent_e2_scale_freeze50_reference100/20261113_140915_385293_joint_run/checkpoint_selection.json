@@ -1,0 +1,37 @@
+{
+  "policy": "first strict maximum of E4M3/A32 official-test top1; report global and branch-only maxima separately",
+  "best": {
+    "epoch": 34,
+    "file": "best_checkpoint.pt",
+    "sha256": "3f0e90561e8bfb86b7f64c443ffbe29d1c349f1b0ae4c010545dd6ecbf43bd75",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_independent_e2_scale_reference100\\20261111_172102_961497_joint_run\\checkpoints\\epoch_00034.pt",
+    "selection_score_E4M3": 94.70651505370043
+  },
+  "last": {
+    "epoch": 100,
+    "file": "last_checkpoint.pt",
+    "sha256": "e824893d0f18b384857086ae9f72c4ad672e5218956e607c2684788c43ddb4a0",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_independent_e2_scale_freeze50_reference100\\20261113_140915_385293_joint_run\\checkpoints\\epoch_00100.pt",
+    "selection_score_E4M3": 94.5259680393362
+  },
+  "branch_best": {
+    "epoch": 51,
+    "file": "branch_best_checkpoint.pt",
+    "sha256": "b2a4a5800237808581bc381022e6c267abc929424ced52bcdae07f6d66007964",
+    "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_independent_e2_scale_freeze50_reference100\\20261113_140915_385293_joint_run\\checkpoints\\epoch_00051.pt",
+    "selection_score_E4M3": 94.63352795620234
+  },
+  "branch_selection_window": [
+    51,
+    100
+  ],
+  "global_selection_window": [
+    1,
+    100
+  ],
+  "same_checkpoint": false,
+  "selected_on_official_test": true,
+  "independent_test_estimate": false,
+  "selection_mode": "MXFP8_E4M3/A32",
+  "all_modes_from_same_selected_checkpoint": true
+}

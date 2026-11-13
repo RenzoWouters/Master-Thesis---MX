@@ -1,0 +1,33 @@
+{
+  "schema": "freeze50-pilot-review-for-reference100-v1",
+  "source_feedback_filename": "feedback_bundle(20261113-123312).zip",
+  "source_feedback_sha256": "482442c6b393272b79b45885c35e739c762bcea497fce6b13f9decc3f6049581",
+  "pilot_package_sha256": "c930c05d6217816816a3bbfe8a468ffdaa5affe5e4b0705d5a68bd8c3d3117d6",
+  "source_pilot_run": "20261112_172804_526136_joint_run",
+  "pilot_status": "PASS",
+  "completed_epoch": 55,
+  "new_epochs": [
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "frozen_scale_parameters": 4080,
+  "all_phi_and_hard_E2_scale_codes_unchanged_after50": true,
+  "epoch55_test_accuracy_percent": {
+    "frozen": {
+      "4": 95.02151198055968,
+      "6": 95.08681622149392,
+      "8": 94.55669943745619
+    },
+    "learning_control": {
+      "4": 94.6873079240139,
+      "6": 94.63352796089158,
+      "8": 94.60663797464119
+    }
+  },
+  "used_as_new_training_history": false,
+  "new_full100_freeze_results_available": false,
+  "note": "Historical pilot observations only. New epochs51..100 must be measured from the original epoch50 checkpoint."
+}

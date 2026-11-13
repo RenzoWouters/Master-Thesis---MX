@@ -1,0 +1,38 @@
+{
+  "schema": "independent-e2-freeze50-reference100-change-v1",
+  "source": "successful freeze50 pilot package; original pinned independent E2 full100 parent remains the branch origin",
+  "source_pilot_package_sha256": "c930c05d6217816816a3bbfe8a468ffdaa5affe5e4b0705d5a68bd8c3d3117d6",
+  "source_pilot_feedback_sha256": "482442c6b393272b79b45885c35e739c762bcea497fce6b13f9decc3f6049581",
+  "unchanged_modules": {
+    "trunc_adapter.py": "513a226e9bf74cefc5d72b0d45172297e191cc715ac7d47473c01cf6308c2e32",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "trunc_support.py": "903ee72d4bcc9831606deee1e327973e05b099dfcac1fc45427e7507e8a62731"
+  },
+  "intended_changes_from_pilot": [
+    "new execution restores original epoch50 instead of pilot55",
+    "extend allowed execution horizon and CLI default to100",
+    "retain identical absolute E2 freeze and original weight LR schedule",
+    "separate inherited1..50 from newly executed51..100 in reporting",
+    "update completion, partial-run, resume and measured-time reporting",
+    "update notebook and package identity; preserve raw controls"
+  ],
+  "weight_optimizer_reset": false,
+  "E4_dynamic_scale_changed": false,
+  "quantization_bit_mapping_changed": false,
+  "dataset_changes": false,
+  "parent_checkpoint_modified": false,
+  "raw_research_data_modified": false,
+  "scale_freeze_epoch": 50,
+  "first_frozen_epoch": 51,
+  "branch_stop_epoch": 100,
+  "branch_new_epochs": 50,
+  "numerical_adapter_sha256": "513a226e9bf74cefc5d72b0d45172297e191cc715ac7d47473c01cf6308c2e32"
+}

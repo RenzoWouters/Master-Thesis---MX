@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": [
+    "compatibility_fixture_explicitly_not_new_research",
+    "real_pilot_values_pass_new_partial_reader",
+    "five_available_new_epochs_do_not_claim_fifty",
+    "partial_status_explicit",
+    "remaining_time_explicitly_projected",
+    "plot_uses_actual_epoch55",
+    "global_best_retains_inherited_epoch34",
+    "branch_best_starts_after50",
+    "actual_4080_scales_frozen",
+    "actual_partial_data_figures_render_with_fixture_label",
+    "numerical_history_metrics_and_scales_not_changed",
+    "original_feedback_left_unchanged"
+  ],
+  "purpose": "Notebook compatibility check only; no new training was executed.",
+  "source_feedback": "/workspace/scratch/56d55813fcd5/analysis_freeze50/inputs/feedback_bundle(20261113-123312)",
+  "numerical_values": "Unmodified actual freeze-pilot values through epoch 55.",
+  "metadata_only_adaptation": "New partial-run schema; explicitly marked synthetic software fixture.",
+  "not_a_new_reference100_run": true,
+  "fixture_path": "/workspace/scratch/56d55813fcd5/validation_full100/notebook_actual_pilot/actual_pilot_values_compatibility_fixture",
+  "new_training_executed": false
+}

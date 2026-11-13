@@ -1,0 +1,20 @@
+{
+  "available": true,
+  "epoch": 50,
+  "original_checkpoint": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_learned_scale10_reference100\\20261104_193228_406260_joint_run\\checkpoints\\epoch_00050.pt",
+  "sha256": "0276dc622aaa3b763ef3929de8713e673b6734947d53f1f3f4c7316e0d228b61",
+  "optimizer_steps": 28650,
+  "scale_lr_used": 0.001,
+  "scale_lr_next": 0.0001,
+  "full_training_state": true,
+  "state_includes": [
+    "FP32 weights",
+    "FP32 scale proxies",
+    "both Adam groups",
+    "scheduler",
+    "Python/NumPy/Torch CPU/CUDA RNG",
+    "full epoch history"
+  ],
+  "purpose": "Optional future freeze branch; this reference continues learning scales through epoch100.",
+  "checkpoint_in_feedback_bundle": false
+}

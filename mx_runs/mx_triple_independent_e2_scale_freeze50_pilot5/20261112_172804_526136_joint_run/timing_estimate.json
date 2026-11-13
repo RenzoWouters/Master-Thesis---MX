@@ -1,0 +1,26 @@
+{
+  "available": true,
+  "pilot_completed": true,
+  "full_training_completed": false,
+  "full_100_epoch_training_completed": false,
+  "inherited_epochs": 50,
+  "new_measured_epochs": [
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "measured_new_branch_epoch_seconds": 560.8386730000001,
+  "measured_inherited_epoch_seconds": 3192.2421242012642,
+  "measured_completed_epoch_seconds": 3753.0807972012644,
+  "measured_100_epoch_seconds": null,
+  "median_branch_epoch_seconds": 118.04539034999993,
+  "remaining_epochs_to100": 45,
+  "estimated_remaining_to100_seconds": 5312.042565749997,
+  "interpretation": "Only epochs51..last were executed by the freeze branch; remaining time to100 is a projection. This pilot never executes beyond55.",
+  "limitations": [
+    "Projection is not measured future duration; excludes loading and final exports.",
+    "Inherited epochs1..50 are existing evidence, not new computation."
+  ]
+}

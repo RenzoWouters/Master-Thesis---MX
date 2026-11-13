@@ -1,0 +1,20 @@
+{
+  "schema": "freeze50-reference100-build-provenance-v1",
+  "base_package": {
+    "filename": "mx_triple_independent_e2_scale_freeze50_pilot5_v1.zip",
+    "sha256": "c930c05d6217816816a3bbfe8a468ffdaa5affe5e4b0705d5a68bd8c3d3117d6"
+  },
+  "pilot_feedback": {
+    "filename": "feedback_bundle(20261113-123312).zip",
+    "sha256": "482442c6b393272b79b45885c35e739c762bcea497fce6b13f9decc3f6049581"
+  },
+  "original_parent_identity_preserved": true,
+  "raw_reference_directories": [
+    "fixed_scale64_reference",
+    "relative_scale10_reference",
+    "relative_scale10_full100_reference",
+    "independent_pilot_reference",
+    "independent_full100_reference"
+  ],
+  "new_training_not_executed_during_build": true
+}

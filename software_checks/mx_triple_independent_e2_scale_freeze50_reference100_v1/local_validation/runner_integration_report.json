@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "synthetic_fixture_only": true,
+  "no_SVHN_data_or_training": true,
+  "scope": "actual learning-control100 CPU trace, pinned parent50, freeze/check/export through100 and resume after75 on three synthetic images",
+  "cases": {
+    "continuous100": {
+      "last_epoch": 100,
+      "new_epochs": 50,
+      "output_directory": "/workspace/scratch/56d55813fcd5/validation_full100/runner_integration/continuous100",
+      "branch_training_completed": true
+    },
+    "stop75": {
+      "last_epoch": 75,
+      "new_epochs": 25,
+      "output_directory": "/workspace/scratch/56d55813fcd5/validation_full100/runner_integration/stop75",
+      "branch_training_completed": false
+    },
+    "resume75_to100": {
+      "last_epoch": 100,
+      "new_epochs": 50,
+      "output_directory": "/workspace/scratch/56d55813fcd5/validation_full100/runner_integration/resume75_to100",
+      "branch_training_completed": true
+    }
+  },
+  "check_report": {
+    "complete_parent_state_restored": true,
+    "transition_preserves_all_model_values_and_RNG": true,
+    "dynamic_E4_scale_independent_of_frozen_E2": true,
+    "phi_unchanged": true,
+    "hard_E2_scales_unchanged": true,
+    "scale_optimizer_state_unchanged": true,
+    "scale_gradients_absent": true,
+    "frozen_parameter_tensors": 6,
+    "frozen_parameters": 4080,
+    "three_passes_one_Adam_update": true,
+    "frozen_scale_Adam_steps_and_moments_preserved": true,
+    "weight_and_BN_updates_continue": true,
+    "mutated_phi_moment_or_gradient_rejected": true,
+    "original_forward_ast_sha256": "a1327bc7b429c5df5436ae50394cd08e83b8da3a4d14cf8bd257baa22d2ed5bc",
+    "synthetic_step_seconds": 0.11036930999989636,
+    "status": "PASS",
+    "parent_state_restored_after_check": true,
+    "no_SVHN_data_loaded": true,
+    "no_SVHN_training": true
+  },
+  "parent_checkpoint_read_only": true,
+  "parent_phi_and_hard_E2_scales_and_Adam_unchanged_after_every_update": true,
+  "weight_and_BN_updates_continue": true,
+  "all_sample_orders_match_learning_control": true,
+  "continuous100_equals_stop75_resume100_model_Adam_scheduler_RNG_exact_CPU": true,
+  "scale_Adam_steps_remain100_weight_Adam_steps200": true,
+  "weight_LR_boundaries_51_76_91_preserved": true,
+  "all_4080_scale_parameters_frozen": true,
+  "partial75_and_complete100_flags_and_timing_correct": true,
+  "invalid_final_epochs50_and101_rejected_before_mutation": true,
+  "wrong_contract_parent_hash_and_parent_trace_rejected": true,
+  "real_reference_files_unchanged": true,
+  "production_guard_modified": false,
+  "reference_root": "/workspace/scratch/56d55813fcd5/validation_full100/runner_integration/synthetic_reference_root",
+  "test_seconds": 331.2759408469997,
+  "note": "CPU substitutes only in this harness; not a GPU timing or SVHN accuracy result."
+}

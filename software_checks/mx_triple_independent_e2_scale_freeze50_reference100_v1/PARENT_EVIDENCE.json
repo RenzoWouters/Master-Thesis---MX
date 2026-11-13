@@ -1,0 +1,36 @@
+{
+  "schema": "independent-e2-freeze50-parent-evidence-v1",
+  "source_feedback_sha256": "fb0c3b30896d4a5a9fea540338a92668ecc37cc27d4e68b3818fa1f70baf2837",
+  "source_run": "20261111_172102_961497_joint_run",
+  "status": "PASS",
+  "epochs": 100,
+  "updates": 57300,
+  "best_E4_epoch": 34,
+  "parent_checkpoint_epoch": 50,
+  "test_accuracy_percent": {
+    "34": {
+      "8": 94.70651505370043,
+      "6": 93.10848186378034,
+      "4": 93.31207743845765
+    },
+    "50": {
+      "8": 94.45682236308618,
+      "6": 93.10848186378034,
+      "4": 92.93177627066417
+    },
+    "55": {
+      "8": 94.60663797464119,
+      "6": 94.63352796089158,
+      "4": 94.6873079240139
+    },
+    "100": {
+      "8": 94.59511370620774,
+      "6": 94.94084203118697,
+      "4": 94.82175783181967
+    }
+  },
+  "session_wall_seconds": 6478.802888399921,
+  "last10_hard_E2_flip_events_including_repeats": 19533,
+  "raw_files": "independent_full100_reference",
+  "all_values_are_existing_parent_measurements_not_new_freeze_results": true
+}

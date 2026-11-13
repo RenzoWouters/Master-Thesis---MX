@@ -1,0 +1,785 @@
+{
+  "status": "PASS",
+  "scope": "read-only actual independent E2 full100 feedback audit",
+  "source_feedback_sha256": "fb0c3b30896d4a5a9fea540338a92668ecc37cc27d4e68b3818fa1f70baf2837",
+  "precision_order": [
+    8,
+    6,
+    4
+  ],
+  "variants": {
+    "independent": {
+      "source": "/workspace/scratch/4619498905be/work/independent_e2_full100_feedback_20261111",
+      "epoch100": {
+        "epoch": 100,
+        "top1_percent": [
+          94.59511370620774,
+          94.94084203118697,
+          94.82175783181967
+        ],
+        "correct1": [
+          24625,
+          24715,
+          24684
+        ],
+        "test_loss": [
+          0.1999962005922233,
+          0.18596892274078153,
+          0.18886729737843336
+        ]
+      },
+      "best_E4_checkpoint": {
+        "epoch": 34,
+        "top1_percent": [
+          94.70651505370043,
+          93.10848186378034,
+          93.31207743845765
+        ],
+        "correct1": [
+          24654,
+          24238,
+          24291
+        ],
+        "test_loss": [
+          0.1969413647786488,
+          0.24831054778225817,
+          0.2502475427469375
+        ]
+      },
+      "epochs_of_interest": [
+        {
+          "epoch": 5,
+          "top1_percent": [
+            92.78964350629454,
+            90.8343577042048,
+            90.67685924077517
+          ],
+          "correct1": [
+            24155,
+            23646,
+            23605
+          ],
+          "test_loss": [
+            0.2498040741106888,
+            0.30659428827771396,
+            0.31993849748618486
+          ]
+        },
+        {
+          "epoch": 34,
+          "top1_percent": [
+            94.70651505370043,
+            93.10848186378034,
+            93.31207743845765
+          ],
+          "correct1": [
+            24654,
+            24238,
+            24291
+          ],
+          "test_loss": [
+            0.1969413647786488,
+            0.24831054778225817,
+            0.2502475427469375
+          ]
+        },
+        {
+          "epoch": 50,
+          "top1_percent": [
+            94.45682236308618,
+            93.10848186378034,
+            92.93177627066417
+          ],
+          "correct1": [
+            24589,
+            24238,
+            24192
+          ],
+          "test_loss": [
+            0.20678530787315264,
+            0.2363928182310463,
+            0.24328937748310825
+          ]
+        },
+        {
+          "epoch": 75,
+          "top1_percent": [
+            94.6681007990166,
+            94.71419790557505,
+            94.59895512276657
+          ],
+          "correct1": [
+            24644,
+            24656,
+            24626
+          ],
+          "test_loss": [
+            0.1985011197576218,
+            0.19335630428464998,
+            0.19642163019057204
+          ]
+        },
+        {
+          "epoch": 90,
+          "top1_percent": [
+            94.59511370620774,
+            94.4721880762139,
+            94.5759065765212
+          ],
+          "correct1": [
+            24625,
+            24593,
+            24620
+          ],
+          "test_loss": [
+            0.19924158795743027,
+            0.1993567647931029,
+            0.20132802027496885
+          ]
+        },
+        {
+          "epoch": 100,
+          "top1_percent": [
+            94.59511370620774,
+            94.94084203118697,
+            94.82175783181967
+          ],
+          "correct1": [
+            24625,
+            24715,
+            24684
+          ],
+          "test_loss": [
+            0.1999962005922233,
+            0.18596892274078153,
+            0.18886729737843336
+          ]
+        }
+      ],
+      "last10": {
+        "8": {
+          "mean": 94.60510141364475,
+          "min": 94.55285802089736,
+          "max": 94.65273509526736,
+          "sd_descriptive_not_uncertainty": 0.034128931057072945
+        },
+        "6": {
+          "mean": 94.68039335545105,
+          "min": 94.26859249684733,
+          "max": 94.99462199899853,
+          "sd_descriptive_not_uncertainty": 0.2726047430688507
+        },
+        "4": {
+          "mean": 94.65811308407682,
+          "min": 94.35310386277887,
+          "max": 95.04071911024623,
+          "sd_descriptive_not_uncertainty": 0.2628950243252581
+        }
+      },
+      "per_precision_best_diagnostic_not_common_checkpoint": {
+        "8": {
+          "epoch": 34,
+          "top1_percent": [
+            94.70651505370043,
+            93.10848186378034,
+            93.31207743845765
+          ],
+          "correct1": [
+            24654,
+            24238,
+            24291
+          ],
+          "test_loss": [
+            0.1969413647786488,
+            0.24831054778225817,
+            0.2502475427469375
+          ]
+        },
+        "6": {
+          "epoch": 89,
+          "top1_percent": [
+            94.62968653964352,
+            95.03303625837161,
+            94.87937922087929
+          ],
+          "correct1": [
+            24634,
+            24739,
+            24699
+          ],
+          "test_loss": [
+            0.19909472186541952,
+            0.18703292154998374,
+            0.19175842203790597
+          ]
+        },
+        "4": {
+          "epoch": 98,
+          "top1_percent": [
+            94.61432083589429,
+            94.99462199899853,
+            95.04071911024623
+          ],
+          "correct1": [
+            24630,
+            24729,
+            24741
+          ],
+          "test_loss": [
+            0.1992929703118102,
+            0.18607354475518423,
+            0.18832409926349572
+          ]
+        }
+      }
+    },
+    "fixed64": {
+      "source": "/workspace/scratch/4619498905be/work/independent_e2_full100_feedback_20261111/fixed_scale64_reference",
+      "epoch100": {
+        "epoch": 100,
+        "top1_percent": [
+          94.9293177580643,
+          94.8985863458766,
+          94.79102641963196
+        ],
+        "correct1": [
+          24712,
+          24704,
+          24676
+        ],
+        "test_loss": [
+          0.20986763852263202,
+          0.18996921746768905,
+          0.19379675295375648
+        ]
+      },
+      "best_E4_checkpoint": {
+        "epoch": 42,
+        "top1_percent": [
+          95.08681621680468,
+          93.84219421311691,
+          93.92286415780038
+        ],
+        "correct1": [
+          24753,
+          24429,
+          24450
+        ],
+        "test_loss": [
+          0.19387716565512408,
+          0.22127891677651,
+          0.2214264178118533
+        ]
+      },
+      "epochs_of_interest": [
+        {
+          "epoch": 5,
+          "top1_percent": [
+            93.00860479409957,
+            91.29917025199754,
+            90.8919791026429
+          ],
+          "correct1": [
+            24212,
+            23767,
+            23661
+          ],
+          "test_loss": [
+            0.24308195013207165,
+            0.2989847544757002,
+            0.3105133664831473
+          ]
+        },
+        {
+          "epoch": 34,
+          "top1_percent": [
+            94.96389059150006,
+            93.81530423155576,
+            93.5963429531292
+          ],
+          "correct1": [
+            24721,
+            24422,
+            24365
+          ],
+          "test_loss": [
+            0.19049483753818636,
+            0.22274779819625246,
+            0.23576108222917758
+          ]
+        },
+        {
+          "epoch": 50,
+          "top1_percent": [
+            94.82559925306774,
+            93.62323293469036,
+            93.65780576812612
+          ],
+          "correct1": [
+            24685,
+            24372,
+            24381
+          ],
+          "test_loss": [
+            0.20526664978386658,
+            0.2225596357294952,
+            0.22982703507880747
+          ]
+        },
+        {
+          "epoch": 75,
+          "top1_percent": [
+            94.86785494306737,
+            94.85248923462889,
+            94.77566071588274
+          ],
+          "correct1": [
+            24696,
+            24692,
+            24672
+          ],
+          "test_loss": [
+            0.21041738205734176,
+            0.19122617629934252,
+            0.19594362761410894
+          ]
+        },
+        {
+          "epoch": 90,
+          "top1_percent": [
+            94.99078056837197,
+            94.83328210494236,
+            94.68730791932465
+          ],
+          "correct1": [
+            24728,
+            24687,
+            24649
+          ],
+          "test_loss": [
+            0.20853686901914173,
+            0.19141773688111777,
+            0.1957335741646684
+          ]
+        },
+        {
+          "epoch": 100,
+          "top1_percent": [
+            94.9293177580643,
+            94.8985863458766,
+            94.79102641963196
+          ],
+          "correct1": [
+            24712,
+            24704,
+            24676
+          ],
+          "test_loss": [
+            0.20986763852263202,
+            0.18996921746768905,
+            0.19379675295375648
+          ]
+        }
+      ],
+      "last10": {
+        "8": {
+          "mean": 94.91971418993856,
+          "min": 94.87553779025274,
+          "max": 94.9792562952493,
+          "sd_descriptive_not_uncertainty": 0.031430388926740944
+        },
+        "6": {
+          "mean": 94.84787952350413,
+          "min": 94.78718499369467,
+          "max": 94.8985863458766,
+          "sd_descriptive_not_uncertainty": 0.03072073501767736
+        },
+        "4": {
+          "mean": 94.74185616763442,
+          "min": 94.68730791932465,
+          "max": 94.79870927150658,
+          "sd_descriptive_not_uncertainty": 0.03524448692652836
+        }
+      },
+      "per_precision_best_diagnostic_not_common_checkpoint": {
+        "8": {
+          "epoch": 42,
+          "top1_percent": [
+            95.08681621680468,
+            93.84219421311691,
+            93.92286415780038
+          ],
+          "correct1": [
+            24753,
+            24429,
+            24450
+          ],
+          "test_loss": [
+            0.19387716565512408,
+            0.22127891677651,
+            0.2214264178118533
+          ]
+        },
+        "6": {
+          "epoch": 77,
+          "top1_percent": [
+            94.9869391471239,
+            94.94468345712428,
+            94.8063921233812
+          ],
+          "correct1": [
+            24727,
+            24716,
+            24680
+          ],
+          "test_loss": [
+            0.20663186068375858,
+            0.1892640023837444,
+            0.19342844262856534
+          ]
+        },
+        "4": {
+          "epoch": 83,
+          "top1_percent": [
+            94.94468346181353,
+            94.8985863458766,
+            94.81407497525582
+          ],
+          "correct1": [
+            24716,
+            24704,
+            24682
+          ],
+          "test_loss": [
+            0.20772893865121678,
+            0.1890446495793682,
+            0.19349887610379363
+          ]
+        }
+      }
+    },
+    "relative10": {
+      "source": "/workspace/scratch/4619498905be/work/independent_e2_full100_feedback_20261111/relative_scale10_full100_reference",
+      "epoch100": {
+        "epoch": 100,
+        "top1_percent": [
+          94.87169636900468,
+          93.9343884356123,
+          93.96127841717346
+        ],
+        "correct1": [
+          24697,
+          24453,
+          24460
+        ],
+        "test_loss": [
+          0.21108940750653565,
+          0.21602410235577885,
+          0.22300935120361307
+        ]
+      },
+      "best_E4_checkpoint": {
+        "epoch": 63,
+        "top1_percent": [
+          95.0291948324343,
+          93.84603563905422,
+          93.700061462815
+        ],
+        "correct1": [
+          24738,
+          24430,
+          24392
+        ],
+        "test_loss": [
+          0.20572696105515803,
+          0.22126358480049044,
+          0.22813198847333271
+        ]
+      },
+      "epochs_of_interest": [
+        {
+          "epoch": 5,
+          "top1_percent": [
+            92.69360786724032,
+            91.68715427166565,
+            91.66410571604179
+          ],
+          "correct1": [
+            24130,
+            23868,
+            23862
+          ],
+          "test_loss": [
+            0.251342992833515,
+            0.2817997454442931,
+            0.2882589002511365
+          ]
+        },
+        {
+          "epoch": 34,
+          "top1_percent": [
+            94.74108788244696,
+            92.55915795943454,
+            92.10586969883221
+          ],
+          "correct1": [
+            24663,
+            24095,
+            23977
+          ],
+          "test_loss": [
+            0.19603165272524845,
+            0.2565344466925693,
+            0.27539639021072493
+          ]
+        },
+        {
+          "epoch": 50,
+          "top1_percent": [
+            94.67962506745003,
+            93.25445604470879,
+            93.36585739689073
+          ],
+          "correct1": [
+            24647,
+            24276,
+            24305
+          ],
+          "test_loss": [
+            0.20831729207455782,
+            0.24149156920497375,
+            0.2463679509655273
+          ]
+        },
+        {
+          "epoch": 75,
+          "top1_percent": [
+            94.95236631368815,
+            93.74615856937345,
+            93.63859864312883
+          ],
+          "correct1": [
+            24718,
+            24404,
+            24376
+          ],
+          "test_loss": [
+            0.2100350205370379,
+            0.21539671003323943,
+            0.22493942852172663
+          ]
+        },
+        {
+          "epoch": 90,
+          "top1_percent": [
+            94.94468346181353,
+            93.62707437000614,
+            93.51567301782421
+          ],
+          "correct1": [
+            24716,
+            24373,
+            24344
+          ],
+          "test_loss": [
+            0.2104607628361902,
+            0.22550031690232653,
+            0.2329859713432462
+          ]
+        },
+        {
+          "epoch": 100,
+          "top1_percent": [
+            94.87169636900468,
+            93.9343884356123,
+            93.96127841717346
+          ],
+          "correct1": [
+            24697,
+            24453,
+            24460
+          ],
+          "test_loss": [
+            0.21108940750653565,
+            0.21602410235577885,
+            0.22300935120361307
+          ]
+        }
+      ],
+      "last10": {
+        "8": {
+          "mean": 94.89397663897213,
+          "min": 94.85633066525544,
+          "max": 94.92547632743775,
+          "sd_descriptive_not_uncertainty": 0.02148758063694229
+        },
+        "6": {
+          "mean": 94.05923478279513,
+          "min": 93.68085433312845,
+          "max": 94.51828518746159,
+          "sd_descriptive_not_uncertainty": 0.25254433854372565
+        },
+        "4": {
+          "mean": 94.01390595532811,
+          "min": 93.45036877688999,
+          "max": 94.33773815902963,
+          "sd_descriptive_not_uncertainty": 0.2708685024153915
+        }
+      },
+      "per_precision_best_diagnostic_not_common_checkpoint": {
+        "8": {
+          "epoch": 63,
+          "top1_percent": [
+            95.0291948324343,
+            93.84603563905422,
+            93.700061462815
+          ],
+          "correct1": [
+            24738,
+            24430,
+            24392
+          ],
+          "test_loss": [
+            0.20572696105515803,
+            0.22126358480049044,
+            0.22813198847333271
+          ]
+        },
+        "6": {
+          "epoch": 93,
+          "top1_percent": [
+            94.92547632743775,
+            94.51828518746159,
+            94.29932389965656
+          ],
+          "correct1": [
+            24711,
+            24605,
+            24548
+          ],
+          "test_loss": [
+            0.2106868159747153,
+            0.1983139901785449,
+            0.20620984160962394
+          ]
+        },
+        "4": {
+          "epoch": 91,
+          "top1_percent": [
+            94.8832206468166,
+            94.24170251059694,
+            94.33773815902963
+          ],
+          "correct1": [
+            24700,
+            24533,
+            24558
+          ],
+          "test_loss": [
+            0.21144994725166982,
+            0.20406962595032854,
+            0.20849146921080025
+          ]
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "fixed64": {
+      "epoch100": {
+        "delta_percentage_points": [
+          -0.33420405185655966,
+          0.04225568531037993,
+          0.030731412187705587
+        ],
+        "delta_correct_images": [
+          -87,
+          11,
+          8
+        ]
+      },
+      "best_E4_checkpoint": {
+        "delta_percentage_points": [
+          -0.38030116310424944,
+          -0.7337123493365709,
+          -0.6107867193427268
+        ],
+        "delta_correct_images": [
+          -99,
+          -191,
+          -159
+        ]
+      }
+    },
+    "relative10": {
+      "epoch100": {
+        "delta_percentage_points": [
+          -0.2765826627969403,
+          1.0064535955746692,
+          0.8604794146462069
+        ],
+        "delta_correct_images": [
+          -72,
+          262,
+          224
+        ]
+      },
+      "best_E4_checkpoint": {
+        "delta_percentage_points": [
+          -0.3226797787338711,
+          -0.7375537752738808,
+          -0.38798402435735113
+        ],
+        "delta_correct_images": [
+          -84,
+          -192,
+          -101
+        ]
+      }
+    }
+  },
+  "checks": {
+    "all600_metrics_unique_and_complete": true,
+    "all_history_metric_values_match_csv": true,
+    "max_abs_top1_vs_correct_count_error_percentage_points": 9.378481991006993e-09,
+    "all_100_train_test_orders_match_relative10": true,
+    "base_weights_and_BN_initial_hash_same": true,
+    "all_epoch_Adam_and_gradient_checks_pass": true,
+    "all_modes_A32": true,
+    "LR_milestones50_75_90_correct": true,
+    "all300_evaluations_predict_all10_classes": true,
+    "max_dominant_prediction_fraction": 0.22011370620774431,
+    "train_updates": 57300,
+    "training_passes": 171900,
+    "raw_source_modified": false,
+    "selected_metrics_match_common_best_and_last_history": true
+  },
+  "timing": {
+    "session_seconds": 6478.802888399921,
+    "session_hms": "1h 47m 58.80s",
+    "sum100_epoch_seconds": 6459.024781300686,
+    "sum100_epoch_minutes": 107.6504130216781,
+    "mean_epoch_seconds": 64.59024781300687
+  },
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57
+    }
+  ],
+  "interpretation": [
+    "Independent absolute E2 scale improves lower-mode endpoint relative to learned relative10, but reaches approximately fixed64 lower-mode accuracy with an E4 accuracy cost.",
+    "Best E4 checkpoint is epoch34; all three scores at that checkpoint must be presented together, without choosing individual best epochs.",
+    "Late lower-mode improvement continues after50. Freezing phi at50 is an ablation worth testing, not a conclusion supported by the present accuracies.",
+    "Historical single-seed comparisons do not identify significance or method superiority; sample order and initial base model match, but CUDA is not deterministic.",
+    "Absolute lower-scale freeze differs from freezing relative offset: fixed absolute S2 does not follow changing E4 scale."
+  ]
+}

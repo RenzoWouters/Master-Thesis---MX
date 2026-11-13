@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "real main/check and create_context with synthetic CPU parent/reference/config only",
+  "production_initialization_and_parent_guards_unchanged": true,
+  "production_dependency_checks_exercised": true,
+  "no_dataset_calls_or_SVHN_training": true,
+  "synthetic_fixture_only": true,
+  "output_directory": "/workspace/scratch/4619498905be/work/independent_e2_freeze50_check_entry_v1/outputs/20261111_200801_415774_joint_check"
+}

@@ -1,0 +1,73 @@
+{
+  "source": "pinned independent E2 full100 parent protocol",
+  "changes": {
+    "branch_new_epochs": {
+      "parent": null,
+      "freeze_full100": 50
+    },
+    "branch_start_epoch": {
+      "parent": null,
+      "freeze_full100": 51
+    },
+    "branch_stop_epoch": {
+      "parent": null,
+      "freeze_full100": 100
+    },
+    "checkpoint_policy": {
+      "parent": "immutable FP32 training state per epoch and selected best/last copies",
+      "freeze_full100": "read-only epoch50 parent; immutable child state each new epoch; strict child resume"
+    },
+    "freeze_absolute_E2_scale": {
+      "parent": null,
+      "freeze_full100": true
+    },
+    "frozen_scale_lr": {
+      "parent": null,
+      "freeze_full100": 0.0
+    },
+    "inherited_epochs": {
+      "parent": null,
+      "freeze_full100": 50
+    },
+    "initialization_policy": {
+      "parent": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+      "freeze_full100": "restore complete independent-E2 epoch50 state; never restart training from initialization"
+    },
+    "parent_reference": {
+      "parent": null,
+      "freeze_full100": "independent_full100_reference"
+    },
+    "purpose": {
+      "parent": "one hundred complete train-only epochs from fresh weights; learn an independent absolute E8M0 scale shared by the E2 modes through epoch100 without a freeze, initialized once to the initial E4 scale x64; unchanged E4 source and exponent/mantissa bit truncation",
+      "freeze_full100": "restore the pinned original independent-E2 epoch50 checkpoint; freeze the absolute E2 scale and continue weights/BN for epochs51..100; reuse the existing learning control without reusing the freeze pilot"
+    },
+    "reporting_policy": {
+      "parent": "all three modes at epoch100 or actual final epoch and at the same E4M3-best checkpoint; compare only matched observed epochs against historical references; partial runs never claim epoch100 completion",
+      "freeze_full100": "epoch100 or actual final epoch, shared global best E4 and branch-only best E4; controls use the same available epoch window; partial runs never claim epoch100 completion; inherited1..50 and newly executed51..100 are reported separately"
+    },
+    "scale_freeze_epoch": {
+      "parent": null,
+      "freeze_full100": 50
+    },
+    "scale_gradient_after50": {
+      "parent": null,
+      "freeze_full100": "disabled: requires_grad=False and grad=None; retained scale Adam state does not advance"
+    },
+    "scale_learning_end_epoch": {
+      "parent": 100,
+      "freeze_full100": 50
+    },
+    "scale_projection": {
+      "parent": "after_each_Adam_step",
+      "freeze_full100": "only while learned through50; no projection after freeze"
+    },
+    "schema": {
+      "parent": "mx-triple-independent-e2-scale-reference100-protocol-v1",
+      "freeze_full100": "mx-triple-independent-e2-scale-freeze50-reference100-protocol-v1"
+    },
+    "selection_policy": {
+      "parent": "first strict maximum of E4M3/A32 official-test top1",
+      "freeze_full100": "first strict maximum of E4M3/A32 official-test top1; report global and branch-only maxima separately"
+    }
+  }
+}

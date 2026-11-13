@@ -1,0 +1,9 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_independent_e2_scale_freeze50_pilot5\20261112_172729_806257_joint_check
+FREEZE50-PILOT: epoch50 herstellen; absolute E2-schalen vast; gewichten vijf epochs verder tot55; dynamische E4-bron; B32; E4M3 -> E2M3 -> E2M1; A32; FP32-masters.
+pip check: No broken requirements found.
+GPU: NVIDIA GeForce RTX 5070 Laptop GPU
+Originele backend: cudnn.benchmark=True; geen bitexacte CUDA-hervatgarantie.
+UPSTREAM epoch 50, iter 0/1, bit_width_max loss 7.32, prec1 0.00, prec5 0.00
+CHECK PASS: oudercheckpoint exact hersteld; absolute E2-schalen en schaal-Adam bevroren; gewichten/BN kunnen bijwerken; E4-schaal dynamisch. Geen SVHN-training.
+EINDSTATUS: PASS
+Rapport: C:\Users\renzo\master-thesis-mx\mx_runs\mx_triple_independent_e2_scale_freeze50_pilot5\20261112_172729_806257_joint_check\run_report.json

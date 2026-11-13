@@ -1,0 +1,24 @@
+{
+  "schema": "independent-e2-freeze50-pilot5-experiment-v1",
+  "name": "mx_triple_independent_e2_scale_freeze50_pilot5_v1",
+  "research_status": "exploratory branch selected after inspecting parent100; intervention fixed before new pilot",
+  "parent_run": "20261111_172102_961497_joint_run",
+  "parent_epoch": 50,
+  "parent_checkpoint_sha256": "d6c6d7281f39f818ae7f7a61324362858c518ac5e9ebeb37def9b66ea0e1654a",
+  "new_epochs": [
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "hard_stop_epoch": 55,
+  "complete_protocol_horizon": 100,
+  "freeze_absolute_E2_scale": true,
+  "E4_scale_policy": "unchanged dynamic amax",
+  "same_weight_optimizer_moments_scheduler_RNG_at_branch_start": true,
+  "control_already_exists_no_retraining": true,
+  "new_research_results_exist": false,
+  "raw_research_data_modified": false,
+  "training_starts_only_with_explicit_run_command": true
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "real main/check and create_context with synthetic CPU parent/reference/config only",
+  "production_initialization_and_parent_guards_unchanged": true,
+  "production_dependency_checks_exercised": true,
+  "no_dataset_calls_or_SVHN_training": true,
+  "CLI_default_final_epoch_is100": true,
+  "config_freezes_after50_and_plans50_new_epochs": true,
+  "synthetic_fixture_only": true,
+  "output_directory": "/workspace/scratch/56d55813fcd5/validation_full100/check_entry/outputs/20261113_135731_753536_joint_check"
+}
