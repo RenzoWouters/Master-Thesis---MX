@@ -1,0 +1,252 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142938_400521_train
+VIJF DIRECTE MX-FORMATEN: E4M3, E5M2, E2M3, E3M2, E2M1; A32; vijf epochs vanaf nul.
+Afhankelijkheden: pip check geslaagd.
+Device: NVIDIA GeForce RTX 5070 Laptop GPU
+DATA bestaand en correct: train_32x32.mat
+DATA bestaand en correct: test_32x32.mat
+DATA PASS: 73257 trainbeelden en 26032 testbeelden; geen extra-split.
+Per epoch: 573 optimizerupdates; vijf gewichtsmodi per minibatch.
+WAARSCHUWING (herhalingen worden geteld): The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:48.)
+WAARSCHUWING (herhalingen worden geteld): The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Memory.cpp:33.)
+Epoch 1/5 train: minibatch 1/573; vijf formaten.
+Epoch 1/5 train: minibatch 20/573; vijf formaten.
+Epoch 1/5 train: minibatch 40/573; vijf formaten.
+Epoch 1/5 train: minibatch 60/573; vijf formaten.
+Epoch 1/5 train: minibatch 80/573; vijf formaten.
+Epoch 1/5 train: minibatch 100/573; vijf formaten.
+Epoch 1/5 train: minibatch 120/573; vijf formaten.
+Epoch 1/5 train: minibatch 140/573; vijf formaten.
+Epoch 1/5 train: minibatch 160/573; vijf formaten.
+Epoch 1/5 train: minibatch 180/573; vijf formaten.
+Epoch 1/5 train: minibatch 200/573; vijf formaten.
+Epoch 1/5 train: minibatch 220/573; vijf formaten.
+Epoch 1/5 train: minibatch 240/573; vijf formaten.
+Epoch 1/5 train: minibatch 260/573; vijf formaten.
+Epoch 1/5 train: minibatch 280/573; vijf formaten.
+Epoch 1/5 train: minibatch 300/573; vijf formaten.
+Epoch 1/5 train: minibatch 320/573; vijf formaten.
+Epoch 1/5 train: minibatch 340/573; vijf formaten.
+Epoch 1/5 train: minibatch 360/573; vijf formaten.
+Epoch 1/5 train: minibatch 380/573; vijf formaten.
+Epoch 1/5 train: minibatch 400/573; vijf formaten.
+Epoch 1/5 train: minibatch 420/573; vijf formaten.
+Epoch 1/5 train: minibatch 440/573; vijf formaten.
+Epoch 1/5 train: minibatch 460/573; vijf formaten.
+Epoch 1/5 train: minibatch 480/573; vijf formaten.
+Epoch 1/5 train: minibatch 500/573; vijf formaten.
+Epoch 1/5 train: minibatch 520/573; vijf formaten.
+Epoch 1/5 train: minibatch 540/573; vijf formaten.
+Epoch 1/5 train: minibatch 560/573; vijf formaten.
+Epoch 1/5 train: minibatch 573/573; vijf formaten.
+Epoch 1/5 test: minibatch 1/204; vijf formaten.
+Epoch 1/5 test: minibatch 20/204; vijf formaten.
+Epoch 1/5 test: minibatch 40/204; vijf formaten.
+Epoch 1/5 test: minibatch 60/204; vijf formaten.
+Epoch 1/5 test: minibatch 80/204; vijf formaten.
+Epoch 1/5 test: minibatch 100/204; vijf formaten.
+Epoch 1/5 test: minibatch 120/204; vijf formaten.
+Epoch 1/5 test: minibatch 140/204; vijf formaten.
+Epoch 1/5 test: minibatch 160/204; vijf formaten.
+Epoch 1/5 test: minibatch 180/204; vijf formaten.
+Epoch 1/5 test: minibatch 200/204; vijf formaten.
+Epoch 1/5 test: minibatch 204/204; vijf formaten.
+Epoch 1/5 E4M3: 22829/26032 = 87.695913%
+Epoch 1/5 E5M2: 22815/26032 = 87.642133%
+Epoch 1/5 E2M3: 22749/26032 = 87.388599%
+Epoch 1/5 E3M2: 22762/26032 = 87.438537%
+Epoch 1/5 E2M1: 22739/26032 = 87.350184%
+CHECKPOINT: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142938_400521_train\checkpoints\epoch_00001.pt
+Epoch 2/5 train: minibatch 1/573; vijf formaten.
+Epoch 2/5 train: minibatch 20/573; vijf formaten.
+Epoch 2/5 train: minibatch 40/573; vijf formaten.
+Epoch 2/5 train: minibatch 60/573; vijf formaten.
+Epoch 2/5 train: minibatch 80/573; vijf formaten.
+Epoch 2/5 train: minibatch 100/573; vijf formaten.
+Epoch 2/5 train: minibatch 120/573; vijf formaten.
+Epoch 2/5 train: minibatch 140/573; vijf formaten.
+Epoch 2/5 train: minibatch 160/573; vijf formaten.
+Epoch 2/5 train: minibatch 180/573; vijf formaten.
+Epoch 2/5 train: minibatch 200/573; vijf formaten.
+Epoch 2/5 train: minibatch 220/573; vijf formaten.
+Epoch 2/5 train: minibatch 240/573; vijf formaten.
+Epoch 2/5 train: minibatch 260/573; vijf formaten.
+Epoch 2/5 train: minibatch 280/573; vijf formaten.
+Epoch 2/5 train: minibatch 300/573; vijf formaten.
+Epoch 2/5 train: minibatch 320/573; vijf formaten.
+Epoch 2/5 train: minibatch 340/573; vijf formaten.
+Epoch 2/5 train: minibatch 360/573; vijf formaten.
+Epoch 2/5 train: minibatch 380/573; vijf formaten.
+Epoch 2/5 train: minibatch 400/573; vijf formaten.
+Epoch 2/5 train: minibatch 420/573; vijf formaten.
+Epoch 2/5 train: minibatch 440/573; vijf formaten.
+Epoch 2/5 train: minibatch 460/573; vijf formaten.
+Epoch 2/5 train: minibatch 480/573; vijf formaten.
+Epoch 2/5 train: minibatch 500/573; vijf formaten.
+Epoch 2/5 train: minibatch 520/573; vijf formaten.
+Epoch 2/5 train: minibatch 540/573; vijf formaten.
+Epoch 2/5 train: minibatch 560/573; vijf formaten.
+Epoch 2/5 train: minibatch 573/573; vijf formaten.
+Epoch 2/5 test: minibatch 1/204; vijf formaten.
+Epoch 2/5 test: minibatch 20/204; vijf formaten.
+Epoch 2/5 test: minibatch 40/204; vijf formaten.
+Epoch 2/5 test: minibatch 60/204; vijf formaten.
+Epoch 2/5 test: minibatch 80/204; vijf formaten.
+Epoch 2/5 test: minibatch 100/204; vijf formaten.
+Epoch 2/5 test: minibatch 120/204; vijf formaten.
+Epoch 2/5 test: minibatch 140/204; vijf formaten.
+Epoch 2/5 test: minibatch 160/204; vijf formaten.
+Epoch 2/5 test: minibatch 180/204; vijf formaten.
+Epoch 2/5 test: minibatch 200/204; vijf formaten.
+Epoch 2/5 test: minibatch 204/204; vijf formaten.
+Epoch 2/5 E4M3: 23810/26032 = 91.464352%
+Epoch 2/5 E5M2: 23812/26032 = 91.472034%
+Epoch 2/5 E2M3: 23817/26032 = 91.491242%
+Epoch 2/5 E3M2: 23787/26032 = 91.375999%
+Epoch 2/5 E2M1: 23757/26032 = 91.260756%
+CHECKPOINT: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142938_400521_train\checkpoints\epoch_00002.pt
+Epoch 3/5 train: minibatch 1/573; vijf formaten.
+Epoch 3/5 train: minibatch 20/573; vijf formaten.
+Epoch 3/5 train: minibatch 40/573; vijf formaten.
+Epoch 3/5 train: minibatch 60/573; vijf formaten.
+Epoch 3/5 train: minibatch 80/573; vijf formaten.
+Epoch 3/5 train: minibatch 100/573; vijf formaten.
+Epoch 3/5 train: minibatch 120/573; vijf formaten.
+Epoch 3/5 train: minibatch 140/573; vijf formaten.
+Epoch 3/5 train: minibatch 160/573; vijf formaten.
+Epoch 3/5 train: minibatch 180/573; vijf formaten.
+Epoch 3/5 train: minibatch 200/573; vijf formaten.
+Epoch 3/5 train: minibatch 220/573; vijf formaten.
+Epoch 3/5 train: minibatch 240/573; vijf formaten.
+Epoch 3/5 train: minibatch 260/573; vijf formaten.
+Epoch 3/5 train: minibatch 280/573; vijf formaten.
+Epoch 3/5 train: minibatch 300/573; vijf formaten.
+Epoch 3/5 train: minibatch 320/573; vijf formaten.
+Epoch 3/5 train: minibatch 340/573; vijf formaten.
+Epoch 3/5 train: minibatch 360/573; vijf formaten.
+Epoch 3/5 train: minibatch 380/573; vijf formaten.
+Epoch 3/5 train: minibatch 400/573; vijf formaten.
+Epoch 3/5 train: minibatch 420/573; vijf formaten.
+Epoch 3/5 train: minibatch 440/573; vijf formaten.
+Epoch 3/5 train: minibatch 460/573; vijf formaten.
+Epoch 3/5 train: minibatch 480/573; vijf formaten.
+Epoch 3/5 train: minibatch 500/573; vijf formaten.
+Epoch 3/5 train: minibatch 520/573; vijf formaten.
+Epoch 3/5 train: minibatch 540/573; vijf formaten.
+Epoch 3/5 train: minibatch 560/573; vijf formaten.
+Epoch 3/5 train: minibatch 573/573; vijf formaten.
+Epoch 3/5 test: minibatch 1/204; vijf formaten.
+Epoch 3/5 test: minibatch 20/204; vijf formaten.
+Epoch 3/5 test: minibatch 40/204; vijf formaten.
+Epoch 3/5 test: minibatch 60/204; vijf formaten.
+Epoch 3/5 test: minibatch 80/204; vijf formaten.
+Epoch 3/5 test: minibatch 100/204; vijf formaten.
+Epoch 3/5 test: minibatch 120/204; vijf formaten.
+Epoch 3/5 test: minibatch 140/204; vijf formaten.
+Epoch 3/5 test: minibatch 160/204; vijf formaten.
+Epoch 3/5 test: minibatch 180/204; vijf formaten.
+Epoch 3/5 test: minibatch 200/204; vijf formaten.
+Epoch 3/5 test: minibatch 204/204; vijf formaten.
+Epoch 3/5 E4M3: 24028/26032 = 92.301782%
+Epoch 3/5 E5M2: 23947/26032 = 91.990627%
+Epoch 3/5 E2M3: 24052/26032 = 92.393977%
+Epoch 3/5 E3M2: 23920/26032 = 91.886908%
+Epoch 3/5 E2M1: 23899/26032 = 91.806238%
+CHECKPOINT: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142938_400521_train\checkpoints\epoch_00003.pt
+Epoch 4/5 train: minibatch 1/573; vijf formaten.
+Epoch 4/5 train: minibatch 20/573; vijf formaten.
+Epoch 4/5 train: minibatch 40/573; vijf formaten.
+Epoch 4/5 train: minibatch 60/573; vijf formaten.
+Epoch 4/5 train: minibatch 80/573; vijf formaten.
+Epoch 4/5 train: minibatch 100/573; vijf formaten.
+Epoch 4/5 train: minibatch 120/573; vijf formaten.
+Epoch 4/5 train: minibatch 140/573; vijf formaten.
+Epoch 4/5 train: minibatch 160/573; vijf formaten.
+Epoch 4/5 train: minibatch 180/573; vijf formaten.
+Epoch 4/5 train: minibatch 200/573; vijf formaten.
+Epoch 4/5 train: minibatch 220/573; vijf formaten.
+Epoch 4/5 train: minibatch 240/573; vijf formaten.
+Epoch 4/5 train: minibatch 260/573; vijf formaten.
+Epoch 4/5 train: minibatch 280/573; vijf formaten.
+Epoch 4/5 train: minibatch 300/573; vijf formaten.
+Epoch 4/5 train: minibatch 320/573; vijf formaten.
+Epoch 4/5 train: minibatch 340/573; vijf formaten.
+Epoch 4/5 train: minibatch 360/573; vijf formaten.
+Epoch 4/5 train: minibatch 380/573; vijf formaten.
+Epoch 4/5 train: minibatch 400/573; vijf formaten.
+Epoch 4/5 train: minibatch 420/573; vijf formaten.
+Epoch 4/5 train: minibatch 440/573; vijf formaten.
+Epoch 4/5 train: minibatch 460/573; vijf formaten.
+Epoch 4/5 train: minibatch 480/573; vijf formaten.
+Epoch 4/5 train: minibatch 500/573; vijf formaten.
+Epoch 4/5 train: minibatch 520/573; vijf formaten.
+Epoch 4/5 train: minibatch 540/573; vijf formaten.
+Epoch 4/5 train: minibatch 560/573; vijf formaten.
+Epoch 4/5 train: minibatch 573/573; vijf formaten.
+Epoch 4/5 test: minibatch 1/204; vijf formaten.
+Epoch 4/5 test: minibatch 20/204; vijf formaten.
+Epoch 4/5 test: minibatch 40/204; vijf formaten.
+Epoch 4/5 test: minibatch 60/204; vijf formaten.
+Epoch 4/5 test: minibatch 80/204; vijf formaten.
+Epoch 4/5 test: minibatch 100/204; vijf formaten.
+Epoch 4/5 test: minibatch 120/204; vijf formaten.
+Epoch 4/5 test: minibatch 140/204; vijf formaten.
+Epoch 4/5 test: minibatch 160/204; vijf formaten.
+Epoch 4/5 test: minibatch 180/204; vijf formaten.
+Epoch 4/5 test: minibatch 200/204; vijf formaten.
+Epoch 4/5 test: minibatch 204/204; vijf formaten.
+Epoch 4/5 E4M3: 24262/26032 = 93.200676%
+Epoch 4/5 E5M2: 24181/26032 = 92.889521%
+Epoch 4/5 E2M3: 24234/26032 = 93.093116%
+Epoch 4/5 E3M2: 24186/26032 = 92.908728%
+Epoch 4/5 E2M1: 24115/26032 = 92.635986%
+CHECKPOINT: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142938_400521_train\checkpoints\epoch_00004.pt
+Epoch 5/5 train: minibatch 1/573; vijf formaten.
+Epoch 5/5 train: minibatch 20/573; vijf formaten.
+Epoch 5/5 train: minibatch 40/573; vijf formaten.
+Epoch 5/5 train: minibatch 60/573; vijf formaten.
+Epoch 5/5 train: minibatch 80/573; vijf formaten.
+Epoch 5/5 train: minibatch 100/573; vijf formaten.
+Epoch 5/5 train: minibatch 120/573; vijf formaten.
+Epoch 5/5 train: minibatch 140/573; vijf formaten.
+Epoch 5/5 train: minibatch 160/573; vijf formaten.
+Epoch 5/5 train: minibatch 180/573; vijf formaten.
+Epoch 5/5 train: minibatch 200/573; vijf formaten.
+Epoch 5/5 train: minibatch 220/573; vijf formaten.
+Epoch 5/5 train: minibatch 240/573; vijf formaten.
+Epoch 5/5 train: minibatch 260/573; vijf formaten.
+Epoch 5/5 train: minibatch 280/573; vijf formaten.
+Epoch 5/5 train: minibatch 300/573; vijf formaten.
+Epoch 5/5 train: minibatch 320/573; vijf formaten.
+Epoch 5/5 train: minibatch 340/573; vijf formaten.
+Epoch 5/5 train: minibatch 360/573; vijf formaten.
+Epoch 5/5 train: minibatch 380/573; vijf formaten.
+Epoch 5/5 train: minibatch 400/573; vijf formaten.
+Epoch 5/5 train: minibatch 420/573; vijf formaten.
+Epoch 5/5 train: minibatch 440/573; vijf formaten.
+Epoch 5/5 train: minibatch 460/573; vijf formaten.
+Epoch 5/5 train: minibatch 480/573; vijf formaten.
+Epoch 5/5 train: minibatch 500/573; vijf formaten.
+Epoch 5/5 train: minibatch 520/573; vijf formaten.
+Epoch 5/5 train: minibatch 540/573; vijf formaten.
+Epoch 5/5 train: minibatch 560/573; vijf formaten.
+Epoch 5/5 train: minibatch 573/573; vijf formaten.
+Epoch 5/5 test: minibatch 1/204; vijf formaten.
+Epoch 5/5 test: minibatch 20/204; vijf formaten.
+Epoch 5/5 test: minibatch 40/204; vijf formaten.
+Epoch 5/5 test: minibatch 60/204; vijf formaten.
+Epoch 5/5 test: minibatch 80/204; vijf formaten.
+Epoch 5/5 test: minibatch 100/204; vijf formaten.
+Epoch 5/5 test: minibatch 120/204; vijf formaten.
+Epoch 5/5 test: minibatch 140/204; vijf formaten.
+Epoch 5/5 test: minibatch 160/204; vijf formaten.
+Epoch 5/5 test: minibatch 180/204; vijf formaten.
+Epoch 5/5 test: minibatch 200/204; vijf formaten.
+Epoch 5/5 test: minibatch 204/204; vijf formaten.
+Epoch 5/5 E4M3: 24286/26032 = 93.292870%
+Epoch 5/5 E5M2: 24310/26032 = 93.385065%
+Epoch 5/5 E2M3: 24292/26032 = 93.315919%
+Epoch 5/5 E3M2: 24316/26032 = 93.408113%
+Epoch 5/5 E2M1: 24278/26032 = 93.262139%
+CHECKPOINT: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142938_400521_train\checkpoints\epoch_00005.pt
+EXPORT PASS: vijf afzonderlijke compacte modellen; gewichten exact gecontroleerd en synthetische logits vergeleken.
+EINDSTATUS: PASS

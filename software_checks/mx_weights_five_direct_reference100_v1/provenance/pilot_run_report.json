@@ -1,0 +1,451 @@
+{
+  "schema": "mx-five-direct-pilot5-report-v1",
+  "status": "PASS",
+  "command": "train",
+  "package": "mx_weights_five_direct_pilot5_v1",
+  "started_at": "2026-11-15T14:29:38.401007+01:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_five_direct_pilot5_v1\\20261115_142938_400521_train",
+  "completed_epochs": 5,
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57,
+      "count": 11655
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57,
+      "count": 11655
+    }
+  ],
+  "limitations": [
+    "One exploratory fixed-seed five-epoch pilot; no final accuracy conclusion.",
+    "Numerical FP32 emulator with MX weights and A32; no native MX speed/energy measurement.",
+    "Fixed seed does not guarantee bit-identical CUDA runs or resumes.",
+    "No matched accuracy comparison with the historical three-format model.",
+    "All five format losses have weight1; equal coefficients do not imply equal gradient norms."
+  ],
+  "config": {
+    "schema": "mx-five-direct-pilot5-protocol-v1",
+    "package": "mx_weights_five_direct_pilot5_v1",
+    "mode": "joint",
+    "weight_formats": [
+      "E4M3",
+      "E5M2",
+      "E2M3",
+      "E3M2",
+      "E2M1"
+    ],
+    "element_bits": {
+      "E4M3": 8,
+      "E5M2": 8,
+      "E2M3": 6,
+      "E3M2": 6,
+      "E2M1": 4
+    },
+    "activation_bits": 32,
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "weight_preprocess": "original G(W)=tanh(W)/max(abs(tanh(W)))*mean(abs(W)).detach(), with zero guard",
+    "quantization_source": "each format directly from the same current G(W); no inter-format code conversion",
+    "scale_emax_subtracted": {
+      "E4M3": 8,
+      "E5M2": 15,
+      "E2M3": 2,
+      "E3M2": 4,
+      "E2M1": 2
+    },
+    "scale_rule": "floor(log2(block_amax))-format_emax; clip[-127,127]; zero block exponent0",
+    "scale_grouping": "within Cout over flattened Cin*Kh*Kw; positive zero padding to B32",
+    "rounding": "nearest ties-to-even, finite saturation; reject non-finite input",
+    "fp32_scalar_subnormals": "flush to signed zero; local MX subnormals supported",
+    "truncation": false,
+    "mantissa_truncation": false,
+    "exponent_truncation": false,
+    "shared_scale_compensation": false,
+    "learned_shared_scale": false,
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "ste_policy": "identity through quantizer; original G(W) derivative retained",
+    "training_mode_order": [
+      "E4M3",
+      "E5M2",
+      "E2M3",
+      "E3M2",
+      "E2M1"
+    ],
+    "test_mode_order": [
+      "E2M1",
+      "E2M3",
+      "E3M2",
+      "E4M3",
+      "E5M2"
+    ],
+    "teacher_formats": {
+      "E4M3": [],
+      "E5M2": [],
+      "E2M3": [
+        "E4M3"
+      ],
+      "E3M2": [
+        "E5M2"
+      ],
+      "E2M1": [
+        "E2M3",
+        "E3M2"
+      ]
+    },
+    "teacher_mixture_weights": {
+      "E2M1": [
+        0.5,
+        0.5
+      ]
+    },
+    "teacher_mixture_domain": "post-softmax probabilities, detached",
+    "temperature": 1.0,
+    "loss_weights": {
+      "E4M3": 1.0,
+      "E5M2": 1.0,
+      "E2M3": 1.0,
+      "E3M2": 1.0,
+      "E2M1": 1.0
+    },
+    "loss_reduction": "sum",
+    "loss_batch_reduction": "mean",
+    "extra_hard_student_loss": false,
+    "passes_per_training_batch": 5,
+    "optimizer_steps_per_training_batch": 1,
+    "extra_FP32_teacher_forward": false,
+    "bn_bank_mapping": {
+      "E4M3": "E4M3",
+      "E5M2": "E5M2",
+      "E2M3": "E2M3",
+      "E3M2": "E3M2",
+      "E2M1": "E2M1"
+    },
+    "bn_original_bank_mapping": {
+      "E4M3": "8",
+      "E5M2": "1",
+      "E2M3": "32",
+      "E3M2": "2",
+      "E2M1": "4"
+    },
+    "legacy_abits_and_wbits": 32,
+    "bn_active_banks_per_layer": 5,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "initialization_policy": "fresh seed20261009; no old three-format or MSB checkpoint",
+    "seed": 20261009,
+    "planned_epochs": 5,
+    "reference_schedule_epochs": 100,
+    "primary_endpoint": "epoch5, all five formats from one joint checkpoint",
+    "checkpoint_selection_on_test": false,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "image_shape": [
+      3,
+      40,
+      40
+    ],
+    "backend_policy": "original cudnn.benchmark=True; no AMP/compile or TF32 override",
+    "rng_policy": "global upstream streams; sequential dropout draws per format",
+    "export_policy": "five independent direct exports at epoch5; all five BN banks retained",
+    "resume_policy": "same pilot contract only; completed epochs1..4; new output directory",
+    "scope": "exploratory weight-only numerical emulation; no native MX or hardware performance claim"
+  },
+  "package_sha256": {
+    "MX_five_direct_pilot5_resultaten.ipynb": "fbb7f2ac256285873272434157dbe3de53ac751761634aaac3f01b832423be95",
+    "PROTOCOL.md": "1598026262c28040834bf71768f18095eae217f641c025fb8257f0a6cdd1f50d",
+    "README.md": "1608e0c9ec0cb193f7a0f1d8e1416ca070347fa4b0317fb5d117e16e2fd98086",
+    "REUSE_MANIFEST.json": "f5931dc8f39104f1b0469dca32ac3ce04ae546fa2d7617cf6f60eb936547777a",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "joint_adapter.py": "2370a9996fb52290926823bab8225802ade2b1cb53837b09c887a1651e397045",
+    "joint_support.py": "48a854c32f937e67aa0013e783025c6e4cfc93cf0ac4e05c095a3ff6961c701b",
+    "local_validation/VALIDATION.md": "753729b9b232356e8ab95892dcb686d57e89b1cf09638f29014b3144e7aa21c0",
+    "local_validation/cli_guard_review.json": "f4799014defd064d9992ad521bdbc5c8184de0a6707d46d7c26e473278640c93",
+    "local_validation/joint_cpu_report.json": "a05a9bc1d264eb9875fa770c722022b3f5878396a4a5d576e25c41bfc56d10cd",
+    "local_validation/new_codecs_cpu_report.json": "3a508e708a37d248f9ff8cf975d5be74823442ef42040d9e90435b9ee81a2ef4",
+    "local_validation/notebook_validation_report.json": "d98e8ba479a9a909ef2a9c8d53ee444e3841075ac0559af18655a242191e3306",
+    "local_validation/runner_cpu_report.json": "9b0c159b864f9429ced84ae7a0bb8a541a5043fbbbfaccafaef0a082773593b1",
+    "local_validation/test_runner.py": "f83b4d4a316b041ef5b32c1b492fad0947a78c2ac1e34a36d9d00f15e622be98",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e3m2.py": "491f5e45b74305f8c242b9597a5c8ee5dd5afa78e09fd49e9eb30ffa710e5fa7",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e5m2.py": "5f8a7eae79a6e05494f3fd0be446b383f96d8f2ae41b00a6ca93fd86965e0198",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "ff73192e2d3c108f0f2fc766b658e586ecd6575ae26925adb4955550a107a76e",
+    "provenance/triple_direct_PACKAGE_SHA256.json": "145493e9c6b2e27ee30f405cfcc35a2b8ea8b39105c9d1fb32cd7d1d3123e8b8",
+    "provenance/triple_direct_PROTOCOL.md": "8a45f899e1586c8edb5c89d9c0fc2888ea21233831014a9d5332217b9de94029",
+    "provenance/triple_direct_joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "provenance/triple_direct_joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "provenance/triple_direct_run_train.py": "24cdc0cd7e9dd0a02052e404ae47c51243177f89ffded246973b403164d481c3",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "9f2c4efa4c638092c2fcd83b4205eed08d4c7ca44380a12627e77c92ad4ca904",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_joint.py": "94a6edacd9be020bce9c4cfe3ee1b0844b132ddc8ad20f6149d64e71180c5814",
+    "test_new_codecs.py": "3db8f642e910f6fc63124b15ca248160375da0dbbbe7e652bdbd264be67e9ebf",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "source_reuse": {
+    "schema": "five-direct-source-reuse-v1",
+    "source_archive_name": "mx_weights_triple_direct_reference100_v1(1).zip",
+    "source_archive_sha256": "d3a73669ea40d46f2e8cd78b99c7c4972a4cf67f735a586096fff56675356729",
+    "byte_identical_files": {
+      "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+      "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+    },
+    "original_files_preserved": true,
+    "changes": [
+      "Two added finite-only direct codecs E5M2/E3M2",
+      "Five format-named BN banks; initial tensors unchanged",
+      "Two hard-label roots, corresponding 6-bit students, detached mean probability teacher for E2M1",
+      "Equal five loss weights, same summed-loss convention and one Adam update",
+      "Fixed fresh pilot endpoint5; no checkpoint selection by test accuracy",
+      "New run/feedback/notebook with optional same-pilot epoch-boundary resume"
+    ]
+  },
+  "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "dependencies": {
+    "pip_freeze": "PASS",
+    "pip_check": "PASS"
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "seed_source": "explicit local seed, not reported by authors",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "torch_num_threads": 16,
+    "matmul_fp32_precision": "none",
+    "cudnn_conv_fp32_precision": "tf32",
+    "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "exact_cuda_resume_guaranteed": false
+  },
+  "local_cpu_validation_only": false,
+  "dataset_files": {
+    "root": "C:\\Users\\renzo\\master-thesis-mx\\data\\svhn",
+    "files": {
+      "train_32x32.mat": {
+        "split": "train",
+        "md5": "e26dedcc434d2e4c54c9b2d4a06d8373",
+        "sha256": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8",
+        "bytes": 182040794
+      },
+      "test_32x32.mat": {
+        "split": "test",
+        "md5": "eb5a983be6a315427106f1b164d9cef3",
+        "sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+        "bytes": 64275384
+      }
+    },
+    "download_events": []
+  },
+  "dataset_selection": {
+    "train": {
+      "n": 73257,
+      "labels_histogram": [
+        4948,
+        13861,
+        10585,
+        8497,
+        7458,
+        6882,
+        5727,
+        5595,
+        5045,
+        4659
+      ],
+      "label_sha256": "d12587a1e0efc1b8ecc006ec91da5eb53f2230cedb3a0357ef50737f72285765"
+    },
+    "test": {
+      "n": 26032,
+      "labels_histogram": [
+        1744,
+        5099,
+        4149,
+        2882,
+        2523,
+        2384,
+        1977,
+        2019,
+        1660,
+        1595
+      ],
+      "label_sha256": "e48928b73c8aeda0597997f294279171368a478e28633e2c312a6dd9601d4048"
+    },
+    "extra_used": false
+  },
+  "transforms": {
+    "train": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "test": "Compose(\n    Resize(size=40, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)"
+  },
+  "data_preparation_seconds": 1.8273424000071827,
+  "synthetic_checks_only": false,
+  "svhn_accuracy_measured": true,
+  "contract_sha256": "5a606c70b2687d0ac285f1919f1fa477da8d42bdb56ecddc27505a72d3dcb3fe",
+  "initialization_state_sha256": "5ae4b7df6183b5034a1e2e709eb300ac91089f7d4137095c5876b0fea9df360e",
+  "optimizer_steps": 2865,
+  "timing": {
+    "epoch_seconds": [
+      93.58924819997628,
+      88.19512479996774,
+      88.55668800001149,
+      88.80669850000413,
+      88.44569910003338
+    ],
+    "measured_total_epoch_seconds": 447.593458599993,
+    "estimated_100_epoch_seconds": 8951.86917199986,
+    "basis": "train+test phases including instrumentation; excludes data preparation, checks, checkpoint writes and exports",
+    "estimate_is_not_measured_100_epoch_training": true
+  },
+  "pilot_completed": true,
+  "exports": {
+    "E4M3": {
+      "file": "epoch00005_E4M3.pt",
+      "sha256": "5ee4991d822057f40b709c9f1ccbf037ec75b658461473ba7d873514dd525cc2",
+      "bytes": 196837,
+      "decoded_weights_exact": true,
+      "synthetic_logits_close": true,
+      "max_abs_logit_difference": 0.0,
+      "full_test_from_export_measured": false
+    },
+    "E5M2": {
+      "file": "epoch00005_E5M2.pt",
+      "sha256": "da42cd5d0887ec4cef84b4dc71527047169e0a4297d38668cd94e300dcd74874",
+      "bytes": 196837,
+      "decoded_weights_exact": true,
+      "synthetic_logits_close": true,
+      "max_abs_logit_difference": 0.0,
+      "full_test_from_export_measured": false
+    },
+    "E2M3": {
+      "file": "epoch00005_E2M3.pt",
+      "sha256": "bf714a1e750ac95e293dc2bb68fdb0e0e42694221c96afaeba3999c69e96ac4f",
+      "bytes": 164197,
+      "decoded_weights_exact": true,
+      "synthetic_logits_close": true,
+      "max_abs_logit_difference": 0.0,
+      "full_test_from_export_measured": false
+    },
+    "E3M2": {
+      "file": "epoch00005_E3M2.pt",
+      "sha256": "5958c65fdb93a0e8d7a3820cb3504b1327e84c9262f5d0e60407cbe159ed43e7",
+      "bytes": 164197,
+      "decoded_weights_exact": true,
+      "synthetic_logits_close": true,
+      "max_abs_logit_difference": 0.0,
+      "full_test_from_export_measured": false
+    },
+    "E2M1": {
+      "file": "epoch00005_E2M1.pt",
+      "sha256": "dcd239bb48e6fdc63f7f4811828fcdfc5618a7e682bbd44250b2be59f45696fb",
+      "bytes": 131557,
+      "decoded_weights_exact": true,
+      "synthetic_logits_close": true,
+      "max_abs_logit_difference": 0.0,
+      "full_test_from_export_measured": false
+    }
+  },
+  "source_and_package_unchanged": true,
+  "ended_at": "2026-11-15T14:37:13.329344+01:00",
+  "session_wall_seconds": 454.92813419998856
+}

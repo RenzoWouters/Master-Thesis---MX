@@ -1,0 +1,27 @@
+--- upstream/utils.py
++++ source_workcopy/utils.py
+@@ -2,7 +2,6 @@
+ import torch
+ import logging
+ import shutil
+-import gpustat
+ import random
+ 
+ 
+@@ -38,7 +37,7 @@
+ 
+         res = []
+         for k in topk:
+-            correct_k = correct[:k].view(-1).float().sum(0)
++            correct_k = correct[:k].reshape(-1).float().sum(0)
+             res.append(correct_k.mul_(100.0 / batch_size))
+         return res
+ 
+@@ -61,6 +60,7 @@
+ def setup_gpus():
+     """Adapted from https://github.com/bamos/setGPU/blob/master/setGPU.py
+     """
++    import gpustat  # Optional: only needed for setup_gpus().
+     stats = gpustat.GPUStatCollection.new_query()
+     ids = map(lambda gpu: int(gpu.entry['index']), stats)
+     ratios = map(lambda gpu: float(gpu.entry['memory.used']) / float(gpu.entry['memory.total']), stats)

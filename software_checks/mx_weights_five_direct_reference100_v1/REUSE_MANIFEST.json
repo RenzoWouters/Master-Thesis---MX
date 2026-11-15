@@ -1,0 +1,32 @@
+{
+  "schema": "five-direct-reference100-source-reuse-v1",
+  "source_archive_name": "mx_weights_five_direct_pilot5_v1.zip",
+  "source_archive_sha256": "0f7b0834fa67c6ef73764516582500e9fa9d08c1f8f35915adf0c21b7740ba21",
+  "byte_identical_files": {
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e5m2.py": "5f8a7eae79a6e05494f3fd0be446b383f96d8f2ae41b00a6ca93fd86965e0198",
+    "mx_e3m2.py": "491f5e45b74305f8c242b9597a5c8ee5dd5afa78e09fd49e9eb30ffa710e5fa7",
+    "joint_adapter.py": "2370a9996fb52290926823bab8225802ade2b1cb53837b09c887a1651e397045",
+    "test_new_codecs.py": "3db8f642e910f6fc63124b15ca248160375da0dbbbe7e652bdbd264be67e9ebf",
+    "test_joint.py": "94a6edacd9be020bce9c4cfe3ee1b0844b132ddc8ad20f6149d64e71180c5814",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "pilot_feedback_filename": "feedback_bundle(20261115-133745).zip",
+  "pilot_feedback_sha256": "77162698b82752cc1be87c853c18f8b4e5e56691e836b539832676aa6fcbe61e",
+  "pilot_feedback_audit": "provenance/five_pilot_feedback_audit.json",
+  "prior_three_direct_source_archive_sha256": "d3a73669ea40d46f2e8cd78b99c7c4972a4cf67f735a586096fff56675356729",
+  "changes": [
+    "Fixed fresh full100 endpoint and new resume contract; pilot checkpoints rejected",
+    "Original 50/75/90 learning-rate schedule activated and checked; numeric joint training unchanged",
+    "Progress and export filenames for epoch100; measured full100 timing at completion",
+    "Historical direct three-format reference and matched-epoch notebook comparisons",
+    "Correct relative export file paths in metadata"
+  ]
+}

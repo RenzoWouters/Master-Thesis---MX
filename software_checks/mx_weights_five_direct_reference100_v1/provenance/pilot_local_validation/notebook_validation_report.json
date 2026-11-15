@@ -1,0 +1,28 @@
+[
+  {
+    "case": "complete5",
+    "status": "PASS"
+  },
+  {
+    "case": "partial3",
+    "status": "PASS"
+  },
+  {
+    "case": "check_only",
+    "status": "PASS"
+  },
+  {
+    "case": "metrics_without_committed_checkpoint",
+    "status": "PASS_no_primary_endpoint"
+  },
+  {
+    "case": "duplicate",
+    "status": "PASS_expected_rejection",
+    "error": "Dubbele epoch/fase/formaatrijen in metrics.csv."
+  },
+  {
+    "case": "wrong_accuracy",
+    "status": "PASS_expected_rejection",
+    "error": "Top-1-accuracy wijkt af van de tellingen."
+  }
+]

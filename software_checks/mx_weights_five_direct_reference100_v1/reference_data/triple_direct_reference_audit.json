@@ -1,0 +1,123 @@
+{
+  "scope": "Read-only audit of the original three-format direct 100-epoch reference and independent direct-path reevaluation",
+  "status": "PASS",
+  "primary_archive": "feedback_bundle(20261023-150530).zip",
+  "primary_archive_sha256": "68b55b2432bdc6802094e8968ad5d97252b8166ebbca4d1651fc438c6c66e259",
+  "posthoc_archive": "feedback_bundle(20261023-153619).zip",
+  "posthoc_archive_sha256": "a52fd83c641e0e44a2a6bffb6725c103e7a3d1b901fef2e1c7bb435d4ccfdc5f",
+  "checks": {
+    "primary_complete_real_full100": true,
+    "primary_direct_three_MX_A32_B32": true,
+    "original_dataset_optimizer_training_config": true,
+    "exact_600_epoch_phase_format_rows": true,
+    "metric_counts_LR_objectives_valid": true,
+    "history_exact_100_epochs": true,
+    "history_matches_all_metric_rows": true,
+    "all_100_logged_gradient_BN_optimizer_coverage_audits_consistent": true,
+    "57300_steps_171900_training_passes": true,
+    "selection_roles_epochs": true,
+    "selected_metrics_exactly_match_epoch_metrics": true,
+    "linked_source_run_report.json": true,
+    "linked_source_epoch_metrics.csv": true,
+    "linked_source_selected_metrics.csv": true,
+    "linked_source_checkpoint_selection.json": true,
+    "linked_source_training_summary.json": true,
+    "posthoc_readonly_original_reference_confirmed": true,
+    "all_six_direct_reproduction_rows_match_original": true,
+    "last_epoch_posthoc_indices_full_testset": true,
+    "last_epoch_labels_match_original_dataset": true,
+    "epoch100_direct8_stored_predictions_recompute": true,
+    "epoch100_direct6_stored_predictions_recompute": true,
+    "epoch100_direct4_stored_predictions_recompute": true
+  },
+  "errors": [],
+  "primary_run_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_triple_direct_reference100\\20261023_151331_732669_joint_run",
+  "primary_initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "max_legacy_float_averaged_top1_vs_count_percent_difference": 9.378481991006993e-09,
+  "max_count_top1_percent_rounding_difference": 0.0,
+  "linked_primary_files": {
+    "run_report.json": {
+      "primary_sha256": "0016d288cbc372e1d1341435357a258f92a93bef3b13d2f3141dca030d2f776c",
+      "posthoc_copy_sha256": "0016d288cbc372e1d1341435357a258f92a93bef3b13d2f3141dca030d2f776c",
+      "posthoc_logged_input_sha256": "0016d288cbc372e1d1341435357a258f92a93bef3b13d2f3141dca030d2f776c"
+    },
+    "epoch_metrics.csv": {
+      "primary_sha256": "52df99915d90f3626399db078f610ac4a2ada7658052eed37ed76a7cd0a006c8",
+      "posthoc_copy_sha256": "52df99915d90f3626399db078f610ac4a2ada7658052eed37ed76a7cd0a006c8",
+      "posthoc_logged_input_sha256": "52df99915d90f3626399db078f610ac4a2ada7658052eed37ed76a7cd0a006c8"
+    },
+    "selected_metrics.csv": {
+      "primary_sha256": "e538fe4aeb3e1af8c7f3aa6b639d48be627369555219642991f4287c464ffc60",
+      "posthoc_copy_sha256": "e538fe4aeb3e1af8c7f3aa6b639d48be627369555219642991f4287c464ffc60",
+      "posthoc_logged_input_sha256": "e538fe4aeb3e1af8c7f3aa6b639d48be627369555219642991f4287c464ffc60"
+    },
+    "checkpoint_selection.json": {
+      "primary_sha256": "c208030d083a6c1967850d7dde8098d9d48b5a74dd5fc0c6cb7aee3b9c52da26",
+      "posthoc_copy_sha256": "c208030d083a6c1967850d7dde8098d9d48b5a74dd5fc0c6cb7aee3b9c52da26",
+      "posthoc_logged_input_sha256": "c208030d083a6c1967850d7dde8098d9d48b5a74dd5fc0c6cb7aee3b9c52da26"
+    },
+    "training_summary.json": {
+      "primary_sha256": "f6da13ead79fee877f024ca3ebb13d824862fe7d5693f1d3e5f40d9b92e72826",
+      "posthoc_copy_sha256": "f6da13ead79fee877f024ca3ebb13d824862fe7d5693f1d3e5f40d9b92e72826",
+      "posthoc_logged_input_sha256": "f6da13ead79fee877f024ca3ebb13d824862fe7d5693f1d3e5f40d9b92e72826"
+    }
+  },
+  "direct_epoch100_predictions_verified": 78096,
+  "rows_verified": 600,
+  "endpoint_metrics": {
+    "5": [
+      {
+        "format": "E4M3",
+        "correct1": 24160,
+        "n": 26032,
+        "top1_percent_from_counts": 92.80885064535956,
+        "legacy_top1_percent": 92.80885063598107
+      },
+      {
+        "format": "E2M3",
+        "correct1": 24152,
+        "n": 26032,
+        "top1_percent_from_counts": 92.77811923786109,
+        "legacy_top1_percent": 92.77811922848261
+      },
+      {
+        "format": "E2M1",
+        "correct1": 24102,
+        "n": 26032,
+        "top1_percent_from_counts": 92.5860479409957,
+        "legacy_top1_percent": 92.58604793161722
+      }
+    ],
+    "100": [
+      {
+        "format": "E4M3",
+        "correct1": 24694,
+        "n": 26032,
+        "top1_percent_from_counts": 94.86017209588199,
+        "legacy_top1_percent": 94.86017208650351
+      },
+      {
+        "format": "E2M3",
+        "correct1": 24732,
+        "n": 26032,
+        "top1_percent_from_counts": 95.0061462814997,
+        "legacy_top1_percent": 95.00614627212121
+      },
+      {
+        "format": "E2M1",
+        "correct1": 24749,
+        "n": 26032,
+        "top1_percent_from_counts": 95.07145052243392,
+        "legacy_top1_percent": 95.0714505177447
+      }
+    ]
+  },
+  "best_checkpoint_epoch_not_used_as_primary_comparison": 54,
+  "limitations": [
+    "The primary feedback does not include the 100 per-epoch raw prediction arrays, original per-batch records, sample-order arrays or checkpoints. All 600 aggregate rows and the logged history/audits can be cross-checked, but the whole training cannot be independently replayed from this bundle.",
+    "Only the direct8/direct6/direct4 outputs from the later post-hoc evaluation were used to verify epoch100 accuracy. Truncated or rounded variants are excluded from the baseline.",
+    "Legacy top1_percent contains tiny floating-point averaging differences; normalize comparison accuracy from correct1/n, matching count_top1_percent.",
+    "Three-format versus five-format results are a descriptive historical comparison: the distillation graph, number of gradient contributions, active BN banks and training compute differ. No isolated causal effect of adding formats is established.",
+    "Single-seed runs; no across-seed uncertainty or statistical superiority claim."
+  ]
+}

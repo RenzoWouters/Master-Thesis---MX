@@ -1,0 +1,50 @@
+{
+  "scope": "Synthetic NEW-run fixtures; real supplied historical reference; no new SVHN results",
+  "status": "PASS",
+  "checks": [
+    {
+      "case": "complete100",
+      "status": "PASS"
+    },
+    {
+      "case": "partial75",
+      "status": "PASS"
+    },
+    {
+      "case": "check_only",
+      "status": "PASS"
+    },
+    {
+      "case": "uncommitted_epoch100_excluded_from_primary_and_comparison",
+      "status": "PASS"
+    },
+    {
+      "case": "incomplete_five_format_endpoint_excluded",
+      "status": "PASS"
+    },
+    {
+      "case": "missing_reference_not_fabricated",
+      "status": "PASS"
+    },
+    {
+      "case": "incompatible_shared_protocol_blocks_comparison",
+      "status": "PASS"
+    },
+    {
+      "case": "duplicate_new_rows",
+      "status": "PASS_expected_rejection",
+      "error": "Dubbele epoch/fase/formaatrijen in metrics.csv."
+    },
+    {
+      "case": "invalid_new_accuracy",
+      "status": "PASS_expected_rejection",
+      "error": "Top-1-accuracy wijkt af van de tellingen."
+    },
+    {
+      "case": "modified_reference_table_rejected",
+      "status": "PASS_expected_rejection"
+    }
+  ],
+  "reference_source_sha256": "68b55b2432bdc6802094e8968ad5d97252b8166ebbca4d1651fc438c6c66e259",
+  "reference_metrics_sha256": "4fb87444c1386e457c981663588af40a0c13cf6332f959cb01dc57b3b93eeee5"
+}

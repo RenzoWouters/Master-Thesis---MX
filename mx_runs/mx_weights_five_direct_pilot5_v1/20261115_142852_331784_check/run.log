@@ -1,0 +1,10 @@
+RESULTATENMAP: C:\Users\renzo\master-thesis-mx\mx_runs\mx_weights_five_direct_pilot5_v1\20261115_142852_331784_check
+VIJF DIRECTE MX-FORMATEN: E4M3, E5M2, E2M3, E3M2, E2M1; A32; vijf epochs vanaf nul.
+Afhankelijkheden: pip check geslaagd.
+Device: NVIDIA GeForce RTX 5070 Laptop GPU
+NUMERIEK PASS: E5M2 en E3M2; eindige codes, afronding, schalen, opslag en STE.
+INTEGRATIE PASS: vijf formaatmodi, oorspronkelijke masters, A32 en directe G(W)-kwantisatie.
+TRAININGSSTAP PASS: twee gezamenlijke updates stemmen overeen met onafhankelijke referentie; vijf exports gecontroleerd.
+CHECK PASS: vijf directe formaten, afzonderlijke BN-banken, afgesproken distillatie en één update per minibatch.
+Deze check gebruikt synthetische invoer; er is geen SVHN-accuracy gemeten.
+EINDSTATUS: PASS

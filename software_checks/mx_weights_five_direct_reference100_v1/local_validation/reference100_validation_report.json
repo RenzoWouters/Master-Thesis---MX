@@ -1,0 +1,18 @@
+{
+  "scope": "real CNN-8 with two synthetic training/test examples on CPU; no SVHN accuracy",
+  "status": "PASS",
+  "training_functions_unchanged_from_pilot_except_progress_label": "PASS",
+  "actual_100_epoch_runner_and_50_75_90_lr_boundaries": "PASS",
+  "five_epoch100_exports_and_relative_report_paths": "PASS",
+  "resume_from_epoch50_matches_continuous_exact_cpu": "PASS",
+  "resume_from_epoch99_matches_continuous_exact_cpu": "PASS",
+  "completed_run_and_pilot_checkpoint_rejected": "PASS",
+  "epoch100_write_failure_does_not_publish_completed_endpoint": "PASS",
+  "python_version": "3.12.14",
+  "torch_version": "2.10.0+cpu",
+  "cuda_tested": false,
+  "changed_full100_loss_contract_rejected_before_restoration": "PASS",
+  "four_cli_invalid_requests_final_fail": "PASS",
+  "production_expected_optimizer_updates": 57300,
+  "production_100_epoch_svhn_measured_here": false
+}

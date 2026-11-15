@@ -1,0 +1,645 @@
+{
+  "schema": "mx-five-direct-pilot5-report-v1",
+  "status": "PASS",
+  "command": "check",
+  "package": "mx_weights_five_direct_pilot5_v1",
+  "started_at": "2026-11-15T14:28:52.332732+01:00",
+  "output_directory": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_five_direct_pilot5_v1\\20261115_142852_331784_check",
+  "completed_epochs": 0,
+  "warnings": [],
+  "limitations": [
+    "One exploratory fixed-seed five-epoch pilot; no final accuracy conclusion.",
+    "Numerical FP32 emulator with MX weights and A32; no native MX speed/energy measurement.",
+    "Fixed seed does not guarantee bit-identical CUDA runs or resumes.",
+    "No matched accuracy comparison with the historical three-format model.",
+    "All five format losses have weight1; equal coefficients do not imply equal gradient norms."
+  ],
+  "config": {
+    "schema": "mx-five-direct-pilot5-protocol-v1",
+    "package": "mx_weights_five_direct_pilot5_v1",
+    "mode": "joint",
+    "weight_formats": [
+      "E4M3",
+      "E5M2",
+      "E2M3",
+      "E3M2",
+      "E2M1"
+    ],
+    "element_bits": {
+      "E4M3": 8,
+      "E5M2": 8,
+      "E2M3": 6,
+      "E3M2": 6,
+      "E2M1": 4
+    },
+    "activation_bits": 32,
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "weight_preprocess": "original G(W)=tanh(W)/max(abs(tanh(W)))*mean(abs(W)).detach(), with zero guard",
+    "quantization_source": "each format directly from the same current G(W); no inter-format code conversion",
+    "scale_emax_subtracted": {
+      "E4M3": 8,
+      "E5M2": 15,
+      "E2M3": 2,
+      "E3M2": 4,
+      "E2M1": 2
+    },
+    "scale_rule": "floor(log2(block_amax))-format_emax; clip[-127,127]; zero block exponent0",
+    "scale_grouping": "within Cout over flattened Cin*Kh*Kw; positive zero padding to B32",
+    "rounding": "nearest ties-to-even, finite saturation; reject non-finite input",
+    "fp32_scalar_subnormals": "flush to signed zero; local MX subnormals supported",
+    "truncation": false,
+    "mantissa_truncation": false,
+    "exponent_truncation": false,
+    "shared_scale_compensation": false,
+    "learned_shared_scale": false,
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "ste_policy": "identity through quantizer; original G(W) derivative retained",
+    "training_mode_order": [
+      "E4M3",
+      "E5M2",
+      "E2M3",
+      "E3M2",
+      "E2M1"
+    ],
+    "test_mode_order": [
+      "E2M1",
+      "E2M3",
+      "E3M2",
+      "E4M3",
+      "E5M2"
+    ],
+    "teacher_formats": {
+      "E4M3": [],
+      "E5M2": [],
+      "E2M3": [
+        "E4M3"
+      ],
+      "E3M2": [
+        "E5M2"
+      ],
+      "E2M1": [
+        "E2M3",
+        "E3M2"
+      ]
+    },
+    "teacher_mixture_weights": {
+      "E2M1": [
+        0.5,
+        0.5
+      ]
+    },
+    "teacher_mixture_domain": "post-softmax probabilities, detached",
+    "temperature": 1.0,
+    "loss_weights": {
+      "E4M3": 1.0,
+      "E5M2": 1.0,
+      "E2M3": 1.0,
+      "E3M2": 1.0,
+      "E2M1": 1.0
+    },
+    "loss_reduction": "sum",
+    "loss_batch_reduction": "mean",
+    "extra_hard_student_loss": false,
+    "passes_per_training_batch": 5,
+    "optimizer_steps_per_training_batch": 1,
+    "extra_FP32_teacher_forward": false,
+    "bn_bank_mapping": {
+      "E4M3": "E4M3",
+      "E5M2": "E5M2",
+      "E2M3": "E2M3",
+      "E3M2": "E3M2",
+      "E2M1": "E2M1"
+    },
+    "bn_original_bank_mapping": {
+      "E4M3": "8",
+      "E5M2": "1",
+      "E2M3": "32",
+      "E3M2": "2",
+      "E2M1": "4"
+    },
+    "legacy_abits_and_wbits": 32,
+    "bn_active_banks_per_layer": 5,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "initialization_policy": "fresh seed20261009; no old three-format or MSB checkpoint",
+    "seed": 20261009,
+    "planned_epochs": 5,
+    "reference_schedule_epochs": 100,
+    "primary_endpoint": "epoch5, all five formats from one joint checkpoint",
+    "checkpoint_selection_on_test": false,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "image_shape": [
+      3,
+      40,
+      40
+    ],
+    "backend_policy": "original cudnn.benchmark=True; no AMP/compile or TF32 override",
+    "rng_policy": "global upstream streams; sequential dropout draws per format",
+    "export_policy": "five independent direct exports at epoch5; all five BN banks retained",
+    "resume_policy": "same pilot contract only; completed epochs1..4; new output directory",
+    "scope": "exploratory weight-only numerical emulation; no native MX or hardware performance claim"
+  },
+  "package_sha256": {
+    "MX_five_direct_pilot5_resultaten.ipynb": "fbb7f2ac256285873272434157dbe3de53ac751761634aaac3f01b832423be95",
+    "PROTOCOL.md": "1598026262c28040834bf71768f18095eae217f641c025fb8257f0a6cdd1f50d",
+    "README.md": "1608e0c9ec0cb193f7a0f1d8e1416ca070347fa4b0317fb5d117e16e2fd98086",
+    "REUSE_MANIFEST.json": "f5931dc8f39104f1b0469dca32ac3ce04ae546fa2d7617cf6f60eb936547777a",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "joint_adapter.py": "2370a9996fb52290926823bab8225802ade2b1cb53837b09c887a1651e397045",
+    "joint_support.py": "48a854c32f937e67aa0013e783025c6e4cfc93cf0ac4e05c095a3ff6961c701b",
+    "local_validation/VALIDATION.md": "753729b9b232356e8ab95892dcb686d57e89b1cf09638f29014b3144e7aa21c0",
+    "local_validation/cli_guard_review.json": "f4799014defd064d9992ad521bdbc5c8184de0a6707d46d7c26e473278640c93",
+    "local_validation/joint_cpu_report.json": "a05a9bc1d264eb9875fa770c722022b3f5878396a4a5d576e25c41bfc56d10cd",
+    "local_validation/new_codecs_cpu_report.json": "3a508e708a37d248f9ff8cf975d5be74823442ef42040d9e90435b9ee81a2ef4",
+    "local_validation/notebook_validation_report.json": "d98e8ba479a9a909ef2a9c8d53ee444e3841075ac0559af18655a242191e3306",
+    "local_validation/runner_cpu_report.json": "9b0c159b864f9429ced84ae7a0bb8a541a5043fbbbfaccafaef0a082773593b1",
+    "local_validation/test_runner.py": "f83b4d4a316b041ef5b32c1b492fad0947a78c2ac1e34a36d9d00f15e622be98",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e3m2.py": "491f5e45b74305f8c242b9597a5c8ee5dd5afa78e09fd49e9eb30ffa710e5fa7",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "mx_e5m2.py": "5f8a7eae79a6e05494f3fd0be446b383f96d8f2ae41b00a6ca93fd86965e0198",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "notebook_support.py": "ff73192e2d3c108f0f2fc766b658e586ecd6575ae26925adb4955550a107a76e",
+    "provenance/triple_direct_PACKAGE_SHA256.json": "145493e9c6b2e27ee30f405cfcc35a2b8ea8b39105c9d1fb32cd7d1d3123e8b8",
+    "provenance/triple_direct_PROTOCOL.md": "8a45f899e1586c8edb5c89d9c0fc2888ea21233831014a9d5332217b9de94029",
+    "provenance/triple_direct_joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "provenance/triple_direct_joint_support.py": "259b9e057a9e0f29b926fffcee5516ff10d04343d1b5fe62cb72f05107f55e89",
+    "provenance/triple_direct_run_train.py": "24cdc0cd7e9dd0a02052e404ae47c51243177f89ffded246973b403164d481c3",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "run_train.py": "9f2c4efa4c638092c2fcd83b4205eed08d4c7ca44380a12627e77c92ad4ca904",
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "test_joint.py": "94a6edacd9be020bce9c4cfe3ee1b0844b132ddc8ad20f6149d64e71180c5814",
+    "test_new_codecs.py": "3db8f642e910f6fc63124b15ca248160375da0dbbbe7e652bdbd264be67e9ebf",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "source_reuse": {
+    "schema": "five-direct-source-reuse-v1",
+    "source_archive_name": "mx_weights_triple_direct_reference100_v1(1).zip",
+    "source_archive_sha256": "d3a73669ea40d46f2e8cd78b99c7c4972a4cf67f735a586096fff56675356729",
+    "byte_identical_files": {
+      "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+      "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+      "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+      "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+      "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+      "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+      "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+      "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+      "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+    },
+    "original_files_preserved": true,
+    "changes": [
+      "Two added finite-only direct codecs E5M2/E3M2",
+      "Five format-named BN banks; initial tensors unchanged",
+      "Two hard-label roots, corresponding 6-bit students, detached mean probability teacher for E2M1",
+      "Equal five loss weights, same summed-loss convention and one Adam update",
+      "Fixed fresh pilot endpoint5; no checkpoint selection by test accuracy",
+      "New run/feedback/notebook with optional same-pilot epoch-boundary resume"
+    ]
+  },
+  "interpreter": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Scripts\\python.exe",
+  "dependencies": {
+    "pip_freeze": "PASS",
+    "pip_check": "PASS"
+  },
+  "source": {
+    "archive_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c",
+    "changed_files": [
+      "utils.py"
+    ],
+    "original_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "8c7d2685082d35113162d8b78363b29ef9bbabc8995c334fee7a397f0a751bf9"
+    },
+    "workcopy_files_sha256": {
+      ".gitignore": "a2f92eb59974c1605df2501ceacc66896df99a2885cd420bb5e8c7c8e4c27145",
+      "LICENSE.md": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "README.md": "afe588b940b5f23cbe94f1e0242d50831af4b95bc6c1917bff2966814b16c062",
+      "datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "datasets/cifar10.py": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "datasets/data.py": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "datasets/svhn.py": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "models/__init__.py": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "models/losses.py": "70183b8a7e8ddd25eb86a5f3486abcce96a8407cd73851d0e5ea98772a2d70ba",
+      "models/quan_ops.py": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "models/resnet_quan.py": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "models/svhn_quan.py": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "optimizer.py": "3437457c8ed07f77d1a6832743c568afa2edf0592004a839e7028609aff1eff1",
+      "train.py": "318ef0c73b80634e9a4de0cf7dbf7caff2c0761abfa8d48c78b08a9a8d266b5b",
+      "train_cifar10.sh": "6a93ce2a5738848aa7eee5c1fcf5e8a3d64802aeaa8a7b663c87f36f07ebbf46",
+      "train_imagenet.py": "01863e2aeeaa71bddad413841b7271155e47a4b3d7bf8d92657a824615e6587e",
+      "train_imagenet.sh": "964f73ae00c73b369b5d5bf92ec85e9fbf79c7d6fd7c3474c11f437cd77a92ae",
+      "train_svhn.sh": "fc34cc420007cc5aa82cc9c6e4ffad94897151b87bef8c56f5f254cf0c8609a8",
+      "utils.py": "e4e88bd05ee5edc5bad59cb56d7842a024231f0495c5e2cf5d616ef642fb5524"
+    }
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "execution_settings": {
+    "seed": 20261009,
+    "seed_source": "explicit local seed, not reported by authors",
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "torch_num_threads": 16,
+    "matmul_fp32_precision": "none",
+    "cudnn_conv_fp32_precision": "tf32",
+    "precision_backend_policy": "installed PyTorch defaults; no TF32 override",
+    "AMP": false,
+    "torch_compile": false,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "exact_cuda_resume_guaranteed": false
+  },
+  "local_cpu_validation_only": false,
+  "synthetic_checks_only": true,
+  "dataset_downloaded": false,
+  "svhn_accuracy_measured": false,
+  "codec_tests": {
+    "status": "PASS",
+    "device": "cuda:0",
+    "source": {
+      "document": "OCP Microscaling Formats (MX) Specification v1.0",
+      "url": "https://www.opencompute.org/documents/ocp-microscaling-formats-mx-v1-0-spec-final-pdf",
+      "element_pages": {
+        "E5M2": 11,
+        "E3M2": 12
+      },
+      "scope_note": "Scale selection and FP32 input-subnormal flush follow the project reference."
+    },
+    "synthetic_only": true,
+    "formats": {
+      "E5M2": {
+        "status": "PASS",
+        "format": "MXFP8_E5M2",
+        "all_finite_codes": 248,
+        "midpoints_both_signs": 246,
+        "midpoint_neighbour_and_other_scalar_cases": 1260,
+        "invalid_element_codes_rejected": 8,
+        "finite_E8M0_codes_checked": 255,
+        "float32_power_boundaries": {
+          "n_weights": 8128,
+          "blocks": 254,
+          "padded_slots": 0
+        },
+        "mixed_range_padding_signed_zero": {
+          "n_weights": 105,
+          "blocks": 6,
+          "padded_slots": 87
+        },
+        "convolution_row_layout": {
+          "n_weights": 135,
+          "blocks": 6,
+          "padded_slots": 57
+        },
+        "identity_STE_and_exact_forward": true,
+        "one_byte_per_element": true
+      },
+      "E3M2": {
+        "status": "PASS",
+        "format": "MXFP6_E3M2",
+        "all_finite_codes": 64,
+        "midpoints_both_signs": 62,
+        "midpoint_neighbour_and_other_scalar_cases": 708,
+        "invalid_element_codes_rejected": 192,
+        "finite_E8M0_codes_checked": 255,
+        "float32_power_boundaries": {
+          "n_weights": 8128,
+          "blocks": 254,
+          "padded_slots": 0
+        },
+        "mixed_range_padding_signed_zero": {
+          "n_weights": 105,
+          "blocks": 6,
+          "padded_slots": 87
+        },
+        "convolution_row_layout": {
+          "n_weights": 135,
+          "blocks": 6,
+          "padded_slots": 57
+        },
+        "identity_STE_and_exact_forward": true,
+        "packing_layout_and_all_64_codes": true
+      }
+    }
+  },
+  "synthetic_training_checks": {
+    "initialization": {
+      "all_original_values_preserved_after_BN_key_rename": true,
+      "same_initialization_RNG": true,
+      "parameter_count": 132954,
+      "BN_layers": 5,
+      "active_BN_banks_per_layer": 5,
+      "one_FP32_master_per_MX_layer": true,
+      "MX_layers": [
+        "layers.3",
+        "layers.6",
+        "layers.10",
+        "layers.13",
+        "layers.16",
+        "layers.20"
+      ]
+    },
+    "direct_quantization_and_STE": {
+      "formats": {
+        "E4M3": {
+          "direct_same_GW": true,
+          "identity_STE_exact": true,
+          "master_unchanged_by_forward": true,
+          "fresh_after_master_change": true
+        },
+        "E5M2": {
+          "direct_same_GW": true,
+          "identity_STE_exact": true,
+          "master_unchanged_by_forward": true,
+          "fresh_after_master_change": true
+        },
+        "E2M3": {
+          "direct_same_GW": true,
+          "identity_STE_exact": true,
+          "master_unchanged_by_forward": true,
+          "fresh_after_master_change": true
+        },
+        "E3M2": {
+          "direct_same_GW": true,
+          "identity_STE_exact": true,
+          "master_unchanged_by_forward": true,
+          "fresh_after_master_change": true
+        },
+        "E2M1": {
+          "direct_same_GW": true,
+          "identity_STE_exact": true,
+          "master_unchanged_by_forward": true,
+          "fresh_after_master_change": true
+        }
+      },
+      "bitwidth_only_selectors_rejected": true,
+      "direct_quantization_negative_controls": true
+    },
+    "independent_training_comparison": {
+      "updates_per_model": 2,
+      "passes_per_update": 5,
+      "CPU_exact": false,
+      "CUDA_rtol": 0.0001,
+      "CUDA_atol": 1e-05,
+      "records": [
+        {
+          "step": 1,
+          "zero_grad_calls": 1,
+          "optimizer_steps": 1,
+          "forward_order": [
+            "E4M3",
+            "E5M2",
+            "E2M3",
+            "E3M2",
+            "E2M1"
+          ],
+          "teacher_targets_detached": true,
+          "probability_mixture_50_50_exact": true,
+          "dropout_RNG_matches": true,
+          "loss_absolute_differences": {
+            "E4M3": 0.0,
+            "E5M2": 0.0,
+            "E2M3": 0.0,
+            "E3M2": 0.0,
+            "E2M1": 0.0
+          },
+          "model_comparison": {
+            "checked_tensors": 135,
+            "all_exact": true,
+            "max_abs_difference": 0.0
+          },
+          "optimizer_comparison": {
+            "checked_parameter_states": 60,
+            "all_exact": true,
+            "max_abs_difference": 0.0
+          },
+          "BN": {
+            "all_counters_correct": true,
+            "counts": {
+              "layers.4.bn_dict.E4M3.num_batches_tracked": 1,
+              "layers.4.bn_dict.E5M2.num_batches_tracked": 1,
+              "layers.4.bn_dict.E2M3.num_batches_tracked": 1,
+              "layers.4.bn_dict.E3M2.num_batches_tracked": 1,
+              "layers.4.bn_dict.E2M1.num_batches_tracked": 1,
+              "layers.7.bn_dict.E4M3.num_batches_tracked": 1,
+              "layers.7.bn_dict.E5M2.num_batches_tracked": 1,
+              "layers.7.bn_dict.E2M3.num_batches_tracked": 1,
+              "layers.7.bn_dict.E3M2.num_batches_tracked": 1,
+              "layers.7.bn_dict.E2M1.num_batches_tracked": 1,
+              "layers.11.bn_dict.E4M3.num_batches_tracked": 1,
+              "layers.11.bn_dict.E5M2.num_batches_tracked": 1,
+              "layers.11.bn_dict.E2M3.num_batches_tracked": 1,
+              "layers.11.bn_dict.E3M2.num_batches_tracked": 1,
+              "layers.11.bn_dict.E2M1.num_batches_tracked": 1,
+              "layers.14.bn_dict.E4M3.num_batches_tracked": 1,
+              "layers.14.bn_dict.E5M2.num_batches_tracked": 1,
+              "layers.14.bn_dict.E2M3.num_batches_tracked": 1,
+              "layers.14.bn_dict.E3M2.num_batches_tracked": 1,
+              "layers.14.bn_dict.E2M1.num_batches_tracked": 1,
+              "layers.17.bn_dict.E4M3.num_batches_tracked": 1,
+              "layers.17.bn_dict.E5M2.num_batches_tracked": 1,
+              "layers.17.bn_dict.E2M3.num_batches_tracked": 1,
+              "layers.17.bn_dict.E3M2.num_batches_tracked": 1,
+              "layers.17.bn_dict.E2M1.num_batches_tracked": 1
+            },
+            "active_banks_per_layer": 5
+          },
+          "Adam": {
+            "all_active_adam_steps_correct": true,
+            "moments_fp32_finite": true,
+            "active_parameter_tensors": 60
+          }
+        },
+        {
+          "step": 2,
+          "zero_grad_calls": 1,
+          "optimizer_steps": 1,
+          "forward_order": [
+            "E4M3",
+            "E5M2",
+            "E2M3",
+            "E3M2",
+            "E2M1"
+          ],
+          "teacher_targets_detached": true,
+          "probability_mixture_50_50_exact": true,
+          "dropout_RNG_matches": true,
+          "loss_absolute_differences": {
+            "E4M3": 0.0,
+            "E5M2": 0.0,
+            "E2M3": 0.0,
+            "E3M2": 0.0,
+            "E2M1": 0.0
+          },
+          "model_comparison": {
+            "checked_tensors": 135,
+            "all_exact": true,
+            "max_abs_difference": 0.0
+          },
+          "optimizer_comparison": {
+            "checked_parameter_states": 60,
+            "all_exact": true,
+            "max_abs_difference": 0.0
+          },
+          "BN": {
+            "all_counters_correct": true,
+            "counts": {
+              "layers.4.bn_dict.E4M3.num_batches_tracked": 2,
+              "layers.4.bn_dict.E5M2.num_batches_tracked": 2,
+              "layers.4.bn_dict.E2M3.num_batches_tracked": 2,
+              "layers.4.bn_dict.E3M2.num_batches_tracked": 2,
+              "layers.4.bn_dict.E2M1.num_batches_tracked": 2,
+              "layers.7.bn_dict.E4M3.num_batches_tracked": 2,
+              "layers.7.bn_dict.E5M2.num_batches_tracked": 2,
+              "layers.7.bn_dict.E2M3.num_batches_tracked": 2,
+              "layers.7.bn_dict.E3M2.num_batches_tracked": 2,
+              "layers.7.bn_dict.E2M1.num_batches_tracked": 2,
+              "layers.11.bn_dict.E4M3.num_batches_tracked": 2,
+              "layers.11.bn_dict.E5M2.num_batches_tracked": 2,
+              "layers.11.bn_dict.E2M3.num_batches_tracked": 2,
+              "layers.11.bn_dict.E3M2.num_batches_tracked": 2,
+              "layers.11.bn_dict.E2M1.num_batches_tracked": 2,
+              "layers.14.bn_dict.E4M3.num_batches_tracked": 2,
+              "layers.14.bn_dict.E5M2.num_batches_tracked": 2,
+              "layers.14.bn_dict.E2M3.num_batches_tracked": 2,
+              "layers.14.bn_dict.E3M2.num_batches_tracked": 2,
+              "layers.14.bn_dict.E2M1.num_batches_tracked": 2,
+              "layers.17.bn_dict.E4M3.num_batches_tracked": 2,
+              "layers.17.bn_dict.E5M2.num_batches_tracked": 2,
+              "layers.17.bn_dict.E2M3.num_batches_tracked": 2,
+              "layers.17.bn_dict.E3M2.num_batches_tracked": 2,
+              "layers.17.bn_dict.E2M1.num_batches_tracked": 2
+            },
+            "active_banks_per_layer": 5
+          },
+          "Adam": {
+            "all_active_adam_steps_correct": true,
+            "moments_fp32_finite": true,
+            "active_parameter_tensors": 60
+          }
+        }
+      ]
+    },
+    "evaluation_and_exports": {
+      "evaluation_preserves_BN_and_all_state": true,
+      "hard_label_CE_all_formats": true,
+      "evaluation_order": [
+        "E2M1",
+        "E2M3",
+        "E3M2",
+        "E4M3",
+        "E5M2"
+      ],
+      "exports": {
+        "E4M3": {
+          "exact": true,
+          "max_abs_difference": 0.0,
+          "rtol": 1e-05,
+          "atol": 1e-06,
+          "MX_masters_absent": true,
+          "decoded_weights_exact": true,
+          "MX_layers": 6
+        },
+        "E5M2": {
+          "exact": true,
+          "max_abs_difference": 0.0,
+          "rtol": 1e-05,
+          "atol": 1e-06,
+          "MX_masters_absent": true,
+          "decoded_weights_exact": true,
+          "MX_layers": 6
+        },
+        "E2M3": {
+          "exact": true,
+          "max_abs_difference": 0.0,
+          "rtol": 1e-05,
+          "atol": 1e-06,
+          "MX_masters_absent": true,
+          "decoded_weights_exact": true,
+          "MX_layers": 6
+        },
+        "E3M2": {
+          "exact": true,
+          "max_abs_difference": 0.0,
+          "rtol": 1e-05,
+          "atol": 1e-06,
+          "MX_masters_absent": true,
+          "decoded_weights_exact": true,
+          "MX_layers": 6
+        },
+        "E2M1": {
+          "exact": true,
+          "max_abs_difference": 0.0,
+          "rtol": 1e-05,
+          "atol": 1e-06,
+          "MX_masters_absent": true,
+          "decoded_weights_exact": true,
+          "MX_layers": 6
+        }
+      }
+    },
+    "status": "PASS",
+    "backend_policy_restored": true,
+    "no_SVHN_data": true,
+    "synthetic_checks_only": true,
+    "no_research_accuracy_measured": true
+  },
+  "source_and_package_unchanged": true,
+  "ended_at": "2026-11-15T14:29:14.725449+01:00",
+  "session_wall_seconds": 22.39245920002577
+}

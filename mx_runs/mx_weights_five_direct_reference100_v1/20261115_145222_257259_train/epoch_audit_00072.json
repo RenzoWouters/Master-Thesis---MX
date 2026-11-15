@@ -1,0 +1,87 @@
+{
+  "epoch": 72,
+  "lr_used": 0.0001,
+  "train_seconds": 75.16370380000444,
+  "test_seconds": 21.532811399985803,
+  "epoch_seconds": 96.69651519999024,
+  "optimizer_steps_total": 41256,
+  "train_audit": {
+    "optimizer_steps_in_phase": 573,
+    "finite_gradient_checks": 573,
+    "detached_teacher_target_checks": 1719,
+    "gradient_l2_min": 0.4896252155303955,
+    "gradient_l2_max": 2.9989430904388428,
+    "forward_calls": {
+      "E4M3": 573,
+      "E5M2": 573,
+      "E2M3": 573,
+      "E3M2": 573,
+      "E2M1": 573
+    },
+    "no_extra_FP32_teacher": true
+  },
+  "test_audit": {
+    "optimizer_steps_in_phase": 0,
+    "finite_gradient_checks": 0,
+    "detached_teacher_target_checks": 0,
+    "gradient_l2_min": null,
+    "gradient_l2_max": null,
+    "forward_calls": {
+      "E4M3": 204,
+      "E5M2": 204,
+      "E2M3": 204,
+      "E3M2": 204,
+      "E2M1": 204
+    },
+    "no_extra_FP32_teacher": true
+  },
+  "train_coverage": {
+    "n": 73257,
+    "order_sha256": "21a0fee4dc896e98ba8c10488e2511f8b2bcc22656d70c0a5f434b89533df482",
+    "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_five_direct_reference100_v1\\20261115_145222_257259_train\\train_order_epoch_00072.npy",
+    "complete_once": true
+  },
+  "test_coverage": {
+    "n": 26032,
+    "order_sha256": "3071b6b27f317301adf97a6f783586442d0c68d62d030a2f023bfe6c1d97f091",
+    "order_file": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_weights_five_direct_reference100_v1\\20261115_145222_257259_train\\test_order_epoch_00072.npy",
+    "complete_once": true
+  },
+  "bn_audit": {
+    "all_counters_correct": true,
+    "counts": {
+      "layers.4.bn_dict.E4M3.num_batches_tracked": 41256,
+      "layers.4.bn_dict.E5M2.num_batches_tracked": 41256,
+      "layers.4.bn_dict.E2M3.num_batches_tracked": 41256,
+      "layers.4.bn_dict.E3M2.num_batches_tracked": 41256,
+      "layers.4.bn_dict.E2M1.num_batches_tracked": 41256,
+      "layers.7.bn_dict.E4M3.num_batches_tracked": 41256,
+      "layers.7.bn_dict.E5M2.num_batches_tracked": 41256,
+      "layers.7.bn_dict.E2M3.num_batches_tracked": 41256,
+      "layers.7.bn_dict.E3M2.num_batches_tracked": 41256,
+      "layers.7.bn_dict.E2M1.num_batches_tracked": 41256,
+      "layers.11.bn_dict.E4M3.num_batches_tracked": 41256,
+      "layers.11.bn_dict.E5M2.num_batches_tracked": 41256,
+      "layers.11.bn_dict.E2M3.num_batches_tracked": 41256,
+      "layers.11.bn_dict.E3M2.num_batches_tracked": 41256,
+      "layers.11.bn_dict.E2M1.num_batches_tracked": 41256,
+      "layers.14.bn_dict.E4M3.num_batches_tracked": 41256,
+      "layers.14.bn_dict.E5M2.num_batches_tracked": 41256,
+      "layers.14.bn_dict.E2M3.num_batches_tracked": 41256,
+      "layers.14.bn_dict.E3M2.num_batches_tracked": 41256,
+      "layers.14.bn_dict.E2M1.num_batches_tracked": 41256,
+      "layers.17.bn_dict.E4M3.num_batches_tracked": 41256,
+      "layers.17.bn_dict.E5M2.num_batches_tracked": 41256,
+      "layers.17.bn_dict.E2M3.num_batches_tracked": 41256,
+      "layers.17.bn_dict.E3M2.num_batches_tracked": 41256,
+      "layers.17.bn_dict.E2M1.num_batches_tracked": 41256
+    },
+    "active_banks_per_layer": 5
+  },
+  "adam_audit": {
+    "all_active_adam_steps_correct": true,
+    "moments_fp32_finite": true,
+    "active_parameter_tensors": 60
+  },
+  "checkpoint_relative": "checkpoints/epoch_00072.pt"
+}

@@ -1,0 +1,149 @@
+{
+  "scope": "Independent read-only audit of user SVHN five-format direct pilot feedback",
+  "status": "PASS",
+  "archive_sha256": "77162698b82752cc1be87c853c18f8b4e5e56691e836b539832676aa6fcbe61e",
+  "checks": {
+    "feedback_manifest_all_hashes_sizes": true,
+    "manifest_covers_all_contents_except_self": true,
+    "package_hashes_match_delivered_pilot": true,
+    "current_delivered_files_match_report_hashes": true,
+    "run_complete_real_cuda": true,
+    "protocol_formats_master_A32_B32_direct": true,
+    "joint_objective_contract": true,
+    "fresh_start_no_resume": true,
+    "exactly_50_unique_complete_metric_rows": true,
+    "history_matches_csv": true,
+    "epoch1_predictions_schema": true,
+    "epoch1_prediction_indices": true,
+    "epoch1_E4M3_stored_top1_recomputed": true,
+    "epoch1_E5M2_stored_top1_recomputed": true,
+    "epoch1_E2M3_stored_top1_recomputed": true,
+    "epoch1_E3M2_stored_top1_recomputed": true,
+    "epoch1_E2M1_stored_top1_recomputed": true,
+    "epoch2_predictions_schema": true,
+    "epoch2_prediction_indices": true,
+    "epoch2_E4M3_stored_top1_recomputed": true,
+    "epoch2_E5M2_stored_top1_recomputed": true,
+    "epoch2_E2M3_stored_top1_recomputed": true,
+    "epoch2_E3M2_stored_top1_recomputed": true,
+    "epoch2_E2M1_stored_top1_recomputed": true,
+    "epoch3_predictions_schema": true,
+    "epoch3_prediction_indices": true,
+    "epoch3_E4M3_stored_top1_recomputed": true,
+    "epoch3_E5M2_stored_top1_recomputed": true,
+    "epoch3_E2M3_stored_top1_recomputed": true,
+    "epoch3_E3M2_stored_top1_recomputed": true,
+    "epoch3_E2M1_stored_top1_recomputed": true,
+    "epoch4_predictions_schema": true,
+    "epoch4_prediction_indices": true,
+    "epoch4_E4M3_stored_top1_recomputed": true,
+    "epoch4_E5M2_stored_top1_recomputed": true,
+    "epoch4_E2M3_stored_top1_recomputed": true,
+    "epoch4_E3M2_stored_top1_recomputed": true,
+    "epoch4_E2M1_stored_top1_recomputed": true,
+    "epoch5_predictions_schema": true,
+    "epoch5_prediction_indices": true,
+    "epoch5_E4M3_stored_top1_recomputed": true,
+    "epoch5_E5M2_stored_top1_recomputed": true,
+    "epoch5_E2M3_stored_top1_recomputed": true,
+    "epoch5_E3M2_stored_top1_recomputed": true,
+    "epoch5_E2M1_stored_top1_recomputed": true,
+    "all_minibatch_counts_objectives_losses_aggregate": true,
+    "all_ten_dataset_orders_complete_once": true,
+    "epoch_gradient_optimizer_BN_forward_audits": true,
+    "test_labels_match_dataset_manifest": true,
+    "reported_optimizer_steps": true,
+    "checkpoint_sha256_marker": true,
+    "checkpoint_endpoint_scheduler_lr": true,
+    "checkpoint_all_60_Adam_states": true,
+    "checkpoint_25_BN_counters": true,
+    "checkpoint_contract_matches_report": true,
+    "checkpoint_history_metrics_matches_saved_history": true,
+    "checkpoint_model_tensors_finite": true,
+    "five_export_files_verified": true,
+    "timing_sum_and_projection": true
+  },
+  "errors": [],
+  "notes": [
+    "Export-report file fields contain only basenames; actual files are under exports/. No missing export or numerical error; consider keeping explicit relative path in next runner.",
+    "This feedback bundle is the real train run; the separately run CUDA check report is not included. All train-time guards and export checks passed."
+  ],
+  "metric_rows_checked": 50,
+  "minibatch_records_checked": 3885,
+  "test_top1_predictions_checked": 650800,
+  "feedback_files_checked": 95,
+  "epoch5_test": [
+    {
+      "format": "E4M3",
+      "correct1": 24286,
+      "n": 26032,
+      "top1_percent": 93.29287031346036,
+      "hard_ce": 0.23283570501140533
+    },
+    {
+      "format": "E5M2",
+      "correct1": 24310,
+      "n": 26032,
+      "top1_percent": 93.38506453595575,
+      "hard_ce": 0.23202791349354446
+    },
+    {
+      "format": "E2M3",
+      "correct1": 24292,
+      "n": 26032,
+      "top1_percent": 93.3159188690842,
+      "hard_ce": 0.23310870005444068
+    },
+    {
+      "format": "E3M2",
+      "correct1": 24316,
+      "n": 26032,
+      "top1_percent": 93.4081130915796,
+      "hard_ce": 0.23095011612206937
+    },
+    {
+      "format": "E2M1",
+      "correct1": 24278,
+      "n": 26032,
+      "top1_percent": 93.26213890596189,
+      "hard_ce": 0.23856304259884922
+    }
+  ],
+  "timing": {
+    "epoch_seconds": [
+      93.58924819997628,
+      88.19512479996774,
+      88.55668800001149,
+      88.80669850000413,
+      88.44569910003338
+    ],
+    "measured_total_epoch_seconds": 447.593458599993,
+    "estimated_100_epoch_seconds": 8951.86917199986,
+    "basis": "train+test phases including instrumentation; excludes data preparation, checks, checkpoint writes and exports",
+    "estimate_is_not_measured_100_epoch_training": true
+  },
+  "session_wall_seconds": 454.92813419998856,
+  "warnings": [
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:48.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57,
+      "count": 11655
+    },
+    {
+      "category": "DeprecationWarning",
+      "message": "The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\native\\Memory.cpp:33.)",
+      "file": "C:\\Users\\renzo\\master-thesis-mx\\.venv-train\\Lib\\site-packages\\torch\\utils\\data\\_utils\\pin_memory.py",
+      "line": 57,
+      "count": 11655
+    }
+  ],
+  "limitations": [
+    "Single fixed-seed five-epoch pilot; no final-accuracy or statistical-superiority claim.",
+    "100-epoch time is extrapolated train+test phase time; excludes data preparation, checks, checkpoint writing and exports.",
+    "Two repeated PyTorch pin_memory deprecation-warning types; no recorded numerical failure.",
+    "No full test-set evaluation from compact exports, only exact decoded-weight and synthetic-logit checks."
+  ],
+  "blockers_for_full100": []
+}

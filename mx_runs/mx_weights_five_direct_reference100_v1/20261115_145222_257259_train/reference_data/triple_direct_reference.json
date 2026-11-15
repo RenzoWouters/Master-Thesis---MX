@@ -1,0 +1,167 @@
+{
+  "schema": "three-format-direct-historical-reference-v1",
+  "reference_kind": "three_format_joint_direct",
+  "status": "PASS",
+  "completed_epochs": 100,
+  "source_filename": "feedback_bundle(20261023-150530).zip",
+  "source_library_file_id": "libfile_8a122d06b5888191a73b77be9900636a",
+  "source_sha256": "68b55b2432bdc6802094e8968ad5d97252b8166ebbca4d1651fc438c6c66e259",
+  "source_run_id": "20261023_151331_732669_joint_run",
+  "metrics_sha256": "4fb87444c1386e457c981663588af40a0c13cf6332f959cb01dc57b3b93eeee5",
+  "config": {
+    "schema": "mx-weights-triple-direct-reference100-protocol-v1",
+    "purpose": "100 complete train-only epochs: joint direct E4M3/E2M3/E2M1 without weight truncation",
+    "mode": "joint",
+    "weight_format": "MXFP8_E4M3+MXFP6_E2M3+MXFP4_E2M1",
+    "weight_bits": [
+      4,
+      6,
+      8
+    ],
+    "weight_formats": {
+      "8": "MXFP8_E4M3",
+      "6": "MXFP6_E2M3",
+      "4": "MXFP4_E2M1"
+    },
+    "codec_revision": {
+      "8": "e4m3-exact-binary-v2",
+      "6": "unchanged-direct-E2M3",
+      "4": "unchanged-direct-E2M1"
+    },
+    "weight_preprocess": "original W32 G(W); detached mean(abs(W)), tanh/max normalization",
+    "activation_bits": 32,
+    "activation_policy": "original A32/ReLU in ALL THREE modes",
+    "master_dtype": "float32",
+    "gradient_dtype": "float32",
+    "adam_moments_dtype": "float32",
+    "mx_block_size": 32,
+    "mx_scale_format": "E8M0",
+    "mx_group_axis": "flatten Cin*Kh*Kw within each Cout, zero-pad tail",
+    "mx_scale_policy": "independent direct encoding of current G(W); E4M3 floor(log2(amax))-8; E2M3/E2M1 floor(log2(amax))-2; clip[-127,127], zero block exponent0; only E2 scales equal",
+    "mx_rounding": "nearest ties-to-even; finite FP32 source, scalar subnormal flush, local subnormals supported",
+    "ste_policy": "identity through each MX quantizer; retain original G(W) derivatives",
+    "numeric_kernel": "FP32 F.conv2d; codec FP64 intermediates; not native low-bit kernels",
+    "truncation": false,
+    "mantissa_truncation": false,
+    "exponent_truncation": false,
+    "shared_scale_compensation": false,
+    "learned_shared_scale": false,
+    "quantization_source": "same current FP32 G(W), independently per weight format",
+    "distillation": true,
+    "loss": "E4M3 hard CE + E2M3 soft CE from detached E4M3 + E2M1 soft CE from detached E2M3; T=1; gradients summed, no division by 3",
+    "passes_per_training_batch": 3,
+    "optimizer_steps_per_training_batch": 1,
+    "training_mode_order": [
+      8,
+      6,
+      4
+    ],
+    "test_mode_order": [
+      4,
+      6,
+      8
+    ],
+    "internal_upstream_selectors": [
+      4,
+      6,
+      8
+    ],
+    "legacy_abits_and_wbits": 32,
+    "model_bank_structure": [
+      1,
+      2,
+      4,
+      8,
+      32
+    ],
+    "bn_bank_mapping": {
+      "8": "8",
+      "6": "32",
+      "4": "4"
+    },
+    "batchnorm_policy": "three active weight-mode banks: E4M3=8, E2M3=32, E2M1=4; keys are storage IDs, all A32; banks1/2 unused",
+    "extra_FP32_teacher_forward": false,
+    "dataset": "svhn",
+    "train_split": "train",
+    "test_split": "test",
+    "extra_used": false,
+    "train_examples": 73257,
+    "test_examples": 26032,
+    "validation_examples": 0,
+    "initialization_policy": "fresh seed20261009; same untrained state as prior model construction; no warmstart",
+    "model": "svhnq",
+    "expand": 2,
+    "parameters": 132954,
+    "planned_epochs": 100,
+    "reference_end_epoch": 100,
+    "batch_size": 128,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "scheduler_milestones": [
+      50,
+      75,
+      90
+    ],
+    "scheduler_gamma": 0.1,
+    "workers": 0,
+    "pin_memory": true,
+    "drop_last": false,
+    "train_shuffle": true,
+    "test_shuffle": false,
+    "seed": 20261009,
+    "evaluation_policy": "all three modes on complete official test after every epoch; hard CE for each",
+    "selection_policy": "first strict maximum of E4M3/A32 official-test top1",
+    "reporting_policy": "all three modes from same selected E4M3-best checkpoint and epoch100; incomplete runs also retain last completed epoch",
+    "backend_policy": "github: cudnn.benchmark=True; no deterministic override",
+    "rng_policy": "global streams as upstream; sequential dropout draws per mode; saved at epoch boundaries",
+    "checkpoint_policy": "immutable FP32 training state per epoch and selected best/last copies",
+    "export_policy": "independent direct E4M3/E2M3/E2M1 files per selected checkpoint; not a truncatable source model",
+    "exact_historical_paper_reproduction_proven": false
+  },
+  "original_files": {
+    "run_report.json": {
+      "bundled_file": "original_triple_direct_run_report.json",
+      "sha256": "0016d288cbc372e1d1341435357a258f92a93bef3b13d2f3141dca030d2f776c",
+      "bytes": 29273
+    },
+    "training_summary.json": {
+      "bundled_file": "original_triple_direct_training_summary.json",
+      "sha256": "f6da13ead79fee877f024ca3ebb13d824862fe7d5693f1d3e5f40d9b92e72826",
+      "bytes": 1223
+    },
+    "epoch_metrics.csv": {
+      "bundled_file": "original_triple_direct_epoch_metrics.csv",
+      "sha256": "52df99915d90f3626399db078f610ac4a2ada7658052eed37ed76a7cd0a006c8",
+      "bytes": 95983
+    },
+    "selected_metrics.csv": {
+      "bundled_file": "original_triple_direct_selected_metrics.csv",
+      "sha256": "e538fe4aeb3e1af8c7f3aa6b639d48be627369555219642991f4287c464ffc60",
+      "bytes": 1231
+    },
+    "checkpoint_selection.json": {
+      "bundled_file": "original_triple_direct_checkpoint_selection.json",
+      "sha256": "c208030d083a6c1967850d7dde8098d9d48b5a74dd5fc0c6cb7aee3b9c52da26",
+      "bytes": 1007
+    }
+  },
+  "normalization": "Only names normalized to short formats; top1/top5 percentages recomputed from integer correct counts. Original logged percentages retained. No observations changed.",
+  "validation": {
+    "primary_report_PASS": true,
+    "completed_epochs": 100,
+    "metric_rows": 600,
+    "all_integer_counts_match_reported_accuracy": true,
+    "independent_audit_status": "PASS",
+    "full_metric_rows_checked": 600,
+    "epoch100_direct_predictions_checked": 78096,
+    "posthoc_reference_inputs_byte_identical": true,
+    "audit_file": "triple_direct_reference_audit.json",
+    "limitation": "Original feedback lacks raw predictions, sample-order arrays and checkpoints for all100 epochs; epoch100 direct accuracy independently reproduced in the posthoc direct paths."
+  },
+  "provenance": {
+    "kind": "original user feedback bundle, not assistant recollection or posthoc truncation results",
+    "primary_endpoint": "all three modes at epoch100; not E4M3-best epoch54"
+  },
+  "comparison_scope": "Historical descriptive comparison: three vs five direct joint formats; distillation, active BN banks, number of passes and RNG consumption differ."
+}

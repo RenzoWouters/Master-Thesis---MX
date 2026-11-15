@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "device": "cuda:0",
+  "source": {
+    "document": "OCP Microscaling Formats (MX) Specification v1.0",
+    "url": "https://www.opencompute.org/documents/ocp-microscaling-formats-mx-v1-0-spec-final-pdf",
+    "element_pages": {
+      "E5M2": 11,
+      "E3M2": 12
+    },
+    "scope_note": "Scale selection and FP32 input-subnormal flush follow the project reference."
+  },
+  "synthetic_only": true,
+  "formats": {
+    "E5M2": {
+      "status": "PASS",
+      "format": "MXFP8_E5M2",
+      "all_finite_codes": 248,
+      "midpoints_both_signs": 246,
+      "midpoint_neighbour_and_other_scalar_cases": 1260,
+      "invalid_element_codes_rejected": 8,
+      "finite_E8M0_codes_checked": 255,
+      "float32_power_boundaries": {
+        "n_weights": 8128,
+        "blocks": 254,
+        "padded_slots": 0
+      },
+      "mixed_range_padding_signed_zero": {
+        "n_weights": 105,
+        "blocks": 6,
+        "padded_slots": 87
+      },
+      "convolution_row_layout": {
+        "n_weights": 135,
+        "blocks": 6,
+        "padded_slots": 57
+      },
+      "identity_STE_and_exact_forward": true,
+      "one_byte_per_element": true
+    },
+    "E3M2": {
+      "status": "PASS",
+      "format": "MXFP6_E3M2",
+      "all_finite_codes": 64,
+      "midpoints_both_signs": 62,
+      "midpoint_neighbour_and_other_scalar_cases": 708,
+      "invalid_element_codes_rejected": 192,
+      "finite_E8M0_codes_checked": 255,
+      "float32_power_boundaries": {
+        "n_weights": 8128,
+        "blocks": 254,
+        "padded_slots": 0
+      },
+      "mixed_range_padding_signed_zero": {
+        "n_weights": 105,
+        "blocks": 6,
+        "padded_slots": 87
+      },
+      "convolution_row_layout": {
+        "n_weights": 135,
+        "blocks": 6,
+        "padded_slots": 57
+      },
+      "identity_STE_and_exact_forward": true,
+      "packing_layout_and_all_64_codes": true
+    }
+  }
+}

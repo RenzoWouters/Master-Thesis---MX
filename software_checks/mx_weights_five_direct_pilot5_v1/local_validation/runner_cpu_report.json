@@ -1,0 +1,9 @@
+{
+  "scope": "synthetic CPU runner checks; no SVHN accuracy",
+  "status": "PASS",
+  "five_epoch_endpoint_and_five_exports": "PASS",
+  "continuous_vs_epoch2_resume_exact_cpu": "PASS",
+  "all_earlier_evidence_copied_into_resume": "PASS",
+  "incompatible_or_completed_resume_rejected": "PASS",
+  "save_failure_keeps_raw_evidence_without_false_completed_epoch": "PASS"
+}

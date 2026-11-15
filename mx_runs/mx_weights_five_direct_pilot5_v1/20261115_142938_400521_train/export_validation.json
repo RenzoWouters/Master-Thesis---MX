@@ -1,0 +1,47 @@
+{
+  "E4M3": {
+    "file": "epoch00005_E4M3.pt",
+    "sha256": "5ee4991d822057f40b709c9f1ccbf037ec75b658461473ba7d873514dd525cc2",
+    "bytes": 196837,
+    "decoded_weights_exact": true,
+    "synthetic_logits_close": true,
+    "max_abs_logit_difference": 0.0,
+    "full_test_from_export_measured": false
+  },
+  "E5M2": {
+    "file": "epoch00005_E5M2.pt",
+    "sha256": "da42cd5d0887ec4cef84b4dc71527047169e0a4297d38668cd94e300dcd74874",
+    "bytes": 196837,
+    "decoded_weights_exact": true,
+    "synthetic_logits_close": true,
+    "max_abs_logit_difference": 0.0,
+    "full_test_from_export_measured": false
+  },
+  "E2M3": {
+    "file": "epoch00005_E2M3.pt",
+    "sha256": "bf714a1e750ac95e293dc2bb68fdb0e0e42694221c96afaeba3999c69e96ac4f",
+    "bytes": 164197,
+    "decoded_weights_exact": true,
+    "synthetic_logits_close": true,
+    "max_abs_logit_difference": 0.0,
+    "full_test_from_export_measured": false
+  },
+  "E3M2": {
+    "file": "epoch00005_E3M2.pt",
+    "sha256": "5958c65fdb93a0e8d7a3820cb3504b1327e84c9262f5d0e60407cbe159ed43e7",
+    "bytes": 164197,
+    "decoded_weights_exact": true,
+    "synthetic_logits_close": true,
+    "max_abs_logit_difference": 0.0,
+    "full_test_from_export_measured": false
+  },
+  "E2M1": {
+    "file": "epoch00005_E2M1.pt",
+    "sha256": "dcd239bb48e6fdc63f7f4811828fcdfc5618a7e682bbd44250b2be59f45696fb",
+    "bytes": 131557,
+    "decoded_weights_exact": true,
+    "synthetic_logits_close": true,
+    "max_abs_logit_difference": 0.0,
+    "full_test_from_export_measured": false
+  }
+}

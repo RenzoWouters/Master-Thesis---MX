@@ -1,0 +1,25 @@
+{
+  "schema": "five-direct-source-reuse-v1",
+  "source_archive_name": "mx_weights_triple_direct_reference100_v1(1).zip",
+  "source_archive_sha256": "d3a73669ea40d46f2e8cd78b99c7c4972a4cf67f735a586096fff56675356729",
+  "byte_identical_files": {
+    "smoke_support.py": "95c04f14f199763d794bf8b731280cd249b7256a7abddebf0f33a005cc8605b8",
+    "svhn_support.py": "1dbec29251d4d86a5a014fc49461a287c5afd3b60bf0b4571a214c965a86b395",
+    "resume_core.py": "33f84c890aa6ef9b433ce303e4051f35ecacbb35479636484038442db197efe9",
+    "mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617",
+    "mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "SOURCE_MANIFEST.json": "1a1fe2c89b5ac5add83fb6531f6e43bade638f095578bef099b2bd6560e0c634",
+    "upstream/Any-Precision-DNNs-master.zip": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+  },
+  "original_files_preserved": true,
+  "changes": [
+    "Two added finite-only direct codecs E5M2/E3M2",
+    "Five format-named BN banks; initial tensors unchanged",
+    "Two hard-label roots, corresponding 6-bit students, detached mean probability teacher for E2M1",
+    "Equal five loss weights, same summed-loss convention and one Adam update",
+    "Fixed fresh pilot endpoint5; no checkpoint selection by test accuracy",
+    "New run/feedback/notebook with optional same-pilot epoch-boundary resume"
+  ]
+}

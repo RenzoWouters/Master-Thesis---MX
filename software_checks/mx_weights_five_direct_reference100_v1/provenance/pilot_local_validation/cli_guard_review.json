@@ -1,0 +1,26 @@
+[
+  {
+    "case": "cpu_training_rejected",
+    "returncode": 2,
+    "last_line": "GLOBAAL RESULTAAT: FAIL",
+    "passed": true
+  },
+  {
+    "case": "local_validation_training_rejected",
+    "returncode": 2,
+    "last_line": "GLOBAAL RESULTAAT: FAIL",
+    "passed": true
+  },
+  {
+    "case": "epoch6_rejected",
+    "returncode": 2,
+    "last_line": "GLOBAAL RESULTAAT: FAIL",
+    "passed": true
+  },
+  {
+    "case": "check_resume_rejected",
+    "returncode": 2,
+    "last_line": "GLOBAAL RESULTAAT: FAIL",
+    "passed": true
+  }
+]
