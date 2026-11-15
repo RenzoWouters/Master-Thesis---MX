@@ -1,0 +1,19 @@
+2026-11-13T16:41:23.188626+00:00 NUMERIEK PASS: alle 64 broncodes, drie omzettingen; optimale beperkte mapping exact gecontroleerd.
+2026-11-13T16:41:25.330235+00:00 BRON PASS: oorspronkelijke compacte epoch100-export en opgeslagen E2-schalen geverifieerd.
+2026-11-13T16:41:26.479048+00:00 Testbeelden: 128/26032; vijf varianten, geen training.
+2026-11-13T16:41:26.942470+00:00 Testbeelden: 3200/26032; vijf varianten, geen training.
+2026-11-13T16:41:27.412564+00:00 Testbeelden: 6400/26032; vijf varianten, geen training.
+2026-11-13T16:41:27.876441+00:00 Testbeelden: 9600/26032; vijf varianten, geen training.
+2026-11-13T16:41:28.374760+00:00 Testbeelden: 12800/26032; vijf varianten, geen training.
+2026-11-13T16:41:28.850556+00:00 Testbeelden: 16000/26032; vijf varianten, geen training.
+2026-11-13T16:41:29.308974+00:00 Testbeelden: 19200/26032; vijf varianten, geen training.
+2026-11-13T16:41:29.759068+00:00 Testbeelden: 22400/26032; vijf varianten, geen training.
+2026-11-13T16:41:30.187500+00:00 Testbeelden: 25600/26032; vijf varianten, geen training.
+2026-11-13T16:41:30.287757+00:00 Testbeelden: 26032/26032; vijf varianten, geen training.
+2026-11-13T16:41:30.349763+00:00 E4M3: ongewijzigde bron: 24607/26032 = 94.525968%
+2026-11-13T16:41:30.350249+00:00 E2M3: ongewijzigde bron: 24746/26032 = 95.059926%
+2026-11-13T16:41:30.350681+00:00 LSB verwijderen (bestaand): 24740/26032 = 95.036878%
+2026-11-13T16:41:30.351051+00:00 Afronding naar E2M1: 23958/26032 = 92.032883%
+2026-11-13T16:41:30.351317+00:00 MSB verwijderen + optimale exponent: 23870/26032 = 91.694837%
+2026-11-13T16:41:31.416441+00:00 Resultaten: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_exponent_probe_v1\20261113_174123_159210_evaluate
+2026-11-13T16:41:31.416822+00:00 Stuur dit bestand terug: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_exponent_probe_v1\20261113_174123_159210_evaluate\feedback_bundle.zip

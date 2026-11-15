@@ -1,0 +1,8 @@
+AFHANKELIJKHEDEN PASS: bestaande omgeving gecontroleerd.
+BRON PASS: oorspronkelijke fixed64-code en historische LSB-epochs 1–5 geverifieerd.
+NUMERIEK PASS: alle 64 E2M3-broncodes; behouden m0 en optimale beperkte exponentkeuze.
+INIT PASS: exact dezelfde ongetrainde modelwaarden als de historische LSB x64-run; geen phi.
+UPSTREAM epoch 0, iter 0/2, bit_width_max loss 2.18, prec1 0.00, prec5 100.00
+CHECK PASS: verse initialisatie, twee synthetische Adamupdates, echte MSB-forward/backward en dynamische x64-schalen. Geen SVHN-training of SVHN-accuracy.
+Resultaten: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_scale64_scratch5_v1\20261113_193138_027700_check
+Stuur dit bestand terug: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_scale64_scratch5_v1\20261113_193138_027700_check\feedback_bundle.zip

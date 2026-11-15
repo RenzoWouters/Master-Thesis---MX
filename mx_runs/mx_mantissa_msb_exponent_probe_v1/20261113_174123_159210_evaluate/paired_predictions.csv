@@ -1,0 +1,3 @@
+variant,baseline,n,both_correct,baseline_correct_only,variant_correct_only,both_wrong,prediction_disagreements
+rne,lsb_trunc,26032,23708,1032,250,1042,1552
+msb_bestexp,lsb_trunc,26032,23614,1126,256,1036,1674

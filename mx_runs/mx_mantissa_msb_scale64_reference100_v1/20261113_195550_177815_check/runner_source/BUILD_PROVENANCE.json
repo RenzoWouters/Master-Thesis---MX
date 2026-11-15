@@ -1,0 +1,27 @@
+{
+  "schema": "mx-msb-scale64-reference100-build-v1",
+  "purpose": "One new 100-epoch MSB x64 training from a fresh initialization, per user request.",
+  "based_on_pilot_package": "mx_mantissa_msb_scale64_scratch5_v1",
+  "pilot_checkpoint_loaded": false,
+  "pilot_research_scores_merged_into_new_run": false,
+  "unchanged_training_kernel_files_sha256": {
+    "training_engine.py": "41175f0a9d43cfd5c062b88acd6f7dc15d1b85a56cafbbdde5f1d55eea05e6ee",
+    "msb64_adapter.py": "09cbf9bfcb605c8bc09b5557ab414957a51ef0a2209f50d302842c4577a8167e",
+    "mantissa_rules.py": "dde643f73a3c14cdc61461214b3a1e81cf4c4c673ef4cd0b23b5e46e05641209"
+  },
+  "original_fixed64_package_sha256": "0cb0472de825aa8b4087488ef82ce87a90ed24f89ce8e58f9e1ec3c3f8076a76",
+  "original_fixed64_manifest_files_verified": 75,
+  "original_fixed64_manifest_all_match": true,
+  "deliberate_changes_from_pilot": [
+    "New package identity, contract and output root; all new training starts at epoch1 with seed20261009.",
+    "Planned endpoint100; actual historical reference epochs1-100; original LR milestones50/75/90 fully exercised.",
+    "Last terminal line after check is GLOBAAL RESULTAAT: PASS or FAIL, including reporting/publication failures.",
+    "Repeated warnings are counted and displayed once per message/category; frequency is preserved.",
+    "Reporting and notebook use complete/partial100-epoch guards and epoch100 comparison.",
+    "Resume is restricted to checkpoints created by this full100 package; no pilot warmstart.",
+    "Full immutable per-epoch FP32 model/BN/Adam/scheduler/RNG checkpoints; no legacy LSB compact exports."
+  ],
+  "production_CUDA_init_match_already_observed_in_prior_pilot": true,
+  "new_full100_training_executed": false,
+  "source_raw_data_and_prior_results_modified": false
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "mx-msb-scale64-reference100-prior-pilot-validation-v1",
+  "source_library_id": "libfile_7f3750df5c5c81918d6e627232e40529",
+  "source_bundle_sha256": "21f10047c8efba924263f77db677539a1a2c8f7654f2bdece0e458322f95a26f",
+  "pilot_status": "PASS",
+  "completed_epochs": 5,
+  "actual_optimizer_steps": 2865,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "reference_comparison": {
+    "initialization_hash_matches": true,
+    "runtime_matches_reference": true,
+    "source_matches_reference": true,
+    "dataset_matches_reference": true,
+    "historical_sample_order_verified": false,
+    "historical_initial_rng_verified": false,
+    "historical_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "reference_run": "C:\\Users\\renzo\\master-thesis-mx\\mx_runs\\mx_triple_scale64_reference100\\20261024_151210_665535_joint_run",
+    "basis": "recorded historical LSB x64 epochs1-5; no new LSB training"
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "2.5.2",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "cuda_build": "12.8",
+    "cudnn": 91002,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU"
+  },
+  "production_CUDA_initialization_verified_by_completed_pilot": true,
+  "pilot_checkpoint_used_in_new_training": false,
+  "pilot_scores_used_as_new_run_observations": false,
+  "new_full100_run_already_executed": false,
+  "note": "Read-only evidence that the same MSB kernel and dynamic x64 rule completed the previous five-epoch CUDA pilot; the requested 100-epoch run initializes anew."
+}

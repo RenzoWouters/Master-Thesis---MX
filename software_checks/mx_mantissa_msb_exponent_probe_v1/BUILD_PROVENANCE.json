@@ -1,0 +1,63 @@
+{
+  "schema": "msb-probe-build-provenance-v1",
+  "parent_package": "mx_triple_independent_e2_scale_freeze50_reference100_v1",
+  "reused_legacy": {
+    "vendor/legacy/mx_e4m3.py": "0452b9c2b322493dea97de2807b064cedf2fb9575692f48e3bca0aa11535b72a",
+    "vendor/legacy/trunc_adapter.py": "513a226e9bf74cefc5d72b0d45172297e191cc715ac7d47473c01cf6308c2e32",
+    "vendor/legacy/posthoc_truncation.py": "6ee836445813106d69e1e220475ff2521940fc2d64611d39f2425303114ff313",
+    "vendor/legacy/mx_format.py": "252876a4d0f0a127369bf633953a8498ddc4d2639b844c64a8851ccd51b0bc1c",
+    "vendor/legacy/joint_adapter.py": "dd0efb8c10912db3e530db63ee9f278cd7809985af493454ef07cbd72d26d6ed",
+    "vendor/legacy/mx_e2m1.py": "6695357a2891a45e345d5e8fcdb4f9301ce93408fe55cfd33ec56b738e24f27b",
+    "vendor/legacy/mx_adapter.py": "3fdc0cfa1d766a5f2b5bdc1c0dcf2ae2c17aefd8d33ef21e152fac448e0bb617"
+  },
+  "reused_upstream": {
+    "LICENSE.md": {
+      "sha256": "ed7f81684b6ae7dac8dee5ebf8c351d7fbc0d9e8ebc8b99c478e189c55892b1a",
+      "unchanged": true
+    },
+    "datasets/data.py": {
+      "sha256": "f73ff03f5000de51e70fd69f2e27dd3dabfec8cb2fbdc799d6cfe10e6cbff225",
+      "unchanged": true
+    },
+    "datasets/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    "datasets/cifar10.py": {
+      "sha256": "56979cc6302135dc21c66483726ce0a54f22d47e0aceeba3c51c0c84bc06125b",
+      "unchanged": true
+    },
+    "datasets/svhn.py": {
+      "sha256": "8b46eaa0a0b9fc4107f37f30a47fbbb30ab90a1260839eb86c7db3b945094ba4",
+      "unchanged": true
+    },
+    "models/resnet_quan.py": {
+      "sha256": "52160abb9d19b988ec8fb1cf59ad904761cd09c397ec591d4aa0fd6a0b6e16dc",
+      "unchanged": true
+    },
+    "models/__init__.py": {
+      "sha256": "06ea472819fe3cbee7a7202ea0b19dd84d2aa33ca58dcf1c6c64820799915bad",
+      "unchanged": true
+    },
+    "models/svhn_quan.py": {
+      "sha256": "c891da23c7d2934cd65e3c596c3e47b47de8987385bc8d06eab22de7d2d02e74",
+      "unchanged": true
+    },
+    "models/quan_ops.py": {
+      "sha256": "86fc8f68e3060f98913cb7f1b33f698f43bf8d2b6d85a3ad92c30f6e19a70f71",
+      "unchanged": true
+    }
+  },
+  "new_files": [
+    "run_probe.py",
+    "mantissa_rules.py",
+    "probe_notebook.py",
+    "tests/test_rules.py",
+    "tests/test_probe.py",
+    "README.md",
+    "REFERENCE.json"
+  ],
+  "new_network_training": false,
+  "numerical_results_only_precomputed": true,
+  "upstream_zip_sha256": "7e36c5f039a78e3174421de7ff097066f95dde2837ea02f11913f3be0ba7f73c"
+}

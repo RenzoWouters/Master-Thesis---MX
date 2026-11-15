@@ -1,0 +1,14 @@
+{
+  "all64_bit_rule_equals_exhaustive_optimum": true,
+  "sign_preserved": true,
+  "shared_scale_preserved": true,
+  "msb_rule": "Eprime=min(3,E+[m2 AND m1 AND NOT m0]); mprime=m0",
+  "rne_rule": "keep m2; increment=m1 AND (m0 OR m2); saturate magnitude code to7",
+  "runtime_search_or_float_log_needed": false,
+  "new_per_weight_metadata_bits": 0,
+  "compact_low_code_bits": 4,
+  "removed_bits_read_during_conversion": true,
+  "measured_hardware_area": null,
+  "measured_hardware_energy": null,
+  "interpretation": "Logic description only; no synthesized hardware or bandwidth saving measured."
+}

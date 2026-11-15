@@ -1,0 +1,174 @@
+AFHANKELIJKHEDEN PASS: bestaande omgeving gecontroleerd.
+BRON PASS: oorspronkelijke fixed64-code en historische LSB-epochs 1–5 geverifieerd.
+NUMERIEK PASS: alle 64 E2M3-broncodes; behouden m0 en optimale beperkte exponentkeuze.
+DATA bestaand en correct: train_32x32.mat
+DATA bestaand en correct: test_32x32.mat
+DATA PASS: 73.257 trainbeelden en 26.032 testbeelden, zonder extra-split.
+INIT PASS: exact dezelfde ongetrainde modelwaarden als de historische LSB x64-run; geen phi.
+TRAIN MSB x64: epoch 1/5 vanaf nul; Adam lr=0.001.
+UPSTREAM epoch 0, iter 0/573, bit_width_max loss 2.31, prec1 7.03, prec5 50.00
+UPSTREAM epoch 0, iter 20/573, bit_width_max loss 2.15, prec1 20.31, prec5 69.53
+UPSTREAM epoch 0, iter 40/573, bit_width_max loss 1.86, prec1 39.06, prec5 84.38
+UPSTREAM epoch 0, iter 60/573, bit_width_max loss 1.40, prec1 50.78, prec5 91.41
+UPSTREAM epoch 0, iter 80/573, bit_width_max loss 1.08, prec1 68.75, prec5 97.66
+UPSTREAM epoch 0, iter 100/573, bit_width_max loss 1.06, prec1 67.97, prec5 93.75
+UPSTREAM epoch 0, iter 120/573, bit_width_max loss 0.84, prec1 69.53, prec5 98.44
+UPSTREAM epoch 0, iter 140/573, bit_width_max loss 0.70, prec1 82.81, prec5 94.53
+UPSTREAM epoch 0, iter 160/573, bit_width_max loss 0.64, prec1 82.03, prec5 96.09
+UPSTREAM epoch 0, iter 180/573, bit_width_max loss 0.72, prec1 78.91, prec5 94.53
+UPSTREAM epoch 0, iter 200/573, bit_width_max loss 0.58, prec1 80.47, prec5 98.44
+UPSTREAM epoch 0, iter 220/573, bit_width_max loss 0.56, prec1 84.38, prec5 97.66
+UPSTREAM epoch 0, iter 240/573, bit_width_max loss 0.63, prec1 82.03, prec5 99.22
+UPSTREAM epoch 0, iter 260/573, bit_width_max loss 0.45, prec1 85.16, prec5 100.00
+UPSTREAM epoch 0, iter 280/573, bit_width_max loss 0.57, prec1 82.03, prec5 97.66
+UPSTREAM epoch 0, iter 300/573, bit_width_max loss 0.39, prec1 86.72, prec5 99.22
+UPSTREAM epoch 0, iter 320/573, bit_width_max loss 0.50, prec1 82.03, prec5 99.22
+UPSTREAM epoch 0, iter 340/573, bit_width_max loss 0.48, prec1 82.81, prec5 96.88
+UPSTREAM epoch 0, iter 360/573, bit_width_max loss 0.65, prec1 82.81, prec5 96.09
+UPSTREAM epoch 0, iter 380/573, bit_width_max loss 0.48, prec1 85.94, prec5 96.88
+UPSTREAM epoch 0, iter 400/573, bit_width_max loss 0.25, prec1 92.97, prec5 99.22
+UPSTREAM epoch 0, iter 420/573, bit_width_max loss 0.31, prec1 91.41, prec5 98.44
+UPSTREAM epoch 0, iter 440/573, bit_width_max loss 0.44, prec1 86.72, prec5 97.66
+UPSTREAM epoch 0, iter 460/573, bit_width_max loss 0.42, prec1 90.62, prec5 99.22
+UPSTREAM epoch 0, iter 480/573, bit_width_max loss 0.39, prec1 88.28, prec5 97.66
+UPSTREAM epoch 0, iter 500/573, bit_width_max loss 0.54, prec1 81.25, prec5 96.88
+UPSTREAM epoch 0, iter 520/573, bit_width_max loss 0.38, prec1 83.59, prec5 98.44
+UPSTREAM epoch 0, iter 540/573, bit_width_max loss 0.24, prec1 92.97, prec5 98.44
+UPSTREAM epoch 0, iter 560/573, bit_width_max loss 0.47, prec1 85.16, prec5 97.66
+  TEST W8: 22844/26032 = 87.753534%
+  TEST W6: 22199/26032 = 85.275814%
+  TEST W4: 22332/26032 = 85.786724%
+TRAIN MSB x64: epoch 2/5 vanaf nul; Adam lr=0.001.
+UPSTREAM epoch 1, iter 0/573, bit_width_max loss 0.54, prec1 85.16, prec5 98.44
+UPSTREAM epoch 1, iter 20/573, bit_width_max loss 0.37, prec1 89.84, prec5 98.44
+UPSTREAM epoch 1, iter 40/573, bit_width_max loss 0.28, prec1 90.62, prec5 97.66
+UPSTREAM epoch 1, iter 60/573, bit_width_max loss 0.34, prec1 89.06, prec5 99.22
+UPSTREAM epoch 1, iter 80/573, bit_width_max loss 0.52, prec1 82.81, prec5 97.66
+UPSTREAM epoch 1, iter 100/573, bit_width_max loss 0.44, prec1 89.06, prec5 98.44
+UPSTREAM epoch 1, iter 120/573, bit_width_max loss 0.45, prec1 88.28, prec5 96.09
+UPSTREAM epoch 1, iter 140/573, bit_width_max loss 0.24, prec1 92.19, prec5 100.00
+UPSTREAM epoch 1, iter 160/573, bit_width_max loss 0.41, prec1 91.41, prec5 96.09
+UPSTREAM epoch 1, iter 180/573, bit_width_max loss 0.33, prec1 89.06, prec5 96.88
+UPSTREAM epoch 1, iter 200/573, bit_width_max loss 0.37, prec1 89.06, prec5 98.44
+UPSTREAM epoch 1, iter 220/573, bit_width_max loss 0.52, prec1 87.50, prec5 96.88
+UPSTREAM epoch 1, iter 240/573, bit_width_max loss 0.41, prec1 87.50, prec5 97.66
+UPSTREAM epoch 1, iter 260/573, bit_width_max loss 0.26, prec1 92.19, prec5 99.22
+UPSTREAM epoch 1, iter 280/573, bit_width_max loss 0.37, prec1 88.28, prec5 97.66
+UPSTREAM epoch 1, iter 300/573, bit_width_max loss 0.44, prec1 88.28, prec5 97.66
+UPSTREAM epoch 1, iter 320/573, bit_width_max loss 0.30, prec1 91.41, prec5 99.22
+UPSTREAM epoch 1, iter 340/573, bit_width_max loss 0.32, prec1 88.28, prec5 99.22
+UPSTREAM epoch 1, iter 360/573, bit_width_max loss 0.33, prec1 89.84, prec5 100.00
+UPSTREAM epoch 1, iter 380/573, bit_width_max loss 0.29, prec1 91.41, prec5 100.00
+UPSTREAM epoch 1, iter 400/573, bit_width_max loss 0.30, prec1 92.19, prec5 96.88
+UPSTREAM epoch 1, iter 420/573, bit_width_max loss 0.31, prec1 88.28, prec5 98.44
+UPSTREAM epoch 1, iter 440/573, bit_width_max loss 0.25, prec1 90.62, prec5 98.44
+UPSTREAM epoch 1, iter 460/573, bit_width_max loss 0.28, prec1 89.06, prec5 100.00
+UPSTREAM epoch 1, iter 480/573, bit_width_max loss 0.23, prec1 92.19, prec5 100.00
+UPSTREAM epoch 1, iter 500/573, bit_width_max loss 0.42, prec1 88.28, prec5 97.66
+UPSTREAM epoch 1, iter 520/573, bit_width_max loss 0.35, prec1 89.84, prec5 99.22
+UPSTREAM epoch 1, iter 540/573, bit_width_max loss 0.39, prec1 89.06, prec5 96.88
+UPSTREAM epoch 1, iter 560/573, bit_width_max loss 0.37, prec1 86.72, prec5 99.22
+  TEST W8: 23609/26032 = 90.692225%
+  TEST W6: 23178/26032 = 89.036570%
+  TEST W4: 22893/26032 = 87.941764%
+TRAIN MSB x64: epoch 3/5 vanaf nul; Adam lr=0.001.
+UPSTREAM epoch 2, iter 0/573, bit_width_max loss 0.35, prec1 86.72, prec5 99.22
+UPSTREAM epoch 2, iter 20/573, bit_width_max loss 0.28, prec1 89.84, prec5 100.00
+UPSTREAM epoch 2, iter 40/573, bit_width_max loss 0.41, prec1 87.50, prec5 99.22
+UPSTREAM epoch 2, iter 60/573, bit_width_max loss 0.34, prec1 94.53, prec5 99.22
+UPSTREAM epoch 2, iter 80/573, bit_width_max loss 0.25, prec1 91.41, prec5 99.22
+UPSTREAM epoch 2, iter 100/573, bit_width_max loss 0.34, prec1 91.41, prec5 98.44
+UPSTREAM epoch 2, iter 120/573, bit_width_max loss 0.23, prec1 92.19, prec5 100.00
+UPSTREAM epoch 2, iter 140/573, bit_width_max loss 0.21, prec1 92.97, prec5 100.00
+UPSTREAM epoch 2, iter 160/573, bit_width_max loss 0.19, prec1 96.09, prec5 100.00
+UPSTREAM epoch 2, iter 180/573, bit_width_max loss 0.28, prec1 92.19, prec5 99.22
+UPSTREAM epoch 2, iter 200/573, bit_width_max loss 0.28, prec1 90.62, prec5 99.22
+UPSTREAM epoch 2, iter 220/573, bit_width_max loss 0.26, prec1 89.84, prec5 100.00
+UPSTREAM epoch 2, iter 240/573, bit_width_max loss 0.30, prec1 89.84, prec5 99.22
+UPSTREAM epoch 2, iter 260/573, bit_width_max loss 0.16, prec1 94.53, prec5 100.00
+UPSTREAM epoch 2, iter 280/573, bit_width_max loss 0.24, prec1 92.97, prec5 98.44
+UPSTREAM epoch 2, iter 300/573, bit_width_max loss 0.37, prec1 92.19, prec5 99.22
+UPSTREAM epoch 2, iter 320/573, bit_width_max loss 0.25, prec1 90.62, prec5 99.22
+UPSTREAM epoch 2, iter 340/573, bit_width_max loss 0.26, prec1 91.41, prec5 99.22
+UPSTREAM epoch 2, iter 360/573, bit_width_max loss 0.33, prec1 90.62, prec5 99.22
+UPSTREAM epoch 2, iter 380/573, bit_width_max loss 0.22, prec1 91.41, prec5 100.00
+UPSTREAM epoch 2, iter 400/573, bit_width_max loss 0.29, prec1 93.75, prec5 98.44
+UPSTREAM epoch 2, iter 420/573, bit_width_max loss 0.27, prec1 89.06, prec5 100.00
+UPSTREAM epoch 2, iter 440/573, bit_width_max loss 0.29, prec1 90.62, prec5 98.44
+UPSTREAM epoch 2, iter 460/573, bit_width_max loss 0.30, prec1 89.84, prec5 97.66
+UPSTREAM epoch 2, iter 480/573, bit_width_max loss 0.25, prec1 90.62, prec5 99.22
+UPSTREAM epoch 2, iter 500/573, bit_width_max loss 0.29, prec1 92.19, prec5 100.00
+UPSTREAM epoch 2, iter 520/573, bit_width_max loss 0.37, prec1 90.62, prec5 98.44
+UPSTREAM epoch 2, iter 540/573, bit_width_max loss 0.36, prec1 89.84, prec5 99.22
+UPSTREAM epoch 2, iter 560/573, bit_width_max loss 0.32, prec1 91.41, prec5 98.44
+  TEST W8: 23983/26032 = 92.128918%
+  TEST W6: 23612/26032 = 90.703749%
+  TEST W4: 23476/26032 = 90.181315%
+TRAIN MSB x64: epoch 4/5 vanaf nul; Adam lr=0.001.
+UPSTREAM epoch 3, iter 0/573, bit_width_max loss 0.18, prec1 92.97, prec5 100.00
+UPSTREAM epoch 3, iter 20/573, bit_width_max loss 0.22, prec1 94.53, prec5 98.44
+UPSTREAM epoch 3, iter 40/573, bit_width_max loss 0.12, prec1 97.66, prec5 100.00
+UPSTREAM epoch 3, iter 60/573, bit_width_max loss 0.30, prec1 89.84, prec5 100.00
+UPSTREAM epoch 3, iter 80/573, bit_width_max loss 0.24, prec1 92.19, prec5 98.44
+UPSTREAM epoch 3, iter 100/573, bit_width_max loss 0.26, prec1 92.97, prec5 100.00
+UPSTREAM epoch 3, iter 120/573, bit_width_max loss 0.35, prec1 89.84, prec5 97.66
+UPSTREAM epoch 3, iter 140/573, bit_width_max loss 0.21, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 160/573, bit_width_max loss 0.23, prec1 92.19, prec5 99.22
+UPSTREAM epoch 3, iter 180/573, bit_width_max loss 0.52, prec1 89.84, prec5 96.88
+UPSTREAM epoch 3, iter 200/573, bit_width_max loss 0.18, prec1 93.75, prec5 100.00
+UPSTREAM epoch 3, iter 220/573, bit_width_max loss 0.29, prec1 88.28, prec5 100.00
+UPSTREAM epoch 3, iter 240/573, bit_width_max loss 0.27, prec1 91.41, prec5 98.44
+UPSTREAM epoch 3, iter 260/573, bit_width_max loss 0.33, prec1 87.50, prec5 99.22
+UPSTREAM epoch 3, iter 280/573, bit_width_max loss 0.35, prec1 87.50, prec5 98.44
+UPSTREAM epoch 3, iter 300/573, bit_width_max loss 0.22, prec1 95.31, prec5 100.00
+UPSTREAM epoch 3, iter 320/573, bit_width_max loss 0.25, prec1 92.19, prec5 100.00
+UPSTREAM epoch 3, iter 340/573, bit_width_max loss 0.46, prec1 86.72, prec5 96.88
+UPSTREAM epoch 3, iter 360/573, bit_width_max loss 0.40, prec1 89.06, prec5 97.66
+UPSTREAM epoch 3, iter 380/573, bit_width_max loss 0.38, prec1 89.06, prec5 97.66
+UPSTREAM epoch 3, iter 400/573, bit_width_max loss 0.26, prec1 92.19, prec5 98.44
+UPSTREAM epoch 3, iter 420/573, bit_width_max loss 0.21, prec1 96.09, prec5 100.00
+UPSTREAM epoch 3, iter 440/573, bit_width_max loss 0.21, prec1 93.75, prec5 100.00
+UPSTREAM epoch 3, iter 460/573, bit_width_max loss 0.20, prec1 92.19, prec5 99.22
+UPSTREAM epoch 3, iter 480/573, bit_width_max loss 0.32, prec1 89.84, prec5 100.00
+UPSTREAM epoch 3, iter 500/573, bit_width_max loss 0.23, prec1 94.53, prec5 99.22
+UPSTREAM epoch 3, iter 520/573, bit_width_max loss 0.35, prec1 91.41, prec5 98.44
+UPSTREAM epoch 3, iter 540/573, bit_width_max loss 0.34, prec1 89.06, prec5 97.66
+UPSTREAM epoch 3, iter 560/573, bit_width_max loss 0.26, prec1 89.06, prec5 99.22
+  TEST W8: 24075/26032 = 92.482329%
+  TEST W6: 23732/26032 = 91.164720%
+  TEST W4: 23639/26032 = 90.807468%
+TRAIN MSB x64: epoch 5/5 vanaf nul; Adam lr=0.001.
+UPSTREAM epoch 4, iter 0/573, bit_width_max loss 0.28, prec1 93.75, prec5 98.44
+UPSTREAM epoch 4, iter 20/573, bit_width_max loss 0.33, prec1 92.19, prec5 100.00
+UPSTREAM epoch 4, iter 40/573, bit_width_max loss 0.20, prec1 96.09, prec5 99.22
+UPSTREAM epoch 4, iter 60/573, bit_width_max loss 0.34, prec1 89.84, prec5 99.22
+UPSTREAM epoch 4, iter 80/573, bit_width_max loss 0.32, prec1 95.31, prec5 98.44
+UPSTREAM epoch 4, iter 100/573, bit_width_max loss 0.27, prec1 91.41, prec5 100.00
+UPSTREAM epoch 4, iter 120/573, bit_width_max loss 0.20, prec1 92.19, prec5 99.22
+UPSTREAM epoch 4, iter 140/573, bit_width_max loss 0.26, prec1 92.19, prec5 100.00
+UPSTREAM epoch 4, iter 160/573, bit_width_max loss 0.26, prec1 91.41, prec5 99.22
+UPSTREAM epoch 4, iter 180/573, bit_width_max loss 0.34, prec1 89.06, prec5 99.22
+UPSTREAM epoch 4, iter 200/573, bit_width_max loss 0.13, prec1 97.66, prec5 99.22
+UPSTREAM epoch 4, iter 220/573, bit_width_max loss 0.18, prec1 94.53, prec5 98.44
+UPSTREAM epoch 4, iter 240/573, bit_width_max loss 0.15, prec1 96.09, prec5 100.00
+UPSTREAM epoch 4, iter 260/573, bit_width_max loss 0.24, prec1 91.41, prec5 99.22
+UPSTREAM epoch 4, iter 280/573, bit_width_max loss 0.15, prec1 96.88, prec5 99.22
+UPSTREAM epoch 4, iter 300/573, bit_width_max loss 0.24, prec1 94.53, prec5 98.44
+UPSTREAM epoch 4, iter 320/573, bit_width_max loss 0.49, prec1 89.06, prec5 99.22
+UPSTREAM epoch 4, iter 340/573, bit_width_max loss 0.29, prec1 92.19, prec5 99.22
+UPSTREAM epoch 4, iter 360/573, bit_width_max loss 0.30, prec1 92.19, prec5 98.44
+UPSTREAM epoch 4, iter 380/573, bit_width_max loss 0.35, prec1 90.62, prec5 97.66
+UPSTREAM epoch 4, iter 400/573, bit_width_max loss 0.23, prec1 94.53, prec5 100.00
+UPSTREAM epoch 4, iter 420/573, bit_width_max loss 0.56, prec1 87.50, prec5 99.22
+UPSTREAM epoch 4, iter 440/573, bit_width_max loss 0.21, prec1 93.75, prec5 100.00
+UPSTREAM epoch 4, iter 460/573, bit_width_max loss 0.21, prec1 93.75, prec5 100.00
+UPSTREAM epoch 4, iter 480/573, bit_width_max loss 0.27, prec1 94.53, prec5 98.44
+UPSTREAM epoch 4, iter 500/573, bit_width_max loss 0.24, prec1 91.41, prec5 100.00
+UPSTREAM epoch 4, iter 520/573, bit_width_max loss 0.30, prec1 91.41, prec5 100.00
+UPSTREAM epoch 4, iter 540/573, bit_width_max loss 0.26, prec1 92.97, prec5 98.44
+UPSTREAM epoch 4, iter 560/573, bit_width_max loss 0.25, prec1 92.19, prec5 99.22
+  TEST W8: 24164/26032 = 92.824216%
+  TEST W6: 23869/26032 = 91.690996%
+  TEST W4: 23616/26032 = 90.719115%
+Resultaten: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_scale64_scratch5_v1\20261113_193233_068378_run
+Stuur dit bestand terug: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_scale64_scratch5_v1\20261113_193233_068378_run\feedback_bundle.zip

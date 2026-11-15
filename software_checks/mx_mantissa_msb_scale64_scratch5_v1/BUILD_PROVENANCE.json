@@ -1,0 +1,18 @@
+{
+  "schema": "mx-msb-scale64-scratch5-build-v1",
+  "source": "original fixed64 LSB package recovered byte-identically to recorded reference",
+  "original_package_filename": "mx_triple_scale64_reference100_v1.zip",
+  "original_package_library_id": "libfile_f54432f78ef481918b29c7a5256ab65e",
+  "original_package_sha256": "0cb0472de825aa8b4087488ef82ce87a90ed24f89ce8e58f9e1ec3c3f8076a76",
+  "original_manifest_files_verified": 75,
+  "original_manifest_all_match": true,
+  "vendored_files_verified": 14,
+  "scientific_change": "Only E2M3-to-E2M1 mapping replaced by retained-m0 constrained optimal exponent selection; original dynamic source+6 scale rule retained.",
+  "experiment": "One new MSB run, fresh initialization, epochs1-5; recorded historical LSB x64 epochs1-5 as reference.",
+  "reference_init_pin": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "reference_initial_rng_and_order_files_available": false,
+  "runtime_validation": "Production requires historical numerical environment and initial-model pin on user CUDA device. Local technical tests use explicit CPU fixtures and are not SVHN measurements.",
+  "checkpoints": "Full FP32 model, BN, Adam, scheduler and RNG. Original LSB-only compact-export functions are not used.",
+  "raw_data_modified": false,
+  "new_research_accuracy_available": false
+}

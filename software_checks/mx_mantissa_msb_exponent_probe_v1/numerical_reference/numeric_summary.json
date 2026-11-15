@@ -1,0 +1,387 @@
+{
+  "schema": "mx-e2m3-e2m1-mantissa-rules-numeric-summary-v1",
+  "methods": [
+    "lsb_trunc",
+    "rne",
+    "msb_bestexp"
+  ],
+  "labels": {
+    "lsb_trunc": "Laagste twee mantissabits verwijderen",
+    "rne": "Afronden naar dichtstbijzijnde (RNE)",
+    "msb_bestexp": "Mantissa-LSB behouden + beste exponent"
+  },
+  "assumptions": {
+    "source_format": "E2M3",
+    "target_format": "E2M1",
+    "exponent_bias": 1,
+    "shared_scale": 1,
+    "shared_scale_unchanged": true,
+    "population_weighting": "uniform within each reported code population",
+    "population_is_model_weight_distribution": false,
+    "magnitude_bias_definition": "mean(abs(target) - abs(source))",
+    "relative_error_definition": "abs(target - source) / abs(source); nonzero source only",
+    "msb_constraint": "original mantissa LSB, sign and shared scale fixed",
+    "msb_objective": "minimum absolute numerical error over all four target exponents",
+    "msb_tiebreak": "minimum abs(target exponent - source exponent), then lowest target exponent",
+    "network_accuracy_optimality_claimed": false
+  },
+  "populations": {
+    "all64": {
+      "count": 64,
+      "description": "All 64 encodings, including both signed zeros",
+      "methods": {
+        "lsb_trunc": {
+          "mae": 0.375,
+          "mse": 0.30078125,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.375,
+          "mean_relative_abs_error": 0.22492776041163137,
+          "relative_error_count": 62,
+          "exact_count": 16,
+          "better_than_lsb": 0,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 64,
+          "exact_fractions": {
+            "mae": "3/8",
+            "mse": "77/256",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-3/8",
+            "mean_relative_abs_error": "104696/465465"
+          }
+        },
+        "rne": {
+          "mae": 0.28125,
+          "mse": 0.19140625,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.125,
+          "mean_relative_abs_error": 0.16800833575027124,
+          "relative_error_count": 62,
+          "exact_count": 16,
+          "better_than_lsb": 14,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 50,
+          "exact_fractions": {
+            "mae": "9/32",
+            "mse": "49/256",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-1/8",
+            "mean_relative_abs_error": "78202/465465"
+          }
+        },
+        "msb_bestexp": {
+          "mae": 0.5625,
+          "mse": 0.72265625,
+          "max_abs_error": 3.0,
+          "magnitude_bias": -0.25,
+          "mean_relative_abs_error": 0.3455813004200101,
+          "relative_error_count": 62,
+          "exact_count": 8,
+          "better_than_lsb": 8,
+          "worse_than_lsb": 18,
+          "equal_to_lsb": 38,
+          "exact_fractions": {
+            "mae": "9/16",
+            "mse": "185/256",
+            "max_abs_error": "3",
+            "magnitude_bias": "-1/4",
+            "mean_relative_abs_error": "160856/465465"
+          }
+        }
+      }
+    },
+    "positive32": {
+      "count": 32,
+      "description": "Positive-sign encodings, including +0",
+      "methods": {
+        "lsb_trunc": {
+          "mae": 0.375,
+          "mse": 0.30078125,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.375,
+          "mean_relative_abs_error": 0.22492776041163137,
+          "relative_error_count": 31,
+          "exact_count": 8,
+          "better_than_lsb": 0,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 32,
+          "exact_fractions": {
+            "mae": "3/8",
+            "mse": "77/256",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-3/8",
+            "mean_relative_abs_error": "104696/465465"
+          }
+        },
+        "rne": {
+          "mae": 0.28125,
+          "mse": 0.19140625,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.125,
+          "mean_relative_abs_error": 0.16800833575027124,
+          "relative_error_count": 31,
+          "exact_count": 8,
+          "better_than_lsb": 7,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 25,
+          "exact_fractions": {
+            "mae": "9/32",
+            "mse": "49/256",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-1/8",
+            "mean_relative_abs_error": "78202/465465"
+          }
+        },
+        "msb_bestexp": {
+          "mae": 0.5625,
+          "mse": 0.72265625,
+          "max_abs_error": 3.0,
+          "magnitude_bias": -0.25,
+          "mean_relative_abs_error": 0.3455813004200101,
+          "relative_error_count": 31,
+          "exact_count": 4,
+          "better_than_lsb": 4,
+          "worse_than_lsb": 9,
+          "equal_to_lsb": 19,
+          "exact_fractions": {
+            "mae": "9/16",
+            "mse": "185/256",
+            "max_abs_error": "3",
+            "magnitude_bias": "-1/4",
+            "mean_relative_abs_error": "160856/465465"
+          }
+        }
+      }
+    },
+    "positive_nonzero31": {
+      "count": 31,
+      "description": "Positive nonzero encodings",
+      "methods": {
+        "lsb_trunc": {
+          "mae": 0.3870967741935484,
+          "mse": 0.31048387096774194,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.3870967741935484,
+          "mean_relative_abs_error": 0.22492776041163137,
+          "relative_error_count": 31,
+          "exact_count": 7,
+          "better_than_lsb": 0,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 31,
+          "exact_fractions": {
+            "mae": "12/31",
+            "mse": "77/248",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-12/31",
+            "mean_relative_abs_error": "104696/465465"
+          }
+        },
+        "rne": {
+          "mae": 0.2903225806451613,
+          "mse": 0.1975806451612903,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.12903225806451613,
+          "mean_relative_abs_error": 0.16800833575027124,
+          "relative_error_count": 31,
+          "exact_count": 7,
+          "better_than_lsb": 7,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 24,
+          "exact_fractions": {
+            "mae": "9/31",
+            "mse": "49/248",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-4/31",
+            "mean_relative_abs_error": "78202/465465"
+          }
+        },
+        "msb_bestexp": {
+          "mae": 0.5806451612903226,
+          "mse": 0.7459677419354839,
+          "max_abs_error": 3.0,
+          "magnitude_bias": -0.25806451612903225,
+          "mean_relative_abs_error": 0.3455813004200101,
+          "relative_error_count": 31,
+          "exact_count": 3,
+          "better_than_lsb": 4,
+          "worse_than_lsb": 9,
+          "equal_to_lsb": 18,
+          "exact_fractions": {
+            "mae": "18/31",
+            "mse": "185/248",
+            "max_abs_error": "3",
+            "magnitude_bias": "-8/31",
+            "mean_relative_abs_error": "160856/465465"
+          }
+        }
+      }
+    },
+    "positive_normal24": {
+      "count": 24,
+      "description": "Positive normal encodings; exponent 1..3",
+      "methods": {
+        "lsb_trunc": {
+          "mae": 0.4375,
+          "mse": 0.3828125,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.4375,
+          "mean_relative_abs_error": 0.12545232545232546,
+          "relative_error_count": 24,
+          "exact_count": 6,
+          "better_than_lsb": 0,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 24,
+          "exact_fractions": {
+            "mae": "7/16",
+            "mse": "49/128",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-7/16",
+            "mean_relative_abs_error": "5651/45045"
+          }
+        },
+        "rne": {
+          "mae": 0.3333333333333333,
+          "mse": 0.24739583333333334,
+          "max_abs_error": 1.5,
+          "magnitude_bias": -0.16666666666666666,
+          "mean_relative_abs_error": 0.09161394161394161,
+          "relative_error_count": 24,
+          "exact_count": 6,
+          "better_than_lsb": 5,
+          "worse_than_lsb": 0,
+          "equal_to_lsb": 19,
+          "exact_fractions": {
+            "mae": "1/3",
+            "mse": "95/384",
+            "max_abs_error": "3/2",
+            "magnitude_bias": "-1/6",
+            "mean_relative_abs_error": "16507/180180"
+          }
+        },
+        "msb_bestexp": {
+          "mae": 0.6666666666666666,
+          "mse": 0.9348958333333334,
+          "max_abs_error": 3.0,
+          "magnitude_bias": -0.3125,
+          "mean_relative_abs_error": 0.18407425907425906,
+          "relative_error_count": 24,
+          "exact_count": 3,
+          "better_than_lsb": 3,
+          "worse_than_lsb": 7,
+          "equal_to_lsb": 14,
+          "exact_fractions": {
+            "mae": "2/3",
+            "mse": "359/384",
+            "max_abs_error": "3",
+            "magnitude_bias": "-5/16",
+            "mean_relative_abs_error": "22111/120120"
+          }
+        }
+      }
+    }
+  },
+  "monotonicity": {
+    "lsb_trunc": {
+      "ordering": "source magnitude codes 0..31, increasing decoded value",
+      "nondecreasing": true,
+      "decreases": 0,
+      "violations": []
+    },
+    "rne": {
+      "ordering": "source magnitude codes 0..31, increasing decoded value",
+      "nondecreasing": true,
+      "decreases": 0,
+      "violations": []
+    },
+    "msb_bestexp": {
+      "ordering": "source magnitude codes 0..31, increasing decoded value",
+      "nondecreasing": false,
+      "decreases": 12,
+      "violations": [
+        {
+          "source_code_before": 1,
+          "source_code_after": 2,
+          "target_value_before": 0.5,
+          "target_value_after": 0.0
+        },
+        {
+          "source_code_before": 3,
+          "source_code_after": 4,
+          "target_value_before": 0.5,
+          "target_value_after": 0.0
+        },
+        {
+          "source_code_before": 6,
+          "source_code_after": 7,
+          "target_value_before": 1.0,
+          "target_value_after": 0.5
+        },
+        {
+          "source_code_before": 9,
+          "source_code_after": 10,
+          "target_value_before": 1.5,
+          "target_value_after": 1.0
+        },
+        {
+          "source_code_before": 11,
+          "source_code_after": 12,
+          "target_value_before": 1.5,
+          "target_value_after": 1.0
+        },
+        {
+          "source_code_before": 14,
+          "source_code_after": 15,
+          "target_value_before": 2.0,
+          "target_value_after": 1.5
+        },
+        {
+          "source_code_before": 17,
+          "source_code_after": 18,
+          "target_value_before": 3.0,
+          "target_value_after": 2.0
+        },
+        {
+          "source_code_before": 19,
+          "source_code_after": 20,
+          "target_value_before": 3.0,
+          "target_value_after": 2.0
+        },
+        {
+          "source_code_before": 22,
+          "source_code_after": 23,
+          "target_value_before": 4.0,
+          "target_value_after": 3.0
+        },
+        {
+          "source_code_before": 25,
+          "source_code_after": 26,
+          "target_value_before": 6.0,
+          "target_value_after": 4.0
+        },
+        {
+          "source_code_before": 27,
+          "source_code_after": 28,
+          "target_value_before": 6.0,
+          "target_value_after": 4.0
+        },
+        {
+          "source_code_before": 29,
+          "source_code_after": 30,
+          "target_value_before": 6.0,
+          "target_value_after": 4.0
+        }
+      ]
+    }
+  },
+  "exhaustive_checks": {
+    "codes_checked": 64,
+    "lsb_mapping_equals_code_shift": true,
+    "all_target_codes_in_range": true,
+    "all_signs_preserved": true,
+    "signed_zero_codes_preserved": true,
+    "rne_is_globally_nearest": true,
+    "rne_ties_choose_even_magnitude_code": true,
+    "msb_preserves_original_mantissa_lsb": true,
+    "msb_minimizes_error_over_all_four_exponents": true,
+    "msb_exponent_tiebreak_respected": true
+  }
+}

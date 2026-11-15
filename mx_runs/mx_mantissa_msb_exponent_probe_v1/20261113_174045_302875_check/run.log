@@ -1,0 +1,5 @@
+2026-11-13T16:40:45.334687+00:00 NUMERIEK PASS: alle 64 broncodes, drie omzettingen; optimale beperkte mapping exact gecontroleerd.
+2026-11-13T16:40:47.717827+00:00 BRON PASS: oorspronkelijke compacte epoch100-export en opgeslagen E2-schalen geverifieerd.
+2026-11-13T16:40:48.190512+00:00 CHECK PASS: vijf varianten met synthetische invoer; geen SVHN-accuracy gemeten.
+2026-11-13T16:40:49.261098+00:00 Resultaten: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_exponent_probe_v1\20261113_174045_302875_check
+2026-11-13T16:40:49.261612+00:00 Stuur dit bestand terug: C:\Users\renzo\master-thesis-mx\mx_runs\mx_mantissa_msb_exponent_probe_v1\20261113_174045_302875_check\feedback_bundle.zip

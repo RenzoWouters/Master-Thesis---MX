@@ -1,0 +1,6 @@
+{
+  "method": "msb_bestexp",
+  "train_from_scratch": true,
+  "initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+  "initial_rng_sha256": "be692b956727ec717b6ae14c93e3b8cf3bca06cc2b67c051ada948259cd5f214"
+}

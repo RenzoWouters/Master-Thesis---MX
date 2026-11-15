@@ -1,0 +1,1 @@
+method,epoch,phase,weight_bits,weight_format,n,correct1,correct5,top1_percent,top5_percent,loss,lr

@@ -1,0 +1,150 @@
+{
+  "schema": "mx-msb-scale64-reference100-validation-v1",
+  "status": "PASS",
+  "new_targeted_tests": {
+    "training_engine": 5,
+    "runner_boundaries": 17,
+    "report_guards": 12,
+    "total": 34,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_execution_note": "Engine suite5 passed; runner base16 plus optional-render-warning test1 passed; report base11 plus missing-matplotlib test1 passed. No redundant broad reruns.",
+  "inherited_unchanged_adapter_validation": {
+    "tests": 9,
+    "source": "previous validated scratch5 package",
+    "adapter_byte_identical": true,
+    "vendor_byte_identical": true
+  },
+  "full100_engine_evidence": {
+    "status": "PASS",
+    "synthetic_fixture_only": true,
+    "SVHN_loaded": false,
+    "parent_checkpoint_used": false,
+    "scope": "100 epochs from fresh actual fixed64 model versus resumes49/74/89; real CPU updates on three synthetic images; no research accuracy.",
+    "tests_run": 5,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 43.075157400000535,
+    "vendor_and_historical_reference_unchanged": true,
+    "training_engine_matches_successful_pilot_sha256": "41175f0a9d43cfd5c062b88acd6f7dc15d1b85a56cafbbdde5f1d55eea05e6ee",
+    "cpu_initial_model_hash_matches_original_CPU_control": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+    "historical_expected_initial_model_sha256": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f",
+    "CPU_initial_hash_equals_historical": false,
+    "production_historical_initialization_pin_unchanged": true,
+    "parameter_count132954_no_phi": true,
+    "installation_and_optimizer_no_RNG_draws": true,
+    "fresh_LSB_and_MSB_construction_RNG_exact": true,
+    "initial_E4_E2M3_logits_equal_to_LSB": true,
+    "initial_E2M1_logits_use_different_MSB_mapping": true,
+    "historical_initial_RNG_snapshot_available": false,
+    "continuous100_equals_resumes49_74_89_exact_CPU": true,
+    "resume_equality_fields": [
+      "model",
+      "optimizer",
+      "scheduler",
+      "rng",
+      "trace"
+    ],
+    "exact_comparison_epochs": [
+      49,
+      74,
+      89,
+      100
+    ],
+    "resume_start_epochs": [
+      50,
+      75,
+      90
+    ],
+    "real_optimizer_updates_in_comparison": 400,
+    "Adam_and_active_BN_steps200": true,
+    "completed_epochs_per_full_run": 100,
+    "scheduler_steps_after_evaluation": 100,
+    "original_LR_boundaries": {
+      "50": {
+        "training_lr": 0.001,
+        "evaluation_lr": 0.001,
+        "lr_after_evaluation_and_scheduler_step": 0.0001
+      },
+      "51": {
+        "training_lr": 0.0001,
+        "evaluation_lr": 0.0001,
+        "lr_after_evaluation_and_scheduler_step": 0.0001
+      },
+      "75": {
+        "training_lr": 0.0001,
+        "evaluation_lr": 0.0001,
+        "lr_after_evaluation_and_scheduler_step": 1e-05
+      },
+      "76": {
+        "training_lr": 1e-05,
+        "evaluation_lr": 1e-05,
+        "lr_after_evaluation_and_scheduler_step": 1e-05
+      },
+      "90": {
+        "training_lr": 1e-05,
+        "evaluation_lr": 1e-05,
+        "lr_after_evaluation_and_scheduler_step": 1.0000000000000002e-06
+      },
+      "91": {
+        "training_lr": 1.0000000000000002e-06,
+        "evaluation_lr": 1.0000000000000002e-06,
+        "lr_after_evaluation_and_scheduler_step": 1.0000000000000002e-06
+      }
+    },
+    "actual_MSB_mappings_and_dynamic_scale64_checked": true,
+    "original_100_epoch_LR_schedule_unchanged": true,
+    "wrong_method_resume_rejected_before_restore": true,
+    "resumed_segment_checkpoints": [
+      "/workspace/scratch/56d55813fcd5/msb100_validation/training_engine_cpu/test_hundred_epochs_equal_resumes49_74_89_exactly/stop49/epoch_00049.pt",
+      "/workspace/scratch/56d55813fcd5/msb100_validation/training_engine_cpu/test_hundred_epochs_equal_resumes49_74_89_exactly/resume50to74/epoch_00074.pt",
+      "/workspace/scratch/56d55813fcd5/msb100_validation/training_engine_cpu/test_hundred_epochs_equal_resumes49_74_89_exactly/resume75to89/epoch_00089.pt",
+      "/workspace/scratch/56d55813fcd5/msb100_validation/training_engine_cpu/test_hundred_epochs_equal_resumes49_74_89_exactly/resume90to100/epoch_00100.pt"
+    ],
+    "historical_hash_guard_rejects_observed_CPU_mismatch": true,
+    "mid_epoch_failure_reports_real_completed_update": true,
+    "actual_forward_E4_scale_change_propagates_to_both_lower_scales": true
+  },
+  "complete_check_pipeline": {
+    "status": "PASS",
+    "scope": "Complete public main(check) flow with explicit private CPU runtime/control pin",
+    "synthetic_only": true,
+    "production_CUDA_environment_validated_here": false,
+    "production_initialization_pin_unchanged": true,
+    "initialization_pins": {
+      "cpu_control": "d7d420ca0f0de886324f1b4d741fa29e13bdae6c518a07a5665a52e8764a3148",
+      "production": "a8fcd20c40a204ba24cabfa36258f9501d55b9d4d4bdfb8ba742b8c827af127f"
+    },
+    "new_research_accuracy_measured": false,
+    "synthetic_optimizer_steps": 2,
+    "historical_reference_rows": 300,
+    "new_accuracy_rows": 0,
+    "terminal_last_line": "GLOBAAL RESULTAAT: PASS",
+    "exit_code": 0,
+    "notebook_generated": true,
+    "feedback_bundle_generated": true,
+    "raw_SVHN_data_loaded": false
+  },
+  "production_CUDA_pilot_evidence": "PILOT_VALIDATION.json",
+  "terminal_contract": {
+    "successful_check_last_line": "GLOBAAL RESULTAAT: PASS",
+    "failed_check_last_line": "GLOBAAL RESULTAAT: FAIL",
+    "incomplete_training_last_line": "GLOBAAL RESULTAAT: GESTOPT",
+    "printed_after_report_and_feedback_publication": true,
+    "tested_numeric_report_zip_and_interrupt_failure_paths": true
+  },
+  "fresh_training_default": true,
+  "pilot_checkpoint_loaded": false,
+  "MSB_training_kernel_changed_from_successful_pilot": false,
+  "new_full100_SVHN_run_performed": false,
+  "new_research_accuracy_available": false,
+  "technical_CPU_tests_environment_note": "Numerical tests use the recorded Linux CPU environment and its original CPU control initialization. Public check/run require the historical Windows CUDA environment and production initialization pin.",
+  "limitations": [
+    "Technical CPU resume equality does not guarantee bit-exact CUDA execution.",
+    "Historical initial RNG and sample-order files remain unavailable.",
+    "This package contains historical LSB observations only; new MSB100 results await the user run."
+  ]
+}
