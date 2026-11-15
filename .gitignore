@@ -12,3 +12,5 @@ results/
 # PyTorch-checkpoints en binaire tensordata
 *.pt
 *.pth
+
+mx_runs/mx_weights_five_direct_reference100_v1/20261115_145222_257259_train/feedback_bundle.zip
